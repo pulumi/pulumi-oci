@@ -35,12 +35,12 @@ import (
 //				CompartmentId:           pulumi.Any(_var.Compartment_id),
 //				DataScienceResourceType: pulumi.Any(_var.Data_science_private_endpoint_data_science_resource_type),
 //				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Data_science_private_endpoint_description),
 //				DisplayName: pulumi.Any(_var.Data_science_private_endpoint_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NsgIds:    pulumi.Any(_var.Data_science_private_endpoint_nsg_ids),

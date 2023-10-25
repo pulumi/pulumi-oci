@@ -57,27 +57,35 @@ class RuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             budget_id: pulumi.Input[str],
-             threshold: pulumi.Input[float],
-             threshold_type: pulumi.Input[str],
-             type: pulumi.Input[str],
+             budget_id: Optional[pulumi.Input[str]] = None,
+             threshold: Optional[pulumi.Input[float]] = None,
+             threshold_type: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              message: Optional[pulumi.Input[str]] = None,
              recipients: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'budgetId' in kwargs:
+        if budget_id is None and 'budgetId' in kwargs:
             budget_id = kwargs['budgetId']
-        if 'thresholdType' in kwargs:
+        if budget_id is None:
+            raise TypeError("Missing 'budget_id' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
+        if threshold_type is None and 'thresholdType' in kwargs:
             threshold_type = kwargs['thresholdType']
-        if 'definedTags' in kwargs:
+        if threshold_type is None:
+            raise TypeError("Missing 'threshold_type' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("budget_id", budget_id)
@@ -294,21 +302,21 @@ class _RuleState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'budgetId' in kwargs:
+        if budget_id is None and 'budgetId' in kwargs:
             budget_id = kwargs['budgetId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'thresholdType' in kwargs:
+        if threshold_type is None and 'thresholdType' in kwargs:
             threshold_type = kwargs['thresholdType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if budget_id is not None:

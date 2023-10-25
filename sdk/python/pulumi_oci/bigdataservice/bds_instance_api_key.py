@@ -42,20 +42,28 @@ class BdsInstanceApiKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bds_instance_id: pulumi.Input[str],
-             key_alias: pulumi.Input[str],
-             passphrase: pulumi.Input[str],
-             user_id: pulumi.Input[str],
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             key_alias: Optional[pulumi.Input[str]] = None,
+             passphrase: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
              default_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bdsInstanceId' in kwargs:
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'keyAlias' in kwargs:
+        if bds_instance_id is None:
+            raise TypeError("Missing 'bds_instance_id' argument")
+        if key_alias is None and 'keyAlias' in kwargs:
             key_alias = kwargs['keyAlias']
-        if 'userId' in kwargs:
+        if key_alias is None:
+            raise TypeError("Missing 'key_alias' argument")
+        if passphrase is None:
+            raise TypeError("Missing 'passphrase' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'defaultRegion' in kwargs:
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
+        if default_region is None and 'defaultRegion' in kwargs:
             default_region = kwargs['defaultRegion']
 
         _setter("bds_instance_id", bds_instance_id)
@@ -186,19 +194,19 @@ class _BdsInstanceApiKeyState:
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bdsInstanceId' in kwargs:
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'defaultRegion' in kwargs:
+        if default_region is None and 'defaultRegion' in kwargs:
             default_region = kwargs['defaultRegion']
-        if 'keyAlias' in kwargs:
+        if key_alias is None and 'keyAlias' in kwargs:
             key_alias = kwargs['keyAlias']
-        if 'tenantId' in kwargs:
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if bds_instance_id is not None:

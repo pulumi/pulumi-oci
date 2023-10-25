@@ -78,13 +78,13 @@ class OperatorControlAssignmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             is_enforced_always: pulumi.Input[bool],
-             operator_control_id: pulumi.Input[str],
-             resource_compartment_id: pulumi.Input[str],
-             resource_id: pulumi.Input[str],
-             resource_name: pulumi.Input[str],
-             resource_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_enforced_always: Optional[pulumi.Input[bool]] = None,
+             operator_control_id: Optional[pulumi.Input[str]] = None,
+             resource_compartment_id: Optional[pulumi.Input[str]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             resource_name: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
              comment: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -95,39 +95,53 @@ class OperatorControlAssignmentArgs:
              remote_syslog_server_port: Optional[pulumi.Input[int]] = None,
              time_assignment_from: Optional[pulumi.Input[str]] = None,
              time_assignment_to: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isEnforcedAlways' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_enforced_always is None and 'isEnforcedAlways' in kwargs:
             is_enforced_always = kwargs['isEnforcedAlways']
-        if 'operatorControlId' in kwargs:
+        if is_enforced_always is None:
+            raise TypeError("Missing 'is_enforced_always' argument")
+        if operator_control_id is None and 'operatorControlId' in kwargs:
             operator_control_id = kwargs['operatorControlId']
-        if 'resourceCompartmentId' in kwargs:
+        if operator_control_id is None:
+            raise TypeError("Missing 'operator_control_id' argument")
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'resourceId' in kwargs:
+        if resource_compartment_id is None:
+            raise TypeError("Missing 'resource_compartment_id' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'definedTags' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoApproveDuringMaintenance' in kwargs:
+        if is_auto_approve_during_maintenance is None and 'isAutoApproveDuringMaintenance' in kwargs:
             is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
-        if 'isLogForwarded' in kwargs:
+        if is_log_forwarded is None and 'isLogForwarded' in kwargs:
             is_log_forwarded = kwargs['isLogForwarded']
-        if 'remoteSyslogServerAddress' in kwargs:
+        if remote_syslog_server_address is None and 'remoteSyslogServerAddress' in kwargs:
             remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
-        if 'remoteSyslogServerCaCert' in kwargs:
+        if remote_syslog_server_ca_cert is None and 'remoteSyslogServerCaCert' in kwargs:
             remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
-        if 'remoteSyslogServerPort' in kwargs:
+        if remote_syslog_server_port is None and 'remoteSyslogServerPort' in kwargs:
             remote_syslog_server_port = kwargs['remoteSyslogServerPort']
-        if 'timeAssignmentFrom' in kwargs:
+        if time_assignment_from is None and 'timeAssignmentFrom' in kwargs:
             time_assignment_from = kwargs['timeAssignmentFrom']
-        if 'timeAssignmentTo' in kwargs:
+        if time_assignment_to is None and 'timeAssignmentTo' in kwargs:
             time_assignment_to = kwargs['timeAssignmentTo']
 
         _setter("compartment_id", compartment_id)
@@ -491,57 +505,57 @@ class _OperatorControlAssignmentState:
              time_of_assignment: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              unassigner_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignerId' in kwargs:
+        if assigner_id is None and 'assignerId' in kwargs:
             assigner_id = kwargs['assignerId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'detachmentDescription' in kwargs:
+        if detachment_description is None and 'detachmentDescription' in kwargs:
             detachment_description = kwargs['detachmentDescription']
-        if 'errorCode' in kwargs:
+        if error_code is None and 'errorCode' in kwargs:
             error_code = kwargs['errorCode']
-        if 'errorMessage' in kwargs:
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoApproveDuringMaintenance' in kwargs:
+        if is_auto_approve_during_maintenance is None and 'isAutoApproveDuringMaintenance' in kwargs:
             is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
-        if 'isDefaultAssignment' in kwargs:
+        if is_default_assignment is None and 'isDefaultAssignment' in kwargs:
             is_default_assignment = kwargs['isDefaultAssignment']
-        if 'isEnforcedAlways' in kwargs:
+        if is_enforced_always is None and 'isEnforcedAlways' in kwargs:
             is_enforced_always = kwargs['isEnforcedAlways']
-        if 'isLogForwarded' in kwargs:
+        if is_log_forwarded is None and 'isLogForwarded' in kwargs:
             is_log_forwarded = kwargs['isLogForwarded']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'operatorControlId' in kwargs:
+        if operator_control_id is None and 'operatorControlId' in kwargs:
             operator_control_id = kwargs['operatorControlId']
-        if 'remoteSyslogServerAddress' in kwargs:
+        if remote_syslog_server_address is None and 'remoteSyslogServerAddress' in kwargs:
             remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
-        if 'remoteSyslogServerCaCert' in kwargs:
+        if remote_syslog_server_ca_cert is None and 'remoteSyslogServerCaCert' in kwargs:
             remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
-        if 'remoteSyslogServerPort' in kwargs:
+        if remote_syslog_server_port is None and 'remoteSyslogServerPort' in kwargs:
             remote_syslog_server_port = kwargs['remoteSyslogServerPort']
-        if 'resourceCompartmentId' in kwargs:
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'timeAssignmentFrom' in kwargs:
+        if time_assignment_from is None and 'timeAssignmentFrom' in kwargs:
             time_assignment_from = kwargs['timeAssignmentFrom']
-        if 'timeAssignmentTo' in kwargs:
+        if time_assignment_to is None and 'timeAssignmentTo' in kwargs:
             time_assignment_to = kwargs['timeAssignmentTo']
-        if 'timeOfAssignment' in kwargs:
+        if time_of_assignment is None and 'timeOfAssignment' in kwargs:
             time_of_assignment = kwargs['timeOfAssignment']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'unassignerId' in kwargs:
+        if unassigner_id is None and 'unassignerId' in kwargs:
             unassigner_id = kwargs['unassignerId']
 
         if assigner_id is not None:

@@ -46,26 +46,30 @@ class ContainerRepositoryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_immutable: Optional[pulumi.Input[bool]] = None,
              is_public: Optional[pulumi.Input[bool]] = None,
              readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isImmutable' in kwargs:
+        if is_immutable is None and 'isImmutable' in kwargs:
             is_immutable = kwargs['isImmutable']
-        if 'isPublic' in kwargs:
+        if is_public is None and 'isPublic' in kwargs:
             is_public = kwargs['isPublic']
 
         _setter("compartment_id", compartment_id)
@@ -246,35 +250,35 @@ class _ContainerRepositoryState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_pushed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billableSizeInGbs' in kwargs:
+        if billable_size_in_gbs is None and 'billableSizeInGbs' in kwargs:
             billable_size_in_gbs = kwargs['billableSizeInGbs']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageCount' in kwargs:
+        if image_count is None and 'imageCount' in kwargs:
             image_count = kwargs['imageCount']
-        if 'isImmutable' in kwargs:
+        if is_immutable is None and 'isImmutable' in kwargs:
             is_immutable = kwargs['isImmutable']
-        if 'isPublic' in kwargs:
+        if is_public is None and 'isPublic' in kwargs:
             is_public = kwargs['isPublic']
-        if 'layerCount' in kwargs:
+        if layer_count is None and 'layerCount' in kwargs:
             layer_count = kwargs['layerCount']
-        if 'layersSizeInBytes' in kwargs:
+        if layers_size_in_bytes is None and 'layersSizeInBytes' in kwargs:
             layers_size_in_bytes = kwargs['layersSizeInBytes']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastPushed' in kwargs:
+        if time_last_pushed is None and 'timeLastPushed' in kwargs:
             time_last_pushed = kwargs['timeLastPushed']
 
         if billable_size_in_gbs is not None:
@@ -663,11 +667,7 @@ class ContainerRepository(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_immutable"] = is_immutable
             __props__.__dict__["is_public"] = is_public
-            if readme is not None and not isinstance(readme, ContainerRepositoryReadmeArgs):
-                readme = readme or {}
-                def _setter(key, value):
-                    readme[key] = value
-                ContainerRepositoryReadmeArgs._configure(_setter, **readme)
+            readme = _utilities.configure(readme, ContainerRepositoryReadmeArgs, True)
             __props__.__dict__["readme"] = readme
             __props__.__dict__["billable_size_in_gbs"] = None
             __props__.__dict__["created_by"] = None

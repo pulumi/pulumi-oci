@@ -57,25 +57,29 @@ class TagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             tag_namespace_id: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             tag_namespace_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_cost_tracking: Optional[pulumi.Input[bool]] = None,
              is_retired: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tagNamespaceId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if tag_namespace_id is None and 'tagNamespaceId' in kwargs:
             tag_namespace_id = kwargs['tagNamespaceId']
-        if 'definedTags' in kwargs:
+        if tag_namespace_id is None:
+            raise TypeError("Missing 'tag_namespace_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCostTracking' in kwargs:
+        if is_cost_tracking is None and 'isCostTracking' in kwargs:
             is_cost_tracking = kwargs['isCostTracking']
-        if 'isRetired' in kwargs:
+        if is_retired is None and 'isRetired' in kwargs:
             is_retired = kwargs['isRetired']
 
         _setter("description", description)
@@ -258,19 +262,19 @@ class _TagState:
              tag_namespace_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCostTracking' in kwargs:
+        if is_cost_tracking is None and 'isCostTracking' in kwargs:
             is_cost_tracking = kwargs['isCostTracking']
-        if 'isRetired' in kwargs:
+        if is_retired is None and 'isRetired' in kwargs:
             is_retired = kwargs['isRetired']
-        if 'tagNamespaceId' in kwargs:
+        if tag_namespace_id is None and 'tagNamespaceId' in kwargs:
             tag_namespace_id = kwargs['tagNamespaceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if defined_tags is not None:
@@ -623,11 +627,7 @@ class Tag(pulumi.CustomResource):
             if tag_namespace_id is None and not opts.urn:
                 raise TypeError("Missing required property 'tag_namespace_id'")
             __props__.__dict__["tag_namespace_id"] = tag_namespace_id
-            if validator is not None and not isinstance(validator, TagValidatorArgs):
-                validator = validator or {}
-                def _setter(key, value):
-                    validator[key] = value
-                TagValidatorArgs._configure(_setter, **validator)
+            validator = _utilities.configure(validator, TagValidatorArgs, True)
             __props__.__dict__["validator"] = validator
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

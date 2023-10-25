@@ -41,19 +41,21 @@ class JobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             job_id: pulumi.Input[str],
+             job_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'jobId' in kwargs:
+        if job_id is None and 'jobId' in kwargs:
             job_id = kwargs['jobId']
-        if 'definedTags' in kwargs:
+        if job_id is None:
+            raise TypeError("Missing 'job_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("job_id", job_id)
@@ -185,27 +187,27 @@ class _JobState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              unsupported_objects: Optional[pulumi.Input[Sequence[pulumi.Input['JobUnsupportedObjectArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jobId' in kwargs:
+        if job_id is None and 'jobId' in kwargs:
             job_id = kwargs['jobId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'unsupportedObjects' in kwargs:
+        if unsupported_objects is None and 'unsupportedObjects' in kwargs:
             unsupported_objects = kwargs['unsupportedObjects']
 
         if defined_tags is not None:

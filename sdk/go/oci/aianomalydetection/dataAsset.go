@@ -62,12 +62,12 @@ import (
 //					WalletPasswordSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
 //				},
 //				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Data_asset_description),
 //				DisplayName: pulumi.Any(_var.Data_asset_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),

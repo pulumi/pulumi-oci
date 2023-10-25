@@ -38,12 +38,12 @@ import (
 //				AvailabilityDomain:   pulumi.Any(_var.Dedicated_vm_host_availability_domain),
 //				CompartmentId:        pulumi.Any(_var.Compartment_id),
 //				DedicatedVmHostShape: pulumi.Any(_var.Dedicated_vm_host_dedicated_vm_host_shape),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Dedicated_vm_host_display_name),
 //				FaultDomain: pulumi.Any(_var.Dedicated_vm_host_fault_domain),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

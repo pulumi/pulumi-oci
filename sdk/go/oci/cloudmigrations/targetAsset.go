@@ -54,11 +54,11 @@ import (
 //					CreateVnicDetails: &cloudmigrations.TargetAssetUserSpecCreateVnicDetailsArgs{
 //						AssignPrivateDnsRecord: pulumi.Any(_var.Target_asset_user_spec_create_vnic_details_assign_private_dns_record),
 //						AssignPublicIp:         pulumi.Any(_var.Target_asset_user_spec_create_vnic_details_assign_public_ip),
-//						DefinedTags: pulumi.AnyMap{
+//						DefinedTags: pulumi.Map{
 //							"foo-namespace.bar-key": pulumi.Any("value"),
 //						},
 //						DisplayName: pulumi.Any(_var.Target_asset_user_spec_create_vnic_details_display_name),
-//						FreeformTags: pulumi.AnyMap{
+//						FreeformTags: pulumi.Map{
 //							"bar-key": pulumi.Any("value"),
 //						},
 //						HostnameLabel:       pulumi.Any(_var.Target_asset_user_spec_create_vnic_details_hostname_label),
@@ -69,12 +69,12 @@ import (
 //						VlanId:              pulumi.Any(oci_core_vlan.Test_vlan.Id),
 //					},
 //					DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//					DefinedTags: pulumi.AnyMap{
+//					DefinedTags: pulumi.Map{
 //						"foo-namespace.bar-key": pulumi.Any("value"),
 //					},
 //					DisplayName: pulumi.Any(_var.Target_asset_user_spec_display_name),
 //					FaultDomain: pulumi.Any(_var.Target_asset_user_spec_fault_domain),
-//					FreeformTags: pulumi.AnyMap{
+//					FreeformTags: pulumi.Map{
 //						"bar-key": pulumi.Any("value"),
 //					},
 //					HostnameLabel: pulumi.Any(_var.Target_asset_user_spec_hostname_label),

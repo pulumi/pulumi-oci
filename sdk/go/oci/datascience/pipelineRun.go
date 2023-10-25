@@ -40,11 +40,11 @@ import (
 //					EnvironmentVariables:    pulumi.Any(_var.Pipeline_run_configuration_override_details_environment_variables),
 //					MaximumRuntimeInMinutes: pulumi.Any(_var.Pipeline_run_configuration_override_details_maximum_runtime_in_minutes),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Pipeline_run_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				LogConfigurationOverrideDetails: &datascience.PipelineRunLogConfigurationOverrideDetailsArgs{

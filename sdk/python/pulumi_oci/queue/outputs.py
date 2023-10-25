@@ -31,11 +31,15 @@ class GetQueuesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -69,9 +73,11 @@ class GetQueuesQueueCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetQueuesQueueCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetQueuesQueueCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -147,61 +153,99 @@ class GetQueuesQueueCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             channel_consumption_limit: int,
-             compartment_id: str,
-             custom_encryption_key_id: str,
-             dead_letter_queue_delivery_count: int,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             messages_endpoint: str,
-             purge_queue: bool,
-             purge_type: str,
-             retention_in_seconds: int,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             timeout_in_seconds: int,
-             visibility_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             channel_consumption_limit: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             custom_encryption_key_id: Optional[str] = None,
+             dead_letter_queue_delivery_count: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             messages_endpoint: Optional[str] = None,
+             purge_queue: Optional[bool] = None,
+             purge_type: Optional[str] = None,
+             retention_in_seconds: Optional[int] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             visibility_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'channelConsumptionLimit' in kwargs:
+        if channel_consumption_limit is None and 'channelConsumptionLimit' in kwargs:
             channel_consumption_limit = kwargs['channelConsumptionLimit']
-        if 'compartmentId' in kwargs:
+        if channel_consumption_limit is None:
+            raise TypeError("Missing 'channel_consumption_limit' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'customEncryptionKeyId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if custom_encryption_key_id is None and 'customEncryptionKeyId' in kwargs:
             custom_encryption_key_id = kwargs['customEncryptionKeyId']
-        if 'deadLetterQueueDeliveryCount' in kwargs:
+        if custom_encryption_key_id is None:
+            raise TypeError("Missing 'custom_encryption_key_id' argument")
+        if dead_letter_queue_delivery_count is None and 'deadLetterQueueDeliveryCount' in kwargs:
             dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
-        if 'definedTags' in kwargs:
+        if dead_letter_queue_delivery_count is None:
+            raise TypeError("Missing 'dead_letter_queue_delivery_count' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'messagesEndpoint' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
             messages_endpoint = kwargs['messagesEndpoint']
-        if 'purgeQueue' in kwargs:
+        if messages_endpoint is None:
+            raise TypeError("Missing 'messages_endpoint' argument")
+        if purge_queue is None and 'purgeQueue' in kwargs:
             purge_queue = kwargs['purgeQueue']
-        if 'purgeType' in kwargs:
+        if purge_queue is None:
+            raise TypeError("Missing 'purge_queue' argument")
+        if purge_type is None and 'purgeType' in kwargs:
             purge_type = kwargs['purgeType']
-        if 'retentionInSeconds' in kwargs:
+        if purge_type is None:
+            raise TypeError("Missing 'purge_type' argument")
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
             retention_in_seconds = kwargs['retentionInSeconds']
-        if 'systemTags' in kwargs:
+        if retention_in_seconds is None:
+            raise TypeError("Missing 'retention_in_seconds' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeoutInSeconds' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'visibilityInSeconds' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if visibility_in_seconds is None and 'visibilityInSeconds' in kwargs:
             visibility_in_seconds = kwargs['visibilityInSeconds']
+        if visibility_in_seconds is None:
+            raise TypeError("Missing 'visibility_in_seconds' argument")
 
         _setter("channel_consumption_limit", channel_consumption_limit)
         _setter("compartment_id", compartment_id)

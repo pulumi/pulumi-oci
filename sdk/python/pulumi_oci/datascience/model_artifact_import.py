@@ -35,24 +35,36 @@ class ModelArtifactImportArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_source_type: pulumi.Input[str],
-             destination_bucket: pulumi.Input[str],
-             destination_object_name: pulumi.Input[str],
-             destination_region: pulumi.Input[str],
-             model_id: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_source_type: Optional[pulumi.Input[str]] = None,
+             destination_bucket: Optional[pulumi.Input[str]] = None,
+             destination_object_name: Optional[pulumi.Input[str]] = None,
+             destination_region: Optional[pulumi.Input[str]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactSourceType' in kwargs:
+        if artifact_source_type is None and 'artifactSourceType' in kwargs:
             artifact_source_type = kwargs['artifactSourceType']
-        if 'destinationBucket' in kwargs:
+        if artifact_source_type is None:
+            raise TypeError("Missing 'artifact_source_type' argument")
+        if destination_bucket is None and 'destinationBucket' in kwargs:
             destination_bucket = kwargs['destinationBucket']
-        if 'destinationObjectName' in kwargs:
+        if destination_bucket is None:
+            raise TypeError("Missing 'destination_bucket' argument")
+        if destination_object_name is None and 'destinationObjectName' in kwargs:
             destination_object_name = kwargs['destinationObjectName']
-        if 'destinationRegion' in kwargs:
+        if destination_object_name is None:
+            raise TypeError("Missing 'destination_object_name' argument")
+        if destination_region is None and 'destinationRegion' in kwargs:
             destination_region = kwargs['destinationRegion']
-        if 'modelId' in kwargs:
+        if destination_region is None:
+            raise TypeError("Missing 'destination_region' argument")
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("artifact_source_type", artifact_source_type)
         _setter("destination_bucket", destination_bucket)
@@ -146,17 +158,17 @@ class _ModelArtifactImportState:
              destination_region: Optional[pulumi.Input[str]] = None,
              model_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactSourceType' in kwargs:
+        if artifact_source_type is None and 'artifactSourceType' in kwargs:
             artifact_source_type = kwargs['artifactSourceType']
-        if 'destinationBucket' in kwargs:
+        if destination_bucket is None and 'destinationBucket' in kwargs:
             destination_bucket = kwargs['destinationBucket']
-        if 'destinationObjectName' in kwargs:
+        if destination_object_name is None and 'destinationObjectName' in kwargs:
             destination_object_name = kwargs['destinationObjectName']
-        if 'destinationRegion' in kwargs:
+        if destination_region is None and 'destinationRegion' in kwargs:
             destination_region = kwargs['destinationRegion']
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
 
         if artifact_source_type is not None:

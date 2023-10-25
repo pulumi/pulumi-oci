@@ -65,11 +65,11 @@ class DatasetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             annotation_format: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             dataset_format_details: pulumi.Input['DatasetDatasetFormatDetailsArgs'],
-             dataset_source_details: pulumi.Input['DatasetDatasetSourceDetailsArgs'],
-             label_set: pulumi.Input['DatasetLabelSetArgs'],
+             annotation_format: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
+             dataset_source_details: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']] = None,
+             label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -77,29 +77,39 @@ class DatasetArgs:
              initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
              initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
              labeling_instructions: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'annotationFormat' in kwargs:
+        if annotation_format is None and 'annotationFormat' in kwargs:
             annotation_format = kwargs['annotationFormat']
-        if 'compartmentId' in kwargs:
+        if annotation_format is None:
+            raise TypeError("Missing 'annotation_format' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'datasetFormatDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dataset_format_details is None and 'datasetFormatDetails' in kwargs:
             dataset_format_details = kwargs['datasetFormatDetails']
-        if 'datasetSourceDetails' in kwargs:
+        if dataset_format_details is None:
+            raise TypeError("Missing 'dataset_format_details' argument")
+        if dataset_source_details is None and 'datasetSourceDetails' in kwargs:
             dataset_source_details = kwargs['datasetSourceDetails']
-        if 'labelSet' in kwargs:
+        if dataset_source_details is None:
+            raise TypeError("Missing 'dataset_source_details' argument")
+        if label_set is None and 'labelSet' in kwargs:
             label_set = kwargs['labelSet']
-        if 'definedTags' in kwargs:
+        if label_set is None:
+            raise TypeError("Missing 'label_set' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialImportDatasetConfiguration' in kwargs:
+        if initial_import_dataset_configuration is None and 'initialImportDatasetConfiguration' in kwargs:
             initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
-        if 'initialRecordGenerationConfiguration' in kwargs:
+        if initial_record_generation_configuration is None and 'initialRecordGenerationConfiguration' in kwargs:
             initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
-        if 'labelingInstructions' in kwargs:
+        if labeling_instructions is None and 'labelingInstructions' in kwargs:
             labeling_instructions = kwargs['labelingInstructions']
 
         _setter("annotation_format", annotation_format)
@@ -359,39 +369,39 @@ class _DatasetState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalProperties' in kwargs:
+        if additional_properties is None and 'additionalProperties' in kwargs:
             additional_properties = kwargs['additionalProperties']
-        if 'annotationFormat' in kwargs:
+        if annotation_format is None and 'annotationFormat' in kwargs:
             annotation_format = kwargs['annotationFormat']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'datasetFormatDetails' in kwargs:
+        if dataset_format_details is None and 'datasetFormatDetails' in kwargs:
             dataset_format_details = kwargs['datasetFormatDetails']
-        if 'datasetSourceDetails' in kwargs:
+        if dataset_source_details is None and 'datasetSourceDetails' in kwargs:
             dataset_source_details = kwargs['datasetSourceDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialImportDatasetConfiguration' in kwargs:
+        if initial_import_dataset_configuration is None and 'initialImportDatasetConfiguration' in kwargs:
             initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
-        if 'initialRecordGenerationConfiguration' in kwargs:
+        if initial_record_generation_configuration is None and 'initialRecordGenerationConfiguration' in kwargs:
             initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
-        if 'labelSet' in kwargs:
+        if label_set is None and 'labelSet' in kwargs:
             label_set = kwargs['labelSet']
-        if 'labelingInstructions' in kwargs:
+        if labeling_instructions is None and 'labelingInstructions' in kwargs:
             labeling_instructions = kwargs['labelingInstructions']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lifecycleSubstate' in kwargs:
+        if lifecycle_substate is None and 'lifecycleSubstate' in kwargs:
             lifecycle_substate = kwargs['lifecycleSubstate']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_properties is not None:
@@ -869,19 +879,11 @@ class Dataset(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if dataset_format_details is not None and not isinstance(dataset_format_details, DatasetDatasetFormatDetailsArgs):
-                dataset_format_details = dataset_format_details or {}
-                def _setter(key, value):
-                    dataset_format_details[key] = value
-                DatasetDatasetFormatDetailsArgs._configure(_setter, **dataset_format_details)
+            dataset_format_details = _utilities.configure(dataset_format_details, DatasetDatasetFormatDetailsArgs, True)
             if dataset_format_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_format_details'")
             __props__.__dict__["dataset_format_details"] = dataset_format_details
-            if dataset_source_details is not None and not isinstance(dataset_source_details, DatasetDatasetSourceDetailsArgs):
-                dataset_source_details = dataset_source_details or {}
-                def _setter(key, value):
-                    dataset_source_details[key] = value
-                DatasetDatasetSourceDetailsArgs._configure(_setter, **dataset_source_details)
+            dataset_source_details = _utilities.configure(dataset_source_details, DatasetDatasetSourceDetailsArgs, True)
             if dataset_source_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_source_details'")
             __props__.__dict__["dataset_source_details"] = dataset_source_details
@@ -889,23 +891,11 @@ class Dataset(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if initial_import_dataset_configuration is not None and not isinstance(initial_import_dataset_configuration, DatasetInitialImportDatasetConfigurationArgs):
-                initial_import_dataset_configuration = initial_import_dataset_configuration or {}
-                def _setter(key, value):
-                    initial_import_dataset_configuration[key] = value
-                DatasetInitialImportDatasetConfigurationArgs._configure(_setter, **initial_import_dataset_configuration)
+            initial_import_dataset_configuration = _utilities.configure(initial_import_dataset_configuration, DatasetInitialImportDatasetConfigurationArgs, True)
             __props__.__dict__["initial_import_dataset_configuration"] = initial_import_dataset_configuration
-            if initial_record_generation_configuration is not None and not isinstance(initial_record_generation_configuration, DatasetInitialRecordGenerationConfigurationArgs):
-                initial_record_generation_configuration = initial_record_generation_configuration or {}
-                def _setter(key, value):
-                    initial_record_generation_configuration[key] = value
-                DatasetInitialRecordGenerationConfigurationArgs._configure(_setter, **initial_record_generation_configuration)
+            initial_record_generation_configuration = _utilities.configure(initial_record_generation_configuration, DatasetInitialRecordGenerationConfigurationArgs, True)
             __props__.__dict__["initial_record_generation_configuration"] = initial_record_generation_configuration
-            if label_set is not None and not isinstance(label_set, DatasetLabelSetArgs):
-                label_set = label_set or {}
-                def _setter(key, value):
-                    label_set[key] = value
-                DatasetLabelSetArgs._configure(_setter, **label_set)
+            label_set = _utilities.configure(label_set, DatasetLabelSetArgs, True)
             if label_set is None and not opts.urn:
                 raise TypeError("Missing required property 'label_set'")
             __props__.__dict__["label_set"] = label_set

@@ -64,10 +64,10 @@ class InstancePoolArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             instance_configuration_id: pulumi.Input[str],
-             placement_configurations: pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]],
-             size: pulumi.Input[int],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+             placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
+             size: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -75,25 +75,33 @@ class InstancePoolArgs:
              instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
              load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'instanceConfigurationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
             instance_configuration_id = kwargs['instanceConfigurationId']
-        if 'placementConfigurations' in kwargs:
+        if instance_configuration_id is None:
+            raise TypeError("Missing 'instance_configuration_id' argument")
+        if placement_configurations is None and 'placementConfigurations' in kwargs:
             placement_configurations = kwargs['placementConfigurations']
-        if 'definedTags' in kwargs:
+        if placement_configurations is None:
+            raise TypeError("Missing 'placement_configurations' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceDisplayNameFormatter' in kwargs:
+        if instance_display_name_formatter is None and 'instanceDisplayNameFormatter' in kwargs:
             instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
-        if 'instanceHostnameFormatter' in kwargs:
+        if instance_hostname_formatter is None and 'instanceHostnameFormatter' in kwargs:
             instance_hostname_formatter = kwargs['instanceHostnameFormatter']
-        if 'loadBalancers' in kwargs:
+        if load_balancers is None and 'loadBalancers' in kwargs:
             load_balancers = kwargs['loadBalancers']
 
         _setter("compartment_id", compartment_id)
@@ -324,29 +332,29 @@ class _InstancePoolState:
              size: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actualSize' in kwargs:
+        if actual_size is None and 'actualSize' in kwargs:
             actual_size = kwargs['actualSize']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceConfigurationId' in kwargs:
+        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
             instance_configuration_id = kwargs['instanceConfigurationId']
-        if 'instanceDisplayNameFormatter' in kwargs:
+        if instance_display_name_formatter is None and 'instanceDisplayNameFormatter' in kwargs:
             instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
-        if 'instanceHostnameFormatter' in kwargs:
+        if instance_hostname_formatter is None and 'instanceHostnameFormatter' in kwargs:
             instance_hostname_formatter = kwargs['instanceHostnameFormatter']
-        if 'loadBalancers' in kwargs:
+        if load_balancers is None and 'loadBalancers' in kwargs:
             load_balancers = kwargs['loadBalancers']
-        if 'placementConfigurations' in kwargs:
+        if placement_configurations is None and 'placementConfigurations' in kwargs:
             placement_configurations = kwargs['placementConfigurations']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if actual_size is not None:

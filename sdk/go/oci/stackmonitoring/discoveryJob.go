@@ -55,12 +55,12 @@ import (
 //						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_tags_properties_map),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DiscoveryClient: pulumi.Any(_var.Discovery_job_discovery_client),
 //				DiscoveryType:   pulumi.Any(_var.Discovery_job_discovery_type),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				ShouldPropagateTagsToDiscoveredResources: pulumi.Any(_var.Discovery_job_should_propagate_tags_to_discovered_resources),

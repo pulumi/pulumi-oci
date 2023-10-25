@@ -62,7 +62,7 @@ class AppFirewallPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              actions: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -73,27 +73,29 @@ class AppFirewallPolicyArgs:
              response_access_control: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']] = None,
              response_protection: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'requestAccessControl' in kwargs:
+        if request_access_control is None and 'requestAccessControl' in kwargs:
             request_access_control = kwargs['requestAccessControl']
-        if 'requestProtection' in kwargs:
+        if request_protection is None and 'requestProtection' in kwargs:
             request_protection = kwargs['requestProtection']
-        if 'requestRateLimiting' in kwargs:
+        if request_rate_limiting is None and 'requestRateLimiting' in kwargs:
             request_rate_limiting = kwargs['requestRateLimiting']
-        if 'responseAccessControl' in kwargs:
+        if response_access_control is None and 'responseAccessControl' in kwargs:
             response_access_control = kwargs['responseAccessControl']
-        if 'responseProtection' in kwargs:
+        if response_protection is None and 'responseProtection' in kwargs:
             response_protection = kwargs['responseProtection']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("compartment_id", compartment_id)
@@ -331,33 +333,33 @@ class _AppFirewallPolicyState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'requestAccessControl' in kwargs:
+        if request_access_control is None and 'requestAccessControl' in kwargs:
             request_access_control = kwargs['requestAccessControl']
-        if 'requestProtection' in kwargs:
+        if request_protection is None and 'requestProtection' in kwargs:
             request_protection = kwargs['requestProtection']
-        if 'requestRateLimiting' in kwargs:
+        if request_rate_limiting is None and 'requestRateLimiting' in kwargs:
             request_rate_limiting = kwargs['requestRateLimiting']
-        if 'responseAccessControl' in kwargs:
+        if response_access_control is None and 'responseAccessControl' in kwargs:
             response_access_control = kwargs['responseAccessControl']
-        if 'responseProtection' in kwargs:
+        if response_protection is None and 'responseProtection' in kwargs:
             response_protection = kwargs['responseProtection']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if actions is not None:
@@ -949,35 +951,15 @@ class AppFirewallPolicy(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if request_access_control is not None and not isinstance(request_access_control, AppFirewallPolicyRequestAccessControlArgs):
-                request_access_control = request_access_control or {}
-                def _setter(key, value):
-                    request_access_control[key] = value
-                AppFirewallPolicyRequestAccessControlArgs._configure(_setter, **request_access_control)
+            request_access_control = _utilities.configure(request_access_control, AppFirewallPolicyRequestAccessControlArgs, True)
             __props__.__dict__["request_access_control"] = request_access_control
-            if request_protection is not None and not isinstance(request_protection, AppFirewallPolicyRequestProtectionArgs):
-                request_protection = request_protection or {}
-                def _setter(key, value):
-                    request_protection[key] = value
-                AppFirewallPolicyRequestProtectionArgs._configure(_setter, **request_protection)
+            request_protection = _utilities.configure(request_protection, AppFirewallPolicyRequestProtectionArgs, True)
             __props__.__dict__["request_protection"] = request_protection
-            if request_rate_limiting is not None and not isinstance(request_rate_limiting, AppFirewallPolicyRequestRateLimitingArgs):
-                request_rate_limiting = request_rate_limiting or {}
-                def _setter(key, value):
-                    request_rate_limiting[key] = value
-                AppFirewallPolicyRequestRateLimitingArgs._configure(_setter, **request_rate_limiting)
+            request_rate_limiting = _utilities.configure(request_rate_limiting, AppFirewallPolicyRequestRateLimitingArgs, True)
             __props__.__dict__["request_rate_limiting"] = request_rate_limiting
-            if response_access_control is not None and not isinstance(response_access_control, AppFirewallPolicyResponseAccessControlArgs):
-                response_access_control = response_access_control or {}
-                def _setter(key, value):
-                    response_access_control[key] = value
-                AppFirewallPolicyResponseAccessControlArgs._configure(_setter, **response_access_control)
+            response_access_control = _utilities.configure(response_access_control, AppFirewallPolicyResponseAccessControlArgs, True)
             __props__.__dict__["response_access_control"] = response_access_control
-            if response_protection is not None and not isinstance(response_protection, AppFirewallPolicyResponseProtectionArgs):
-                response_protection = response_protection or {}
-                def _setter(key, value):
-                    response_protection[key] = value
-                AppFirewallPolicyResponseProtectionArgs._configure(_setter, **response_protection)
+            response_protection = _utilities.configure(response_protection, AppFirewallPolicyResponseProtectionArgs, True)
             __props__.__dict__["response_protection"] = response_protection
             __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["lifecycle_details"] = None

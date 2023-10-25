@@ -37,7 +37,7 @@ import (
 //				Type:             pulumi.Any(_var.Backup_destination_type),
 //				ConnectionString: pulumi.Any(_var.Backup_destination_connection_string),
 //				DefinedTags:      pulumi.Any(_var.Backup_destination_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				LocalMountPointPath: pulumi.Any(_var.Backup_destination_local_mount_point_path),

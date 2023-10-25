@@ -33,7 +33,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.NewDeployPipeline(ctx, "testDeployPipeline", &DevOps.DeployPipelineArgs{
 //				ProjectId: pulumi.Any(oci_devops_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeployPipelineParameters: &devops.DeployPipelineDeployPipelineParametersArgs{
@@ -47,7 +47,7 @@ import (
 //				},
 //				Description: pulumi.Any(_var.Deploy_pipeline_description),
 //				DisplayName: pulumi.Any(_var.Deploy_pipeline_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

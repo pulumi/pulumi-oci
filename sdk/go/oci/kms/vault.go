@@ -43,7 +43,7 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Vault_display_name),
 //				VaultType:     pulumi.Any(_var.Vault_vault_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				ExternalKeyManagerMetadata: &kms.VaultExternalKeyManagerMetadataArgs{
@@ -55,7 +55,7 @@ import (
 //					},
 //					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

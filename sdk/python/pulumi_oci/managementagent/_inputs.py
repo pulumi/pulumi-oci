@@ -42,7 +42,7 @@ class ManagementAgentManagementAgentPropertyArgs:
              name: Optional[pulumi.Input[str]] = None,
              units: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -128,21 +128,21 @@ class ManagementAgentPluginListArgs:
              plugin_status: Optional[pulumi.Input[str]] = None,
              plugin_status_message: Optional[pulumi.Input[str]] = None,
              plugin_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pluginDisplayName' in kwargs:
+        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
             plugin_display_name = kwargs['pluginDisplayName']
-        if 'pluginId' in kwargs:
+        if plugin_id is None and 'pluginId' in kwargs:
             plugin_id = kwargs['pluginId']
-        if 'pluginName' in kwargs:
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'pluginStatus' in kwargs:
+        if plugin_status is None and 'pluginStatus' in kwargs:
             plugin_status = kwargs['pluginStatus']
-        if 'pluginStatusMessage' in kwargs:
+        if plugin_status_message is None and 'pluginStatusMessage' in kwargs:
             plugin_status_message = kwargs['pluginStatusMessage']
-        if 'pluginVersion' in kwargs:
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
 
         if is_enabled is not None:
@@ -260,11 +260,15 @@ class GetManagementAgentAvailableHistoriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -317,11 +321,15 @@ class GetManagementAgentImagesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -374,11 +382,15 @@ class GetManagementAgentInstallKeysFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -431,11 +443,15 @@ class GetManagementAgentPluginsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -492,11 +508,15 @@ class GetManagementAgentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

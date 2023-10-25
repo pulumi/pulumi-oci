@@ -75,9 +75,9 @@ class MountTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -87,29 +87,35 @@ class MountTargetArgs:
              kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
              ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'subnetId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'idmapType' in kwargs:
+        if idmap_type is None and 'idmapType' in kwargs:
             idmap_type = kwargs['idmapType']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'ldapIdmap' in kwargs:
+        if ldap_idmap is None and 'ldapIdmap' in kwargs:
             ldap_idmap = kwargs['ldapIdmap']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("availability_domain", availability_domain)
@@ -387,37 +393,37 @@ class _MountTargetState:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exportSetId' in kwargs:
+        if export_set_id is None and 'exportSetId' in kwargs:
             export_set_id = kwargs['exportSetId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'idmapType' in kwargs:
+        if idmap_type is None and 'idmapType' in kwargs:
             idmap_type = kwargs['idmapType']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'ldapIdmap' in kwargs:
+        if ldap_idmap is None and 'ldapIdmap' in kwargs:
             ldap_idmap = kwargs['ldapIdmap']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIpIds' in kwargs:
+        if private_ip_ids is None and 'privateIpIds' in kwargs:
             private_ip_ids = kwargs['privateIpIds']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if availability_domain is not None:
@@ -947,17 +953,9 @@ class MountTarget(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["idmap_type"] = idmap_type
             __props__.__dict__["ip_address"] = ip_address
-            if kerberos is not None and not isinstance(kerberos, MountTargetKerberosArgs):
-                kerberos = kerberos or {}
-                def _setter(key, value):
-                    kerberos[key] = value
-                MountTargetKerberosArgs._configure(_setter, **kerberos)
+            kerberos = _utilities.configure(kerberos, MountTargetKerberosArgs, True)
             __props__.__dict__["kerberos"] = kerberos
-            if ldap_idmap is not None and not isinstance(ldap_idmap, MountTargetLdapIdmapArgs):
-                ldap_idmap = ldap_idmap or {}
-                def _setter(key, value):
-                    ldap_idmap[key] = value
-                MountTargetLdapIdmapArgs._configure(_setter, **ldap_idmap)
+            ldap_idmap = _utilities.configure(ldap_idmap, MountTargetLdapIdmapArgs, True)
             __props__.__dict__["ldap_idmap"] = ldap_idmap
             __props__.__dict__["nsg_ids"] = nsg_ids
             if subnet_id is None and not opts.urn:

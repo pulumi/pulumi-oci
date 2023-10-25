@@ -76,23 +76,27 @@ class CertificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_name: pulumi.Input[str],
-             load_balancer_id: pulumi.Input[str],
+             certificate_name: Optional[pulumi.Input[str]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
              ca_certificate: Optional[pulumi.Input[str]] = None,
              passphrase: Optional[pulumi.Input[str]] = None,
              private_key: Optional[pulumi.Input[str]] = None,
              public_certificate: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateName' in kwargs:
+        if certificate_name is None and 'certificateName' in kwargs:
             certificate_name = kwargs['certificateName']
-        if 'loadBalancerId' in kwargs:
+        if certificate_name is None:
+            raise TypeError("Missing 'certificate_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'caCertificate' in kwargs:
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if ca_certificate is None and 'caCertificate' in kwargs:
             ca_certificate = kwargs['caCertificate']
-        if 'privateKey' in kwargs:
+        if private_key is None and 'privateKey' in kwargs:
             private_key = kwargs['privateKey']
-        if 'publicCertificate' in kwargs:
+        if public_certificate is None and 'publicCertificate' in kwargs:
             public_certificate = kwargs['publicCertificate']
 
         _setter("certificate_name", certificate_name)
@@ -288,17 +292,17 @@ class _CertificateState:
              private_key: Optional[pulumi.Input[str]] = None,
              public_certificate: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caCertificate' in kwargs:
+        if ca_certificate is None and 'caCertificate' in kwargs:
             ca_certificate = kwargs['caCertificate']
-        if 'certificateName' in kwargs:
+        if certificate_name is None and 'certificateName' in kwargs:
             certificate_name = kwargs['certificateName']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'privateKey' in kwargs:
+        if private_key is None and 'privateKey' in kwargs:
             private_key = kwargs['privateKey']
-        if 'publicCertificate' in kwargs:
+        if public_certificate is None and 'publicCertificate' in kwargs:
             public_certificate = kwargs['publicCertificate']
 
         if ca_certificate is not None:

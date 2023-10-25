@@ -36,17 +36,23 @@ class IdpGroupMappingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             group_id: pulumi.Input[str],
-             identity_provider_id: pulumi.Input[str],
-             idp_group_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             identity_provider_id: Optional[pulumi.Input[str]] = None,
+             idp_group_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'identityProviderId' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if identity_provider_id is None and 'identityProviderId' in kwargs:
             identity_provider_id = kwargs['identityProviderId']
-        if 'idpGroupName' in kwargs:
+        if identity_provider_id is None:
+            raise TypeError("Missing 'identity_provider_id' argument")
+        if idp_group_name is None and 'idpGroupName' in kwargs:
             idp_group_name = kwargs['idpGroupName']
+        if idp_group_name is None:
+            raise TypeError("Missing 'idp_group_name' argument")
 
         _setter("group_id", group_id)
         _setter("identity_provider_id", identity_provider_id)
@@ -137,19 +143,19 @@ class _IdpGroupMappingState:
              inactive_state: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'identityProviderId' in kwargs:
+        if identity_provider_id is None and 'identityProviderId' in kwargs:
             identity_provider_id = kwargs['identityProviderId']
-        if 'idpGroupName' in kwargs:
+        if idp_group_name is None and 'idpGroupName' in kwargs:
             idp_group_name = kwargs['idpGroupName']
-        if 'inactiveState' in kwargs:
+        if inactive_state is None and 'inactiveState' in kwargs:
             inactive_state = kwargs['inactiveState']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

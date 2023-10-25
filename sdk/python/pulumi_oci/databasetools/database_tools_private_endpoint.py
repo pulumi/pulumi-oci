@@ -56,32 +56,40 @@ class DatabaseToolsPrivateEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             endpoint_service_id: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoint_service_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              private_endpoint_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'endpointServiceId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoint_service_id is None and 'endpointServiceId' in kwargs:
             endpoint_service_id = kwargs['endpointServiceId']
-        if 'subnetId' in kwargs:
+        if endpoint_service_id is None:
+            raise TypeError("Missing 'endpoint_service_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
 
         _setter("compartment_id", compartment_id)
@@ -304,41 +312,41 @@ class _DatabaseToolsPrivateEndpointState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalFqdns' in kwargs:
+        if additional_fqdns is None and 'additionalFqdns' in kwargs:
             additional_fqdns = kwargs['additionalFqdns']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'endpointFqdn' in kwargs:
+        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
             endpoint_fqdn = kwargs['endpointFqdn']
-        if 'endpointServiceId' in kwargs:
+        if endpoint_service_id is None and 'endpointServiceId' in kwargs:
             endpoint_service_id = kwargs['endpointServiceId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'privateEndpointVnicId' in kwargs:
+        if private_endpoint_vnic_id is None and 'privateEndpointVnicId' in kwargs:
             private_endpoint_vnic_id = kwargs['privateEndpointVnicId']
-        if 'reverseConnectionConfigurations' in kwargs:
+        if reverse_connection_configurations is None and 'reverseConnectionConfigurations' in kwargs:
             reverse_connection_configurations = kwargs['reverseConnectionConfigurations']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if additional_fqdns is not None:

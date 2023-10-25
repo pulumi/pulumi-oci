@@ -34,11 +34,11 @@ import (
 //			_, err := Core.NewRemotePeeringConnection(ctx, "testRemotePeeringConnection", &Core.RemotePeeringConnectionArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DrgId:         pulumi.Any(oci_core_drg.Test_drg.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Remote_peering_connection_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PeerId:         pulumi.Any(oci_core_remote_peering_connection.Test_remote_peering_connection2.Id),

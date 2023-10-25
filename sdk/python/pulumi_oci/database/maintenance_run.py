@@ -67,7 +67,7 @@ class MaintenanceRunArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             maintenance_run_id: pulumi.Input[str],
+             maintenance_run_id: Optional[pulumi.Input[str]] = None,
              current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
              custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
              is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
@@ -79,31 +79,33 @@ class MaintenanceRunArgs:
              target_db_server_version: Optional[pulumi.Input[str]] = None,
              target_storage_server_version: Optional[pulumi.Input[str]] = None,
              time_scheduled: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maintenanceRunId' in kwargs:
+        if maintenance_run_id is None and 'maintenanceRunId' in kwargs:
             maintenance_run_id = kwargs['maintenanceRunId']
-        if 'currentCustomActionTimeoutInMins' in kwargs:
+        if maintenance_run_id is None:
+            raise TypeError("Missing 'maintenance_run_id' argument")
+        if current_custom_action_timeout_in_mins is None and 'currentCustomActionTimeoutInMins' in kwargs:
             current_custom_action_timeout_in_mins = kwargs['currentCustomActionTimeoutInMins']
-        if 'customActionTimeoutInMins' in kwargs:
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
             custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
-        if 'isCustomActionTimeoutEnabled' in kwargs:
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
             is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isPatchNowEnabled' in kwargs:
+        if is_patch_now_enabled is None and 'isPatchNowEnabled' in kwargs:
             is_patch_now_enabled = kwargs['isPatchNowEnabled']
-        if 'isResumePatching' in kwargs:
+        if is_resume_patching is None and 'isResumePatching' in kwargs:
             is_resume_patching = kwargs['isResumePatching']
-        if 'patchId' in kwargs:
+        if patch_id is None and 'patchId' in kwargs:
             patch_id = kwargs['patchId']
-        if 'patchingMode' in kwargs:
+        if patching_mode is None and 'patchingMode' in kwargs:
             patching_mode = kwargs['patchingMode']
-        if 'targetDbServerVersion' in kwargs:
+        if target_db_server_version is None and 'targetDbServerVersion' in kwargs:
             target_db_server_version = kwargs['targetDbServerVersion']
-        if 'targetStorageServerVersion' in kwargs:
+        if target_storage_server_version is None and 'targetStorageServerVersion' in kwargs:
             target_storage_server_version = kwargs['targetStorageServerVersion']
-        if 'timeScheduled' in kwargs:
+        if time_scheduled is None and 'timeScheduled' in kwargs:
             time_scheduled = kwargs['timeScheduled']
 
         _setter("maintenance_run_id", maintenance_run_id)
@@ -423,65 +425,65 @@ class _MaintenanceRunState:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_scheduled: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'currentCustomActionTimeoutInMins' in kwargs:
+        if current_custom_action_timeout_in_mins is None and 'currentCustomActionTimeoutInMins' in kwargs:
             current_custom_action_timeout_in_mins = kwargs['currentCustomActionTimeoutInMins']
-        if 'currentPatchingComponent' in kwargs:
+        if current_patching_component is None and 'currentPatchingComponent' in kwargs:
             current_patching_component = kwargs['currentPatchingComponent']
-        if 'customActionTimeoutInMins' in kwargs:
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
             custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'estimatedComponentPatchingStartTime' in kwargs:
+        if estimated_component_patching_start_time is None and 'estimatedComponentPatchingStartTime' in kwargs:
             estimated_component_patching_start_time = kwargs['estimatedComponentPatchingStartTime']
-        if 'estimatedPatchingTimes' in kwargs:
+        if estimated_patching_times is None and 'estimatedPatchingTimes' in kwargs:
             estimated_patching_times = kwargs['estimatedPatchingTimes']
-        if 'isCustomActionTimeoutEnabled' in kwargs:
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
             is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isPatchNowEnabled' in kwargs:
+        if is_patch_now_enabled is None and 'isPatchNowEnabled' in kwargs:
             is_patch_now_enabled = kwargs['isPatchNowEnabled']
-        if 'isResumePatching' in kwargs:
+        if is_resume_patching is None and 'isResumePatching' in kwargs:
             is_resume_patching = kwargs['isResumePatching']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceRunId' in kwargs:
+        if maintenance_run_id is None and 'maintenanceRunId' in kwargs:
             maintenance_run_id = kwargs['maintenanceRunId']
-        if 'maintenanceSubtype' in kwargs:
+        if maintenance_subtype is None and 'maintenanceSubtype' in kwargs:
             maintenance_subtype = kwargs['maintenanceSubtype']
-        if 'maintenanceType' in kwargs:
+        if maintenance_type is None and 'maintenanceType' in kwargs:
             maintenance_type = kwargs['maintenanceType']
-        if 'patchFailureCount' in kwargs:
+        if patch_failure_count is None and 'patchFailureCount' in kwargs:
             patch_failure_count = kwargs['patchFailureCount']
-        if 'patchId' in kwargs:
+        if patch_id is None and 'patchId' in kwargs:
             patch_id = kwargs['patchId']
-        if 'patchingEndTime' in kwargs:
+        if patching_end_time is None and 'patchingEndTime' in kwargs:
             patching_end_time = kwargs['patchingEndTime']
-        if 'patchingMode' in kwargs:
+        if patching_mode is None and 'patchingMode' in kwargs:
             patching_mode = kwargs['patchingMode']
-        if 'patchingStartTime' in kwargs:
+        if patching_start_time is None and 'patchingStartTime' in kwargs:
             patching_start_time = kwargs['patchingStartTime']
-        if 'patchingStatus' in kwargs:
+        if patching_status is None and 'patchingStatus' in kwargs:
             patching_status = kwargs['patchingStatus']
-        if 'peerMaintenanceRunId' in kwargs:
+        if peer_maintenance_run_id is None and 'peerMaintenanceRunId' in kwargs:
             peer_maintenance_run_id = kwargs['peerMaintenanceRunId']
-        if 'targetDbServerVersion' in kwargs:
+        if target_db_server_version is None and 'targetDbServerVersion' in kwargs:
             target_db_server_version = kwargs['targetDbServerVersion']
-        if 'targetResourceId' in kwargs:
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceType' in kwargs:
+        if target_resource_type is None and 'targetResourceType' in kwargs:
             target_resource_type = kwargs['targetResourceType']
-        if 'targetStorageServerVersion' in kwargs:
+        if target_storage_server_version is None and 'targetStorageServerVersion' in kwargs:
             target_storage_server_version = kwargs['targetStorageServerVersion']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeScheduled' in kwargs:
+        if time_scheduled is None and 'timeScheduled' in kwargs:
             time_scheduled = kwargs['timeScheduled']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if compartment_id is not None:

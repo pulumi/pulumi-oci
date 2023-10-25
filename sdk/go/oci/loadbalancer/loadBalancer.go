@@ -63,10 +63,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Load_balancer_display_name),
 //				Shape:         pulumi.Any(_var.Load_balancer_shape),
 //				SubnetIds:     pulumi.Any(_var.Load_balancer_subnet_ids),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IpMode:                  pulumi.Any(_var.Load_balancer_ip_mode),

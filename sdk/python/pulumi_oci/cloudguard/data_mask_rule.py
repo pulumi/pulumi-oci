@@ -59,33 +59,43 @@ class DataMaskRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             data_mask_categories: pulumi.Input[Sequence[pulumi.Input[str]]],
-             display_name: pulumi.Input[str],
-             iam_group_id: pulumi.Input[str],
-             target_selected: pulumi.Input['DataMaskRuleTargetSelectedArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_mask_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             iam_group_id: Optional[pulumi.Input[str]] = None,
+             target_selected: Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']] = None,
              data_mask_rule_status: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataMaskCategories' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_mask_categories is None and 'dataMaskCategories' in kwargs:
             data_mask_categories = kwargs['dataMaskCategories']
-        if 'displayName' in kwargs:
+        if data_mask_categories is None:
+            raise TypeError("Missing 'data_mask_categories' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'iamGroupId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if iam_group_id is None and 'iamGroupId' in kwargs:
             iam_group_id = kwargs['iamGroupId']
-        if 'targetSelected' in kwargs:
+        if iam_group_id is None:
+            raise TypeError("Missing 'iam_group_id' argument")
+        if target_selected is None and 'targetSelected' in kwargs:
             target_selected = kwargs['targetSelected']
-        if 'dataMaskRuleStatus' in kwargs:
+        if target_selected is None:
+            raise TypeError("Missing 'target_selected' argument")
+        if data_mask_rule_status is None and 'dataMaskRuleStatus' in kwargs:
             data_mask_rule_status = kwargs['dataMaskRuleStatus']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -301,31 +311,31 @@ class _DataMaskRuleState:
              target_selected: Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataMaskCategories' in kwargs:
+        if data_mask_categories is None and 'dataMaskCategories' in kwargs:
             data_mask_categories = kwargs['dataMaskCategories']
-        if 'dataMaskRuleStatus' in kwargs:
+        if data_mask_rule_status is None and 'dataMaskRuleStatus' in kwargs:
             data_mask_rule_status = kwargs['dataMaskRuleStatus']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'iamGroupId' in kwargs:
+        if iam_group_id is None and 'iamGroupId' in kwargs:
             iam_group_id = kwargs['iamGroupId']
-        if 'lifecyleDetails' in kwargs:
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetSelected' in kwargs:
+        if target_selected is None and 'targetSelected' in kwargs:
             target_selected = kwargs['targetSelected']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -702,11 +712,7 @@ class DataMaskRule(pulumi.CustomResource):
                 raise TypeError("Missing required property 'iam_group_id'")
             __props__.__dict__["iam_group_id"] = iam_group_id
             __props__.__dict__["state"] = state
-            if target_selected is not None and not isinstance(target_selected, DataMaskRuleTargetSelectedArgs):
-                target_selected = target_selected or {}
-                def _setter(key, value):
-                    target_selected[key] = value
-                DataMaskRuleTargetSelectedArgs._configure(_setter, **target_selected)
+            target_selected = _utilities.configure(target_selected, DataMaskRuleTargetSelectedArgs, True)
             if target_selected is None and not opts.urn:
                 raise TypeError("Missing required property 'target_selected'")
             __props__.__dict__["target_selected"] = target_selected

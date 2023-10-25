@@ -36,9 +36,9 @@ class ConfigDimensionArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value_source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
 
         if name is not None:
@@ -98,13 +98,13 @@ class ConfigInUseByArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
              options_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'optionsGroup' in kwargs:
+        if options_group is None and 'optionsGroup' in kwargs:
             options_group = kwargs['optionsGroup']
 
         if config_type is not None:
@@ -192,9 +192,9 @@ class ConfigMetricArgs:
              name: Optional[pulumi.Input[str]] = None,
              unit: Optional[pulumi.Input[str]] = None,
              value_source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
 
         if description is not None:
@@ -298,19 +298,19 @@ class ConfigRuleArgs:
              priority: Optional[pulumi.Input[int]] = None,
              satisfied_response_time: Optional[pulumi.Input[int]] = None,
              tolerating_response_time: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterText' in kwargs:
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'isApplyToErrorSpans' in kwargs:
+        if is_apply_to_error_spans is None and 'isApplyToErrorSpans' in kwargs:
             is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'satisfiedResponseTime' in kwargs:
+        if satisfied_response_time is None and 'satisfiedResponseTime' in kwargs:
             satisfied_response_time = kwargs['satisfiedResponseTime']
-        if 'toleratingResponseTime' in kwargs:
+        if tolerating_response_time is None and 'toleratingResponseTime' in kwargs:
             tolerating_response_time = kwargs['toleratingResponseTime']
 
         if display_name is not None:
@@ -435,11 +435,15 @@ class GetConfigsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

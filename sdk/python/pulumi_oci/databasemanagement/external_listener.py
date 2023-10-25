@@ -35,13 +35,15 @@ class ExternalListenerArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_listener_id: pulumi.Input[str],
+             external_listener_id: Optional[pulumi.Input[str]] = None,
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalListenerId' in kwargs:
+        if external_listener_id is None and 'externalListenerId' in kwargs:
             external_listener_id = kwargs['externalListenerId']
-        if 'externalConnectorId' in kwargs:
+        if external_listener_id is None:
+            raise TypeError("Missing 'external_listener_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
 
         _setter("external_listener_id", external_listener_id)
@@ -193,51 +195,51 @@ class _ExternalListenerState:
              time_updated: Optional[pulumi.Input[str]] = None,
              trace_directory: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalConnectorId' in kwargs:
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbHomeId' in kwargs:
+        if external_db_home_id is None and 'externalDbHomeId' in kwargs:
             external_db_home_id = kwargs['externalDbHomeId']
-        if 'externalDbNodeId' in kwargs:
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'externalListenerId' in kwargs:
+        if external_listener_id is None and 'externalListenerId' in kwargs:
             external_listener_id = kwargs['externalListenerId']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'listenerAlias' in kwargs:
+        if listener_alias is None and 'listenerAlias' in kwargs:
             listener_alias = kwargs['listenerAlias']
-        if 'listenerOraLocation' in kwargs:
+        if listener_ora_location is None and 'listenerOraLocation' in kwargs:
             listener_ora_location = kwargs['listenerOraLocation']
-        if 'listenerType' in kwargs:
+        if listener_type is None and 'listenerType' in kwargs:
             listener_type = kwargs['listenerType']
-        if 'logDirectory' in kwargs:
+        if log_directory is None and 'logDirectory' in kwargs:
             log_directory = kwargs['logDirectory']
-        if 'oracleHome' in kwargs:
+        if oracle_home is None and 'oracleHome' in kwargs:
             oracle_home = kwargs['oracleHome']
-        if 'servicedAsms' in kwargs:
+        if serviced_asms is None and 'servicedAsms' in kwargs:
             serviced_asms = kwargs['servicedAsms']
-        if 'servicedDatabases' in kwargs:
+        if serviced_databases is None and 'servicedDatabases' in kwargs:
             serviced_databases = kwargs['servicedDatabases']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'traceDirectory' in kwargs:
+        if trace_directory is None and 'traceDirectory' in kwargs:
             trace_directory = kwargs['traceDirectory']
 
         if additional_details is not None:

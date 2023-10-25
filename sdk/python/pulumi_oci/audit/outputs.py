@@ -55,28 +55,44 @@ class GetEventsAuditEventResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloud_events_version: str,
-             content_type: str,
-             datas: Sequence['outputs.GetEventsAuditEventDataResult'],
-             event_id: str,
-             event_time: str,
-             event_type: str,
-             event_type_version: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cloud_events_version: Optional[str] = None,
+             content_type: Optional[str] = None,
+             datas: Optional[Sequence['outputs.GetEventsAuditEventDataResult']] = None,
+             event_id: Optional[str] = None,
+             event_time: Optional[str] = None,
+             event_type: Optional[str] = None,
+             event_type_version: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudEventsVersion' in kwargs:
+        if cloud_events_version is None and 'cloudEventsVersion' in kwargs:
             cloud_events_version = kwargs['cloudEventsVersion']
-        if 'contentType' in kwargs:
+        if cloud_events_version is None:
+            raise TypeError("Missing 'cloud_events_version' argument")
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
-        if 'eventId' in kwargs:
+        if content_type is None:
+            raise TypeError("Missing 'content_type' argument")
+        if datas is None:
+            raise TypeError("Missing 'datas' argument")
+        if event_id is None and 'eventId' in kwargs:
             event_id = kwargs['eventId']
-        if 'eventTime' in kwargs:
+        if event_id is None:
+            raise TypeError("Missing 'event_id' argument")
+        if event_time is None and 'eventTime' in kwargs:
             event_time = kwargs['eventTime']
-        if 'eventType' in kwargs:
+        if event_time is None:
+            raise TypeError("Missing 'event_time' argument")
+        if event_type is None and 'eventType' in kwargs:
             event_type = kwargs['eventType']
-        if 'eventTypeVersion' in kwargs:
+        if event_type is None:
+            raise TypeError("Missing 'event_type' argument")
+        if event_type_version is None and 'eventTypeVersion' in kwargs:
             event_type_version = kwargs['eventTypeVersion']
+        if event_type_version is None:
+            raise TypeError("Missing 'event_type_version' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("cloud_events_version", cloud_events_version)
         _setter("content_type", content_type)
@@ -205,44 +221,72 @@ class GetEventsAuditEventDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             availability_domain: str,
-             compartment_id: str,
-             compartment_name: str,
-             defined_tags: Mapping[str, Any],
-             event_grouping_id: str,
-             event_name: str,
-             freeform_tags: Mapping[str, Any],
-             identities: Sequence['outputs.GetEventsAuditEventDataIdentityResult'],
-             requests: Sequence['outputs.GetEventsAuditEventDataRequestResult'],
-             resource_id: str,
-             resource_name: str,
-             responses: Sequence['outputs.GetEventsAuditEventDataResponseResult'],
-             state_changes: Sequence['outputs.GetEventsAuditEventDataStateChangeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compartment_name: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             event_grouping_id: Optional[str] = None,
+             event_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             identities: Optional[Sequence['outputs.GetEventsAuditEventDataIdentityResult']] = None,
+             requests: Optional[Sequence['outputs.GetEventsAuditEventDataRequestResult']] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             responses: Optional[Sequence['outputs.GetEventsAuditEventDataResponseResult']] = None,
+             state_changes: Optional[Sequence['outputs.GetEventsAuditEventDataStateChangeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'availabilityDomain' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_name is None and 'compartmentName' in kwargs:
             compartment_name = kwargs['compartmentName']
-        if 'definedTags' in kwargs:
+        if compartment_name is None:
+            raise TypeError("Missing 'compartment_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'eventGroupingId' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if event_grouping_id is None and 'eventGroupingId' in kwargs:
             event_grouping_id = kwargs['eventGroupingId']
-        if 'eventName' in kwargs:
+        if event_grouping_id is None:
+            raise TypeError("Missing 'event_grouping_id' argument")
+        if event_name is None and 'eventName' in kwargs:
             event_name = kwargs['eventName']
-        if 'freeformTags' in kwargs:
+        if event_name is None:
+            raise TypeError("Missing 'event_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'resourceId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if identities is None:
+            raise TypeError("Missing 'identities' argument")
+        if requests is None:
+            raise TypeError("Missing 'requests' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'stateChanges' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if responses is None:
+            raise TypeError("Missing 'responses' argument")
+        if state_changes is None and 'stateChanges' in kwargs:
             state_changes = kwargs['stateChanges']
+        if state_changes is None:
+            raise TypeError("Missing 'state_changes' argument")
 
         _setter("additional_details", additional_details)
         _setter("availability_domain", availability_domain)
@@ -413,36 +457,56 @@ class GetEventsAuditEventDataIdentityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auth_type: str,
-             caller_id: str,
-             caller_name: str,
-             console_session_id: str,
-             credentials: str,
-             ip_address: str,
-             principal_id: str,
-             principal_name: str,
-             tenant_id: str,
-             user_agent: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             auth_type: Optional[str] = None,
+             caller_id: Optional[str] = None,
+             caller_name: Optional[str] = None,
+             console_session_id: Optional[str] = None,
+             credentials: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             principal_id: Optional[str] = None,
+             principal_name: Optional[str] = None,
+             tenant_id: Optional[str] = None,
+             user_agent: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authType' in kwargs:
+        if auth_type is None and 'authType' in kwargs:
             auth_type = kwargs['authType']
-        if 'callerId' in kwargs:
+        if auth_type is None:
+            raise TypeError("Missing 'auth_type' argument")
+        if caller_id is None and 'callerId' in kwargs:
             caller_id = kwargs['callerId']
-        if 'callerName' in kwargs:
+        if caller_id is None:
+            raise TypeError("Missing 'caller_id' argument")
+        if caller_name is None and 'callerName' in kwargs:
             caller_name = kwargs['callerName']
-        if 'consoleSessionId' in kwargs:
+        if caller_name is None:
+            raise TypeError("Missing 'caller_name' argument")
+        if console_session_id is None and 'consoleSessionId' in kwargs:
             console_session_id = kwargs['consoleSessionId']
-        if 'ipAddress' in kwargs:
+        if console_session_id is None:
+            raise TypeError("Missing 'console_session_id' argument")
+        if credentials is None:
+            raise TypeError("Missing 'credentials' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'principalId' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if principal_id is None and 'principalId' in kwargs:
             principal_id = kwargs['principalId']
-        if 'principalName' in kwargs:
+        if principal_id is None:
+            raise TypeError("Missing 'principal_id' argument")
+        if principal_name is None and 'principalName' in kwargs:
             principal_name = kwargs['principalName']
-        if 'tenantId' in kwargs:
+        if principal_name is None:
+            raise TypeError("Missing 'principal_name' argument")
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'userAgent' in kwargs:
+        if tenant_id is None:
+            raise TypeError("Missing 'tenant_id' argument")
+        if user_agent is None and 'userAgent' in kwargs:
             user_agent = kwargs['userAgent']
+        if user_agent is None:
+            raise TypeError("Missing 'user_agent' argument")
 
         _setter("auth_type", auth_type)
         _setter("caller_id", caller_id)
@@ -562,13 +626,23 @@ class GetEventsAuditEventDataRequestResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             headers: Mapping[str, Any],
-             id: str,
-             parameters: Mapping[str, Any],
-             path: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             headers: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
 
         _setter("action", action)
         _setter("headers", headers)
@@ -643,15 +717,25 @@ class GetEventsAuditEventDataResponseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             headers: Mapping[str, Any],
-             message: str,
-             payload: Mapping[str, Any],
-             response_time: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             headers: Optional[Mapping[str, Any]] = None,
+             message: Optional[str] = None,
+             payload: Optional[Mapping[str, Any]] = None,
+             response_time: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'responseTime' in kwargs:
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if payload is None:
+            raise TypeError("Missing 'payload' argument")
+        if response_time is None and 'responseTime' in kwargs:
             response_time = kwargs['responseTime']
+        if response_time is None:
+            raise TypeError("Missing 'response_time' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("headers", headers)
         _setter("message", message)
@@ -717,10 +801,14 @@ class GetEventsAuditEventDataStateChangeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             current: Mapping[str, Any],
-             previous: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             current: Optional[Mapping[str, Any]] = None,
+             previous: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if current is None:
+            raise TypeError("Missing 'current' argument")
+        if previous is None:
+            raise TypeError("Missing 'previous' argument")
 
         _setter("current", current)
         _setter("previous", previous)
@@ -757,11 +845,15 @@ class GetEventsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

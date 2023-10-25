@@ -49,28 +49,30 @@ class ImageArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
              instance_id: Optional[pulumi.Input[str]] = None,
              launch_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageSourceDetails' in kwargs:
+        if image_source_details is None and 'imageSourceDetails' in kwargs:
             image_source_details = kwargs['imageSourceDetails']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'launchMode' in kwargs:
+        if launch_mode is None and 'launchMode' in kwargs:
             launch_mode = kwargs['launchMode']
 
         _setter("compartment_id", compartment_id)
@@ -260,41 +262,41 @@ class _ImageState:
              size_in_mbs: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentFeatures' in kwargs:
+        if agent_features is None and 'agentFeatures' in kwargs:
             agent_features = kwargs['agentFeatures']
-        if 'baseImageId' in kwargs:
+        if base_image_id is None and 'baseImageId' in kwargs:
             base_image_id = kwargs['baseImageId']
-        if 'billableSizeInGbs' in kwargs:
+        if billable_size_in_gbs is None and 'billableSizeInGbs' in kwargs:
             billable_size_in_gbs = kwargs['billableSizeInGbs']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createImageAllowed' in kwargs:
+        if create_image_allowed is None and 'createImageAllowed' in kwargs:
             create_image_allowed = kwargs['createImageAllowed']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageSourceDetails' in kwargs:
+        if image_source_details is None and 'imageSourceDetails' in kwargs:
             image_source_details = kwargs['imageSourceDetails']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'launchMode' in kwargs:
+        if launch_mode is None and 'launchMode' in kwargs:
             launch_mode = kwargs['launchMode']
-        if 'launchOptions' in kwargs:
+        if launch_options is None and 'launchOptions' in kwargs:
             launch_options = kwargs['launchOptions']
-        if 'listingType' in kwargs:
+        if listing_type is None and 'listingType' in kwargs:
             listing_type = kwargs['listingType']
-        if 'operatingSystem' in kwargs:
+        if operating_system is None and 'operatingSystem' in kwargs:
             operating_system = kwargs['operatingSystem']
-        if 'operatingSystemVersion' in kwargs:
+        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
             operating_system_version = kwargs['operatingSystemVersion']
-        if 'sizeInMbs' in kwargs:
+        if size_in_mbs is None and 'sizeInMbs' in kwargs:
             size_in_mbs = kwargs['sizeInMbs']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if agent_features is not None:
@@ -805,11 +807,7 @@ class Image(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if image_source_details is not None and not isinstance(image_source_details, ImageImageSourceDetailsArgs):
-                image_source_details = image_source_details or {}
-                def _setter(key, value):
-                    image_source_details[key] = value
-                ImageImageSourceDetailsArgs._configure(_setter, **image_source_details)
+            image_source_details = _utilities.configure(image_source_details, ImageImageSourceDetailsArgs, True)
             __props__.__dict__["image_source_details"] = image_source_details
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["launch_mode"] = launch_mode

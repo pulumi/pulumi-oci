@@ -50,28 +50,36 @@ class PluggableDatabasesRemoteCloneArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloned_pdb_name: pulumi.Input[str],
-             pluggable_database_id: pulumi.Input[str],
-             source_container_db_admin_password: pulumi.Input[str],
-             target_container_database_id: pulumi.Input[str],
+             cloned_pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             source_container_db_admin_password: Optional[pulumi.Input[str]] = None,
+             target_container_database_id: Optional[pulumi.Input[str]] = None,
              pdb_admin_password: Optional[pulumi.Input[str]] = None,
              should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
              target_tde_wallet_password: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clonedPdbName' in kwargs:
+        if cloned_pdb_name is None and 'clonedPdbName' in kwargs:
             cloned_pdb_name = kwargs['clonedPdbName']
-        if 'pluggableDatabaseId' in kwargs:
+        if cloned_pdb_name is None:
+            raise TypeError("Missing 'cloned_pdb_name' argument")
+        if pluggable_database_id is None and 'pluggableDatabaseId' in kwargs:
             pluggable_database_id = kwargs['pluggableDatabaseId']
-        if 'sourceContainerDbAdminPassword' in kwargs:
+        if pluggable_database_id is None:
+            raise TypeError("Missing 'pluggable_database_id' argument")
+        if source_container_db_admin_password is None and 'sourceContainerDbAdminPassword' in kwargs:
             source_container_db_admin_password = kwargs['sourceContainerDbAdminPassword']
-        if 'targetContainerDatabaseId' in kwargs:
+        if source_container_db_admin_password is None:
+            raise TypeError("Missing 'source_container_db_admin_password' argument")
+        if target_container_database_id is None and 'targetContainerDatabaseId' in kwargs:
             target_container_database_id = kwargs['targetContainerDatabaseId']
-        if 'pdbAdminPassword' in kwargs:
+        if target_container_database_id is None:
+            raise TypeError("Missing 'target_container_database_id' argument")
+        if pdb_admin_password is None and 'pdbAdminPassword' in kwargs:
             pdb_admin_password = kwargs['pdbAdminPassword']
-        if 'shouldPdbAdminAccountBeLocked' in kwargs:
+        if should_pdb_admin_account_be_locked is None and 'shouldPdbAdminAccountBeLocked' in kwargs:
             should_pdb_admin_account_be_locked = kwargs['shouldPdbAdminAccountBeLocked']
-        if 'targetTdeWalletPassword' in kwargs:
+        if target_tde_wallet_password is None and 'targetTdeWalletPassword' in kwargs:
             target_tde_wallet_password = kwargs['targetTdeWalletPassword']
 
         _setter("cloned_pdb_name", cloned_pdb_name)
@@ -274,47 +282,47 @@ class _PluggableDatabasesRemoteCloneState:
              target_container_database_id: Optional[pulumi.Input[str]] = None,
              target_tde_wallet_password: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clonedPdbName' in kwargs:
+        if cloned_pdb_name is None and 'clonedPdbName' in kwargs:
             cloned_pdb_name = kwargs['clonedPdbName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRestricted' in kwargs:
+        if is_restricted is None and 'isRestricted' in kwargs:
             is_restricted = kwargs['isRestricted']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'openMode' in kwargs:
+        if open_mode is None and 'openMode' in kwargs:
             open_mode = kwargs['openMode']
-        if 'pdbAdminPassword' in kwargs:
+        if pdb_admin_password is None and 'pdbAdminPassword' in kwargs:
             pdb_admin_password = kwargs['pdbAdminPassword']
-        if 'pdbName' in kwargs:
+        if pdb_name is None and 'pdbName' in kwargs:
             pdb_name = kwargs['pdbName']
-        if 'pdbNodeLevelDetails' in kwargs:
+        if pdb_node_level_details is None and 'pdbNodeLevelDetails' in kwargs:
             pdb_node_level_details = kwargs['pdbNodeLevelDetails']
-        if 'pluggableDatabaseId' in kwargs:
+        if pluggable_database_id is None and 'pluggableDatabaseId' in kwargs:
             pluggable_database_id = kwargs['pluggableDatabaseId']
-        if 'pluggableDatabaseManagementConfigs' in kwargs:
+        if pluggable_database_management_configs is None and 'pluggableDatabaseManagementConfigs' in kwargs:
             pluggable_database_management_configs = kwargs['pluggableDatabaseManagementConfigs']
-        if 'refreshableCloneConfigs' in kwargs:
+        if refreshable_clone_configs is None and 'refreshableCloneConfigs' in kwargs:
             refreshable_clone_configs = kwargs['refreshableCloneConfigs']
-        if 'shouldPdbAdminAccountBeLocked' in kwargs:
+        if should_pdb_admin_account_be_locked is None and 'shouldPdbAdminAccountBeLocked' in kwargs:
             should_pdb_admin_account_be_locked = kwargs['shouldPdbAdminAccountBeLocked']
-        if 'sourceContainerDbAdminPassword' in kwargs:
+        if source_container_db_admin_password is None and 'sourceContainerDbAdminPassword' in kwargs:
             source_container_db_admin_password = kwargs['sourceContainerDbAdminPassword']
-        if 'targetContainerDatabaseId' in kwargs:
+        if target_container_database_id is None and 'targetContainerDatabaseId' in kwargs:
             target_container_database_id = kwargs['targetContainerDatabaseId']
-        if 'targetTdeWalletPassword' in kwargs:
+        if target_tde_wallet_password is None and 'targetTdeWalletPassword' in kwargs:
             target_tde_wallet_password = kwargs['targetTdeWalletPassword']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if cloned_pdb_name is not None:

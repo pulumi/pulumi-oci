@@ -41,15 +41,19 @@ class SddcDatastoreArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
-             datastore_type: pulumi.Input[str],
+             block_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             datastore_type: Optional[pulumi.Input[str]] = None,
              capacity: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumeIds' in kwargs:
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
             block_volume_ids = kwargs['blockVolumeIds']
-        if 'datastoreType' in kwargs:
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
             datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
 
         _setter("block_volume_ids", block_volume_ids)
         _setter("datastore_type", datastore_type)
@@ -116,11 +120,11 @@ class SddcHcxOnPremLicenseArgs:
              activation_key: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              system_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationKey' in kwargs:
+        if activation_key is None and 'activationKey' in kwargs:
             activation_key = kwargs['activationKey']
-        if 'systemName' in kwargs:
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
 
         if activation_key is not None:
@@ -186,11 +190,11 @@ class SddcUpgradeLicenseArgs:
              _setter: Callable[[Any, Any], None],
              license_key: Optional[pulumi.Input[str]] = None,
              license_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseKey' in kwargs:
+        if license_key is None and 'licenseKey' in kwargs:
             license_key = kwargs['licenseKey']
-        if 'licenseType' in kwargs:
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
 
         if license_key is not None:
@@ -242,11 +246,11 @@ class SddcVsphereUpgradeObjectArgs:
              _setter: Callable[[Any, Any], None],
              download_link: Optional[pulumi.Input[str]] = None,
              link_description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'downloadLink' in kwargs:
+        if download_link is None and 'downloadLink' in kwargs:
             download_link = kwargs['downloadLink']
-        if 'linkDescription' in kwargs:
+        if link_description is None and 'linkDescription' in kwargs:
             link_description = kwargs['linkDescription']
 
         if download_link is not None:
@@ -294,11 +298,15 @@ class GetExsiHostsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -348,11 +356,15 @@ class GetSddcsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -405,11 +417,15 @@ class GetSupportedHostShapesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -465,11 +481,15 @@ class GetSupportedSkusFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -522,11 +542,15 @@ class GetSupportedVmwareSoftwareVersionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

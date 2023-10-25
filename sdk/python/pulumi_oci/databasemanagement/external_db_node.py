@@ -33,13 +33,15 @@ class ExternalDbNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_db_node_id: pulumi.Input[str],
+             external_db_node_id: Optional[pulumi.Input[str]] = None,
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalDbNodeId' in kwargs:
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalConnectorId' in kwargs:
+        if external_db_node_id is None:
+            raise TypeError("Missing 'external_db_node_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
 
         _setter("external_db_node_id", external_db_node_id)
@@ -151,35 +153,35 @@ class _ExternalDbNodeState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainName' in kwargs:
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
-        if 'externalConnectorId' in kwargs:
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbNodeId' in kwargs:
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_details is not None:

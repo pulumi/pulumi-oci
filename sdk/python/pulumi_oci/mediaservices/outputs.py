@@ -82,10 +82,12 @@ class MediaAssetMediaAssetTag(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: str,
+             value: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if type is not None:
@@ -126,9 +128,11 @@ class MediaAssetMetadata(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metadata: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
 
         _setter("metadata", metadata)
 
@@ -189,9 +193,9 @@ class MediaWorkflowJobOutput(dict):
              id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetType' in kwargs:
+        if asset_type is None and 'assetType' in kwargs:
             asset_type = kwargs['assetType']
 
         if asset_type is not None:
@@ -286,9 +290,9 @@ class MediaWorkflowJobTaskLifecycleState(dict):
              key: Optional[str] = None,
              lifecycle_details: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
 
         if key is not None:
@@ -378,18 +382,26 @@ class MediaWorkflowTask(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             parameters: str,
-             type: str,
-             version: str,
+             key: Optional[str] = None,
+             parameters: Optional[str] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
              enable_parameter_reference: Optional[str] = None,
              enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
              prerequisites: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableParameterReference' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if enable_parameter_reference is None and 'enableParameterReference' in kwargs:
             enable_parameter_reference = kwargs['enableParameterReference']
-        if 'enableWhenReferencedParameterEquals' in kwargs:
+        if enable_when_referenced_parameter_equals is None and 'enableWhenReferencedParameterEquals' in kwargs:
             enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
 
         _setter("key", key)
@@ -548,7 +560,7 @@ class StreamCdnConfigConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
+             type: Optional[str] = None,
              edge_hostname: Optional[str] = None,
              edge_path_prefix: Optional[str] = None,
              edge_token_key: Optional[str] = None,
@@ -560,29 +572,31 @@ class StreamCdnConfigConfig(dict):
              origin_auth_secret_key_nonce_b: Optional[str] = None,
              origin_auth_sign_encryption: Optional[str] = None,
              origin_auth_sign_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'edgeHostname' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if edge_hostname is None and 'edgeHostname' in kwargs:
             edge_hostname = kwargs['edgeHostname']
-        if 'edgePathPrefix' in kwargs:
+        if edge_path_prefix is None and 'edgePathPrefix' in kwargs:
             edge_path_prefix = kwargs['edgePathPrefix']
-        if 'edgeTokenKey' in kwargs:
+        if edge_token_key is None and 'edgeTokenKey' in kwargs:
             edge_token_key = kwargs['edgeTokenKey']
-        if 'edgeTokenSalt' in kwargs:
+        if edge_token_salt is None and 'edgeTokenSalt' in kwargs:
             edge_token_salt = kwargs['edgeTokenSalt']
-        if 'isEdgeTokenAuth' in kwargs:
+        if is_edge_token_auth is None and 'isEdgeTokenAuth' in kwargs:
             is_edge_token_auth = kwargs['isEdgeTokenAuth']
-        if 'originAuthSecretKeyA' in kwargs:
+        if origin_auth_secret_key_a is None and 'originAuthSecretKeyA' in kwargs:
             origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
-        if 'originAuthSecretKeyB' in kwargs:
+        if origin_auth_secret_key_b is None and 'originAuthSecretKeyB' in kwargs:
             origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
-        if 'originAuthSecretKeyNonceA' in kwargs:
+        if origin_auth_secret_key_nonce_a is None and 'originAuthSecretKeyNonceA' in kwargs:
             origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
-        if 'originAuthSecretKeyNonceB' in kwargs:
+        if origin_auth_secret_key_nonce_b is None and 'originAuthSecretKeyNonceB' in kwargs:
             origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
-        if 'originAuthSignEncryption' in kwargs:
+        if origin_auth_sign_encryption is None and 'originAuthSignEncryption' in kwargs:
             origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
-        if 'originAuthSignType' in kwargs:
+        if origin_auth_sign_type is None and 'originAuthSignType' in kwargs:
             origin_auth_sign_type = kwargs['originAuthSignType']
 
         _setter("type", type)
@@ -740,11 +754,13 @@ class StreamPackagingConfigEncryption(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
+             algorithm: Optional[str] = None,
              kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
 
         _setter("algorithm", algorithm)
@@ -785,10 +801,14 @@ class GetMediaAssetMediaAssetTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -824,9 +844,11 @@ class GetMediaAssetMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metadata: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
 
         _setter("metadata", metadata)
 
@@ -854,11 +876,15 @@ class GetMediaAssetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -892,9 +918,11 @@ class GetMediaAssetsMediaAssetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -984,63 +1012,109 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             master_media_asset_id: str,
-             media_asset_tags: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult'],
-             media_workflow_job_id: str,
-             metadatas: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult'],
-             namespace: str,
-             object: str,
-             object_etag: str,
-             parent_media_asset_id: str,
-             segment_range_end_index: str,
-             segment_range_start_index: str,
-             source_media_workflow_id: str,
-             source_media_workflow_version: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             master_media_asset_id: Optional[str] = None,
+             media_asset_tags: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult']] = None,
+             media_workflow_job_id: Optional[str] = None,
+             metadatas: Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult']] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             object_etag: Optional[str] = None,
+             parent_media_asset_id: Optional[str] = None,
+             segment_range_end_index: Optional[str] = None,
+             segment_range_start_index: Optional[str] = None,
+             source_media_workflow_id: Optional[str] = None,
+             source_media_workflow_version: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'masterMediaAssetId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if master_media_asset_id is None and 'masterMediaAssetId' in kwargs:
             master_media_asset_id = kwargs['masterMediaAssetId']
-        if 'mediaAssetTags' in kwargs:
+        if master_media_asset_id is None:
+            raise TypeError("Missing 'master_media_asset_id' argument")
+        if media_asset_tags is None and 'mediaAssetTags' in kwargs:
             media_asset_tags = kwargs['mediaAssetTags']
-        if 'mediaWorkflowJobId' in kwargs:
+        if media_asset_tags is None:
+            raise TypeError("Missing 'media_asset_tags' argument")
+        if media_workflow_job_id is None and 'mediaWorkflowJobId' in kwargs:
             media_workflow_job_id = kwargs['mediaWorkflowJobId']
-        if 'objectEtag' in kwargs:
+        if media_workflow_job_id is None:
+            raise TypeError("Missing 'media_workflow_job_id' argument")
+        if metadatas is None:
+            raise TypeError("Missing 'metadatas' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if object_etag is None and 'objectEtag' in kwargs:
             object_etag = kwargs['objectEtag']
-        if 'parentMediaAssetId' in kwargs:
+        if object_etag is None:
+            raise TypeError("Missing 'object_etag' argument")
+        if parent_media_asset_id is None and 'parentMediaAssetId' in kwargs:
             parent_media_asset_id = kwargs['parentMediaAssetId']
-        if 'segmentRangeEndIndex' in kwargs:
+        if parent_media_asset_id is None:
+            raise TypeError("Missing 'parent_media_asset_id' argument")
+        if segment_range_end_index is None and 'segmentRangeEndIndex' in kwargs:
             segment_range_end_index = kwargs['segmentRangeEndIndex']
-        if 'segmentRangeStartIndex' in kwargs:
+        if segment_range_end_index is None:
+            raise TypeError("Missing 'segment_range_end_index' argument")
+        if segment_range_start_index is None and 'segmentRangeStartIndex' in kwargs:
             segment_range_start_index = kwargs['segmentRangeStartIndex']
-        if 'sourceMediaWorkflowId' in kwargs:
+        if segment_range_start_index is None:
+            raise TypeError("Missing 'segment_range_start_index' argument")
+        if source_media_workflow_id is None and 'sourceMediaWorkflowId' in kwargs:
             source_media_workflow_id = kwargs['sourceMediaWorkflowId']
-        if 'sourceMediaWorkflowVersion' in kwargs:
+        if source_media_workflow_id is None:
+            raise TypeError("Missing 'source_media_workflow_id' argument")
+        if source_media_workflow_version is None and 'sourceMediaWorkflowVersion' in kwargs:
             source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
-        if 'systemTags' in kwargs:
+        if source_media_workflow_version is None:
+            raise TypeError("Missing 'source_media_workflow_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("bucket", bucket)
         _setter("compartment_id", compartment_id)
@@ -1268,10 +1342,14 @@ class GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -1307,9 +1385,11 @@ class GetMediaAssetsMediaAssetCollectionItemMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metadata: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
 
         _setter("metadata", metadata)
 
@@ -1337,11 +1417,15 @@ class GetMediaWorkflowConfigurationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1375,9 +1459,11 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1431,35 +1517,57 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecyle_details: str,
-             parameters: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecyle_details: Optional[str] = None,
+             parameters: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecyleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'systemTags' in kwargs:
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1580,11 +1688,15 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1621,9 +1733,11 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1659,15 +1773,25 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             detail: str,
-             key: str,
-             media_workflow_job_id: str,
-             name: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             detail: Optional[str] = None,
+             key: Optional[str] = None,
+             media_workflow_job_id: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mediaWorkflowJobId' in kwargs:
+        if detail is None:
+            raise TypeError("Missing 'detail' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if media_workflow_job_id is None and 'mediaWorkflowJobId' in kwargs:
             media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if media_workflow_job_id is None:
+            raise TypeError("Missing 'media_workflow_job_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("detail", detail)
         _setter("key", key)
@@ -1742,15 +1866,25 @@ class GetMediaWorkflowJobOutputResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asset_type: str,
-             bucket: str,
-             id: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             asset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetType' in kwargs:
+        if asset_type is None and 'assetType' in kwargs:
             asset_type = kwargs['assetType']
+        if asset_type is None:
+            raise TypeError("Missing 'asset_type' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("asset_type", asset_type)
         _setter("bucket", bucket)
@@ -1819,13 +1953,19 @@ class GetMediaWorkflowJobTaskLifecycleStateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             lifecycle_details: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lifecycleDetails' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("key", key)
         _setter("lifecycle_details", lifecycle_details)
@@ -1871,11 +2011,15 @@ class GetMediaWorkflowJobsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1909,9 +2053,11 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1990,58 +2136,98 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             media_workflow_configuration_ids: Sequence[str],
-             media_workflow_id: str,
-             media_workflow_name: str,
-             outputs: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult'],
-             parameters: str,
-             runnable: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             task_lifecycle_states: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult'],
-             time_created: str,
-             time_ended: str,
-             time_started: str,
-             time_updated: str,
-             workflow_identifier_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             media_workflow_configuration_ids: Optional[Sequence[str]] = None,
+             media_workflow_id: Optional[str] = None,
+             media_workflow_name: Optional[str] = None,
+             outputs: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult']] = None,
+             parameters: Optional[str] = None,
+             runnable: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             task_lifecycle_states: Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult']] = None,
+             time_created: Optional[str] = None,
+             time_ended: Optional[str] = None,
+             time_started: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             workflow_identifier_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mediaWorkflowConfigurationIds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
             media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if 'mediaWorkflowId' in kwargs:
+        if media_workflow_configuration_ids is None:
+            raise TypeError("Missing 'media_workflow_configuration_ids' argument")
+        if media_workflow_id is None and 'mediaWorkflowId' in kwargs:
             media_workflow_id = kwargs['mediaWorkflowId']
-        if 'mediaWorkflowName' in kwargs:
+        if media_workflow_id is None:
+            raise TypeError("Missing 'media_workflow_id' argument")
+        if media_workflow_name is None and 'mediaWorkflowName' in kwargs:
             media_workflow_name = kwargs['mediaWorkflowName']
-        if 'systemTags' in kwargs:
+        if media_workflow_name is None:
+            raise TypeError("Missing 'media_workflow_name' argument")
+        if outputs is None:
+            raise TypeError("Missing 'outputs' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if runnable is None:
+            raise TypeError("Missing 'runnable' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'taskLifecycleStates' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if task_lifecycle_states is None and 'taskLifecycleStates' in kwargs:
             task_lifecycle_states = kwargs['taskLifecycleStates']
-        if 'timeCreated' in kwargs:
+        if task_lifecycle_states is None:
+            raise TypeError("Missing 'task_lifecycle_states' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeEnded' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_ended is None:
+            raise TypeError("Missing 'time_ended' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'timeUpdated' in kwargs:
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'workflowIdentifierType' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if workflow_identifier_type is None and 'workflowIdentifierType' in kwargs:
             workflow_identifier_type = kwargs['workflowIdentifierType']
+        if workflow_identifier_type is None:
+            raise TypeError("Missing 'workflow_identifier_type' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2245,15 +2431,25 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asset_type: str,
-             bucket: str,
-             id: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             asset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetType' in kwargs:
+        if asset_type is None and 'assetType' in kwargs:
             asset_type = kwargs['assetType']
+        if asset_type is None:
+            raise TypeError("Missing 'asset_type' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("asset_type", asset_type)
         _setter("bucket", bucket)
@@ -2322,13 +2518,19 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             lifecycle_details: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lifecycleDetails' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("key", key)
         _setter("lifecycle_details", lifecycle_details)
@@ -2391,19 +2593,33 @@ class GetMediaWorkflowTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_parameter_reference: str,
-             enable_when_referenced_parameter_equals: Mapping[str, Any],
-             key: str,
-             parameters: str,
-             prerequisites: Sequence[str],
-             type: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_parameter_reference: Optional[str] = None,
+             enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+             key: Optional[str] = None,
+             parameters: Optional[str] = None,
+             prerequisites: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableParameterReference' in kwargs:
+        if enable_parameter_reference is None and 'enableParameterReference' in kwargs:
             enable_parameter_reference = kwargs['enableParameterReference']
-        if 'enableWhenReferencedParameterEquals' in kwargs:
+        if enable_parameter_reference is None:
+            raise TypeError("Missing 'enable_parameter_reference' argument")
+        if enable_when_referenced_parameter_equals is None and 'enableWhenReferencedParameterEquals' in kwargs:
             enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+        if enable_when_referenced_parameter_equals is None:
+            raise TypeError("Missing 'enable_when_referenced_parameter_equals' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if prerequisites is None:
+            raise TypeError("Missing 'prerequisites' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
@@ -2493,16 +2709,24 @@ class GetMediaWorkflowTaskDeclarationItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             parameters_schema: str,
-             parameters_schema_allowing_references: str,
-             version: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             parameters_schema: Optional[str] = None,
+             parameters_schema_allowing_references: Optional[str] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parametersSchema' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if parameters_schema is None and 'parametersSchema' in kwargs:
             parameters_schema = kwargs['parametersSchema']
-        if 'parametersSchemaAllowingReferences' in kwargs:
+        if parameters_schema is None:
+            raise TypeError("Missing 'parameters_schema' argument")
+        if parameters_schema_allowing_references is None and 'parametersSchemaAllowingReferences' in kwargs:
             parameters_schema_allowing_references = kwargs['parametersSchemaAllowingReferences']
+        if parameters_schema_allowing_references is None:
+            raise TypeError("Missing 'parameters_schema_allowing_references' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("name", name)
         _setter("parameters_schema", parameters_schema)
@@ -2557,11 +2781,15 @@ class GetMediaWorkflowsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2595,9 +2823,11 @@ class GetMediaWorkflowsMediaWorkflowCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2660,40 +2890,68 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecyle_details: str,
-             media_workflow_configuration_ids: Sequence[str],
-             parameters: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             tasks: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult'],
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecyle_details: Optional[str] = None,
+             media_workflow_configuration_ids: Optional[Sequence[str]] = None,
+             parameters: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             tasks: Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecyleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'mediaWorkflowConfigurationIds' in kwargs:
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
             media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if 'systemTags' in kwargs:
+        if media_workflow_configuration_ids is None:
+            raise TypeError("Missing 'media_workflow_configuration_ids' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if tasks is None:
+            raise TypeError("Missing 'tasks' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2855,19 +3113,33 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_parameter_reference: str,
-             enable_when_referenced_parameter_equals: Mapping[str, Any],
-             key: str,
-             parameters: str,
-             prerequisites: Sequence[str],
-             type: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_parameter_reference: Optional[str] = None,
+             enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+             key: Optional[str] = None,
+             parameters: Optional[str] = None,
+             prerequisites: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableParameterReference' in kwargs:
+        if enable_parameter_reference is None and 'enableParameterReference' in kwargs:
             enable_parameter_reference = kwargs['enableParameterReference']
-        if 'enableWhenReferencedParameterEquals' in kwargs:
+        if enable_parameter_reference is None:
+            raise TypeError("Missing 'enable_parameter_reference' argument")
+        if enable_when_referenced_parameter_equals is None and 'enableWhenReferencedParameterEquals' in kwargs:
             enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+        if enable_when_referenced_parameter_equals is None:
+            raise TypeError("Missing 'enable_when_referenced_parameter_equals' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if prerequisites is None:
+            raise TypeError("Missing 'prerequisites' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
@@ -2981,42 +3253,66 @@ class GetStreamCdnConfigConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             edge_hostname: str,
-             edge_path_prefix: str,
-             edge_token_key: str,
-             edge_token_salt: str,
-             is_edge_token_auth: bool,
-             origin_auth_secret_key_a: str,
-             origin_auth_secret_key_b: str,
-             origin_auth_secret_key_nonce_a: str,
-             origin_auth_secret_key_nonce_b: str,
-             origin_auth_sign_encryption: str,
-             origin_auth_sign_type: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             edge_hostname: Optional[str] = None,
+             edge_path_prefix: Optional[str] = None,
+             edge_token_key: Optional[str] = None,
+             edge_token_salt: Optional[str] = None,
+             is_edge_token_auth: Optional[bool] = None,
+             origin_auth_secret_key_a: Optional[str] = None,
+             origin_auth_secret_key_b: Optional[str] = None,
+             origin_auth_secret_key_nonce_a: Optional[str] = None,
+             origin_auth_secret_key_nonce_b: Optional[str] = None,
+             origin_auth_sign_encryption: Optional[str] = None,
+             origin_auth_sign_type: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'edgeHostname' in kwargs:
+        if edge_hostname is None and 'edgeHostname' in kwargs:
             edge_hostname = kwargs['edgeHostname']
-        if 'edgePathPrefix' in kwargs:
+        if edge_hostname is None:
+            raise TypeError("Missing 'edge_hostname' argument")
+        if edge_path_prefix is None and 'edgePathPrefix' in kwargs:
             edge_path_prefix = kwargs['edgePathPrefix']
-        if 'edgeTokenKey' in kwargs:
+        if edge_path_prefix is None:
+            raise TypeError("Missing 'edge_path_prefix' argument")
+        if edge_token_key is None and 'edgeTokenKey' in kwargs:
             edge_token_key = kwargs['edgeTokenKey']
-        if 'edgeTokenSalt' in kwargs:
+        if edge_token_key is None:
+            raise TypeError("Missing 'edge_token_key' argument")
+        if edge_token_salt is None and 'edgeTokenSalt' in kwargs:
             edge_token_salt = kwargs['edgeTokenSalt']
-        if 'isEdgeTokenAuth' in kwargs:
+        if edge_token_salt is None:
+            raise TypeError("Missing 'edge_token_salt' argument")
+        if is_edge_token_auth is None and 'isEdgeTokenAuth' in kwargs:
             is_edge_token_auth = kwargs['isEdgeTokenAuth']
-        if 'originAuthSecretKeyA' in kwargs:
+        if is_edge_token_auth is None:
+            raise TypeError("Missing 'is_edge_token_auth' argument")
+        if origin_auth_secret_key_a is None and 'originAuthSecretKeyA' in kwargs:
             origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
-        if 'originAuthSecretKeyB' in kwargs:
+        if origin_auth_secret_key_a is None:
+            raise TypeError("Missing 'origin_auth_secret_key_a' argument")
+        if origin_auth_secret_key_b is None and 'originAuthSecretKeyB' in kwargs:
             origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
-        if 'originAuthSecretKeyNonceA' in kwargs:
+        if origin_auth_secret_key_b is None:
+            raise TypeError("Missing 'origin_auth_secret_key_b' argument")
+        if origin_auth_secret_key_nonce_a is None and 'originAuthSecretKeyNonceA' in kwargs:
             origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
-        if 'originAuthSecretKeyNonceB' in kwargs:
+        if origin_auth_secret_key_nonce_a is None:
+            raise TypeError("Missing 'origin_auth_secret_key_nonce_a' argument")
+        if origin_auth_secret_key_nonce_b is None and 'originAuthSecretKeyNonceB' in kwargs:
             origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
-        if 'originAuthSignEncryption' in kwargs:
+        if origin_auth_secret_key_nonce_b is None:
+            raise TypeError("Missing 'origin_auth_secret_key_nonce_b' argument")
+        if origin_auth_sign_encryption is None and 'originAuthSignEncryption' in kwargs:
             origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
-        if 'originAuthSignType' in kwargs:
+        if origin_auth_sign_encryption is None:
+            raise TypeError("Missing 'origin_auth_sign_encryption' argument")
+        if origin_auth_sign_type is None and 'originAuthSignType' in kwargs:
             origin_auth_sign_type = kwargs['originAuthSignType']
+        if origin_auth_sign_type is None:
+            raise TypeError("Missing 'origin_auth_sign_type' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("edge_hostname", edge_hostname)
         _setter("edge_path_prefix", edge_path_prefix)
@@ -3143,11 +3439,15 @@ class GetStreamCdnConfigsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3181,9 +3481,11 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3243,41 +3545,67 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             configs: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult'],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             distribution_channel_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             lifecyle_details: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             configs: Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             distribution_channel_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecyle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configs is None:
+            raise TypeError("Missing 'configs' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'freeformTags' in kwargs:
+        if distribution_channel_id is None:
+            raise TypeError("Missing 'distribution_channel_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecyleDetails' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'systemTags' in kwargs:
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("configs", configs)
@@ -3445,42 +3773,66 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             edge_hostname: str,
-             edge_path_prefix: str,
-             edge_token_key: str,
-             edge_token_salt: str,
-             is_edge_token_auth: bool,
-             origin_auth_secret_key_a: str,
-             origin_auth_secret_key_b: str,
-             origin_auth_secret_key_nonce_a: str,
-             origin_auth_secret_key_nonce_b: str,
-             origin_auth_sign_encryption: str,
-             origin_auth_sign_type: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             edge_hostname: Optional[str] = None,
+             edge_path_prefix: Optional[str] = None,
+             edge_token_key: Optional[str] = None,
+             edge_token_salt: Optional[str] = None,
+             is_edge_token_auth: Optional[bool] = None,
+             origin_auth_secret_key_a: Optional[str] = None,
+             origin_auth_secret_key_b: Optional[str] = None,
+             origin_auth_secret_key_nonce_a: Optional[str] = None,
+             origin_auth_secret_key_nonce_b: Optional[str] = None,
+             origin_auth_sign_encryption: Optional[str] = None,
+             origin_auth_sign_type: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'edgeHostname' in kwargs:
+        if edge_hostname is None and 'edgeHostname' in kwargs:
             edge_hostname = kwargs['edgeHostname']
-        if 'edgePathPrefix' in kwargs:
+        if edge_hostname is None:
+            raise TypeError("Missing 'edge_hostname' argument")
+        if edge_path_prefix is None and 'edgePathPrefix' in kwargs:
             edge_path_prefix = kwargs['edgePathPrefix']
-        if 'edgeTokenKey' in kwargs:
+        if edge_path_prefix is None:
+            raise TypeError("Missing 'edge_path_prefix' argument")
+        if edge_token_key is None and 'edgeTokenKey' in kwargs:
             edge_token_key = kwargs['edgeTokenKey']
-        if 'edgeTokenSalt' in kwargs:
+        if edge_token_key is None:
+            raise TypeError("Missing 'edge_token_key' argument")
+        if edge_token_salt is None and 'edgeTokenSalt' in kwargs:
             edge_token_salt = kwargs['edgeTokenSalt']
-        if 'isEdgeTokenAuth' in kwargs:
+        if edge_token_salt is None:
+            raise TypeError("Missing 'edge_token_salt' argument")
+        if is_edge_token_auth is None and 'isEdgeTokenAuth' in kwargs:
             is_edge_token_auth = kwargs['isEdgeTokenAuth']
-        if 'originAuthSecretKeyA' in kwargs:
+        if is_edge_token_auth is None:
+            raise TypeError("Missing 'is_edge_token_auth' argument")
+        if origin_auth_secret_key_a is None and 'originAuthSecretKeyA' in kwargs:
             origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
-        if 'originAuthSecretKeyB' in kwargs:
+        if origin_auth_secret_key_a is None:
+            raise TypeError("Missing 'origin_auth_secret_key_a' argument")
+        if origin_auth_secret_key_b is None and 'originAuthSecretKeyB' in kwargs:
             origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
-        if 'originAuthSecretKeyNonceA' in kwargs:
+        if origin_auth_secret_key_b is None:
+            raise TypeError("Missing 'origin_auth_secret_key_b' argument")
+        if origin_auth_secret_key_nonce_a is None and 'originAuthSecretKeyNonceA' in kwargs:
             origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
-        if 'originAuthSecretKeyNonceB' in kwargs:
+        if origin_auth_secret_key_nonce_a is None:
+            raise TypeError("Missing 'origin_auth_secret_key_nonce_a' argument")
+        if origin_auth_secret_key_nonce_b is None and 'originAuthSecretKeyNonceB' in kwargs:
             origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
-        if 'originAuthSignEncryption' in kwargs:
+        if origin_auth_secret_key_nonce_b is None:
+            raise TypeError("Missing 'origin_auth_secret_key_nonce_b' argument")
+        if origin_auth_sign_encryption is None and 'originAuthSignEncryption' in kwargs:
             origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
-        if 'originAuthSignType' in kwargs:
+        if origin_auth_sign_encryption is None:
+            raise TypeError("Missing 'origin_auth_sign_encryption' argument")
+        if origin_auth_sign_type is None and 'originAuthSignType' in kwargs:
             origin_auth_sign_type = kwargs['originAuthSignType']
+        if origin_auth_sign_type is None:
+            raise TypeError("Missing 'origin_auth_sign_type' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("edge_hostname", edge_hostname)
         _setter("edge_path_prefix", edge_path_prefix)
@@ -3607,11 +3959,15 @@ class GetStreamDistributionChannelsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3645,9 +4001,11 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3698,34 +4056,54 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             domain_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             domain_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
-        if 'freeformTags' in kwargs:
+        if domain_name is None:
+            raise TypeError("Missing 'domain_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'systemTags' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3836,12 +4214,16 @@ class GetStreamPackagingConfigEncryptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("algorithm", algorithm)
         _setter("kms_key_id", kms_key_id)
@@ -3878,11 +4260,15 @@ class GetStreamPackagingConfigsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3916,9 +4302,11 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3978,41 +4366,67 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             distribution_channel_id: str,
-             encryptions: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             segment_time_in_seconds: int,
-             state: str,
-             stream_packaging_format: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             distribution_channel_id: Optional[str] = None,
+             encryptions: Optional[Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             segment_time_in_seconds: Optional[int] = None,
+             state: Optional[str] = None,
+             stream_packaging_format: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'freeformTags' in kwargs:
+        if distribution_channel_id is None:
+            raise TypeError("Missing 'distribution_channel_id' argument")
+        if encryptions is None:
+            raise TypeError("Missing 'encryptions' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'segmentTimeInSeconds' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if segment_time_in_seconds is None and 'segmentTimeInSeconds' in kwargs:
             segment_time_in_seconds = kwargs['segmentTimeInSeconds']
-        if 'streamPackagingFormat' in kwargs:
+        if segment_time_in_seconds is None:
+            raise TypeError("Missing 'segment_time_in_seconds' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_packaging_format is None and 'streamPackagingFormat' in kwargs:
             stream_packaging_format = kwargs['streamPackagingFormat']
-        if 'systemTags' in kwargs:
+        if stream_packaging_format is None:
+            raise TypeError("Missing 'stream_packaging_format' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4150,12 +4564,16 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("algorithm", algorithm)
         _setter("kms_key_id", kms_key_id)
@@ -4200,12 +4618,20 @@ class GetSystemMediaWorkflowItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             name: str,
-             parameters: str,
-             tasks: Sequence['outputs.GetSystemMediaWorkflowItemTaskResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             parameters: Optional[str] = None,
+             tasks: Optional[Sequence['outputs.GetSystemMediaWorkflowItemTaskResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if tasks is None:
+            raise TypeError("Missing 'tasks' argument")
 
         _setter("description", description)
         _setter("name", name)
@@ -4277,19 +4703,33 @@ class GetSystemMediaWorkflowItemTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_parameter_reference: str,
-             enable_when_referenced_parameter_equals: Mapping[str, Any],
-             key: str,
-             parameters: str,
-             prerequisites: Sequence[str],
-             type: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_parameter_reference: Optional[str] = None,
+             enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+             key: Optional[str] = None,
+             parameters: Optional[str] = None,
+             prerequisites: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableParameterReference' in kwargs:
+        if enable_parameter_reference is None and 'enableParameterReference' in kwargs:
             enable_parameter_reference = kwargs['enableParameterReference']
-        if 'enableWhenReferencedParameterEquals' in kwargs:
+        if enable_parameter_reference is None:
+            raise TypeError("Missing 'enable_parameter_reference' argument")
+        if enable_when_referenced_parameter_equals is None and 'enableWhenReferencedParameterEquals' in kwargs:
             enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+        if enable_when_referenced_parameter_equals is None:
+            raise TypeError("Missing 'enable_when_referenced_parameter_equals' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if prerequisites is None:
+            raise TypeError("Missing 'prerequisites' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)

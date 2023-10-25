@@ -33,13 +33,15 @@ class FusionEnvironmentDataMaskingActivityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fusion_environment_id: pulumi.Input[str],
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
              is_resume_data_masking: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'isResumeDataMasking' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if is_resume_data_masking is None and 'isResumeDataMasking' in kwargs:
             is_resume_data_masking = kwargs['isResumeDataMasking']
 
         _setter("fusion_environment_id", fusion_environment_id)
@@ -111,15 +113,15 @@ class _FusionEnvironmentDataMaskingActivityState:
              state: Optional[pulumi.Input[str]] = None,
              time_masking_finish: Optional[pulumi.Input[str]] = None,
              time_masking_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'isResumeDataMasking' in kwargs:
+        if is_resume_data_masking is None and 'isResumeDataMasking' in kwargs:
             is_resume_data_masking = kwargs['isResumeDataMasking']
-        if 'timeMaskingFinish' in kwargs:
+        if time_masking_finish is None and 'timeMaskingFinish' in kwargs:
             time_masking_finish = kwargs['timeMaskingFinish']
-        if 'timeMaskingStart' in kwargs:
+        if time_masking_start is None and 'timeMaskingStart' in kwargs:
             time_masking_start = kwargs['timeMaskingStart']
 
         if fusion_environment_id is not None:

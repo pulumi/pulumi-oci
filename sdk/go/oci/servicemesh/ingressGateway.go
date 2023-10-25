@@ -65,11 +65,11 @@ import (
 //				AccessLogging: &servicemesh.IngressGatewayAccessLoggingArgs{
 //					IsEnabled: pulumi.Any(_var.Ingress_gateway_access_logging_is_enabled),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Ingress_gateway_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Mtls: &servicemesh.IngressGatewayMtlsArgs{

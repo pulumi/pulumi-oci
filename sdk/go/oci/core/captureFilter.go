@@ -42,7 +42,7 @@ import (
 //			_, err := Core.NewCaptureFilter(ctx, "testCaptureFilter", &Core.CaptureFilterArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				FilterType:    pulumi.Any(_var.Capture_filter_filter_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Capture_filter_display_name),
@@ -82,7 +82,7 @@ import (
 //						},
 //					},
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				VtapCaptureFilterRules: core.CaptureFilterVtapCaptureFilterRuleArray{

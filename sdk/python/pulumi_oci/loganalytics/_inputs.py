@@ -79,25 +79,25 @@ class LogAnalyticsImportCustomContentChangeListArgs:
              updated_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              updated_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              updated_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'conflictFieldDisplayNames' in kwargs:
+        if conflict_field_display_names is None and 'conflictFieldDisplayNames' in kwargs:
             conflict_field_display_names = kwargs['conflictFieldDisplayNames']
-        if 'conflictParserNames' in kwargs:
+        if conflict_parser_names is None and 'conflictParserNames' in kwargs:
             conflict_parser_names = kwargs['conflictParserNames']
-        if 'conflictSourceNames' in kwargs:
+        if conflict_source_names is None and 'conflictSourceNames' in kwargs:
             conflict_source_names = kwargs['conflictSourceNames']
-        if 'createdFieldDisplayNames' in kwargs:
+        if created_field_display_names is None and 'createdFieldDisplayNames' in kwargs:
             created_field_display_names = kwargs['createdFieldDisplayNames']
-        if 'createdParserNames' in kwargs:
+        if created_parser_names is None and 'createdParserNames' in kwargs:
             created_parser_names = kwargs['createdParserNames']
-        if 'createdSourceNames' in kwargs:
+        if created_source_names is None and 'createdSourceNames' in kwargs:
             created_source_names = kwargs['createdSourceNames']
-        if 'updatedFieldDisplayNames' in kwargs:
+        if updated_field_display_names is None and 'updatedFieldDisplayNames' in kwargs:
             updated_field_display_names = kwargs['updatedFieldDisplayNames']
-        if 'updatedParserNames' in kwargs:
+        if updated_parser_names is None and 'updatedParserNames' in kwargs:
             updated_parser_names = kwargs['updatedParserNames']
-        if 'updatedSourceNames' in kwargs:
+        if updated_source_names is None and 'updatedSourceNames' in kwargs:
             updated_source_names = kwargs['updatedSourceNames']
 
         if conflict_field_display_names is not None:
@@ -249,15 +249,15 @@ class LogAnalyticsObjectCollectionRuleOverrideArgs:
              match_value: Optional[pulumi.Input[str]] = None,
              property_name: Optional[pulumi.Input[str]] = None,
              property_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'matchType' in kwargs:
+        if match_type is None and 'matchType' in kwargs:
             match_type = kwargs['matchType']
-        if 'matchValue' in kwargs:
+        if match_value is None and 'matchValue' in kwargs:
             match_value = kwargs['matchValue']
-        if 'propertyName' in kwargs:
+        if property_name is None and 'propertyName' in kwargs:
             property_name = kwargs['propertyName']
-        if 'propertyValue' in kwargs:
+        if property_value is None and 'propertyValue' in kwargs:
             property_value = kwargs['propertyValue']
 
         if match_type is not None:
@@ -325,7 +325,7 @@ class LogAnalyticsPreferencesManagementItemArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -391,19 +391,27 @@ class NamespaceIngestTimeRuleActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             metric_name: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             metric_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'metricName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if metric_name is None and 'metricName' in kwargs:
             metric_name = kwargs['metricName']
-        if 'resourceGroup' in kwargs:
+        if metric_name is None:
+            raise TypeError("Missing 'metric_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
 
         _setter("compartment_id", compartment_id)
@@ -518,20 +526,28 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             field_name: pulumi.Input[str],
-             field_operator: pulumi.Input[str],
-             field_value: pulumi.Input[str],
-             kind: pulumi.Input[str],
+             field_name: Optional[pulumi.Input[str]] = None,
+             field_operator: Optional[pulumi.Input[str]] = None,
+             field_value: Optional[pulumi.Input[str]] = None,
+             kind: Optional[pulumi.Input[str]] = None,
              additional_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fieldName' in kwargs:
+        if field_name is None and 'fieldName' in kwargs:
             field_name = kwargs['fieldName']
-        if 'fieldOperator' in kwargs:
+        if field_name is None:
+            raise TypeError("Missing 'field_name' argument")
+        if field_operator is None and 'fieldOperator' in kwargs:
             field_operator = kwargs['fieldOperator']
-        if 'fieldValue' in kwargs:
+        if field_operator is None:
+            raise TypeError("Missing 'field_operator' argument")
+        if field_value is None and 'fieldValue' in kwargs:
             field_value = kwargs['fieldValue']
-        if 'additionalConditions' in kwargs:
+        if field_value is None:
+            raise TypeError("Missing 'field_value' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if additional_conditions is None and 'additionalConditions' in kwargs:
             additional_conditions = kwargs['additionalConditions']
 
         _setter("field_name", field_name)
@@ -622,17 +638,23 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition_field: pulumi.Input[str],
-             condition_operator: pulumi.Input[str],
-             condition_value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition_field: Optional[pulumi.Input[str]] = None,
+             condition_operator: Optional[pulumi.Input[str]] = None,
+             condition_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'conditionField' in kwargs:
+        if condition_field is None and 'conditionField' in kwargs:
             condition_field = kwargs['conditionField']
-        if 'conditionOperator' in kwargs:
+        if condition_field is None:
+            raise TypeError("Missing 'condition_field' argument")
+        if condition_operator is None and 'conditionOperator' in kwargs:
             condition_operator = kwargs['conditionOperator']
-        if 'conditionValue' in kwargs:
+        if condition_operator is None:
+            raise TypeError("Missing 'condition_operator' argument")
+        if condition_value is None and 'conditionValue' in kwargs:
             condition_value = kwargs['conditionValue']
+        if condition_value is None:
+            raise TypeError("Missing 'condition_value' argument")
 
         _setter("condition_field", condition_field)
         _setter("condition_operator", condition_operator)
@@ -710,7 +732,7 @@ class NamespaceScheduledTaskActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
              data_type: Optional[pulumi.Input[str]] = None,
              metric_extraction: Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']] = None,
@@ -718,21 +740,23 @@ class NamespaceScheduledTaskActionArgs:
              purge_duration: Optional[pulumi.Input[str]] = None,
              query_string: Optional[pulumi.Input[str]] = None,
              saved_search_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentIdInSubtree' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if compartment_id_in_subtree is None and 'compartmentIdInSubtree' in kwargs:
             compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'metricExtraction' in kwargs:
+        if metric_extraction is None and 'metricExtraction' in kwargs:
             metric_extraction = kwargs['metricExtraction']
-        if 'purgeCompartmentId' in kwargs:
+        if purge_compartment_id is None and 'purgeCompartmentId' in kwargs:
             purge_compartment_id = kwargs['purgeCompartmentId']
-        if 'purgeDuration' in kwargs:
+        if purge_duration is None and 'purgeDuration' in kwargs:
             purge_duration = kwargs['purgeDuration']
-        if 'queryString' in kwargs:
+        if query_string is None and 'queryString' in kwargs:
             query_string = kwargs['queryString']
-        if 'savedSearchId' in kwargs:
+        if saved_search_id is None and 'savedSearchId' in kwargs:
             saved_search_id = kwargs['savedSearchId']
 
         _setter("type", type)
@@ -875,13 +899,13 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
              metric_name: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'metricName' in kwargs:
+        if metric_name is None and 'metricName' in kwargs:
             metric_name = kwargs['metricName']
-        if 'resourceGroup' in kwargs:
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
 
         if compartment_id is not None:
@@ -953,9 +977,11 @@ class NamespaceScheduledTaskSchedulesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             schedules: pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskSchedulesScheduleArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             schedules: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskSchedulesScheduleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if schedules is None:
+            raise TypeError("Missing 'schedules' argument")
 
         _setter("schedules", schedules)
 
@@ -998,21 +1024,23 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              expression: Optional[pulumi.Input[str]] = None,
              misfire_policy: Optional[pulumi.Input[str]] = None,
              recurring_interval: Optional[pulumi.Input[str]] = None,
              repeat_count: Optional[pulumi.Input[int]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'misfirePolicy' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if misfire_policy is None and 'misfirePolicy' in kwargs:
             misfire_policy = kwargs['misfirePolicy']
-        if 'recurringInterval' in kwargs:
+        if recurring_interval is None and 'recurringInterval' in kwargs:
             recurring_interval = kwargs['recurringInterval']
-        if 'repeatCount' in kwargs:
+        if repeat_count is None and 'repeatCount' in kwargs:
             repeat_count = kwargs['repeatCount']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         _setter("type", type)
@@ -1118,11 +1146,15 @@ class GetLogAnalyticsEntitiesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1175,11 +1207,15 @@ class GetLogAnalyticsLogGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1232,11 +1268,15 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1292,11 +1332,15 @@ class GetNamespaceEffectivePropertiesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1349,11 +1393,15 @@ class GetNamespaceIngestTimeRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1406,11 +1454,15 @@ class GetNamespacePropertiesMetadataFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1463,11 +1515,15 @@ class GetNamespaceRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1517,11 +1573,15 @@ class GetNamespaceScheduledTasksFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1571,11 +1631,15 @@ class GetNamespaceStorageOverlappingRecallsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1625,11 +1689,15 @@ class GetNamespacesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

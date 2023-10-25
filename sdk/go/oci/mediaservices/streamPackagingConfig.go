@@ -36,14 +36,14 @@ import (
 //				DistributionChannelId: pulumi.Any(oci_mysql_channel.Test_channel.Id),
 //				SegmentTimeInSeconds:  pulumi.Any(_var.Stream_packaging_config_segment_time_in_seconds),
 //				StreamPackagingFormat: pulumi.Any(_var.Stream_packaging_config_stream_packaging_format),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Encryption: &mediaservices.StreamPackagingConfigEncryptionArgs{
 //					Algorithm: pulumi.Any(_var.Stream_packaging_config_encryption_algorithm),
 //					KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

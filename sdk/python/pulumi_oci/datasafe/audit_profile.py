@@ -53,7 +53,7 @@ class AuditProfileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             audit_profile_id: pulumi.Input[str],
+             audit_profile_id: Optional[pulumi.Input[str]] = None,
              change_retention_trigger: Optional[pulumi.Input[int]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -61,21 +61,23 @@ class AuditProfileArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_paid_usage_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditProfileId' in kwargs:
+        if audit_profile_id is None and 'auditProfileId' in kwargs:
             audit_profile_id = kwargs['auditProfileId']
-        if 'changeRetentionTrigger' in kwargs:
+        if audit_profile_id is None:
+            raise TypeError("Missing 'audit_profile_id' argument")
+        if change_retention_trigger is None and 'changeRetentionTrigger' in kwargs:
             change_retention_trigger = kwargs['changeRetentionTrigger']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPaidUsageEnabled' in kwargs:
+        if is_paid_usage_enabled is None and 'isPaidUsageEnabled' in kwargs:
             is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
 
         _setter("audit_profile_id", audit_profile_id)
@@ -287,41 +289,41 @@ class _AuditProfileState:
              target_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditCollectedVolume' in kwargs:
+        if audit_collected_volume is None and 'auditCollectedVolume' in kwargs:
             audit_collected_volume = kwargs['auditCollectedVolume']
-        if 'auditProfileId' in kwargs:
+        if audit_profile_id is None and 'auditProfileId' in kwargs:
             audit_profile_id = kwargs['auditProfileId']
-        if 'auditTrails' in kwargs:
+        if audit_trails is None and 'auditTrails' in kwargs:
             audit_trails = kwargs['auditTrails']
-        if 'changeRetentionTrigger' in kwargs:
+        if change_retention_trigger is None and 'changeRetentionTrigger' in kwargs:
             change_retention_trigger = kwargs['changeRetentionTrigger']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isOverrideGlobalRetentionSetting' in kwargs:
+        if is_override_global_retention_setting is None and 'isOverrideGlobalRetentionSetting' in kwargs:
             is_override_global_retention_setting = kwargs['isOverrideGlobalRetentionSetting']
-        if 'isPaidUsageEnabled' in kwargs:
+        if is_paid_usage_enabled is None and 'isPaidUsageEnabled' in kwargs:
             is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'offlineMonths' in kwargs:
+        if offline_months is None and 'offlineMonths' in kwargs:
             offline_months = kwargs['offlineMonths']
-        if 'onlineMonths' in kwargs:
+        if online_months is None and 'onlineMonths' in kwargs:
             online_months = kwargs['onlineMonths']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if audit_collected_volume is not None:

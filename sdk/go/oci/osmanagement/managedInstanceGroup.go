@@ -36,11 +36,11 @@ import (
 //			_, err := OsManagement.NewManagedInstanceGroup(ctx, "testManagedInstanceGroup", &OsManagement.ManagedInstanceGroupArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Managed_instance_group_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Managed_instance_group_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				OsFamily: pulumi.Any(_var.Managed_instance_group_os_family),

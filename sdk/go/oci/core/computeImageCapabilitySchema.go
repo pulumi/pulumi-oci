@@ -35,7 +35,7 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(_var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name),
 //				ImageId: pulumi.Any(oci_core_image.Test_image.Id),
-//				SchemaData: pulumi.AnyMap{
+//				SchemaData: pulumi.Map{
 //					pulumi.Any{
 //						DescriptorType: _var.Compute_image_capability_schema_schema_data_descriptor_type,
 //						Source:         _var.Compute_image_capability_schema_schema_data_source,
@@ -43,11 +43,11 @@ import (
 //						Values:         _var.Compute_image_capability_schema_schema_data_values,
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Compute_image_capability_schema_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

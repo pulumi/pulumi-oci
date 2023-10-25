@@ -57,27 +57,31 @@ class DetectorRecipeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              detector: Optional[pulumi.Input[str]] = None,
              detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'detectorRules' in kwargs:
+        if detector_rules is None and 'detectorRules' in kwargs:
             detector_rules = kwargs['detectorRules']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sourceDetectorRecipeId' in kwargs:
+        if source_detector_recipe_id is None and 'sourceDetectorRecipeId' in kwargs:
             source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
 
         _setter("compartment_id", compartment_id)
@@ -280,29 +284,29 @@ class _DetectorRecipeState:
              target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'detectorRules' in kwargs:
+        if detector_rules is None and 'detectorRules' in kwargs:
             detector_rules = kwargs['detectorRules']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'effectiveDetectorRules' in kwargs:
+        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
             effective_detector_rules = kwargs['effectiveDetectorRules']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sourceDetectorRecipeId' in kwargs:
+        if source_detector_recipe_id is None and 'sourceDetectorRecipeId' in kwargs:
             source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetIds' in kwargs:
+        if target_ids is None and 'targetIds' in kwargs:
             target_ids = kwargs['targetIds']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

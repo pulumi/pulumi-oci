@@ -33,14 +33,18 @@ class CustomerSecretKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'userId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("display_name", display_name)
         _setter("user_id", user_id)
@@ -118,17 +122,17 @@ class _CustomerSecretKeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'inactiveState' in kwargs:
+        if inactive_state is None and 'inactiveState' in kwargs:
             inactive_state = kwargs['inactiveState']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpires' in kwargs:
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if display_name is not None:

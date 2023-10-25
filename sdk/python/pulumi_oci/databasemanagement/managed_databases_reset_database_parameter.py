@@ -43,14 +43,22 @@ class ManagedDatabasesResetDatabaseParameterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credentials: pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs'],
-             managed_database_id: pulumi.Input[str],
-             parameters: pulumi.Input[Sequence[pulumi.Input[str]]],
-             scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credentials: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] = None,
+             managed_database_id: Optional[pulumi.Input[str]] = None,
+             parameters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedDatabaseId' in kwargs:
+        if credentials is None:
+            raise TypeError("Missing 'credentials' argument")
+        if managed_database_id is None and 'managedDatabaseId' in kwargs:
             managed_database_id = kwargs['managedDatabaseId']
+        if managed_database_id is None:
+            raise TypeError("Missing 'managed_database_id' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
 
         _setter("credentials", credentials)
         _setter("managed_database_id", managed_database_id)
@@ -146,9 +154,9 @@ class _ManagedDatabasesResetDatabaseParameterState:
              managed_database_id: Optional[pulumi.Input[str]] = None,
              parameters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedDatabaseId' in kwargs:
+        if managed_database_id is None and 'managedDatabaseId' in kwargs:
             managed_database_id = kwargs['managedDatabaseId']
 
         if credentials is not None:
@@ -330,11 +338,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ManagedDatabasesResetDatabaseParameterArgs.__new__(ManagedDatabasesResetDatabaseParameterArgs)
 
-            if credentials is not None and not isinstance(credentials, ManagedDatabasesResetDatabaseParameterCredentialsArgs):
-                credentials = credentials or {}
-                def _setter(key, value):
-                    credentials[key] = value
-                ManagedDatabasesResetDatabaseParameterCredentialsArgs._configure(_setter, **credentials)
+            credentials = _utilities.configure(credentials, ManagedDatabasesResetDatabaseParameterCredentialsArgs, True)
             if credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'credentials'")
             __props__.__dict__["credentials"] = credentials

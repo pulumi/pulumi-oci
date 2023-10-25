@@ -41,10 +41,10 @@ import (
 //					DvpVersion:   pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_version),
 //				},
 //				Region: pulumi.Any(_var.Dedicated_vantage_point_region),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Status: pulumi.Any(_var.Dedicated_vantage_point_status),

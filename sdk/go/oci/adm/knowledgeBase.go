@@ -33,11 +33,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.NewKnowledgeBase(ctx, "testKnowledgeBase", &Adm.KnowledgeBaseArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Knowledge_base_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

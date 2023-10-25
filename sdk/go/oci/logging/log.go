@@ -45,10 +45,10 @@ import (
 //					},
 //					CompartmentId: pulumi.Any(_var.Compartment_id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsEnabled:         pulumi.Any(_var.Log_is_enabled),

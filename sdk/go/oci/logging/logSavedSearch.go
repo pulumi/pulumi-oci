@@ -34,11 +34,11 @@ import (
 //			_, err := Logging.NewLogSavedSearch(ctx, "testLogSavedSearch", &Logging.LogSavedSearchArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Query:         pulumi.Any(_var.Log_saved_search_query),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Log_saved_search_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

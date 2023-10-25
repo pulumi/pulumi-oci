@@ -56,21 +56,21 @@ class ProtectedDatabaseMetricArgs:
              is_redo_logs_enabled: Optional[pulumi.Input[bool]] = None,
              retention_period_in_days: Optional[pulumi.Input[float]] = None,
              unprotected_window_in_seconds: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupSpaceEstimateInGbs' in kwargs:
+        if backup_space_estimate_in_gbs is None and 'backupSpaceEstimateInGbs' in kwargs:
             backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
-        if 'backupSpaceUsedInGbs' in kwargs:
+        if backup_space_used_in_gbs is None and 'backupSpaceUsedInGbs' in kwargs:
             backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
-        if 'currentRetentionPeriodInSeconds' in kwargs:
+        if current_retention_period_in_seconds is None and 'currentRetentionPeriodInSeconds' in kwargs:
             current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
-        if 'dbSizeInGbs' in kwargs:
+        if db_size_in_gbs is None and 'dbSizeInGbs' in kwargs:
             db_size_in_gbs = kwargs['dbSizeInGbs']
-        if 'isRedoLogsEnabled' in kwargs:
+        if is_redo_logs_enabled is None and 'isRedoLogsEnabled' in kwargs:
             is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
-        if 'retentionPeriodInDays' in kwargs:
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
             retention_period_in_days = kwargs['retentionPeriodInDays']
-        if 'unprotectedWindowInSeconds' in kwargs:
+        if unprotected_window_in_seconds is None and 'unprotectedWindowInSeconds' in kwargs:
             unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
 
         if backup_space_estimate_in_gbs is not None:
@@ -194,12 +194,14 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             recovery_service_subnet_id: pulumi.Input[str],
+             recovery_service_subnet_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recoveryServiceSubnetId' in kwargs:
+        if recovery_service_subnet_id is None and 'recoveryServiceSubnetId' in kwargs:
             recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+        if recovery_service_subnet_id is None:
+            raise TypeError("Missing 'recovery_service_subnet_id' argument")
 
         _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
@@ -249,11 +251,15 @@ class GetProtectedDatabasesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -303,11 +309,15 @@ class GetProtectionPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -357,11 +367,15 @@ class GetRecoveryServiceSubnetsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

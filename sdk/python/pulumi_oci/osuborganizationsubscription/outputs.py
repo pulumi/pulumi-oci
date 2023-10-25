@@ -34,11 +34,15 @@ class GetOrganizationSubscriptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -99,24 +103,40 @@ class GetOrganizationSubscriptionsSubscriptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currencies: Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult'],
-             id: str,
-             service_name: str,
-             status: str,
-             time_end: str,
-             time_start: str,
-             total_value: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currencies: Optional[Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult']] = None,
+             id: Optional[str] = None,
+             service_name: Optional[str] = None,
+             status: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             total_value: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'serviceName' in kwargs:
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'timeEnd' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'totalValue' in kwargs:
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if total_value is None and 'totalValue' in kwargs:
             total_value = kwargs['totalValue']
+        if total_value is None:
+            raise TypeError("Missing 'total_value' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("currencies", currencies)
         _setter("id", id)
@@ -212,15 +232,21 @@ class GetOrganizationSubscriptionsSubscriptionCurrencyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             iso_code: str,
-             name: str,
-             std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isoCode' in kwargs:
+        if iso_code is None and 'isoCode' in kwargs:
             iso_code = kwargs['isoCode']
-        if 'stdPrecision' in kwargs:
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
             std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
 
         _setter("iso_code", iso_code)
         _setter("name", name)

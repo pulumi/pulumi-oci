@@ -44,18 +44,22 @@ class IndexArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             keys: pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]],
-             table_name_or_id: pulumi.Input[str],
+             keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]] = None,
+             table_name_or_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              is_if_not_exists: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tableNameOrId' in kwargs:
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
             table_name_or_id = kwargs['tableNameOrId']
-        if 'compartmentId' in kwargs:
+        if table_name_or_id is None:
+            raise TypeError("Missing 'table_name_or_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isIfNotExists' in kwargs:
+        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
             is_if_not_exists = kwargs['isIfNotExists']
 
         _setter("keys", keys)
@@ -184,19 +188,19 @@ class _IndexState:
              table_id: Optional[pulumi.Input[str]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              table_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isIfNotExists' in kwargs:
+        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
             is_if_not_exists = kwargs['isIfNotExists']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'tableId' in kwargs:
+        if table_id is None and 'tableId' in kwargs:
             table_id = kwargs['tableId']
-        if 'tableName' in kwargs:
+        if table_name is None and 'tableName' in kwargs:
             table_name = kwargs['tableName']
-        if 'tableNameOrId' in kwargs:
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
             table_name_or_id = kwargs['tableNameOrId']
 
         if compartment_id is not None:

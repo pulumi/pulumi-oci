@@ -50,24 +50,28 @@ class CertificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_config: pulumi.Input['CertificateCertificateConfigArgs'],
-             compartment_id: pulumi.Input[str],
+             certificate_config: Optional[pulumi.Input['CertificateCertificateConfigArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
              certificate_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateConfig' in kwargs:
+        if certificate_config is None and 'certificateConfig' in kwargs:
             certificate_config = kwargs['certificateConfig']
-        if 'compartmentId' in kwargs:
+        if certificate_config is None:
+            raise TypeError("Missing 'certificate_config' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'certificateRules' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if certificate_rules is None and 'certificateRules' in kwargs:
             certificate_rules = kwargs['certificateRules']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("certificate_config", certificate_config)
@@ -264,37 +268,37 @@ class _CertificateState:
              subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateConfig' in kwargs:
+        if certificate_config is None and 'certificateConfig' in kwargs:
             certificate_config = kwargs['certificateConfig']
-        if 'certificateProfileType' in kwargs:
+        if certificate_profile_type is None and 'certificateProfileType' in kwargs:
             certificate_profile_type = kwargs['certificateProfileType']
-        if 'certificateRevocationListDetails' in kwargs:
+        if certificate_revocation_list_details is None and 'certificateRevocationListDetails' in kwargs:
             certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
-        if 'certificateRules' in kwargs:
+        if certificate_rules is None and 'certificateRules' in kwargs:
             certificate_rules = kwargs['certificateRules']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'currentVersions' in kwargs:
+        if current_versions is None and 'currentVersions' in kwargs:
             current_versions = kwargs['currentVersions']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'keyAlgorithm' in kwargs:
+        if key_algorithm is None and 'keyAlgorithm' in kwargs:
             key_algorithm = kwargs['keyAlgorithm']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'signatureAlgorithm' in kwargs:
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
 
         if certificate_config is not None:
@@ -663,11 +667,7 @@ class Certificate(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CertificateArgs.__new__(CertificateArgs)
 
-            if certificate_config is not None and not isinstance(certificate_config, CertificateCertificateConfigArgs):
-                certificate_config = certificate_config or {}
-                def _setter(key, value):
-                    certificate_config[key] = value
-                CertificateCertificateConfigArgs._configure(_setter, **certificate_config)
+            certificate_config = _utilities.configure(certificate_config, CertificateCertificateConfigArgs, True)
             if certificate_config is None and not opts.urn:
                 raise TypeError("Missing required property 'certificate_config'")
             __props__.__dict__["certificate_config"] = certificate_config

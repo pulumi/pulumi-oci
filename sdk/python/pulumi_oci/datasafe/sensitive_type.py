@@ -66,8 +66,8 @@ class SensitiveTypeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             entity_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             entity_type: Optional[pulumi.Input[str]] = None,
              comment_pattern: Optional[pulumi.Input[str]] = None,
              data_pattern: Optional[pulumi.Input[str]] = None,
              default_masking_format_id: Optional[pulumi.Input[str]] = None,
@@ -79,31 +79,35 @@ class SensitiveTypeArgs:
              parent_category_id: Optional[pulumi.Input[str]] = None,
              search_type: Optional[pulumi.Input[str]] = None,
              short_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'entityType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'commentPattern' in kwargs:
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if comment_pattern is None and 'commentPattern' in kwargs:
             comment_pattern = kwargs['commentPattern']
-        if 'dataPattern' in kwargs:
+        if data_pattern is None and 'dataPattern' in kwargs:
             data_pattern = kwargs['dataPattern']
-        if 'defaultMaskingFormatId' in kwargs:
+        if default_masking_format_id is None and 'defaultMaskingFormatId' in kwargs:
             default_masking_format_id = kwargs['defaultMaskingFormatId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'namePattern' in kwargs:
+        if name_pattern is None and 'namePattern' in kwargs:
             name_pattern = kwargs['namePattern']
-        if 'parentCategoryId' in kwargs:
+        if parent_category_id is None and 'parentCategoryId' in kwargs:
             parent_category_id = kwargs['parentCategoryId']
-        if 'searchType' in kwargs:
+        if search_type is None and 'searchType' in kwargs:
             search_type = kwargs['searchType']
-        if 'shortName' in kwargs:
+        if short_name is None and 'shortName' in kwargs:
             short_name = kwargs['shortName']
 
         _setter("compartment_id", compartment_id)
@@ -380,37 +384,37 @@ class _SensitiveTypeState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commentPattern' in kwargs:
+        if comment_pattern is None and 'commentPattern' in kwargs:
             comment_pattern = kwargs['commentPattern']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataPattern' in kwargs:
+        if data_pattern is None and 'dataPattern' in kwargs:
             data_pattern = kwargs['dataPattern']
-        if 'defaultMaskingFormatId' in kwargs:
+        if default_masking_format_id is None and 'defaultMaskingFormatId' in kwargs:
             default_masking_format_id = kwargs['defaultMaskingFormatId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'namePattern' in kwargs:
+        if name_pattern is None and 'namePattern' in kwargs:
             name_pattern = kwargs['namePattern']
-        if 'parentCategoryId' in kwargs:
+        if parent_category_id is None and 'parentCategoryId' in kwargs:
             parent_category_id = kwargs['parentCategoryId']
-        if 'searchType' in kwargs:
+        if search_type is None and 'searchType' in kwargs:
             search_type = kwargs['searchType']
-        if 'shortName' in kwargs:
+        if short_name is None and 'shortName' in kwargs:
             short_name = kwargs['shortName']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if comment_pattern is not None:

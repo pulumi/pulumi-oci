@@ -38,10 +38,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Deployment_backup_display_name),
 //				Namespace:     pulumi.Any(_var.Deployment_backup_namespace),
 //				Object:        pulumi.Any(_var.Deployment_backup_object),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

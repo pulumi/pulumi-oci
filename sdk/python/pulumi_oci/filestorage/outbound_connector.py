@@ -59,35 +59,45 @@ class OutboundConnectorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             bind_distinguished_name: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             connector_type: pulumi.Input[str],
-             endpoints: pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             bind_distinguished_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
              password_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'bindDistinguishedName' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if bind_distinguished_name is None and 'bindDistinguishedName' in kwargs:
             bind_distinguished_name = kwargs['bindDistinguishedName']
-        if 'compartmentId' in kwargs:
+        if bind_distinguished_name is None:
+            raise TypeError("Missing 'bind_distinguished_name' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectorType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'definedTags' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'passwordSecretVersion' in kwargs:
+        if password_secret_version is None and 'passwordSecretVersion' in kwargs:
             password_secret_version = kwargs['passwordSecretVersion']
 
         _setter("availability_domain", availability_domain)
@@ -295,27 +305,27 @@ class _OutboundConnectorState:
              password_secret_version: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'bindDistinguishedName' in kwargs:
+        if bind_distinguished_name is None and 'bindDistinguishedName' in kwargs:
             bind_distinguished_name = kwargs['bindDistinguishedName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'passwordSecretVersion' in kwargs:
+        if password_secret_version is None and 'passwordSecretVersion' in kwargs:
             password_secret_version = kwargs['passwordSecretVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if availability_domain is not None:

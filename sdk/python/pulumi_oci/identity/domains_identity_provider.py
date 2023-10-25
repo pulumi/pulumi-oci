@@ -680,10 +680,10 @@ class DomainsIdentityProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enabled: pulumi.Input[bool],
-             idcs_endpoint: pulumi.Input[str],
-             partner_name: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             enabled: Optional[pulumi.Input[bool]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             partner_name: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              assertion_attribute: Optional[pulumi.Input[str]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
@@ -732,93 +732,101 @@ class DomainsIdentityProviderArgs:
              urnietfparamsscimschemasoracleidcsextensionx509identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] = None,
              user_mapping_method: Optional[pulumi.Input[str]] = None,
              user_mapping_store_attribute: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if enabled is None:
+            raise TypeError("Missing 'enabled' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'partnerName' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if partner_name is None and 'partnerName' in kwargs:
             partner_name = kwargs['partnerName']
-        if 'assertionAttribute' in kwargs:
+        if partner_name is None:
+            raise TypeError("Missing 'partner_name' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if assertion_attribute is None and 'assertionAttribute' in kwargs:
             assertion_attribute = kwargs['assertionAttribute']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'authnRequestBinding' in kwargs:
+        if authn_request_binding is None and 'authnRequestBinding' in kwargs:
             authn_request_binding = kwargs['authnRequestBinding']
-        if 'correlationPolicy' in kwargs:
+        if correlation_policy is None and 'correlationPolicy' in kwargs:
             correlation_policy = kwargs['correlationPolicy']
-        if 'encryptionCertificate' in kwargs:
+        if encryption_certificate is None and 'encryptionCertificate' in kwargs:
             encryption_certificate = kwargs['encryptionCertificate']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'iconUrl' in kwargs:
+        if icon_url is None and 'iconUrl' in kwargs:
             icon_url = kwargs['iconUrl']
-        if 'idpSsoUrl' in kwargs:
+        if idp_sso_url is None and 'idpSsoUrl' in kwargs:
             idp_sso_url = kwargs['idpSsoUrl']
-        if 'includeSigningCertInSignature' in kwargs:
+        if include_signing_cert_in_signature is None and 'includeSigningCertInSignature' in kwargs:
             include_signing_cert_in_signature = kwargs['includeSigningCertInSignature']
-        if 'jitUserProvAssignedGroups' in kwargs:
+        if jit_user_prov_assigned_groups is None and 'jitUserProvAssignedGroups' in kwargs:
             jit_user_prov_assigned_groups = kwargs['jitUserProvAssignedGroups']
-        if 'jitUserProvAttributeUpdateEnabled' in kwargs:
+        if jit_user_prov_attribute_update_enabled is None and 'jitUserProvAttributeUpdateEnabled' in kwargs:
             jit_user_prov_attribute_update_enabled = kwargs['jitUserProvAttributeUpdateEnabled']
-        if 'jitUserProvAttributes' in kwargs:
+        if jit_user_prov_attributes is None and 'jitUserProvAttributes' in kwargs:
             jit_user_prov_attributes = kwargs['jitUserProvAttributes']
-        if 'jitUserProvCreateUserEnabled' in kwargs:
+        if jit_user_prov_create_user_enabled is None and 'jitUserProvCreateUserEnabled' in kwargs:
             jit_user_prov_create_user_enabled = kwargs['jitUserProvCreateUserEnabled']
-        if 'jitUserProvEnabled' in kwargs:
+        if jit_user_prov_enabled is None and 'jitUserProvEnabled' in kwargs:
             jit_user_prov_enabled = kwargs['jitUserProvEnabled']
-        if 'jitUserProvGroupAssertionAttributeEnabled' in kwargs:
+        if jit_user_prov_group_assertion_attribute_enabled is None and 'jitUserProvGroupAssertionAttributeEnabled' in kwargs:
             jit_user_prov_group_assertion_attribute_enabled = kwargs['jitUserProvGroupAssertionAttributeEnabled']
-        if 'jitUserProvGroupAssignmentMethod' in kwargs:
+        if jit_user_prov_group_assignment_method is None and 'jitUserProvGroupAssignmentMethod' in kwargs:
             jit_user_prov_group_assignment_method = kwargs['jitUserProvGroupAssignmentMethod']
-        if 'jitUserProvGroupMappingMode' in kwargs:
+        if jit_user_prov_group_mapping_mode is None and 'jitUserProvGroupMappingMode' in kwargs:
             jit_user_prov_group_mapping_mode = kwargs['jitUserProvGroupMappingMode']
-        if 'jitUserProvGroupMappings' in kwargs:
+        if jit_user_prov_group_mappings is None and 'jitUserProvGroupMappings' in kwargs:
             jit_user_prov_group_mappings = kwargs['jitUserProvGroupMappings']
-        if 'jitUserProvGroupSamlAttributeName' in kwargs:
+        if jit_user_prov_group_saml_attribute_name is None and 'jitUserProvGroupSamlAttributeName' in kwargs:
             jit_user_prov_group_saml_attribute_name = kwargs['jitUserProvGroupSamlAttributeName']
-        if 'jitUserProvGroupStaticListEnabled' in kwargs:
+        if jit_user_prov_group_static_list_enabled is None and 'jitUserProvGroupStaticListEnabled' in kwargs:
             jit_user_prov_group_static_list_enabled = kwargs['jitUserProvGroupStaticListEnabled']
-        if 'jitUserProvIgnoreErrorOnAbsentGroups' in kwargs:
+        if jit_user_prov_ignore_error_on_absent_groups is None and 'jitUserProvIgnoreErrorOnAbsentGroups' in kwargs:
             jit_user_prov_ignore_error_on_absent_groups = kwargs['jitUserProvIgnoreErrorOnAbsentGroups']
-        if 'logoutBinding' in kwargs:
+        if logout_binding is None and 'logoutBinding' in kwargs:
             logout_binding = kwargs['logoutBinding']
-        if 'logoutEnabled' in kwargs:
+        if logout_enabled is None and 'logoutEnabled' in kwargs:
             logout_enabled = kwargs['logoutEnabled']
-        if 'logoutRequestUrl' in kwargs:
+        if logout_request_url is None and 'logoutRequestUrl' in kwargs:
             logout_request_url = kwargs['logoutRequestUrl']
-        if 'logoutResponseUrl' in kwargs:
+        if logout_response_url is None and 'logoutResponseUrl' in kwargs:
             logout_response_url = kwargs['logoutResponseUrl']
-        if 'nameIdFormat' in kwargs:
+        if name_id_format is None and 'nameIdFormat' in kwargs:
             name_id_format = kwargs['nameIdFormat']
-        if 'partnerProviderId' in kwargs:
+        if partner_provider_id is None and 'partnerProviderId' in kwargs:
             partner_provider_id = kwargs['partnerProviderId']
-        if 'requestedAuthenticationContexts' in kwargs:
+        if requested_authentication_contexts is None and 'requestedAuthenticationContexts' in kwargs:
             requested_authentication_contexts = kwargs['requestedAuthenticationContexts']
-        if 'requireForceAuthn' in kwargs:
+        if require_force_authn is None and 'requireForceAuthn' in kwargs:
             require_force_authn = kwargs['requireForceAuthn']
-        if 'requiresEncryptedAssertion' in kwargs:
+        if requires_encrypted_assertion is None and 'requiresEncryptedAssertion' in kwargs:
             requires_encrypted_assertion = kwargs['requiresEncryptedAssertion']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'samlHoKrequired' in kwargs:
+        if saml_ho_krequired is None and 'samlHoKrequired' in kwargs:
             saml_ho_krequired = kwargs['samlHoKrequired']
-        if 'serviceInstanceIdentifier' in kwargs:
+        if service_instance_identifier is None and 'serviceInstanceIdentifier' in kwargs:
             service_instance_identifier = kwargs['serviceInstanceIdentifier']
-        if 'shownOnLoginPage' in kwargs:
+        if shown_on_login_page is None and 'shownOnLoginPage' in kwargs:
             shown_on_login_page = kwargs['shownOnLoginPage']
-        if 'signatureHashAlgorithm' in kwargs:
+        if signature_hash_algorithm is None and 'signatureHashAlgorithm' in kwargs:
             signature_hash_algorithm = kwargs['signatureHashAlgorithm']
-        if 'signingCertificate' in kwargs:
+        if signing_certificate is None and 'signingCertificate' in kwargs:
             signing_certificate = kwargs['signingCertificate']
-        if 'succinctId' in kwargs:
+        if succinct_id is None and 'succinctId' in kwargs:
             succinct_id = kwargs['succinctId']
-        if 'urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is None and 'urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']
-        if 'urnietfparamsscimschemasoracleidcsextensionx509identityProvider' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is None and 'urnietfparamsscimschemasoracleidcsextensionx509identityProvider' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionx509identity_provider = kwargs['urnietfparamsscimschemasoracleidcsextensionx509identityProvider']
-        if 'userMappingMethod' in kwargs:
+        if user_mapping_method is None and 'userMappingMethod' in kwargs:
             user_mapping_method = kwargs['userMappingMethod']
-        if 'userMappingStoreAttribute' in kwargs:
+        if user_mapping_store_attribute is None and 'userMappingStoreAttribute' in kwargs:
             user_mapping_store_attribute = kwargs['userMappingStoreAttribute']
 
         _setter("enabled", enabled)
@@ -2918,113 +2926,113 @@ class _DomainsIdentityProviderState:
              urnietfparamsscimschemasoracleidcsextensionx509identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] = None,
              user_mapping_method: Optional[pulumi.Input[str]] = None,
              user_mapping_store_attribute: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assertionAttribute' in kwargs:
+        if assertion_attribute is None and 'assertionAttribute' in kwargs:
             assertion_attribute = kwargs['assertionAttribute']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'authnRequestBinding' in kwargs:
+        if authn_request_binding is None and 'authnRequestBinding' in kwargs:
             authn_request_binding = kwargs['authnRequestBinding']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'correlationPolicy' in kwargs:
+        if correlation_policy is None and 'correlationPolicy' in kwargs:
             correlation_policy = kwargs['correlationPolicy']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'encryptionCertificate' in kwargs:
+        if encryption_certificate is None and 'encryptionCertificate' in kwargs:
             encryption_certificate = kwargs['encryptionCertificate']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'iconUrl' in kwargs:
+        if icon_url is None and 'iconUrl' in kwargs:
             icon_url = kwargs['iconUrl']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'idpSsoUrl' in kwargs:
+        if idp_sso_url is None and 'idpSsoUrl' in kwargs:
             idp_sso_url = kwargs['idpSsoUrl']
-        if 'includeSigningCertInSignature' in kwargs:
+        if include_signing_cert_in_signature is None and 'includeSigningCertInSignature' in kwargs:
             include_signing_cert_in_signature = kwargs['includeSigningCertInSignature']
-        if 'jitUserProvAssignedGroups' in kwargs:
+        if jit_user_prov_assigned_groups is None and 'jitUserProvAssignedGroups' in kwargs:
             jit_user_prov_assigned_groups = kwargs['jitUserProvAssignedGroups']
-        if 'jitUserProvAttributeUpdateEnabled' in kwargs:
+        if jit_user_prov_attribute_update_enabled is None and 'jitUserProvAttributeUpdateEnabled' in kwargs:
             jit_user_prov_attribute_update_enabled = kwargs['jitUserProvAttributeUpdateEnabled']
-        if 'jitUserProvAttributes' in kwargs:
+        if jit_user_prov_attributes is None and 'jitUserProvAttributes' in kwargs:
             jit_user_prov_attributes = kwargs['jitUserProvAttributes']
-        if 'jitUserProvCreateUserEnabled' in kwargs:
+        if jit_user_prov_create_user_enabled is None and 'jitUserProvCreateUserEnabled' in kwargs:
             jit_user_prov_create_user_enabled = kwargs['jitUserProvCreateUserEnabled']
-        if 'jitUserProvEnabled' in kwargs:
+        if jit_user_prov_enabled is None and 'jitUserProvEnabled' in kwargs:
             jit_user_prov_enabled = kwargs['jitUserProvEnabled']
-        if 'jitUserProvGroupAssertionAttributeEnabled' in kwargs:
+        if jit_user_prov_group_assertion_attribute_enabled is None and 'jitUserProvGroupAssertionAttributeEnabled' in kwargs:
             jit_user_prov_group_assertion_attribute_enabled = kwargs['jitUserProvGroupAssertionAttributeEnabled']
-        if 'jitUserProvGroupAssignmentMethod' in kwargs:
+        if jit_user_prov_group_assignment_method is None and 'jitUserProvGroupAssignmentMethod' in kwargs:
             jit_user_prov_group_assignment_method = kwargs['jitUserProvGroupAssignmentMethod']
-        if 'jitUserProvGroupMappingMode' in kwargs:
+        if jit_user_prov_group_mapping_mode is None and 'jitUserProvGroupMappingMode' in kwargs:
             jit_user_prov_group_mapping_mode = kwargs['jitUserProvGroupMappingMode']
-        if 'jitUserProvGroupMappings' in kwargs:
+        if jit_user_prov_group_mappings is None and 'jitUserProvGroupMappings' in kwargs:
             jit_user_prov_group_mappings = kwargs['jitUserProvGroupMappings']
-        if 'jitUserProvGroupSamlAttributeName' in kwargs:
+        if jit_user_prov_group_saml_attribute_name is None and 'jitUserProvGroupSamlAttributeName' in kwargs:
             jit_user_prov_group_saml_attribute_name = kwargs['jitUserProvGroupSamlAttributeName']
-        if 'jitUserProvGroupStaticListEnabled' in kwargs:
+        if jit_user_prov_group_static_list_enabled is None and 'jitUserProvGroupStaticListEnabled' in kwargs:
             jit_user_prov_group_static_list_enabled = kwargs['jitUserProvGroupStaticListEnabled']
-        if 'jitUserProvIgnoreErrorOnAbsentGroups' in kwargs:
+        if jit_user_prov_ignore_error_on_absent_groups is None and 'jitUserProvIgnoreErrorOnAbsentGroups' in kwargs:
             jit_user_prov_ignore_error_on_absent_groups = kwargs['jitUserProvIgnoreErrorOnAbsentGroups']
-        if 'lastNotificationSentTime' in kwargs:
+        if last_notification_sent_time is None and 'lastNotificationSentTime' in kwargs:
             last_notification_sent_time = kwargs['lastNotificationSentTime']
-        if 'logoutBinding' in kwargs:
+        if logout_binding is None and 'logoutBinding' in kwargs:
             logout_binding = kwargs['logoutBinding']
-        if 'logoutEnabled' in kwargs:
+        if logout_enabled is None and 'logoutEnabled' in kwargs:
             logout_enabled = kwargs['logoutEnabled']
-        if 'logoutRequestUrl' in kwargs:
+        if logout_request_url is None and 'logoutRequestUrl' in kwargs:
             logout_request_url = kwargs['logoutRequestUrl']
-        if 'logoutResponseUrl' in kwargs:
+        if logout_response_url is None and 'logoutResponseUrl' in kwargs:
             logout_response_url = kwargs['logoutResponseUrl']
-        if 'nameIdFormat' in kwargs:
+        if name_id_format is None and 'nameIdFormat' in kwargs:
             name_id_format = kwargs['nameIdFormat']
-        if 'partnerName' in kwargs:
+        if partner_name is None and 'partnerName' in kwargs:
             partner_name = kwargs['partnerName']
-        if 'partnerProviderId' in kwargs:
+        if partner_provider_id is None and 'partnerProviderId' in kwargs:
             partner_provider_id = kwargs['partnerProviderId']
-        if 'requestedAuthenticationContexts' in kwargs:
+        if requested_authentication_contexts is None and 'requestedAuthenticationContexts' in kwargs:
             requested_authentication_contexts = kwargs['requestedAuthenticationContexts']
-        if 'requireForceAuthn' in kwargs:
+        if require_force_authn is None and 'requireForceAuthn' in kwargs:
             require_force_authn = kwargs['requireForceAuthn']
-        if 'requiresEncryptedAssertion' in kwargs:
+        if requires_encrypted_assertion is None and 'requiresEncryptedAssertion' in kwargs:
             requires_encrypted_assertion = kwargs['requiresEncryptedAssertion']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'samlHoKrequired' in kwargs:
+        if saml_ho_krequired is None and 'samlHoKrequired' in kwargs:
             saml_ho_krequired = kwargs['samlHoKrequired']
-        if 'serviceInstanceIdentifier' in kwargs:
+        if service_instance_identifier is None and 'serviceInstanceIdentifier' in kwargs:
             service_instance_identifier = kwargs['serviceInstanceIdentifier']
-        if 'shownOnLoginPage' in kwargs:
+        if shown_on_login_page is None and 'shownOnLoginPage' in kwargs:
             shown_on_login_page = kwargs['shownOnLoginPage']
-        if 'signatureHashAlgorithm' in kwargs:
+        if signature_hash_algorithm is None and 'signatureHashAlgorithm' in kwargs:
             signature_hash_algorithm = kwargs['signatureHashAlgorithm']
-        if 'signingCertificate' in kwargs:
+        if signing_certificate is None and 'signingCertificate' in kwargs:
             signing_certificate = kwargs['signingCertificate']
-        if 'succinctId' in kwargs:
+        if succinct_id is None and 'succinctId' in kwargs:
             succinct_id = kwargs['succinctId']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'tenantProviderId' in kwargs:
+        if tenant_provider_id is None and 'tenantProviderId' in kwargs:
             tenant_provider_id = kwargs['tenantProviderId']
-        if 'urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is None and 'urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']
-        if 'urnietfparamsscimschemasoracleidcsextensionx509identityProvider' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is None and 'urnietfparamsscimschemasoracleidcsextensionx509identityProvider' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionx509identity_provider = kwargs['urnietfparamsscimschemasoracleidcsextensionx509identityProvider']
-        if 'userMappingMethod' in kwargs:
+        if user_mapping_method is None and 'userMappingMethod' in kwargs:
             user_mapping_method = kwargs['userMappingMethod']
-        if 'userMappingStoreAttribute' in kwargs:
+        if user_mapping_store_attribute is None and 'userMappingStoreAttribute' in kwargs:
             user_mapping_store_attribute = kwargs['userMappingStoreAttribute']
 
         if assertion_attribute is not None:
@@ -5248,11 +5256,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authn_request_binding"] = authn_request_binding
             __props__.__dict__["authorization"] = authorization
-            if correlation_policy is not None and not isinstance(correlation_policy, DomainsIdentityProviderCorrelationPolicyArgs):
-                correlation_policy = correlation_policy or {}
-                def _setter(key, value):
-                    correlation_policy[key] = value
-                DomainsIdentityProviderCorrelationPolicyArgs._configure(_setter, **correlation_policy)
+            correlation_policy = _utilities.configure(correlation_policy, DomainsIdentityProviderCorrelationPolicyArgs, True)
             __props__.__dict__["correlation_policy"] = correlation_policy
             __props__.__dict__["description"] = description
             if enabled is None and not opts.urn:
@@ -5268,11 +5272,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["include_signing_cert_in_signature"] = include_signing_cert_in_signature
             __props__.__dict__["jit_user_prov_assigned_groups"] = jit_user_prov_assigned_groups
             __props__.__dict__["jit_user_prov_attribute_update_enabled"] = jit_user_prov_attribute_update_enabled
-            if jit_user_prov_attributes is not None and not isinstance(jit_user_prov_attributes, DomainsIdentityProviderJitUserProvAttributesArgs):
-                jit_user_prov_attributes = jit_user_prov_attributes or {}
-                def _setter(key, value):
-                    jit_user_prov_attributes[key] = value
-                DomainsIdentityProviderJitUserProvAttributesArgs._configure(_setter, **jit_user_prov_attributes)
+            jit_user_prov_attributes = _utilities.configure(jit_user_prov_attributes, DomainsIdentityProviderJitUserProvAttributesArgs, True)
             __props__.__dict__["jit_user_prov_attributes"] = jit_user_prov_attributes
             __props__.__dict__["jit_user_prov_create_user_enabled"] = jit_user_prov_create_user_enabled
             __props__.__dict__["jit_user_prov_enabled"] = jit_user_prov_enabled
@@ -5309,17 +5309,9 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["succinct_id"] = succinct_id
             __props__.__dict__["tags"] = tags
             __props__.__dict__["type"] = type
-            if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs):
-                urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider[key] = value
-                DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
+            urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider"] = urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider
-            if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionx509identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs):
-                urnietfparamsscimschemasoracleidcsextensionx509identity_provider = urnietfparamsscimschemasoracleidcsextensionx509identity_provider or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionx509identity_provider[key] = value
-                DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
+            urnietfparamsscimschemasoracleidcsextensionx509identity_provider = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionx509identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionx509identity_provider"] = urnietfparamsscimschemasoracleidcsextensionx509identity_provider
             __props__.__dict__["user_mapping_method"] = user_mapping_method
             __props__.__dict__["user_mapping_store_attribute"] = user_mapping_store_attribute

@@ -47,22 +47,34 @@ class FusionEnvironmentAdminUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: pulumi.Input[str],
-             first_name: pulumi.Input[str],
-             fusion_environment_id: pulumi.Input[str],
-             last_name: pulumi.Input[str],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'fusionEnvironmentId' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lastName' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -192,15 +204,15 @@ class _FusionEnvironmentAdminUserState:
              last_name: Optional[pulumi.Input[str]] = None,
              password: Optional[pulumi.Input[str]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lastName' in kwargs:
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
 
         if email_address is not None:

@@ -288,8 +288,8 @@ class AutonomousDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             db_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
              admin_password: Optional[pulumi.Input[str]] = None,
              are_primary_whitelisted_ips_used: Optional[pulumi.Input[bool]] = None,
              autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
@@ -356,137 +356,141 @@ class AutonomousDatabaseArgs:
              use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_name is None and 'dbName' in kwargs:
             db_name = kwargs['dbName']
-        if 'adminPassword' in kwargs:
+        if db_name is None:
+            raise TypeError("Missing 'db_name' argument")
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'arePrimaryWhitelistedIpsUsed' in kwargs:
+        if are_primary_whitelisted_ips_used is None and 'arePrimaryWhitelistedIpsUsed' in kwargs:
             are_primary_whitelisted_ips_used = kwargs['arePrimaryWhitelistedIpsUsed']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'autonomousDatabaseBackupId' in kwargs:
+        if autonomous_database_backup_id is None and 'autonomousDatabaseBackupId' in kwargs:
             autonomous_database_backup_id = kwargs['autonomousDatabaseBackupId']
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'autonomousMaintenanceScheduleType' in kwargs:
+        if autonomous_maintenance_schedule_type is None and 'autonomousMaintenanceScheduleType' in kwargs:
             autonomous_maintenance_schedule_type = kwargs['autonomousMaintenanceScheduleType']
-        if 'backupRetentionPeriodInDays' in kwargs:
+        if backup_retention_period_in_days is None and 'backupRetentionPeriodInDays' in kwargs:
             backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
-        if 'characterSet' in kwargs:
+        if character_set is None and 'characterSet' in kwargs:
             character_set = kwargs['characterSet']
-        if 'cloneType' in kwargs:
+        if clone_type is None and 'cloneType' in kwargs:
             clone_type = kwargs['cloneType']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'computeModel' in kwargs:
+        if compute_model is None and 'computeModel' in kwargs:
             compute_model = kwargs['computeModel']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'customerContacts' in kwargs:
+        if customer_contacts is None and 'customerContacts' in kwargs:
             customer_contacts = kwargs['customerContacts']
-        if 'dataSafeStatus' in kwargs:
+        if data_safe_status is None and 'dataSafeStatus' in kwargs:
             data_safe_status = kwargs['dataSafeStatus']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'databaseEdition' in kwargs:
+        if database_edition is None and 'databaseEdition' in kwargs:
             database_edition = kwargs['databaseEdition']
-        if 'databaseManagementStatus' in kwargs:
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
             database_management_status = kwargs['databaseManagementStatus']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'dbWorkload' in kwargs:
+        if db_workload is None and 'dbWorkload' in kwargs:
             db_workload = kwargs['dbWorkload']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inMemoryPercentage' in kwargs:
+        if in_memory_percentage is None and 'inMemoryPercentage' in kwargs:
             in_memory_percentage = kwargs['inMemoryPercentage']
-        if 'isAccessControlEnabled' in kwargs:
+        if is_access_control_enabled is None and 'isAccessControlEnabled' in kwargs:
             is_access_control_enabled = kwargs['isAccessControlEnabled']
-        if 'isAutoScalingEnabled' in kwargs:
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
             is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
-        if 'isAutoScalingForStorageEnabled' in kwargs:
+        if is_auto_scaling_for_storage_enabled is None and 'isAutoScalingForStorageEnabled' in kwargs:
             is_auto_scaling_for_storage_enabled = kwargs['isAutoScalingForStorageEnabled']
-        if 'isDataGuardEnabled' in kwargs:
+        if is_data_guard_enabled is None and 'isDataGuardEnabled' in kwargs:
             is_data_guard_enabled = kwargs['isDataGuardEnabled']
-        if 'isDedicated' in kwargs:
+        if is_dedicated is None and 'isDedicated' in kwargs:
             is_dedicated = kwargs['isDedicated']
-        if 'isFreeTier' in kwargs:
+        if is_free_tier is None and 'isFreeTier' in kwargs:
             is_free_tier = kwargs['isFreeTier']
-        if 'isLocalDataGuardEnabled' in kwargs:
+        if is_local_data_guard_enabled is None and 'isLocalDataGuardEnabled' in kwargs:
             is_local_data_guard_enabled = kwargs['isLocalDataGuardEnabled']
-        if 'isMtlsConnectionRequired' in kwargs:
+        if is_mtls_connection_required is None and 'isMtlsConnectionRequired' in kwargs:
             is_mtls_connection_required = kwargs['isMtlsConnectionRequired']
-        if 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
+        if is_preview_version_with_service_terms_accepted is None and 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
             is_preview_version_with_service_terms_accepted = kwargs['isPreviewVersionWithServiceTermsAccepted']
-        if 'isRefreshableClone' in kwargs:
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
             is_refreshable_clone = kwargs['isRefreshableClone']
-        if 'isShrinkOnly' in kwargs:
+        if is_shrink_only is None and 'isShrinkOnly' in kwargs:
             is_shrink_only = kwargs['isShrinkOnly']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
+        if local_adg_auto_failover_max_data_loss_limit is None and 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
             local_adg_auto_failover_max_data_loss_limit = kwargs['localAdgAutoFailoverMaxDataLossLimit']
-        if 'maxCpuCoreCount' in kwargs:
+        if max_cpu_core_count is None and 'maxCpuCoreCount' in kwargs:
             max_cpu_core_count = kwargs['maxCpuCoreCount']
-        if 'ncharacterSet' in kwargs:
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
             ncharacter_set = kwargs['ncharacterSet']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'openMode' in kwargs:
+        if open_mode is None and 'openMode' in kwargs:
             open_mode = kwargs['openMode']
-        if 'operationsInsightsStatus' in kwargs:
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
             operations_insights_status = kwargs['operationsInsightsStatus']
-        if 'permissionLevel' in kwargs:
+        if permission_level is None and 'permissionLevel' in kwargs:
             permission_level = kwargs['permissionLevel']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'privateEndpointLabel' in kwargs:
+        if private_endpoint_label is None and 'privateEndpointLabel' in kwargs:
             private_endpoint_label = kwargs['privateEndpointLabel']
-        if 'refreshableMode' in kwargs:
+        if refreshable_mode is None and 'refreshableMode' in kwargs:
             refreshable_mode = kwargs['refreshableMode']
-        if 'remoteDisasterRecoveryType' in kwargs:
+        if remote_disaster_recovery_type is None and 'remoteDisasterRecoveryType' in kwargs:
             remote_disaster_recovery_type = kwargs['remoteDisasterRecoveryType']
-        if 'resourcePoolLeaderId' in kwargs:
+        if resource_pool_leader_id is None and 'resourcePoolLeaderId' in kwargs:
             resource_pool_leader_id = kwargs['resourcePoolLeaderId']
-        if 'resourcePoolSummary' in kwargs:
+        if resource_pool_summary is None and 'resourcePoolSummary' in kwargs:
             resource_pool_summary = kwargs['resourcePoolSummary']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'scheduledOperations' in kwargs:
+        if scheduled_operations is None and 'scheduledOperations' in kwargs:
             scheduled_operations = kwargs['scheduledOperations']
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'secretVersionNumber' in kwargs:
+        if secret_version_number is None and 'secretVersionNumber' in kwargs:
             secret_version_number = kwargs['secretVersionNumber']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'standbyWhitelistedIps' in kwargs:
+        if standby_whitelisted_ips is None and 'standbyWhitelistedIps' in kwargs:
             standby_whitelisted_ips = kwargs['standbyWhitelistedIps']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'switchoverTo' in kwargs:
+        if switchover_to is None and 'switchoverTo' in kwargs:
             switchover_to = kwargs['switchoverTo']
-        if 'switchoverToRemotePeerId' in kwargs:
+        if switchover_to_remote_peer_id is None and 'switchoverToRemotePeerId' in kwargs:
             switchover_to_remote_peer_id = kwargs['switchoverToRemotePeerId']
-        if 'useLatestAvailableBackupTimeStamp' in kwargs:
+        if use_latest_available_backup_time_stamp is None and 'useLatestAvailableBackupTimeStamp' in kwargs:
             use_latest_available_backup_time_stamp = kwargs['useLatestAvailableBackupTimeStamp']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'whitelistedIps' in kwargs:
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
             whitelisted_ips = kwargs['whitelistedIps']
 
         _setter("compartment_id", compartment_id)
@@ -2054,243 +2058,243 @@ class _AutonomousDatabaseState:
              used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actualUsedDataStorageSizeInTbs' in kwargs:
+        if actual_used_data_storage_size_in_tbs is None and 'actualUsedDataStorageSizeInTbs' in kwargs:
             actual_used_data_storage_size_in_tbs = kwargs['actualUsedDataStorageSizeInTbs']
-        if 'adminPassword' in kwargs:
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'allocatedStorageSizeInTbs' in kwargs:
+        if allocated_storage_size_in_tbs is None and 'allocatedStorageSizeInTbs' in kwargs:
             allocated_storage_size_in_tbs = kwargs['allocatedStorageSizeInTbs']
-        if 'apexDetails' in kwargs:
+        if apex_details is None and 'apexDetails' in kwargs:
             apex_details = kwargs['apexDetails']
-        if 'arePrimaryWhitelistedIpsUsed' in kwargs:
+        if are_primary_whitelisted_ips_used is None and 'arePrimaryWhitelistedIpsUsed' in kwargs:
             are_primary_whitelisted_ips_used = kwargs['arePrimaryWhitelistedIpsUsed']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'autonomousDatabaseBackupId' in kwargs:
+        if autonomous_database_backup_id is None and 'autonomousDatabaseBackupId' in kwargs:
             autonomous_database_backup_id = kwargs['autonomousDatabaseBackupId']
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'autonomousMaintenanceScheduleType' in kwargs:
+        if autonomous_maintenance_schedule_type is None and 'autonomousMaintenanceScheduleType' in kwargs:
             autonomous_maintenance_schedule_type = kwargs['autonomousMaintenanceScheduleType']
-        if 'availableUpgradeVersions' in kwargs:
+        if available_upgrade_versions is None and 'availableUpgradeVersions' in kwargs:
             available_upgrade_versions = kwargs['availableUpgradeVersions']
-        if 'backupConfigs' in kwargs:
+        if backup_configs is None and 'backupConfigs' in kwargs:
             backup_configs = kwargs['backupConfigs']
-        if 'backupRetentionPeriodInDays' in kwargs:
+        if backup_retention_period_in_days is None and 'backupRetentionPeriodInDays' in kwargs:
             backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
-        if 'characterSet' in kwargs:
+        if character_set is None and 'characterSet' in kwargs:
             character_set = kwargs['characterSet']
-        if 'cloneType' in kwargs:
+        if clone_type is None and 'cloneType' in kwargs:
             clone_type = kwargs['cloneType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'computeModel' in kwargs:
+        if compute_model is None and 'computeModel' in kwargs:
             compute_model = kwargs['computeModel']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
-        if 'connectionUrls' in kwargs:
+        if connection_urls is None and 'connectionUrls' in kwargs:
             connection_urls = kwargs['connectionUrls']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'customerContacts' in kwargs:
+        if customer_contacts is None and 'customerContacts' in kwargs:
             customer_contacts = kwargs['customerContacts']
-        if 'dataSafeStatus' in kwargs:
+        if data_safe_status is None and 'dataSafeStatus' in kwargs:
             data_safe_status = kwargs['dataSafeStatus']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'databaseEdition' in kwargs:
+        if database_edition is None and 'databaseEdition' in kwargs:
             database_edition = kwargs['databaseEdition']
-        if 'databaseManagementStatus' in kwargs:
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
             database_management_status = kwargs['databaseManagementStatus']
-        if 'dataguardRegionType' in kwargs:
+        if dataguard_region_type is None and 'dataguardRegionType' in kwargs:
             dataguard_region_type = kwargs['dataguardRegionType']
-        if 'dbName' in kwargs:
+        if db_name is None and 'dbName' in kwargs:
             db_name = kwargs['dbName']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'dbWorkload' in kwargs:
+        if db_workload is None and 'dbWorkload' in kwargs:
             db_workload = kwargs['dbWorkload']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'disasterRecoveryRegionType' in kwargs:
+        if disaster_recovery_region_type is None and 'disasterRecoveryRegionType' in kwargs:
             disaster_recovery_region_type = kwargs['disasterRecoveryRegionType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'failedDataRecoveryInSeconds' in kwargs:
+        if failed_data_recovery_in_seconds is None and 'failedDataRecoveryInSeconds' in kwargs:
             failed_data_recovery_in_seconds = kwargs['failedDataRecoveryInSeconds']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inMemoryAreaInGbs' in kwargs:
+        if in_memory_area_in_gbs is None and 'inMemoryAreaInGbs' in kwargs:
             in_memory_area_in_gbs = kwargs['inMemoryAreaInGbs']
-        if 'inMemoryPercentage' in kwargs:
+        if in_memory_percentage is None and 'inMemoryPercentage' in kwargs:
             in_memory_percentage = kwargs['inMemoryPercentage']
-        if 'infrastructureType' in kwargs:
+        if infrastructure_type is None and 'infrastructureType' in kwargs:
             infrastructure_type = kwargs['infrastructureType']
-        if 'isAccessControlEnabled' in kwargs:
+        if is_access_control_enabled is None and 'isAccessControlEnabled' in kwargs:
             is_access_control_enabled = kwargs['isAccessControlEnabled']
-        if 'isAutoScalingEnabled' in kwargs:
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
             is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
-        if 'isAutoScalingForStorageEnabled' in kwargs:
+        if is_auto_scaling_for_storage_enabled is None and 'isAutoScalingForStorageEnabled' in kwargs:
             is_auto_scaling_for_storage_enabled = kwargs['isAutoScalingForStorageEnabled']
-        if 'isDataGuardEnabled' in kwargs:
+        if is_data_guard_enabled is None and 'isDataGuardEnabled' in kwargs:
             is_data_guard_enabled = kwargs['isDataGuardEnabled']
-        if 'isDedicated' in kwargs:
+        if is_dedicated is None and 'isDedicated' in kwargs:
             is_dedicated = kwargs['isDedicated']
-        if 'isFreeTier' in kwargs:
+        if is_free_tier is None and 'isFreeTier' in kwargs:
             is_free_tier = kwargs['isFreeTier']
-        if 'isLocalDataGuardEnabled' in kwargs:
+        if is_local_data_guard_enabled is None and 'isLocalDataGuardEnabled' in kwargs:
             is_local_data_guard_enabled = kwargs['isLocalDataGuardEnabled']
-        if 'isMtlsConnectionRequired' in kwargs:
+        if is_mtls_connection_required is None and 'isMtlsConnectionRequired' in kwargs:
             is_mtls_connection_required = kwargs['isMtlsConnectionRequired']
-        if 'isPreview' in kwargs:
+        if is_preview is None and 'isPreview' in kwargs:
             is_preview = kwargs['isPreview']
-        if 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
+        if is_preview_version_with_service_terms_accepted is None and 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
             is_preview_version_with_service_terms_accepted = kwargs['isPreviewVersionWithServiceTermsAccepted']
-        if 'isReconnectCloneEnabled' in kwargs:
+        if is_reconnect_clone_enabled is None and 'isReconnectCloneEnabled' in kwargs:
             is_reconnect_clone_enabled = kwargs['isReconnectCloneEnabled']
-        if 'isRefreshableClone' in kwargs:
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
             is_refreshable_clone = kwargs['isRefreshableClone']
-        if 'isRemoteDataGuardEnabled' in kwargs:
+        if is_remote_data_guard_enabled is None and 'isRemoteDataGuardEnabled' in kwargs:
             is_remote_data_guard_enabled = kwargs['isRemoteDataGuardEnabled']
-        if 'isShrinkOnly' in kwargs:
+        if is_shrink_only is None and 'isShrinkOnly' in kwargs:
             is_shrink_only = kwargs['isShrinkOnly']
-        if 'keyHistoryEntries' in kwargs:
+        if key_history_entries is None and 'keyHistoryEntries' in kwargs:
             key_history_entries = kwargs['keyHistoryEntries']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'keyStoreWalletName' in kwargs:
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
             key_store_wallet_name = kwargs['keyStoreWalletName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyLifecycleDetails' in kwargs:
+        if kms_key_lifecycle_details is None and 'kmsKeyLifecycleDetails' in kwargs:
             kms_key_lifecycle_details = kwargs['kmsKeyLifecycleDetails']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
+        if local_adg_auto_failover_max_data_loss_limit is None and 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
             local_adg_auto_failover_max_data_loss_limit = kwargs['localAdgAutoFailoverMaxDataLossLimit']
-        if 'localDisasterRecoveryType' in kwargs:
+        if local_disaster_recovery_type is None and 'localDisasterRecoveryType' in kwargs:
             local_disaster_recovery_type = kwargs['localDisasterRecoveryType']
-        if 'localStandbyDbs' in kwargs:
+        if local_standby_dbs is None and 'localStandbyDbs' in kwargs:
             local_standby_dbs = kwargs['localStandbyDbs']
-        if 'longTermBackupSchedules' in kwargs:
+        if long_term_backup_schedules is None and 'longTermBackupSchedules' in kwargs:
             long_term_backup_schedules = kwargs['longTermBackupSchedules']
-        if 'maxCpuCoreCount' in kwargs:
+        if max_cpu_core_count is None and 'maxCpuCoreCount' in kwargs:
             max_cpu_core_count = kwargs['maxCpuCoreCount']
-        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+        if memory_per_oracle_compute_unit_in_gbs is None and 'memoryPerOracleComputeUnitInGbs' in kwargs:
             memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
-        if 'ncharacterSet' in kwargs:
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
             ncharacter_set = kwargs['ncharacterSet']
-        if 'nextLongTermBackupTimeStamp' in kwargs:
+        if next_long_term_backup_time_stamp is None and 'nextLongTermBackupTimeStamp' in kwargs:
             next_long_term_backup_time_stamp = kwargs['nextLongTermBackupTimeStamp']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'openMode' in kwargs:
+        if open_mode is None and 'openMode' in kwargs:
             open_mode = kwargs['openMode']
-        if 'operationsInsightsStatus' in kwargs:
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
             operations_insights_status = kwargs['operationsInsightsStatus']
-        if 'peerDbIds' in kwargs:
+        if peer_db_ids is None and 'peerDbIds' in kwargs:
             peer_db_ids = kwargs['peerDbIds']
-        if 'permissionLevel' in kwargs:
+        if permission_level is None and 'permissionLevel' in kwargs:
             permission_level = kwargs['permissionLevel']
-        if 'privateEndpoint' in kwargs:
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
             private_endpoint = kwargs['privateEndpoint']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'privateEndpointLabel' in kwargs:
+        if private_endpoint_label is None and 'privateEndpointLabel' in kwargs:
             private_endpoint_label = kwargs['privateEndpointLabel']
-        if 'provisionableCpuses' in kwargs:
+        if provisionable_cpuses is None and 'provisionableCpuses' in kwargs:
             provisionable_cpuses = kwargs['provisionableCpuses']
-        if 'refreshableMode' in kwargs:
+        if refreshable_mode is None and 'refreshableMode' in kwargs:
             refreshable_mode = kwargs['refreshableMode']
-        if 'refreshableStatus' in kwargs:
+        if refreshable_status is None and 'refreshableStatus' in kwargs:
             refreshable_status = kwargs['refreshableStatus']
-        if 'remoteDisasterRecoveryConfigurations' in kwargs:
+        if remote_disaster_recovery_configurations is None and 'remoteDisasterRecoveryConfigurations' in kwargs:
             remote_disaster_recovery_configurations = kwargs['remoteDisasterRecoveryConfigurations']
-        if 'remoteDisasterRecoveryType' in kwargs:
+        if remote_disaster_recovery_type is None and 'remoteDisasterRecoveryType' in kwargs:
             remote_disaster_recovery_type = kwargs['remoteDisasterRecoveryType']
-        if 'resourcePoolLeaderId' in kwargs:
+        if resource_pool_leader_id is None and 'resourcePoolLeaderId' in kwargs:
             resource_pool_leader_id = kwargs['resourcePoolLeaderId']
-        if 'resourcePoolSummary' in kwargs:
+        if resource_pool_summary is None and 'resourcePoolSummary' in kwargs:
             resource_pool_summary = kwargs['resourcePoolSummary']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'scheduledOperations' in kwargs:
+        if scheduled_operations is None and 'scheduledOperations' in kwargs:
             scheduled_operations = kwargs['scheduledOperations']
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'secretVersionNumber' in kwargs:
+        if secret_version_number is None and 'secretVersionNumber' in kwargs:
             secret_version_number = kwargs['secretVersionNumber']
-        if 'serviceConsoleUrl' in kwargs:
+        if service_console_url is None and 'serviceConsoleUrl' in kwargs:
             service_console_url = kwargs['serviceConsoleUrl']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'standbyDbs' in kwargs:
+        if standby_dbs is None and 'standbyDbs' in kwargs:
             standby_dbs = kwargs['standbyDbs']
-        if 'standbyWhitelistedIps' in kwargs:
+        if standby_whitelisted_ips is None and 'standbyWhitelistedIps' in kwargs:
             standby_whitelisted_ips = kwargs['standbyWhitelistedIps']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'supportedRegionsToCloneTos' in kwargs:
+        if supported_regions_to_clone_tos is None and 'supportedRegionsToCloneTos' in kwargs:
             supported_regions_to_clone_tos = kwargs['supportedRegionsToCloneTos']
-        if 'switchoverTo' in kwargs:
+        if switchover_to is None and 'switchoverTo' in kwargs:
             switchover_to = kwargs['switchoverTo']
-        if 'switchoverToRemotePeerId' in kwargs:
+        if switchover_to_remote_peer_id is None and 'switchoverToRemotePeerId' in kwargs:
             switchover_to_remote_peer_id = kwargs['switchoverToRemotePeerId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeDataGuardRoleChanged' in kwargs:
+        if time_data_guard_role_changed is None and 'timeDataGuardRoleChanged' in kwargs:
             time_data_guard_role_changed = kwargs['timeDataGuardRoleChanged']
-        if 'timeDeletionOfFreeAutonomousDatabase' in kwargs:
+        if time_deletion_of_free_autonomous_database is None and 'timeDeletionOfFreeAutonomousDatabase' in kwargs:
             time_deletion_of_free_autonomous_database = kwargs['timeDeletionOfFreeAutonomousDatabase']
-        if 'timeDisasterRecoveryRoleChanged' in kwargs:
+        if time_disaster_recovery_role_changed is None and 'timeDisasterRecoveryRoleChanged' in kwargs:
             time_disaster_recovery_role_changed = kwargs['timeDisasterRecoveryRoleChanged']
-        if 'timeLocalDataGuardEnabled' in kwargs:
+        if time_local_data_guard_enabled is None and 'timeLocalDataGuardEnabled' in kwargs:
             time_local_data_guard_enabled = kwargs['timeLocalDataGuardEnabled']
-        if 'timeMaintenanceBegin' in kwargs:
+        if time_maintenance_begin is None and 'timeMaintenanceBegin' in kwargs:
             time_maintenance_begin = kwargs['timeMaintenanceBegin']
-        if 'timeMaintenanceEnd' in kwargs:
+        if time_maintenance_end is None and 'timeMaintenanceEnd' in kwargs:
             time_maintenance_end = kwargs['timeMaintenanceEnd']
-        if 'timeOfJoiningResourcePool' in kwargs:
+        if time_of_joining_resource_pool is None and 'timeOfJoiningResourcePool' in kwargs:
             time_of_joining_resource_pool = kwargs['timeOfJoiningResourcePool']
-        if 'timeOfLastFailover' in kwargs:
+        if time_of_last_failover is None and 'timeOfLastFailover' in kwargs:
             time_of_last_failover = kwargs['timeOfLastFailover']
-        if 'timeOfLastRefresh' in kwargs:
+        if time_of_last_refresh is None and 'timeOfLastRefresh' in kwargs:
             time_of_last_refresh = kwargs['timeOfLastRefresh']
-        if 'timeOfLastRefreshPoint' in kwargs:
+        if time_of_last_refresh_point is None and 'timeOfLastRefreshPoint' in kwargs:
             time_of_last_refresh_point = kwargs['timeOfLastRefreshPoint']
-        if 'timeOfLastSwitchover' in kwargs:
+        if time_of_last_switchover is None and 'timeOfLastSwitchover' in kwargs:
             time_of_last_switchover = kwargs['timeOfLastSwitchover']
-        if 'timeOfNextRefresh' in kwargs:
+        if time_of_next_refresh is None and 'timeOfNextRefresh' in kwargs:
             time_of_next_refresh = kwargs['timeOfNextRefresh']
-        if 'timeReclamationOfFreeAutonomousDatabase' in kwargs:
+        if time_reclamation_of_free_autonomous_database is None and 'timeReclamationOfFreeAutonomousDatabase' in kwargs:
             time_reclamation_of_free_autonomous_database = kwargs['timeReclamationOfFreeAutonomousDatabase']
-        if 'timeUntilReconnectCloneEnabled' in kwargs:
+        if time_until_reconnect_clone_enabled is None and 'timeUntilReconnectCloneEnabled' in kwargs:
             time_until_reconnect_clone_enabled = kwargs['timeUntilReconnectCloneEnabled']
-        if 'totalBackupStorageSizeInGbs' in kwargs:
+        if total_backup_storage_size_in_gbs is None and 'totalBackupStorageSizeInGbs' in kwargs:
             total_backup_storage_size_in_gbs = kwargs['totalBackupStorageSizeInGbs']
-        if 'useLatestAvailableBackupTimeStamp' in kwargs:
+        if use_latest_available_backup_time_stamp is None and 'useLatestAvailableBackupTimeStamp' in kwargs:
             use_latest_available_backup_time_stamp = kwargs['useLatestAvailableBackupTimeStamp']
-        if 'usedDataStorageSizeInGbs' in kwargs:
+        if used_data_storage_size_in_gbs is None and 'usedDataStorageSizeInGbs' in kwargs:
             used_data_storage_size_in_gbs = kwargs['usedDataStorageSizeInGbs']
-        if 'usedDataStorageSizeInTbs' in kwargs:
+        if used_data_storage_size_in_tbs is None and 'usedDataStorageSizeInTbs' in kwargs:
             used_data_storage_size_in_tbs = kwargs['usedDataStorageSizeInTbs']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'whitelistedIps' in kwargs:
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
             whitelisted_ips = kwargs['whitelistedIps']
 
         if actual_used_data_storage_size_in_tbs is not None:
@@ -4443,11 +4447,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["refreshable_mode"] = refreshable_mode
             __props__.__dict__["remote_disaster_recovery_type"] = remote_disaster_recovery_type
             __props__.__dict__["resource_pool_leader_id"] = resource_pool_leader_id
-            if resource_pool_summary is not None and not isinstance(resource_pool_summary, AutonomousDatabaseResourcePoolSummaryArgs):
-                resource_pool_summary = resource_pool_summary or {}
-                def _setter(key, value):
-                    resource_pool_summary[key] = value
-                AutonomousDatabaseResourcePoolSummaryArgs._configure(_setter, **resource_pool_summary)
+            resource_pool_summary = _utilities.configure(resource_pool_summary, AutonomousDatabaseResourcePoolSummaryArgs, True)
             __props__.__dict__["resource_pool_summary"] = resource_pool_summary
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["scheduled_operations"] = scheduled_operations

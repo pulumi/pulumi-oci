@@ -34,11 +34,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.NewSnapshot(ctx, "testSnapshot", &FileStorage.SnapshotArgs{
 //				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				ExpirationTime: pulumi.Any(_var.Snapshot_expiration_time),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

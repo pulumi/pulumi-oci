@@ -35,11 +35,15 @@ class GetPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -73,9 +77,11 @@ class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -138,44 +144,72 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             dns_zones: Sequence[str],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_used_with_configuration_source_provider: bool,
-             nsg_id_lists: Sequence[str],
-             source_ips: Sequence[str],
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             dns_zones: Optional[Sequence[str]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_used_with_configuration_source_provider: Optional[bool] = None,
+             nsg_id_lists: Optional[Sequence[str]] = None,
+             source_ips: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsZones' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_zones is None and 'dnsZones' in kwargs:
             dns_zones = kwargs['dnsZones']
-        if 'freeformTags' in kwargs:
+        if dns_zones is None:
+            raise TypeError("Missing 'dns_zones' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isUsedWithConfigurationSourceProvider' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_used_with_configuration_source_provider is None and 'isUsedWithConfigurationSourceProvider' in kwargs:
             is_used_with_configuration_source_provider = kwargs['isUsedWithConfigurationSourceProvider']
-        if 'nsgIdLists' in kwargs:
+        if is_used_with_configuration_source_provider is None:
+            raise TypeError("Missing 'is_used_with_configuration_source_provider' argument")
+        if nsg_id_lists is None and 'nsgIdLists' in kwargs:
             nsg_id_lists = kwargs['nsgIdLists']
-        if 'sourceIps' in kwargs:
+        if nsg_id_lists is None:
+            raise TypeError("Missing 'nsg_id_lists' argument")
+        if source_ips is None and 'sourceIps' in kwargs:
             source_ips = kwargs['sourceIps']
-        if 'subnetId' in kwargs:
+        if source_ips is None:
+            raise TypeError("Missing 'source_ips' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -320,17 +354,23 @@ class GetStackConfigSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_source_type: str,
-             working_directory: str,
-             zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_source_type: Optional[str] = None,
+             working_directory: Optional[str] = None,
+             zip_file_base64encoded: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configSourceType' in kwargs:
+        if config_source_type is None and 'configSourceType' in kwargs:
             config_source_type = kwargs['configSourceType']
-        if 'workingDirectory' in kwargs:
+        if config_source_type is None:
+            raise TypeError("Missing 'config_source_type' argument")
+        if working_directory is None and 'workingDirectory' in kwargs:
             working_directory = kwargs['workingDirectory']
-        if 'zipFileBase64encoded' in kwargs:
+        if working_directory is None:
+            raise TypeError("Missing 'working_directory' argument")
+        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
             zip_file_base64encoded = kwargs['zipFileBase64encoded']
+        if zip_file_base64encoded is None:
+            raise TypeError("Missing 'zip_file_base64encoded' argument")
 
         _setter("config_source_type", config_source_type)
         _setter("working_directory", working_directory)
@@ -367,11 +407,15 @@ class GetStacksFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -439,30 +483,50 @@ class GetStacksStackResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             config_source: 'outputs.GetStacksStackConfigSourceResult',
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             state: str,
-             time_created: str,
-             variables: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             config_source: Optional['outputs.GetStacksStackConfigSourceResult'] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             variables: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configSource' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config_source is None and 'configSource' in kwargs:
             config_source = kwargs['configSource']
-        if 'definedTags' in kwargs:
+        if config_source is None:
+            raise TypeError("Missing 'config_source' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if variables is None:
+            raise TypeError("Missing 'variables' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("config_source", config_source)
@@ -571,17 +635,23 @@ class GetStacksStackConfigSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_source_type: str,
-             working_directory: str,
-             zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_source_type: Optional[str] = None,
+             working_directory: Optional[str] = None,
+             zip_file_base64encoded: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configSourceType' in kwargs:
+        if config_source_type is None and 'configSourceType' in kwargs:
             config_source_type = kwargs['configSourceType']
-        if 'workingDirectory' in kwargs:
+        if config_source_type is None:
+            raise TypeError("Missing 'config_source_type' argument")
+        if working_directory is None and 'workingDirectory' in kwargs:
             working_directory = kwargs['workingDirectory']
-        if 'zipFileBase64encoded' in kwargs:
+        if working_directory is None:
+            raise TypeError("Missing 'working_directory' argument")
+        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
             zip_file_base64encoded = kwargs['zipFileBase64encoded']
+        if zip_file_base64encoded is None:
+            raise TypeError("Missing 'zip_file_base64encoded' argument")
 
         _setter("config_source_type", config_source_type)
         _setter("working_directory", working_directory)

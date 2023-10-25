@@ -41,17 +41,21 @@ class ActionCreateZoneFromZoneFileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             create_zone_from_zone_file_details: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createZoneFromZoneFileDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_zone_from_zone_file_details is None and 'createZoneFromZoneFileDetails' in kwargs:
             create_zone_from_zone_file_details = kwargs['createZoneFromZoneFileDetails']
-        if 'viewId' in kwargs:
+        if create_zone_from_zone_file_details is None:
+            raise TypeError("Missing 'create_zone_from_zone_file_details' argument")
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
 
         _setter("compartment_id", compartment_id)
@@ -202,29 +206,29 @@ class _ActionCreateZoneFromZoneFileState:
              view_id: Optional[pulumi.Input[str]] = None,
              zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]] = None,
              zone_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createZoneFromZoneFileDetails' in kwargs:
+        if create_zone_from_zone_file_details is None and 'createZoneFromZoneFileDetails' in kwargs:
             create_zone_from_zone_file_details = kwargs['createZoneFromZoneFileDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'externalDownstreams' in kwargs:
+        if external_downstreams is None and 'externalDownstreams' in kwargs:
             external_downstreams = kwargs['externalDownstreams']
-        if 'externalMasters' in kwargs:
+        if external_masters is None and 'externalMasters' in kwargs:
             external_masters = kwargs['externalMasters']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isProtected' in kwargs:
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
-        if 'zoneTransferServers' in kwargs:
+        if zone_transfer_servers is None and 'zoneTransferServers' in kwargs:
             zone_transfer_servers = kwargs['zoneTransferServers']
-        if 'zoneType' in kwargs:
+        if zone_type is None and 'zoneType' in kwargs:
             zone_type = kwargs['zoneType']
 
         if compartment_id is not None:

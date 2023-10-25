@@ -53,31 +53,43 @@ class RedisClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             node_count: pulumi.Input[int],
-             node_memory_in_gbs: pulumi.Input[float],
-             software_version: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             software_version: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'nodeCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nodeMemoryInGbs' in kwargs:
+        if node_count is None:
+            raise TypeError("Missing 'node_count' argument")
+        if node_memory_in_gbs is None and 'nodeMemoryInGbs' in kwargs:
             node_memory_in_gbs = kwargs['nodeMemoryInGbs']
-        if 'softwareVersion' in kwargs:
+        if node_memory_in_gbs is None:
+            raise TypeError("Missing 'node_memory_in_gbs' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetId' in kwargs:
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -280,41 +292,41 @@ class _RedisClusterState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeCollections' in kwargs:
+        if node_collections is None and 'nodeCollections' in kwargs:
             node_collections = kwargs['nodeCollections']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nodeMemoryInGbs' in kwargs:
+        if node_memory_in_gbs is None and 'nodeMemoryInGbs' in kwargs:
             node_memory_in_gbs = kwargs['nodeMemoryInGbs']
-        if 'primaryEndpointIpAddress' in kwargs:
+        if primary_endpoint_ip_address is None and 'primaryEndpointIpAddress' in kwargs:
             primary_endpoint_ip_address = kwargs['primaryEndpointIpAddress']
-        if 'primaryFqdn' in kwargs:
+        if primary_fqdn is None and 'primaryFqdn' in kwargs:
             primary_fqdn = kwargs['primaryFqdn']
-        if 'replicasEndpointIpAddress' in kwargs:
+        if replicas_endpoint_ip_address is None and 'replicasEndpointIpAddress' in kwargs:
             replicas_endpoint_ip_address = kwargs['replicasEndpointIpAddress']
-        if 'replicasFqdn' in kwargs:
+        if replicas_fqdn is None and 'replicasFqdn' in kwargs:
             replicas_fqdn = kwargs['replicasFqdn']
-        if 'softwareVersion' in kwargs:
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

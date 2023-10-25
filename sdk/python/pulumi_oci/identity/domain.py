@@ -74,11 +74,11 @@ class DomainArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             description: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             home_region: pulumi.Input[str],
-             license_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             home_region: Optional[pulumi.Input[str]] = None,
+             license_type: Optional[pulumi.Input[str]] = None,
              admin_email: Optional[pulumi.Input[str]] = None,
              admin_first_name: Optional[pulumi.Input[str]] = None,
              admin_last_name: Optional[pulumi.Input[str]] = None,
@@ -89,33 +89,43 @@ class DomainArgs:
              is_notification_bypassed: Optional[pulumi.Input[bool]] = None,
              is_primary_email_required: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'homeRegion' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if home_region is None and 'homeRegion' in kwargs:
             home_region = kwargs['homeRegion']
-        if 'licenseType' in kwargs:
+        if home_region is None:
+            raise TypeError("Missing 'home_region' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'adminEmail' in kwargs:
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+        if admin_email is None and 'adminEmail' in kwargs:
             admin_email = kwargs['adminEmail']
-        if 'adminFirstName' in kwargs:
+        if admin_first_name is None and 'adminFirstName' in kwargs:
             admin_first_name = kwargs['adminFirstName']
-        if 'adminLastName' in kwargs:
+        if admin_last_name is None and 'adminLastName' in kwargs:
             admin_last_name = kwargs['adminLastName']
-        if 'adminUserName' in kwargs:
+        if admin_user_name is None and 'adminUserName' in kwargs:
             admin_user_name = kwargs['adminUserName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isHiddenOnLogin' in kwargs:
+        if is_hidden_on_login is None and 'isHiddenOnLogin' in kwargs:
             is_hidden_on_login = kwargs['isHiddenOnLogin']
-        if 'isNotificationBypassed' in kwargs:
+        if is_notification_bypassed is None and 'isNotificationBypassed' in kwargs:
             is_notification_bypassed = kwargs['isNotificationBypassed']
-        if 'isPrimaryEmailRequired' in kwargs:
+        if is_primary_email_required is None and 'isPrimaryEmailRequired' in kwargs:
             is_primary_email_required = kwargs['isPrimaryEmailRequired']
 
         _setter("compartment_id", compartment_id)
@@ -429,41 +439,41 @@ class _DomainState:
              time_created: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminEmail' in kwargs:
+        if admin_email is None and 'adminEmail' in kwargs:
             admin_email = kwargs['adminEmail']
-        if 'adminFirstName' in kwargs:
+        if admin_first_name is None and 'adminFirstName' in kwargs:
             admin_first_name = kwargs['adminFirstName']
-        if 'adminLastName' in kwargs:
+        if admin_last_name is None and 'adminLastName' in kwargs:
             admin_last_name = kwargs['adminLastName']
-        if 'adminUserName' in kwargs:
+        if admin_user_name is None and 'adminUserName' in kwargs:
             admin_user_name = kwargs['adminUserName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'homeRegion' in kwargs:
+        if home_region is None and 'homeRegion' in kwargs:
             home_region = kwargs['homeRegion']
-        if 'homeRegionUrl' in kwargs:
+        if home_region_url is None and 'homeRegionUrl' in kwargs:
             home_region_url = kwargs['homeRegionUrl']
-        if 'isHiddenOnLogin' in kwargs:
+        if is_hidden_on_login is None and 'isHiddenOnLogin' in kwargs:
             is_hidden_on_login = kwargs['isHiddenOnLogin']
-        if 'isNotificationBypassed' in kwargs:
+        if is_notification_bypassed is None and 'isNotificationBypassed' in kwargs:
             is_notification_bypassed = kwargs['isNotificationBypassed']
-        if 'isPrimaryEmailRequired' in kwargs:
+        if is_primary_email_required is None and 'isPrimaryEmailRequired' in kwargs:
             is_primary_email_required = kwargs['isPrimaryEmailRequired']
-        if 'licenseType' in kwargs:
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'replicaRegions' in kwargs:
+        if replica_regions is None and 'replicaRegions' in kwargs:
             replica_regions = kwargs['replicaRegions']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if admin_email is not None:

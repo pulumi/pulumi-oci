@@ -43,25 +43,27 @@ class CrossConnectGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              customer_reference_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'customerReferenceName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if customer_reference_name is None and 'customerReferenceName' in kwargs:
             customer_reference_name = kwargs['customerReferenceName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'macsecProperties' in kwargs:
+        if macsec_properties is None and 'macsecProperties' in kwargs:
             macsec_properties = kwargs['macsecProperties']
 
         _setter("compartment_id", compartment_id)
@@ -205,25 +207,25 @@ class _CrossConnectGroupState:
              oci_physical_device_name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'customerReferenceName' in kwargs:
+        if customer_reference_name is None and 'customerReferenceName' in kwargs:
             customer_reference_name = kwargs['customerReferenceName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'macsecProperties' in kwargs:
+        if macsec_properties is None and 'macsecProperties' in kwargs:
             macsec_properties = kwargs['macsecProperties']
-        if 'ociLogicalDeviceName' in kwargs:
+        if oci_logical_device_name is None and 'ociLogicalDeviceName' in kwargs:
             oci_logical_device_name = kwargs['ociLogicalDeviceName']
-        if 'ociPhysicalDeviceName' in kwargs:
+        if oci_physical_device_name is None and 'ociPhysicalDeviceName' in kwargs:
             oci_physical_device_name = kwargs['ociPhysicalDeviceName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -548,11 +550,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if macsec_properties is not None and not isinstance(macsec_properties, CrossConnectGroupMacsecPropertiesArgs):
-                macsec_properties = macsec_properties or {}
-                def _setter(key, value):
-                    macsec_properties[key] = value
-                CrossConnectGroupMacsecPropertiesArgs._configure(_setter, **macsec_properties)
+            macsec_properties = _utilities.configure(macsec_properties, CrossConnectGroupMacsecPropertiesArgs, True)
             __props__.__dict__["macsec_properties"] = macsec_properties
             __props__.__dict__["oci_logical_device_name"] = None
             __props__.__dict__["oci_physical_device_name"] = None

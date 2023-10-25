@@ -59,8 +59,8 @@ class ExadataInsightArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             entity_source: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             entity_source: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
              enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
@@ -70,27 +70,31 @@ class ExadataInsightArgs:
              is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
              member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'entitySource' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if entity_source is None and 'entitySource' in kwargs:
             entity_source = kwargs['entitySource']
-        if 'definedTags' in kwargs:
+        if entity_source is None:
+            raise TypeError("Missing 'entity_source' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'enterpriseManagerBridgeId' in kwargs:
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
             enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if 'enterpriseManagerEntityIdentifier' in kwargs:
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
             enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if 'enterpriseManagerIdentifier' in kwargs:
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
             enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if 'exadataInfraId' in kwargs:
+        if exadata_infra_id is None and 'exadataInfraId' in kwargs:
             exadata_infra_id = kwargs['exadataInfraId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoSyncEnabled' in kwargs:
+        if is_auto_sync_enabled is None and 'isAutoSyncEnabled' in kwargs:
             is_auto_sync_enabled = kwargs['isAutoSyncEnabled']
-        if 'memberVmClusterDetails' in kwargs:
+        if member_vm_cluster_details is None and 'memberVmClusterDetails' in kwargs:
             member_vm_cluster_details = kwargs['memberVmClusterDetails']
 
         _setter("compartment_id", compartment_id)
@@ -359,55 +363,55 @@ class _ExadataInsightState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'enterpriseManagerBridgeId' in kwargs:
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
             enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if 'enterpriseManagerEntityDisplayName' in kwargs:
+        if enterprise_manager_entity_display_name is None and 'enterpriseManagerEntityDisplayName' in kwargs:
             enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
-        if 'enterpriseManagerEntityIdentifier' in kwargs:
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
             enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if 'enterpriseManagerEntityName' in kwargs:
+        if enterprise_manager_entity_name is None and 'enterpriseManagerEntityName' in kwargs:
             enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
-        if 'enterpriseManagerEntityType' in kwargs:
+        if enterprise_manager_entity_type is None and 'enterpriseManagerEntityType' in kwargs:
             enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
-        if 'enterpriseManagerIdentifier' in kwargs:
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
             enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if 'entitySource' in kwargs:
+        if entity_source is None and 'entitySource' in kwargs:
             entity_source = kwargs['entitySource']
-        if 'exadataDisplayName' in kwargs:
+        if exadata_display_name is None and 'exadataDisplayName' in kwargs:
             exadata_display_name = kwargs['exadataDisplayName']
-        if 'exadataInfraId' in kwargs:
+        if exadata_infra_id is None and 'exadataInfraId' in kwargs:
             exadata_infra_id = kwargs['exadataInfraId']
-        if 'exadataInfraResourceType' in kwargs:
+        if exadata_infra_resource_type is None and 'exadataInfraResourceType' in kwargs:
             exadata_infra_resource_type = kwargs['exadataInfraResourceType']
-        if 'exadataName' in kwargs:
+        if exadata_name is None and 'exadataName' in kwargs:
             exadata_name = kwargs['exadataName']
-        if 'exadataRackType' in kwargs:
+        if exadata_rack_type is None and 'exadataRackType' in kwargs:
             exadata_rack_type = kwargs['exadataRackType']
-        if 'exadataShape' in kwargs:
+        if exadata_shape is None and 'exadataShape' in kwargs:
             exadata_shape = kwargs['exadataShape']
-        if 'exadataType' in kwargs:
+        if exadata_type is None and 'exadataType' in kwargs:
             exadata_type = kwargs['exadataType']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoSyncEnabled' in kwargs:
+        if is_auto_sync_enabled is None and 'isAutoSyncEnabled' in kwargs:
             is_auto_sync_enabled = kwargs['isAutoSyncEnabled']
-        if 'isVirtualizedExadata' in kwargs:
+        if is_virtualized_exadata is None and 'isVirtualizedExadata' in kwargs:
             is_virtualized_exadata = kwargs['isVirtualizedExadata']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'memberVmClusterDetails' in kwargs:
+        if member_vm_cluster_details is None and 'memberVmClusterDetails' in kwargs:
             member_vm_cluster_details = kwargs['memberVmClusterDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

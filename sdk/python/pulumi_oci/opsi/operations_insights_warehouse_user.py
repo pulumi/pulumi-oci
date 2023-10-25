@@ -54,32 +54,40 @@ class OperationsInsightsWarehouseUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             connection_password: pulumi.Input[str],
-             is_awr_data_access: pulumi.Input[bool],
-             operations_insights_warehouse_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_password: Optional[pulumi.Input[str]] = None,
+             is_awr_data_access: Optional[pulumi.Input[bool]] = None,
+             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_em_data_access: Optional[pulumi.Input[bool]] = None,
              is_opsi_data_access: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionPassword' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_password is None and 'connectionPassword' in kwargs:
             connection_password = kwargs['connectionPassword']
-        if 'isAwrDataAccess' in kwargs:
+        if connection_password is None:
+            raise TypeError("Missing 'connection_password' argument")
+        if is_awr_data_access is None and 'isAwrDataAccess' in kwargs:
             is_awr_data_access = kwargs['isAwrDataAccess']
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if is_awr_data_access is None:
+            raise TypeError("Missing 'is_awr_data_access' argument")
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if 'definedTags' in kwargs:
+        if operations_insights_warehouse_id is None:
+            raise TypeError("Missing 'operations_insights_warehouse_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEmDataAccess' in kwargs:
+        if is_em_data_access is None and 'isEmDataAccess' in kwargs:
             is_em_data_access = kwargs['isEmDataAccess']
-        if 'isOpsiDataAccess' in kwargs:
+        if is_opsi_data_access is None and 'isOpsiDataAccess' in kwargs:
             is_opsi_data_access = kwargs['isOpsiDataAccess']
 
         _setter("compartment_id", compartment_id)
@@ -282,31 +290,31 @@ class _OperationsInsightsWarehouseUserState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionPassword' in kwargs:
+        if connection_password is None and 'connectionPassword' in kwargs:
             connection_password = kwargs['connectionPassword']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAwrDataAccess' in kwargs:
+        if is_awr_data_access is None and 'isAwrDataAccess' in kwargs:
             is_awr_data_access = kwargs['isAwrDataAccess']
-        if 'isEmDataAccess' in kwargs:
+        if is_em_data_access is None and 'isEmDataAccess' in kwargs:
             is_em_data_access = kwargs['isEmDataAccess']
-        if 'isOpsiDataAccess' in kwargs:
+        if is_opsi_data_access is None and 'isOpsiDataAccess' in kwargs:
             is_opsi_data_access = kwargs['isOpsiDataAccess']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

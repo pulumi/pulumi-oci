@@ -169,9 +169,9 @@ class CertificateExtension(dict):
              is_critical: Optional[bool] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCritical' in kwargs:
+        if is_critical is None and 'isCritical' in kwargs:
             is_critical = kwargs['isCritical']
 
         if is_critical is not None:
@@ -268,15 +268,15 @@ class CertificateIssuerName(dict):
              organization: Optional[str] = None,
              organizational_unit: Optional[str] = None,
              state_province: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
 
         if common_name is not None:
@@ -391,9 +391,9 @@ class CertificatePublicKeyInfo(dict):
              algorithm: Optional[str] = None,
              exponent: Optional[int] = None,
              key_size: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
 
         if algorithm is not None:
@@ -490,15 +490,15 @@ class CertificateSubjectName(dict):
              organization: Optional[str] = None,
              organizational_unit: Optional[str] = None,
              state_province: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
 
         if common_name is not None:
@@ -603,13 +603,21 @@ class HttpRedirectTarget(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             path: str,
-             protocol: str,
-             query: str,
+             host: Optional[str] = None,
+             path: Optional[str] = None,
+             protocol: Optional[str] = None,
+             query: Optional[str] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
 
         _setter("host", host)
         _setter("path", path)
@@ -709,18 +717,22 @@ class PolicyOrigin(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             label: str,
-             uri: str,
+             label: Optional[str] = None,
+             uri: Optional[str] = None,
              custom_headers: Optional[Sequence['outputs.PolicyOriginCustomHeader']] = None,
              http_port: Optional[int] = None,
              https_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customHeaders' in kwargs:
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+        if custom_headers is None and 'customHeaders' in kwargs:
             custom_headers = kwargs['customHeaders']
-        if 'httpPort' in kwargs:
+        if http_port is None and 'httpPort' in kwargs:
             http_port = kwargs['httpPort']
-        if 'httpsPort' in kwargs:
+        if https_port is None and 'httpsPort' in kwargs:
             https_port = kwargs['httpsPort']
 
         _setter("label", label)
@@ -791,10 +803,14 @@ class PolicyOriginCustomHeader(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -850,12 +866,16 @@ class PolicyOriginGroup(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             label: str,
-             origin_groups: Sequence['outputs.PolicyOriginGroupOriginGroup'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             label: Optional[str] = None,
+             origin_groups: Optional[Sequence['outputs.PolicyOriginGroupOriginGroup']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'originGroups' in kwargs:
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
 
         _setter("label", label)
         _setter("origin_groups", origin_groups)
@@ -887,10 +907,12 @@ class PolicyOriginGroupOriginGroup(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             origin: str,
+             origin: Optional[str] = None,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
 
         _setter("origin", origin)
         if weight is not None:
@@ -1038,35 +1060,35 @@ class PolicyPolicyConfig(dict):
              load_balancing_method: Optional['outputs.PolicyPolicyConfigLoadBalancingMethod'] = None,
              tls_protocols: Optional[Sequence[str]] = None,
              websocket_path_prefixes: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'cipherGroup' in kwargs:
+        if cipher_group is None and 'cipherGroup' in kwargs:
             cipher_group = kwargs['cipherGroup']
-        if 'clientAddressHeader' in kwargs:
+        if client_address_header is None and 'clientAddressHeader' in kwargs:
             client_address_header = kwargs['clientAddressHeader']
-        if 'healthChecks' in kwargs:
+        if health_checks is None and 'healthChecks' in kwargs:
             health_checks = kwargs['healthChecks']
-        if 'isBehindCdn' in kwargs:
+        if is_behind_cdn is None and 'isBehindCdn' in kwargs:
             is_behind_cdn = kwargs['isBehindCdn']
-        if 'isCacheControlRespected' in kwargs:
+        if is_cache_control_respected is None and 'isCacheControlRespected' in kwargs:
             is_cache_control_respected = kwargs['isCacheControlRespected']
-        if 'isHttpsEnabled' in kwargs:
+        if is_https_enabled is None and 'isHttpsEnabled' in kwargs:
             is_https_enabled = kwargs['isHttpsEnabled']
-        if 'isHttpsForced' in kwargs:
+        if is_https_forced is None and 'isHttpsForced' in kwargs:
             is_https_forced = kwargs['isHttpsForced']
-        if 'isOriginCompressionEnabled' in kwargs:
+        if is_origin_compression_enabled is None and 'isOriginCompressionEnabled' in kwargs:
             is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
-        if 'isResponseBufferingEnabled' in kwargs:
+        if is_response_buffering_enabled is None and 'isResponseBufferingEnabled' in kwargs:
             is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
-        if 'isSniEnabled' in kwargs:
+        if is_sni_enabled is None and 'isSniEnabled' in kwargs:
             is_sni_enabled = kwargs['isSniEnabled']
-        if 'loadBalancingMethod' in kwargs:
+        if load_balancing_method is None and 'loadBalancingMethod' in kwargs:
             load_balancing_method = kwargs['loadBalancingMethod']
-        if 'tlsProtocols' in kwargs:
+        if tls_protocols is None and 'tlsProtocols' in kwargs:
             tls_protocols = kwargs['tlsProtocols']
-        if 'websocketPathPrefixes' in kwargs:
+        if websocket_path_prefixes is None and 'websocketPathPrefixes' in kwargs:
             websocket_path_prefixes = kwargs['websocketPathPrefixes']
 
         if certificate_id is not None:
@@ -1324,23 +1346,23 @@ class PolicyPolicyConfigHealthChecks(dict):
              path: Optional[str] = None,
              timeout_in_seconds: Optional[int] = None,
              unhealthy_threshold: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expectedResponseCodeGroups' in kwargs:
+        if expected_response_code_groups is None and 'expectedResponseCodeGroups' in kwargs:
             expected_response_code_groups = kwargs['expectedResponseCodeGroups']
-        if 'expectedResponseText' in kwargs:
+        if expected_response_text is None and 'expectedResponseText' in kwargs:
             expected_response_text = kwargs['expectedResponseText']
-        if 'healthyThreshold' in kwargs:
+        if healthy_threshold is None and 'healthyThreshold' in kwargs:
             healthy_threshold = kwargs['healthyThreshold']
-        if 'intervalInSeconds' in kwargs:
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isResponseTextCheckEnabled' in kwargs:
+        if is_response_text_check_enabled is None and 'isResponseTextCheckEnabled' in kwargs:
             is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'unhealthyThreshold' in kwargs:
+        if unhealthy_threshold is None and 'unhealthyThreshold' in kwargs:
             unhealthy_threshold = kwargs['unhealthyThreshold']
 
         if expected_response_code_groups is not None:
@@ -1511,13 +1533,15 @@ class PolicyPolicyConfigLoadBalancingMethod(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             method: str,
+             method: Optional[str] = None,
              domain: Optional[str] = None,
              expiration_time_in_seconds: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expirationTimeInSeconds' in kwargs:
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if expiration_time_in_seconds is None and 'expirationTimeInSeconds' in kwargs:
             expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
 
         _setter("method", method)
@@ -1660,25 +1684,25 @@ class PolicyWafConfig(dict):
              origin_groups: Optional[Sequence[str]] = None,
              protection_settings: Optional['outputs.PolicyWafConfigProtectionSettings'] = None,
              whitelists: Optional[Sequence['outputs.PolicyWafConfigWhitelist']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessRules' in kwargs:
+        if access_rules is None and 'accessRules' in kwargs:
             access_rules = kwargs['accessRules']
-        if 'addressRateLimiting' in kwargs:
+        if address_rate_limiting is None and 'addressRateLimiting' in kwargs:
             address_rate_limiting = kwargs['addressRateLimiting']
-        if 'cachingRules' in kwargs:
+        if caching_rules is None and 'cachingRules' in kwargs:
             caching_rules = kwargs['cachingRules']
-        if 'customProtectionRules' in kwargs:
+        if custom_protection_rules is None and 'customProtectionRules' in kwargs:
             custom_protection_rules = kwargs['customProtectionRules']
-        if 'deviceFingerprintChallenge' in kwargs:
+        if device_fingerprint_challenge is None and 'deviceFingerprintChallenge' in kwargs:
             device_fingerprint_challenge = kwargs['deviceFingerprintChallenge']
-        if 'humanInteractionChallenge' in kwargs:
+        if human_interaction_challenge is None and 'humanInteractionChallenge' in kwargs:
             human_interaction_challenge = kwargs['humanInteractionChallenge']
-        if 'jsChallenge' in kwargs:
+        if js_challenge is None and 'jsChallenge' in kwargs:
             js_challenge = kwargs['jsChallenge']
-        if 'originGroups' in kwargs:
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
-        if 'protectionSettings' in kwargs:
+        if protection_settings is None and 'protectionSettings' in kwargs:
             protection_settings = kwargs['protectionSettings']
 
         if access_rules is not None:
@@ -1913,9 +1937,9 @@ class PolicyWafConfigAccessRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             criterias: Sequence['outputs.PolicyWafConfigAccessRuleCriteria'],
-             name: str,
+             action: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.PolicyWafConfigAccessRuleCriteria']] = None,
+             name: Optional[str] = None,
              block_action: Optional[str] = None,
              block_error_page_code: Optional[str] = None,
              block_error_page_description: Optional[str] = None,
@@ -1929,33 +1953,39 @@ class PolicyWafConfigAccessRule(dict):
              redirect_response_code: Optional[str] = None,
              redirect_url: Optional[str] = None,
              response_header_manipulations: Optional[Sequence['outputs.PolicyWafConfigAccessRuleResponseHeaderManipulation']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'bypassChallenges' in kwargs:
+        if bypass_challenges is None and 'bypassChallenges' in kwargs:
             bypass_challenges = kwargs['bypassChallenges']
-        if 'captchaFooter' in kwargs:
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
-        if 'redirectResponseCode' in kwargs:
+        if redirect_response_code is None and 'redirectResponseCode' in kwargs:
             redirect_response_code = kwargs['redirectResponseCode']
-        if 'redirectUrl' in kwargs:
+        if redirect_url is None and 'redirectUrl' in kwargs:
             redirect_url = kwargs['redirectUrl']
-        if 'responseHeaderManipulations' in kwargs:
+        if response_header_manipulations is None and 'responseHeaderManipulations' in kwargs:
             response_header_manipulations = kwargs['responseHeaderManipulations']
 
         _setter("action", action)
@@ -2189,12 +2219,16 @@ class PolicyWafConfigAccessRuleCriteria(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             value: str,
+             condition: Optional[str] = None,
+             value: Optional[str] = None,
              is_case_sensitive: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
 
         _setter("condition", condition)
@@ -2272,11 +2306,15 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulation(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             header: str,
+             action: Optional[str] = None,
+             header: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if header is None:
+            raise TypeError("Missing 'header' argument")
 
         _setter("action", action)
         _setter("header", header)
@@ -2354,19 +2392,21 @@ class PolicyWafConfigAddressRateLimiting(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
+             is_enabled: Optional[bool] = None,
              allowed_rate_per_address: Optional[int] = None,
              block_response_code: Optional[int] = None,
              max_delayed_count_per_address: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'allowedRatePerAddress' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if allowed_rate_per_address is None and 'allowedRatePerAddress' in kwargs:
             allowed_rate_per_address = kwargs['allowedRatePerAddress']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'maxDelayedCountPerAddress' in kwargs:
+        if max_delayed_count_per_address is None and 'maxDelayedCountPerAddress' in kwargs:
             max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
 
         _setter("is_enabled", is_enabled)
@@ -2467,20 +2507,26 @@ class PolicyWafConfigCachingRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             criterias: Sequence['outputs.PolicyWafConfigCachingRuleCriteria'],
-             name: str,
+             action: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.PolicyWafConfigCachingRuleCriteria']] = None,
+             name: Optional[str] = None,
              caching_duration: Optional[str] = None,
              client_caching_duration: Optional[str] = None,
              is_client_caching_enabled: Optional[bool] = None,
              key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cachingDuration' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if caching_duration is None and 'cachingDuration' in kwargs:
             caching_duration = kwargs['cachingDuration']
-        if 'clientCachingDuration' in kwargs:
+        if client_caching_duration is None and 'clientCachingDuration' in kwargs:
             client_caching_duration = kwargs['clientCachingDuration']
-        if 'isClientCachingEnabled' in kwargs:
+        if is_client_caching_enabled is None and 'isClientCachingEnabled' in kwargs:
             is_client_caching_enabled = kwargs['isClientCachingEnabled']
 
         _setter("action", action)
@@ -2598,10 +2644,14 @@ class PolicyWafConfigCachingRuleCriteria(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("value", value)
@@ -2705,24 +2755,34 @@ class PolicyWafConfigCaptcha(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             failure_message: str,
-             session_expiration_in_seconds: int,
-             submit_label: str,
-             title: str,
-             url: str,
+             failure_message: Optional[str] = None,
+             session_expiration_in_seconds: Optional[int] = None,
+             submit_label: Optional[str] = None,
+             title: Optional[str] = None,
+             url: Optional[str] = None,
              footer_text: Optional[str] = None,
              header_text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'failureMessage' in kwargs:
+        if failure_message is None and 'failureMessage' in kwargs:
             failure_message = kwargs['failureMessage']
-        if 'sessionExpirationInSeconds' in kwargs:
+        if failure_message is None:
+            raise TypeError("Missing 'failure_message' argument")
+        if session_expiration_in_seconds is None and 'sessionExpirationInSeconds' in kwargs:
             session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
-        if 'submitLabel' in kwargs:
+        if session_expiration_in_seconds is None:
+            raise TypeError("Missing 'session_expiration_in_seconds' argument")
+        if submit_label is None and 'submitLabel' in kwargs:
             submit_label = kwargs['submitLabel']
-        if 'footerText' in kwargs:
+        if submit_label is None:
+            raise TypeError("Missing 'submit_label' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if footer_text is None and 'footerText' in kwargs:
             footer_text = kwargs['footerText']
-        if 'headerText' in kwargs:
+        if header_text is None and 'headerText' in kwargs:
             header_text = kwargs['headerText']
 
         _setter("failure_message", failure_message)
@@ -2815,7 +2875,7 @@ class PolicyWafConfigCustomProtectionRule(dict):
              action: Optional[str] = None,
              exclusions: Optional[Sequence['outputs.PolicyWafConfigCustomProtectionRuleExclusion']] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if action is not None:
@@ -2869,7 +2929,7 @@ class PolicyWafConfigCustomProtectionRuleExclusion(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[Sequence[str]] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if exclusions is not None:
@@ -2958,7 +3018,7 @@ class PolicyWafConfigDeviceFingerprintChallenge(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
+             is_enabled: Optional[bool] = None,
              action: Optional[str] = None,
              action_expiration_in_seconds: Optional[int] = None,
              challenge_settings: Optional['outputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettings'] = None,
@@ -2966,21 +3026,23 @@ class PolicyWafConfigDeviceFingerprintChallenge(dict):
              failure_threshold_expiration_in_seconds: Optional[int] = None,
              max_address_count: Optional[int] = None,
              max_address_count_expiration_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'actionExpirationInSeconds' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'maxAddressCount' in kwargs:
+        if max_address_count is None and 'maxAddressCount' in kwargs:
             max_address_count = kwargs['maxAddressCount']
-        if 'maxAddressCountExpirationInSeconds' in kwargs:
+        if max_address_count_expiration_in_seconds is None and 'maxAddressCountExpirationInSeconds' in kwargs:
             max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
 
         _setter("is_enabled", is_enabled)
@@ -3144,25 +3206,25 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
 
         if block_action is not None:
@@ -3331,7 +3393,7 @@ class PolicyWafConfigHumanInteractionChallenge(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
+             is_enabled: Optional[bool] = None,
              action: Optional[str] = None,
              action_expiration_in_seconds: Optional[int] = None,
              challenge_settings: Optional['outputs.PolicyWafConfigHumanInteractionChallengeChallengeSettings'] = None,
@@ -3341,25 +3403,27 @@ class PolicyWafConfigHumanInteractionChallenge(dict):
              is_nat_enabled: Optional[bool] = None,
              recording_period_in_seconds: Optional[int] = None,
              set_http_header: Optional['outputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeader'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'actionExpirationInSeconds' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'interactionThreshold' in kwargs:
+        if interaction_threshold is None and 'interactionThreshold' in kwargs:
             interaction_threshold = kwargs['interactionThreshold']
-        if 'isNatEnabled' in kwargs:
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'recordingPeriodInSeconds' in kwargs:
+        if recording_period_in_seconds is None and 'recordingPeriodInSeconds' in kwargs:
             recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
-        if 'setHttpHeader' in kwargs:
+        if set_http_header is None and 'setHttpHeader' in kwargs:
             set_http_header = kwargs['setHttpHeader']
 
         _setter("is_enabled", is_enabled)
@@ -3543,25 +3607,25 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
 
         if block_action is not None:
@@ -3677,10 +3741,14 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeader(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -3773,7 +3841,7 @@ class PolicyWafConfigJsChallenge(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
+             is_enabled: Optional[bool] = None,
              action: Optional[str] = None,
              action_expiration_in_seconds: Optional[int] = None,
              are_redirects_challenged: Optional[bool] = None,
@@ -3782,21 +3850,23 @@ class PolicyWafConfigJsChallenge(dict):
              failure_threshold: Optional[int] = None,
              is_nat_enabled: Optional[bool] = None,
              set_http_header: Optional['outputs.PolicyWafConfigJsChallengeSetHttpHeader'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'actionExpirationInSeconds' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'areRedirectsChallenged' in kwargs:
+        if are_redirects_challenged is None and 'areRedirectsChallenged' in kwargs:
             are_redirects_challenged = kwargs['areRedirectsChallenged']
-        if 'challengeSettings' in kwargs:
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'isNatEnabled' in kwargs:
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'setHttpHeader' in kwargs:
+        if set_http_header is None and 'setHttpHeader' in kwargs:
             set_http_header = kwargs['setHttpHeader']
 
         _setter("is_enabled", is_enabled)
@@ -3970,25 +4040,25 @@ class PolicyWafConfigJsChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
 
         if block_action is not None:
@@ -4145,12 +4215,16 @@ class PolicyWafConfigJsChallengeCriteria(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             value: str,
+             condition: Optional[str] = None,
+             value: Optional[str] = None,
              is_case_sensitive: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
 
         _setter("condition", condition)
@@ -4229,10 +4303,14 @@ class PolicyWafConfigJsChallengeSetHttpHeader(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -4386,33 +4464,33 @@ class PolicyWafConfigProtectionSettings(dict):
              max_total_name_length_of_arguments: Optional[int] = None,
              media_types: Optional[Sequence[str]] = None,
              recommendations_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedHttpMethods' in kwargs:
+        if allowed_http_methods is None and 'allowedHttpMethods' in kwargs:
             allowed_http_methods = kwargs['allowedHttpMethods']
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'isResponseInspected' in kwargs:
+        if is_response_inspected is None and 'isResponseInspected' in kwargs:
             is_response_inspected = kwargs['isResponseInspected']
-        if 'maxArgumentCount' in kwargs:
+        if max_argument_count is None and 'maxArgumentCount' in kwargs:
             max_argument_count = kwargs['maxArgumentCount']
-        if 'maxNameLengthPerArgument' in kwargs:
+        if max_name_length_per_argument is None and 'maxNameLengthPerArgument' in kwargs:
             max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
-        if 'maxResponseSizeInKiB' in kwargs:
+        if max_response_size_in_ki_b is None and 'maxResponseSizeInKiB' in kwargs:
             max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
-        if 'maxTotalNameLengthOfArguments' in kwargs:
+        if max_total_name_length_of_arguments is None and 'maxTotalNameLengthOfArguments' in kwargs:
             max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
-        if 'mediaTypes' in kwargs:
+        if media_types is None and 'mediaTypes' in kwargs:
             media_types = kwargs['mediaTypes']
-        if 'recommendationsPeriodInDays' in kwargs:
+        if recommendations_period_in_days is None and 'recommendationsPeriodInDays' in kwargs:
             recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
 
         if allowed_http_methods is not None:
@@ -4612,12 +4690,14 @@ class PolicyWafConfigWhitelist(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
+             name: Optional[str] = None,
              address_lists: Optional[Sequence[str]] = None,
              addresses: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addressLists' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if address_lists is None and 'addressLists' in kwargs:
             address_lists = kwargs['addressLists']
 
         _setter("name", name)
@@ -4677,7 +4757,7 @@ class ProtectionRuleExclusion(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[Sequence[str]] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if exclusions is not None:
@@ -4743,29 +4823,47 @@ class GetAddressListsAddressListResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address_count: float,
-             addresses: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address_count: Optional[float] = None,
+             addresses: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addressCount' in kwargs:
+        if address_count is None and 'addressCount' in kwargs:
             address_count = kwargs['addressCount']
-        if 'compartmentId' in kwargs:
+        if address_count is None:
+            raise TypeError("Missing 'address_count' argument")
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("address_count", address_count)
         _setter("addresses", addresses)
@@ -4865,11 +4963,15 @@ class GetAddressListsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4912,13 +5014,19 @@ class GetCertificateExtensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_critical: bool,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_critical: Optional[bool] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCritical' in kwargs:
+        if is_critical is None and 'isCritical' in kwargs:
             is_critical = kwargs['isCritical']
+        if is_critical is None:
+            raise TypeError("Missing 'is_critical' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("is_critical", is_critical)
         _setter("name", name)
@@ -4981,23 +5089,37 @@ class GetCertificateIssuerNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             email_address: str,
-             locality: str,
-             organization: str,
-             organizational_unit: str,
-             state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             email_address: Optional[str] = None,
+             locality: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             state_province: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if locality is None:
+            raise TypeError("Missing 'locality' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
+        if state_province is None:
+            raise TypeError("Missing 'state_province' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -5084,13 +5206,19 @@ class GetCertificatePublicKeyInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             exponent: int,
-             key_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             exponent: Optional[int] = None,
+             key_size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if exponent is None:
+            raise TypeError("Missing 'exponent' argument")
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
+        if key_size is None:
+            raise TypeError("Missing 'key_size' argument")
 
         _setter("algorithm", algorithm)
         _setter("exponent", exponent)
@@ -5153,23 +5281,37 @@ class GetCertificateSubjectNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             email_address: str,
-             locality: str,
-             organization: str,
-             organizational_unit: str,
-             state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             email_address: Optional[str] = None,
+             locality: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             state_province: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if locality is None:
+            raise TypeError("Missing 'locality' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
+        if state_province is None:
+            raise TypeError("Missing 'state_province' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -5305,60 +5447,100 @@ class GetCertificatesCertificateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_data: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             extensions: Sequence['outputs.GetCertificatesCertificateExtensionResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_trust_verification_disabled: bool,
-             issued_by: str,
-             issuer_names: Sequence['outputs.GetCertificatesCertificateIssuerNameResult'],
-             private_key_data: str,
-             public_key_infos: Sequence['outputs.GetCertificatesCertificatePublicKeyInfoResult'],
-             serial_number: str,
-             signature_algorithm: str,
-             state: str,
-             subject_names: Sequence['outputs.GetCertificatesCertificateSubjectNameResult'],
-             time_created: str,
-             time_not_valid_after: str,
-             time_not_valid_before: str,
-             version: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_data: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             extensions: Optional[Sequence['outputs.GetCertificatesCertificateExtensionResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_trust_verification_disabled: Optional[bool] = None,
+             issued_by: Optional[str] = None,
+             issuer_names: Optional[Sequence['outputs.GetCertificatesCertificateIssuerNameResult']] = None,
+             private_key_data: Optional[str] = None,
+             public_key_infos: Optional[Sequence['outputs.GetCertificatesCertificatePublicKeyInfoResult']] = None,
+             serial_number: Optional[str] = None,
+             signature_algorithm: Optional[str] = None,
+             state: Optional[str] = None,
+             subject_names: Optional[Sequence['outputs.GetCertificatesCertificateSubjectNameResult']] = None,
+             time_created: Optional[str] = None,
+             time_not_valid_after: Optional[str] = None,
+             time_not_valid_before: Optional[str] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateData' in kwargs:
+        if certificate_data is None and 'certificateData' in kwargs:
             certificate_data = kwargs['certificateData']
-        if 'compartmentId' in kwargs:
+        if certificate_data is None:
+            raise TypeError("Missing 'certificate_data' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if extensions is None:
+            raise TypeError("Missing 'extensions' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isTrustVerificationDisabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_trust_verification_disabled is None and 'isTrustVerificationDisabled' in kwargs:
             is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
-        if 'issuedBy' in kwargs:
+        if is_trust_verification_disabled is None:
+            raise TypeError("Missing 'is_trust_verification_disabled' argument")
+        if issued_by is None and 'issuedBy' in kwargs:
             issued_by = kwargs['issuedBy']
-        if 'issuerNames' in kwargs:
+        if issued_by is None:
+            raise TypeError("Missing 'issued_by' argument")
+        if issuer_names is None and 'issuerNames' in kwargs:
             issuer_names = kwargs['issuerNames']
-        if 'privateKeyData' in kwargs:
+        if issuer_names is None:
+            raise TypeError("Missing 'issuer_names' argument")
+        if private_key_data is None and 'privateKeyData' in kwargs:
             private_key_data = kwargs['privateKeyData']
-        if 'publicKeyInfos' in kwargs:
+        if private_key_data is None:
+            raise TypeError("Missing 'private_key_data' argument")
+        if public_key_infos is None and 'publicKeyInfos' in kwargs:
             public_key_infos = kwargs['publicKeyInfos']
-        if 'serialNumber' in kwargs:
+        if public_key_infos is None:
+            raise TypeError("Missing 'public_key_infos' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'signatureAlgorithm' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'subjectNames' in kwargs:
+        if signature_algorithm is None:
+            raise TypeError("Missing 'signature_algorithm' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subject_names is None and 'subjectNames' in kwargs:
             subject_names = kwargs['subjectNames']
-        if 'timeCreated' in kwargs:
+        if subject_names is None:
+            raise TypeError("Missing 'subject_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeNotValidAfter' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_not_valid_after is None and 'timeNotValidAfter' in kwargs:
             time_not_valid_after = kwargs['timeNotValidAfter']
-        if 'timeNotValidBefore' in kwargs:
+        if time_not_valid_after is None:
+            raise TypeError("Missing 'time_not_valid_after' argument")
+        if time_not_valid_before is None and 'timeNotValidBefore' in kwargs:
             time_not_valid_before = kwargs['timeNotValidBefore']
+        if time_not_valid_before is None:
+            raise TypeError("Missing 'time_not_valid_before' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("certificate_data", certificate_data)
         _setter("compartment_id", compartment_id)
@@ -5556,13 +5738,19 @@ class GetCertificatesCertificateExtensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_critical: bool,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_critical: Optional[bool] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCritical' in kwargs:
+        if is_critical is None and 'isCritical' in kwargs:
             is_critical = kwargs['isCritical']
+        if is_critical is None:
+            raise TypeError("Missing 'is_critical' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("is_critical", is_critical)
         _setter("name", name)
@@ -5625,23 +5813,37 @@ class GetCertificatesCertificateIssuerNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             email_address: str,
-             locality: str,
-             organization: str,
-             organizational_unit: str,
-             state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             email_address: Optional[str] = None,
+             locality: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             state_province: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if locality is None:
+            raise TypeError("Missing 'locality' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
+        if state_province is None:
+            raise TypeError("Missing 'state_province' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -5728,13 +5930,19 @@ class GetCertificatesCertificatePublicKeyInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             exponent: int,
-             key_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             exponent: Optional[int] = None,
+             key_size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if exponent is None:
+            raise TypeError("Missing 'exponent' argument")
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
+        if key_size is None:
+            raise TypeError("Missing 'key_size' argument")
 
         _setter("algorithm", algorithm)
         _setter("exponent", exponent)
@@ -5797,23 +6005,37 @@ class GetCertificatesCertificateSubjectNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             email_address: str,
-             locality: str,
-             organization: str,
-             organizational_unit: str,
-             state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             email_address: Optional[str] = None,
+             locality: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             state_province: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'emailAddress' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'organizationalUnit' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if locality is None:
+            raise TypeError("Missing 'locality' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'stateProvince' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if state_province is None and 'stateProvince' in kwargs:
             state_province = kwargs['stateProvince']
+        if state_province is None:
+            raise TypeError("Missing 'state_province' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -5898,11 +6120,15 @@ class GetCertificatesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5969,30 +6195,50 @@ class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             mod_security_rule_ids: Sequence[str],
-             state: str,
-             template: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             mod_security_rule_ids: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             template: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'modSecurityRuleIds' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if mod_security_rule_ids is None and 'modSecurityRuleIds' in kwargs:
             mod_security_rule_ids = kwargs['modSecurityRuleIds']
-        if 'timeCreated' in kwargs:
+        if mod_security_rule_ids is None:
+            raise TypeError("Missing 'mod_security_rule_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if template is None:
+            raise TypeError("Missing 'template' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -6101,11 +6347,15 @@ class GetCustomProtectionRulesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6148,13 +6398,19 @@ class GetEdgeSubnetsEdgeSubnetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cidr: str,
-             region: str,
-             time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cidr: Optional[str] = None,
+             region: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeModified' in kwargs:
+        if cidr is None:
+            raise TypeError("Missing 'cidr' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if time_modified is None and 'timeModified' in kwargs:
             time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
 
         _setter("cidr", cidr)
         _setter("region", region)
@@ -6200,11 +6456,15 @@ class GetEdgeSubnetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6253,13 +6513,23 @@ class GetHttpRedirectTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             path: str,
-             port: int,
-             protocol: str,
-             query: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             query: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
 
         _setter("host", host)
         _setter("path", path)
@@ -6323,11 +6593,15 @@ class GetHttpRedirectsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6391,30 +6665,50 @@ class GetHttpRedirectsHttpRedirectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             domain: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             response_code: int,
-             state: str,
-             targets: Sequence['outputs.GetHttpRedirectsHttpRedirectTargetResult'],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             response_code: Optional[int] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetHttpRedirectsHttpRedirectTargetResult']] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'responseCode' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if response_code is None and 'responseCode' in kwargs:
             response_code = kwargs['responseCode']
-        if 'timeCreated' in kwargs:
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -6534,13 +6828,23 @@ class GetHttpRedirectsHttpRedirectTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             path: str,
-             port: int,
-             protocol: str,
-             query: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             query: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
 
         _setter("host", host)
         _setter("path", path)
@@ -6606,10 +6910,14 @@ class GetProtectionRuleExclusionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             target: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             target: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
 
         _setter("exclusions", exclusions)
         _setter("target", target)
@@ -6649,11 +6957,15 @@ class GetProtectionRulesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6714,20 +7026,36 @@ class GetProtectionRulesProtectionRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             description: str,
-             exclusions: Sequence['outputs.GetProtectionRulesProtectionRuleExclusionResult'],
-             key: str,
-             labels: Sequence[str],
-             mod_security_rule_ids: Sequence[str],
-             name: str,
-             waas_policy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             description: Optional[str] = None,
+             exclusions: Optional[Sequence['outputs.GetProtectionRulesProtectionRuleExclusionResult']] = None,
+             key: Optional[str] = None,
+             labels: Optional[Sequence[str]] = None,
+             mod_security_rule_ids: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             waas_policy_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modSecurityRuleIds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if labels is None:
+            raise TypeError("Missing 'labels' argument")
+        if mod_security_rule_ids is None and 'modSecurityRuleIds' in kwargs:
             mod_security_rule_ids = kwargs['modSecurityRuleIds']
-        if 'waasPolicyId' in kwargs:
+        if mod_security_rule_ids is None:
+            raise TypeError("Missing 'mod_security_rule_ids' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
             waas_policy_id = kwargs['waasPolicyId']
+        if waas_policy_id is None:
+            raise TypeError("Missing 'waas_policy_id' argument")
 
         _setter("action", action)
         _setter("description", description)
@@ -6820,10 +7148,14 @@ class GetProtectionRulesProtectionRuleExclusionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             target: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             target: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
 
         _setter("exclusions", exclusions)
         _setter("target", target)
@@ -6863,11 +7195,15 @@ class GetWaasPoliciesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6946,40 +7282,68 @@ class GetWaasPoliciesWaasPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_domains: Sequence[str],
-             cname: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             domain: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             origin_groups: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupResult'],
-             origins: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginResult'],
-             policy_configs: Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigResult'],
-             state: str,
-             time_created: str,
-             waf_configs: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_domains: Optional[Sequence[str]] = None,
+             cname: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             origin_groups: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupResult']] = None,
+             origins: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyOriginResult']] = None,
+             policy_configs: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             waf_configs: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDomains' in kwargs:
+        if additional_domains is None and 'additionalDomains' in kwargs:
             additional_domains = kwargs['additionalDomains']
-        if 'compartmentId' in kwargs:
+        if additional_domains is None:
+            raise TypeError("Missing 'additional_domains' argument")
+        if cname is None:
+            raise TypeError("Missing 'cname' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'originGroups' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
-        if 'policyConfigs' in kwargs:
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
+        if origins is None:
+            raise TypeError("Missing 'origins' argument")
+        if policy_configs is None and 'policyConfigs' in kwargs:
             policy_configs = kwargs['policyConfigs']
-        if 'timeCreated' in kwargs:
+        if policy_configs is None:
+            raise TypeError("Missing 'policy_configs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'wafConfigs' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if waf_configs is None and 'wafConfigs' in kwargs:
             waf_configs = kwargs['wafConfigs']
+        if waf_configs is None:
+            raise TypeError("Missing 'waf_configs' argument")
 
         _setter("additional_domains", additional_domains)
         _setter("cname", cname)
@@ -7134,19 +7498,29 @@ class GetWaasPoliciesWaasPolicyOriginResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_headers: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginCustomHeaderResult'],
-             http_port: int,
-             https_port: int,
-             label: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_headers: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyOriginCustomHeaderResult']] = None,
+             http_port: Optional[int] = None,
+             https_port: Optional[int] = None,
+             label: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customHeaders' in kwargs:
+        if custom_headers is None and 'customHeaders' in kwargs:
             custom_headers = kwargs['customHeaders']
-        if 'httpPort' in kwargs:
+        if custom_headers is None:
+            raise TypeError("Missing 'custom_headers' argument")
+        if http_port is None and 'httpPort' in kwargs:
             http_port = kwargs['httpPort']
-        if 'httpsPort' in kwargs:
+        if http_port is None:
+            raise TypeError("Missing 'http_port' argument")
+        if https_port is None and 'httpsPort' in kwargs:
             https_port = kwargs['httpsPort']
+        if https_port is None:
+            raise TypeError("Missing 'https_port' argument")
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("custom_headers", custom_headers)
         _setter("http_port", http_port)
@@ -7209,10 +7583,14 @@ class GetWaasPoliciesWaasPolicyOriginCustomHeaderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -7247,12 +7625,16 @@ class GetWaasPoliciesWaasPolicyOriginGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             label: str,
-             origin_groups: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupOriginGroupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             label: Optional[str] = None,
+             origin_groups: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupOriginGroupResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'originGroups' in kwargs:
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
 
         _setter("label", label)
         _setter("origin_groups", origin_groups)
@@ -7284,10 +7666,14 @@ class GetWaasPoliciesWaasPolicyOriginGroupOriginGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             origin: str,
-             weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             origin: Optional[str] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
+        if weight is None:
+            raise TypeError("Missing 'weight' argument")
 
         _setter("origin", origin)
         _setter("weight", weight)
@@ -7364,50 +7750,78 @@ class GetWaasPoliciesWaasPolicyPolicyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_id: str,
-             cipher_group: str,
-             client_address_header: str,
-             health_checks: Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult'],
-             is_behind_cdn: bool,
-             is_cache_control_respected: bool,
-             is_https_enabled: bool,
-             is_https_forced: bool,
-             is_origin_compression_enabled: bool,
-             is_response_buffering_enabled: bool,
-             is_sni_enabled: bool,
-             load_balancing_methods: Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodResult'],
-             tls_protocols: Sequence[str],
-             websocket_path_prefixes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_id: Optional[str] = None,
+             cipher_group: Optional[str] = None,
+             client_address_header: Optional[str] = None,
+             health_checks: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult']] = None,
+             is_behind_cdn: Optional[bool] = None,
+             is_cache_control_respected: Optional[bool] = None,
+             is_https_enabled: Optional[bool] = None,
+             is_https_forced: Optional[bool] = None,
+             is_origin_compression_enabled: Optional[bool] = None,
+             is_response_buffering_enabled: Optional[bool] = None,
+             is_sni_enabled: Optional[bool] = None,
+             load_balancing_methods: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodResult']] = None,
+             tls_protocols: Optional[Sequence[str]] = None,
+             websocket_path_prefixes: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'cipherGroup' in kwargs:
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if cipher_group is None and 'cipherGroup' in kwargs:
             cipher_group = kwargs['cipherGroup']
-        if 'clientAddressHeader' in kwargs:
+        if cipher_group is None:
+            raise TypeError("Missing 'cipher_group' argument")
+        if client_address_header is None and 'clientAddressHeader' in kwargs:
             client_address_header = kwargs['clientAddressHeader']
-        if 'healthChecks' in kwargs:
+        if client_address_header is None:
+            raise TypeError("Missing 'client_address_header' argument")
+        if health_checks is None and 'healthChecks' in kwargs:
             health_checks = kwargs['healthChecks']
-        if 'isBehindCdn' in kwargs:
+        if health_checks is None:
+            raise TypeError("Missing 'health_checks' argument")
+        if is_behind_cdn is None and 'isBehindCdn' in kwargs:
             is_behind_cdn = kwargs['isBehindCdn']
-        if 'isCacheControlRespected' in kwargs:
+        if is_behind_cdn is None:
+            raise TypeError("Missing 'is_behind_cdn' argument")
+        if is_cache_control_respected is None and 'isCacheControlRespected' in kwargs:
             is_cache_control_respected = kwargs['isCacheControlRespected']
-        if 'isHttpsEnabled' in kwargs:
+        if is_cache_control_respected is None:
+            raise TypeError("Missing 'is_cache_control_respected' argument")
+        if is_https_enabled is None and 'isHttpsEnabled' in kwargs:
             is_https_enabled = kwargs['isHttpsEnabled']
-        if 'isHttpsForced' in kwargs:
+        if is_https_enabled is None:
+            raise TypeError("Missing 'is_https_enabled' argument")
+        if is_https_forced is None and 'isHttpsForced' in kwargs:
             is_https_forced = kwargs['isHttpsForced']
-        if 'isOriginCompressionEnabled' in kwargs:
+        if is_https_forced is None:
+            raise TypeError("Missing 'is_https_forced' argument")
+        if is_origin_compression_enabled is None and 'isOriginCompressionEnabled' in kwargs:
             is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
-        if 'isResponseBufferingEnabled' in kwargs:
+        if is_origin_compression_enabled is None:
+            raise TypeError("Missing 'is_origin_compression_enabled' argument")
+        if is_response_buffering_enabled is None and 'isResponseBufferingEnabled' in kwargs:
             is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
-        if 'isSniEnabled' in kwargs:
+        if is_response_buffering_enabled is None:
+            raise TypeError("Missing 'is_response_buffering_enabled' argument")
+        if is_sni_enabled is None and 'isSniEnabled' in kwargs:
             is_sni_enabled = kwargs['isSniEnabled']
-        if 'loadBalancingMethods' in kwargs:
+        if is_sni_enabled is None:
+            raise TypeError("Missing 'is_sni_enabled' argument")
+        if load_balancing_methods is None and 'loadBalancingMethods' in kwargs:
             load_balancing_methods = kwargs['loadBalancingMethods']
-        if 'tlsProtocols' in kwargs:
+        if load_balancing_methods is None:
+            raise TypeError("Missing 'load_balancing_methods' argument")
+        if tls_protocols is None and 'tlsProtocols' in kwargs:
             tls_protocols = kwargs['tlsProtocols']
-        if 'websocketPathPrefixes' in kwargs:
+        if tls_protocols is None:
+            raise TypeError("Missing 'tls_protocols' argument")
+        if websocket_path_prefixes is None and 'websocketPathPrefixes' in kwargs:
             websocket_path_prefixes = kwargs['websocketPathPrefixes']
+        if websocket_path_prefixes is None:
+            raise TypeError("Missing 'websocket_path_prefixes' argument")
 
         _setter("certificate_id", certificate_id)
         _setter("cipher_group", cipher_group)
@@ -7593,35 +8007,57 @@ class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expected_response_code_groups: Sequence[str],
-             expected_response_text: str,
-             headers: Mapping[str, Any],
-             healthy_threshold: int,
-             interval_in_seconds: int,
-             is_enabled: bool,
-             is_response_text_check_enabled: bool,
-             method: str,
-             path: str,
-             timeout_in_seconds: int,
-             unhealthy_threshold: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expected_response_code_groups: Optional[Sequence[str]] = None,
+             expected_response_text: Optional[str] = None,
+             headers: Optional[Mapping[str, Any]] = None,
+             healthy_threshold: Optional[int] = None,
+             interval_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_response_text_check_enabled: Optional[bool] = None,
+             method: Optional[str] = None,
+             path: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             unhealthy_threshold: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expectedResponseCodeGroups' in kwargs:
+        if expected_response_code_groups is None and 'expectedResponseCodeGroups' in kwargs:
             expected_response_code_groups = kwargs['expectedResponseCodeGroups']
-        if 'expectedResponseText' in kwargs:
+        if expected_response_code_groups is None:
+            raise TypeError("Missing 'expected_response_code_groups' argument")
+        if expected_response_text is None and 'expectedResponseText' in kwargs:
             expected_response_text = kwargs['expectedResponseText']
-        if 'healthyThreshold' in kwargs:
+        if expected_response_text is None:
+            raise TypeError("Missing 'expected_response_text' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if healthy_threshold is None and 'healthyThreshold' in kwargs:
             healthy_threshold = kwargs['healthyThreshold']
-        if 'intervalInSeconds' in kwargs:
+        if healthy_threshold is None:
+            raise TypeError("Missing 'healthy_threshold' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'isEnabled' in kwargs:
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isResponseTextCheckEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_response_text_check_enabled is None and 'isResponseTextCheckEnabled' in kwargs:
             is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
-        if 'timeoutInSeconds' in kwargs:
+        if is_response_text_check_enabled is None:
+            raise TypeError("Missing 'is_response_text_check_enabled' argument")
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'unhealthyThreshold' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if unhealthy_threshold is None and 'unhealthyThreshold' in kwargs:
             unhealthy_threshold = kwargs['unhealthyThreshold']
+        if unhealthy_threshold is None:
+            raise TypeError("Missing 'unhealthy_threshold' argument")
 
         _setter("expected_response_code_groups", expected_response_code_groups)
         _setter("expected_response_text", expected_response_text)
@@ -7757,14 +8193,22 @@ class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             expiration_time_in_seconds: int,
-             method: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain: Optional[str] = None,
+             expiration_time_in_seconds: Optional[int] = None,
+             method: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expirationTimeInSeconds' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if expiration_time_in_seconds is None and 'expirationTimeInSeconds' in kwargs:
             expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+        if expiration_time_in_seconds is None:
+            raise TypeError("Missing 'expiration_time_in_seconds' argument")
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("domain", domain)
         _setter("expiration_time_in_seconds", expiration_time_in_seconds)
@@ -7854,38 +8298,62 @@ class GetWaasPoliciesWaasPolicyWafConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_rules: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleResult'],
-             address_rate_limitings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingResult'],
-             caching_rules: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCachingRuleResult'],
-             captchas: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCaptchaResult'],
-             custom_protection_rules: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleResult'],
-             device_fingerprint_challenges: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeResult'],
-             human_interaction_challenges: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeResult'],
-             js_challenges: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeResult'],
-             origin: str,
-             origin_groups: Sequence[str],
-             protection_settings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigProtectionSettingResult'],
-             whitelists: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigWhitelistResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access_rules: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleResult']] = None,
+             address_rate_limitings: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingResult']] = None,
+             caching_rules: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCachingRuleResult']] = None,
+             captchas: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCaptchaResult']] = None,
+             custom_protection_rules: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleResult']] = None,
+             device_fingerprint_challenges: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeResult']] = None,
+             human_interaction_challenges: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeResult']] = None,
+             js_challenges: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeResult']] = None,
+             origin: Optional[str] = None,
+             origin_groups: Optional[Sequence[str]] = None,
+             protection_settings: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigProtectionSettingResult']] = None,
+             whitelists: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigWhitelistResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessRules' in kwargs:
+        if access_rules is None and 'accessRules' in kwargs:
             access_rules = kwargs['accessRules']
-        if 'addressRateLimitings' in kwargs:
+        if access_rules is None:
+            raise TypeError("Missing 'access_rules' argument")
+        if address_rate_limitings is None and 'addressRateLimitings' in kwargs:
             address_rate_limitings = kwargs['addressRateLimitings']
-        if 'cachingRules' in kwargs:
+        if address_rate_limitings is None:
+            raise TypeError("Missing 'address_rate_limitings' argument")
+        if caching_rules is None and 'cachingRules' in kwargs:
             caching_rules = kwargs['cachingRules']
-        if 'customProtectionRules' in kwargs:
+        if caching_rules is None:
+            raise TypeError("Missing 'caching_rules' argument")
+        if captchas is None:
+            raise TypeError("Missing 'captchas' argument")
+        if custom_protection_rules is None and 'customProtectionRules' in kwargs:
             custom_protection_rules = kwargs['customProtectionRules']
-        if 'deviceFingerprintChallenges' in kwargs:
+        if custom_protection_rules is None:
+            raise TypeError("Missing 'custom_protection_rules' argument")
+        if device_fingerprint_challenges is None and 'deviceFingerprintChallenges' in kwargs:
             device_fingerprint_challenges = kwargs['deviceFingerprintChallenges']
-        if 'humanInteractionChallenges' in kwargs:
+        if device_fingerprint_challenges is None:
+            raise TypeError("Missing 'device_fingerprint_challenges' argument")
+        if human_interaction_challenges is None and 'humanInteractionChallenges' in kwargs:
             human_interaction_challenges = kwargs['humanInteractionChallenges']
-        if 'jsChallenges' in kwargs:
+        if human_interaction_challenges is None:
+            raise TypeError("Missing 'human_interaction_challenges' argument")
+        if js_challenges is None and 'jsChallenges' in kwargs:
             js_challenges = kwargs['jsChallenges']
-        if 'originGroups' in kwargs:
+        if js_challenges is None:
+            raise TypeError("Missing 'js_challenges' argument")
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
-        if 'protectionSettings' in kwargs:
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
+        if protection_settings is None and 'protectionSettings' in kwargs:
             protection_settings = kwargs['protectionSettings']
+        if protection_settings is None:
+            raise TypeError("Missing 'protection_settings' argument")
+        if whitelists is None:
+            raise TypeError("Missing 'whitelists' argument")
 
         _setter("access_rules", access_rules)
         _setter("address_rate_limitings", address_rate_limitings)
@@ -8062,50 +8530,82 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             bypass_challenges: Sequence[str],
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             criterias: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaResult'],
-             name: str,
-             redirect_response_code: str,
-             redirect_url: str,
-             response_header_manipulations: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             bypass_challenges: Optional[Sequence[str]] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaResult']] = None,
+             name: Optional[str] = None,
+             redirect_response_code: Optional[str] = None,
+             redirect_url: Optional[str] = None,
+             response_header_manipulations: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'bypassChallenges' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if bypass_challenges is None and 'bypassChallenges' in kwargs:
             bypass_challenges = kwargs['bypassChallenges']
-        if 'captchaFooter' in kwargs:
+        if bypass_challenges is None:
+            raise TypeError("Missing 'bypass_challenges' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
-        if 'redirectResponseCode' in kwargs:
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if redirect_response_code is None and 'redirectResponseCode' in kwargs:
             redirect_response_code = kwargs['redirectResponseCode']
-        if 'redirectUrl' in kwargs:
+        if redirect_response_code is None:
+            raise TypeError("Missing 'redirect_response_code' argument")
+        if redirect_url is None and 'redirectUrl' in kwargs:
             redirect_url = kwargs['redirectUrl']
-        if 'responseHeaderManipulations' in kwargs:
+        if redirect_url is None:
+            raise TypeError("Missing 'redirect_url' argument")
+        if response_header_manipulations is None and 'responseHeaderManipulations' in kwargs:
             response_header_manipulations = kwargs['responseHeaderManipulations']
+        if response_header_manipulations is None:
+            raise TypeError("Missing 'response_header_manipulations' argument")
 
         _setter("action", action)
         _setter("block_action", block_action)
@@ -8295,13 +8795,19 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             is_case_sensitive: bool,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             is_case_sensitive: Optional[bool] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
+        if is_case_sensitive is None:
+            raise TypeError("Missing 'is_case_sensitive' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
@@ -8368,11 +8874,17 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             header: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             header: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if header is None:
+            raise TypeError("Missing 'header' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("action", action)
         _setter("header", header)
@@ -8426,20 +8938,28 @@ class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_rate_per_address: int,
-             block_response_code: int,
-             is_enabled: bool,
-             max_delayed_count_per_address: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_rate_per_address: Optional[int] = None,
+             block_response_code: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             max_delayed_count_per_address: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedRatePerAddress' in kwargs:
+        if allowed_rate_per_address is None and 'allowedRatePerAddress' in kwargs:
             allowed_rate_per_address = kwargs['allowedRatePerAddress']
-        if 'blockResponseCode' in kwargs:
+        if allowed_rate_per_address is None:
+            raise TypeError("Missing 'allowed_rate_per_address' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'isEnabled' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxDelayedCountPerAddress' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if max_delayed_count_per_address is None and 'maxDelayedCountPerAddress' in kwargs:
             max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+        if max_delayed_count_per_address is None:
+            raise TypeError("Missing 'max_delayed_count_per_address' argument")
 
         _setter("allowed_rate_per_address", allowed_rate_per_address)
         _setter("block_response_code", block_response_code)
@@ -8511,21 +9031,35 @@ class GetWaasPoliciesWaasPolicyWafConfigCachingRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             caching_duration: str,
-             client_caching_duration: str,
-             criterias: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaResult'],
-             is_client_caching_enabled: bool,
-             key: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             caching_duration: Optional[str] = None,
+             client_caching_duration: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaResult']] = None,
+             is_client_caching_enabled: Optional[bool] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cachingDuration' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if caching_duration is None and 'cachingDuration' in kwargs:
             caching_duration = kwargs['cachingDuration']
-        if 'clientCachingDuration' in kwargs:
+        if caching_duration is None:
+            raise TypeError("Missing 'caching_duration' argument")
+        if client_caching_duration is None and 'clientCachingDuration' in kwargs:
             client_caching_duration = kwargs['clientCachingDuration']
-        if 'isClientCachingEnabled' in kwargs:
+        if client_caching_duration is None:
+            raise TypeError("Missing 'client_caching_duration' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if is_client_caching_enabled is None and 'isClientCachingEnabled' in kwargs:
             is_client_caching_enabled = kwargs['isClientCachingEnabled']
+        if is_client_caching_enabled is None:
+            raise TypeError("Missing 'is_client_caching_enabled' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("action", action)
         _setter("caching_duration", caching_duration)
@@ -8625,10 +9159,14 @@ class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("value", value)
@@ -8698,25 +9236,39 @@ class GetWaasPoliciesWaasPolicyWafConfigCaptchaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             failure_message: str,
-             footer_text: str,
-             header_text: str,
-             session_expiration_in_seconds: int,
-             submit_label: str,
-             title: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             failure_message: Optional[str] = None,
+             footer_text: Optional[str] = None,
+             header_text: Optional[str] = None,
+             session_expiration_in_seconds: Optional[int] = None,
+             submit_label: Optional[str] = None,
+             title: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'failureMessage' in kwargs:
+        if failure_message is None and 'failureMessage' in kwargs:
             failure_message = kwargs['failureMessage']
-        if 'footerText' in kwargs:
+        if failure_message is None:
+            raise TypeError("Missing 'failure_message' argument")
+        if footer_text is None and 'footerText' in kwargs:
             footer_text = kwargs['footerText']
-        if 'headerText' in kwargs:
+        if footer_text is None:
+            raise TypeError("Missing 'footer_text' argument")
+        if header_text is None and 'headerText' in kwargs:
             header_text = kwargs['headerText']
-        if 'sessionExpirationInSeconds' in kwargs:
+        if header_text is None:
+            raise TypeError("Missing 'header_text' argument")
+        if session_expiration_in_seconds is None and 'sessionExpirationInSeconds' in kwargs:
             session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
-        if 'submitLabel' in kwargs:
+        if session_expiration_in_seconds is None:
+            raise TypeError("Missing 'session_expiration_in_seconds' argument")
+        if submit_label is None and 'submitLabel' in kwargs:
             submit_label = kwargs['submitLabel']
+        if submit_label is None:
+            raise TypeError("Missing 'submit_label' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("failure_message", failure_message)
         _setter("footer_text", footer_text)
@@ -8803,11 +9355,17 @@ class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             exclusions: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionResult'],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             exclusions: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionResult']] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("action", action)
         _setter("exclusions", exclusions)
@@ -8855,10 +9413,14 @@ class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             target: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             target: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
 
         _setter("exclusions", exclusions)
         _setter("target", target)
@@ -8915,30 +9477,46 @@ class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             challenge_settings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingResult'],
-             failure_threshold: int,
-             failure_threshold_expiration_in_seconds: int,
-             is_enabled: bool,
-             max_address_count: int,
-             max_address_count_expiration_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             challenge_settings: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingResult']] = None,
+             failure_threshold: Optional[int] = None,
+             failure_threshold_expiration_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             max_address_count: Optional[int] = None,
+             max_address_count_expiration_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'isEnabled' in kwargs:
+        if failure_threshold_expiration_in_seconds is None:
+            raise TypeError("Missing 'failure_threshold_expiration_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxAddressCount' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if max_address_count is None and 'maxAddressCount' in kwargs:
             max_address_count = kwargs['maxAddressCount']
-        if 'maxAddressCountExpirationInSeconds' in kwargs:
+        if max_address_count is None:
+            raise TypeError("Missing 'max_address_count' argument")
+        if max_address_count_expiration_in_seconds is None and 'maxAddressCountExpirationInSeconds' in kwargs:
             max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+        if max_address_count_expiration_in_seconds is None:
+            raise TypeError("Missing 'max_address_count_expiration_in_seconds' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -9052,35 +9630,53 @@ class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -9206,36 +9802,56 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             challenge_settings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingResult'],
-             failure_threshold: int,
-             failure_threshold_expiration_in_seconds: int,
-             interaction_threshold: int,
-             is_enabled: bool,
-             is_nat_enabled: bool,
-             recording_period_in_seconds: int,
-             set_http_headers: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             challenge_settings: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingResult']] = None,
+             failure_threshold: Optional[int] = None,
+             failure_threshold_expiration_in_seconds: Optional[int] = None,
+             interaction_threshold: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_nat_enabled: Optional[bool] = None,
+             recording_period_in_seconds: Optional[int] = None,
+             set_http_headers: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'interactionThreshold' in kwargs:
+        if failure_threshold_expiration_in_seconds is None:
+            raise TypeError("Missing 'failure_threshold_expiration_in_seconds' argument")
+        if interaction_threshold is None and 'interactionThreshold' in kwargs:
             interaction_threshold = kwargs['interactionThreshold']
-        if 'isEnabled' in kwargs:
+        if interaction_threshold is None:
+            raise TypeError("Missing 'interaction_threshold' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNatEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'recordingPeriodInSeconds' in kwargs:
+        if is_nat_enabled is None:
+            raise TypeError("Missing 'is_nat_enabled' argument")
+        if recording_period_in_seconds is None and 'recordingPeriodInSeconds' in kwargs:
             recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
-        if 'setHttpHeaders' in kwargs:
+        if recording_period_in_seconds is None:
+            raise TypeError("Missing 'recording_period_in_seconds' argument")
+        if set_http_headers is None and 'setHttpHeaders' in kwargs:
             set_http_headers = kwargs['setHttpHeaders']
+        if set_http_headers is None:
+            raise TypeError("Missing 'set_http_headers' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -9367,35 +9983,53 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettin
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -9497,10 +10131,14 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -9560,31 +10198,49 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             are_redirects_challenged: bool,
-             challenge_settings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingResult'],
-             criterias: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaResult'],
-             failure_threshold: int,
-             is_enabled: bool,
-             is_nat_enabled: bool,
-             set_http_headers: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             are_redirects_challenged: Optional[bool] = None,
+             challenge_settings: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingResult']] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaResult']] = None,
+             failure_threshold: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_nat_enabled: Optional[bool] = None,
+             set_http_headers: Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'areRedirectsChallenged' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if are_redirects_challenged is None and 'areRedirectsChallenged' in kwargs:
             are_redirects_challenged = kwargs['areRedirectsChallenged']
-        if 'challengeSettings' in kwargs:
+        if are_redirects_challenged is None:
+            raise TypeError("Missing 'are_redirects_challenged' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'isEnabled' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNatEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'setHttpHeaders' in kwargs:
+        if is_nat_enabled is None:
+            raise TypeError("Missing 'is_nat_enabled' argument")
+        if set_http_headers is None and 'setHttpHeaders' in kwargs:
             set_http_headers = kwargs['setHttpHeaders']
+        if set_http_headers is None:
+            raise TypeError("Missing 'set_http_headers' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -9707,35 +10363,53 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -9856,13 +10530,19 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             is_case_sensitive: bool,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             is_case_sensitive: Optional[bool] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
+        if is_case_sensitive is None:
+            raise TypeError("Missing 'is_case_sensitive' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
@@ -9926,10 +10606,14 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -10001,47 +10685,73 @@ class GetWaasPoliciesWaasPolicyWafConfigProtectionSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_http_methods: Sequence[str],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             is_response_inspected: bool,
-             max_argument_count: int,
-             max_name_length_per_argument: int,
-             max_response_size_in_ki_b: int,
-             max_total_name_length_of_arguments: int,
-             media_types: Sequence[str],
-             recommendations_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_http_methods: Optional[Sequence[str]] = None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             is_response_inspected: Optional[bool] = None,
+             max_argument_count: Optional[int] = None,
+             max_name_length_per_argument: Optional[int] = None,
+             max_response_size_in_ki_b: Optional[int] = None,
+             max_total_name_length_of_arguments: Optional[int] = None,
+             media_types: Optional[Sequence[str]] = None,
+             recommendations_period_in_days: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedHttpMethods' in kwargs:
+        if allowed_http_methods is None and 'allowedHttpMethods' in kwargs:
             allowed_http_methods = kwargs['allowedHttpMethods']
-        if 'blockAction' in kwargs:
+        if allowed_http_methods is None:
+            raise TypeError("Missing 'allowed_http_methods' argument")
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'isResponseInspected' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if is_response_inspected is None and 'isResponseInspected' in kwargs:
             is_response_inspected = kwargs['isResponseInspected']
-        if 'maxArgumentCount' in kwargs:
+        if is_response_inspected is None:
+            raise TypeError("Missing 'is_response_inspected' argument")
+        if max_argument_count is None and 'maxArgumentCount' in kwargs:
             max_argument_count = kwargs['maxArgumentCount']
-        if 'maxNameLengthPerArgument' in kwargs:
+        if max_argument_count is None:
+            raise TypeError("Missing 'max_argument_count' argument")
+        if max_name_length_per_argument is None and 'maxNameLengthPerArgument' in kwargs:
             max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
-        if 'maxResponseSizeInKiB' in kwargs:
+        if max_name_length_per_argument is None:
+            raise TypeError("Missing 'max_name_length_per_argument' argument")
+        if max_response_size_in_ki_b is None and 'maxResponseSizeInKiB' in kwargs:
             max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
-        if 'maxTotalNameLengthOfArguments' in kwargs:
+        if max_response_size_in_ki_b is None:
+            raise TypeError("Missing 'max_response_size_in_ki_b' argument")
+        if max_total_name_length_of_arguments is None and 'maxTotalNameLengthOfArguments' in kwargs:
             max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
-        if 'mediaTypes' in kwargs:
+        if max_total_name_length_of_arguments is None:
+            raise TypeError("Missing 'max_total_name_length_of_arguments' argument")
+        if media_types is None and 'mediaTypes' in kwargs:
             media_types = kwargs['mediaTypes']
-        if 'recommendationsPeriodInDays' in kwargs:
+        if media_types is None:
+            raise TypeError("Missing 'media_types' argument")
+        if recommendations_period_in_days is None and 'recommendationsPeriodInDays' in kwargs:
             recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+        if recommendations_period_in_days is None:
+            raise TypeError("Missing 'recommendations_period_in_days' argument")
 
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("block_action", block_action)
@@ -10182,13 +10892,19 @@ class GetWaasPoliciesWaasPolicyWafConfigWhitelistResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address_lists: Sequence[str],
-             addresses: Sequence[str],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address_lists: Optional[Sequence[str]] = None,
+             addresses: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addressLists' in kwargs:
+        if address_lists is None and 'addressLists' in kwargs:
             address_lists = kwargs['addressLists']
+        if address_lists is None:
+            raise TypeError("Missing 'address_lists' argument")
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("address_lists", address_lists)
         _setter("addresses", addresses)
@@ -10244,18 +10960,24 @@ class GetWaasPolicyOriginResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_headers: Sequence['outputs.GetWaasPolicyOriginCustomHeaderResult'],
-             label: str,
-             uri: str,
+             custom_headers: Optional[Sequence['outputs.GetWaasPolicyOriginCustomHeaderResult']] = None,
+             label: Optional[str] = None,
+             uri: Optional[str] = None,
              http_port: Optional[int] = None,
              https_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customHeaders' in kwargs:
+        if custom_headers is None and 'customHeaders' in kwargs:
             custom_headers = kwargs['customHeaders']
-        if 'httpPort' in kwargs:
+        if custom_headers is None:
+            raise TypeError("Missing 'custom_headers' argument")
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+        if http_port is None and 'httpPort' in kwargs:
             http_port = kwargs['httpPort']
-        if 'httpsPort' in kwargs:
+        if https_port is None and 'httpsPort' in kwargs:
             https_port = kwargs['httpsPort']
 
         _setter("custom_headers", custom_headers)
@@ -10321,10 +11043,14 @@ class GetWaasPolicyOriginCustomHeaderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -10359,12 +11085,16 @@ class GetWaasPolicyOriginGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             label: str,
-             origin_groups: Sequence['outputs.GetWaasPolicyOriginGroupOriginGroupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             label: Optional[str] = None,
+             origin_groups: Optional[Sequence['outputs.GetWaasPolicyOriginGroupOriginGroupResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'originGroups' in kwargs:
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
 
         _setter("label", label)
         _setter("origin_groups", origin_groups)
@@ -10396,10 +11126,14 @@ class GetWaasPolicyOriginGroupOriginGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             origin: str,
-             weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             origin: Optional[str] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
+        if weight is None:
+            raise TypeError("Missing 'weight' argument")
 
         _setter("origin", origin)
         _setter("weight", weight)
@@ -10476,50 +11210,78 @@ class GetWaasPolicyPolicyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_id: str,
-             cipher_group: str,
-             client_address_header: str,
-             health_checks: 'outputs.GetWaasPolicyPolicyConfigHealthChecksResult',
-             is_behind_cdn: bool,
-             is_cache_control_respected: bool,
-             is_https_enabled: bool,
-             is_https_forced: bool,
-             is_origin_compression_enabled: bool,
-             is_response_buffering_enabled: bool,
-             is_sni_enabled: bool,
-             load_balancing_method: 'outputs.GetWaasPolicyPolicyConfigLoadBalancingMethodResult',
-             tls_protocols: Sequence[str],
-             websocket_path_prefixes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_id: Optional[str] = None,
+             cipher_group: Optional[str] = None,
+             client_address_header: Optional[str] = None,
+             health_checks: Optional['outputs.GetWaasPolicyPolicyConfigHealthChecksResult'] = None,
+             is_behind_cdn: Optional[bool] = None,
+             is_cache_control_respected: Optional[bool] = None,
+             is_https_enabled: Optional[bool] = None,
+             is_https_forced: Optional[bool] = None,
+             is_origin_compression_enabled: Optional[bool] = None,
+             is_response_buffering_enabled: Optional[bool] = None,
+             is_sni_enabled: Optional[bool] = None,
+             load_balancing_method: Optional['outputs.GetWaasPolicyPolicyConfigLoadBalancingMethodResult'] = None,
+             tls_protocols: Optional[Sequence[str]] = None,
+             websocket_path_prefixes: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'cipherGroup' in kwargs:
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if cipher_group is None and 'cipherGroup' in kwargs:
             cipher_group = kwargs['cipherGroup']
-        if 'clientAddressHeader' in kwargs:
+        if cipher_group is None:
+            raise TypeError("Missing 'cipher_group' argument")
+        if client_address_header is None and 'clientAddressHeader' in kwargs:
             client_address_header = kwargs['clientAddressHeader']
-        if 'healthChecks' in kwargs:
+        if client_address_header is None:
+            raise TypeError("Missing 'client_address_header' argument")
+        if health_checks is None and 'healthChecks' in kwargs:
             health_checks = kwargs['healthChecks']
-        if 'isBehindCdn' in kwargs:
+        if health_checks is None:
+            raise TypeError("Missing 'health_checks' argument")
+        if is_behind_cdn is None and 'isBehindCdn' in kwargs:
             is_behind_cdn = kwargs['isBehindCdn']
-        if 'isCacheControlRespected' in kwargs:
+        if is_behind_cdn is None:
+            raise TypeError("Missing 'is_behind_cdn' argument")
+        if is_cache_control_respected is None and 'isCacheControlRespected' in kwargs:
             is_cache_control_respected = kwargs['isCacheControlRespected']
-        if 'isHttpsEnabled' in kwargs:
+        if is_cache_control_respected is None:
+            raise TypeError("Missing 'is_cache_control_respected' argument")
+        if is_https_enabled is None and 'isHttpsEnabled' in kwargs:
             is_https_enabled = kwargs['isHttpsEnabled']
-        if 'isHttpsForced' in kwargs:
+        if is_https_enabled is None:
+            raise TypeError("Missing 'is_https_enabled' argument")
+        if is_https_forced is None and 'isHttpsForced' in kwargs:
             is_https_forced = kwargs['isHttpsForced']
-        if 'isOriginCompressionEnabled' in kwargs:
+        if is_https_forced is None:
+            raise TypeError("Missing 'is_https_forced' argument")
+        if is_origin_compression_enabled is None and 'isOriginCompressionEnabled' in kwargs:
             is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
-        if 'isResponseBufferingEnabled' in kwargs:
+        if is_origin_compression_enabled is None:
+            raise TypeError("Missing 'is_origin_compression_enabled' argument")
+        if is_response_buffering_enabled is None and 'isResponseBufferingEnabled' in kwargs:
             is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
-        if 'isSniEnabled' in kwargs:
+        if is_response_buffering_enabled is None:
+            raise TypeError("Missing 'is_response_buffering_enabled' argument")
+        if is_sni_enabled is None and 'isSniEnabled' in kwargs:
             is_sni_enabled = kwargs['isSniEnabled']
-        if 'loadBalancingMethod' in kwargs:
+        if is_sni_enabled is None:
+            raise TypeError("Missing 'is_sni_enabled' argument")
+        if load_balancing_method is None and 'loadBalancingMethod' in kwargs:
             load_balancing_method = kwargs['loadBalancingMethod']
-        if 'tlsProtocols' in kwargs:
+        if load_balancing_method is None:
+            raise TypeError("Missing 'load_balancing_method' argument")
+        if tls_protocols is None and 'tlsProtocols' in kwargs:
             tls_protocols = kwargs['tlsProtocols']
-        if 'websocketPathPrefixes' in kwargs:
+        if tls_protocols is None:
+            raise TypeError("Missing 'tls_protocols' argument")
+        if websocket_path_prefixes is None and 'websocketPathPrefixes' in kwargs:
             websocket_path_prefixes = kwargs['websocketPathPrefixes']
+        if websocket_path_prefixes is None:
+            raise TypeError("Missing 'websocket_path_prefixes' argument")
 
         _setter("certificate_id", certificate_id)
         _setter("cipher_group", cipher_group)
@@ -10705,35 +11467,57 @@ class GetWaasPolicyPolicyConfigHealthChecksResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expected_response_code_groups: Sequence[str],
-             expected_response_text: str,
-             headers: Mapping[str, Any],
-             healthy_threshold: int,
-             interval_in_seconds: int,
-             is_enabled: bool,
-             is_response_text_check_enabled: bool,
-             method: str,
-             path: str,
-             timeout_in_seconds: int,
-             unhealthy_threshold: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expected_response_code_groups: Optional[Sequence[str]] = None,
+             expected_response_text: Optional[str] = None,
+             headers: Optional[Mapping[str, Any]] = None,
+             healthy_threshold: Optional[int] = None,
+             interval_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_response_text_check_enabled: Optional[bool] = None,
+             method: Optional[str] = None,
+             path: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             unhealthy_threshold: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expectedResponseCodeGroups' in kwargs:
+        if expected_response_code_groups is None and 'expectedResponseCodeGroups' in kwargs:
             expected_response_code_groups = kwargs['expectedResponseCodeGroups']
-        if 'expectedResponseText' in kwargs:
+        if expected_response_code_groups is None:
+            raise TypeError("Missing 'expected_response_code_groups' argument")
+        if expected_response_text is None and 'expectedResponseText' in kwargs:
             expected_response_text = kwargs['expectedResponseText']
-        if 'healthyThreshold' in kwargs:
+        if expected_response_text is None:
+            raise TypeError("Missing 'expected_response_text' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if healthy_threshold is None and 'healthyThreshold' in kwargs:
             healthy_threshold = kwargs['healthyThreshold']
-        if 'intervalInSeconds' in kwargs:
+        if healthy_threshold is None:
+            raise TypeError("Missing 'healthy_threshold' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'isEnabled' in kwargs:
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isResponseTextCheckEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_response_text_check_enabled is None and 'isResponseTextCheckEnabled' in kwargs:
             is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
-        if 'timeoutInSeconds' in kwargs:
+        if is_response_text_check_enabled is None:
+            raise TypeError("Missing 'is_response_text_check_enabled' argument")
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'unhealthyThreshold' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if unhealthy_threshold is None and 'unhealthyThreshold' in kwargs:
             unhealthy_threshold = kwargs['unhealthyThreshold']
+        if unhealthy_threshold is None:
+            raise TypeError("Missing 'unhealthy_threshold' argument")
 
         _setter("expected_response_code_groups", expected_response_code_groups)
         _setter("expected_response_text", expected_response_text)
@@ -10869,14 +11653,22 @@ class GetWaasPolicyPolicyConfigLoadBalancingMethodResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             expiration_time_in_seconds: int,
-             method: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain: Optional[str] = None,
+             expiration_time_in_seconds: Optional[int] = None,
+             method: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expirationTimeInSeconds' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if expiration_time_in_seconds is None and 'expirationTimeInSeconds' in kwargs:
             expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+        if expiration_time_in_seconds is None:
+            raise TypeError("Missing 'expiration_time_in_seconds' argument")
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("domain", domain)
         _setter("expiration_time_in_seconds", expiration_time_in_seconds)
@@ -10966,38 +11758,62 @@ class GetWaasPolicyWafConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_rules: Sequence['outputs.GetWaasPolicyWafConfigAccessRuleResult'],
-             address_rate_limiting: 'outputs.GetWaasPolicyWafConfigAddressRateLimitingResult',
-             caching_rules: Sequence['outputs.GetWaasPolicyWafConfigCachingRuleResult'],
-             captchas: Sequence['outputs.GetWaasPolicyWafConfigCaptchaResult'],
-             custom_protection_rules: Sequence['outputs.GetWaasPolicyWafConfigCustomProtectionRuleResult'],
-             device_fingerprint_challenge: 'outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeResult',
-             human_interaction_challenge: 'outputs.GetWaasPolicyWafConfigHumanInteractionChallengeResult',
-             js_challenge: 'outputs.GetWaasPolicyWafConfigJsChallengeResult',
-             origin: str,
-             origin_groups: Sequence[str],
-             protection_settings: 'outputs.GetWaasPolicyWafConfigProtectionSettingsResult',
-             whitelists: Sequence['outputs.GetWaasPolicyWafConfigWhitelistResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access_rules: Optional[Sequence['outputs.GetWaasPolicyWafConfigAccessRuleResult']] = None,
+             address_rate_limiting: Optional['outputs.GetWaasPolicyWafConfigAddressRateLimitingResult'] = None,
+             caching_rules: Optional[Sequence['outputs.GetWaasPolicyWafConfigCachingRuleResult']] = None,
+             captchas: Optional[Sequence['outputs.GetWaasPolicyWafConfigCaptchaResult']] = None,
+             custom_protection_rules: Optional[Sequence['outputs.GetWaasPolicyWafConfigCustomProtectionRuleResult']] = None,
+             device_fingerprint_challenge: Optional['outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeResult'] = None,
+             human_interaction_challenge: Optional['outputs.GetWaasPolicyWafConfigHumanInteractionChallengeResult'] = None,
+             js_challenge: Optional['outputs.GetWaasPolicyWafConfigJsChallengeResult'] = None,
+             origin: Optional[str] = None,
+             origin_groups: Optional[Sequence[str]] = None,
+             protection_settings: Optional['outputs.GetWaasPolicyWafConfigProtectionSettingsResult'] = None,
+             whitelists: Optional[Sequence['outputs.GetWaasPolicyWafConfigWhitelistResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessRules' in kwargs:
+        if access_rules is None and 'accessRules' in kwargs:
             access_rules = kwargs['accessRules']
-        if 'addressRateLimiting' in kwargs:
+        if access_rules is None:
+            raise TypeError("Missing 'access_rules' argument")
+        if address_rate_limiting is None and 'addressRateLimiting' in kwargs:
             address_rate_limiting = kwargs['addressRateLimiting']
-        if 'cachingRules' in kwargs:
+        if address_rate_limiting is None:
+            raise TypeError("Missing 'address_rate_limiting' argument")
+        if caching_rules is None and 'cachingRules' in kwargs:
             caching_rules = kwargs['cachingRules']
-        if 'customProtectionRules' in kwargs:
+        if caching_rules is None:
+            raise TypeError("Missing 'caching_rules' argument")
+        if captchas is None:
+            raise TypeError("Missing 'captchas' argument")
+        if custom_protection_rules is None and 'customProtectionRules' in kwargs:
             custom_protection_rules = kwargs['customProtectionRules']
-        if 'deviceFingerprintChallenge' in kwargs:
+        if custom_protection_rules is None:
+            raise TypeError("Missing 'custom_protection_rules' argument")
+        if device_fingerprint_challenge is None and 'deviceFingerprintChallenge' in kwargs:
             device_fingerprint_challenge = kwargs['deviceFingerprintChallenge']
-        if 'humanInteractionChallenge' in kwargs:
+        if device_fingerprint_challenge is None:
+            raise TypeError("Missing 'device_fingerprint_challenge' argument")
+        if human_interaction_challenge is None and 'humanInteractionChallenge' in kwargs:
             human_interaction_challenge = kwargs['humanInteractionChallenge']
-        if 'jsChallenge' in kwargs:
+        if human_interaction_challenge is None:
+            raise TypeError("Missing 'human_interaction_challenge' argument")
+        if js_challenge is None and 'jsChallenge' in kwargs:
             js_challenge = kwargs['jsChallenge']
-        if 'originGroups' in kwargs:
+        if js_challenge is None:
+            raise TypeError("Missing 'js_challenge' argument")
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
+        if origin_groups is None and 'originGroups' in kwargs:
             origin_groups = kwargs['originGroups']
-        if 'protectionSettings' in kwargs:
+        if origin_groups is None:
+            raise TypeError("Missing 'origin_groups' argument")
+        if protection_settings is None and 'protectionSettings' in kwargs:
             protection_settings = kwargs['protectionSettings']
+        if protection_settings is None:
+            raise TypeError("Missing 'protection_settings' argument")
+        if whitelists is None:
+            raise TypeError("Missing 'whitelists' argument")
 
         _setter("access_rules", access_rules)
         _setter("address_rate_limiting", address_rate_limiting)
@@ -11174,50 +11990,82 @@ class GetWaasPolicyWafConfigAccessRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             bypass_challenges: Sequence[str],
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             criterias: Sequence['outputs.GetWaasPolicyWafConfigAccessRuleCriteriaResult'],
-             name: str,
-             redirect_response_code: str,
-             redirect_url: str,
-             response_header_manipulations: Sequence['outputs.GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             bypass_challenges: Optional[Sequence[str]] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPolicyWafConfigAccessRuleCriteriaResult']] = None,
+             name: Optional[str] = None,
+             redirect_response_code: Optional[str] = None,
+             redirect_url: Optional[str] = None,
+             response_header_manipulations: Optional[Sequence['outputs.GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'bypassChallenges' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if bypass_challenges is None and 'bypassChallenges' in kwargs:
             bypass_challenges = kwargs['bypassChallenges']
-        if 'captchaFooter' in kwargs:
+        if bypass_challenges is None:
+            raise TypeError("Missing 'bypass_challenges' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
-        if 'redirectResponseCode' in kwargs:
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if redirect_response_code is None and 'redirectResponseCode' in kwargs:
             redirect_response_code = kwargs['redirectResponseCode']
-        if 'redirectUrl' in kwargs:
+        if redirect_response_code is None:
+            raise TypeError("Missing 'redirect_response_code' argument")
+        if redirect_url is None and 'redirectUrl' in kwargs:
             redirect_url = kwargs['redirectUrl']
-        if 'responseHeaderManipulations' in kwargs:
+        if redirect_url is None:
+            raise TypeError("Missing 'redirect_url' argument")
+        if response_header_manipulations is None and 'responseHeaderManipulations' in kwargs:
             response_header_manipulations = kwargs['responseHeaderManipulations']
+        if response_header_manipulations is None:
+            raise TypeError("Missing 'response_header_manipulations' argument")
 
         _setter("action", action)
         _setter("block_action", block_action)
@@ -11407,13 +12255,19 @@ class GetWaasPolicyWafConfigAccessRuleCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             is_case_sensitive: bool,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             is_case_sensitive: Optional[bool] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
+        if is_case_sensitive is None:
+            raise TypeError("Missing 'is_case_sensitive' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
@@ -11480,11 +12334,17 @@ class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             header: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             header: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if header is None:
+            raise TypeError("Missing 'header' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("action", action)
         _setter("header", header)
@@ -11538,20 +12398,28 @@ class GetWaasPolicyWafConfigAddressRateLimitingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_rate_per_address: int,
-             block_response_code: int,
-             is_enabled: bool,
-             max_delayed_count_per_address: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_rate_per_address: Optional[int] = None,
+             block_response_code: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             max_delayed_count_per_address: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedRatePerAddress' in kwargs:
+        if allowed_rate_per_address is None and 'allowedRatePerAddress' in kwargs:
             allowed_rate_per_address = kwargs['allowedRatePerAddress']
-        if 'blockResponseCode' in kwargs:
+        if allowed_rate_per_address is None:
+            raise TypeError("Missing 'allowed_rate_per_address' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'isEnabled' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxDelayedCountPerAddress' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if max_delayed_count_per_address is None and 'maxDelayedCountPerAddress' in kwargs:
             max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+        if max_delayed_count_per_address is None:
+            raise TypeError("Missing 'max_delayed_count_per_address' argument")
 
         _setter("allowed_rate_per_address", allowed_rate_per_address)
         _setter("block_response_code", block_response_code)
@@ -11623,21 +12491,35 @@ class GetWaasPolicyWafConfigCachingRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             caching_duration: str,
-             client_caching_duration: str,
-             criterias: Sequence['outputs.GetWaasPolicyWafConfigCachingRuleCriteriaResult'],
-             is_client_caching_enabled: bool,
-             key: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             caching_duration: Optional[str] = None,
+             client_caching_duration: Optional[str] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPolicyWafConfigCachingRuleCriteriaResult']] = None,
+             is_client_caching_enabled: Optional[bool] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cachingDuration' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if caching_duration is None and 'cachingDuration' in kwargs:
             caching_duration = kwargs['cachingDuration']
-        if 'clientCachingDuration' in kwargs:
+        if caching_duration is None:
+            raise TypeError("Missing 'caching_duration' argument")
+        if client_caching_duration is None and 'clientCachingDuration' in kwargs:
             client_caching_duration = kwargs['clientCachingDuration']
-        if 'isClientCachingEnabled' in kwargs:
+        if client_caching_duration is None:
+            raise TypeError("Missing 'client_caching_duration' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if is_client_caching_enabled is None and 'isClientCachingEnabled' in kwargs:
             is_client_caching_enabled = kwargs['isClientCachingEnabled']
+        if is_client_caching_enabled is None:
+            raise TypeError("Missing 'is_client_caching_enabled' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("action", action)
         _setter("caching_duration", caching_duration)
@@ -11737,10 +12619,14 @@ class GetWaasPolicyWafConfigCachingRuleCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("value", value)
@@ -11810,25 +12696,39 @@ class GetWaasPolicyWafConfigCaptchaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             failure_message: str,
-             footer_text: str,
-             header_text: str,
-             session_expiration_in_seconds: int,
-             submit_label: str,
-             title: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             failure_message: Optional[str] = None,
+             footer_text: Optional[str] = None,
+             header_text: Optional[str] = None,
+             session_expiration_in_seconds: Optional[int] = None,
+             submit_label: Optional[str] = None,
+             title: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'failureMessage' in kwargs:
+        if failure_message is None and 'failureMessage' in kwargs:
             failure_message = kwargs['failureMessage']
-        if 'footerText' in kwargs:
+        if failure_message is None:
+            raise TypeError("Missing 'failure_message' argument")
+        if footer_text is None and 'footerText' in kwargs:
             footer_text = kwargs['footerText']
-        if 'headerText' in kwargs:
+        if footer_text is None:
+            raise TypeError("Missing 'footer_text' argument")
+        if header_text is None and 'headerText' in kwargs:
             header_text = kwargs['headerText']
-        if 'sessionExpirationInSeconds' in kwargs:
+        if header_text is None:
+            raise TypeError("Missing 'header_text' argument")
+        if session_expiration_in_seconds is None and 'sessionExpirationInSeconds' in kwargs:
             session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
-        if 'submitLabel' in kwargs:
+        if session_expiration_in_seconds is None:
+            raise TypeError("Missing 'session_expiration_in_seconds' argument")
+        if submit_label is None and 'submitLabel' in kwargs:
             submit_label = kwargs['submitLabel']
+        if submit_label is None:
+            raise TypeError("Missing 'submit_label' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("failure_message", failure_message)
         _setter("footer_text", footer_text)
@@ -11915,11 +12815,17 @@ class GetWaasPolicyWafConfigCustomProtectionRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             exclusions: Sequence['outputs.GetWaasPolicyWafConfigCustomProtectionRuleExclusionResult'],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             exclusions: Optional[Sequence['outputs.GetWaasPolicyWafConfigCustomProtectionRuleExclusionResult']] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("action", action)
         _setter("exclusions", exclusions)
@@ -11967,10 +12873,14 @@ class GetWaasPolicyWafConfigCustomProtectionRuleExclusionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             target: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             target: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
 
         _setter("exclusions", exclusions)
         _setter("target", target)
@@ -12027,30 +12937,46 @@ class GetWaasPolicyWafConfigDeviceFingerprintChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             challenge_settings: 'outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult',
-             failure_threshold: int,
-             failure_threshold_expiration_in_seconds: int,
-             is_enabled: bool,
-             max_address_count: int,
-             max_address_count_expiration_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             challenge_settings: Optional['outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult'] = None,
+             failure_threshold: Optional[int] = None,
+             failure_threshold_expiration_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             max_address_count: Optional[int] = None,
+             max_address_count_expiration_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'isEnabled' in kwargs:
+        if failure_threshold_expiration_in_seconds is None:
+            raise TypeError("Missing 'failure_threshold_expiration_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxAddressCount' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if max_address_count is None and 'maxAddressCount' in kwargs:
             max_address_count = kwargs['maxAddressCount']
-        if 'maxAddressCountExpirationInSeconds' in kwargs:
+        if max_address_count is None:
+            raise TypeError("Missing 'max_address_count' argument")
+        if max_address_count_expiration_in_seconds is None and 'maxAddressCountExpirationInSeconds' in kwargs:
             max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+        if max_address_count_expiration_in_seconds is None:
+            raise TypeError("Missing 'max_address_count_expiration_in_seconds' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -12164,35 +13090,53 @@ class GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -12318,36 +13262,56 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             challenge_settings: 'outputs.GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsResult',
-             failure_threshold: int,
-             failure_threshold_expiration_in_seconds: int,
-             interaction_threshold: int,
-             is_enabled: bool,
-             is_nat_enabled: bool,
-             recording_period_in_seconds: int,
-             set_http_header: 'outputs.GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             challenge_settings: Optional['outputs.GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsResult'] = None,
+             failure_threshold: Optional[int] = None,
+             failure_threshold_expiration_in_seconds: Optional[int] = None,
+             interaction_threshold: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_nat_enabled: Optional[bool] = None,
+             recording_period_in_seconds: Optional[int] = None,
+             set_http_header: Optional['outputs.GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'challengeSettings' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'failureThresholdExpirationInSeconds' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if failure_threshold_expiration_in_seconds is None and 'failureThresholdExpirationInSeconds' in kwargs:
             failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
-        if 'interactionThreshold' in kwargs:
+        if failure_threshold_expiration_in_seconds is None:
+            raise TypeError("Missing 'failure_threshold_expiration_in_seconds' argument")
+        if interaction_threshold is None and 'interactionThreshold' in kwargs:
             interaction_threshold = kwargs['interactionThreshold']
-        if 'isEnabled' in kwargs:
+        if interaction_threshold is None:
+            raise TypeError("Missing 'interaction_threshold' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNatEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'recordingPeriodInSeconds' in kwargs:
+        if is_nat_enabled is None:
+            raise TypeError("Missing 'is_nat_enabled' argument")
+        if recording_period_in_seconds is None and 'recordingPeriodInSeconds' in kwargs:
             recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
-        if 'setHttpHeader' in kwargs:
+        if recording_period_in_seconds is None:
+            raise TypeError("Missing 'recording_period_in_seconds' argument")
+        if set_http_header is None and 'setHttpHeader' in kwargs:
             set_http_header = kwargs['setHttpHeader']
+        if set_http_header is None:
+            raise TypeError("Missing 'set_http_header' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -12479,35 +13443,53 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -12609,10 +13591,14 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -12672,31 +13658,49 @@ class GetWaasPolicyWafConfigJsChallengeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_expiration_in_seconds: int,
-             are_redirects_challenged: bool,
-             challenge_settings: 'outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult',
-             criterias: Sequence['outputs.GetWaasPolicyWafConfigJsChallengeCriteriaResult'],
-             failure_threshold: int,
-             is_enabled: bool,
-             is_nat_enabled: bool,
-             set_http_header: 'outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_expiration_in_seconds: Optional[int] = None,
+             are_redirects_challenged: Optional[bool] = None,
+             challenge_settings: Optional['outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult'] = None,
+             criterias: Optional[Sequence['outputs.GetWaasPolicyWafConfigJsChallengeCriteriaResult']] = None,
+             failure_threshold: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             is_nat_enabled: Optional[bool] = None,
+             set_http_header: Optional['outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionExpirationInSeconds' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_expiration_in_seconds is None and 'actionExpirationInSeconds' in kwargs:
             action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
-        if 'areRedirectsChallenged' in kwargs:
+        if action_expiration_in_seconds is None:
+            raise TypeError("Missing 'action_expiration_in_seconds' argument")
+        if are_redirects_challenged is None and 'areRedirectsChallenged' in kwargs:
             are_redirects_challenged = kwargs['areRedirectsChallenged']
-        if 'challengeSettings' in kwargs:
+        if are_redirects_challenged is None:
+            raise TypeError("Missing 'are_redirects_challenged' argument")
+        if challenge_settings is None and 'challengeSettings' in kwargs:
             challenge_settings = kwargs['challengeSettings']
-        if 'failureThreshold' in kwargs:
+        if challenge_settings is None:
+            raise TypeError("Missing 'challenge_settings' argument")
+        if criterias is None:
+            raise TypeError("Missing 'criterias' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'isEnabled' in kwargs:
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNatEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_nat_enabled is None and 'isNatEnabled' in kwargs:
             is_nat_enabled = kwargs['isNatEnabled']
-        if 'setHttpHeader' in kwargs:
+        if is_nat_enabled is None:
+            raise TypeError("Missing 'is_nat_enabled' argument")
+        if set_http_header is None and 'setHttpHeader' in kwargs:
             set_http_header = kwargs['setHttpHeader']
+        if set_http_header is None:
+            raise TypeError("Missing 'set_http_header' argument")
 
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
@@ -12819,35 +13823,53 @@ class GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             captcha_footer: str,
-             captcha_header: str,
-             captcha_submit_label: str,
-             captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             captcha_footer: Optional[str] = None,
+             captcha_header: Optional[str] = None,
+             captcha_submit_label: Optional[str] = None,
+             captcha_title: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockAction' in kwargs:
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'captchaFooter' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if captcha_footer is None and 'captchaFooter' in kwargs:
             captcha_footer = kwargs['captchaFooter']
-        if 'captchaHeader' in kwargs:
+        if captcha_footer is None:
+            raise TypeError("Missing 'captcha_footer' argument")
+        if captcha_header is None and 'captchaHeader' in kwargs:
             captcha_header = kwargs['captchaHeader']
-        if 'captchaSubmitLabel' in kwargs:
+        if captcha_header is None:
+            raise TypeError("Missing 'captcha_header' argument")
+        if captcha_submit_label is None and 'captchaSubmitLabel' in kwargs:
             captcha_submit_label = kwargs['captchaSubmitLabel']
-        if 'captchaTitle' in kwargs:
+        if captcha_submit_label is None:
+            raise TypeError("Missing 'captcha_submit_label' argument")
+        if captcha_title is None and 'captchaTitle' in kwargs:
             captcha_title = kwargs['captchaTitle']
+        if captcha_title is None:
+            raise TypeError("Missing 'captcha_title' argument")
 
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -12968,13 +13990,19 @@ class GetWaasPolicyWafConfigJsChallengeCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             condition: str,
-             is_case_sensitive: bool,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             condition: Optional[str] = None,
+             is_case_sensitive: Optional[bool] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCaseSensitive' in kwargs:
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if is_case_sensitive is None and 'isCaseSensitive' in kwargs:
             is_case_sensitive = kwargs['isCaseSensitive']
+        if is_case_sensitive is None:
+            raise TypeError("Missing 'is_case_sensitive' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
@@ -13038,10 +14066,14 @@ class GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -13113,47 +14145,73 @@ class GetWaasPolicyWafConfigProtectionSettingsResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_http_methods: Sequence[str],
-             block_action: str,
-             block_error_page_code: str,
-             block_error_page_description: str,
-             block_error_page_message: str,
-             block_response_code: int,
-             is_response_inspected: bool,
-             max_argument_count: int,
-             max_name_length_per_argument: int,
-             max_response_size_in_ki_b: int,
-             max_total_name_length_of_arguments: int,
-             media_types: Sequence[str],
-             recommendations_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_http_methods: Optional[Sequence[str]] = None,
+             block_action: Optional[str] = None,
+             block_error_page_code: Optional[str] = None,
+             block_error_page_description: Optional[str] = None,
+             block_error_page_message: Optional[str] = None,
+             block_response_code: Optional[int] = None,
+             is_response_inspected: Optional[bool] = None,
+             max_argument_count: Optional[int] = None,
+             max_name_length_per_argument: Optional[int] = None,
+             max_response_size_in_ki_b: Optional[int] = None,
+             max_total_name_length_of_arguments: Optional[int] = None,
+             media_types: Optional[Sequence[str]] = None,
+             recommendations_period_in_days: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedHttpMethods' in kwargs:
+        if allowed_http_methods is None and 'allowedHttpMethods' in kwargs:
             allowed_http_methods = kwargs['allowedHttpMethods']
-        if 'blockAction' in kwargs:
+        if allowed_http_methods is None:
+            raise TypeError("Missing 'allowed_http_methods' argument")
+        if block_action is None and 'blockAction' in kwargs:
             block_action = kwargs['blockAction']
-        if 'blockErrorPageCode' in kwargs:
+        if block_action is None:
+            raise TypeError("Missing 'block_action' argument")
+        if block_error_page_code is None and 'blockErrorPageCode' in kwargs:
             block_error_page_code = kwargs['blockErrorPageCode']
-        if 'blockErrorPageDescription' in kwargs:
+        if block_error_page_code is None:
+            raise TypeError("Missing 'block_error_page_code' argument")
+        if block_error_page_description is None and 'blockErrorPageDescription' in kwargs:
             block_error_page_description = kwargs['blockErrorPageDescription']
-        if 'blockErrorPageMessage' in kwargs:
+        if block_error_page_description is None:
+            raise TypeError("Missing 'block_error_page_description' argument")
+        if block_error_page_message is None and 'blockErrorPageMessage' in kwargs:
             block_error_page_message = kwargs['blockErrorPageMessage']
-        if 'blockResponseCode' in kwargs:
+        if block_error_page_message is None:
+            raise TypeError("Missing 'block_error_page_message' argument")
+        if block_response_code is None and 'blockResponseCode' in kwargs:
             block_response_code = kwargs['blockResponseCode']
-        if 'isResponseInspected' in kwargs:
+        if block_response_code is None:
+            raise TypeError("Missing 'block_response_code' argument")
+        if is_response_inspected is None and 'isResponseInspected' in kwargs:
             is_response_inspected = kwargs['isResponseInspected']
-        if 'maxArgumentCount' in kwargs:
+        if is_response_inspected is None:
+            raise TypeError("Missing 'is_response_inspected' argument")
+        if max_argument_count is None and 'maxArgumentCount' in kwargs:
             max_argument_count = kwargs['maxArgumentCount']
-        if 'maxNameLengthPerArgument' in kwargs:
+        if max_argument_count is None:
+            raise TypeError("Missing 'max_argument_count' argument")
+        if max_name_length_per_argument is None and 'maxNameLengthPerArgument' in kwargs:
             max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
-        if 'maxResponseSizeInKiB' in kwargs:
+        if max_name_length_per_argument is None:
+            raise TypeError("Missing 'max_name_length_per_argument' argument")
+        if max_response_size_in_ki_b is None and 'maxResponseSizeInKiB' in kwargs:
             max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
-        if 'maxTotalNameLengthOfArguments' in kwargs:
+        if max_response_size_in_ki_b is None:
+            raise TypeError("Missing 'max_response_size_in_ki_b' argument")
+        if max_total_name_length_of_arguments is None and 'maxTotalNameLengthOfArguments' in kwargs:
             max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
-        if 'mediaTypes' in kwargs:
+        if max_total_name_length_of_arguments is None:
+            raise TypeError("Missing 'max_total_name_length_of_arguments' argument")
+        if media_types is None and 'mediaTypes' in kwargs:
             media_types = kwargs['mediaTypes']
-        if 'recommendationsPeriodInDays' in kwargs:
+        if media_types is None:
+            raise TypeError("Missing 'media_types' argument")
+        if recommendations_period_in_days is None and 'recommendationsPeriodInDays' in kwargs:
             recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+        if recommendations_period_in_days is None:
+            raise TypeError("Missing 'recommendations_period_in_days' argument")
 
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("block_action", block_action)
@@ -13294,13 +14352,19 @@ class GetWaasPolicyWafConfigWhitelistResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address_lists: Sequence[str],
-             addresses: Sequence[str],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address_lists: Optional[Sequence[str]] = None,
+             addresses: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addressLists' in kwargs:
+        if address_lists is None and 'addressLists' in kwargs:
             address_lists = kwargs['addressLists']
+        if address_lists is None:
+            raise TypeError("Missing 'address_lists' argument")
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("address_lists", address_lists)
         _setter("addresses", addresses)

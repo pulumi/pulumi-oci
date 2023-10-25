@@ -36,13 +36,17 @@ class NetworkFirewallPolicyServiceListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: pulumi.Input[str],
-             services: pulumi.Input[Sequence[pulumi.Input[str]]],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
 
         _setter("network_firewall_policy_id", network_firewall_policy_id)
         _setter("services", services)
@@ -126,13 +130,13 @@ class _NetworkFirewallPolicyServiceListState:
              parent_resource_id: Optional[pulumi.Input[str]] = None,
              services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              total_services: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
-        if 'totalServices' in kwargs:
+        if total_services is None and 'totalServices' in kwargs:
             total_services = kwargs['totalServices']
 
         if name is not None:

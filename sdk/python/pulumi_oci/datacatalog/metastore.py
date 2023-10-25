@@ -45,25 +45,31 @@ class MetastoreArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             default_external_table_location: pulumi.Input[str],
-             default_managed_table_location: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             default_external_table_location: Optional[pulumi.Input[str]] = None,
+             default_managed_table_location: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultExternalTableLocation' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if default_external_table_location is None and 'defaultExternalTableLocation' in kwargs:
             default_external_table_location = kwargs['defaultExternalTableLocation']
-        if 'defaultManagedTableLocation' in kwargs:
+        if default_external_table_location is None:
+            raise TypeError("Missing 'default_external_table_location' argument")
+        if default_managed_table_location is None and 'defaultManagedTableLocation' in kwargs:
             default_managed_table_location = kwargs['defaultManagedTableLocation']
-        if 'definedTags' in kwargs:
+        if default_managed_table_location is None:
+            raise TypeError("Missing 'default_managed_table_location' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -209,25 +215,25 @@ class _MetastoreState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultExternalTableLocation' in kwargs:
+        if default_external_table_location is None and 'defaultExternalTableLocation' in kwargs:
             default_external_table_location = kwargs['defaultExternalTableLocation']
-        if 'defaultManagedTableLocation' in kwargs:
+        if default_managed_table_location is None and 'defaultManagedTableLocation' in kwargs:
             default_managed_table_location = kwargs['defaultManagedTableLocation']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

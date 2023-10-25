@@ -47,23 +47,29 @@ class SubscriberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             clients: pulumi.Input[Sequence[pulumi.Input['SubscriberClientArgs']]],
-             compartment_id: pulumi.Input[str],
-             usage_plans: pulumi.Input[Sequence[pulumi.Input[str]]],
+             clients: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriberClientArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             usage_plans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if clients is None:
+            raise TypeError("Missing 'clients' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'usagePlans' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if usage_plans is None and 'usagePlans' in kwargs:
             usage_plans = kwargs['usagePlans']
-        if 'definedTags' in kwargs:
+        if usage_plans is None:
+            raise TypeError("Missing 'usage_plans' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("clients", clients)
@@ -209,23 +215,23 @@ class _SubscriberState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              usage_plans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'usagePlans' in kwargs:
+        if usage_plans is None and 'usagePlans' in kwargs:
             usage_plans = kwargs['usagePlans']
 
         if clients is not None:

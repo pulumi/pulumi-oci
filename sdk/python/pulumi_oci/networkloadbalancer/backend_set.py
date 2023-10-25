@@ -51,21 +51,27 @@ class BackendSetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
-             network_load_balancer_id: pulumi.Input[str],
-             policy: pulumi.Input[str],
+             health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
+             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input[str]] = None,
              ip_version: Optional[pulumi.Input[str]] = None,
              is_preserve_source: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'healthChecker' in kwargs:
+        if health_checker is None and 'healthChecker' in kwargs:
             health_checker = kwargs['healthChecker']
-        if 'networkLoadBalancerId' in kwargs:
+        if health_checker is None:
+            raise TypeError("Missing 'health_checker' argument")
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
             network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if 'ipVersion' in kwargs:
+        if network_load_balancer_id is None:
+            raise TypeError("Missing 'network_load_balancer_id' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if ip_version is None and 'ipVersion' in kwargs:
             ip_version = kwargs['ipVersion']
-        if 'isPreserveSource' in kwargs:
+        if is_preserve_source is None and 'isPreserveSource' in kwargs:
             is_preserve_source = kwargs['isPreserveSource']
 
         _setter("health_checker", health_checker)
@@ -207,15 +213,15 @@ class _BackendSetState:
              name: Optional[pulumi.Input[str]] = None,
              network_load_balancer_id: Optional[pulumi.Input[str]] = None,
              policy: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'healthChecker' in kwargs:
+        if health_checker is None and 'healthChecker' in kwargs:
             health_checker = kwargs['healthChecker']
-        if 'ipVersion' in kwargs:
+        if ip_version is None and 'ipVersion' in kwargs:
             ip_version = kwargs['ipVersion']
-        if 'isPreserveSource' in kwargs:
+        if is_preserve_source is None and 'isPreserveSource' in kwargs:
             is_preserve_source = kwargs['isPreserveSource']
-        if 'networkLoadBalancerId' in kwargs:
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
             network_load_balancer_id = kwargs['networkLoadBalancerId']
 
         if backends is not None:
@@ -471,11 +477,7 @@ class BackendSet(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = BackendSetArgs.__new__(BackendSetArgs)
 
-            if health_checker is not None and not isinstance(health_checker, BackendSetHealthCheckerArgs):
-                health_checker = health_checker or {}
-                def _setter(key, value):
-                    health_checker[key] = value
-                BackendSetHealthCheckerArgs._configure(_setter, **health_checker)
+            health_checker = _utilities.configure(health_checker, BackendSetHealthCheckerArgs, True)
             if health_checker is None and not opts.urn:
                 raise TypeError("Missing required property 'health_checker'")
             __props__.__dict__["health_checker"] = health_checker

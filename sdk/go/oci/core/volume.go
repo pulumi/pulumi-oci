@@ -60,11 +60,11 @@ import (
 //						DisplayName:        pulumi.Any(_var.Volume_block_volume_replicas_display_name),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Volume_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsAutoTuneEnabled: pulumi.Any(_var.Volume_is_auto_tune_enabled),

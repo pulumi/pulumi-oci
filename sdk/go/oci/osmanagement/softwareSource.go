@@ -38,11 +38,11 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Software_source_display_name),
 //				ChecksumType:  pulumi.Any(_var.Software_source_checksum_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Software_source_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MaintainerEmail: pulumi.Any(_var.Software_source_maintainer_email),

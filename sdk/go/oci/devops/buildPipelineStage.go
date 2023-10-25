@@ -59,7 +59,7 @@ import (
 //					},
 //				},
 //				BuildSpecFile: pulumi.Any(_var.Build_pipeline_stage_build_spec_file),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeliverArtifactCollection: &devops.BuildPipelineStageDeliverArtifactCollectionArgs{
@@ -73,7 +73,7 @@ import (
 //				DeployPipelineId: pulumi.Any(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
 //				Description:      pulumi.Any(_var.Build_pipeline_stage_description),
 //				DisplayName:      pulumi.Any(_var.Build_pipeline_stage_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Image:                      pulumi.Any(_var.Build_pipeline_stage_image),

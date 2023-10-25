@@ -70,11 +70,11 @@ import (
 //						ScimFilter:       pulumi.Any(_var.Report_definition_summary_scim_filter),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Report_definition_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

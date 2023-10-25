@@ -31,17 +31,23 @@ class AutonomousContainerDatabaseDataguardRoleChangeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomous_container_database_dataguard_association_id: pulumi.Input[str],
-             autonomous_container_database_id: pulumi.Input[str],
-             role: pulumi.Input[str],
+             autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
              connection_strings_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None and 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
             autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None:
+            raise TypeError("Missing 'autonomous_container_database_dataguard_association_id' argument")
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'connectionStringsType' in kwargs:
+        if autonomous_container_database_id is None:
+            raise TypeError("Missing 'autonomous_container_database_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if connection_strings_type is None and 'connectionStringsType' in kwargs:
             connection_strings_type = kwargs['connectionStringsType']
 
         _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
@@ -111,13 +117,13 @@ class _AutonomousContainerDatabaseDataguardRoleChangeState:
              autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
              connection_strings_type: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None and 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
             autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'connectionStringsType' in kwargs:
+        if connection_strings_type is None and 'connectionStringsType' in kwargs:
             connection_strings_type = kwargs['connectionStringsType']
 
         if autonomous_container_database_dataguard_association_id is not None:

@@ -53,12 +53,12 @@ import (
 //					Password: pulumi.Any(_var.Target_database_credentials_password),
 //					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Target_database_description),
 //				DisplayName: pulumi.Any(_var.Target_database_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				TlsConfig: &datasafe.TargetDatabaseTlsConfigArgs{

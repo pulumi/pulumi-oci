@@ -37,11 +37,11 @@ import (
 //				CertificateData: pulumi.Any(_var.Certificate_certificate_data),
 //				CompartmentId:   pulumi.Any(_var.Compartment_id),
 //				PrivateKeyData:  pulumi.Any(_var.Certificate_private_key_data),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Certificate_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsTrustVerificationDisabled: pulumi.Any(_var.Certificate_is_trust_verification_disabled),

@@ -104,10 +104,10 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				GroupAssociation: &logging.UnifiedAgentConfigurationGroupAssociationArgs{

@@ -34,11 +34,15 @@ class ObjectLifecyclePolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -110,9 +114,9 @@ class _ObjectLifecyclePolicyState:
              namespace: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if bucket is not None:

@@ -54,11 +54,11 @@ import (
 //						DisplayName:        pulumi.Any(_var.Boot_volume_boot_volume_replicas_display_name),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Boot_volume_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsAutoTuneEnabled:          pulumi.Any(_var.Boot_volume_is_auto_tune_enabled),

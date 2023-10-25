@@ -80,10 +80,14 @@ class ConnectionAdminCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -140,11 +144,11 @@ class ConnectionConnectDescriptorArgs:
              database_service_name: Optional[pulumi.Input[str]] = None,
              host: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectString' in kwargs:
+        if connect_string is None and 'connectString' in kwargs:
             connect_string = kwargs['connectString']
-        if 'databaseServiceName' in kwargs:
+        if database_service_name is None and 'databaseServiceName' in kwargs:
             database_service_name = kwargs['databaseServiceName']
 
         if connect_string is not None:
@@ -228,18 +232,24 @@ class ConnectionPrivateEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
-             vcn_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'subnetId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("subnet_id", subnet_id)
@@ -313,10 +323,14 @@ class ConnectionReplicationCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -369,13 +383,19 @@ class ConnectionSshDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: pulumi.Input[str],
-             sshkey: pulumi.Input[str],
-             user: pulumi.Input[str],
+             host: Optional[pulumi.Input[str]] = None,
+             sshkey: Optional[pulumi.Input[str]] = None,
+             user: Optional[pulumi.Input[str]] = None,
              sudo_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sudoLocation' in kwargs:
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if sshkey is None:
+            raise TypeError("Missing 'sshkey' argument")
+        if user is None:
+            raise TypeError("Missing 'user' argument")
+        if sudo_location is None and 'sudoLocation' in kwargs:
             sudo_location = kwargs['sudoLocation']
 
         _setter("host", host)
@@ -457,17 +477,23 @@ class ConnectionVaultDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             key_id: pulumi.Input[str],
-             vault_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'keyId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'vaultId' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("key_id", key_id)
@@ -537,11 +563,11 @@ class JobProgressArgs:
              current_phase: Optional[pulumi.Input[str]] = None,
              current_status: Optional[pulumi.Input[str]] = None,
              phases: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currentPhase' in kwargs:
+        if current_phase is None and 'currentPhase' in kwargs:
             current_phase = kwargs['currentPhase']
-        if 'currentStatus' in kwargs:
+        if current_status is None and 'currentStatus' in kwargs:
             current_status = kwargs['currentStatus']
 
         if current_phase is not None:
@@ -635,13 +661,13 @@ class JobProgressPhaseArgs:
              name: Optional[pulumi.Input[str]] = None,
              progress: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMs' in kwargs:
+        if duration_in_ms is None and 'durationInMs' in kwargs:
             duration_in_ms = kwargs['durationInMs']
-        if 'isAdvisorReportAvailable' in kwargs:
+        if is_advisor_report_available is None and 'isAdvisorReportAvailable' in kwargs:
             is_advisor_report_available = kwargs['isAdvisorReportAvailable']
-        if 'logLocations' in kwargs:
+        if log_locations is None and 'logLocations' in kwargs:
             log_locations = kwargs['logLocations']
 
         if action is not None:
@@ -791,7 +817,7 @@ class JobProgressPhaseExtractArgs:
              _setter: Callable[[Any, Any], None],
              message: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if message is not None:
@@ -847,7 +873,7 @@ class JobProgressPhaseLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -917,7 +943,7 @@ class JobUnsupportedObjectArgs:
              object: Optional[pulumi.Input[str]] = None,
              owner: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if object is not None:
@@ -983,11 +1009,11 @@ class MigrationAdvisorSettingsArgs:
              _setter: Callable[[Any, Any], None],
              is_ignore_errors: Optional[pulumi.Input[bool]] = None,
              is_skip_advisor: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isIgnoreErrors' in kwargs:
+        if is_ignore_errors is None and 'isIgnoreErrors' in kwargs:
             is_ignore_errors = kwargs['isIgnoreErrors']
-        if 'isSkipAdvisor' in kwargs:
+        if is_skip_advisor is None and 'isSkipAdvisor' in kwargs:
             is_skip_advisor = kwargs['isSkipAdvisor']
 
         if is_ignore_errors is not None:
@@ -1039,11 +1065,11 @@ class MigrationDataTransferMediumDetailsArgs:
              _setter: Callable[[Any, Any], None],
              database_link_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs']] = None,
              object_storage_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseLinkDetails' in kwargs:
+        if database_link_details is None and 'databaseLinkDetails' in kwargs:
             database_link_details = kwargs['databaseLinkDetails']
-        if 'objectStorageDetails' in kwargs:
+        if object_storage_details is None and 'objectStorageDetails' in kwargs:
             object_storage_details = kwargs['objectStorageDetails']
 
         if database_link_details is not None:
@@ -1095,9 +1121,9 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              wallet_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'walletBucket' in kwargs:
+        if wallet_bucket is None and 'walletBucket' in kwargs:
             wallet_bucket = kwargs['walletBucket']
 
         if name is not None:
@@ -1147,10 +1173,14 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1197,10 +1227,14 @@ class MigrationDataTransferMediumDetailsObjectStorageDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1255,19 +1289,21 @@ class MigrationDataTransferMediumDetailsV2Args:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              access_key_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              object_storage_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs']] = None,
              region: Optional[pulumi.Input[str]] = None,
              secret_access_key: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessKeyId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if access_key_id is None and 'accessKeyId' in kwargs:
             access_key_id = kwargs['accessKeyId']
-        if 'objectStorageBucket' in kwargs:
+        if object_storage_bucket is None and 'objectStorageBucket' in kwargs:
             object_storage_bucket = kwargs['objectStorageBucket']
-        if 'secretAccessKey' in kwargs:
+        if secret_access_key is None and 'secretAccessKey' in kwargs:
             secret_access_key = kwargs['secretAccessKey']
 
         _setter("type", type)
@@ -1362,7 +1398,7 @@ class MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs:
              _setter: Callable[[Any, Any], None],
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -1426,17 +1462,17 @@ class MigrationDatapumpSettingsArgs:
              import_directory_object: Optional[pulumi.Input['MigrationDatapumpSettingsImportDirectoryObjectArgs']] = None,
              job_mode: Optional[pulumi.Input[str]] = None,
              metadata_remaps: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationDatapumpSettingsMetadataRemapArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dataPumpParameters' in kwargs:
+        if data_pump_parameters is None and 'dataPumpParameters' in kwargs:
             data_pump_parameters = kwargs['dataPumpParameters']
-        if 'exportDirectoryObject' in kwargs:
+        if export_directory_object is None and 'exportDirectoryObject' in kwargs:
             export_directory_object = kwargs['exportDirectoryObject']
-        if 'importDirectoryObject' in kwargs:
+        if import_directory_object is None and 'importDirectoryObject' in kwargs:
             import_directory_object = kwargs['importDirectoryObject']
-        if 'jobMode' in kwargs:
+        if job_mode is None and 'jobMode' in kwargs:
             job_mode = kwargs['jobMode']
-        if 'metadataRemaps' in kwargs:
+        if metadata_remaps is None and 'metadataRemaps' in kwargs:
             metadata_remaps = kwargs['metadataRemaps']
 
         if data_pump_parameters is not None:
@@ -1546,17 +1582,17 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
              import_parallelism_degree: Optional[pulumi.Input[int]] = None,
              is_cluster: Optional[pulumi.Input[bool]] = None,
              table_exists_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'excludeParameters' in kwargs:
+        if exclude_parameters is None and 'excludeParameters' in kwargs:
             exclude_parameters = kwargs['excludeParameters']
-        if 'exportParallelismDegree' in kwargs:
+        if export_parallelism_degree is None and 'exportParallelismDegree' in kwargs:
             export_parallelism_degree = kwargs['exportParallelismDegree']
-        if 'importParallelismDegree' in kwargs:
+        if import_parallelism_degree is None and 'importParallelismDegree' in kwargs:
             import_parallelism_degree = kwargs['importParallelismDegree']
-        if 'isCluster' in kwargs:
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'tableExistsAction' in kwargs:
+        if table_exists_action is None and 'tableExistsAction' in kwargs:
             table_exists_action = kwargs['tableExistsAction']
 
         if estimate is not None:
@@ -1662,10 +1698,12 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if path is not None:
@@ -1713,10 +1751,12 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if path is not None:
@@ -1767,15 +1807,21 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             new_value: pulumi.Input[str],
-             old_value: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             new_value: Optional[pulumi.Input[str]] = None,
+             old_value: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'newValue' in kwargs:
+        if new_value is None and 'newValue' in kwargs:
             new_value = kwargs['newValue']
-        if 'oldValue' in kwargs:
+        if new_value is None:
+            raise TypeError("Missing 'new_value' argument")
+        if old_value is None and 'oldValue' in kwargs:
             old_value = kwargs['oldValue']
+        if old_value is None:
+            raise TypeError("Missing 'old_value' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("new_value", new_value)
         _setter("old_value", old_value)
@@ -1840,9 +1886,9 @@ class MigrationDumpTransferDetailsArgs:
              shared_storage_mount_target_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input['MigrationDumpTransferDetailsSourceArgs']] = None,
              target: Optional[pulumi.Input['MigrationDumpTransferDetailsTargetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sharedStorageMountTargetId' in kwargs:
+        if shared_storage_mount_target_id is None and 'sharedStorageMountTargetId' in kwargs:
             shared_storage_mount_target_id = kwargs['sharedStorageMountTargetId']
 
         if shared_storage_mount_target_id is not None:
@@ -1906,14 +1952,16 @@ class MigrationDumpTransferDetailsSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              oci_home: Optional[pulumi.Input[str]] = None,
              wallet_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ociHome' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if oci_home is None and 'ociHome' in kwargs:
             oci_home = kwargs['ociHome']
-        if 'walletLocation' in kwargs:
+        if wallet_location is None and 'walletLocation' in kwargs:
             wallet_location = kwargs['walletLocation']
 
         _setter("kind", kind)
@@ -1979,14 +2027,16 @@ class MigrationDumpTransferDetailsTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              oci_home: Optional[pulumi.Input[str]] = None,
              wallet_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ociHome' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if oci_home is None and 'ociHome' in kwargs:
             oci_home = kwargs['ociHome']
-        if 'walletLocation' in kwargs:
+        if wallet_location is None and 'walletLocation' in kwargs:
             wallet_location = kwargs['walletLocation']
 
         _setter("kind", kind)
@@ -2055,13 +2105,17 @@ class MigrationExcludeObjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object: pulumi.Input[str],
-             owner: pulumi.Input[str],
+             object: Optional[pulumi.Input[str]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
              is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isOmitExcludedTableFromReplication' in kwargs:
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if is_omit_excluded_table_from_replication is None and 'isOmitExcludedTableFromReplication' in kwargs:
             is_omit_excluded_table_from_replication = kwargs['isOmitExcludedTableFromReplication']
 
         _setter("object", object)
@@ -2137,10 +2191,12 @@ class MigrationGoldenGateDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hub: pulumi.Input['MigrationGoldenGateDetailsHubArgs'],
+             hub: Optional[pulumi.Input['MigrationGoldenGateDetailsHubArgs']] = None,
              settings: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hub is None:
+            raise TypeError("Missing 'hub' argument")
 
         _setter("hub", hub)
         if settings is not None:
@@ -2206,29 +2262,33 @@ class MigrationGoldenGateDetailsHubArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rest_admin_credentials: pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs'],
-             url: pulumi.Input[str],
+             rest_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs']] = None,
+             url: Optional[pulumi.Input[str]] = None,
              compute_id: Optional[pulumi.Input[str]] = None,
              source_container_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs']] = None,
              source_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']] = None,
              source_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
              target_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']] = None,
              target_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'restAdminCredentials' in kwargs:
+        if rest_admin_credentials is None and 'restAdminCredentials' in kwargs:
             rest_admin_credentials = kwargs['restAdminCredentials']
-        if 'computeId' in kwargs:
+        if rest_admin_credentials is None:
+            raise TypeError("Missing 'rest_admin_credentials' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if compute_id is None and 'computeId' in kwargs:
             compute_id = kwargs['computeId']
-        if 'sourceContainerDbAdminCredentials' in kwargs:
+        if source_container_db_admin_credentials is None and 'sourceContainerDbAdminCredentials' in kwargs:
             source_container_db_admin_credentials = kwargs['sourceContainerDbAdminCredentials']
-        if 'sourceDbAdminCredentials' in kwargs:
+        if source_db_admin_credentials is None and 'sourceDbAdminCredentials' in kwargs:
             source_db_admin_credentials = kwargs['sourceDbAdminCredentials']
-        if 'sourceMicroservicesDeploymentName' in kwargs:
+        if source_microservices_deployment_name is None and 'sourceMicroservicesDeploymentName' in kwargs:
             source_microservices_deployment_name = kwargs['sourceMicroservicesDeploymentName']
-        if 'targetDbAdminCredentials' in kwargs:
+        if target_db_admin_credentials is None and 'targetDbAdminCredentials' in kwargs:
             target_db_admin_credentials = kwargs['targetDbAdminCredentials']
-        if 'targetMicroservicesDeploymentName' in kwargs:
+        if target_microservices_deployment_name is None and 'targetMicroservicesDeploymentName' in kwargs:
             target_microservices_deployment_name = kwargs['targetMicroservicesDeploymentName']
 
         _setter("rest_admin_credentials", rest_admin_credentials)
@@ -2360,10 +2420,14 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -2410,10 +2474,14 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -2460,10 +2528,14 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -2510,10 +2582,14 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -2566,9 +2642,9 @@ class MigrationGoldenGateDetailsSettingsArgs:
              acceptable_lag: Optional[pulumi.Input[int]] = None,
              extract: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsExtractArgs']] = None,
              replicat: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsReplicatArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'acceptableLag' in kwargs:
+        if acceptable_lag is None and 'acceptableLag' in kwargs:
             acceptable_lag = kwargs['acceptableLag']
 
         if acceptable_lag is not None:
@@ -2634,11 +2710,11 @@ class MigrationGoldenGateDetailsSettingsExtractArgs:
              _setter: Callable[[Any, Any], None],
              long_trans_duration: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'longTransDuration' in kwargs:
+        if long_trans_duration is None and 'longTransDuration' in kwargs:
             long_trans_duration = kwargs['longTransDuration']
-        if 'performanceProfile' in kwargs:
+        if performance_profile is None and 'performanceProfile' in kwargs:
             performance_profile = kwargs['performanceProfile']
 
         if long_trans_duration is not None:
@@ -2698,15 +2774,15 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
              max_apply_parallelism: Optional[pulumi.Input[int]] = None,
              min_apply_parallelism: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mapParallelism' in kwargs:
+        if map_parallelism is None and 'mapParallelism' in kwargs:
             map_parallelism = kwargs['mapParallelism']
-        if 'maxApplyParallelism' in kwargs:
+        if max_apply_parallelism is None and 'maxApplyParallelism' in kwargs:
             max_apply_parallelism = kwargs['maxApplyParallelism']
-        if 'minApplyParallelism' in kwargs:
+        if min_apply_parallelism is None and 'minApplyParallelism' in kwargs:
             min_apply_parallelism = kwargs['minApplyParallelism']
-        if 'performanceProfile' in kwargs:
+        if performance_profile is None and 'performanceProfile' in kwargs:
             performance_profile = kwargs['performanceProfile']
 
         if map_parallelism is not None:
@@ -2798,15 +2874,15 @@ class MigrationGoldenGateServiceDetailsArgs:
              source_container_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']] = None,
              source_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']] = None,
              target_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ggsDeployments' in kwargs:
+        if ggs_deployments is None and 'ggsDeployments' in kwargs:
             ggs_deployments = kwargs['ggsDeployments']
-        if 'sourceContainerDbCredentials' in kwargs:
+        if source_container_db_credentials is None and 'sourceContainerDbCredentials' in kwargs:
             source_container_db_credentials = kwargs['sourceContainerDbCredentials']
-        if 'sourceDbCredentials' in kwargs:
+        if source_db_credentials is None and 'sourceDbCredentials' in kwargs:
             source_db_credentials = kwargs['sourceDbCredentials']
-        if 'targetDbCredentials' in kwargs:
+        if target_db_credentials is None and 'targetDbCredentials' in kwargs:
             target_db_credentials = kwargs['targetDbCredentials']
 
         if ggs_deployments is not None:
@@ -2900,11 +2976,11 @@ class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
              _setter: Callable[[Any, Any], None],
              deployment_id: Optional[pulumi.Input[str]] = None,
              ggs_admin_credentials_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deploymentId' in kwargs:
+        if deployment_id is None and 'deploymentId' in kwargs:
             deployment_id = kwargs['deploymentId']
-        if 'ggsAdminCredentialsSecretId' in kwargs:
+        if ggs_admin_credentials_secret_id is None and 'ggsAdminCredentialsSecretId' in kwargs:
             ggs_admin_credentials_secret_id = kwargs['ggsAdminCredentialsSecretId']
 
         if deployment_id is not None:
@@ -2960,9 +3036,9 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
              acceptable_lag: Optional[pulumi.Input[int]] = None,
              extract: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']] = None,
              replicat: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'acceptableLag' in kwargs:
+        if acceptable_lag is None and 'acceptableLag' in kwargs:
             acceptable_lag = kwargs['acceptableLag']
 
         if acceptable_lag is not None:
@@ -3028,11 +3104,11 @@ class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
              _setter: Callable[[Any, Any], None],
              long_trans_duration: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'longTransDuration' in kwargs:
+        if long_trans_duration is None and 'longTransDuration' in kwargs:
             long_trans_duration = kwargs['longTransDuration']
-        if 'performanceProfile' in kwargs:
+        if performance_profile is None and 'performanceProfile' in kwargs:
             performance_profile = kwargs['performanceProfile']
 
         if long_trans_duration is not None:
@@ -3088,13 +3164,13 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
              map_parallelism: Optional[pulumi.Input[int]] = None,
              max_apply_parallelism: Optional[pulumi.Input[int]] = None,
              min_apply_parallelism: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mapParallelism' in kwargs:
+        if map_parallelism is None and 'mapParallelism' in kwargs:
             map_parallelism = kwargs['mapParallelism']
-        if 'maxApplyParallelism' in kwargs:
+        if max_apply_parallelism is None and 'maxApplyParallelism' in kwargs:
             max_apply_parallelism = kwargs['maxApplyParallelism']
-        if 'minApplyParallelism' in kwargs:
+        if min_apply_parallelism is None and 'minApplyParallelism' in kwargs:
             min_apply_parallelism = kwargs['minApplyParallelism']
 
         if map_parallelism is not None:
@@ -3158,10 +3234,14 @@ class MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -3208,10 +3288,14 @@ class MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -3258,10 +3342,14 @@ class MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("username", username)
@@ -3314,13 +3402,17 @@ class MigrationIncludeObjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object: pulumi.Input[str],
-             owner: pulumi.Input[str],
+             object: Optional[pulumi.Input[str]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
              is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isOmitExcludedTableFromReplication' in kwargs:
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if is_omit_excluded_table_from_replication is None and 'isOmitExcludedTableFromReplication' in kwargs:
             is_omit_excluded_table_from_replication = kwargs['isOmitExcludedTableFromReplication']
 
         _setter("object", object)
@@ -3403,17 +3495,23 @@ class MigrationVaultDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             key_id: pulumi.Input[str],
-             vault_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'keyId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'vaultId' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("key_id", key_id)
@@ -3475,11 +3573,15 @@ class GetAgentImagesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3529,11 +3631,15 @@ class GetAgentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3583,11 +3689,15 @@ class GetConnectionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3640,11 +3750,15 @@ class GetMigrationObjectTypesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3700,11 +3814,15 @@ class GetMigrationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

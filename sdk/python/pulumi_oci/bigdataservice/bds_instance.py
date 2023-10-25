@@ -100,16 +100,16 @@ class BdsInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_admin_password: pulumi.Input[str],
-             cluster_public_key: pulumi.Input[str],
-             cluster_version: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             is_high_availability: pulumi.Input[bool],
-             is_secure: pulumi.Input[bool],
-             master_node: pulumi.Input['BdsInstanceMasterNodeArgs'],
-             util_node: pulumi.Input['BdsInstanceUtilNodeArgs'],
-             worker_node: pulumi.Input['BdsInstanceWorkerNodeArgs'],
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             cluster_public_key: Optional[pulumi.Input[str]] = None,
+             cluster_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_high_availability: Optional[pulumi.Input[bool]] = None,
+             is_secure: Optional[pulumi.Input[bool]] = None,
+             master_node: Optional[pulumi.Input['BdsInstanceMasterNodeArgs']] = None,
+             util_node: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']] = None,
+             worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None,
              bootstrap_script_url: Optional[pulumi.Input[str]] = None,
              cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
              cluster_profile: Optional[pulumi.Input[str]] = None,
@@ -126,57 +126,77 @@ class BdsInstanceArgs:
              network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
              os_patch_version: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterAdminPassword' in kwargs:
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
-        if 'clusterPublicKey' in kwargs:
+        if cluster_admin_password is None:
+            raise TypeError("Missing 'cluster_admin_password' argument")
+        if cluster_public_key is None and 'clusterPublicKey' in kwargs:
             cluster_public_key = kwargs['clusterPublicKey']
-        if 'clusterVersion' in kwargs:
+        if cluster_public_key is None:
+            raise TypeError("Missing 'cluster_public_key' argument")
+        if cluster_version is None and 'clusterVersion' in kwargs:
             cluster_version = kwargs['clusterVersion']
-        if 'compartmentId' in kwargs:
+        if cluster_version is None:
+            raise TypeError("Missing 'cluster_version' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isHighAvailability' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_high_availability is None and 'isHighAvailability' in kwargs:
             is_high_availability = kwargs['isHighAvailability']
-        if 'isSecure' in kwargs:
+        if is_high_availability is None:
+            raise TypeError("Missing 'is_high_availability' argument")
+        if is_secure is None and 'isSecure' in kwargs:
             is_secure = kwargs['isSecure']
-        if 'masterNode' in kwargs:
+        if is_secure is None:
+            raise TypeError("Missing 'is_secure' argument")
+        if master_node is None and 'masterNode' in kwargs:
             master_node = kwargs['masterNode']
-        if 'utilNode' in kwargs:
+        if master_node is None:
+            raise TypeError("Missing 'master_node' argument")
+        if util_node is None and 'utilNode' in kwargs:
             util_node = kwargs['utilNode']
-        if 'workerNode' in kwargs:
+        if util_node is None:
+            raise TypeError("Missing 'util_node' argument")
+        if worker_node is None and 'workerNode' in kwargs:
             worker_node = kwargs['workerNode']
-        if 'bootstrapScriptUrl' in kwargs:
+        if worker_node is None:
+            raise TypeError("Missing 'worker_node' argument")
+        if bootstrap_script_url is None and 'bootstrapScriptUrl' in kwargs:
             bootstrap_script_url = kwargs['bootstrapScriptUrl']
-        if 'cloudSqlDetails' in kwargs:
+        if cloud_sql_details is None and 'cloudSqlDetails' in kwargs:
             cloud_sql_details = kwargs['cloudSqlDetails']
-        if 'clusterProfile' in kwargs:
+        if cluster_profile is None and 'clusterProfile' in kwargs:
             cluster_profile = kwargs['clusterProfile']
-        if 'computeOnlyWorkerNode' in kwargs:
+        if compute_only_worker_node is None and 'computeOnlyWorkerNode' in kwargs:
             compute_only_worker_node = kwargs['computeOnlyWorkerNode']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'edgeNode' in kwargs:
+        if edge_node is None and 'edgeNode' in kwargs:
             edge_node = kwargs['edgeNode']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCloudSqlConfigured' in kwargs:
+        if is_cloud_sql_configured is None and 'isCloudSqlConfigured' in kwargs:
             is_cloud_sql_configured = kwargs['isCloudSqlConfigured']
-        if 'isForceStopJobs' in kwargs:
+        if is_force_stop_jobs is None and 'isForceStopJobs' in kwargs:
             is_force_stop_jobs = kwargs['isForceStopJobs']
-        if 'isKafkaConfigured' in kwargs:
+        if is_kafka_configured is None and 'isKafkaConfigured' in kwargs:
             is_kafka_configured = kwargs['isKafkaConfigured']
-        if 'kafkaBrokerNode' in kwargs:
+        if kafka_broker_node is None and 'kafkaBrokerNode' in kwargs:
             kafka_broker_node = kwargs['kafkaBrokerNode']
-        if 'kerberosRealmName' in kwargs:
+        if kerberos_realm_name is None and 'kerberosRealmName' in kwargs:
             kerberos_realm_name = kwargs['kerberosRealmName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'networkConfig' in kwargs:
+        if network_config is None and 'networkConfig' in kwargs:
             network_config = kwargs['networkConfig']
-        if 'osPatchVersion' in kwargs:
+        if os_patch_version is None and 'osPatchVersion' in kwargs:
             os_patch_version = kwargs['osPatchVersion']
 
         _setter("cluster_admin_password", cluster_admin_password)
@@ -667,69 +687,69 @@ class _BdsInstanceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              util_node: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']] = None,
              worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootstrapScriptUrl' in kwargs:
+        if bootstrap_script_url is None and 'bootstrapScriptUrl' in kwargs:
             bootstrap_script_url = kwargs['bootstrapScriptUrl']
-        if 'cloudSqlDetails' in kwargs:
+        if cloud_sql_details is None and 'cloudSqlDetails' in kwargs:
             cloud_sql_details = kwargs['cloudSqlDetails']
-        if 'clusterAdminPassword' in kwargs:
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
-        if 'clusterDetails' in kwargs:
+        if cluster_details is None and 'clusterDetails' in kwargs:
             cluster_details = kwargs['clusterDetails']
-        if 'clusterProfile' in kwargs:
+        if cluster_profile is None and 'clusterProfile' in kwargs:
             cluster_profile = kwargs['clusterProfile']
-        if 'clusterPublicKey' in kwargs:
+        if cluster_public_key is None and 'clusterPublicKey' in kwargs:
             cluster_public_key = kwargs['clusterPublicKey']
-        if 'clusterVersion' in kwargs:
+        if cluster_version is None and 'clusterVersion' in kwargs:
             cluster_version = kwargs['clusterVersion']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeOnlyWorkerNode' in kwargs:
+        if compute_only_worker_node is None and 'computeOnlyWorkerNode' in kwargs:
             compute_only_worker_node = kwargs['computeOnlyWorkerNode']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'edgeNode' in kwargs:
+        if edge_node is None and 'edgeNode' in kwargs:
             edge_node = kwargs['edgeNode']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCloudSqlConfigured' in kwargs:
+        if is_cloud_sql_configured is None and 'isCloudSqlConfigured' in kwargs:
             is_cloud_sql_configured = kwargs['isCloudSqlConfigured']
-        if 'isForceStopJobs' in kwargs:
+        if is_force_stop_jobs is None and 'isForceStopJobs' in kwargs:
             is_force_stop_jobs = kwargs['isForceStopJobs']
-        if 'isHighAvailability' in kwargs:
+        if is_high_availability is None and 'isHighAvailability' in kwargs:
             is_high_availability = kwargs['isHighAvailability']
-        if 'isKafkaConfigured' in kwargs:
+        if is_kafka_configured is None and 'isKafkaConfigured' in kwargs:
             is_kafka_configured = kwargs['isKafkaConfigured']
-        if 'isSecure' in kwargs:
+        if is_secure is None and 'isSecure' in kwargs:
             is_secure = kwargs['isSecure']
-        if 'kafkaBrokerNode' in kwargs:
+        if kafka_broker_node is None and 'kafkaBrokerNode' in kwargs:
             kafka_broker_node = kwargs['kafkaBrokerNode']
-        if 'kerberosRealmName' in kwargs:
+        if kerberos_realm_name is None and 'kerberosRealmName' in kwargs:
             kerberos_realm_name = kwargs['kerberosRealmName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'masterNode' in kwargs:
+        if master_node is None and 'masterNode' in kwargs:
             master_node = kwargs['masterNode']
-        if 'networkConfig' in kwargs:
+        if network_config is None and 'networkConfig' in kwargs:
             network_config = kwargs['networkConfig']
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'numberOfNodesRequiringMaintenanceReboot' in kwargs:
+        if number_of_nodes_requiring_maintenance_reboot is None and 'numberOfNodesRequiringMaintenanceReboot' in kwargs:
             number_of_nodes_requiring_maintenance_reboot = kwargs['numberOfNodesRequiringMaintenanceReboot']
-        if 'osPatchVersion' in kwargs:
+        if os_patch_version is None and 'osPatchVersion' in kwargs:
             os_patch_version = kwargs['osPatchVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'utilNode' in kwargs:
+        if util_node is None and 'utilNode' in kwargs:
             util_node = kwargs['utilNode']
-        if 'workerNode' in kwargs:
+        if worker_node is None and 'workerNode' in kwargs:
             worker_node = kwargs['workerNode']
 
         if bootstrap_script_url is not None:
@@ -1346,21 +1366,13 @@ class BdsInstance(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if compute_only_worker_node is not None and not isinstance(compute_only_worker_node, BdsInstanceComputeOnlyWorkerNodeArgs):
-                compute_only_worker_node = compute_only_worker_node or {}
-                def _setter(key, value):
-                    compute_only_worker_node[key] = value
-                BdsInstanceComputeOnlyWorkerNodeArgs._configure(_setter, **compute_only_worker_node)
+            compute_only_worker_node = _utilities.configure(compute_only_worker_node, BdsInstanceComputeOnlyWorkerNodeArgs, True)
             __props__.__dict__["compute_only_worker_node"] = compute_only_worker_node
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if edge_node is not None and not isinstance(edge_node, BdsInstanceEdgeNodeArgs):
-                edge_node = edge_node or {}
-                def _setter(key, value):
-                    edge_node[key] = value
-                BdsInstanceEdgeNodeArgs._configure(_setter, **edge_node)
+            edge_node = _utilities.configure(edge_node, BdsInstanceEdgeNodeArgs, True)
             __props__.__dict__["edge_node"] = edge_node
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
@@ -1372,43 +1384,23 @@ class BdsInstance(pulumi.CustomResource):
             if is_secure is None and not opts.urn:
                 raise TypeError("Missing required property 'is_secure'")
             __props__.__dict__["is_secure"] = is_secure
-            if kafka_broker_node is not None and not isinstance(kafka_broker_node, BdsInstanceKafkaBrokerNodeArgs):
-                kafka_broker_node = kafka_broker_node or {}
-                def _setter(key, value):
-                    kafka_broker_node[key] = value
-                BdsInstanceKafkaBrokerNodeArgs._configure(_setter, **kafka_broker_node)
+            kafka_broker_node = _utilities.configure(kafka_broker_node, BdsInstanceKafkaBrokerNodeArgs, True)
             __props__.__dict__["kafka_broker_node"] = kafka_broker_node
             __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
             __props__.__dict__["kms_key_id"] = kms_key_id
-            if master_node is not None and not isinstance(master_node, BdsInstanceMasterNodeArgs):
-                master_node = master_node or {}
-                def _setter(key, value):
-                    master_node[key] = value
-                BdsInstanceMasterNodeArgs._configure(_setter, **master_node)
+            master_node = _utilities.configure(master_node, BdsInstanceMasterNodeArgs, True)
             if master_node is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node'")
             __props__.__dict__["master_node"] = master_node
-            if network_config is not None and not isinstance(network_config, BdsInstanceNetworkConfigArgs):
-                network_config = network_config or {}
-                def _setter(key, value):
-                    network_config[key] = value
-                BdsInstanceNetworkConfigArgs._configure(_setter, **network_config)
+            network_config = _utilities.configure(network_config, BdsInstanceNetworkConfigArgs, True)
             __props__.__dict__["network_config"] = network_config
             __props__.__dict__["os_patch_version"] = os_patch_version
             __props__.__dict__["state"] = state
-            if util_node is not None and not isinstance(util_node, BdsInstanceUtilNodeArgs):
-                util_node = util_node or {}
-                def _setter(key, value):
-                    util_node[key] = value
-                BdsInstanceUtilNodeArgs._configure(_setter, **util_node)
+            util_node = _utilities.configure(util_node, BdsInstanceUtilNodeArgs, True)
             if util_node is None and not opts.urn:
                 raise TypeError("Missing required property 'util_node'")
             __props__.__dict__["util_node"] = util_node
-            if worker_node is not None and not isinstance(worker_node, BdsInstanceWorkerNodeArgs):
-                worker_node = worker_node or {}
-                def _setter(key, value):
-                    worker_node[key] = value
-                BdsInstanceWorkerNodeArgs._configure(_setter, **worker_node)
+            worker_node = _utilities.configure(worker_node, BdsInstanceWorkerNodeArgs, True)
             if worker_node is None and not opts.urn:
                 raise TypeError("Missing required property 'worker_node'")
             __props__.__dict__["worker_node"] = worker_node

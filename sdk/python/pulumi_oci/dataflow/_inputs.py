@@ -56,14 +56,18 @@ class ApplicationApplicationLogConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: pulumi.Input[str],
-             log_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -112,9 +116,9 @@ class ApplicationDriverShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -166,9 +170,9 @@ class ApplicationExecutorShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -218,10 +222,14 @@ class ApplicationParameterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -268,14 +276,18 @@ class InvokeRunApplicationLogConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: pulumi.Input[str],
-             log_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -324,9 +336,9 @@ class InvokeRunDriverShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -378,9 +390,9 @@ class InvokeRunExecutorShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -430,10 +442,14 @@ class InvokeRunParameterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -490,9 +506,9 @@ class PoolConfigurationArgs:
              min: Optional[pulumi.Input[int]] = None,
              shape: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         if max is not None:
@@ -572,9 +588,9 @@ class PoolConfigurationShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -642,19 +658,19 @@ class PoolPoolMetricArgs:
              time_last_started: Optional[pulumi.Input[str]] = None,
              time_last_stopped: Optional[pulumi.Input[str]] = None,
              time_last_used: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeRunsCount' in kwargs:
+        if active_runs_count is None and 'activeRunsCount' in kwargs:
             active_runs_count = kwargs['activeRunsCount']
-        if 'activelyUsedNodeCounts' in kwargs:
+        if actively_used_node_counts is None and 'activelyUsedNodeCounts' in kwargs:
             actively_used_node_counts = kwargs['activelyUsedNodeCounts']
-        if 'timeLastMetricsUpdated' in kwargs:
+        if time_last_metrics_updated is None and 'timeLastMetricsUpdated' in kwargs:
             time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
-        if 'timeLastStarted' in kwargs:
+        if time_last_started is None and 'timeLastStarted' in kwargs:
             time_last_started = kwargs['timeLastStarted']
-        if 'timeLastStopped' in kwargs:
+        if time_last_stopped is None and 'timeLastStopped' in kwargs:
             time_last_stopped = kwargs['timeLastStopped']
-        if 'timeLastUsed' in kwargs:
+        if time_last_used is None and 'timeLastUsed' in kwargs:
             time_last_used = kwargs['timeLastUsed']
 
         if active_runs_count is not None:
@@ -762,11 +778,11 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
              _setter: Callable[[Any, Any], None],
              logical_shape: Optional[pulumi.Input[str]] = None,
              pool_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logicalShape' in kwargs:
+        if logical_shape is None and 'logicalShape' in kwargs:
             logical_shape = kwargs['logicalShape']
-        if 'poolCount' in kwargs:
+        if pool_count is None and 'poolCount' in kwargs:
             pool_count = kwargs['poolCount']
 
         if logical_shape is not None:
@@ -822,13 +838,13 @@ class PoolScheduleArgs:
              day_of_week: Optional[pulumi.Input[str]] = None,
              start_time: Optional[pulumi.Input[int]] = None,
              stop_time: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dayOfWeek' in kwargs:
+        if day_of_week is None and 'dayOfWeek' in kwargs:
             day_of_week = kwargs['dayOfWeek']
-        if 'startTime' in kwargs:
+        if start_time is None and 'startTime' in kwargs:
             start_time = kwargs['startTime']
-        if 'stopTime' in kwargs:
+        if stop_time is None and 'stopTime' in kwargs:
             stop_time = kwargs['stopTime']
 
         if day_of_week is not None:
@@ -894,7 +910,7 @@ class PrivateEndpointScanDetailArgs:
              _setter: Callable[[Any, Any], None],
              fqdn: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if fqdn is not None:
@@ -958,11 +974,11 @@ class RunStatementOutputArgs:
              error_value: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              tracebacks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'errorName' in kwargs:
+        if error_name is None and 'errorName' in kwargs:
             error_name = kwargs['errorName']
-        if 'errorValue' in kwargs:
+        if error_value is None and 'errorValue' in kwargs:
             error_value = kwargs['errorValue']
 
         if datas is not None:
@@ -1056,7 +1072,7 @@ class RunStatementOutputDataArgs:
              _setter: Callable[[Any, Any], None],
              type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if type is not None:
@@ -1108,9 +1124,9 @@ class SqlEndpointDriverShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -1162,9 +1178,9 @@ class SqlEndpointExecutorShapeConfigArgs:
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -1229,28 +1245,30 @@ class SqlEndpointNetworkConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_type: pulumi.Input[str],
+             network_type: Optional[pulumi.Input[str]] = None,
              access_control_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]] = None,
              host_name_prefix: Optional[pulumi.Input[str]] = None,
              private_endpoint_ip: Optional[pulumi.Input[str]] = None,
              public_endpoint_ip: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkType' in kwargs:
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
-        if 'accessControlRules' in kwargs:
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if access_control_rules is None and 'accessControlRules' in kwargs:
             access_control_rules = kwargs['accessControlRules']
-        if 'hostNamePrefix' in kwargs:
+        if host_name_prefix is None and 'hostNamePrefix' in kwargs:
             host_name_prefix = kwargs['hostNamePrefix']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'publicEndpointIp' in kwargs:
+        if public_endpoint_ip is None and 'publicEndpointIp' in kwargs:
             public_endpoint_ip = kwargs['publicEndpointIp']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         _setter("network_type", network_type)
@@ -1375,11 +1393,11 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
              ip_notation: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
              vcn_ips: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipNotation' in kwargs:
+        if ip_notation is None and 'ipNotation' in kwargs:
             ip_notation = kwargs['ipNotation']
-        if 'vcnIps' in kwargs:
+        if vcn_ips is None and 'vcnIps' in kwargs:
             vcn_ips = kwargs['vcnIps']
 
         if ip_notation is not None:
@@ -1444,11 +1462,15 @@ class GetApplicationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1504,11 +1526,15 @@ class GetInvokeRunsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1561,11 +1587,15 @@ class GetPoolsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1615,11 +1645,15 @@ class GetPrivateEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1669,11 +1703,15 @@ class GetRunLogsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1723,11 +1761,15 @@ class GetRunStatementsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1777,11 +1819,15 @@ class GetSqlEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

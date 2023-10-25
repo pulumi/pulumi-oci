@@ -69,11 +69,11 @@ import (
 //				},
 //				CustomerAsn:    pulumi.Any(_var.Virtual_circuit_customer_asn),
 //				CustomerBgpAsn: pulumi.Any(_var.Virtual_circuit_customer_bgp_asn),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Virtual_circuit_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IpMtu:                  pulumi.Any(_var.Virtual_circuit_ip_mtu),

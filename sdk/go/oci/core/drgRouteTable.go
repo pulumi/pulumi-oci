@@ -34,11 +34,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewDrgRouteTable(ctx, "testDrgRouteTable", &Core.DrgRouteTableArgs{
 //				DrgId: pulumi.Any(oci_core_drg.Test_drg.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Drg_route_table_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ImportDrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),

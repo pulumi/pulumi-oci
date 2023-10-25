@@ -49,29 +49,35 @@ class MigrationPlanArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             migration_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             migration_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              source_migration_plan_id: Optional[pulumi.Input[str]] = None,
              strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
              target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'migrationId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'definedTags' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sourceMigrationPlanId' in kwargs:
+        if source_migration_plan_id is None and 'sourceMigrationPlanId' in kwargs:
             source_migration_plan_id = kwargs['sourceMigrationPlanId']
-        if 'targetEnvironments' in kwargs:
+        if target_environments is None and 'targetEnvironments' in kwargs:
             target_environments = kwargs['targetEnvironments']
 
         _setter("compartment_id", compartment_id)
@@ -261,35 +267,35 @@ class _MigrationPlanState:
              target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'calculatedLimits' in kwargs:
+        if calculated_limits is None and 'calculatedLimits' in kwargs:
             calculated_limits = kwargs['calculatedLimits']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'migrationPlanStats' in kwargs:
+        if migration_plan_stats is None and 'migrationPlanStats' in kwargs:
             migration_plan_stats = kwargs['migrationPlanStats']
-        if 'referenceToRmsStack' in kwargs:
+        if reference_to_rms_stack is None and 'referenceToRmsStack' in kwargs:
             reference_to_rms_stack = kwargs['referenceToRmsStack']
-        if 'sourceMigrationPlanId' in kwargs:
+        if source_migration_plan_id is None and 'sourceMigrationPlanId' in kwargs:
             source_migration_plan_id = kwargs['sourceMigrationPlanId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetEnvironments' in kwargs:
+        if target_environments is None and 'targetEnvironments' in kwargs:
             target_environments = kwargs['targetEnvironments']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if calculated_limits is not None:

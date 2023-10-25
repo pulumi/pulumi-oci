@@ -57,33 +57,41 @@ class ResolverEndpointInitArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_forwarding: pulumi.Input[bool],
-             is_listening: pulumi.Input[bool],
-             resolver_id: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             is_forwarding: Optional[pulumi.Input[bool]] = None,
+             is_listening: Optional[pulumi.Input[bool]] = None,
+             resolver_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              endpoint_type: Optional[pulumi.Input[str]] = None,
              forwarding_address: Optional[pulumi.Input[str]] = None,
              listening_address: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isForwarding' in kwargs:
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_forwarding is None:
+            raise TypeError("Missing 'is_forwarding' argument")
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'resolverId' in kwargs:
+        if is_listening is None:
+            raise TypeError("Missing 'is_listening' argument")
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'subnetId' in kwargs:
+        if resolver_id is None:
+            raise TypeError("Missing 'resolver_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'endpointType' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'listeningAddress' in kwargs:
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("is_forwarding", is_forwarding)
@@ -304,29 +312,29 @@ class _ResolverEndpointState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'endpointType' in kwargs:
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'isForwarding' in kwargs:
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'listeningAddress' in kwargs:
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'resolverId' in kwargs:
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

@@ -76,14 +76,18 @@ class VulnerabilityAuditApplicationDependency(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gav: str,
-             node_id: str,
+             gav: Optional[str] = None,
+             node_id: Optional[str] = None,
              application_dependency_node_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nodeId' in kwargs:
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
-        if 'applicationDependencyNodeIds' in kwargs:
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
             application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
 
         _setter("gav", gav)
@@ -158,11 +162,11 @@ class VulnerabilityAuditConfiguration(dict):
              exclusions: Optional[Sequence[str]] = None,
              max_permissible_cvss_v2score: Optional[float] = None,
              max_permissible_cvss_v3score: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxPermissibleCvssV2score' in kwargs:
+        if max_permissible_cvss_v2score is None and 'maxPermissibleCvssV2score' in kwargs:
             max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
-        if 'maxPermissibleCvssV3score' in kwargs:
+        if max_permissible_cvss_v3score is None and 'maxPermissibleCvssV3score' in kwargs:
             max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
 
         if exclusions is not None:
@@ -238,12 +242,14 @@ class VulnerabilityAuditSource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
+             type: Optional[str] = None,
              description: Optional[str] = None,
              oci_resource_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ociResourceId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if oci_resource_id is None and 'ociResourceId' in kwargs:
             oci_resource_id = kwargs['ociResourceId']
 
         _setter("type", type)
@@ -329,13 +335,13 @@ class VulnerabilityAuditVulnerability(dict):
              cvss_v3score: Optional[float] = None,
              id: Optional[str] = None,
              is_ignored: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cvssV2score' in kwargs:
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
             cvss_v2score = kwargs['cvssV2score']
-        if 'cvssV3score' in kwargs:
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
             cvss_v3score = kwargs['cvssV3score']
-        if 'isIgnored' in kwargs:
+        if is_ignored is None and 'isIgnored' in kwargs:
             is_ignored = kwargs['isIgnored']
 
         if cvss_v2score is not None:
@@ -395,11 +401,15 @@ class GetKnowledgebasesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -433,9 +443,11 @@ class GetKnowledgebasesKnowledgeBaseCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetKnowledgebasesKnowledgeBaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetKnowledgebasesKnowledgeBaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -483,31 +495,49 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'systemTags' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -607,15 +637,21 @@ class GetVulnerabilityAuditApplicationDependencyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_dependency_node_ids: Sequence[str],
-             gav: str,
-             node_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_dependency_node_ids: Optional[Sequence[str]] = None,
+             gav: Optional[str] = None,
+             node_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationDependencyNodeIds' in kwargs:
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
             application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
-        if 'nodeId' in kwargs:
+        if application_dependency_node_ids is None:
+            raise TypeError("Missing 'application_dependency_node_ids' argument")
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
 
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
@@ -651,9 +687,11 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -692,19 +730,29 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_dependency_node_ids: Sequence[str],
-             gav: str,
-             is_found_in_knowledge_base: bool,
-             node_id: str,
-             vulnerabilities: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_dependency_node_ids: Optional[Sequence[str]] = None,
+             gav: Optional[str] = None,
+             is_found_in_knowledge_base: Optional[bool] = None,
+             node_id: Optional[str] = None,
+             vulnerabilities: Optional[Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationDependencyNodeIds' in kwargs:
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
             application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
-        if 'isFoundInKnowledgeBase' in kwargs:
+        if application_dependency_node_ids is None:
+            raise TypeError("Missing 'application_dependency_node_ids' argument")
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if is_found_in_knowledge_base is None and 'isFoundInKnowledgeBase' in kwargs:
             is_found_in_knowledge_base = kwargs['isFoundInKnowledgeBase']
-        if 'nodeId' in kwargs:
+        if is_found_in_knowledge_base is None:
+            raise TypeError("Missing 'is_found_in_knowledge_base' argument")
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if vulnerabilities is None:
+            raise TypeError("Missing 'vulnerabilities' argument")
 
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
@@ -776,18 +824,26 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cvss_v2score: float,
-             cvss_v3score: float,
-             id: str,
-             is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cvss_v2score: Optional[float] = None,
+             cvss_v3score: Optional[float] = None,
+             id: Optional[str] = None,
+             is_ignored: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cvssV2score' in kwargs:
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
             cvss_v2score = kwargs['cvssV2score']
-        if 'cvssV3score' in kwargs:
+        if cvss_v2score is None:
+            raise TypeError("Missing 'cvss_v2score' argument")
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
             cvss_v3score = kwargs['cvssV3score']
-        if 'isIgnored' in kwargs:
+        if cvss_v3score is None:
+            raise TypeError("Missing 'cvss_v3score' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_ignored is None and 'isIgnored' in kwargs:
             is_ignored = kwargs['isIgnored']
+        if is_ignored is None:
+            raise TypeError("Missing 'is_ignored' argument")
 
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
@@ -842,11 +898,15 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -895,19 +955,29 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_dependency_node_ids: Sequence[str],
-             gav: str,
-             is_found_in_knowledge_base: bool,
-             node_id: str,
-             vulnerabilities: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_dependency_node_ids: Optional[Sequence[str]] = None,
+             gav: Optional[str] = None,
+             is_found_in_knowledge_base: Optional[bool] = None,
+             node_id: Optional[str] = None,
+             vulnerabilities: Optional[Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationDependencyNodeIds' in kwargs:
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
             application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
-        if 'isFoundInKnowledgeBase' in kwargs:
+        if application_dependency_node_ids is None:
+            raise TypeError("Missing 'application_dependency_node_ids' argument")
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if is_found_in_knowledge_base is None and 'isFoundInKnowledgeBase' in kwargs:
             is_found_in_knowledge_base = kwargs['isFoundInKnowledgeBase']
-        if 'nodeId' in kwargs:
+        if is_found_in_knowledge_base is None:
+            raise TypeError("Missing 'is_found_in_knowledge_base' argument")
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if vulnerabilities is None:
+            raise TypeError("Missing 'vulnerabilities' argument")
 
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
@@ -979,18 +1049,26 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cvss_v2score: float,
-             cvss_v3score: float,
-             id: str,
-             is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cvss_v2score: Optional[float] = None,
+             cvss_v3score: Optional[float] = None,
+             id: Optional[str] = None,
+             is_ignored: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cvssV2score' in kwargs:
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
             cvss_v2score = kwargs['cvssV2score']
-        if 'cvssV3score' in kwargs:
+        if cvss_v2score is None:
+            raise TypeError("Missing 'cvss_v2score' argument")
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
             cvss_v3score = kwargs['cvssV3score']
-        if 'isIgnored' in kwargs:
+        if cvss_v3score is None:
+            raise TypeError("Missing 'cvss_v3score' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_ignored is None and 'isIgnored' in kwargs:
             is_ignored = kwargs['isIgnored']
+        if is_ignored is None:
+            raise TypeError("Missing 'is_ignored' argument")
 
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
@@ -1050,15 +1128,21 @@ class GetVulnerabilityAuditConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             max_permissible_cvss_v2score: float,
-             max_permissible_cvss_v3score: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             max_permissible_cvss_v2score: Optional[float] = None,
+             max_permissible_cvss_v3score: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxPermissibleCvssV2score' in kwargs:
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if max_permissible_cvss_v2score is None and 'maxPermissibleCvssV2score' in kwargs:
             max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
-        if 'maxPermissibleCvssV3score' in kwargs:
+        if max_permissible_cvss_v2score is None:
+            raise TypeError("Missing 'max_permissible_cvss_v2score' argument")
+        if max_permissible_cvss_v3score is None and 'maxPermissibleCvssV3score' in kwargs:
             max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+        if max_permissible_cvss_v3score is None:
+            raise TypeError("Missing 'max_permissible_cvss_v3score' argument")
 
         _setter("exclusions", exclusions)
         _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
@@ -1109,13 +1193,19 @@ class GetVulnerabilityAuditSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             oci_resource_id: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             oci_resource_id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ociResourceId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if oci_resource_id is None and 'ociResourceId' in kwargs:
             oci_resource_id = kwargs['ociResourceId']
+        if oci_resource_id is None:
+            raise TypeError("Missing 'oci_resource_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("description", description)
         _setter("oci_resource_id", oci_resource_id)
@@ -1169,18 +1259,26 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cvss_v2score: float,
-             cvss_v3score: float,
-             id: str,
-             is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cvss_v2score: Optional[float] = None,
+             cvss_v3score: Optional[float] = None,
+             id: Optional[str] = None,
+             is_ignored: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cvssV2score' in kwargs:
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
             cvss_v2score = kwargs['cvssV2score']
-        if 'cvssV3score' in kwargs:
+        if cvss_v2score is None:
+            raise TypeError("Missing 'cvss_v2score' argument")
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
             cvss_v3score = kwargs['cvssV3score']
-        if 'isIgnored' in kwargs:
+        if cvss_v3score is None:
+            raise TypeError("Missing 'cvss_v3score' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_ignored is None and 'isIgnored' in kwargs:
             is_ignored = kwargs['isIgnored']
+        if is_ignored is None:
+            raise TypeError("Missing 'is_ignored' argument")
 
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
@@ -1235,11 +1333,15 @@ class GetVulnerabilityAuditsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1273,9 +1375,11 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1361,64 +1465,108 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_dependencies: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyResult'],
-             build_type: str,
-             compartment_id: str,
-             configurations: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult'],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_success: bool,
-             knowledge_base_id: str,
-             max_observed_cvss_v2score: float,
-             max_observed_cvss_v2score_with_ignored: float,
-             max_observed_cvss_v3score: float,
-             max_observed_cvss_v3score_with_ignored: float,
-             sources: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             vulnerabilities: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult'],
-             vulnerable_artifacts_count: int,
-             vulnerable_artifacts_count_with_ignored: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_dependencies: Optional[Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyResult']] = None,
+             build_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_success: Optional[bool] = None,
+             knowledge_base_id: Optional[str] = None,
+             max_observed_cvss_v2score: Optional[float] = None,
+             max_observed_cvss_v2score_with_ignored: Optional[float] = None,
+             max_observed_cvss_v3score: Optional[float] = None,
+             max_observed_cvss_v3score_with_ignored: Optional[float] = None,
+             sources: Optional[Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vulnerabilities: Optional[Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult']] = None,
+             vulnerable_artifacts_count: Optional[int] = None,
+             vulnerable_artifacts_count_with_ignored: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationDependencies' in kwargs:
+        if application_dependencies is None and 'applicationDependencies' in kwargs:
             application_dependencies = kwargs['applicationDependencies']
-        if 'buildType' in kwargs:
+        if application_dependencies is None:
+            raise TypeError("Missing 'application_dependencies' argument")
+        if build_type is None and 'buildType' in kwargs:
             build_type = kwargs['buildType']
-        if 'compartmentId' in kwargs:
+        if build_type is None:
+            raise TypeError("Missing 'build_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configurations is None:
+            raise TypeError("Missing 'configurations' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSuccess' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_success is None and 'isSuccess' in kwargs:
             is_success = kwargs['isSuccess']
-        if 'knowledgeBaseId' in kwargs:
+        if is_success is None:
+            raise TypeError("Missing 'is_success' argument")
+        if knowledge_base_id is None and 'knowledgeBaseId' in kwargs:
             knowledge_base_id = kwargs['knowledgeBaseId']
-        if 'maxObservedCvssV2score' in kwargs:
+        if knowledge_base_id is None:
+            raise TypeError("Missing 'knowledge_base_id' argument")
+        if max_observed_cvss_v2score is None and 'maxObservedCvssV2score' in kwargs:
             max_observed_cvss_v2score = kwargs['maxObservedCvssV2score']
-        if 'maxObservedCvssV2scoreWithIgnored' in kwargs:
+        if max_observed_cvss_v2score is None:
+            raise TypeError("Missing 'max_observed_cvss_v2score' argument")
+        if max_observed_cvss_v2score_with_ignored is None and 'maxObservedCvssV2scoreWithIgnored' in kwargs:
             max_observed_cvss_v2score_with_ignored = kwargs['maxObservedCvssV2scoreWithIgnored']
-        if 'maxObservedCvssV3score' in kwargs:
+        if max_observed_cvss_v2score_with_ignored is None:
+            raise TypeError("Missing 'max_observed_cvss_v2score_with_ignored' argument")
+        if max_observed_cvss_v3score is None and 'maxObservedCvssV3score' in kwargs:
             max_observed_cvss_v3score = kwargs['maxObservedCvssV3score']
-        if 'maxObservedCvssV3scoreWithIgnored' in kwargs:
+        if max_observed_cvss_v3score is None:
+            raise TypeError("Missing 'max_observed_cvss_v3score' argument")
+        if max_observed_cvss_v3score_with_ignored is None and 'maxObservedCvssV3scoreWithIgnored' in kwargs:
             max_observed_cvss_v3score_with_ignored = kwargs['maxObservedCvssV3scoreWithIgnored']
-        if 'systemTags' in kwargs:
+        if max_observed_cvss_v3score_with_ignored is None:
+            raise TypeError("Missing 'max_observed_cvss_v3score_with_ignored' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vulnerableArtifactsCount' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vulnerabilities is None:
+            raise TypeError("Missing 'vulnerabilities' argument")
+        if vulnerable_artifacts_count is None and 'vulnerableArtifactsCount' in kwargs:
             vulnerable_artifacts_count = kwargs['vulnerableArtifactsCount']
-        if 'vulnerableArtifactsCountWithIgnored' in kwargs:
+        if vulnerable_artifacts_count is None:
+            raise TypeError("Missing 'vulnerable_artifacts_count' argument")
+        if vulnerable_artifacts_count_with_ignored is None and 'vulnerableArtifactsCountWithIgnored' in kwargs:
             vulnerable_artifacts_count_with_ignored = kwargs['vulnerableArtifactsCountWithIgnored']
+        if vulnerable_artifacts_count_with_ignored is None:
+            raise TypeError("Missing 'vulnerable_artifacts_count_with_ignored' argument")
 
         _setter("application_dependencies", application_dependencies)
         _setter("build_type", build_type)
@@ -1632,15 +1780,21 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependenc
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_dependency_node_ids: Sequence[str],
-             gav: str,
-             node_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_dependency_node_ids: Optional[Sequence[str]] = None,
+             gav: Optional[str] = None,
+             node_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationDependencyNodeIds' in kwargs:
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
             application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
-        if 'nodeId' in kwargs:
+        if application_dependency_node_ids is None:
+            raise TypeError("Missing 'application_dependency_node_ids' argument")
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
 
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
@@ -1682,15 +1836,21 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exclusions: Sequence[str],
-             max_permissible_cvss_v2score: float,
-             max_permissible_cvss_v3score: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exclusions: Optional[Sequence[str]] = None,
+             max_permissible_cvss_v2score: Optional[float] = None,
+             max_permissible_cvss_v3score: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxPermissibleCvssV2score' in kwargs:
+        if exclusions is None:
+            raise TypeError("Missing 'exclusions' argument")
+        if max_permissible_cvss_v2score is None and 'maxPermissibleCvssV2score' in kwargs:
             max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
-        if 'maxPermissibleCvssV3score' in kwargs:
+        if max_permissible_cvss_v2score is None:
+            raise TypeError("Missing 'max_permissible_cvss_v2score' argument")
+        if max_permissible_cvss_v3score is None and 'maxPermissibleCvssV3score' in kwargs:
             max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+        if max_permissible_cvss_v3score is None:
+            raise TypeError("Missing 'max_permissible_cvss_v3score' argument")
 
         _setter("exclusions", exclusions)
         _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
@@ -1741,13 +1901,19 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             oci_resource_id: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             oci_resource_id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ociResourceId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if oci_resource_id is None and 'ociResourceId' in kwargs:
             oci_resource_id = kwargs['ociResourceId']
+        if oci_resource_id is None:
+            raise TypeError("Missing 'oci_resource_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("description", description)
         _setter("oci_resource_id", oci_resource_id)
@@ -1801,18 +1967,26 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cvss_v2score: float,
-             cvss_v3score: float,
-             id: str,
-             is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cvss_v2score: Optional[float] = None,
+             cvss_v3score: Optional[float] = None,
+             id: Optional[str] = None,
+             is_ignored: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cvssV2score' in kwargs:
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
             cvss_v2score = kwargs['cvssV2score']
-        if 'cvssV3score' in kwargs:
+        if cvss_v2score is None:
+            raise TypeError("Missing 'cvss_v2score' argument")
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
             cvss_v3score = kwargs['cvssV3score']
-        if 'isIgnored' in kwargs:
+        if cvss_v3score is None:
+            raise TypeError("Missing 'cvss_v3score' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_ignored is None and 'isIgnored' in kwargs:
             is_ignored = kwargs['isIgnored']
+        if is_ignored is None:
+            raise TypeError("Missing 'is_ignored' argument")
 
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)

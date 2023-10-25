@@ -68,11 +68,11 @@ class OdaInstanceRestrictedOperation(dict):
              _setter: Callable[[Any, Any], None],
              operation_name: Optional[str] = None,
              restricting_service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationName' in kwargs:
+        if operation_name is None and 'operationName' in kwargs:
             operation_name = kwargs['operationName']
-        if 'restrictingService' in kwargs:
+        if restricting_service is None and 'restrictingService' in kwargs:
             restricting_service = kwargs['restrictingService']
 
         if operation_name is not None:
@@ -141,13 +141,13 @@ class OdaPrivateEndpointScanProxyScanListenerInfo(dict):
              scan_listener_fqdn: Optional[str] = None,
              scan_listener_ip: Optional[str] = None,
              scan_listener_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scanListenerFqdn' in kwargs:
+        if scan_listener_fqdn is None and 'scanListenerFqdn' in kwargs:
             scan_listener_fqdn = kwargs['scanListenerFqdn']
-        if 'scanListenerIp' in kwargs:
+        if scan_listener_ip is None and 'scanListenerIp' in kwargs:
             scan_listener_ip = kwargs['scanListenerIp']
-        if 'scanListenerPort' in kwargs:
+        if scan_listener_port is None and 'scanListenerPort' in kwargs:
             scan_listener_port = kwargs['scanListenerPort']
 
         if scan_listener_fqdn is not None:
@@ -199,14 +199,18 @@ class GetOdaInstanceRestrictedOperationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation_name: str,
-             restricting_service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation_name: Optional[str] = None,
+             restricting_service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationName' in kwargs:
+        if operation_name is None and 'operationName' in kwargs:
             operation_name = kwargs['operationName']
-        if 'restrictingService' in kwargs:
+        if operation_name is None:
+            raise TypeError("Missing 'operation_name' argument")
+        if restricting_service is None and 'restrictingService' in kwargs:
             restricting_service = kwargs['restrictingService']
+        if restricting_service is None:
+            raise TypeError("Missing 'restricting_service' argument")
 
         _setter("operation_name", operation_name)
         _setter("restricting_service", restricting_service)
@@ -243,11 +247,15 @@ class GetOdaInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -350,71 +358,117 @@ class GetOdaInstancesOdaInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attachment_ids: Sequence[str],
-             attachment_types: Sequence[str],
-             compartment_id: str,
-             connector_url: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             identity_app_console_url: str,
-             identity_app_guid: str,
-             identity_domain: str,
-             imported_package_ids: Sequence[str],
-             imported_package_names: Sequence[str],
-             is_role_based_access: bool,
-             lifecycle_sub_state: str,
-             restricted_operations: Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult'],
-             shape_name: str,
-             state: str,
-             state_message: str,
-             time_created: str,
-             time_updated: str,
-             web_app_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attachment_ids: Optional[Sequence[str]] = None,
+             attachment_types: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             connector_url: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             identity_app_console_url: Optional[str] = None,
+             identity_app_guid: Optional[str] = None,
+             identity_domain: Optional[str] = None,
+             imported_package_ids: Optional[Sequence[str]] = None,
+             imported_package_names: Optional[Sequence[str]] = None,
+             is_role_based_access: Optional[bool] = None,
+             lifecycle_sub_state: Optional[str] = None,
+             restricted_operations: Optional[Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult']] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             state_message: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             web_app_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentIds' in kwargs:
+        if attachment_ids is None and 'attachmentIds' in kwargs:
             attachment_ids = kwargs['attachmentIds']
-        if 'attachmentTypes' in kwargs:
+        if attachment_ids is None:
+            raise TypeError("Missing 'attachment_ids' argument")
+        if attachment_types is None and 'attachmentTypes' in kwargs:
             attachment_types = kwargs['attachmentTypes']
-        if 'compartmentId' in kwargs:
+        if attachment_types is None:
+            raise TypeError("Missing 'attachment_types' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectorUrl' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connector_url is None and 'connectorUrl' in kwargs:
             connector_url = kwargs['connectorUrl']
-        if 'definedTags' in kwargs:
+        if connector_url is None:
+            raise TypeError("Missing 'connector_url' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'identityAppConsoleUrl' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if identity_app_console_url is None and 'identityAppConsoleUrl' in kwargs:
             identity_app_console_url = kwargs['identityAppConsoleUrl']
-        if 'identityAppGuid' in kwargs:
+        if identity_app_console_url is None:
+            raise TypeError("Missing 'identity_app_console_url' argument")
+        if identity_app_guid is None and 'identityAppGuid' in kwargs:
             identity_app_guid = kwargs['identityAppGuid']
-        if 'identityDomain' in kwargs:
+        if identity_app_guid is None:
+            raise TypeError("Missing 'identity_app_guid' argument")
+        if identity_domain is None and 'identityDomain' in kwargs:
             identity_domain = kwargs['identityDomain']
-        if 'importedPackageIds' in kwargs:
+        if identity_domain is None:
+            raise TypeError("Missing 'identity_domain' argument")
+        if imported_package_ids is None and 'importedPackageIds' in kwargs:
             imported_package_ids = kwargs['importedPackageIds']
-        if 'importedPackageNames' in kwargs:
+        if imported_package_ids is None:
+            raise TypeError("Missing 'imported_package_ids' argument")
+        if imported_package_names is None and 'importedPackageNames' in kwargs:
             imported_package_names = kwargs['importedPackageNames']
-        if 'isRoleBasedAccess' in kwargs:
+        if imported_package_names is None:
+            raise TypeError("Missing 'imported_package_names' argument")
+        if is_role_based_access is None and 'isRoleBasedAccess' in kwargs:
             is_role_based_access = kwargs['isRoleBasedAccess']
-        if 'lifecycleSubState' in kwargs:
+        if is_role_based_access is None:
+            raise TypeError("Missing 'is_role_based_access' argument")
+        if lifecycle_sub_state is None and 'lifecycleSubState' in kwargs:
             lifecycle_sub_state = kwargs['lifecycleSubState']
-        if 'restrictedOperations' in kwargs:
+        if lifecycle_sub_state is None:
+            raise TypeError("Missing 'lifecycle_sub_state' argument")
+        if restricted_operations is None and 'restrictedOperations' in kwargs:
             restricted_operations = kwargs['restrictedOperations']
-        if 'shapeName' in kwargs:
+        if restricted_operations is None:
+            raise TypeError("Missing 'restricted_operations' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'stateMessage' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'timeCreated' in kwargs:
+        if state_message is None:
+            raise TypeError("Missing 'state_message' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'webAppUrl' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if web_app_url is None and 'webAppUrl' in kwargs:
             web_app_url = kwargs['webAppUrl']
+        if web_app_url is None:
+            raise TypeError("Missing 'web_app_url' argument")
 
         _setter("attachment_ids", attachment_ids)
         _setter("attachment_types", attachment_types)
@@ -642,14 +696,18 @@ class GetOdaInstancesOdaInstanceRestrictedOperationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation_name: str,
-             restricting_service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation_name: Optional[str] = None,
+             restricting_service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationName' in kwargs:
+        if operation_name is None and 'operationName' in kwargs:
             operation_name = kwargs['operationName']
-        if 'restrictingService' in kwargs:
+        if operation_name is None:
+            raise TypeError("Missing 'operation_name' argument")
+        if restricting_service is None and 'restrictingService' in kwargs:
             restricting_service = kwargs['restrictingService']
+        if restricting_service is None:
+            raise TypeError("Missing 'restricting_service' argument")
 
         _setter("operation_name", operation_name)
         _setter("restricting_service", restricting_service)
@@ -686,11 +744,15 @@ class GetOdaPrivateEndpointAttachmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -724,9 +786,11 @@ class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -768,25 +832,39 @@ class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             oda_instance_id: str,
-             oda_private_endpoint_id: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             oda_instance_id: Optional[str] = None,
+             oda_private_endpoint_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'odaInstanceId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if oda_instance_id is None and 'odaInstanceId' in kwargs:
             oda_instance_id = kwargs['odaInstanceId']
-        if 'odaPrivateEndpointId' in kwargs:
+        if oda_instance_id is None:
+            raise TypeError("Missing 'oda_instance_id' argument")
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if 'timeCreated' in kwargs:
+        if oda_private_endpoint_id is None:
+            raise TypeError("Missing 'oda_private_endpoint_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -868,11 +946,15 @@ class GetOdaPrivateEndpointScanProxiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -906,9 +988,11 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -950,23 +1034,37 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             oda_private_endpoint_id: str,
-             protocol: str,
-             scan_listener_infos: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult'],
-             scan_listener_type: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             oda_private_endpoint_id: Optional[str] = None,
+             protocol: Optional[str] = None,
+             scan_listener_infos: Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult']] = None,
+             scan_listener_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'odaPrivateEndpointId' in kwargs:
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if 'scanListenerInfos' in kwargs:
+        if oda_private_endpoint_id is None:
+            raise TypeError("Missing 'oda_private_endpoint_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if scan_listener_infos is None and 'scanListenerInfos' in kwargs:
             scan_listener_infos = kwargs['scanListenerInfos']
-        if 'scanListenerType' in kwargs:
+        if scan_listener_infos is None:
+            raise TypeError("Missing 'scan_listener_infos' argument")
+        if scan_listener_type is None and 'scanListenerType' in kwargs:
             scan_listener_type = kwargs['scanListenerType']
-        if 'timeCreated' in kwargs:
+        if scan_listener_type is None:
+            raise TypeError("Missing 'scan_listener_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("id", id)
         _setter("oda_private_endpoint_id", oda_private_endpoint_id)
@@ -1053,17 +1151,23 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             scan_listener_fqdn: str,
-             scan_listener_ip: str,
-             scan_listener_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             scan_listener_fqdn: Optional[str] = None,
+             scan_listener_ip: Optional[str] = None,
+             scan_listener_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scanListenerFqdn' in kwargs:
+        if scan_listener_fqdn is None and 'scanListenerFqdn' in kwargs:
             scan_listener_fqdn = kwargs['scanListenerFqdn']
-        if 'scanListenerIp' in kwargs:
+        if scan_listener_fqdn is None:
+            raise TypeError("Missing 'scan_listener_fqdn' argument")
+        if scan_listener_ip is None and 'scanListenerIp' in kwargs:
             scan_listener_ip = kwargs['scanListenerIp']
-        if 'scanListenerPort' in kwargs:
+        if scan_listener_ip is None:
+            raise TypeError("Missing 'scan_listener_ip' argument")
+        if scan_listener_port is None and 'scanListenerPort' in kwargs:
             scan_listener_port = kwargs['scanListenerPort']
+        if scan_listener_port is None:
+            raise TypeError("Missing 'scan_listener_port' argument")
 
         _setter("scan_listener_fqdn", scan_listener_fqdn)
         _setter("scan_listener_ip", scan_listener_ip)
@@ -1114,17 +1218,23 @@ class GetOdaPrivateEndpointScanProxyScanListenerInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             scan_listener_fqdn: str,
-             scan_listener_ip: str,
-             scan_listener_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             scan_listener_fqdn: Optional[str] = None,
+             scan_listener_ip: Optional[str] = None,
+             scan_listener_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scanListenerFqdn' in kwargs:
+        if scan_listener_fqdn is None and 'scanListenerFqdn' in kwargs:
             scan_listener_fqdn = kwargs['scanListenerFqdn']
-        if 'scanListenerIp' in kwargs:
+        if scan_listener_fqdn is None:
+            raise TypeError("Missing 'scan_listener_fqdn' argument")
+        if scan_listener_ip is None and 'scanListenerIp' in kwargs:
             scan_listener_ip = kwargs['scanListenerIp']
-        if 'scanListenerPort' in kwargs:
+        if scan_listener_ip is None:
+            raise TypeError("Missing 'scan_listener_ip' argument")
+        if scan_listener_port is None and 'scanListenerPort' in kwargs:
             scan_listener_port = kwargs['scanListenerPort']
+        if scan_listener_port is None:
+            raise TypeError("Missing 'scan_listener_port' argument")
 
         _setter("scan_listener_fqdn", scan_listener_fqdn)
         _setter("scan_listener_ip", scan_listener_ip)
@@ -1170,11 +1280,15 @@ class GetOdaPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1208,9 +1322,11 @@ class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1264,35 +1380,57 @@ class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             nsg_ids: Sequence[str],
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'nsgIds' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

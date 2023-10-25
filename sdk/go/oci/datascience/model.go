@@ -50,12 +50,12 @@ import (
 //						Value:       pulumi.Any(_var.Model_defined_metadata_list_value),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Model_description),
 //				DisplayName: pulumi.Any(_var.Model_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InputSchema:  pulumi.Any(_var.Model_input_schema),

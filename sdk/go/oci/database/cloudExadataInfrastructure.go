@@ -43,7 +43,7 @@ import (
 //					},
 //				},
 //				DefinedTags: pulumi.Any(_var.Cloud_exadata_infrastructure_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{

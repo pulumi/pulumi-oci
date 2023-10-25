@@ -32,12 +32,16 @@ class GetSecretbundleSecretBundleContentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: str,
-             content_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content: Optional[str] = None,
+             content_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentType' in kwargs:
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
+        if content_type is None:
+            raise TypeError("Missing 'content_type' argument")
 
         _setter("content", content)
         _setter("content_type", content_type)
@@ -74,11 +78,15 @@ class GetSecretbundleVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -133,27 +141,41 @@ class GetSecretbundleVersionsSecretBundleVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             stages: Sequence[str],
-             time_created: str,
-             time_of_deletion: str,
-             time_of_expiry: str,
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             time_of_expiry: Optional[str] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'timeCreated' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'timeOfExpiry' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if time_of_expiry is None and 'timeOfExpiry' in kwargs:
             time_of_expiry = kwargs['timeOfExpiry']
-        if 'versionName' in kwargs:
+        if time_of_expiry is None:
+            raise TypeError("Missing 'time_of_expiry' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("secret_id", secret_id)
         _setter("stages", stages)

@@ -41,11 +41,11 @@ import (
 //				},
 //				ScheduleRecurrences: pulumi.Any(_var.Schedule_schedule_recurrences),
 //				TimeScheduled:       pulumi.Any(_var.Schedule_time_scheduled),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Schedule_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				OutputFileFormat: pulumi.Any(_var.Schedule_output_file_format),

@@ -85,29 +85,29 @@ class DbHomeArgs:
              kms_key_version_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseSoftwareImageId' in kwargs:
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
             database_software_image_id = kwargs['databaseSoftwareImageId']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'enableDatabaseDelete' in kwargs:
+        if enable_database_delete is None and 'enableDatabaseDelete' in kwargs:
             enable_database_delete = kwargs['enableDatabaseDelete']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDesupportedVersion' in kwargs:
+        if is_desupported_version is None and 'isDesupportedVersion' in kwargs:
             is_desupported_version = kwargs['isDesupportedVersion']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
 
         if database is not None:
@@ -398,39 +398,39 @@ class _DbHomeState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSoftwareImageId' in kwargs:
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
             database_software_image_id = kwargs['databaseSoftwareImageId']
-        if 'dbHomeLocation' in kwargs:
+        if db_home_location is None and 'dbHomeLocation' in kwargs:
             db_home_location = kwargs['dbHomeLocation']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'enableDatabaseDelete' in kwargs:
+        if enable_database_delete is None and 'enableDatabaseDelete' in kwargs:
             enable_database_delete = kwargs['enableDatabaseDelete']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDesupportedVersion' in kwargs:
+        if is_desupported_version is None and 'isDesupportedVersion' in kwargs:
             is_desupported_version = kwargs['isDesupportedVersion']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'lastPatchHistoryEntryId' in kwargs:
+        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
             last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
 
         if compartment_id is not None:
@@ -833,11 +833,7 @@ class DbHome(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbHomeArgs.__new__(DbHomeArgs)
 
-            if database is not None and not isinstance(database, DbHomeDatabaseArgs):
-                database = database or {}
-                def _setter(key, value):
-                    database[key] = value
-                DbHomeDatabaseArgs._configure(_setter, **database)
+            database = _utilities.configure(database, DbHomeDatabaseArgs, True)
             __props__.__dict__["database"] = database
             __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["db_system_id"] = db_system_id

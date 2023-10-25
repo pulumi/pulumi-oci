@@ -27,14 +27,18 @@ class SensitiveDataModelsApplyDiscoveryJobResultsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             discovery_job_id: pulumi.Input[str],
-             sensitive_data_model_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             discovery_job_id: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'discoveryJobId' in kwargs:
+        if discovery_job_id is None and 'discoveryJobId' in kwargs:
             discovery_job_id = kwargs['discoveryJobId']
-        if 'sensitiveDataModelId' in kwargs:
+        if discovery_job_id is None:
+            raise TypeError("Missing 'discovery_job_id' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if sensitive_data_model_id is None:
+            raise TypeError("Missing 'sensitive_data_model_id' argument")
 
         _setter("discovery_job_id", discovery_job_id)
         _setter("sensitive_data_model_id", sensitive_data_model_id)
@@ -76,11 +80,11 @@ class _SensitiveDataModelsApplyDiscoveryJobResultsState:
              _setter: Callable[[Any, Any], None],
              discovery_job_id: Optional[pulumi.Input[str]] = None,
              sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'discoveryJobId' in kwargs:
+        if discovery_job_id is None and 'discoveryJobId' in kwargs:
             discovery_job_id = kwargs['discoveryJobId']
-        if 'sensitiveDataModelId' in kwargs:
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
 
         if discovery_job_id is not None:

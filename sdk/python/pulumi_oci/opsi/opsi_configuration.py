@@ -65,7 +65,7 @@ class OpsiConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opsi_config_type: pulumi.Input[str],
+             opsi_config_type: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -77,29 +77,31 @@ class OpsiConfigurationArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              opsi_config_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'opsiConfigType' in kwargs:
+        if opsi_config_type is None and 'opsiConfigType' in kwargs:
             opsi_config_type = kwargs['opsiConfigType']
-        if 'compartmentId' in kwargs:
+        if opsi_config_type is None:
+            raise TypeError("Missing 'opsi_config_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configItemCustomStatuses' in kwargs:
+        if config_item_custom_statuses is None and 'configItemCustomStatuses' in kwargs:
             config_item_custom_statuses = kwargs['configItemCustomStatuses']
-        if 'configItemFields' in kwargs:
+        if config_item_fields is None and 'configItemFields' in kwargs:
             config_item_fields = kwargs['configItemFields']
-        if 'configItems' in kwargs:
+        if config_items is None and 'configItems' in kwargs:
             config_items = kwargs['configItems']
-        if 'configItemsApplicableContexts' in kwargs:
+        if config_items_applicable_contexts is None and 'configItemsApplicableContexts' in kwargs:
             config_items_applicable_contexts = kwargs['configItemsApplicableContexts']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'opsiConfigFields' in kwargs:
+        if opsi_config_fields is None and 'opsiConfigFields' in kwargs:
             opsi_config_fields = kwargs['opsiConfigFields']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("opsi_config_type", opsi_config_type)
@@ -355,35 +357,35 @@ class _OpsiConfigurationState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configItemCustomStatuses' in kwargs:
+        if config_item_custom_statuses is None and 'configItemCustomStatuses' in kwargs:
             config_item_custom_statuses = kwargs['configItemCustomStatuses']
-        if 'configItemFields' in kwargs:
+        if config_item_fields is None and 'configItemFields' in kwargs:
             config_item_fields = kwargs['configItemFields']
-        if 'configItems' in kwargs:
+        if config_items is None and 'configItems' in kwargs:
             config_items = kwargs['configItems']
-        if 'configItemsApplicableContexts' in kwargs:
+        if config_items_applicable_contexts is None and 'configItemsApplicableContexts' in kwargs:
             config_items_applicable_contexts = kwargs['configItemsApplicableContexts']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'opsiConfigFields' in kwargs:
+        if opsi_config_fields is None and 'opsiConfigFields' in kwargs:
             opsi_config_fields = kwargs['opsiConfigFields']
-        if 'opsiConfigType' in kwargs:
+        if opsi_config_type is None and 'opsiConfigType' in kwargs:
             opsi_config_type = kwargs['opsiConfigType']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

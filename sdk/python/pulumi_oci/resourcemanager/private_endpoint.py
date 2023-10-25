@@ -57,35 +57,43 @@ class PrivateEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
-             vcn_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_used_with_configuration_source_provider: Optional[pulumi.Input[bool]] = None,
              nsg_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'subnetId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'definedTags' in kwargs:
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsZones' in kwargs:
+        if dns_zones is None and 'dnsZones' in kwargs:
             dns_zones = kwargs['dnsZones']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isUsedWithConfigurationSourceProvider' in kwargs:
+        if is_used_with_configuration_source_provider is None and 'isUsedWithConfigurationSourceProvider' in kwargs:
             is_used_with_configuration_source_provider = kwargs['isUsedWithConfigurationSourceProvider']
-        if 'nsgIdLists' in kwargs:
+        if nsg_id_lists is None and 'nsgIdLists' in kwargs:
             nsg_id_lists = kwargs['nsgIdLists']
 
         _setter("compartment_id", compartment_id)
@@ -298,29 +306,29 @@ class _PrivateEndpointState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsZones' in kwargs:
+        if dns_zones is None and 'dnsZones' in kwargs:
             dns_zones = kwargs['dnsZones']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isUsedWithConfigurationSourceProvider' in kwargs:
+        if is_used_with_configuration_source_provider is None and 'isUsedWithConfigurationSourceProvider' in kwargs:
             is_used_with_configuration_source_provider = kwargs['isUsedWithConfigurationSourceProvider']
-        if 'nsgIdLists' in kwargs:
+        if nsg_id_lists is None and 'nsgIdLists' in kwargs:
             nsg_id_lists = kwargs['nsgIdLists']
-        if 'sourceIps' in kwargs:
+        if source_ips is None and 'sourceIps' in kwargs:
             source_ips = kwargs['sourceIps']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if compartment_id is not None:

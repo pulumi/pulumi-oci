@@ -41,20 +41,28 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             association_type: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             destination_resource_id: pulumi.Input[str],
-             source_resource_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             association_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_resource_id: Optional[pulumi.Input[str]] = None,
+             source_resource_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'compartmentId' in kwargs:
+        if association_type is None:
+            raise TypeError("Missing 'association_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationResourceId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'sourceResourceId' in kwargs:
+        if destination_resource_id is None:
+            raise TypeError("Missing 'destination_resource_id' argument")
+        if source_resource_id is None and 'sourceResourceId' in kwargs:
             source_resource_id = kwargs['sourceResourceId']
+        if source_resource_id is None:
+            raise TypeError("Missing 'source_resource_id' argument")
 
         _setter("association_type", association_type)
         _setter("compartment_id", compartment_id)
@@ -169,23 +177,23 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationResourceDetails' in kwargs:
+        if destination_resource_details is None and 'destinationResourceDetails' in kwargs:
             destination_resource_details = kwargs['destinationResourceDetails']
-        if 'destinationResourceId' in kwargs:
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'sourceResourceDetails' in kwargs:
+        if source_resource_details is None and 'sourceResourceDetails' in kwargs:
             source_resource_details = kwargs['sourceResourceDetails']
-        if 'sourceResourceId' in kwargs:
+        if source_resource_id is None and 'sourceResourceId' in kwargs:
             source_resource_id = kwargs['sourceResourceId']
-        if 'tenantId' in kwargs:
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if association_type is not None:

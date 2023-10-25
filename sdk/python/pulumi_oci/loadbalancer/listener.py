@@ -64,10 +64,10 @@ class ListenerArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_backend_set_name: pulumi.Input[str],
-             load_balancer_id: pulumi.Input[str],
-             port: pulumi.Input[int],
-             protocol: pulumi.Input[str],
+             default_backend_set_name: Optional[pulumi.Input[str]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
              connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
              hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
@@ -75,23 +75,31 @@ class ListenerArgs:
              routing_policy_name: Optional[pulumi.Input[str]] = None,
              rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultBackendSetName' in kwargs:
+        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
             default_backend_set_name = kwargs['defaultBackendSetName']
-        if 'loadBalancerId' in kwargs:
+        if default_backend_set_name is None:
+            raise TypeError("Missing 'default_backend_set_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'connectionConfiguration' in kwargs:
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if connection_configuration is None and 'connectionConfiguration' in kwargs:
             connection_configuration = kwargs['connectionConfiguration']
-        if 'hostnameNames' in kwargs:
+        if hostname_names is None and 'hostnameNames' in kwargs:
             hostname_names = kwargs['hostnameNames']
-        if 'pathRouteSetName' in kwargs:
+        if path_route_set_name is None and 'pathRouteSetName' in kwargs:
             path_route_set_name = kwargs['pathRouteSetName']
-        if 'routingPolicyName' in kwargs:
+        if routing_policy_name is None and 'routingPolicyName' in kwargs:
             routing_policy_name = kwargs['routingPolicyName']
-        if 'ruleSetNames' in kwargs:
+        if rule_set_names is None and 'ruleSetNames' in kwargs:
             rule_set_names = kwargs['ruleSetNames']
-        if 'sslConfiguration' in kwargs:
+        if ssl_configuration is None and 'sslConfiguration' in kwargs:
             ssl_configuration = kwargs['sslConfiguration']
 
         _setter("default_backend_set_name", default_backend_set_name)
@@ -317,23 +325,23 @@ class _ListenerState:
              rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionConfiguration' in kwargs:
+        if connection_configuration is None and 'connectionConfiguration' in kwargs:
             connection_configuration = kwargs['connectionConfiguration']
-        if 'defaultBackendSetName' in kwargs:
+        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
             default_backend_set_name = kwargs['defaultBackendSetName']
-        if 'hostnameNames' in kwargs:
+        if hostname_names is None and 'hostnameNames' in kwargs:
             hostname_names = kwargs['hostnameNames']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'pathRouteSetName' in kwargs:
+        if path_route_set_name is None and 'pathRouteSetName' in kwargs:
             path_route_set_name = kwargs['pathRouteSetName']
-        if 'routingPolicyName' in kwargs:
+        if routing_policy_name is None and 'routingPolicyName' in kwargs:
             routing_policy_name = kwargs['routingPolicyName']
-        if 'ruleSetNames' in kwargs:
+        if rule_set_names is None and 'ruleSetNames' in kwargs:
             rule_set_names = kwargs['ruleSetNames']
-        if 'sslConfiguration' in kwargs:
+        if ssl_configuration is None and 'sslConfiguration' in kwargs:
             ssl_configuration = kwargs['sslConfiguration']
 
         if connection_configuration is not None:
@@ -679,11 +687,7 @@ class Listener(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ListenerArgs.__new__(ListenerArgs)
 
-            if connection_configuration is not None and not isinstance(connection_configuration, ListenerConnectionConfigurationArgs):
-                connection_configuration = connection_configuration or {}
-                def _setter(key, value):
-                    connection_configuration[key] = value
-                ListenerConnectionConfigurationArgs._configure(_setter, **connection_configuration)
+            connection_configuration = _utilities.configure(connection_configuration, ListenerConnectionConfigurationArgs, True)
             __props__.__dict__["connection_configuration"] = connection_configuration
             if default_backend_set_name is None and not opts.urn:
                 raise TypeError("Missing required property 'default_backend_set_name'")
@@ -702,11 +706,7 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["protocol"] = protocol
             __props__.__dict__["routing_policy_name"] = routing_policy_name
             __props__.__dict__["rule_set_names"] = rule_set_names
-            if ssl_configuration is not None and not isinstance(ssl_configuration, ListenerSslConfigurationArgs):
-                ssl_configuration = ssl_configuration or {}
-                def _setter(key, value):
-                    ssl_configuration[key] = value
-                ListenerSslConfigurationArgs._configure(_setter, **ssl_configuration)
+            ssl_configuration = _utilities.configure(ssl_configuration, ListenerSslConfigurationArgs, True)
             __props__.__dict__["ssl_configuration"] = ssl_configuration
             __props__.__dict__["state"] = None
         super(Listener, __self__).__init__(

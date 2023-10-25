@@ -30,7 +30,7 @@ class RedisClusterNodeCollectionArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -72,13 +72,13 @@ class RedisClusterNodeCollectionItemArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              private_endpoint_fqdn: Optional[pulumi.Input[str]] = None,
              private_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'privateEndpointFqdn' in kwargs:
+        if private_endpoint_fqdn is None and 'privateEndpointFqdn' in kwargs:
             private_endpoint_fqdn = kwargs['privateEndpointFqdn']
-        if 'privateEndpointIpAddress' in kwargs:
+        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
             private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
 
         if display_name is not None:
@@ -140,11 +140,15 @@ class GetRedisClustersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

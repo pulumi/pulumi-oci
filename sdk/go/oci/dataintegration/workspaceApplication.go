@@ -35,12 +35,12 @@ import (
 //				Identifier:  pulumi.Any(_var.Workspace_application_identifier),
 //				WorkspaceId: pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
 //				ModelType:   pulumi.Any(_var.Workspace_application_model_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Workspace_application_description),
 //				DisplayName: pulumi.Any(_var.Workspace_application_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Key:          pulumi.Any(_var.Workspace_application_key),

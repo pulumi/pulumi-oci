@@ -78,13 +78,13 @@ class DeploymentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             cpu_core_count: pulumi.Input[int],
-             deployment_type: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             is_auto_scaling_enabled: pulumi.Input[bool],
-             license_model: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              deployment_backup_id: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -96,37 +96,51 @@ class DeploymentArgs:
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'deploymentType' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'displayName' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isAutoScalingEnabled' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
             is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
-        if 'licenseModel' in kwargs:
+        if is_auto_scaling_enabled is None:
+            raise TypeError("Missing 'is_auto_scaling_enabled' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'subnetId' in kwargs:
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentBackupId' in kwargs:
+        if deployment_backup_id is None and 'deploymentBackupId' in kwargs:
             deployment_backup_id = kwargs['deploymentBackupId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPublic' in kwargs:
+        if is_public is None and 'isPublic' in kwargs:
             is_public = kwargs['isPublic']
-        if 'maintenanceConfiguration' in kwargs:
+        if maintenance_configuration is None and 'maintenanceConfiguration' in kwargs:
             maintenance_configuration = kwargs['maintenanceConfiguration']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'oggData' in kwargs:
+        if ogg_data is None and 'oggData' in kwargs:
             ogg_data = kwargs['oggData']
 
         _setter("compartment_id", compartment_id)
@@ -528,73 +542,73 @@ class _DeploymentState:
              time_ogg_version_supported_until: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              time_upgrade_required: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentBackupId' in kwargs:
+        if deployment_backup_id is None and 'deploymentBackupId' in kwargs:
             deployment_backup_id = kwargs['deploymentBackupId']
-        if 'deploymentDiagnosticDatas' in kwargs:
+        if deployment_diagnostic_datas is None and 'deploymentDiagnosticDatas' in kwargs:
             deployment_diagnostic_datas = kwargs['deploymentDiagnosticDatas']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'deploymentUrl' in kwargs:
+        if deployment_url is None and 'deploymentUrl' in kwargs:
             deployment_url = kwargs['deploymentUrl']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoScalingEnabled' in kwargs:
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
             is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
-        if 'isHealthy' in kwargs:
+        if is_healthy is None and 'isHealthy' in kwargs:
             is_healthy = kwargs['isHealthy']
-        if 'isLatestVersion' in kwargs:
+        if is_latest_version is None and 'isLatestVersion' in kwargs:
             is_latest_version = kwargs['isLatestVersion']
-        if 'isPublic' in kwargs:
+        if is_public is None and 'isPublic' in kwargs:
             is_public = kwargs['isPublic']
-        if 'isStorageUtilizationLimitExceeded' in kwargs:
+        if is_storage_utilization_limit_exceeded is None and 'isStorageUtilizationLimitExceeded' in kwargs:
             is_storage_utilization_limit_exceeded = kwargs['isStorageUtilizationLimitExceeded']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lifecycleSubState' in kwargs:
+        if lifecycle_sub_state is None and 'lifecycleSubState' in kwargs:
             lifecycle_sub_state = kwargs['lifecycleSubState']
-        if 'maintenanceConfiguration' in kwargs:
+        if maintenance_configuration is None and 'maintenanceConfiguration' in kwargs:
             maintenance_configuration = kwargs['maintenanceConfiguration']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'nextMaintenanceActionType' in kwargs:
+        if next_maintenance_action_type is None and 'nextMaintenanceActionType' in kwargs:
             next_maintenance_action_type = kwargs['nextMaintenanceActionType']
-        if 'nextMaintenanceDescription' in kwargs:
+        if next_maintenance_description is None and 'nextMaintenanceDescription' in kwargs:
             next_maintenance_description = kwargs['nextMaintenanceDescription']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'oggData' in kwargs:
+        if ogg_data is None and 'oggData' in kwargs:
             ogg_data = kwargs['oggData']
-        if 'privateIpAddress' in kwargs:
+        if private_ip_address is None and 'privateIpAddress' in kwargs:
             private_ip_address = kwargs['privateIpAddress']
-        if 'publicIpAddress' in kwargs:
+        if public_ip_address is None and 'publicIpAddress' in kwargs:
             public_ip_address = kwargs['publicIpAddress']
-        if 'storageUtilizationInBytes' in kwargs:
+        if storage_utilization_in_bytes is None and 'storageUtilizationInBytes' in kwargs:
             storage_utilization_in_bytes = kwargs['storageUtilizationInBytes']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfNextMaintenance' in kwargs:
+        if time_of_next_maintenance is None and 'timeOfNextMaintenance' in kwargs:
             time_of_next_maintenance = kwargs['timeOfNextMaintenance']
-        if 'timeOggVersionSupportedUntil' in kwargs:
+        if time_ogg_version_supported_until is None and 'timeOggVersionSupportedUntil' in kwargs:
             time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeUpgradeRequired' in kwargs:
+        if time_upgrade_required is None and 'timeUpgradeRequired' in kwargs:
             time_upgrade_required = kwargs['timeUpgradeRequired']
 
         if compartment_id is not None:
@@ -1246,24 +1260,12 @@ class Deployment(pulumi.CustomResource):
             if license_model is None and not opts.urn:
                 raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
-            if maintenance_configuration is not None and not isinstance(maintenance_configuration, DeploymentMaintenanceConfigurationArgs):
-                maintenance_configuration = maintenance_configuration or {}
-                def _setter(key, value):
-                    maintenance_configuration[key] = value
-                DeploymentMaintenanceConfigurationArgs._configure(_setter, **maintenance_configuration)
+            maintenance_configuration = _utilities.configure(maintenance_configuration, DeploymentMaintenanceConfigurationArgs, True)
             __props__.__dict__["maintenance_configuration"] = maintenance_configuration
-            if maintenance_window is not None and not isinstance(maintenance_window, DeploymentMaintenanceWindowArgs):
-                maintenance_window = maintenance_window or {}
-                def _setter(key, value):
-                    maintenance_window[key] = value
-                DeploymentMaintenanceWindowArgs._configure(_setter, **maintenance_window)
+            maintenance_window = _utilities.configure(maintenance_window, DeploymentMaintenanceWindowArgs, True)
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
-            if ogg_data is not None and not isinstance(ogg_data, DeploymentOggDataArgs):
-                ogg_data = ogg_data or {}
-                def _setter(key, value):
-                    ogg_data[key] = value
-                DeploymentOggDataArgs._configure(_setter, **ogg_data)
+            ogg_data = _utilities.configure(ogg_data, DeploymentOggDataArgs, True)
             __props__.__dict__["ogg_data"] = ogg_data
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:

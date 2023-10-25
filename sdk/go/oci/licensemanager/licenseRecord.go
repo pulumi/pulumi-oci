@@ -36,11 +36,11 @@ import (
 //				IsPerpetual:      pulumi.Any(_var.License_record_is_perpetual),
 //				IsUnlimited:      pulumi.Any(_var.License_record_is_unlimited),
 //				ProductLicenseId: pulumi.Any(oci_license_manager_product_license.Test_product_license.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				ExpirationDate: pulumi.Any(_var.License_record_expiration_date),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				LicenseCount:   pulumi.Any(_var.License_record_license_count),

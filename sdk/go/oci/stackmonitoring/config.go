@@ -42,11 +42,11 @@ import (
 //				ConfigType:    pulumi.Any(_var.Config_config_type),
 //				IsEnabled:     pulumi.Any(_var.Config_is_enabled),
 //				ResourceType:  pulumi.Any(_var.Config_resource_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Config_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

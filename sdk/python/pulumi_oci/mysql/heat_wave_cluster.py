@@ -43,20 +43,26 @@ class HeatWaveClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_size: pulumi.Input[int],
-             db_system_id: pulumi.Input[str],
-             shape_name: pulumi.Input[str],
+             cluster_size: Optional[pulumi.Input[int]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
              is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterSize' in kwargs:
+        if cluster_size is None and 'clusterSize' in kwargs:
             cluster_size = kwargs['clusterSize']
-        if 'dbSystemId' in kwargs:
+        if cluster_size is None:
+            raise TypeError("Missing 'cluster_size' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'shapeName' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'isLakehouseEnabled' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
             is_lakehouse_enabled = kwargs['isLakehouseEnabled']
 
         _setter("cluster_size", cluster_size)
@@ -182,23 +188,23 @@ class _HeatWaveClusterState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterNodes' in kwargs:
+        if cluster_nodes is None and 'clusterNodes' in kwargs:
             cluster_nodes = kwargs['clusterNodes']
-        if 'clusterSize' in kwargs:
+        if cluster_size is None and 'clusterSize' in kwargs:
             cluster_size = kwargs['clusterSize']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'isLakehouseEnabled' in kwargs:
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
             is_lakehouse_enabled = kwargs['isLakehouseEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if cluster_nodes is not None:

@@ -89,11 +89,11 @@ class ConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apm_domain_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             monitor_type: pulumi.Input[str],
-             repeat_interval_in_seconds: pulumi.Input[int],
-             vantage_points: pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             monitor_type: Optional[pulumi.Input[str]] = None,
+             repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None,
              availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
              batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
              configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
@@ -109,41 +109,51 @@ class ConfigArgs:
              status: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'displayName' in kwargs:
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'monitorType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if monitor_type is None and 'monitorType' in kwargs:
             monitor_type = kwargs['monitorType']
-        if 'repeatIntervalInSeconds' in kwargs:
+        if monitor_type is None:
+            raise TypeError("Missing 'monitor_type' argument")
+        if repeat_interval_in_seconds is None and 'repeatIntervalInSeconds' in kwargs:
             repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
-        if 'vantagePoints' in kwargs:
+        if repeat_interval_in_seconds is None:
+            raise TypeError("Missing 'repeat_interval_in_seconds' argument")
+        if vantage_points is None and 'vantagePoints' in kwargs:
             vantage_points = kwargs['vantagePoints']
-        if 'availabilityConfiguration' in kwargs:
+        if vantage_points is None:
+            raise TypeError("Missing 'vantage_points' argument")
+        if availability_configuration is None and 'availabilityConfiguration' in kwargs:
             availability_configuration = kwargs['availabilityConfiguration']
-        if 'batchIntervalInSeconds' in kwargs:
+        if batch_interval_in_seconds is None and 'batchIntervalInSeconds' in kwargs:
             batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRunNow' in kwargs:
+        if is_run_now is None and 'isRunNow' in kwargs:
             is_run_now = kwargs['isRunNow']
-        if 'isRunOnce' in kwargs:
+        if is_run_once is None and 'isRunOnce' in kwargs:
             is_run_once = kwargs['isRunOnce']
-        if 'maintenanceWindowSchedule' in kwargs:
+        if maintenance_window_schedule is None and 'maintenanceWindowSchedule' in kwargs:
             maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
-        if 'schedulingPolicy' in kwargs:
+        if scheduling_policy is None and 'schedulingPolicy' in kwargs:
             scheduling_policy = kwargs['schedulingPolicy']
-        if 'scriptId' in kwargs:
+        if script_id is None and 'scriptId' in kwargs:
             script_id = kwargs['scriptId']
-        if 'scriptName' in kwargs:
+        if script_name is None and 'scriptName' in kwargs:
             script_name = kwargs['scriptName']
-        if 'scriptParameters' in kwargs:
+        if script_parameters is None and 'scriptParameters' in kwargs:
             script_parameters = kwargs['scriptParameters']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
 
         _setter("apm_domain_id", apm_domain_id)
@@ -535,47 +545,47 @@ class _ConfigState:
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_count: Optional[pulumi.Input[int]] = None,
              vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'availabilityConfiguration' in kwargs:
+        if availability_configuration is None and 'availabilityConfiguration' in kwargs:
             availability_configuration = kwargs['availabilityConfiguration']
-        if 'batchIntervalInSeconds' in kwargs:
+        if batch_interval_in_seconds is None and 'batchIntervalInSeconds' in kwargs:
             batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRunNow' in kwargs:
+        if is_run_now is None and 'isRunNow' in kwargs:
             is_run_now = kwargs['isRunNow']
-        if 'isRunOnce' in kwargs:
+        if is_run_once is None and 'isRunOnce' in kwargs:
             is_run_once = kwargs['isRunOnce']
-        if 'maintenanceWindowSchedule' in kwargs:
+        if maintenance_window_schedule is None and 'maintenanceWindowSchedule' in kwargs:
             maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
-        if 'monitorType' in kwargs:
+        if monitor_type is None and 'monitorType' in kwargs:
             monitor_type = kwargs['monitorType']
-        if 'repeatIntervalInSeconds' in kwargs:
+        if repeat_interval_in_seconds is None and 'repeatIntervalInSeconds' in kwargs:
             repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
-        if 'schedulingPolicy' in kwargs:
+        if scheduling_policy is None and 'schedulingPolicy' in kwargs:
             scheduling_policy = kwargs['schedulingPolicy']
-        if 'scriptId' in kwargs:
+        if script_id is None and 'scriptId' in kwargs:
             script_id = kwargs['scriptId']
-        if 'scriptName' in kwargs:
+        if script_name is None and 'scriptName' in kwargs:
             script_name = kwargs['scriptName']
-        if 'scriptParameters' in kwargs:
+        if script_parameters is None and 'scriptParameters' in kwargs:
             script_parameters = kwargs['scriptParameters']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'vantagePointCount' in kwargs:
+        if vantage_point_count is None and 'vantagePointCount' in kwargs:
             vantage_point_count = kwargs['vantagePointCount']
-        if 'vantagePoints' in kwargs:
+        if vantage_points is None and 'vantagePoints' in kwargs:
             vantage_points = kwargs['vantagePoints']
 
         if apm_domain_id is not None:
@@ -1242,18 +1252,10 @@ class Config(pulumi.CustomResource):
             if apm_domain_id is None and not opts.urn:
                 raise TypeError("Missing required property 'apm_domain_id'")
             __props__.__dict__["apm_domain_id"] = apm_domain_id
-            if availability_configuration is not None and not isinstance(availability_configuration, ConfigAvailabilityConfigurationArgs):
-                availability_configuration = availability_configuration or {}
-                def _setter(key, value):
-                    availability_configuration[key] = value
-                ConfigAvailabilityConfigurationArgs._configure(_setter, **availability_configuration)
+            availability_configuration = _utilities.configure(availability_configuration, ConfigAvailabilityConfigurationArgs, True)
             __props__.__dict__["availability_configuration"] = availability_configuration
             __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
-            if configuration is not None and not isinstance(configuration, ConfigConfigurationArgs):
-                configuration = configuration or {}
-                def _setter(key, value):
-                    configuration[key] = value
-                ConfigConfigurationArgs._configure(_setter, **configuration)
+            configuration = _utilities.configure(configuration, ConfigConfigurationArgs, True)
             __props__.__dict__["configuration"] = configuration
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
@@ -1262,11 +1264,7 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_run_now"] = is_run_now
             __props__.__dict__["is_run_once"] = is_run_once
-            if maintenance_window_schedule is not None and not isinstance(maintenance_window_schedule, ConfigMaintenanceWindowScheduleArgs):
-                maintenance_window_schedule = maintenance_window_schedule or {}
-                def _setter(key, value):
-                    maintenance_window_schedule[key] = value
-                ConfigMaintenanceWindowScheduleArgs._configure(_setter, **maintenance_window_schedule)
+            maintenance_window_schedule = _utilities.configure(maintenance_window_schedule, ConfigMaintenanceWindowScheduleArgs, True)
             __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
             if monitor_type is None and not opts.urn:
                 raise TypeError("Missing required property 'monitor_type'")

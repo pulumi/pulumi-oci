@@ -35,10 +35,12 @@ class LogAnalyticsPreferencesManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             namespace: pulumi.Input[str],
+             namespace: Optional[pulumi.Input[str]] = None,
              items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("namespace", namespace)
         if items is not None:
@@ -97,7 +99,7 @@ class _LogAnalyticsPreferencesManagementState:
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:

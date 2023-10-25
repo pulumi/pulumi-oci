@@ -53,10 +53,10 @@ import (
 //					Regions:   pulumi.Any(_var.Data_source_data_source_details_regions),
 //					Threshold: pulumi.Any(_var.Data_source_data_source_details_threshold),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

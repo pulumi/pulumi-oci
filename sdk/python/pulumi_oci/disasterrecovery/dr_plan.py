@@ -44,20 +44,26 @@ class DrPlanArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             dr_protection_group_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             dr_protection_group_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drProtectionGroupId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dr_protection_group_id is None and 'drProtectionGroupId' in kwargs:
             dr_protection_group_id = kwargs['drProtectionGroupId']
-        if 'definedTags' in kwargs:
+        if dr_protection_group_id is None:
+            raise TypeError("Missing 'dr_protection_group_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("display_name", display_name)
@@ -205,31 +211,31 @@ class _DrPlanState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drProtectionGroupId' in kwargs:
+        if dr_protection_group_id is None and 'drProtectionGroupId' in kwargs:
             dr_protection_group_id = kwargs['drProtectionGroupId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifeCycleDetails' in kwargs:
+        if life_cycle_details is None and 'lifeCycleDetails' in kwargs:
             life_cycle_details = kwargs['lifeCycleDetails']
-        if 'peerDrProtectionGroupId' in kwargs:
+        if peer_dr_protection_group_id is None and 'peerDrProtectionGroupId' in kwargs:
             peer_dr_protection_group_id = kwargs['peerDrProtectionGroupId']
-        if 'peerRegion' in kwargs:
+        if peer_region is None and 'peerRegion' in kwargs:
             peer_region = kwargs['peerRegion']
-        if 'planGroups' in kwargs:
+        if plan_groups is None and 'planGroups' in kwargs:
             plan_groups = kwargs['planGroups']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

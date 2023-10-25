@@ -57,7 +57,7 @@ class ResolverArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             resolver_id: pulumi.Input[str],
+             resolver_id: Optional[pulumi.Input[str]] = None,
              attached_views: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -65,19 +65,21 @@ class ResolverArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resolverId' in kwargs:
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'attachedViews' in kwargs:
+        if resolver_id is None:
+            raise TypeError("Missing 'resolver_id' argument")
+        if attached_views is None and 'attachedViews' in kwargs:
             attached_views = kwargs['attachedViews']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("resolver_id", resolver_id)
@@ -285,29 +287,29 @@ class _ResolverState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachedVcnId' in kwargs:
+        if attached_vcn_id is None and 'attachedVcnId' in kwargs:
             attached_vcn_id = kwargs['attachedVcnId']
-        if 'attachedViews' in kwargs:
+        if attached_views is None and 'attachedViews' in kwargs:
             attached_views = kwargs['attachedViews']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultViewId' in kwargs:
+        if default_view_id is None and 'defaultViewId' in kwargs:
             default_view_id = kwargs['defaultViewId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isProtected' in kwargs:
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'resolverId' in kwargs:
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if attached_vcn_id is not None:

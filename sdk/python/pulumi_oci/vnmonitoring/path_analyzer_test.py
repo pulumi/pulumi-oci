@@ -52,32 +52,40 @@ class PathAnalyzerTestArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             destination_endpoint: pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'],
-             protocol: pulumi.Input[int],
-             source_endpoint: pulumi.Input['PathAnalyzerTestSourceEndpointArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_endpoint: Optional[pulumi.Input['PathAnalyzerTestDestinationEndpointArgs']] = None,
+             protocol: Optional[pulumi.Input[int]] = None,
+             source_endpoint: Optional[pulumi.Input['PathAnalyzerTestSourceEndpointArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              protocol_parameters: Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']] = None,
              query_options: Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationEndpoint' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
             destination_endpoint = kwargs['destinationEndpoint']
-        if 'sourceEndpoint' in kwargs:
+        if destination_endpoint is None:
+            raise TypeError("Missing 'destination_endpoint' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
             source_endpoint = kwargs['sourceEndpoint']
-        if 'definedTags' in kwargs:
+        if source_endpoint is None:
+            raise TypeError("Missing 'source_endpoint' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'protocolParameters' in kwargs:
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
             protocol_parameters = kwargs['protocolParameters']
-        if 'queryOptions' in kwargs:
+        if query_options is None and 'queryOptions' in kwargs:
             query_options = kwargs['queryOptions']
 
         _setter("compartment_id", compartment_id)
@@ -268,29 +276,29 @@ class _PathAnalyzerTestState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'destinationEndpoint' in kwargs:
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
             destination_endpoint = kwargs['destinationEndpoint']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'protocolParameters' in kwargs:
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
             protocol_parameters = kwargs['protocolParameters']
-        if 'queryOptions' in kwargs:
+        if query_options is None and 'queryOptions' in kwargs:
             query_options = kwargs['queryOptions']
-        if 'sourceEndpoint' in kwargs:
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
             source_endpoint = kwargs['sourceEndpoint']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -677,11 +685,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
-            if destination_endpoint is not None and not isinstance(destination_endpoint, PathAnalyzerTestDestinationEndpointArgs):
-                destination_endpoint = destination_endpoint or {}
-                def _setter(key, value):
-                    destination_endpoint[key] = value
-                PathAnalyzerTestDestinationEndpointArgs._configure(_setter, **destination_endpoint)
+            destination_endpoint = _utilities.configure(destination_endpoint, PathAnalyzerTestDestinationEndpointArgs, True)
             if destination_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'destination_endpoint'")
             __props__.__dict__["destination_endpoint"] = destination_endpoint
@@ -690,23 +694,11 @@ class PathAnalyzerTest(pulumi.CustomResource):
             if protocol is None and not opts.urn:
                 raise TypeError("Missing required property 'protocol'")
             __props__.__dict__["protocol"] = protocol
-            if protocol_parameters is not None and not isinstance(protocol_parameters, PathAnalyzerTestProtocolParametersArgs):
-                protocol_parameters = protocol_parameters or {}
-                def _setter(key, value):
-                    protocol_parameters[key] = value
-                PathAnalyzerTestProtocolParametersArgs._configure(_setter, **protocol_parameters)
+            protocol_parameters = _utilities.configure(protocol_parameters, PathAnalyzerTestProtocolParametersArgs, True)
             __props__.__dict__["protocol_parameters"] = protocol_parameters
-            if query_options is not None and not isinstance(query_options, PathAnalyzerTestQueryOptionsArgs):
-                query_options = query_options or {}
-                def _setter(key, value):
-                    query_options[key] = value
-                PathAnalyzerTestQueryOptionsArgs._configure(_setter, **query_options)
+            query_options = _utilities.configure(query_options, PathAnalyzerTestQueryOptionsArgs, True)
             __props__.__dict__["query_options"] = query_options
-            if source_endpoint is not None and not isinstance(source_endpoint, PathAnalyzerTestSourceEndpointArgs):
-                source_endpoint = source_endpoint or {}
-                def _setter(key, value):
-                    source_endpoint[key] = value
-                PathAnalyzerTestSourceEndpointArgs._configure(_setter, **source_endpoint)
+            source_endpoint = _utilities.configure(source_endpoint, PathAnalyzerTestSourceEndpointArgs, True)
             if source_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'source_endpoint'")
             __props__.__dict__["source_endpoint"] = source_endpoint

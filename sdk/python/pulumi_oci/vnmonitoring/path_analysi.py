@@ -56,7 +56,7 @@ class PathAnalysiArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              cache_control: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              destination_endpoint: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']] = None,
@@ -65,21 +65,23 @@ class PathAnalysiArgs:
              protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
              query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
              source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheControl' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_control is None and 'cacheControl' in kwargs:
             cache_control = kwargs['cacheControl']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationEndpoint' in kwargs:
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
             destination_endpoint = kwargs['destinationEndpoint']
-        if 'pathAnalyzerTestId' in kwargs:
+        if path_analyzer_test_id is None and 'pathAnalyzerTestId' in kwargs:
             path_analyzer_test_id = kwargs['pathAnalyzerTestId']
-        if 'protocolParameters' in kwargs:
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
             protocol_parameters = kwargs['protocolParameters']
-        if 'queryOptions' in kwargs:
+        if query_options is None and 'queryOptions' in kwargs:
             query_options = kwargs['queryOptions']
-        if 'sourceEndpoint' in kwargs:
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
             source_endpoint = kwargs['sourceEndpoint']
 
         _setter("type", type)
@@ -265,21 +267,21 @@ class _PathAnalysiState:
              query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
              source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheControl' in kwargs:
+        if cache_control is None and 'cacheControl' in kwargs:
             cache_control = kwargs['cacheControl']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationEndpoint' in kwargs:
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
             destination_endpoint = kwargs['destinationEndpoint']
-        if 'pathAnalyzerTestId' in kwargs:
+        if path_analyzer_test_id is None and 'pathAnalyzerTestId' in kwargs:
             path_analyzer_test_id = kwargs['pathAnalyzerTestId']
-        if 'protocolParameters' in kwargs:
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
             protocol_parameters = kwargs['protocolParameters']
-        if 'queryOptions' in kwargs:
+        if query_options is None and 'queryOptions' in kwargs:
             query_options = kwargs['queryOptions']
-        if 'sourceEndpoint' in kwargs:
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
             source_endpoint = kwargs['sourceEndpoint']
 
         if cache_control is not None:
@@ -622,31 +624,15 @@ class PathAnalysi(pulumi.CustomResource):
 
             __props__.__dict__["cache_control"] = cache_control
             __props__.__dict__["compartment_id"] = compartment_id
-            if destination_endpoint is not None and not isinstance(destination_endpoint, PathAnalysiDestinationEndpointArgs):
-                destination_endpoint = destination_endpoint or {}
-                def _setter(key, value):
-                    destination_endpoint[key] = value
-                PathAnalysiDestinationEndpointArgs._configure(_setter, **destination_endpoint)
+            destination_endpoint = _utilities.configure(destination_endpoint, PathAnalysiDestinationEndpointArgs, True)
             __props__.__dict__["destination_endpoint"] = destination_endpoint
             __props__.__dict__["path_analyzer_test_id"] = path_analyzer_test_id
             __props__.__dict__["protocol"] = protocol
-            if protocol_parameters is not None and not isinstance(protocol_parameters, PathAnalysiProtocolParametersArgs):
-                protocol_parameters = protocol_parameters or {}
-                def _setter(key, value):
-                    protocol_parameters[key] = value
-                PathAnalysiProtocolParametersArgs._configure(_setter, **protocol_parameters)
+            protocol_parameters = _utilities.configure(protocol_parameters, PathAnalysiProtocolParametersArgs, True)
             __props__.__dict__["protocol_parameters"] = protocol_parameters
-            if query_options is not None and not isinstance(query_options, PathAnalysiQueryOptionsArgs):
-                query_options = query_options or {}
-                def _setter(key, value):
-                    query_options[key] = value
-                PathAnalysiQueryOptionsArgs._configure(_setter, **query_options)
+            query_options = _utilities.configure(query_options, PathAnalysiQueryOptionsArgs, True)
             __props__.__dict__["query_options"] = query_options
-            if source_endpoint is not None and not isinstance(source_endpoint, PathAnalysiSourceEndpointArgs):
-                source_endpoint = source_endpoint or {}
-                def _setter(key, value):
-                    source_endpoint[key] = value
-                PathAnalysiSourceEndpointArgs._configure(_setter, **source_endpoint)
+            source_endpoint = _utilities.configure(source_endpoint, PathAnalysiSourceEndpointArgs, True)
             __props__.__dict__["source_endpoint"] = source_endpoint
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

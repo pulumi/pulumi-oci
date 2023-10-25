@@ -36,10 +36,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Recovery_service_subnet_display_name),
 //				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

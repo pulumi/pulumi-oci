@@ -35,7 +35,7 @@ import (
 //				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
 //				ConfigType:  pulumi.Any(_var.Config_config_type),
 //				DisplayName: pulumi.Any(_var.Config_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Config_description),
@@ -47,7 +47,7 @@ import (
 //				},
 //				FilterId:   pulumi.Any(oci_apm_config_filter.Test_filter.Id),
 //				FilterText: pulumi.Any(_var.Config_filter_text),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Group: pulumi.Any(_var.Config_group),

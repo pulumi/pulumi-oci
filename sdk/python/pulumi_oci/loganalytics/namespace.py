@@ -32,15 +32,21 @@ class NamespaceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             is_onboarded: pulumi.Input[bool],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_onboarded: Optional[pulumi.Input[bool]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isOnboarded' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_onboarded is None and 'isOnboarded' in kwargs:
             is_onboarded = kwargs['isOnboarded']
+        if is_onboarded is None:
+            raise TypeError("Missing 'is_onboarded' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("is_onboarded", is_onboarded)
@@ -107,11 +113,11 @@ class _NamespaceState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              is_onboarded: Optional[pulumi.Input[bool]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isOnboarded' in kwargs:
+        if is_onboarded is None and 'isOnboarded' in kwargs:
             is_onboarded = kwargs['isOnboarded']
 
         if compartment_id is not None:

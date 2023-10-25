@@ -30,11 +30,13 @@ class SessionKeyDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             public_key_content: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             public_key_content: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKeyContent' in kwargs:
+        if public_key_content is None and 'publicKeyContent' in kwargs:
             public_key_content = kwargs['publicKeyContent']
+        if public_key_content is None:
+            raise TypeError("Missing 'public_key_content' argument")
 
         _setter("public_key_content", public_key_content)
 
@@ -87,28 +89,30 @@ class SessionTargetResourceDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             session_type: pulumi.Input[str],
+             session_type: Optional[pulumi.Input[str]] = None,
              target_resource_display_name: Optional[pulumi.Input[str]] = None,
              target_resource_fqdn: Optional[pulumi.Input[str]] = None,
              target_resource_id: Optional[pulumi.Input[str]] = None,
              target_resource_operating_system_user_name: Optional[pulumi.Input[str]] = None,
              target_resource_port: Optional[pulumi.Input[int]] = None,
              target_resource_private_ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sessionType' in kwargs:
+        if session_type is None and 'sessionType' in kwargs:
             session_type = kwargs['sessionType']
-        if 'targetResourceDisplayName' in kwargs:
+        if session_type is None:
+            raise TypeError("Missing 'session_type' argument")
+        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
             target_resource_display_name = kwargs['targetResourceDisplayName']
-        if 'targetResourceFqdn' in kwargs:
+        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
             target_resource_fqdn = kwargs['targetResourceFqdn']
-        if 'targetResourceId' in kwargs:
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceOperatingSystemUserName' in kwargs:
+        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
             target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if 'targetResourcePort' in kwargs:
+        if target_resource_port is None and 'targetResourcePort' in kwargs:
             target_resource_port = kwargs['targetResourcePort']
-        if 'targetResourcePrivateIpAddress' in kwargs:
+        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
             target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
 
         _setter("session_type", session_type)
@@ -232,11 +236,15 @@ class GetBastionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -289,11 +297,15 @@ class GetSessionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

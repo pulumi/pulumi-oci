@@ -113,13 +113,13 @@ class ApplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             driver_shape: pulumi.Input[str],
-             executor_shape: pulumi.Input[str],
-             language: pulumi.Input[str],
-             num_executors: pulumi.Input[int],
-             spark_version: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             driver_shape: Optional[pulumi.Input[str]] = None,
+             executor_shape: Optional[pulumi.Input[str]] = None,
+             language: Optional[pulumi.Input[str]] = None,
+             num_executors: Optional[pulumi.Input[int]] = None,
+             spark_version: Optional[pulumi.Input[str]] = None,
              application_log_config: Optional[pulumi.Input['ApplicationApplicationLogConfigArgs']] = None,
              archive_uri: Optional[pulumi.Input[str]] = None,
              arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -141,49 +141,63 @@ class ApplicationArgs:
              private_endpoint_id: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'executorShape' in kwargs:
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'numExecutors' in kwargs:
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if language is None:
+            raise TypeError("Missing 'language' argument")
+        if num_executors is None and 'numExecutors' in kwargs:
             num_executors = kwargs['numExecutors']
-        if 'sparkVersion' in kwargs:
+        if num_executors is None:
+            raise TypeError("Missing 'num_executors' argument")
+        if spark_version is None and 'sparkVersion' in kwargs:
             spark_version = kwargs['sparkVersion']
-        if 'applicationLogConfig' in kwargs:
+        if spark_version is None:
+            raise TypeError("Missing 'spark_version' argument")
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
             application_log_config = kwargs['applicationLogConfig']
-        if 'archiveUri' in kwargs:
+        if archive_uri is None and 'archiveUri' in kwargs:
             archive_uri = kwargs['archiveUri']
-        if 'className' in kwargs:
+        if class_name is None and 'className' in kwargs:
             class_name = kwargs['className']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'fileUri' in kwargs:
+        if file_uri is None and 'fileUri' in kwargs:
             file_uri = kwargs['fileUri']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idleTimeoutInMinutes' in kwargs:
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
             idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
-        if 'logsBucketUri' in kwargs:
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
             logs_bucket_uri = kwargs['logsBucketUri']
-        if 'maxDurationInMinutes' in kwargs:
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
             max_duration_in_minutes = kwargs['maxDurationInMinutes']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'poolId' in kwargs:
+        if pool_id is None and 'poolId' in kwargs:
             pool_id = kwargs['poolId']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'warehouseBucketUri' in kwargs:
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
             warehouse_bucket_uri = kwargs['warehouseBucketUri']
 
         _setter("compartment_id", compartment_id)
@@ -725,57 +739,57 @@ class _ApplicationState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationLogConfig' in kwargs:
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
             application_log_config = kwargs['applicationLogConfig']
-        if 'archiveUri' in kwargs:
+        if archive_uri is None and 'archiveUri' in kwargs:
             archive_uri = kwargs['archiveUri']
-        if 'className' in kwargs:
+        if class_name is None and 'className' in kwargs:
             class_name = kwargs['className']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShape' in kwargs:
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'fileUri' in kwargs:
+        if file_uri is None and 'fileUri' in kwargs:
             file_uri = kwargs['fileUri']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idleTimeoutInMinutes' in kwargs:
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
             idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
-        if 'logsBucketUri' in kwargs:
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
             logs_bucket_uri = kwargs['logsBucketUri']
-        if 'maxDurationInMinutes' in kwargs:
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
             max_duration_in_minutes = kwargs['maxDurationInMinutes']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'numExecutors' in kwargs:
+        if num_executors is None and 'numExecutors' in kwargs:
             num_executors = kwargs['numExecutors']
-        if 'ownerPrincipalId' in kwargs:
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
             owner_principal_id = kwargs['ownerPrincipalId']
-        if 'ownerUserName' in kwargs:
+        if owner_user_name is None and 'ownerUserName' in kwargs:
             owner_user_name = kwargs['ownerUserName']
-        if 'poolId' in kwargs:
+        if pool_id is None and 'poolId' in kwargs:
             pool_id = kwargs['poolId']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'sparkVersion' in kwargs:
+        if spark_version is None and 'sparkVersion' in kwargs:
             spark_version = kwargs['sparkVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'warehouseBucketUri' in kwargs:
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
             warehouse_bucket_uri = kwargs['warehouseBucketUri']
 
         if application_log_config is not None:
@@ -1509,11 +1523,7 @@ class Application(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ApplicationArgs.__new__(ApplicationArgs)
 
-            if application_log_config is not None and not isinstance(application_log_config, ApplicationApplicationLogConfigArgs):
-                application_log_config = application_log_config or {}
-                def _setter(key, value):
-                    application_log_config[key] = value
-                ApplicationApplicationLogConfigArgs._configure(_setter, **application_log_config)
+            application_log_config = _utilities.configure(application_log_config, ApplicationApplicationLogConfigArgs, True)
             __props__.__dict__["application_log_config"] = application_log_config
             __props__.__dict__["archive_uri"] = archive_uri
             __props__.__dict__["arguments"] = arguments
@@ -1530,21 +1540,13 @@ class Application(pulumi.CustomResource):
             if driver_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'driver_shape'")
             __props__.__dict__["driver_shape"] = driver_shape
-            if driver_shape_config is not None and not isinstance(driver_shape_config, ApplicationDriverShapeConfigArgs):
-                driver_shape_config = driver_shape_config or {}
-                def _setter(key, value):
-                    driver_shape_config[key] = value
-                ApplicationDriverShapeConfigArgs._configure(_setter, **driver_shape_config)
+            driver_shape_config = _utilities.configure(driver_shape_config, ApplicationDriverShapeConfigArgs, True)
             __props__.__dict__["driver_shape_config"] = driver_shape_config
             __props__.__dict__["execute"] = execute
             if executor_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'executor_shape'")
             __props__.__dict__["executor_shape"] = executor_shape
-            if executor_shape_config is not None and not isinstance(executor_shape_config, ApplicationExecutorShapeConfigArgs):
-                executor_shape_config = executor_shape_config or {}
-                def _setter(key, value):
-                    executor_shape_config[key] = value
-                ApplicationExecutorShapeConfigArgs._configure(_setter, **executor_shape_config)
+            executor_shape_config = _utilities.configure(executor_shape_config, ApplicationExecutorShapeConfigArgs, True)
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["file_uri"] = file_uri
             __props__.__dict__["freeform_tags"] = freeform_tags

@@ -40,10 +40,10 @@ import (
 //					ZipFileBase64encoded: pulumi.Any(_var.Private_application_package_details_zip_file_base64encoded),
 //				},
 //				ShortDescription: pulumi.Any(_var.Private_application_short_description),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				LogoFileBase64encoded: pulumi.Any(_var.Private_application_logo_file_base64encoded),

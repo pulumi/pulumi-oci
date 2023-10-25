@@ -77,9 +77,9 @@ class NetworkSecurityGroupSecurityRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             direction: pulumi.Input[str],
-             network_security_group_id: pulumi.Input[str],
-             protocol: pulumi.Input[str],
+             direction: Optional[pulumi.Input[str]] = None,
+             network_security_group_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              destination: Optional[pulumi.Input[str]] = None,
              destination_type: Optional[pulumi.Input[str]] = None,
@@ -89,19 +89,25 @@ class NetworkSecurityGroupSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkSecurityGroupId' in kwargs:
+        if direction is None:
+            raise TypeError("Missing 'direction' argument")
+        if network_security_group_id is None and 'networkSecurityGroupId' in kwargs:
             network_security_group_id = kwargs['networkSecurityGroupId']
-        if 'destinationType' in kwargs:
+        if network_security_group_id is None:
+            raise TypeError("Missing 'network_security_group_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if destination_type is None and 'destinationType' in kwargs:
             destination_type = kwargs['destinationType']
-        if 'icmpOptions' in kwargs:
+        if icmp_options is None and 'icmpOptions' in kwargs:
             icmp_options = kwargs['icmpOptions']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'tcpOptions' in kwargs:
+        if tcp_options is None and 'tcpOptions' in kwargs:
             tcp_options = kwargs['tcpOptions']
-        if 'udpOptions' in kwargs:
+        if udp_options is None and 'udpOptions' in kwargs:
             udp_options = kwargs['udpOptions']
 
         _setter("direction", direction)
@@ -371,23 +377,23 @@ class _NetworkSecurityGroupSecurityRuleState:
              tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationType' in kwargs:
+        if destination_type is None and 'destinationType' in kwargs:
             destination_type = kwargs['destinationType']
-        if 'icmpOptions' in kwargs:
+        if icmp_options is None and 'icmpOptions' in kwargs:
             icmp_options = kwargs['icmpOptions']
-        if 'isValid' in kwargs:
+        if is_valid is None and 'isValid' in kwargs:
             is_valid = kwargs['isValid']
-        if 'networkSecurityGroupId' in kwargs:
+        if network_security_group_id is None and 'networkSecurityGroupId' in kwargs:
             network_security_group_id = kwargs['networkSecurityGroupId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'tcpOptions' in kwargs:
+        if tcp_options is None and 'tcpOptions' in kwargs:
             tcp_options = kwargs['tcpOptions']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'udpOptions' in kwargs:
+        if udp_options is None and 'udpOptions' in kwargs:
             udp_options = kwargs['udpOptions']
 
         if description is not None:
@@ -815,11 +821,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             if direction is None and not opts.urn:
                 raise TypeError("Missing required property 'direction'")
             __props__.__dict__["direction"] = direction
-            if icmp_options is not None and not isinstance(icmp_options, NetworkSecurityGroupSecurityRuleIcmpOptionsArgs):
-                icmp_options = icmp_options or {}
-                def _setter(key, value):
-                    icmp_options[key] = value
-                NetworkSecurityGroupSecurityRuleIcmpOptionsArgs._configure(_setter, **icmp_options)
+            icmp_options = _utilities.configure(icmp_options, NetworkSecurityGroupSecurityRuleIcmpOptionsArgs, True)
             __props__.__dict__["icmp_options"] = icmp_options
             if network_security_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_security_group_id'")
@@ -830,17 +832,9 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             __props__.__dict__["source"] = source
             __props__.__dict__["source_type"] = source_type
             __props__.__dict__["stateless"] = stateless
-            if tcp_options is not None and not isinstance(tcp_options, NetworkSecurityGroupSecurityRuleTcpOptionsArgs):
-                tcp_options = tcp_options or {}
-                def _setter(key, value):
-                    tcp_options[key] = value
-                NetworkSecurityGroupSecurityRuleTcpOptionsArgs._configure(_setter, **tcp_options)
+            tcp_options = _utilities.configure(tcp_options, NetworkSecurityGroupSecurityRuleTcpOptionsArgs, True)
             __props__.__dict__["tcp_options"] = tcp_options
-            if udp_options is not None and not isinstance(udp_options, NetworkSecurityGroupSecurityRuleUdpOptionsArgs):
-                udp_options = udp_options or {}
-                def _setter(key, value):
-                    udp_options[key] = value
-                NetworkSecurityGroupSecurityRuleUdpOptionsArgs._configure(_setter, **udp_options)
+            udp_options = _utilities.configure(udp_options, NetworkSecurityGroupSecurityRuleUdpOptionsArgs, True)
             __props__.__dict__["udp_options"] = udp_options
             __props__.__dict__["is_valid"] = None
             __props__.__dict__["time_created"] = None

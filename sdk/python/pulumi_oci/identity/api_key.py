@@ -33,14 +33,18 @@ class ApiKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_value: pulumi.Input[str],
-             user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_value: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyValue' in kwargs:
+        if key_value is None and 'keyValue' in kwargs:
             key_value = kwargs['keyValue']
-        if 'userId' in kwargs:
+        if key_value is None:
+            raise TypeError("Missing 'key_value' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("key_value", key_value)
         _setter("user_id", user_id)
@@ -114,15 +118,15 @@ class _ApiKeyState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'inactiveStatus' in kwargs:
+        if inactive_status is None and 'inactiveStatus' in kwargs:
             inactive_status = kwargs['inactiveStatus']
-        if 'keyValue' in kwargs:
+        if key_value is None and 'keyValue' in kwargs:
             key_value = kwargs['keyValue']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if fingerprint is not None:

@@ -44,13 +44,17 @@ class SslCipherSuiteArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ciphers: pulumi.Input[Sequence[pulumi.Input[str]]],
-             load_balancer_id: pulumi.Input[str],
+             ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if ciphers is None:
+            raise TypeError("Missing 'ciphers' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
 
         _setter("ciphers", ciphers)
         _setter("load_balancer_id", load_balancer_id)
@@ -143,9 +147,9 @@ class _SslCipherSuiteState:
              load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if ciphers is not None:

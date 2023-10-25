@@ -34,11 +34,11 @@ import (
 //			_, err := CloudBridge.NewDiscoverySchedule(ctx, "testDiscoverySchedule", &CloudBridge.DiscoveryScheduleArgs{
 //				CompartmentId:        pulumi.Any(_var.Compartment_id),
 //				ExecutionRecurrences: pulumi.Any(_var.Discovery_schedule_execution_recurrences),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Discovery_schedule_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

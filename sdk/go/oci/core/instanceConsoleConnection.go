@@ -38,10 +38,10 @@ import (
 //			_, err := Core.NewInstanceConsoleConnection(ctx, "testInstanceConsoleConnection", &Core.InstanceConsoleConnectionArgs{
 //				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
 //				PublicKey:  pulumi.Any(_var.Instance_console_connection_public_key),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

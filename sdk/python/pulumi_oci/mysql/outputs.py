@@ -175,23 +175,33 @@ class ChannelSource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             password: str,
-             source_type: str,
-             ssl_mode: str,
-             username: str,
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             source_type: Optional[str] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
              anonymous_transactions_handling: Optional['outputs.ChannelSourceAnonymousTransactionsHandling'] = None,
              port: Optional[int] = None,
              ssl_ca_certificate: Optional['outputs.ChannelSourceSslCaCertificate'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslMode' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
-        if 'anonymousTransactionsHandling' in kwargs:
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+        if anonymous_transactions_handling is None and 'anonymousTransactionsHandling' in kwargs:
             anonymous_transactions_handling = kwargs['anonymousTransactionsHandling']
-        if 'sslCaCertificate' in kwargs:
+        if ssl_ca_certificate is None and 'sslCaCertificate' in kwargs:
             ssl_ca_certificate = kwargs['sslCaCertificate']
 
         _setter("hostname", hostname)
@@ -313,15 +323,17 @@ class ChannelSourceAnonymousTransactionsHandling(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy: str,
+             policy: Optional[str] = None,
              last_configured_log_filename: Optional[str] = None,
              last_configured_log_offset: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
 
         _setter("policy", policy)
@@ -399,12 +411,16 @@ class ChannelSourceSslCaCertificate(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_type: str,
-             contents: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
 
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
@@ -489,26 +505,30 @@ class ChannelTarget(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_system_id: str,
-             target_type: str,
+             db_system_id: Optional[str] = None,
+             target_type: Optional[str] = None,
              applier_username: Optional[str] = None,
              channel_name: Optional[str] = None,
              delay_in_seconds: Optional[int] = None,
              filters: Optional[Sequence['outputs.ChannelTargetFilter']] = None,
              tables_without_primary_key_handling: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'targetType' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'applierUsername' in kwargs:
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'delayInSeconds' in kwargs:
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
 
         _setter("db_system_id", db_system_id)
@@ -604,10 +624,14 @@ class ChannelTargetFilter(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -682,13 +706,13 @@ class HeatWaveClusterClusterNode(dict):
              state: Optional[str] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nodeId' in kwargs:
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if node_id is not None:
@@ -896,45 +920,45 @@ class MysqlBackupDbSystemSnapshot(dict):
              port_x: Optional[int] = None,
              shape_name: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicies' in kwargs:
+        if backup_policies is None and 'backupPolicies' in kwargs:
             backup_policies = kwargs['backupPolicies']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHighlyAvailable' in kwargs:
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'mysqlVersion' in kwargs:
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
 
         if admin_username is not None:
@@ -1245,19 +1269,19 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
              pitr_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy']] = None,
              retention_in_days: Optional[int] = None,
              window_start_time: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicies' in kwargs:
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
             pitr_policies = kwargs['pitrPolicies']
-        if 'retentionInDays' in kwargs:
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
 
         if defined_tags is not None:
@@ -1358,9 +1382,9 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -1419,13 +1443,13 @@ class MysqlBackupDbSystemSnapshotDeletionPolicy(dict):
              automatic_backup_retention: Optional[str] = None,
              final_backup: Optional[str] = None,
              is_delete_protected: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
 
         if automatic_backup_retention is not None:
@@ -1532,17 +1556,17 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
              resource_type: Optional[str] = None,
              status: Optional[str] = None,
              status_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
 
         if hostname is not None:
@@ -1669,9 +1693,9 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              window_start_time: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
 
         if window_start_time is not None:
@@ -1724,9 +1748,9 @@ class MysqlConfigurationInitVariables(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              lower_case_table_names: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lowerCaseTableNames' in kwargs:
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
             lower_case_table_names = kwargs['lowerCaseTableNames']
 
         if lower_case_table_names is not None:
@@ -2337,163 +2361,163 @@ class MysqlConfigurationVariables(dict):
              tmp_table_size: Optional[str] = None,
              transaction_isolation: Optional[str] = None,
              wait_timeout: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bigTables' in kwargs:
+        if big_tables is None and 'bigTables' in kwargs:
             big_tables = kwargs['bigTables']
-        if 'binlogExpireLogsSeconds' in kwargs:
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
             binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
-        if 'binlogRowMetadata' in kwargs:
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
             binlog_row_metadata = kwargs['binlogRowMetadata']
-        if 'binlogRowValueOptions' in kwargs:
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
             binlog_row_value_options = kwargs['binlogRowValueOptions']
-        if 'binlogTransactionCompression' in kwargs:
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
             binlog_transaction_compression = kwargs['binlogTransactionCompression']
-        if 'completionType' in kwargs:
+        if completion_type is None and 'completionType' in kwargs:
             completion_type = kwargs['completionType']
-        if 'connectTimeout' in kwargs:
+        if connect_timeout is None and 'connectTimeout' in kwargs:
             connect_timeout = kwargs['connectTimeout']
-        if 'connectionMemoryChunkSize' in kwargs:
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
             connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
-        if 'connectionMemoryLimit' in kwargs:
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
             connection_memory_limit = kwargs['connectionMemoryLimit']
-        if 'cteMaxRecursionDepth' in kwargs:
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
             cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
-        if 'defaultAuthenticationPlugin' in kwargs:
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
             default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
-        if 'foreignKeyChecks' in kwargs:
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
             foreign_key_checks = kwargs['foreignKeyChecks']
-        if 'generatedRandomPasswordLength' in kwargs:
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
             generated_random_password_length = kwargs['generatedRandomPasswordLength']
-        if 'globalConnectionMemoryLimit' in kwargs:
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
             global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
-        if 'globalConnectionMemoryTracking' in kwargs:
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
             global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
-        if 'groupReplicationConsistency' in kwargs:
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
             group_replication_consistency = kwargs['groupReplicationConsistency']
-        if 'informationSchemaStatsExpiry' in kwargs:
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
             information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
-        if 'innodbBufferPoolDumpPct' in kwargs:
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
             innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
-        if 'innodbBufferPoolInstances' in kwargs:
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
             innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
-        if 'innodbBufferPoolSize' in kwargs:
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
             innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
-        if 'innodbDdlBufferSize' in kwargs:
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
             innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
-        if 'innodbDdlThreads' in kwargs:
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
             innodb_ddl_threads = kwargs['innodbDdlThreads']
-        if 'innodbFtEnableStopword' in kwargs:
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
             innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
-        if 'innodbFtMaxTokenSize' in kwargs:
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
             innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
-        if 'innodbFtMinTokenSize' in kwargs:
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
             innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
-        if 'innodbFtNumWordOptimize' in kwargs:
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
             innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
-        if 'innodbFtResultCacheLimit' in kwargs:
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
             innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
-        if 'innodbFtServerStopwordTable' in kwargs:
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
             innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
-        if 'innodbLockWaitTimeout' in kwargs:
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
             innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
-        if 'innodbLogWriterThreads' in kwargs:
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
             innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
-        if 'innodbMaxPurgeLag' in kwargs:
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
             innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
-        if 'innodbMaxPurgeLagDelay' in kwargs:
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
             innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
-        if 'innodbStatsPersistentSamplePages' in kwargs:
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
             innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
-        if 'innodbStatsTransientSamplePages' in kwargs:
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
             innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
-        if 'interactiveTimeout' in kwargs:
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
             interactive_timeout = kwargs['interactiveTimeout']
-        if 'localInfile' in kwargs:
+        if local_infile is None and 'localInfile' in kwargs:
             local_infile = kwargs['localInfile']
-        if 'mandatoryRoles' in kwargs:
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
             mandatory_roles = kwargs['mandatoryRoles']
-        if 'maxAllowedPacket' in kwargs:
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
             max_allowed_packet = kwargs['maxAllowedPacket']
-        if 'maxBinlogCacheSize' in kwargs:
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
             max_binlog_cache_size = kwargs['maxBinlogCacheSize']
-        if 'maxConnectErrors' in kwargs:
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
             max_connect_errors = kwargs['maxConnectErrors']
-        if 'maxConnections' in kwargs:
+        if max_connections is None and 'maxConnections' in kwargs:
             max_connections = kwargs['maxConnections']
-        if 'maxExecutionTime' in kwargs:
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
             max_execution_time = kwargs['maxExecutionTime']
-        if 'maxHeapTableSize' in kwargs:
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
             max_heap_table_size = kwargs['maxHeapTableSize']
-        if 'maxPreparedStmtCount' in kwargs:
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
             max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
-        if 'mysqlFirewallMode' in kwargs:
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
             mysql_firewall_mode = kwargs['mysqlFirewallMode']
-        if 'mysqlZstdDefaultCompressionLevel' in kwargs:
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
             mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
-        if 'mysqlxConnectTimeout' in kwargs:
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
             mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
-        if 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
             mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
-        if 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
             mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
-        if 'mysqlxDocumentIdUniquePrefix' in kwargs:
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
             mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
-        if 'mysqlxEnableHelloNotice' in kwargs:
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
             mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
-        if 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
             mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
-        if 'mysqlxInteractiveTimeout' in kwargs:
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
             mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
-        if 'mysqlxLz4defaultCompressionLevel' in kwargs:
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
             mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
-        if 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
             mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
-        if 'mysqlxMaxAllowedPacket' in kwargs:
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
             mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
-        if 'mysqlxMinWorkerThreads' in kwargs:
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
             mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
-        if 'mysqlxReadTimeout' in kwargs:
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
             mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
-        if 'mysqlxWaitTimeout' in kwargs:
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
             mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
-        if 'mysqlxWriteTimeout' in kwargs:
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
             mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
-        if 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
             mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
-        if 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
             mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
-        if 'netReadTimeout' in kwargs:
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
             net_read_timeout = kwargs['netReadTimeout']
-        if 'netWriteTimeout' in kwargs:
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
             net_write_timeout = kwargs['netWriteTimeout']
-        if 'parserMaxMemSize' in kwargs:
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
             parser_max_mem_size = kwargs['parserMaxMemSize']
-        if 'queryAllocBlockSize' in kwargs:
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
             query_alloc_block_size = kwargs['queryAllocBlockSize']
-        if 'queryPreallocSize' in kwargs:
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
             query_prealloc_size = kwargs['queryPreallocSize']
-        if 'regexpTimeLimit' in kwargs:
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
             regexp_time_limit = kwargs['regexpTimeLimit']
-        if 'sortBufferSize' in kwargs:
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
             sort_buffer_size = kwargs['sortBufferSize']
-        if 'sqlMode' in kwargs:
+        if sql_mode is None and 'sqlMode' in kwargs:
             sql_mode = kwargs['sqlMode']
-        if 'sqlRequirePrimaryKey' in kwargs:
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
             sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
-        if 'sqlWarnings' in kwargs:
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
             sql_warnings = kwargs['sqlWarnings']
-        if 'threadPoolDedicatedListeners' in kwargs:
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
             thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
-        if 'threadPoolMaxTransactionsLimit' in kwargs:
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
             thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'tmpTableSize' in kwargs:
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
             tmp_table_size = kwargs['tmpTableSize']
-        if 'transactionIsolation' in kwargs:
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
             transaction_isolation = kwargs['transactionIsolation']
-        if 'waitTimeout' in kwargs:
+        if wait_timeout is None and 'waitTimeout' in kwargs:
             wait_timeout = kwargs['waitTimeout']
 
         if autocommit is not None:
@@ -3471,19 +3495,19 @@ class MysqlDbSystemBackupPolicy(dict):
              pitr_policy: Optional['outputs.MysqlDbSystemBackupPolicyPitrPolicy'] = None,
              retention_in_days: Optional[int] = None,
              window_start_time: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicy' in kwargs:
+        if pitr_policy is None and 'pitrPolicy' in kwargs:
             pitr_policy = kwargs['pitrPolicy']
-        if 'retentionInDays' in kwargs:
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
 
         if defined_tags is not None:
@@ -3588,9 +3612,9 @@ class MysqlDbSystemBackupPolicyPitrPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -3695,23 +3719,23 @@ class MysqlDbSystemChannel(dict):
              targets: Optional[Sequence['outputs.MysqlDbSystemChannelTarget']] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -3898,15 +3922,15 @@ class MysqlDbSystemChannelSource(dict):
              ssl_ca_certificates: Optional[Sequence['outputs.MysqlDbSystemChannelSourceSslCaCertificate']] = None,
              ssl_mode: Optional[str] = None,
              username: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'anonymousTransactionsHandlings' in kwargs:
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
             anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslCaCertificates' in kwargs:
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
             ssl_ca_certificates = kwargs['sslCaCertificates']
-        if 'sslMode' in kwargs:
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
 
         if anonymous_transactions_handlings is not None:
@@ -4027,11 +4051,11 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandling(dict):
              last_configured_log_offset: Optional[str] = None,
              policy: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
 
         if last_configured_log_filename is not None:
@@ -4112,9 +4136,9 @@ class MysqlDbSystemChannelSourceSslCaCertificate(dict):
              _setter: Callable[[Any, Any], None],
              certificate_type: Optional[str] = None,
              contents: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
 
         if certificate_type is not None:
@@ -4205,19 +4229,19 @@ class MysqlDbSystemChannelTarget(dict):
              filters: Optional[Sequence['outputs.MysqlDbSystemChannelTargetFilter']] = None,
              tables_without_primary_key_handling: Optional[str] = None,
              target_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applierUsername' in kwargs:
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'delayInSeconds' in kwargs:
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
-        if 'targetType' in kwargs:
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
 
         if applier_username is not None:
@@ -4311,7 +4335,7 @@ class MysqlDbSystemChannelTargetFilter(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if type is not None:
@@ -4382,11 +4406,11 @@ class MysqlDbSystemCurrentPlacement(dict):
              _setter: Callable[[Any, Any], None],
              availability_domain: Optional[str] = None,
              fault_domain: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
 
         if availability_domain is not None:
@@ -4463,13 +4487,13 @@ class MysqlDbSystemDeletionPolicy(dict):
              automatic_backup_retention: Optional[str] = None,
              final_backup: Optional[str] = None,
              is_delete_protected: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
 
         if automatic_backup_retention is not None:
@@ -4576,17 +4600,17 @@ class MysqlDbSystemEndpoint(dict):
              resource_type: Optional[str] = None,
              status: Optional[str] = None,
              status_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
 
         if hostname is not None:
@@ -4742,17 +4766,17 @@ class MysqlDbSystemHeatWaveCluster(dict):
              state: Optional[str] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterSize' in kwargs:
+        if cluster_size is None and 'clusterSize' in kwargs:
             cluster_size = kwargs['clusterSize']
-        if 'isLakehouseEnabled' in kwargs:
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
             is_lakehouse_enabled = kwargs['isLakehouseEnabled']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if cluster_size is not None:
@@ -4857,11 +4881,13 @@ class MysqlDbSystemMaintenance(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("window_start_time", window_start_time)
 
@@ -4920,11 +4946,11 @@ class MysqlDbSystemPointInTimeRecoveryDetail(dict):
              _setter: Callable[[Any, Any], None],
              time_earliest_recovery_point: Optional[str] = None,
              time_latest_recovery_point: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeEarliestRecoveryPoint' in kwargs:
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
             time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
-        if 'timeLatestRecoveryPoint' in kwargs:
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
             time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
 
         if time_earliest_recovery_point is not None:
@@ -5000,22 +5026,24 @@ class MysqlDbSystemSource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_type: str,
+             source_type: Optional[str] = None,
              backup_id: Optional[str] = None,
              db_system_id: Optional[str] = None,
              recovery_point: Optional[str] = None,
              source_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'backupId' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if backup_id is None and 'backupId' in kwargs:
             backup_id = kwargs['backupId']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'recoveryPoint' in kwargs:
+        if recovery_point is None and 'recoveryPoint' in kwargs:
             recovery_point = kwargs['recoveryPoint']
-        if 'sourceUrl' in kwargs:
+        if source_url is None and 'sourceUrl' in kwargs:
             source_url = kwargs['sourceUrl']
 
         _setter("source_type", source_type)
@@ -5117,13 +5145,13 @@ class ReplicaReplicaOverrides(dict):
              configuration_id: Optional[str] = None,
              mysql_version: Optional[str] = None,
              shape_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'mysqlVersion' in kwargs:
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
 
         if configuration_id is not None:
@@ -5196,24 +5224,40 @@ class GetChannelSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             anonymous_transactions_handlings: Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult'],
-             hostname: str,
-             password: str,
-             port: int,
-             source_type: str,
-             ssl_ca_certificates: Sequence['outputs.GetChannelSourceSslCaCertificateResult'],
-             ssl_mode: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'anonymousTransactionsHandlings' in kwargs:
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
             anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
-        if 'sourceType' in kwargs:
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslCaCertificates' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
             ssl_ca_certificates = kwargs['sslCaCertificates']
-        if 'sslMode' in kwargs:
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         _setter("hostname", hostname)
@@ -5309,16 +5353,24 @@ class GetChannelSourceAnonymousTransactionsHandlingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             last_configured_log_filename: str,
-             last_configured_log_offset: str,
-             policy: str,
-             uuid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
 
         _setter("last_configured_log_filename", last_configured_log_filename)
         _setter("last_configured_log_offset", last_configured_log_offset)
@@ -5375,12 +5427,16 @@ class GetChannelSourceSslCaCertificateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_type: str,
-             contents: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
 
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
@@ -5434,27 +5490,41 @@ class GetChannelTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             applier_username: str,
-             channel_name: str,
-             db_system_id: str,
-             delay_in_seconds: int,
-             filters: Sequence['outputs.GetChannelTargetFilterResult'],
-             tables_without_primary_key_handling: str,
-             target_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applierUsername' in kwargs:
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'dbSystemId' in kwargs:
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'delayInSeconds' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
-        if 'targetType' in kwargs:
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
 
         _setter("applier_username", applier_username)
         _setter("channel_name", channel_name)
@@ -5538,10 +5608,14 @@ class GetChannelTargetFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -5613,37 +5687,63 @@ class GetChannelsChannelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             lifecycle_details: str,
-             sources: Sequence['outputs.GetChannelsChannelSourceResult'],
-             state: str,
-             targets: Sequence['outputs.GetChannelsChannelTargetResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetChannelsChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetChannelsChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -5798,24 +5898,40 @@ class GetChannelsChannelSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             anonymous_transactions_handlings: Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult'],
-             hostname: str,
-             password: str,
-             port: int,
-             source_type: str,
-             ssl_ca_certificates: Sequence['outputs.GetChannelsChannelSourceSslCaCertificateResult'],
-             ssl_mode: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetChannelsChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'anonymousTransactionsHandlings' in kwargs:
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
             anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
-        if 'sourceType' in kwargs:
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslCaCertificates' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
             ssl_ca_certificates = kwargs['sslCaCertificates']
-        if 'sslMode' in kwargs:
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         _setter("hostname", hostname)
@@ -5911,16 +6027,24 @@ class GetChannelsChannelSourceAnonymousTransactionsHandlingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             last_configured_log_filename: str,
-             last_configured_log_offset: str,
-             policy: str,
-             uuid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
 
         _setter("last_configured_log_filename", last_configured_log_filename)
         _setter("last_configured_log_offset", last_configured_log_offset)
@@ -5977,12 +6101,16 @@ class GetChannelsChannelSourceSslCaCertificateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_type: str,
-             contents: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
 
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
@@ -6036,27 +6164,41 @@ class GetChannelsChannelTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             applier_username: str,
-             channel_name: str,
-             db_system_id: str,
-             delay_in_seconds: int,
-             filters: Sequence['outputs.GetChannelsChannelTargetFilterResult'],
-             tables_without_primary_key_handling: str,
-             target_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetChannelsChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applierUsername' in kwargs:
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'dbSystemId' in kwargs:
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'delayInSeconds' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
-        if 'targetType' in kwargs:
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
 
         _setter("applier_username", applier_username)
         _setter("channel_name", channel_name)
@@ -6140,10 +6282,14 @@ class GetChannelsChannelTargetFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -6180,11 +6326,15 @@ class GetChannelsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6230,18 +6380,26 @@ class GetHeatWaveClusterClusterNodeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             node_id: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             node_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nodeId' in kwargs:
+        if node_id is None and 'nodeId' in kwargs:
             node_id = kwargs['nodeId']
-        if 'timeCreated' in kwargs:
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("node_id", node_id)
         _setter("state", state)
@@ -6364,70 +6522,118 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_username: str,
-             availability_domain: str,
-             backup_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyResult'],
-             compartment_id: str,
-             configuration_id: str,
-             crash_recovery: str,
-             data_storage_size_in_gb: int,
-             defined_tags: Mapping[str, Any],
-             deletion_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult'],
-             description: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetMysqlBackupDbSystemSnapshotEndpointResult'],
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             id: str,
-             ip_address: str,
-             is_highly_available: bool,
-             maintenances: Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult'],
-             mysql_version: str,
-             port: int,
-             port_x: int,
-             shape_name: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'availabilityDomain' in kwargs:
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicies' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
             backup_policies = kwargs['backupPolicies']
-        if 'compartmentId' in kwargs:
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'dataStorageSizeInGb' in kwargs:
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHighlyAvailable' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'mysqlVersion' in kwargs:
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shapeName' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'subnetId' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("admin_username", admin_username)
         _setter("availability_domain", availability_domain)
@@ -6676,26 +6882,38 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_enabled: bool,
-             pitr_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
-             retention_in_days: int,
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicies' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
             pitr_policies = kwargs['pitrPolicies']
-        if 'retentionInDays' in kwargs:
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -6767,11 +6985,13 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -6804,17 +7024,23 @@ class GetMysqlBackupDbSystemSnapshotDeletionPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             automatic_backup_retention: str,
-             final_backup: str,
-             is_delete_protected: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
 
         _setter("automatic_backup_retention", automatic_backup_retention)
         _setter("final_backup", final_backup)
@@ -6883,27 +7109,45 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             ip_address: str,
-             modes: Sequence[str],
-             port: int,
-             port_x: int,
-             resource_id: str,
-             resource_type: str,
-             status: str,
-             status_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
 
         _setter("hostname", hostname)
         _setter("ip_address", ip_address)
@@ -7002,11 +7246,13 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("window_start_time", window_start_time)
 
@@ -7087,59 +7333,97 @@ class GetMysqlBackupsBackupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_size_in_gbs: int,
-             backup_type: str,
-             compartment_id: str,
-             creation_type: str,
-             data_storage_size_in_gb: int,
-             db_system_id: str,
-             db_system_snapshots: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult'],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             mysql_version: str,
-             retention_in_days: int,
-             shape_name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backup_size_in_gbs: Optional[int] = None,
+             backup_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             creation_type: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             db_system_id: Optional[str] = None,
+             db_system_snapshots: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             retention_in_days: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupSizeInGbs' in kwargs:
+        if backup_size_in_gbs is None and 'backupSizeInGbs' in kwargs:
             backup_size_in_gbs = kwargs['backupSizeInGbs']
-        if 'backupType' in kwargs:
+        if backup_size_in_gbs is None:
+            raise TypeError("Missing 'backup_size_in_gbs' argument")
+        if backup_type is None and 'backupType' in kwargs:
             backup_type = kwargs['backupType']
-        if 'compartmentId' in kwargs:
+        if backup_type is None:
+            raise TypeError("Missing 'backup_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'creationType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if creation_type is None and 'creationType' in kwargs:
             creation_type = kwargs['creationType']
-        if 'dataStorageSizeInGb' in kwargs:
+        if creation_type is None:
+            raise TypeError("Missing 'creation_type' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dbSystemId' in kwargs:
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'dbSystemSnapshots' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if db_system_snapshots is None and 'dbSystemSnapshots' in kwargs:
             db_system_snapshots = kwargs['dbSystemSnapshots']
-        if 'definedTags' in kwargs:
+        if db_system_snapshots is None:
+            raise TypeError("Missing 'db_system_snapshots' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mysqlVersion' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'retentionInDays' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'shapeName' in kwargs:
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("backup_size_in_gbs", backup_size_in_gbs)
         _setter("backup_type", backup_type)
@@ -7397,70 +7681,118 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_username: str,
-             availability_domain: str,
-             backup_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult'],
-             compartment_id: str,
-             configuration_id: str,
-             crash_recovery: str,
-             data_storage_size_in_gb: int,
-             defined_tags: Mapping[str, Any],
-             deletion_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult'],
-             description: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult'],
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             id: str,
-             ip_address: str,
-             is_highly_available: bool,
-             maintenances: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult'],
-             mysql_version: str,
-             port: int,
-             port_x: int,
-             shape_name: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'availabilityDomain' in kwargs:
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicies' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
             backup_policies = kwargs['backupPolicies']
-        if 'compartmentId' in kwargs:
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'dataStorageSizeInGb' in kwargs:
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHighlyAvailable' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'mysqlVersion' in kwargs:
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shapeName' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'subnetId' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("admin_username", admin_username)
         _setter("availability_domain", availability_domain)
@@ -7709,26 +8041,38 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_enabled: bool,
-             pitr_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
-             retention_in_days: int,
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicies' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
             pitr_policies = kwargs['pitrPolicies']
-        if 'retentionInDays' in kwargs:
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -7800,11 +8144,13 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -7837,17 +8183,23 @@ class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             automatic_backup_retention: str,
-             final_backup: str,
-             is_delete_protected: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
 
         _setter("automatic_backup_retention", automatic_backup_retention)
         _setter("final_backup", final_backup)
@@ -7916,27 +8268,45 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             ip_address: str,
-             modes: Sequence[str],
-             port: int,
-             port_x: int,
-             resource_id: str,
-             resource_type: str,
-             status: str,
-             status_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
 
         _setter("hostname", hostname)
         _setter("ip_address", ip_address)
@@ -8035,11 +8405,13 @@ class GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("window_start_time", window_start_time)
 
@@ -8067,11 +8439,15 @@ class GetMysqlBackupsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -8108,11 +8484,13 @@ class GetMysqlConfigurationInitVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lower_case_table_names: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lowerCaseTableNames' in kwargs:
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
             lower_case_table_names = kwargs['lowerCaseTableNames']
+        if lower_case_table_names is None:
+            raise TypeError("Missing 'lower_case_table_names' argument")
 
         _setter("lower_case_table_names", lower_case_table_names)
 
@@ -8377,243 +8755,401 @@ class GetMysqlConfigurationVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autocommit: bool,
-             big_tables: bool,
-             binlog_expire_logs_seconds: int,
-             binlog_row_metadata: str,
-             binlog_row_value_options: str,
-             binlog_transaction_compression: bool,
-             completion_type: str,
-             connect_timeout: int,
-             connection_memory_chunk_size: int,
-             connection_memory_limit: str,
-             cte_max_recursion_depth: str,
-             default_authentication_plugin: str,
-             foreign_key_checks: bool,
-             generated_random_password_length: int,
-             global_connection_memory_limit: str,
-             global_connection_memory_tracking: bool,
-             group_replication_consistency: str,
-             information_schema_stats_expiry: int,
-             innodb_buffer_pool_dump_pct: int,
-             innodb_buffer_pool_instances: int,
-             innodb_buffer_pool_size: str,
-             innodb_ddl_buffer_size: str,
-             innodb_ddl_threads: int,
-             innodb_ft_enable_stopword: bool,
-             innodb_ft_max_token_size: int,
-             innodb_ft_min_token_size: int,
-             innodb_ft_num_word_optimize: int,
-             innodb_ft_result_cache_limit: str,
-             innodb_ft_server_stopword_table: str,
-             innodb_lock_wait_timeout: int,
-             innodb_log_writer_threads: bool,
-             innodb_max_purge_lag: str,
-             innodb_max_purge_lag_delay: int,
-             innodb_stats_persistent_sample_pages: str,
-             innodb_stats_transient_sample_pages: str,
-             interactive_timeout: int,
-             local_infile: bool,
-             mandatory_roles: str,
-             max_allowed_packet: int,
-             max_binlog_cache_size: str,
-             max_connect_errors: str,
-             max_connections: int,
-             max_execution_time: str,
-             max_heap_table_size: str,
-             max_prepared_stmt_count: int,
-             mysql_firewall_mode: bool,
-             mysql_zstd_default_compression_level: int,
-             mysqlx_connect_timeout: int,
-             mysqlx_deflate_default_compression_level: int,
-             mysqlx_deflate_max_client_compression_level: int,
-             mysqlx_document_id_unique_prefix: int,
-             mysqlx_enable_hello_notice: bool,
-             mysqlx_idle_worker_thread_timeout: int,
-             mysqlx_interactive_timeout: int,
-             mysqlx_lz4default_compression_level: int,
-             mysqlx_lz4max_client_compression_level: int,
-             mysqlx_max_allowed_packet: int,
-             mysqlx_min_worker_threads: int,
-             mysqlx_read_timeout: int,
-             mysqlx_wait_timeout: int,
-             mysqlx_write_timeout: int,
-             mysqlx_zstd_default_compression_level: int,
-             mysqlx_zstd_max_client_compression_level: int,
-             net_read_timeout: int,
-             net_write_timeout: int,
-             parser_max_mem_size: str,
-             query_alloc_block_size: str,
-             query_prealloc_size: str,
-             regexp_time_limit: int,
-             sort_buffer_size: str,
-             sql_mode: str,
-             sql_require_primary_key: bool,
-             sql_warnings: bool,
-             thread_pool_dedicated_listeners: bool,
-             thread_pool_max_transactions_limit: int,
-             time_zone: str,
-             tmp_table_size: str,
-             transaction_isolation: str,
-             wait_timeout: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bigTables' in kwargs:
+        if autocommit is None:
+            raise TypeError("Missing 'autocommit' argument")
+        if big_tables is None and 'bigTables' in kwargs:
             big_tables = kwargs['bigTables']
-        if 'binlogExpireLogsSeconds' in kwargs:
+        if big_tables is None:
+            raise TypeError("Missing 'big_tables' argument")
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
             binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
-        if 'binlogRowMetadata' in kwargs:
+        if binlog_expire_logs_seconds is None:
+            raise TypeError("Missing 'binlog_expire_logs_seconds' argument")
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
             binlog_row_metadata = kwargs['binlogRowMetadata']
-        if 'binlogRowValueOptions' in kwargs:
+        if binlog_row_metadata is None:
+            raise TypeError("Missing 'binlog_row_metadata' argument")
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
             binlog_row_value_options = kwargs['binlogRowValueOptions']
-        if 'binlogTransactionCompression' in kwargs:
+        if binlog_row_value_options is None:
+            raise TypeError("Missing 'binlog_row_value_options' argument")
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
             binlog_transaction_compression = kwargs['binlogTransactionCompression']
-        if 'completionType' in kwargs:
+        if binlog_transaction_compression is None:
+            raise TypeError("Missing 'binlog_transaction_compression' argument")
+        if completion_type is None and 'completionType' in kwargs:
             completion_type = kwargs['completionType']
-        if 'connectTimeout' in kwargs:
+        if completion_type is None:
+            raise TypeError("Missing 'completion_type' argument")
+        if connect_timeout is None and 'connectTimeout' in kwargs:
             connect_timeout = kwargs['connectTimeout']
-        if 'connectionMemoryChunkSize' in kwargs:
+        if connect_timeout is None:
+            raise TypeError("Missing 'connect_timeout' argument")
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
             connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
-        if 'connectionMemoryLimit' in kwargs:
+        if connection_memory_chunk_size is None:
+            raise TypeError("Missing 'connection_memory_chunk_size' argument")
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
             connection_memory_limit = kwargs['connectionMemoryLimit']
-        if 'cteMaxRecursionDepth' in kwargs:
+        if connection_memory_limit is None:
+            raise TypeError("Missing 'connection_memory_limit' argument")
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
             cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
-        if 'defaultAuthenticationPlugin' in kwargs:
+        if cte_max_recursion_depth is None:
+            raise TypeError("Missing 'cte_max_recursion_depth' argument")
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
             default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
-        if 'foreignKeyChecks' in kwargs:
+        if default_authentication_plugin is None:
+            raise TypeError("Missing 'default_authentication_plugin' argument")
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
             foreign_key_checks = kwargs['foreignKeyChecks']
-        if 'generatedRandomPasswordLength' in kwargs:
+        if foreign_key_checks is None:
+            raise TypeError("Missing 'foreign_key_checks' argument")
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
             generated_random_password_length = kwargs['generatedRandomPasswordLength']
-        if 'globalConnectionMemoryLimit' in kwargs:
+        if generated_random_password_length is None:
+            raise TypeError("Missing 'generated_random_password_length' argument")
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
             global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
-        if 'globalConnectionMemoryTracking' in kwargs:
+        if global_connection_memory_limit is None:
+            raise TypeError("Missing 'global_connection_memory_limit' argument")
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
             global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
-        if 'groupReplicationConsistency' in kwargs:
+        if global_connection_memory_tracking is None:
+            raise TypeError("Missing 'global_connection_memory_tracking' argument")
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
             group_replication_consistency = kwargs['groupReplicationConsistency']
-        if 'informationSchemaStatsExpiry' in kwargs:
+        if group_replication_consistency is None:
+            raise TypeError("Missing 'group_replication_consistency' argument")
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
             information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
-        if 'innodbBufferPoolDumpPct' in kwargs:
+        if information_schema_stats_expiry is None:
+            raise TypeError("Missing 'information_schema_stats_expiry' argument")
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
             innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
-        if 'innodbBufferPoolInstances' in kwargs:
+        if innodb_buffer_pool_dump_pct is None:
+            raise TypeError("Missing 'innodb_buffer_pool_dump_pct' argument")
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
             innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
-        if 'innodbBufferPoolSize' in kwargs:
+        if innodb_buffer_pool_instances is None:
+            raise TypeError("Missing 'innodb_buffer_pool_instances' argument")
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
             innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
-        if 'innodbDdlBufferSize' in kwargs:
+        if innodb_buffer_pool_size is None:
+            raise TypeError("Missing 'innodb_buffer_pool_size' argument")
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
             innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
-        if 'innodbDdlThreads' in kwargs:
+        if innodb_ddl_buffer_size is None:
+            raise TypeError("Missing 'innodb_ddl_buffer_size' argument")
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
             innodb_ddl_threads = kwargs['innodbDdlThreads']
-        if 'innodbFtEnableStopword' in kwargs:
+        if innodb_ddl_threads is None:
+            raise TypeError("Missing 'innodb_ddl_threads' argument")
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
             innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
-        if 'innodbFtMaxTokenSize' in kwargs:
+        if innodb_ft_enable_stopword is None:
+            raise TypeError("Missing 'innodb_ft_enable_stopword' argument")
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
             innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
-        if 'innodbFtMinTokenSize' in kwargs:
+        if innodb_ft_max_token_size is None:
+            raise TypeError("Missing 'innodb_ft_max_token_size' argument")
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
             innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
-        if 'innodbFtNumWordOptimize' in kwargs:
+        if innodb_ft_min_token_size is None:
+            raise TypeError("Missing 'innodb_ft_min_token_size' argument")
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
             innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
-        if 'innodbFtResultCacheLimit' in kwargs:
+        if innodb_ft_num_word_optimize is None:
+            raise TypeError("Missing 'innodb_ft_num_word_optimize' argument")
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
             innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
-        if 'innodbFtServerStopwordTable' in kwargs:
+        if innodb_ft_result_cache_limit is None:
+            raise TypeError("Missing 'innodb_ft_result_cache_limit' argument")
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
             innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
-        if 'innodbLockWaitTimeout' in kwargs:
+        if innodb_ft_server_stopword_table is None:
+            raise TypeError("Missing 'innodb_ft_server_stopword_table' argument")
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
             innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
-        if 'innodbLogWriterThreads' in kwargs:
+        if innodb_lock_wait_timeout is None:
+            raise TypeError("Missing 'innodb_lock_wait_timeout' argument")
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
             innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
-        if 'innodbMaxPurgeLag' in kwargs:
+        if innodb_log_writer_threads is None:
+            raise TypeError("Missing 'innodb_log_writer_threads' argument")
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
             innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
-        if 'innodbMaxPurgeLagDelay' in kwargs:
+        if innodb_max_purge_lag is None:
+            raise TypeError("Missing 'innodb_max_purge_lag' argument")
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
             innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
-        if 'innodbStatsPersistentSamplePages' in kwargs:
+        if innodb_max_purge_lag_delay is None:
+            raise TypeError("Missing 'innodb_max_purge_lag_delay' argument")
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
             innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
-        if 'innodbStatsTransientSamplePages' in kwargs:
+        if innodb_stats_persistent_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_persistent_sample_pages' argument")
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
             innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
-        if 'interactiveTimeout' in kwargs:
+        if innodb_stats_transient_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_transient_sample_pages' argument")
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
             interactive_timeout = kwargs['interactiveTimeout']
-        if 'localInfile' in kwargs:
+        if interactive_timeout is None:
+            raise TypeError("Missing 'interactive_timeout' argument")
+        if local_infile is None and 'localInfile' in kwargs:
             local_infile = kwargs['localInfile']
-        if 'mandatoryRoles' in kwargs:
+        if local_infile is None:
+            raise TypeError("Missing 'local_infile' argument")
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
             mandatory_roles = kwargs['mandatoryRoles']
-        if 'maxAllowedPacket' in kwargs:
+        if mandatory_roles is None:
+            raise TypeError("Missing 'mandatory_roles' argument")
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
             max_allowed_packet = kwargs['maxAllowedPacket']
-        if 'maxBinlogCacheSize' in kwargs:
+        if max_allowed_packet is None:
+            raise TypeError("Missing 'max_allowed_packet' argument")
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
             max_binlog_cache_size = kwargs['maxBinlogCacheSize']
-        if 'maxConnectErrors' in kwargs:
+        if max_binlog_cache_size is None:
+            raise TypeError("Missing 'max_binlog_cache_size' argument")
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
             max_connect_errors = kwargs['maxConnectErrors']
-        if 'maxConnections' in kwargs:
+        if max_connect_errors is None:
+            raise TypeError("Missing 'max_connect_errors' argument")
+        if max_connections is None and 'maxConnections' in kwargs:
             max_connections = kwargs['maxConnections']
-        if 'maxExecutionTime' in kwargs:
+        if max_connections is None:
+            raise TypeError("Missing 'max_connections' argument")
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
             max_execution_time = kwargs['maxExecutionTime']
-        if 'maxHeapTableSize' in kwargs:
+        if max_execution_time is None:
+            raise TypeError("Missing 'max_execution_time' argument")
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
             max_heap_table_size = kwargs['maxHeapTableSize']
-        if 'maxPreparedStmtCount' in kwargs:
+        if max_heap_table_size is None:
+            raise TypeError("Missing 'max_heap_table_size' argument")
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
             max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
-        if 'mysqlFirewallMode' in kwargs:
+        if max_prepared_stmt_count is None:
+            raise TypeError("Missing 'max_prepared_stmt_count' argument")
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
             mysql_firewall_mode = kwargs['mysqlFirewallMode']
-        if 'mysqlZstdDefaultCompressionLevel' in kwargs:
+        if mysql_firewall_mode is None:
+            raise TypeError("Missing 'mysql_firewall_mode' argument")
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
             mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
-        if 'mysqlxConnectTimeout' in kwargs:
+        if mysql_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysql_zstd_default_compression_level' argument")
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
             mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
-        if 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+        if mysqlx_connect_timeout is None:
+            raise TypeError("Missing 'mysqlx_connect_timeout' argument")
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
             mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
-        if 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+        if mysqlx_deflate_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_default_compression_level' argument")
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
             mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
-        if 'mysqlxDocumentIdUniquePrefix' in kwargs:
+        if mysqlx_deflate_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_max_client_compression_level' argument")
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
             mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
-        if 'mysqlxEnableHelloNotice' in kwargs:
+        if mysqlx_document_id_unique_prefix is None:
+            raise TypeError("Missing 'mysqlx_document_id_unique_prefix' argument")
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
             mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
-        if 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+        if mysqlx_enable_hello_notice is None:
+            raise TypeError("Missing 'mysqlx_enable_hello_notice' argument")
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
             mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
-        if 'mysqlxInteractiveTimeout' in kwargs:
+        if mysqlx_idle_worker_thread_timeout is None:
+            raise TypeError("Missing 'mysqlx_idle_worker_thread_timeout' argument")
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
             mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
-        if 'mysqlxLz4defaultCompressionLevel' in kwargs:
+        if mysqlx_interactive_timeout is None:
+            raise TypeError("Missing 'mysqlx_interactive_timeout' argument")
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
             mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
-        if 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+        if mysqlx_lz4default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4default_compression_level' argument")
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
             mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
-        if 'mysqlxMaxAllowedPacket' in kwargs:
+        if mysqlx_lz4max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4max_client_compression_level' argument")
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
             mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
-        if 'mysqlxMinWorkerThreads' in kwargs:
+        if mysqlx_max_allowed_packet is None:
+            raise TypeError("Missing 'mysqlx_max_allowed_packet' argument")
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
             mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
-        if 'mysqlxReadTimeout' in kwargs:
+        if mysqlx_min_worker_threads is None:
+            raise TypeError("Missing 'mysqlx_min_worker_threads' argument")
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
             mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
-        if 'mysqlxWaitTimeout' in kwargs:
+        if mysqlx_read_timeout is None:
+            raise TypeError("Missing 'mysqlx_read_timeout' argument")
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
             mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
-        if 'mysqlxWriteTimeout' in kwargs:
+        if mysqlx_wait_timeout is None:
+            raise TypeError("Missing 'mysqlx_wait_timeout' argument")
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
             mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
-        if 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+        if mysqlx_write_timeout is None:
+            raise TypeError("Missing 'mysqlx_write_timeout' argument")
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
             mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
-        if 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+        if mysqlx_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_default_compression_level' argument")
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
             mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
-        if 'netReadTimeout' in kwargs:
+        if mysqlx_zstd_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_max_client_compression_level' argument")
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
             net_read_timeout = kwargs['netReadTimeout']
-        if 'netWriteTimeout' in kwargs:
+        if net_read_timeout is None:
+            raise TypeError("Missing 'net_read_timeout' argument")
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
             net_write_timeout = kwargs['netWriteTimeout']
-        if 'parserMaxMemSize' in kwargs:
+        if net_write_timeout is None:
+            raise TypeError("Missing 'net_write_timeout' argument")
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
             parser_max_mem_size = kwargs['parserMaxMemSize']
-        if 'queryAllocBlockSize' in kwargs:
+        if parser_max_mem_size is None:
+            raise TypeError("Missing 'parser_max_mem_size' argument")
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
             query_alloc_block_size = kwargs['queryAllocBlockSize']
-        if 'queryPreallocSize' in kwargs:
+        if query_alloc_block_size is None:
+            raise TypeError("Missing 'query_alloc_block_size' argument")
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
             query_prealloc_size = kwargs['queryPreallocSize']
-        if 'regexpTimeLimit' in kwargs:
+        if query_prealloc_size is None:
+            raise TypeError("Missing 'query_prealloc_size' argument")
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
             regexp_time_limit = kwargs['regexpTimeLimit']
-        if 'sortBufferSize' in kwargs:
+        if regexp_time_limit is None:
+            raise TypeError("Missing 'regexp_time_limit' argument")
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
             sort_buffer_size = kwargs['sortBufferSize']
-        if 'sqlMode' in kwargs:
+        if sort_buffer_size is None:
+            raise TypeError("Missing 'sort_buffer_size' argument")
+        if sql_mode is None and 'sqlMode' in kwargs:
             sql_mode = kwargs['sqlMode']
-        if 'sqlRequirePrimaryKey' in kwargs:
+        if sql_mode is None:
+            raise TypeError("Missing 'sql_mode' argument")
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
             sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
-        if 'sqlWarnings' in kwargs:
+        if sql_require_primary_key is None:
+            raise TypeError("Missing 'sql_require_primary_key' argument")
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
             sql_warnings = kwargs['sqlWarnings']
-        if 'threadPoolDedicatedListeners' in kwargs:
+        if sql_warnings is None:
+            raise TypeError("Missing 'sql_warnings' argument")
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
             thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
-        if 'threadPoolMaxTransactionsLimit' in kwargs:
+        if thread_pool_dedicated_listeners is None:
+            raise TypeError("Missing 'thread_pool_dedicated_listeners' argument")
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
             thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
-        if 'timeZone' in kwargs:
+        if thread_pool_max_transactions_limit is None:
+            raise TypeError("Missing 'thread_pool_max_transactions_limit' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'tmpTableSize' in kwargs:
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
             tmp_table_size = kwargs['tmpTableSize']
-        if 'transactionIsolation' in kwargs:
+        if tmp_table_size is None:
+            raise TypeError("Missing 'tmp_table_size' argument")
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
             transaction_isolation = kwargs['transactionIsolation']
-        if 'waitTimeout' in kwargs:
+        if transaction_isolation is None:
+            raise TypeError("Missing 'transaction_isolation' argument")
+        if wait_timeout is None and 'waitTimeout' in kwargs:
             wait_timeout = kwargs['waitTimeout']
+        if wait_timeout is None:
+            raise TypeError("Missing 'wait_timeout' argument")
 
         _setter("autocommit", autocommit)
         _setter("big_tables", big_tables)
@@ -9406,40 +9942,68 @@ class GetMysqlConfigurationsConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             init_variables: Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult'],
-             parent_configuration_id: str,
-             shape_name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             type: str,
-             variables: Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             init_variables: Optional[Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult']] = None,
+             parent_configuration_id: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             variables: Optional[Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initVariables' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if init_variables is None and 'initVariables' in kwargs:
             init_variables = kwargs['initVariables']
-        if 'parentConfigurationId' in kwargs:
+        if init_variables is None:
+            raise TypeError("Missing 'init_variables' argument")
+        if parent_configuration_id is None and 'parentConfigurationId' in kwargs:
             parent_configuration_id = kwargs['parentConfigurationId']
-        if 'shapeName' in kwargs:
+        if parent_configuration_id is None:
+            raise TypeError("Missing 'parent_configuration_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if variables is None:
+            raise TypeError("Missing 'variables' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -9583,11 +10147,13 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lower_case_table_names: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lowerCaseTableNames' in kwargs:
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
             lower_case_table_names = kwargs['lowerCaseTableNames']
+        if lower_case_table_names is None:
+            raise TypeError("Missing 'lower_case_table_names' argument")
 
         _setter("lower_case_table_names", lower_case_table_names)
 
@@ -9852,243 +10418,401 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autocommit: bool,
-             big_tables: bool,
-             binlog_expire_logs_seconds: int,
-             binlog_row_metadata: str,
-             binlog_row_value_options: str,
-             binlog_transaction_compression: bool,
-             completion_type: str,
-             connect_timeout: int,
-             connection_memory_chunk_size: int,
-             connection_memory_limit: str,
-             cte_max_recursion_depth: str,
-             default_authentication_plugin: str,
-             foreign_key_checks: bool,
-             generated_random_password_length: int,
-             global_connection_memory_limit: str,
-             global_connection_memory_tracking: bool,
-             group_replication_consistency: str,
-             information_schema_stats_expiry: int,
-             innodb_buffer_pool_dump_pct: int,
-             innodb_buffer_pool_instances: int,
-             innodb_buffer_pool_size: str,
-             innodb_ddl_buffer_size: str,
-             innodb_ddl_threads: int,
-             innodb_ft_enable_stopword: bool,
-             innodb_ft_max_token_size: int,
-             innodb_ft_min_token_size: int,
-             innodb_ft_num_word_optimize: int,
-             innodb_ft_result_cache_limit: str,
-             innodb_ft_server_stopword_table: str,
-             innodb_lock_wait_timeout: int,
-             innodb_log_writer_threads: bool,
-             innodb_max_purge_lag: str,
-             innodb_max_purge_lag_delay: int,
-             innodb_stats_persistent_sample_pages: str,
-             innodb_stats_transient_sample_pages: str,
-             interactive_timeout: int,
-             local_infile: bool,
-             mandatory_roles: str,
-             max_allowed_packet: int,
-             max_binlog_cache_size: str,
-             max_connect_errors: str,
-             max_connections: int,
-             max_execution_time: str,
-             max_heap_table_size: str,
-             max_prepared_stmt_count: int,
-             mysql_firewall_mode: bool,
-             mysql_zstd_default_compression_level: int,
-             mysqlx_connect_timeout: int,
-             mysqlx_deflate_default_compression_level: int,
-             mysqlx_deflate_max_client_compression_level: int,
-             mysqlx_document_id_unique_prefix: int,
-             mysqlx_enable_hello_notice: bool,
-             mysqlx_idle_worker_thread_timeout: int,
-             mysqlx_interactive_timeout: int,
-             mysqlx_lz4default_compression_level: int,
-             mysqlx_lz4max_client_compression_level: int,
-             mysqlx_max_allowed_packet: int,
-             mysqlx_min_worker_threads: int,
-             mysqlx_read_timeout: int,
-             mysqlx_wait_timeout: int,
-             mysqlx_write_timeout: int,
-             mysqlx_zstd_default_compression_level: int,
-             mysqlx_zstd_max_client_compression_level: int,
-             net_read_timeout: int,
-             net_write_timeout: int,
-             parser_max_mem_size: str,
-             query_alloc_block_size: str,
-             query_prealloc_size: str,
-             regexp_time_limit: int,
-             sort_buffer_size: str,
-             sql_mode: str,
-             sql_require_primary_key: bool,
-             sql_warnings: bool,
-             thread_pool_dedicated_listeners: bool,
-             thread_pool_max_transactions_limit: int,
-             time_zone: str,
-             tmp_table_size: str,
-             transaction_isolation: str,
-             wait_timeout: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bigTables' in kwargs:
+        if autocommit is None:
+            raise TypeError("Missing 'autocommit' argument")
+        if big_tables is None and 'bigTables' in kwargs:
             big_tables = kwargs['bigTables']
-        if 'binlogExpireLogsSeconds' in kwargs:
+        if big_tables is None:
+            raise TypeError("Missing 'big_tables' argument")
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
             binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
-        if 'binlogRowMetadata' in kwargs:
+        if binlog_expire_logs_seconds is None:
+            raise TypeError("Missing 'binlog_expire_logs_seconds' argument")
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
             binlog_row_metadata = kwargs['binlogRowMetadata']
-        if 'binlogRowValueOptions' in kwargs:
+        if binlog_row_metadata is None:
+            raise TypeError("Missing 'binlog_row_metadata' argument")
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
             binlog_row_value_options = kwargs['binlogRowValueOptions']
-        if 'binlogTransactionCompression' in kwargs:
+        if binlog_row_value_options is None:
+            raise TypeError("Missing 'binlog_row_value_options' argument")
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
             binlog_transaction_compression = kwargs['binlogTransactionCompression']
-        if 'completionType' in kwargs:
+        if binlog_transaction_compression is None:
+            raise TypeError("Missing 'binlog_transaction_compression' argument")
+        if completion_type is None and 'completionType' in kwargs:
             completion_type = kwargs['completionType']
-        if 'connectTimeout' in kwargs:
+        if completion_type is None:
+            raise TypeError("Missing 'completion_type' argument")
+        if connect_timeout is None and 'connectTimeout' in kwargs:
             connect_timeout = kwargs['connectTimeout']
-        if 'connectionMemoryChunkSize' in kwargs:
+        if connect_timeout is None:
+            raise TypeError("Missing 'connect_timeout' argument")
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
             connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
-        if 'connectionMemoryLimit' in kwargs:
+        if connection_memory_chunk_size is None:
+            raise TypeError("Missing 'connection_memory_chunk_size' argument")
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
             connection_memory_limit = kwargs['connectionMemoryLimit']
-        if 'cteMaxRecursionDepth' in kwargs:
+        if connection_memory_limit is None:
+            raise TypeError("Missing 'connection_memory_limit' argument")
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
             cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
-        if 'defaultAuthenticationPlugin' in kwargs:
+        if cte_max_recursion_depth is None:
+            raise TypeError("Missing 'cte_max_recursion_depth' argument")
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
             default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
-        if 'foreignKeyChecks' in kwargs:
+        if default_authentication_plugin is None:
+            raise TypeError("Missing 'default_authentication_plugin' argument")
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
             foreign_key_checks = kwargs['foreignKeyChecks']
-        if 'generatedRandomPasswordLength' in kwargs:
+        if foreign_key_checks is None:
+            raise TypeError("Missing 'foreign_key_checks' argument")
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
             generated_random_password_length = kwargs['generatedRandomPasswordLength']
-        if 'globalConnectionMemoryLimit' in kwargs:
+        if generated_random_password_length is None:
+            raise TypeError("Missing 'generated_random_password_length' argument")
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
             global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
-        if 'globalConnectionMemoryTracking' in kwargs:
+        if global_connection_memory_limit is None:
+            raise TypeError("Missing 'global_connection_memory_limit' argument")
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
             global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
-        if 'groupReplicationConsistency' in kwargs:
+        if global_connection_memory_tracking is None:
+            raise TypeError("Missing 'global_connection_memory_tracking' argument")
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
             group_replication_consistency = kwargs['groupReplicationConsistency']
-        if 'informationSchemaStatsExpiry' in kwargs:
+        if group_replication_consistency is None:
+            raise TypeError("Missing 'group_replication_consistency' argument")
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
             information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
-        if 'innodbBufferPoolDumpPct' in kwargs:
+        if information_schema_stats_expiry is None:
+            raise TypeError("Missing 'information_schema_stats_expiry' argument")
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
             innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
-        if 'innodbBufferPoolInstances' in kwargs:
+        if innodb_buffer_pool_dump_pct is None:
+            raise TypeError("Missing 'innodb_buffer_pool_dump_pct' argument")
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
             innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
-        if 'innodbBufferPoolSize' in kwargs:
+        if innodb_buffer_pool_instances is None:
+            raise TypeError("Missing 'innodb_buffer_pool_instances' argument")
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
             innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
-        if 'innodbDdlBufferSize' in kwargs:
+        if innodb_buffer_pool_size is None:
+            raise TypeError("Missing 'innodb_buffer_pool_size' argument")
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
             innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
-        if 'innodbDdlThreads' in kwargs:
+        if innodb_ddl_buffer_size is None:
+            raise TypeError("Missing 'innodb_ddl_buffer_size' argument")
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
             innodb_ddl_threads = kwargs['innodbDdlThreads']
-        if 'innodbFtEnableStopword' in kwargs:
+        if innodb_ddl_threads is None:
+            raise TypeError("Missing 'innodb_ddl_threads' argument")
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
             innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
-        if 'innodbFtMaxTokenSize' in kwargs:
+        if innodb_ft_enable_stopword is None:
+            raise TypeError("Missing 'innodb_ft_enable_stopword' argument")
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
             innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
-        if 'innodbFtMinTokenSize' in kwargs:
+        if innodb_ft_max_token_size is None:
+            raise TypeError("Missing 'innodb_ft_max_token_size' argument")
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
             innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
-        if 'innodbFtNumWordOptimize' in kwargs:
+        if innodb_ft_min_token_size is None:
+            raise TypeError("Missing 'innodb_ft_min_token_size' argument")
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
             innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
-        if 'innodbFtResultCacheLimit' in kwargs:
+        if innodb_ft_num_word_optimize is None:
+            raise TypeError("Missing 'innodb_ft_num_word_optimize' argument")
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
             innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
-        if 'innodbFtServerStopwordTable' in kwargs:
+        if innodb_ft_result_cache_limit is None:
+            raise TypeError("Missing 'innodb_ft_result_cache_limit' argument")
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
             innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
-        if 'innodbLockWaitTimeout' in kwargs:
+        if innodb_ft_server_stopword_table is None:
+            raise TypeError("Missing 'innodb_ft_server_stopword_table' argument")
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
             innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
-        if 'innodbLogWriterThreads' in kwargs:
+        if innodb_lock_wait_timeout is None:
+            raise TypeError("Missing 'innodb_lock_wait_timeout' argument")
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
             innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
-        if 'innodbMaxPurgeLag' in kwargs:
+        if innodb_log_writer_threads is None:
+            raise TypeError("Missing 'innodb_log_writer_threads' argument")
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
             innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
-        if 'innodbMaxPurgeLagDelay' in kwargs:
+        if innodb_max_purge_lag is None:
+            raise TypeError("Missing 'innodb_max_purge_lag' argument")
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
             innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
-        if 'innodbStatsPersistentSamplePages' in kwargs:
+        if innodb_max_purge_lag_delay is None:
+            raise TypeError("Missing 'innodb_max_purge_lag_delay' argument")
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
             innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
-        if 'innodbStatsTransientSamplePages' in kwargs:
+        if innodb_stats_persistent_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_persistent_sample_pages' argument")
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
             innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
-        if 'interactiveTimeout' in kwargs:
+        if innodb_stats_transient_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_transient_sample_pages' argument")
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
             interactive_timeout = kwargs['interactiveTimeout']
-        if 'localInfile' in kwargs:
+        if interactive_timeout is None:
+            raise TypeError("Missing 'interactive_timeout' argument")
+        if local_infile is None and 'localInfile' in kwargs:
             local_infile = kwargs['localInfile']
-        if 'mandatoryRoles' in kwargs:
+        if local_infile is None:
+            raise TypeError("Missing 'local_infile' argument")
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
             mandatory_roles = kwargs['mandatoryRoles']
-        if 'maxAllowedPacket' in kwargs:
+        if mandatory_roles is None:
+            raise TypeError("Missing 'mandatory_roles' argument")
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
             max_allowed_packet = kwargs['maxAllowedPacket']
-        if 'maxBinlogCacheSize' in kwargs:
+        if max_allowed_packet is None:
+            raise TypeError("Missing 'max_allowed_packet' argument")
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
             max_binlog_cache_size = kwargs['maxBinlogCacheSize']
-        if 'maxConnectErrors' in kwargs:
+        if max_binlog_cache_size is None:
+            raise TypeError("Missing 'max_binlog_cache_size' argument")
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
             max_connect_errors = kwargs['maxConnectErrors']
-        if 'maxConnections' in kwargs:
+        if max_connect_errors is None:
+            raise TypeError("Missing 'max_connect_errors' argument")
+        if max_connections is None and 'maxConnections' in kwargs:
             max_connections = kwargs['maxConnections']
-        if 'maxExecutionTime' in kwargs:
+        if max_connections is None:
+            raise TypeError("Missing 'max_connections' argument")
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
             max_execution_time = kwargs['maxExecutionTime']
-        if 'maxHeapTableSize' in kwargs:
+        if max_execution_time is None:
+            raise TypeError("Missing 'max_execution_time' argument")
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
             max_heap_table_size = kwargs['maxHeapTableSize']
-        if 'maxPreparedStmtCount' in kwargs:
+        if max_heap_table_size is None:
+            raise TypeError("Missing 'max_heap_table_size' argument")
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
             max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
-        if 'mysqlFirewallMode' in kwargs:
+        if max_prepared_stmt_count is None:
+            raise TypeError("Missing 'max_prepared_stmt_count' argument")
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
             mysql_firewall_mode = kwargs['mysqlFirewallMode']
-        if 'mysqlZstdDefaultCompressionLevel' in kwargs:
+        if mysql_firewall_mode is None:
+            raise TypeError("Missing 'mysql_firewall_mode' argument")
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
             mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
-        if 'mysqlxConnectTimeout' in kwargs:
+        if mysql_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysql_zstd_default_compression_level' argument")
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
             mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
-        if 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+        if mysqlx_connect_timeout is None:
+            raise TypeError("Missing 'mysqlx_connect_timeout' argument")
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
             mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
-        if 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+        if mysqlx_deflate_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_default_compression_level' argument")
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
             mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
-        if 'mysqlxDocumentIdUniquePrefix' in kwargs:
+        if mysqlx_deflate_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_max_client_compression_level' argument")
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
             mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
-        if 'mysqlxEnableHelloNotice' in kwargs:
+        if mysqlx_document_id_unique_prefix is None:
+            raise TypeError("Missing 'mysqlx_document_id_unique_prefix' argument")
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
             mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
-        if 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+        if mysqlx_enable_hello_notice is None:
+            raise TypeError("Missing 'mysqlx_enable_hello_notice' argument")
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
             mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
-        if 'mysqlxInteractiveTimeout' in kwargs:
+        if mysqlx_idle_worker_thread_timeout is None:
+            raise TypeError("Missing 'mysqlx_idle_worker_thread_timeout' argument")
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
             mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
-        if 'mysqlxLz4defaultCompressionLevel' in kwargs:
+        if mysqlx_interactive_timeout is None:
+            raise TypeError("Missing 'mysqlx_interactive_timeout' argument")
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
             mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
-        if 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+        if mysqlx_lz4default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4default_compression_level' argument")
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
             mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
-        if 'mysqlxMaxAllowedPacket' in kwargs:
+        if mysqlx_lz4max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4max_client_compression_level' argument")
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
             mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
-        if 'mysqlxMinWorkerThreads' in kwargs:
+        if mysqlx_max_allowed_packet is None:
+            raise TypeError("Missing 'mysqlx_max_allowed_packet' argument")
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
             mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
-        if 'mysqlxReadTimeout' in kwargs:
+        if mysqlx_min_worker_threads is None:
+            raise TypeError("Missing 'mysqlx_min_worker_threads' argument")
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
             mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
-        if 'mysqlxWaitTimeout' in kwargs:
+        if mysqlx_read_timeout is None:
+            raise TypeError("Missing 'mysqlx_read_timeout' argument")
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
             mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
-        if 'mysqlxWriteTimeout' in kwargs:
+        if mysqlx_wait_timeout is None:
+            raise TypeError("Missing 'mysqlx_wait_timeout' argument")
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
             mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
-        if 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+        if mysqlx_write_timeout is None:
+            raise TypeError("Missing 'mysqlx_write_timeout' argument")
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
             mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
-        if 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+        if mysqlx_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_default_compression_level' argument")
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
             mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
-        if 'netReadTimeout' in kwargs:
+        if mysqlx_zstd_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_max_client_compression_level' argument")
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
             net_read_timeout = kwargs['netReadTimeout']
-        if 'netWriteTimeout' in kwargs:
+        if net_read_timeout is None:
+            raise TypeError("Missing 'net_read_timeout' argument")
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
             net_write_timeout = kwargs['netWriteTimeout']
-        if 'parserMaxMemSize' in kwargs:
+        if net_write_timeout is None:
+            raise TypeError("Missing 'net_write_timeout' argument")
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
             parser_max_mem_size = kwargs['parserMaxMemSize']
-        if 'queryAllocBlockSize' in kwargs:
+        if parser_max_mem_size is None:
+            raise TypeError("Missing 'parser_max_mem_size' argument")
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
             query_alloc_block_size = kwargs['queryAllocBlockSize']
-        if 'queryPreallocSize' in kwargs:
+        if query_alloc_block_size is None:
+            raise TypeError("Missing 'query_alloc_block_size' argument")
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
             query_prealloc_size = kwargs['queryPreallocSize']
-        if 'regexpTimeLimit' in kwargs:
+        if query_prealloc_size is None:
+            raise TypeError("Missing 'query_prealloc_size' argument")
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
             regexp_time_limit = kwargs['regexpTimeLimit']
-        if 'sortBufferSize' in kwargs:
+        if regexp_time_limit is None:
+            raise TypeError("Missing 'regexp_time_limit' argument")
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
             sort_buffer_size = kwargs['sortBufferSize']
-        if 'sqlMode' in kwargs:
+        if sort_buffer_size is None:
+            raise TypeError("Missing 'sort_buffer_size' argument")
+        if sql_mode is None and 'sqlMode' in kwargs:
             sql_mode = kwargs['sqlMode']
-        if 'sqlRequirePrimaryKey' in kwargs:
+        if sql_mode is None:
+            raise TypeError("Missing 'sql_mode' argument")
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
             sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
-        if 'sqlWarnings' in kwargs:
+        if sql_require_primary_key is None:
+            raise TypeError("Missing 'sql_require_primary_key' argument")
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
             sql_warnings = kwargs['sqlWarnings']
-        if 'threadPoolDedicatedListeners' in kwargs:
+        if sql_warnings is None:
+            raise TypeError("Missing 'sql_warnings' argument")
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
             thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
-        if 'threadPoolMaxTransactionsLimit' in kwargs:
+        if thread_pool_dedicated_listeners is None:
+            raise TypeError("Missing 'thread_pool_dedicated_listeners' argument")
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
             thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
-        if 'timeZone' in kwargs:
+        if thread_pool_max_transactions_limit is None:
+            raise TypeError("Missing 'thread_pool_max_transactions_limit' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'tmpTableSize' in kwargs:
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
             tmp_table_size = kwargs['tmpTableSize']
-        if 'transactionIsolation' in kwargs:
+        if tmp_table_size is None:
+            raise TypeError("Missing 'tmp_table_size' argument")
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
             transaction_isolation = kwargs['transactionIsolation']
-        if 'waitTimeout' in kwargs:
+        if transaction_isolation is None:
+            raise TypeError("Missing 'transaction_isolation' argument")
+        if wait_timeout is None and 'waitTimeout' in kwargs:
             wait_timeout = kwargs['waitTimeout']
+        if wait_timeout is None:
+            raise TypeError("Missing 'wait_timeout' argument")
 
         _setter("autocommit", autocommit)
         _setter("big_tables", big_tables)
@@ -10843,11 +11567,15 @@ class GetMysqlConfigurationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10899,26 +11627,38 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_enabled: bool,
-             pitr_policies: Sequence['outputs.GetMysqlDbSystemBackupPolicyPitrPolicyResult'],
-             retention_in_days: int,
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlDbSystemBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicies' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
             pitr_policies = kwargs['pitrPolicies']
-        if 'retentionInDays' in kwargs:
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -10990,11 +11730,13 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -11054,36 +11796,60 @@ class GetMysqlDbSystemChannelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             lifecycle_details: str,
-             sources: Sequence['outputs.GetMysqlDbSystemChannelSourceResult'],
-             state: str,
-             targets: Sequence['outputs.GetMysqlDbSystemChannelTargetResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetMysqlDbSystemChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -11227,23 +11993,37 @@ class GetMysqlDbSystemChannelSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
-             hostname: str,
-             port: int,
-             source_type: str,
-             ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemChannelSourceSslCaCertificateResult'],
-             ssl_mode: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'anonymousTransactionsHandlings' in kwargs:
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
             anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
-        if 'sourceType' in kwargs:
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslCaCertificates' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
             ssl_ca_certificates = kwargs['sslCaCertificates']
-        if 'sslMode' in kwargs:
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         _setter("hostname", hostname)
@@ -11333,16 +12113,24 @@ class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             last_configured_log_filename: str,
-             last_configured_log_offset: str,
-             policy: str,
-             uuid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
 
         _setter("last_configured_log_filename", last_configured_log_filename)
         _setter("last_configured_log_offset", last_configured_log_offset)
@@ -11399,12 +12187,16 @@ class GetMysqlDbSystemChannelSourceSslCaCertificateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_type: str,
-             contents: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
 
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
@@ -11458,27 +12250,41 @@ class GetMysqlDbSystemChannelTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             applier_username: str,
-             channel_name: str,
-             db_system_id: str,
-             delay_in_seconds: int,
-             filters: Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult'],
-             tables_without_primary_key_handling: str,
-             target_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applierUsername' in kwargs:
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'dbSystemId' in kwargs:
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'delayInSeconds' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
-        if 'targetType' in kwargs:
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
 
         _setter("applier_username", applier_username)
         _setter("channel_name", channel_name)
@@ -11562,10 +12368,14 @@ class GetMysqlDbSystemChannelTargetFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -11604,14 +12414,18 @@ class GetMysqlDbSystemCurrentPlacementResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             fault_domain: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomain' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("fault_domain", fault_domain)
@@ -11653,17 +12467,23 @@ class GetMysqlDbSystemDeletionPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             automatic_backup_retention: str,
-             final_backup: str,
-             is_delete_protected: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
 
         _setter("automatic_backup_retention", automatic_backup_retention)
         _setter("final_backup", final_backup)
@@ -11732,27 +12552,45 @@ class GetMysqlDbSystemEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             ip_address: str,
-             modes: Sequence[str],
-             port: int,
-             port_x: int,
-             resource_id: str,
-             resource_type: str,
-             status: str,
-             status_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
 
         _setter("hostname", hostname)
         _setter("ip_address", ip_address)
@@ -11866,24 +12704,36 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_size: int,
-             is_lakehouse_enabled: bool,
-             shape_name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterSize' in kwargs:
+        if cluster_size is None and 'clusterSize' in kwargs:
             cluster_size = kwargs['clusterSize']
-        if 'isLakehouseEnabled' in kwargs:
+        if cluster_size is None:
+            raise TypeError("Missing 'cluster_size' argument")
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
             is_lakehouse_enabled = kwargs['isLakehouseEnabled']
-        if 'shapeName' in kwargs:
+        if is_lakehouse_enabled is None:
+            raise TypeError("Missing 'is_lakehouse_enabled' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("cluster_size", cluster_size)
         _setter("is_lakehouse_enabled", is_lakehouse_enabled)
@@ -11955,11 +12805,13 @@ class GetMysqlDbSystemMaintenanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("window_start_time", window_start_time)
 
@@ -11989,14 +12841,18 @@ class GetMysqlDbSystemPointInTimeRecoveryDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_earliest_recovery_point: str,
-             time_latest_recovery_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeEarliestRecoveryPoint' in kwargs:
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
             time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
-        if 'timeLatestRecoveryPoint' in kwargs:
+        if time_earliest_recovery_point is None:
+            raise TypeError("Missing 'time_earliest_recovery_point' argument")
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
             time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+        if time_latest_recovery_point is None:
+            raise TypeError("Missing 'time_latest_recovery_point' argument")
 
         _setter("time_earliest_recovery_point", time_earliest_recovery_point)
         _setter("time_latest_recovery_point", time_latest_recovery_point)
@@ -12043,23 +12899,33 @@ class GetMysqlDbSystemSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_id: str,
-             db_system_id: str,
-             recovery_point: str,
-             source_type: str,
-             source_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_type: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupId' in kwargs:
+        if backup_id is None and 'backupId' in kwargs:
             backup_id = kwargs['backupId']
-        if 'dbSystemId' in kwargs:
+        if backup_id is None:
+            raise TypeError("Missing 'backup_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'recoveryPoint' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if recovery_point is None and 'recoveryPoint' in kwargs:
             recovery_point = kwargs['recoveryPoint']
-        if 'sourceType' in kwargs:
+        if recovery_point is None:
+            raise TypeError("Missing 'recovery_point' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sourceUrl' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if source_url is None and 'sourceUrl' in kwargs:
             source_url = kwargs['sourceUrl']
+        if source_url is None:
+            raise TypeError("Missing 'source_url' argument")
 
         _setter("backup_id", backup_id)
         _setter("db_system_id", db_system_id)
@@ -12221,100 +13087,172 @@ class GetMysqlDbSystemsDbSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_password: str,
-             admin_username: str,
-             availability_domain: str,
-             backup_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult'],
-             channels: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelResult'],
-             compartment_id: str,
-             configuration_id: str,
-             crash_recovery: str,
-             current_placements: Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult'],
-             data_storage_size_in_gb: int,
-             defined_tags: Mapping[str, Any],
-             deletion_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult'],
-             description: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetMysqlDbSystemsDbSystemEndpointResult'],
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             heat_wave_clusters: Sequence['outputs.GetMysqlDbSystemsDbSystemHeatWaveClusterResult'],
-             hostname_label: str,
-             id: str,
-             ip_address: str,
-             is_heat_wave_cluster_attached: bool,
-             is_highly_available: bool,
-             lifecycle_details: str,
-             maintenances: Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult'],
-             mysql_version: str,
-             point_in_time_recovery_details: Sequence['outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult'],
-             port: int,
-             port_x: int,
-             shape_name: str,
-             shutdown_type: str,
-             sources: Sequence['outputs.GetMysqlDbSystemsDbSystemSourceResult'],
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_password: Optional[str] = None,
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult']] = None,
+             channels: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             current_placements: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult']] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             heat_wave_clusters: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemHeatWaveClusterResult']] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_heat_wave_cluster_attached: Optional[bool] = None,
+             is_highly_available: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             point_in_time_recovery_details: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult']] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             shutdown_type: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemSourceResult']] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminPassword' in kwargs:
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'adminUsername' in kwargs:
+        if admin_password is None:
+            raise TypeError("Missing 'admin_password' argument")
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'availabilityDomain' in kwargs:
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicies' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
             backup_policies = kwargs['backupPolicies']
-        if 'compartmentId' in kwargs:
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if channels is None:
+            raise TypeError("Missing 'channels' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'currentPlacements' in kwargs:
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if current_placements is None and 'currentPlacements' in kwargs:
             current_placements = kwargs['currentPlacements']
-        if 'dataStorageSizeInGb' in kwargs:
+        if current_placements is None:
+            raise TypeError("Missing 'current_placements' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'heatWaveClusters' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if heat_wave_clusters is None and 'heatWaveClusters' in kwargs:
             heat_wave_clusters = kwargs['heatWaveClusters']
-        if 'hostnameLabel' in kwargs:
+        if heat_wave_clusters is None:
+            raise TypeError("Missing 'heat_wave_clusters' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHeatWaveClusterAttached' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_heat_wave_cluster_attached is None and 'isHeatWaveClusterAttached' in kwargs:
             is_heat_wave_cluster_attached = kwargs['isHeatWaveClusterAttached']
-        if 'isHighlyAvailable' in kwargs:
+        if is_heat_wave_cluster_attached is None:
+            raise TypeError("Missing 'is_heat_wave_cluster_attached' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'lifecycleDetails' in kwargs:
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mysqlVersion' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'pointInTimeRecoveryDetails' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if point_in_time_recovery_details is None and 'pointInTimeRecoveryDetails' in kwargs:
             point_in_time_recovery_details = kwargs['pointInTimeRecoveryDetails']
-        if 'portX' in kwargs:
+        if point_in_time_recovery_details is None:
+            raise TypeError("Missing 'point_in_time_recovery_details' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shapeName' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'shutdownType' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if shutdown_type is None and 'shutdownType' in kwargs:
             shutdown_type = kwargs['shutdownType']
-        if 'subnetId' in kwargs:
+        if shutdown_type is None:
+            raise TypeError("Missing 'shutdown_type' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("admin_password", admin_password)
         _setter("admin_username", admin_username)
@@ -12662,26 +13600,38 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_enabled: bool,
-             pitr_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult'],
-             retention_in_days: int,
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pitrPolicies' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
             pitr_policies = kwargs['pitrPolicies']
-        if 'retentionInDays' in kwargs:
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
             retention_in_days = kwargs['retentionInDays']
-        if 'windowStartTime' in kwargs:
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -12753,11 +13703,13 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -12817,36 +13769,60 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             lifecycle_details: str,
-             sources: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceResult'],
-             state: str,
-             targets: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -12990,23 +13966,37 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
-             hostname: str,
-             port: int,
-             source_type: str,
-             ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult'],
-             ssl_mode: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'anonymousTransactionsHandlings' in kwargs:
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
             anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
-        if 'sourceType' in kwargs:
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sslCaCertificates' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
             ssl_ca_certificates = kwargs['sslCaCertificates']
-        if 'sslMode' in kwargs:
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         _setter("hostname", hostname)
@@ -13096,16 +14086,24 @@ class GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             last_configured_log_filename: str,
-             last_configured_log_offset: str,
-             policy: str,
-             uuid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastConfiguredLogFilename' in kwargs:
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
             last_configured_log_filename = kwargs['lastConfiguredLogFilename']
-        if 'lastConfiguredLogOffset' in kwargs:
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
             last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
 
         _setter("last_configured_log_filename", last_configured_log_filename)
         _setter("last_configured_log_offset", last_configured_log_offset)
@@ -13162,12 +14160,16 @@ class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_type: str,
-             contents: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
 
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
@@ -13221,27 +14223,41 @@ class GetMysqlDbSystemsDbSystemChannelTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             applier_username: str,
-             channel_name: str,
-             db_system_id: str,
-             delay_in_seconds: int,
-             filters: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult'],
-             tables_without_primary_key_handling: str,
-             target_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applierUsername' in kwargs:
+        if applier_username is None and 'applierUsername' in kwargs:
             applier_username = kwargs['applierUsername']
-        if 'channelName' in kwargs:
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
             channel_name = kwargs['channelName']
-        if 'dbSystemId' in kwargs:
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'delayInSeconds' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
             delay_in_seconds = kwargs['delayInSeconds']
-        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
             tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
-        if 'targetType' in kwargs:
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
 
         _setter("applier_username", applier_username)
         _setter("channel_name", channel_name)
@@ -13325,10 +14341,14 @@ class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -13367,14 +14387,18 @@ class GetMysqlDbSystemsDbSystemCurrentPlacementResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             fault_domain: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomain' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("fault_domain", fault_domain)
@@ -13416,17 +14440,23 @@ class GetMysqlDbSystemsDbSystemDeletionPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             automatic_backup_retention: str,
-             final_backup: str,
-             is_delete_protected: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'automaticBackupRetention' in kwargs:
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
             automatic_backup_retention = kwargs['automaticBackupRetention']
-        if 'finalBackup' in kwargs:
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
             final_backup = kwargs['finalBackup']
-        if 'isDeleteProtected' in kwargs:
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
 
         _setter("automatic_backup_retention", automatic_backup_retention)
         _setter("final_backup", final_backup)
@@ -13495,27 +14525,45 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             ip_address: str,
-             modes: Sequence[str],
-             port: int,
-             port_x: int,
-             resource_id: str,
-             resource_type: str,
-             status: str,
-             status_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'portX' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'resourceId' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusDetails' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
 
         _setter("hostname", hostname)
         _setter("ip_address", ip_address)
@@ -13629,24 +14677,36 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_size: int,
-             is_lakehouse_enabled: bool,
-             shape_name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterSize' in kwargs:
+        if cluster_size is None and 'clusterSize' in kwargs:
             cluster_size = kwargs['clusterSize']
-        if 'isLakehouseEnabled' in kwargs:
+        if cluster_size is None:
+            raise TypeError("Missing 'cluster_size' argument")
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
             is_lakehouse_enabled = kwargs['isLakehouseEnabled']
-        if 'shapeName' in kwargs:
+        if is_lakehouse_enabled is None:
+            raise TypeError("Missing 'is_lakehouse_enabled' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("cluster_size", cluster_size)
         _setter("is_lakehouse_enabled", is_lakehouse_enabled)
@@ -13718,11 +14778,13 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             window_start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'windowStartTime' in kwargs:
+        if window_start_time is None and 'windowStartTime' in kwargs:
             window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
 
         _setter("window_start_time", window_start_time)
 
@@ -13752,14 +14814,18 @@ class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_earliest_recovery_point: str,
-             time_latest_recovery_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeEarliestRecoveryPoint' in kwargs:
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
             time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
-        if 'timeLatestRecoveryPoint' in kwargs:
+        if time_earliest_recovery_point is None:
+            raise TypeError("Missing 'time_earliest_recovery_point' argument")
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
             time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+        if time_latest_recovery_point is None:
+            raise TypeError("Missing 'time_latest_recovery_point' argument")
 
         _setter("time_earliest_recovery_point", time_earliest_recovery_point)
         _setter("time_latest_recovery_point", time_latest_recovery_point)
@@ -13806,23 +14872,33 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_id: str,
-             db_system_id: str,
-             recovery_point: str,
-             source_type: str,
-             source_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_type: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupId' in kwargs:
+        if backup_id is None and 'backupId' in kwargs:
             backup_id = kwargs['backupId']
-        if 'dbSystemId' in kwargs:
+        if backup_id is None:
+            raise TypeError("Missing 'backup_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'recoveryPoint' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if recovery_point is None and 'recoveryPoint' in kwargs:
             recovery_point = kwargs['recoveryPoint']
-        if 'sourceType' in kwargs:
+        if recovery_point is None:
+            raise TypeError("Missing 'recovery_point' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sourceUrl' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if source_url is None and 'sourceUrl' in kwargs:
             source_url = kwargs['sourceUrl']
+        if source_url is None:
+            raise TypeError("Missing 'source_url' argument")
 
         _setter("backup_id", backup_id)
         _setter("db_system_id", db_system_id)
@@ -13883,11 +14959,15 @@ class GetMysqlDbSystemsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -13925,11 +15005,15 @@ class GetMysqlVersionFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -13969,12 +15053,16 @@ class GetMysqlVersionVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             version_family: str,
-             versions: Sequence['outputs.GetMysqlVersionVersionVersionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             version_family: Optional[str] = None,
+             versions: Optional[Sequence['outputs.GetMysqlVersionVersionVersionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'versionFamily' in kwargs:
+        if version_family is None and 'versionFamily' in kwargs:
             version_family = kwargs['versionFamily']
+        if version_family is None:
+            raise TypeError("Missing 'version_family' argument")
+        if versions is None:
+            raise TypeError("Missing 'versions' argument")
 
         _setter("version_family", version_family)
         _setter("versions", versions)
@@ -14013,10 +15101,14 @@ class GetMysqlVersionVersionVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("description", description)
         _setter("version", version)
@@ -14058,17 +15150,23 @@ class GetReplicaReplicaOverrideResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             configuration_id: str,
-             mysql_version: str,
-             shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'mysqlVersion' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'shapeName' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
 
         _setter("configuration_id", configuration_id)
         _setter("mysql_version", mysql_version)
@@ -14114,11 +15212,15 @@ class GetReplicasFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -14215,63 +15317,105 @@ class GetReplicasReplicaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             configuration_id: str,
-             db_system_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             ip_address: str,
-             is_delete_protected: bool,
-             lifecycle_details: str,
-             mysql_version: str,
-             port: int,
-             port_x: int,
-             replica_overrides: Sequence['outputs.GetReplicasReplicaReplicaOverrideResult'],
-             shape_name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             replica_overrides: Optional[Sequence['outputs.GetReplicasReplicaReplicaOverrideResult']] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'dbSystemId' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipAddress' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isDeleteProtected' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
-        if 'lifecycleDetails' in kwargs:
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mysqlVersion' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'replicaOverrides' in kwargs:
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if replica_overrides is None and 'replicaOverrides' in kwargs:
             replica_overrides = kwargs['replicaOverrides']
-        if 'shapeName' in kwargs:
+        if replica_overrides is None:
+            raise TypeError("Missing 'replica_overrides' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -14484,17 +15628,23 @@ class GetReplicasReplicaReplicaOverrideResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             configuration_id: str,
-             mysql_version: str,
-             shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'mysqlVersion' in kwargs:
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'shapeName' in kwargs:
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
 
         _setter("configuration_id", configuration_id)
         _setter("mysql_version", mysql_version)
@@ -14543,11 +15693,15 @@ class GetShapesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -14596,18 +15750,26 @@ class GetShapesShapeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cpu_core_count: int,
-             is_supported_fors: Sequence[str],
-             memory_size_in_gbs: int,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cpu_core_count: Optional[int] = None,
+             is_supported_fors: Optional[Sequence[str]] = None,
+             memory_size_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'isSupportedFors' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if is_supported_fors is None and 'isSupportedFors' in kwargs:
             is_supported_fors = kwargs['isSupportedFors']
-        if 'memorySizeInGbs' in kwargs:
+        if is_supported_fors is None:
+            raise TypeError("Missing 'is_supported_fors' argument")
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if memory_size_in_gbs is None:
+            raise TypeError("Missing 'memory_size_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("cpu_core_count", cpu_core_count)
         _setter("is_supported_fors", is_supported_fors)

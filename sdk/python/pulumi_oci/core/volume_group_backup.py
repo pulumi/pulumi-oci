@@ -56,19 +56,19 @@ class VolumeGroupBackupArgs:
              source_details: Optional[pulumi.Input['VolumeGroupBackupSourceDetailsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
              volume_group_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'volumeGroupId' in kwargs:
+        if volume_group_id is None and 'volumeGroupId' in kwargs:
             volume_group_id = kwargs['volumeGroupId']
 
         if compartment_id is not None:
@@ -261,39 +261,39 @@ class _VolumeGroupBackupState:
              unique_size_in_mbs: Optional[pulumi.Input[str]] = None,
              volume_backup_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              volume_group_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'expirationTime' in kwargs:
+        if expiration_time is None and 'expirationTime' in kwargs:
             expiration_time = kwargs['expirationTime']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sizeInGbs' in kwargs:
+        if size_in_gbs is None and 'sizeInGbs' in kwargs:
             size_in_gbs = kwargs['sizeInGbs']
-        if 'sizeInMbs' in kwargs:
+        if size_in_mbs is None and 'sizeInMbs' in kwargs:
             size_in_mbs = kwargs['sizeInMbs']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'sourceVolumeGroupBackupId' in kwargs:
+        if source_volume_group_backup_id is None and 'sourceVolumeGroupBackupId' in kwargs:
             source_volume_group_backup_id = kwargs['sourceVolumeGroupBackupId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeRequestReceived' in kwargs:
+        if time_request_received is None and 'timeRequestReceived' in kwargs:
             time_request_received = kwargs['timeRequestReceived']
-        if 'uniqueSizeInGbs' in kwargs:
+        if unique_size_in_gbs is None and 'uniqueSizeInGbs' in kwargs:
             unique_size_in_gbs = kwargs['uniqueSizeInGbs']
-        if 'uniqueSizeInMbs' in kwargs:
+        if unique_size_in_mbs is None and 'uniqueSizeInMbs' in kwargs:
             unique_size_in_mbs = kwargs['uniqueSizeInMbs']
-        if 'volumeBackupIds' in kwargs:
+        if volume_backup_ids is None and 'volumeBackupIds' in kwargs:
             volume_backup_ids = kwargs['volumeBackupIds']
-        if 'volumeGroupId' in kwargs:
+        if volume_group_id is None and 'volumeGroupId' in kwargs:
             volume_group_id = kwargs['volumeGroupId']
 
         if compartment_id is not None:
@@ -690,11 +690,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if source_details is not None and not isinstance(source_details, VolumeGroupBackupSourceDetailsArgs):
-                source_details = source_details or {}
-                def _setter(key, value):
-                    source_details[key] = value
-                VolumeGroupBackupSourceDetailsArgs._configure(_setter, **source_details)
+            source_details = _utilities.configure(source_details, VolumeGroupBackupSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["volume_group_id"] = volume_group_id

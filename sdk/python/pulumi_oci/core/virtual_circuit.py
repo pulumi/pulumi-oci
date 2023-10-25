@@ -86,8 +86,8 @@ class VirtualCircuitArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              bandwidth_shape_name: Optional[pulumi.Input[str]] = None,
              bgp_admin_state: Optional[pulumi.Input[str]] = None,
              cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
@@ -105,41 +105,45 @@ class VirtualCircuitArgs:
              public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
              region: Optional[pulumi.Input[str]] = None,
              routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'bandwidthShapeName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if bandwidth_shape_name is None and 'bandwidthShapeName' in kwargs:
             bandwidth_shape_name = kwargs['bandwidthShapeName']
-        if 'bgpAdminState' in kwargs:
+        if bgp_admin_state is None and 'bgpAdminState' in kwargs:
             bgp_admin_state = kwargs['bgpAdminState']
-        if 'crossConnectMappings' in kwargs:
+        if cross_connect_mappings is None and 'crossConnectMappings' in kwargs:
             cross_connect_mappings = kwargs['crossConnectMappings']
-        if 'customerAsn' in kwargs:
+        if customer_asn is None and 'customerAsn' in kwargs:
             customer_asn = kwargs['customerAsn']
-        if 'customerBgpAsn' in kwargs:
+        if customer_bgp_asn is None and 'customerBgpAsn' in kwargs:
             customer_bgp_asn = kwargs['customerBgpAsn']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gatewayId' in kwargs:
+        if gateway_id is None and 'gatewayId' in kwargs:
             gateway_id = kwargs['gatewayId']
-        if 'ipMtu' in kwargs:
+        if ip_mtu is None and 'ipMtu' in kwargs:
             ip_mtu = kwargs['ipMtu']
-        if 'isBfdEnabled' in kwargs:
+        if is_bfd_enabled is None and 'isBfdEnabled' in kwargs:
             is_bfd_enabled = kwargs['isBfdEnabled']
-        if 'isTransportMode' in kwargs:
+        if is_transport_mode is None and 'isTransportMode' in kwargs:
             is_transport_mode = kwargs['isTransportMode']
-        if 'providerServiceId' in kwargs:
+        if provider_service_id is None and 'providerServiceId' in kwargs:
             provider_service_id = kwargs['providerServiceId']
-        if 'providerServiceKeyName' in kwargs:
+        if provider_service_key_name is None and 'providerServiceKeyName' in kwargs:
             provider_service_key_name = kwargs['providerServiceKeyName']
-        if 'publicPrefixes' in kwargs:
+        if public_prefixes is None and 'publicPrefixes' in kwargs:
             public_prefixes = kwargs['publicPrefixes']
-        if 'routingPolicies' in kwargs:
+        if routing_policies is None and 'routingPolicies' in kwargs:
             routing_policies = kwargs['routingPolicies']
 
         _setter("compartment_id", compartment_id)
@@ -546,57 +550,57 @@ class _VirtualCircuitState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bandwidthShapeName' in kwargs:
+        if bandwidth_shape_name is None and 'bandwidthShapeName' in kwargs:
             bandwidth_shape_name = kwargs['bandwidthShapeName']
-        if 'bgpAdminState' in kwargs:
+        if bgp_admin_state is None and 'bgpAdminState' in kwargs:
             bgp_admin_state = kwargs['bgpAdminState']
-        if 'bgpIpv6sessionState' in kwargs:
+        if bgp_ipv6session_state is None and 'bgpIpv6sessionState' in kwargs:
             bgp_ipv6session_state = kwargs['bgpIpv6sessionState']
-        if 'bgpManagement' in kwargs:
+        if bgp_management is None and 'bgpManagement' in kwargs:
             bgp_management = kwargs['bgpManagement']
-        if 'bgpSessionState' in kwargs:
+        if bgp_session_state is None and 'bgpSessionState' in kwargs:
             bgp_session_state = kwargs['bgpSessionState']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'crossConnectMappings' in kwargs:
+        if cross_connect_mappings is None and 'crossConnectMappings' in kwargs:
             cross_connect_mappings = kwargs['crossConnectMappings']
-        if 'customerAsn' in kwargs:
+        if customer_asn is None and 'customerAsn' in kwargs:
             customer_asn = kwargs['customerAsn']
-        if 'customerBgpAsn' in kwargs:
+        if customer_bgp_asn is None and 'customerBgpAsn' in kwargs:
             customer_bgp_asn = kwargs['customerBgpAsn']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gatewayId' in kwargs:
+        if gateway_id is None and 'gatewayId' in kwargs:
             gateway_id = kwargs['gatewayId']
-        if 'ipMtu' in kwargs:
+        if ip_mtu is None and 'ipMtu' in kwargs:
             ip_mtu = kwargs['ipMtu']
-        if 'isBfdEnabled' in kwargs:
+        if is_bfd_enabled is None and 'isBfdEnabled' in kwargs:
             is_bfd_enabled = kwargs['isBfdEnabled']
-        if 'isTransportMode' in kwargs:
+        if is_transport_mode is None and 'isTransportMode' in kwargs:
             is_transport_mode = kwargs['isTransportMode']
-        if 'oracleBgpAsn' in kwargs:
+        if oracle_bgp_asn is None and 'oracleBgpAsn' in kwargs:
             oracle_bgp_asn = kwargs['oracleBgpAsn']
-        if 'providerServiceId' in kwargs:
+        if provider_service_id is None and 'providerServiceId' in kwargs:
             provider_service_id = kwargs['providerServiceId']
-        if 'providerServiceKeyName' in kwargs:
+        if provider_service_key_name is None and 'providerServiceKeyName' in kwargs:
             provider_service_key_name = kwargs['providerServiceKeyName']
-        if 'providerState' in kwargs:
+        if provider_state is None and 'providerState' in kwargs:
             provider_state = kwargs['providerState']
-        if 'publicPrefixes' in kwargs:
+        if public_prefixes is None and 'publicPrefixes' in kwargs:
             public_prefixes = kwargs['publicPrefixes']
-        if 'referenceComment' in kwargs:
+        if reference_comment is None and 'referenceComment' in kwargs:
             reference_comment = kwargs['referenceComment']
-        if 'routingPolicies' in kwargs:
+        if routing_policies is None and 'routingPolicies' in kwargs:
             routing_policies = kwargs['routingPolicies']
-        if 'serviceType' in kwargs:
+        if service_type is None and 'serviceType' in kwargs:
             service_type = kwargs['serviceType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if bandwidth_shape_name is not None:

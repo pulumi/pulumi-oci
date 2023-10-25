@@ -59,11 +59,11 @@ class VmClusterNetworkArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             exadata_infrastructure_id: pulumi.Input[str],
-             scans: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]],
-             vm_networks: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]]] = None,
+             vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None,
              action: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -71,23 +71,33 @@ class VmClusterNetworkArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'vmNetworks' in kwargs:
+        if exadata_infrastructure_id is None:
+            raise TypeError("Missing 'exadata_infrastructure_id' argument")
+        if scans is None:
+            raise TypeError("Missing 'scans' argument")
+        if vm_networks is None and 'vmNetworks' in kwargs:
             vm_networks = kwargs['vmNetworks']
-        if 'definedTags' in kwargs:
+        if vm_networks is None:
+            raise TypeError("Missing 'vm_networks' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'drScans' in kwargs:
+        if dr_scans is None and 'drScans' in kwargs:
             dr_scans = kwargs['drScans']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'validateVmClusterNetwork' in kwargs:
+        if validate_vm_cluster_network is None and 'validateVmClusterNetwork' in kwargs:
             validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
 
         _setter("compartment_id", compartment_id)
@@ -323,29 +333,29 @@ class _VmClusterNetworkState:
              validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
              vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drScans' in kwargs:
+        if dr_scans is None and 'drScans' in kwargs:
             dr_scans = kwargs['drScans']
-        if 'exadataInfrastructureId' in kwargs:
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'validateVmClusterNetwork' in kwargs:
+        if validate_vm_cluster_network is None and 'validateVmClusterNetwork' in kwargs:
             validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
-        if 'vmNetworks' in kwargs:
+        if vm_networks is None and 'vmNetworks' in kwargs:
             vm_networks = kwargs['vmNetworks']
 
         if action is not None:

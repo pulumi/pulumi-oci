@@ -79,18 +79,20 @@ class ModelTestingDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'namespaceName' in kwargs:
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
 
         _setter("dataset_type", dataset_type)
@@ -199,18 +201,20 @@ class ModelTrainingDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'namespaceName' in kwargs:
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
 
         _setter("dataset_type", dataset_type)
@@ -319,18 +323,20 @@ class ModelValidationDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'namespaceName' in kwargs:
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
 
         _setter("dataset_type", dataset_type)
@@ -414,19 +420,29 @@ class GetModelTestingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -501,19 +517,29 @@ class GetModelTrainingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -588,19 +614,29 @@ class GetModelValidationDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -664,11 +700,15 @@ class GetModelsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -702,9 +742,11 @@ class GetModelsModelCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetModelsModelCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -806,77 +848,131 @@ class GetModelsModelCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             average_precision: float,
-             compartment_id: str,
-             confidence_threshold: float,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_quick_mode: bool,
-             lifecycle_details: str,
-             max_training_duration_in_hours: float,
-             metrics: str,
-             model_type: str,
-             model_version: str,
-             precision: float,
-             project_id: str,
-             recall: float,
-             state: str,
-             system_tags: Mapping[str, Any],
-             test_image_count: int,
-             testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
-             time_created: str,
-             time_updated: str,
-             total_image_count: int,
-             trained_duration_in_hours: float,
-             training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
-             validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             average_precision: Optional[float] = None,
+             compartment_id: Optional[str] = None,
+             confidence_threshold: Optional[float] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_quick_mode: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             max_training_duration_in_hours: Optional[float] = None,
+             metrics: Optional[str] = None,
+             model_type: Optional[str] = None,
+             model_version: Optional[str] = None,
+             precision: Optional[float] = None,
+             project_id: Optional[str] = None,
+             recall: Optional[float] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             test_image_count: Optional[int] = None,
+             testing_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_image_count: Optional[int] = None,
+             trained_duration_in_hours: Optional[float] = None,
+             training_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']] = None,
+             validation_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'averagePrecision' in kwargs:
+        if average_precision is None and 'averagePrecision' in kwargs:
             average_precision = kwargs['averagePrecision']
-        if 'compartmentId' in kwargs:
+        if average_precision is None:
+            raise TypeError("Missing 'average_precision' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'confidenceThreshold' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if confidence_threshold is None and 'confidenceThreshold' in kwargs:
             confidence_threshold = kwargs['confidenceThreshold']
-        if 'definedTags' in kwargs:
+        if confidence_threshold is None:
+            raise TypeError("Missing 'confidence_threshold' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isQuickMode' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
             is_quick_mode = kwargs['isQuickMode']
-        if 'lifecycleDetails' in kwargs:
+        if is_quick_mode is None:
+            raise TypeError("Missing 'is_quick_mode' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maxTrainingDurationInHours' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_training_duration_in_hours is None and 'maxTrainingDurationInHours' in kwargs:
             max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
-        if 'modelType' in kwargs:
+        if max_training_duration_in_hours is None:
+            raise TypeError("Missing 'max_training_duration_in_hours' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'projectId' in kwargs:
+        if model_version is None:
+            raise TypeError("Missing 'model_version' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'testImageCount' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if test_image_count is None and 'testImageCount' in kwargs:
             test_image_count = kwargs['testImageCount']
-        if 'testingDatasets' in kwargs:
+        if test_image_count is None:
+            raise TypeError("Missing 'test_image_count' argument")
+        if testing_datasets is None and 'testingDatasets' in kwargs:
             testing_datasets = kwargs['testingDatasets']
-        if 'timeCreated' in kwargs:
+        if testing_datasets is None:
+            raise TypeError("Missing 'testing_datasets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalImageCount' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_image_count is None and 'totalImageCount' in kwargs:
             total_image_count = kwargs['totalImageCount']
-        if 'trainedDurationInHours' in kwargs:
+        if total_image_count is None:
+            raise TypeError("Missing 'total_image_count' argument")
+        if trained_duration_in_hours is None and 'trainedDurationInHours' in kwargs:
             trained_duration_in_hours = kwargs['trainedDurationInHours']
-        if 'trainingDatasets' in kwargs:
+        if trained_duration_in_hours is None:
+            raise TypeError("Missing 'trained_duration_in_hours' argument")
+        if training_datasets is None and 'trainingDatasets' in kwargs:
             training_datasets = kwargs['trainingDatasets']
-        if 'validationDatasets' in kwargs:
+        if training_datasets is None:
+            raise TypeError("Missing 'training_datasets' argument")
+        if validation_datasets is None and 'validationDatasets' in kwargs:
             validation_datasets = kwargs['validationDatasets']
+        if validation_datasets is None:
+            raise TypeError("Missing 'validation_datasets' argument")
 
         _setter("average_precision", average_precision)
         _setter("compartment_id", compartment_id)
@@ -1148,19 +1244,29 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -1231,19 +1337,29 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -1314,19 +1430,29 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace_name: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'namespaceName' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -1387,11 +1513,15 @@ class GetProjectsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1425,9 +1555,11 @@ class GetProjectsProjectCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1481,35 +1613,57 @@ class GetProjectsProjectCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

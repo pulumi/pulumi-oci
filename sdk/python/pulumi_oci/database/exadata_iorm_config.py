@@ -38,15 +38,19 @@ class ExadataIormConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_plans: pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]],
-             db_system_id: pulumi.Input[str],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
              objective: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbPlans' in kwargs:
+        if db_plans is None and 'dbPlans' in kwargs:
             db_plans = kwargs['dbPlans']
-        if 'dbSystemId' in kwargs:
+        if db_plans is None:
+            raise TypeError("Missing 'db_plans' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
 
         _setter("db_plans", db_plans)
         _setter("db_system_id", db_system_id)
@@ -130,13 +134,13 @@ class _ExadataIormConfigState:
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              objective: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbPlans' in kwargs:
+        if db_plans is None and 'dbPlans' in kwargs:
             db_plans = kwargs['dbPlans']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
 
         if db_plans is not None:

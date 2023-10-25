@@ -39,17 +39,23 @@ class CloudGuardConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             reporting_region: pulumi.Input[str],
-             status: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             reporting_region: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
              self_manage_resources: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'reportingRegion' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if reporting_region is None and 'reportingRegion' in kwargs:
             reporting_region = kwargs['reportingRegion']
-        if 'selfManageResources' in kwargs:
+        if reporting_region is None:
+            raise TypeError("Missing 'reporting_region' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if self_manage_resources is None and 'selfManageResources' in kwargs:
             self_manage_resources = kwargs['selfManageResources']
 
         _setter("compartment_id", compartment_id)
@@ -143,13 +149,13 @@ class _CloudGuardConfigurationState:
              reporting_region: Optional[pulumi.Input[str]] = None,
              self_manage_resources: Optional[pulumi.Input[bool]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'reportingRegion' in kwargs:
+        if reporting_region is None and 'reportingRegion' in kwargs:
             reporting_region = kwargs['reportingRegion']
-        if 'selfManageResources' in kwargs:
+        if self_manage_resources is None and 'selfManageResources' in kwargs:
             self_manage_resources = kwargs['selfManageResources']
 
         if compartment_id is not None:

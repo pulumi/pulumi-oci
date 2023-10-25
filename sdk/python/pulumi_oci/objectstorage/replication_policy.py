@@ -44,19 +44,27 @@ class ReplicationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             destination_bucket_name: pulumi.Input[str],
-             destination_region_name: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             destination_bucket_name: Optional[pulumi.Input[str]] = None,
+             destination_region_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationBucketName' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_bucket_name is None and 'destinationBucketName' in kwargs:
             destination_bucket_name = kwargs['destinationBucketName']
-        if 'destinationRegionName' in kwargs:
+        if destination_bucket_name is None:
+            raise TypeError("Missing 'destination_bucket_name' argument")
+        if destination_region_name is None and 'destinationRegionName' in kwargs:
             destination_region_name = kwargs['destinationRegionName']
-        if 'deleteObjectInDestinationBucket' in kwargs:
+        if destination_region_name is None:
+            raise TypeError("Missing 'destination_region_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if delete_object_in_destination_bucket is None and 'deleteObjectInDestinationBucket' in kwargs:
             delete_object_in_destination_bucket = kwargs['deleteObjectInDestinationBucket']
 
         _setter("bucket", bucket)
@@ -203,19 +211,19 @@ class _ReplicationPolicyState:
              status_message: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_sync: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deleteObjectInDestinationBucket' in kwargs:
+        if delete_object_in_destination_bucket is None and 'deleteObjectInDestinationBucket' in kwargs:
             delete_object_in_destination_bucket = kwargs['deleteObjectInDestinationBucket']
-        if 'destinationBucketName' in kwargs:
+        if destination_bucket_name is None and 'destinationBucketName' in kwargs:
             destination_bucket_name = kwargs['destinationBucketName']
-        if 'destinationRegionName' in kwargs:
+        if destination_region_name is None and 'destinationRegionName' in kwargs:
             destination_region_name = kwargs['destinationRegionName']
-        if 'statusMessage' in kwargs:
+        if status_message is None and 'statusMessage' in kwargs:
             status_message = kwargs['statusMessage']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastSync' in kwargs:
+        if time_last_sync is None and 'timeLastSync' in kwargs:
             time_last_sync = kwargs['timeLastSync']
 
         if bucket is not None:

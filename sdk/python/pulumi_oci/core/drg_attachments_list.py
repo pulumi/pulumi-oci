@@ -38,16 +38,18 @@ class DrgAttachmentsListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             drg_id: pulumi.Input[str],
+             drg_id: Optional[pulumi.Input[str]] = None,
              attachment_type: Optional[pulumi.Input[str]] = None,
              is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'drgId' in kwargs:
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'attachmentType' in kwargs:
+        if drg_id is None:
+            raise TypeError("Missing 'drg_id' argument")
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'isCrossTenancy' in kwargs:
+        if is_cross_tenancy is None and 'isCrossTenancy' in kwargs:
             is_cross_tenancy = kwargs['isCrossTenancy']
 
         _setter("drg_id", drg_id)
@@ -129,15 +131,15 @@ class _DrgAttachmentsListState:
              drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]] = None,
              drg_id: Optional[pulumi.Input[str]] = None,
              is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentType' in kwargs:
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'drgAllAttachments' in kwargs:
+        if drg_all_attachments is None and 'drgAllAttachments' in kwargs:
             drg_all_attachments = kwargs['drgAllAttachments']
-        if 'drgId' in kwargs:
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'isCrossTenancy' in kwargs:
+        if is_cross_tenancy is None and 'isCrossTenancy' in kwargs:
             is_cross_tenancy = kwargs['isCrossTenancy']
 
         if attachment_type is not None:

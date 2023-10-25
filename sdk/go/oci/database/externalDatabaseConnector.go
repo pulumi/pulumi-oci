@@ -51,7 +51,7 @@ import (
 //				ExternalDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
 //				ConnectorType:      pulumi.Any(_var.External_database_connector_connector_type),
 //				DefinedTags:        pulumi.Any(_var.External_database_connector_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

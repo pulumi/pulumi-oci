@@ -56,12 +56,12 @@ import (
 //					},
 //				},
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Masking_policy_description),
 //				DisplayName: pulumi.Any(_var.Masking_policy_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsDropTempTablesEnabled: pulumi.Any(_var.Masking_policy_is_drop_temp_tables_enabled),

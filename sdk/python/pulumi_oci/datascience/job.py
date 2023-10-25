@@ -71,10 +71,10 @@ class JobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             job_configuration_details: pulumi.Input['JobJobConfigurationDetailsArgs'],
-             job_infrastructure_configuration_details: pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'],
-             project_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
+             job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              artifact_content_disposition: Optional[pulumi.Input[str]] = None,
              artifact_content_length: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -85,33 +85,41 @@ class JobArgs:
              job_artifact: Optional[pulumi.Input[str]] = None,
              job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
              job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'jobConfigurationDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if job_configuration_details is None and 'jobConfigurationDetails' in kwargs:
             job_configuration_details = kwargs['jobConfigurationDetails']
-        if 'jobInfrastructureConfigurationDetails' in kwargs:
+        if job_configuration_details is None:
+            raise TypeError("Missing 'job_configuration_details' argument")
+        if job_infrastructure_configuration_details is None and 'jobInfrastructureConfigurationDetails' in kwargs:
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
-        if 'projectId' in kwargs:
+        if job_infrastructure_configuration_details is None:
+            raise TypeError("Missing 'job_infrastructure_configuration_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'artifactContentDisposition' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
             artifact_content_disposition = kwargs['artifactContentDisposition']
-        if 'artifactContentLength' in kwargs:
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
             artifact_content_length = kwargs['artifactContentLength']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedJobRuns' in kwargs:
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
             delete_related_job_runs = kwargs['deleteRelatedJobRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jobArtifact' in kwargs:
+        if job_artifact is None and 'jobArtifact' in kwargs:
             job_artifact = kwargs['jobArtifact']
-        if 'jobLogConfigurationDetails' in kwargs:
+        if job_log_configuration_details is None and 'jobLogConfigurationDetails' in kwargs:
             job_log_configuration_details = kwargs['jobLogConfigurationDetails']
-        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+        if job_storage_mount_configuration_details_lists is None and 'jobStorageMountConfigurationDetailsLists' in kwargs:
             job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
 
         _setter("compartment_id", compartment_id)
@@ -409,45 +417,45 @@ class _JobState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactContentDisposition' in kwargs:
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
             artifact_content_disposition = kwargs['artifactContentDisposition']
-        if 'artifactContentLength' in kwargs:
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
             artifact_content_length = kwargs['artifactContentLength']
-        if 'artifactContentMd5' in kwargs:
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
             artifact_content_md5 = kwargs['artifactContentMd5']
-        if 'artifactLastModified' in kwargs:
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
             artifact_last_modified = kwargs['artifactLastModified']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedJobRuns' in kwargs:
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
             delete_related_job_runs = kwargs['deleteRelatedJobRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'emptyArtifact' in kwargs:
+        if empty_artifact is None and 'emptyArtifact' in kwargs:
             empty_artifact = kwargs['emptyArtifact']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jobArtifact' in kwargs:
+        if job_artifact is None and 'jobArtifact' in kwargs:
             job_artifact = kwargs['jobArtifact']
-        if 'jobConfigurationDetails' in kwargs:
+        if job_configuration_details is None and 'jobConfigurationDetails' in kwargs:
             job_configuration_details = kwargs['jobConfigurationDetails']
-        if 'jobInfrastructureConfigurationDetails' in kwargs:
+        if job_infrastructure_configuration_details is None and 'jobInfrastructureConfigurationDetails' in kwargs:
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
-        if 'jobLogConfigurationDetails' in kwargs:
+        if job_log_configuration_details is None and 'jobLogConfigurationDetails' in kwargs:
             job_log_configuration_details = kwargs['jobLogConfigurationDetails']
-        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+        if job_storage_mount_configuration_details_lists is None and 'jobStorageMountConfigurationDetailsLists' in kwargs:
             job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if artifact_content_disposition is not None:
@@ -969,27 +977,15 @@ class Job(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["job_artifact"] = job_artifact
-            if job_configuration_details is not None and not isinstance(job_configuration_details, JobJobConfigurationDetailsArgs):
-                job_configuration_details = job_configuration_details or {}
-                def _setter(key, value):
-                    job_configuration_details[key] = value
-                JobJobConfigurationDetailsArgs._configure(_setter, **job_configuration_details)
+            job_configuration_details = _utilities.configure(job_configuration_details, JobJobConfigurationDetailsArgs, True)
             if job_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'job_configuration_details'")
             __props__.__dict__["job_configuration_details"] = job_configuration_details
-            if job_infrastructure_configuration_details is not None and not isinstance(job_infrastructure_configuration_details, JobJobInfrastructureConfigurationDetailsArgs):
-                job_infrastructure_configuration_details = job_infrastructure_configuration_details or {}
-                def _setter(key, value):
-                    job_infrastructure_configuration_details[key] = value
-                JobJobInfrastructureConfigurationDetailsArgs._configure(_setter, **job_infrastructure_configuration_details)
+            job_infrastructure_configuration_details = _utilities.configure(job_infrastructure_configuration_details, JobJobInfrastructureConfigurationDetailsArgs, True)
             if job_infrastructure_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'job_infrastructure_configuration_details'")
             __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
-            if job_log_configuration_details is not None and not isinstance(job_log_configuration_details, JobJobLogConfigurationDetailsArgs):
-                job_log_configuration_details = job_log_configuration_details or {}
-                def _setter(key, value):
-                    job_log_configuration_details[key] = value
-                JobJobLogConfigurationDetailsArgs._configure(_setter, **job_log_configuration_details)
+            job_log_configuration_details = _utilities.configure(job_log_configuration_details, JobJobLogConfigurationDetailsArgs, True)
             __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
             __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
             if project_id is None and not opts.urn:

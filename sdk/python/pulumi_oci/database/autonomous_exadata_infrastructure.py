@@ -70,10 +70,10 @@ class AutonomousExadataInfrastructureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              create_async: Optional[pulumi.Input[bool]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -82,27 +82,35 @@ class AutonomousExadataInfrastructureArgs:
              license_model: Optional[pulumi.Input[str]] = None,
              maintenance_window_details: Optional[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'subnetId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'createAsync' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'maintenanceWindowDetails' in kwargs:
+        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
             maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         if availability_domain is not None:
@@ -389,41 +397,41 @@ class _AutonomousExadataInfrastructureState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastMaintenanceRunId' in kwargs:
+        if last_maintenance_run_id is None and 'lastMaintenanceRunId' in kwargs:
             last_maintenance_run_id = kwargs['lastMaintenanceRunId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceWindowDetails' in kwargs:
+        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
             maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if 'maintenanceWindows' in kwargs:
+        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
             maintenance_windows = kwargs['maintenanceWindows']
-        if 'nextMaintenanceRunId' in kwargs:
+        if next_maintenance_run_id is None and 'nextMaintenanceRunId' in kwargs:
             next_maintenance_run_id = kwargs['nextMaintenanceRunId']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'scanDnsName' in kwargs:
+        if scan_dns_name is None and 'scanDnsName' in kwargs:
             scan_dns_name = kwargs['scanDnsName']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'zoneId' in kwargs:
+        if zone_id is None and 'zoneId' in kwargs:
             zone_id = kwargs['zoneId']
 
         if availability_domain is not None:
@@ -939,11 +947,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["domain"] = domain
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["license_model"] = license_model
-            if maintenance_window_details is not None and not isinstance(maintenance_window_details, AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs):
-                maintenance_window_details = maintenance_window_details or {}
-                def _setter(key, value):
-                    maintenance_window_details[key] = value
-                AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs._configure(_setter, **maintenance_window_details)
+            maintenance_window_details = _utilities.configure(maintenance_window_details, AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs, True)
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["nsg_ids"] = nsg_ids
             if shape is None and not opts.urn:

@@ -50,26 +50,34 @@ class StreamPackagingConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             distribution_channel_id: pulumi.Input[str],
-             segment_time_in_seconds: pulumi.Input[int],
-             stream_packaging_format: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             distribution_channel_id: Optional[pulumi.Input[str]] = None,
+             segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             stream_packaging_format: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'segmentTimeInSeconds' in kwargs:
+        if distribution_channel_id is None:
+            raise TypeError("Missing 'distribution_channel_id' argument")
+        if segment_time_in_seconds is None and 'segmentTimeInSeconds' in kwargs:
             segment_time_in_seconds = kwargs['segmentTimeInSeconds']
-        if 'streamPackagingFormat' in kwargs:
+        if segment_time_in_seconds is None:
+            raise TypeError("Missing 'segment_time_in_seconds' argument")
+        if stream_packaging_format is None and 'streamPackagingFormat' in kwargs:
             stream_packaging_format = kwargs['streamPackagingFormat']
-        if 'definedTags' in kwargs:
+        if stream_packaging_format is None:
+            raise TypeError("Missing 'stream_packaging_format' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("display_name", display_name)
@@ -236,27 +244,27 @@ class _StreamPackagingConfigState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'segmentTimeInSeconds' in kwargs:
+        if segment_time_in_seconds is None and 'segmentTimeInSeconds' in kwargs:
             segment_time_in_seconds = kwargs['segmentTimeInSeconds']
-        if 'streamPackagingFormat' in kwargs:
+        if stream_packaging_format is None and 'streamPackagingFormat' in kwargs:
             stream_packaging_format = kwargs['streamPackagingFormat']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -580,11 +588,7 @@ class StreamPackagingConfig(pulumi.CustomResource):
             if distribution_channel_id is None and not opts.urn:
                 raise TypeError("Missing required property 'distribution_channel_id'")
             __props__.__dict__["distribution_channel_id"] = distribution_channel_id
-            if encryption is not None and not isinstance(encryption, StreamPackagingConfigEncryptionArgs):
-                encryption = encryption or {}
-                def _setter(key, value):
-                    encryption[key] = value
-                StreamPackagingConfigEncryptionArgs._configure(_setter, **encryption)
+            encryption = _utilities.configure(encryption, StreamPackagingConfigEncryptionArgs, True)
             __props__.__dict__["encryption"] = encryption
             __props__.__dict__["freeform_tags"] = freeform_tags
             if segment_time_in_seconds is None and not opts.urn:

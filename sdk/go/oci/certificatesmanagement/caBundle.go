@@ -34,11 +34,11 @@ import (
 //			_, err := CertificatesManagement.NewCaBundle(ctx, "testCaBundle", &CertificatesManagement.CaBundleArgs{
 //				CaBundlePem:   pulumi.Any(_var.Ca_bundle_ca_bundle_pem),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Ca_bundle_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

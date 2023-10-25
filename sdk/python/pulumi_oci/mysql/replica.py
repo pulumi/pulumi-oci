@@ -46,26 +46,28 @@ class ReplicaArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_system_id: pulumi.Input[str],
+             db_system_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_delete_protected: Optional[pulumi.Input[bool]] = None,
              replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDeleteProtected' in kwargs:
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
-        if 'replicaOverrides' in kwargs:
+        if replica_overrides is None and 'replicaOverrides' in kwargs:
             replica_overrides = kwargs['replicaOverrides']
 
         _setter("db_system_id", db_system_id)
@@ -263,41 +265,41 @@ class _ReplicaState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isDeleteProtected' in kwargs:
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
             is_delete_protected = kwargs['isDeleteProtected']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mysqlVersion' in kwargs:
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'replicaOverrides' in kwargs:
+        if replica_overrides is None and 'replicaOverrides' in kwargs:
             replica_overrides = kwargs['replicaOverrides']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if availability_domain is not None:
@@ -732,11 +734,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_delete_protected"] = is_delete_protected
-            if replica_overrides is not None and not isinstance(replica_overrides, ReplicaReplicaOverridesArgs):
-                replica_overrides = replica_overrides or {}
-                def _setter(key, value):
-                    replica_overrides[key] = value
-                ReplicaReplicaOverridesArgs._configure(_setter, **replica_overrides)
+            replica_overrides = _utilities.configure(replica_overrides, ReplicaReplicaOverridesArgs, True)
             __props__.__dict__["replica_overrides"] = replica_overrides
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["compartment_id"] = None

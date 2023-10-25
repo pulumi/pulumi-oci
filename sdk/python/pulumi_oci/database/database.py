@@ -63,9 +63,9 @@ class DatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             database: pulumi.Input['DatabaseDatabaseArgs'],
-             db_home_id: pulumi.Input[str],
-             source: pulumi.Input[str],
+             database: Optional[pulumi.Input['DatabaseDatabaseArgs']] = None,
+             db_home_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
              db_version: Optional[pulumi.Input[str]] = None,
              key_store_id: Optional[pulumi.Input[str]] = None,
              kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -73,23 +73,29 @@ class DatabaseArgs:
              kms_key_rotation: Optional[pulumi.Input[int]] = None,
              kms_key_version_id: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbHomeId' in kwargs:
+        if database is None:
+            raise TypeError("Missing 'database' argument")
+        if db_home_id is None and 'dbHomeId' in kwargs:
             db_home_id = kwargs['dbHomeId']
-        if 'dbVersion' in kwargs:
+        if db_home_id is None:
+            raise TypeError("Missing 'db_home_id' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyMigration' in kwargs:
+        if kms_key_migration is None and 'kmsKeyMigration' in kwargs:
             kms_key_migration = kwargs['kmsKeyMigration']
-        if 'kmsKeyRotation' in kwargs:
+        if kms_key_rotation is None and 'kmsKeyRotation' in kwargs:
             kms_key_rotation = kwargs['kmsKeyRotation']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         _setter("database", database)
@@ -403,71 +409,71 @@ class _DatabaseState:
              time_created: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'characterSet' in kwargs:
+        if character_set is None and 'characterSet' in kwargs:
             character_set = kwargs['characterSet']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
-        if 'databaseManagementConfigs' in kwargs:
+        if database_management_configs is None and 'databaseManagementConfigs' in kwargs:
             database_management_configs = kwargs['databaseManagementConfigs']
-        if 'databaseSoftwareImageId' in kwargs:
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
             database_software_image_id = kwargs['databaseSoftwareImageId']
-        if 'dbBackupConfigs' in kwargs:
+        if db_backup_configs is None and 'dbBackupConfigs' in kwargs:
             db_backup_configs = kwargs['dbBackupConfigs']
-        if 'dbHomeId' in kwargs:
+        if db_home_id is None and 'dbHomeId' in kwargs:
             db_home_id = kwargs['dbHomeId']
-        if 'dbName' in kwargs:
+        if db_name is None and 'dbName' in kwargs:
             db_name = kwargs['dbName']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'dbWorkload' in kwargs:
+        if db_workload is None and 'dbWorkload' in kwargs:
             db_workload = kwargs['dbWorkload']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCdb' in kwargs:
+        if is_cdb is None and 'isCdb' in kwargs:
             is_cdb = kwargs['isCdb']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'keyStoreWalletName' in kwargs:
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
             key_store_wallet_name = kwargs['keyStoreWalletName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyMigration' in kwargs:
+        if kms_key_migration is None and 'kmsKeyMigration' in kwargs:
             kms_key_migration = kwargs['kmsKeyMigration']
-        if 'kmsKeyRotation' in kwargs:
+        if kms_key_rotation is None and 'kmsKeyRotation' in kwargs:
             kms_key_rotation = kwargs['kmsKeyRotation']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'lastBackupDurationInSeconds' in kwargs:
+        if last_backup_duration_in_seconds is None and 'lastBackupDurationInSeconds' in kwargs:
             last_backup_duration_in_seconds = kwargs['lastBackupDurationInSeconds']
-        if 'lastBackupTimestamp' in kwargs:
+        if last_backup_timestamp is None and 'lastBackupTimestamp' in kwargs:
             last_backup_timestamp = kwargs['lastBackupTimestamp']
-        if 'lastFailedBackupTimestamp' in kwargs:
+        if last_failed_backup_timestamp is None and 'lastFailedBackupTimestamp' in kwargs:
             last_failed_backup_timestamp = kwargs['lastFailedBackupTimestamp']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'ncharacterSet' in kwargs:
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
             ncharacter_set = kwargs['ncharacterSet']
-        if 'pdbName' in kwargs:
+        if pdb_name is None and 'pdbName' in kwargs:
             pdb_name = kwargs['pdbName']
-        if 'sidPrefix' in kwargs:
+        if sid_prefix is None and 'sidPrefix' in kwargs:
             sid_prefix = kwargs['sidPrefix']
-        if 'sourceDatabasePointInTimeRecoveryTimestamp' in kwargs:
+        if source_database_point_in_time_recovery_timestamp is None and 'sourceDatabasePointInTimeRecoveryTimestamp' in kwargs:
             source_database_point_in_time_recovery_timestamp = kwargs['sourceDatabasePointInTimeRecoveryTimestamp']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
 
         if character_set is not None:
@@ -1181,11 +1187,7 @@ class Database(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DatabaseArgs.__new__(DatabaseArgs)
 
-            if database is not None and not isinstance(database, DatabaseDatabaseArgs):
-                database = database or {}
-                def _setter(key, value):
-                    database[key] = value
-                DatabaseDatabaseArgs._configure(_setter, **database)
+            database = _utilities.configure(database, DatabaseDatabaseArgs, True)
             if database is None and not opts.urn:
                 raise TypeError("Missing required property 'database'")
             __props__.__dict__["database"] = database

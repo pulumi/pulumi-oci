@@ -74,15 +74,19 @@ class AlarmSuppression(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_suppress_from: str,
-             time_suppress_until: str,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeSuppressFrom' in kwargs:
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
             time_suppress_from = kwargs['timeSuppressFrom']
-        if 'timeSuppressUntil' in kwargs:
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
             time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
 
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
@@ -142,13 +146,19 @@ class GetAlarmHistoryCollectionEntryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             summary: str,
-             timestamp: str,
-             timestamp_triggered: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             summary: Optional[str] = None,
+             timestamp: Optional[str] = None,
+             timestamp_triggered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timestampTriggered' in kwargs:
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
+        if timestamp_triggered is None and 'timestampTriggered' in kwargs:
             timestamp_triggered = kwargs['timestampTriggered']
+        if timestamp_triggered is None:
+            raise TypeError("Missing 'timestamp_triggered' argument")
 
         _setter("summary", summary)
         _setter("timestamp", timestamp)
@@ -208,18 +218,30 @@ class GetAlarmStatusesAlarmStatusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             severity: str,
-             status: str,
-             suppressions: Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult'],
-             timestamp_triggered: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             severity: Optional[str] = None,
+             status: Optional[str] = None,
+             suppressions: Optional[Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult']] = None,
+             timestamp_triggered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timestampTriggered' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if suppressions is None:
+            raise TypeError("Missing 'suppressions' argument")
+        if timestamp_triggered is None and 'timestampTriggered' in kwargs:
             timestamp_triggered = kwargs['timestampTriggered']
+        if timestamp_triggered is None:
+            raise TypeError("Missing 'timestamp_triggered' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -297,15 +319,21 @@ class GetAlarmStatusesAlarmStatusSuppressionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             time_suppress_from: str,
-             time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeSuppressFrom' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
             time_suppress_from = kwargs['timeSuppressFrom']
-        if 'timeSuppressUntil' in kwargs:
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
             time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
 
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
@@ -351,11 +379,15 @@ class GetAlarmStatusesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -398,15 +430,21 @@ class GetAlarmSuppressionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             time_suppress_from: str,
-             time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeSuppressFrom' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
             time_suppress_from = kwargs['timeSuppressFrom']
-        if 'timeSuppressUntil' in kwargs:
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
             time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
 
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
@@ -517,59 +555,105 @@ class GetAlarmsAlarmResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             body: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             destinations: Sequence[str],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             is_notifications_per_metric_dimension_enabled: bool,
-             message_format: str,
-             metric_compartment_id: str,
-             metric_compartment_id_in_subtree: bool,
-             namespace: str,
-             pending_duration: str,
-             query: str,
-             repeat_notification_duration: str,
-             resolution: str,
-             resource_group: str,
-             severity: str,
-             state: str,
-             suppressions: Sequence['outputs.GetAlarmsAlarmSuppressionResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             body: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             destinations: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             is_notifications_per_metric_dimension_enabled: Optional[bool] = None,
+             message_format: Optional[str] = None,
+             metric_compartment_id: Optional[str] = None,
+             metric_compartment_id_in_subtree: Optional[bool] = None,
+             namespace: Optional[str] = None,
+             pending_duration: Optional[str] = None,
+             query: Optional[str] = None,
+             repeat_notification_duration: Optional[str] = None,
+             resolution: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             severity: Optional[str] = None,
+             state: Optional[str] = None,
+             suppressions: Optional[Sequence['outputs.GetAlarmsAlarmSuppressionResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if destinations is None:
+            raise TypeError("Missing 'destinations' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
             is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
-        if 'messageFormat' in kwargs:
+        if is_notifications_per_metric_dimension_enabled is None:
+            raise TypeError("Missing 'is_notifications_per_metric_dimension_enabled' argument")
+        if message_format is None and 'messageFormat' in kwargs:
             message_format = kwargs['messageFormat']
-        if 'metricCompartmentId' in kwargs:
+        if message_format is None:
+            raise TypeError("Missing 'message_format' argument")
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
             metric_compartment_id = kwargs['metricCompartmentId']
-        if 'metricCompartmentIdInSubtree' in kwargs:
+        if metric_compartment_id is None:
+            raise TypeError("Missing 'metric_compartment_id' argument")
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
             metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
-        if 'pendingDuration' in kwargs:
+        if metric_compartment_id_in_subtree is None:
+            raise TypeError("Missing 'metric_compartment_id_in_subtree' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if pending_duration is None and 'pendingDuration' in kwargs:
             pending_duration = kwargs['pendingDuration']
-        if 'repeatNotificationDuration' in kwargs:
+        if pending_duration is None:
+            raise TypeError("Missing 'pending_duration' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
             repeat_notification_duration = kwargs['repeatNotificationDuration']
-        if 'resourceGroup' in kwargs:
+        if repeat_notification_duration is None:
+            raise TypeError("Missing 'repeat_notification_duration' argument")
+        if resolution is None:
+            raise TypeError("Missing 'resolution' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
-        if 'timeCreated' in kwargs:
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if suppressions is None:
+            raise TypeError("Missing 'suppressions' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("body", body)
         _setter("compartment_id", compartment_id)
@@ -800,15 +884,21 @@ class GetAlarmsAlarmSuppressionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             time_suppress_from: str,
-             time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeSuppressFrom' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
             time_suppress_from = kwargs['timeSuppressFrom']
-        if 'timeSuppressUntil' in kwargs:
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
             time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
 
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
@@ -854,11 +944,15 @@ class GetAlarmsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -899,11 +993,15 @@ class GetMetricDataFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -982,32 +1080,56 @@ class GetMetricDataMetricDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             aggregated_datapoints: Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult'],
-             compartment_id: str,
-             compartment_id_in_subtree: bool,
-             dimensions: Mapping[str, Any],
-             end_time: str,
-             metadata: Mapping[str, Any],
-             name: str,
-             namespace: str,
-             query: str,
-             resolution: str,
-             resource_group: str,
-             start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             aggregated_datapoints: Optional[Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult']] = None,
+             compartment_id: Optional[str] = None,
+             compartment_id_in_subtree: Optional[bool] = None,
+             dimensions: Optional[Mapping[str, Any]] = None,
+             end_time: Optional[str] = None,
+             metadata: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             query: Optional[str] = None,
+             resolution: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatedDatapoints' in kwargs:
+        if aggregated_datapoints is None and 'aggregatedDatapoints' in kwargs:
             aggregated_datapoints = kwargs['aggregatedDatapoints']
-        if 'compartmentId' in kwargs:
+        if aggregated_datapoints is None:
+            raise TypeError("Missing 'aggregated_datapoints' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentIdInSubtree' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_id_in_subtree is None and 'compartmentIdInSubtree' in kwargs:
             compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
-        if 'endTime' in kwargs:
+        if compartment_id_in_subtree is None:
+            raise TypeError("Missing 'compartment_id_in_subtree' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if end_time is None and 'endTime' in kwargs:
             end_time = kwargs['endTime']
-        if 'resourceGroup' in kwargs:
+        if end_time is None:
+            raise TypeError("Missing 'end_time' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if resolution is None:
+            raise TypeError("Missing 'resolution' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
-        if 'startTime' in kwargs:
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
+        if start_time is None and 'startTime' in kwargs:
             start_time = kwargs['startTime']
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
 
         _setter("aggregated_datapoints", aggregated_datapoints)
         _setter("compartment_id", compartment_id)
@@ -1142,10 +1264,14 @@ class GetMetricDataMetricDataAggregatedDatapointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             timestamp: str,
-             value: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             timestamp: Optional[str] = None,
+             value: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("timestamp", timestamp)
         _setter("value", value)
@@ -1185,11 +1311,15 @@ class GetMetricsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1252,26 +1382,42 @@ class GetMetricsMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             compartment_id_in_subtree: bool,
-             dimension_filters: Mapping[str, Any],
-             dimensions: Mapping[str, Any],
-             group_bies: Sequence[str],
-             name: str,
-             namespace: str,
-             resource_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             compartment_id_in_subtree: Optional[bool] = None,
+             dimension_filters: Optional[Mapping[str, Any]] = None,
+             dimensions: Optional[Mapping[str, Any]] = None,
+             group_bies: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentIdInSubtree' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_id_in_subtree is None and 'compartmentIdInSubtree' in kwargs:
             compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
-        if 'dimensionFilters' in kwargs:
+        if compartment_id_in_subtree is None:
+            raise TypeError("Missing 'compartment_id_in_subtree' argument")
+        if dimension_filters is None and 'dimensionFilters' in kwargs:
             dimension_filters = kwargs['dimensionFilters']
-        if 'groupBies' in kwargs:
+        if dimension_filters is None:
+            raise TypeError("Missing 'dimension_filters' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if group_bies is None and 'groupBies' in kwargs:
             group_bies = kwargs['groupBies']
-        if 'resourceGroup' in kwargs:
+        if group_bies is None:
+            raise TypeError("Missing 'group_bies' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("compartment_id_in_subtree", compartment_id_in_subtree)

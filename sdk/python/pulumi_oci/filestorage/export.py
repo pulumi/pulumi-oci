@@ -55,20 +55,26 @@ class ExportArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             export_set_id: pulumi.Input[str],
-             file_system_id: pulumi.Input[str],
-             path: pulumi.Input[str],
+             export_set_id: Optional[pulumi.Input[str]] = None,
+             file_system_id: Optional[pulumi.Input[str]] = None,
+             path: Optional[pulumi.Input[str]] = None,
              export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
              is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'exportSetId' in kwargs:
+        if export_set_id is None and 'exportSetId' in kwargs:
             export_set_id = kwargs['exportSetId']
-        if 'fileSystemId' in kwargs:
+        if export_set_id is None:
+            raise TypeError("Missing 'export_set_id' argument")
+        if file_system_id is None and 'fileSystemId' in kwargs:
             file_system_id = kwargs['fileSystemId']
-        if 'exportOptions' in kwargs:
+        if file_system_id is None:
+            raise TypeError("Missing 'file_system_id' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if export_options is None and 'exportOptions' in kwargs:
             export_options = kwargs['exportOptions']
-        if 'isIdmapGroupsForSysAuth' in kwargs:
+        if is_idmap_groups_for_sys_auth is None and 'isIdmapGroupsForSysAuth' in kwargs:
             is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
 
         _setter("export_set_id", export_set_id)
@@ -210,17 +216,17 @@ class _ExportState:
              path: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'exportOptions' in kwargs:
+        if export_options is None and 'exportOptions' in kwargs:
             export_options = kwargs['exportOptions']
-        if 'exportSetId' in kwargs:
+        if export_set_id is None and 'exportSetId' in kwargs:
             export_set_id = kwargs['exportSetId']
-        if 'fileSystemId' in kwargs:
+        if file_system_id is None and 'fileSystemId' in kwargs:
             file_system_id = kwargs['fileSystemId']
-        if 'isIdmapGroupsForSysAuth' in kwargs:
+        if is_idmap_groups_for_sys_auth is None and 'isIdmapGroupsForSysAuth' in kwargs:
             is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if export_options is not None:

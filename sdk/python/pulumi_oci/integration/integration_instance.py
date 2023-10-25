@@ -83,11 +83,11 @@ class IntegrationInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             integration_instance_type: pulumi.Input[str],
-             is_byol: pulumi.Input[bool],
-             message_packs: pulumi.Input[int],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             integration_instance_type: Optional[pulumi.Input[str]] = None,
+             is_byol: Optional[pulumi.Input[bool]] = None,
+             message_packs: Optional[pulumi.Input[int]] = None,
              alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
              consumption_model: Optional[pulumi.Input[str]] = None,
              custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
@@ -101,39 +101,49 @@ class IntegrationInstanceArgs:
              network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
              shape: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'integrationInstanceType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if integration_instance_type is None and 'integrationInstanceType' in kwargs:
             integration_instance_type = kwargs['integrationInstanceType']
-        if 'isByol' in kwargs:
+        if integration_instance_type is None:
+            raise TypeError("Missing 'integration_instance_type' argument")
+        if is_byol is None and 'isByol' in kwargs:
             is_byol = kwargs['isByol']
-        if 'messagePacks' in kwargs:
+        if is_byol is None:
+            raise TypeError("Missing 'is_byol' argument")
+        if message_packs is None and 'messagePacks' in kwargs:
             message_packs = kwargs['messagePacks']
-        if 'alternateCustomEndpoints' in kwargs:
+        if message_packs is None:
+            raise TypeError("Missing 'message_packs' argument")
+        if alternate_custom_endpoints is None and 'alternateCustomEndpoints' in kwargs:
             alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
-        if 'consumptionModel' in kwargs:
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'customEndpoint' in kwargs:
+        if custom_endpoint is None and 'customEndpoint' in kwargs:
             custom_endpoint = kwargs['customEndpoint']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'enableProcessAutomationTrigger' in kwargs:
+        if enable_process_automation_trigger is None and 'enableProcessAutomationTrigger' in kwargs:
             enable_process_automation_trigger = kwargs['enableProcessAutomationTrigger']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAt' in kwargs:
+        if idcs_at is None and 'idcsAt' in kwargs:
             idcs_at = kwargs['idcsAt']
-        if 'isFileServerEnabled' in kwargs:
+        if is_file_server_enabled is None and 'isFileServerEnabled' in kwargs:
             is_file_server_enabled = kwargs['isFileServerEnabled']
-        if 'isVisualBuilderEnabled' in kwargs:
+        if is_visual_builder_enabled is None and 'isVisualBuilderEnabled' in kwargs:
             is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
-        if 'networkEndpointDetails' in kwargs:
+        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
             network_endpoint_details = kwargs['networkEndpointDetails']
 
         _setter("compartment_id", compartment_id)
@@ -501,49 +511,49 @@ class _IntegrationInstanceState:
              state_message: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'alternateCustomEndpoints' in kwargs:
+        if alternate_custom_endpoints is None and 'alternateCustomEndpoints' in kwargs:
             alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'consumptionModel' in kwargs:
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'customEndpoint' in kwargs:
+        if custom_endpoint is None and 'customEndpoint' in kwargs:
             custom_endpoint = kwargs['customEndpoint']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'enableProcessAutomationTrigger' in kwargs:
+        if enable_process_automation_trigger is None and 'enableProcessAutomationTrigger' in kwargs:
             enable_process_automation_trigger = kwargs['enableProcessAutomationTrigger']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAt' in kwargs:
+        if idcs_at is None and 'idcsAt' in kwargs:
             idcs_at = kwargs['idcsAt']
-        if 'idcsInfos' in kwargs:
+        if idcs_infos is None and 'idcsInfos' in kwargs:
             idcs_infos = kwargs['idcsInfos']
-        if 'instanceUrl' in kwargs:
+        if instance_url is None and 'instanceUrl' in kwargs:
             instance_url = kwargs['instanceUrl']
-        if 'integrationInstanceType' in kwargs:
+        if integration_instance_type is None and 'integrationInstanceType' in kwargs:
             integration_instance_type = kwargs['integrationInstanceType']
-        if 'isByol' in kwargs:
+        if is_byol is None and 'isByol' in kwargs:
             is_byol = kwargs['isByol']
-        if 'isFileServerEnabled' in kwargs:
+        if is_file_server_enabled is None and 'isFileServerEnabled' in kwargs:
             is_file_server_enabled = kwargs['isFileServerEnabled']
-        if 'isVisualBuilderEnabled' in kwargs:
+        if is_visual_builder_enabled is None and 'isVisualBuilderEnabled' in kwargs:
             is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
-        if 'messagePacks' in kwargs:
+        if message_packs is None and 'messagePacks' in kwargs:
             message_packs = kwargs['messagePacks']
-        if 'networkEndpointDetails' in kwargs:
+        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
             network_endpoint_details = kwargs['networkEndpointDetails']
-        if 'stateMessage' in kwargs:
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if alternate_custom_endpoints is not None:
@@ -1108,11 +1118,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["consumption_model"] = consumption_model
-            if custom_endpoint is not None and not isinstance(custom_endpoint, IntegrationInstanceCustomEndpointArgs):
-                custom_endpoint = custom_endpoint or {}
-                def _setter(key, value):
-                    custom_endpoint[key] = value
-                IntegrationInstanceCustomEndpointArgs._configure(_setter, **custom_endpoint)
+            custom_endpoint = _utilities.configure(custom_endpoint, IntegrationInstanceCustomEndpointArgs, True)
             __props__.__dict__["custom_endpoint"] = custom_endpoint
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
@@ -1133,11 +1139,7 @@ class IntegrationInstance(pulumi.CustomResource):
             if message_packs is None and not opts.urn:
                 raise TypeError("Missing required property 'message_packs'")
             __props__.__dict__["message_packs"] = message_packs
-            if network_endpoint_details is not None and not isinstance(network_endpoint_details, IntegrationInstanceNetworkEndpointDetailsArgs):
-                network_endpoint_details = network_endpoint_details or {}
-                def _setter(key, value):
-                    network_endpoint_details[key] = value
-                IntegrationInstanceNetworkEndpointDetailsArgs._configure(_setter, **network_endpoint_details)
+            network_endpoint_details = _utilities.configure(network_endpoint_details, IntegrationInstanceNetworkEndpointDetailsArgs, True)
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state

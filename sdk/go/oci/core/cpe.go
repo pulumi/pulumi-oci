@@ -49,11 +49,11 @@ import (
 //				CompartmentId:    pulumi.Any(_var.Compartment_id),
 //				IpAddress:        pulumi.Any(_var.Cpe_ip_address),
 //				CpeDeviceShapeId: pulumi.Any(data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Cpe_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsPrivate: pulumi.Any(_var.Cpe_is_private),

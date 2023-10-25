@@ -77,10 +77,10 @@ import (
 //				VcnCompartmentId:               pulumi.Any(oci_identity_compartment.Test_compartment.Id),
 //				VcnId:                          pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //				DataNodeHostBareMetalShape:     pulumi.Any(_var.Opensearch_cluster_data_node_host_bare_metal_shape),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MasterNodeHostBareMetalShape:   pulumi.Any(_var.Opensearch_cluster_master_node_host_bare_metal_shape),

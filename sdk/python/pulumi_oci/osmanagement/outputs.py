@@ -79,9 +79,9 @@ class ManagedInstanceAutonomouse(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_auto_update_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isAutoUpdateEnabled' in kwargs:
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
             is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
 
         if is_auto_update_enabled is not None:
@@ -115,7 +115,7 @@ class ManagedInstanceChildSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if id is not None:
@@ -176,9 +176,9 @@ class ManagedInstanceGroupManagedInstance(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -239,9 +239,9 @@ class ManagedInstanceManagedInstanceGroup(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -289,7 +289,7 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if id is not None:
@@ -354,9 +354,9 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -404,7 +404,7 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if id is not None:
@@ -452,7 +452,7 @@ class ManagedInstanceParentSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if id is not None:
@@ -513,9 +513,9 @@ class SoftwareSourceAssociatedManagedInstance(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -554,11 +554,13 @@ class GetManagedInstanceAutonomouseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_auto_update_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isAutoUpdateEnabled' in kwargs:
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
             is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+        if is_auto_update_enabled is None:
+            raise TypeError("Missing 'is_auto_update_enabled' argument")
 
         _setter("is_auto_update_enabled", is_auto_update_enabled)
 
@@ -588,10 +590,14 @@ class GetManagedInstanceChildSoftwareSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("id", id)
         _setter("name", name)
@@ -630,12 +636,16 @@ class GetManagedInstanceGroupManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -672,11 +682,15 @@ class GetManagedInstanceGroupsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -739,32 +753,52 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             managed_instance_count: int,
-             managed_instances: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult'],
-             os_family: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             managed_instances: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult']] = None,
+             os_family: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'managedInstanceCount' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
             managed_instance_count = kwargs['managedInstanceCount']
-        if 'managedInstances' in kwargs:
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if managed_instances is None and 'managedInstances' in kwargs:
             managed_instances = kwargs['managedInstances']
-        if 'osFamily' in kwargs:
+        if managed_instances is None:
+            raise TypeError("Missing 'managed_instances' argument")
+        if os_family is None and 'osFamily' in kwargs:
             os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -872,12 +906,16 @@ class GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -916,12 +954,16 @@ class GetManagedInstanceManagedInstanceGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -958,11 +1000,15 @@ class GetManagedInstanceModuleStreamsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1014,22 +1060,34 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             module_name: str,
-             profiles: Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult'],
-             software_source_id: str,
-             status: str,
-             stream_name: str,
-             time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             module_name: Optional[str] = None,
+             profiles: Optional[Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult']] = None,
+             software_source_id: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'moduleName' in kwargs:
+        if module_name is None and 'moduleName' in kwargs:
             module_name = kwargs['moduleName']
-        if 'softwareSourceId' in kwargs:
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profiles is None:
+            raise TypeError("Missing 'profiles' argument")
+        if software_source_id is None and 'softwareSourceId' in kwargs:
             software_source_id = kwargs['softwareSourceId']
-        if 'streamName' in kwargs:
+        if software_source_id is None:
+            raise TypeError("Missing 'software_source_id' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
-        if 'timeModified' in kwargs:
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
             time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
 
         _setter("module_name", module_name)
         _setter("profiles", profiles)
@@ -1113,21 +1171,31 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             module_name: str,
-             profile_name: str,
-             status: str,
-             stream_name: str,
-             time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'moduleName' in kwargs:
+        if module_name is None and 'moduleName' in kwargs:
             module_name = kwargs['moduleName']
-        if 'profileName' in kwargs:
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
             profile_name = kwargs['profileName']
-        if 'streamName' in kwargs:
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
-        if 'timeModified' in kwargs:
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
             time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
 
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
@@ -1193,10 +1261,14 @@ class GetManagedInstanceParentSoftwareSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("id", id)
         _setter("name", name)
@@ -1233,11 +1305,15 @@ class GetManagedInstanceStreamProfileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1286,21 +1362,31 @@ class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             module_name: str,
-             profile_name: str,
-             status: str,
-             stream_name: str,
-             time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'moduleName' in kwargs:
+        if module_name is None and 'moduleName' in kwargs:
             module_name = kwargs['moduleName']
-        if 'profileName' in kwargs:
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
             profile_name = kwargs['profileName']
-        if 'streamName' in kwargs:
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
-        if 'timeModified' in kwargs:
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
             time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
 
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
@@ -1367,11 +1453,15 @@ class GetManagedInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1488,81 +1578,135 @@ class GetManagedInstancesManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomouses: Sequence['outputs.GetManagedInstancesManagedInstanceAutonomouseResult'],
-             bug_updates_available: int,
-             child_software_sources: Sequence['outputs.GetManagedInstancesManagedInstanceChildSoftwareSourceResult'],
-             compartment_id: str,
-             description: str,
-             display_name: str,
-             enhancement_updates_available: int,
-             id: str,
-             is_data_collection_authorized: bool,
-             is_reboot_required: bool,
-             ksplice_effective_kernel_version: str,
-             last_boot: str,
-             last_checkin: str,
-             managed_instance_groups: Sequence['outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult'],
-             managed_instance_id: str,
-             notification_topic_id: str,
-             os_family: str,
-             os_kernel_version: str,
-             os_name: str,
-             os_version: str,
-             other_updates_available: int,
-             parent_software_sources: Sequence['outputs.GetManagedInstancesManagedInstanceParentSoftwareSourceResult'],
-             scheduled_job_count: int,
-             security_updates_available: int,
-             status: str,
-             updates_available: int,
-             work_request_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             autonomouses: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceAutonomouseResult']] = None,
+             bug_updates_available: Optional[int] = None,
+             child_software_sources: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceChildSoftwareSourceResult']] = None,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             enhancement_updates_available: Optional[int] = None,
+             id: Optional[str] = None,
+             is_data_collection_authorized: Optional[bool] = None,
+             is_reboot_required: Optional[bool] = None,
+             ksplice_effective_kernel_version: Optional[str] = None,
+             last_boot: Optional[str] = None,
+             last_checkin: Optional[str] = None,
+             managed_instance_groups: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult']] = None,
+             managed_instance_id: Optional[str] = None,
+             notification_topic_id: Optional[str] = None,
+             os_family: Optional[str] = None,
+             os_kernel_version: Optional[str] = None,
+             os_name: Optional[str] = None,
+             os_version: Optional[str] = None,
+             other_updates_available: Optional[int] = None,
+             parent_software_sources: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceParentSoftwareSourceResult']] = None,
+             scheduled_job_count: Optional[int] = None,
+             security_updates_available: Optional[int] = None,
+             status: Optional[str] = None,
+             updates_available: Optional[int] = None,
+             work_request_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bugUpdatesAvailable' in kwargs:
+        if autonomouses is None:
+            raise TypeError("Missing 'autonomouses' argument")
+        if bug_updates_available is None and 'bugUpdatesAvailable' in kwargs:
             bug_updates_available = kwargs['bugUpdatesAvailable']
-        if 'childSoftwareSources' in kwargs:
+        if bug_updates_available is None:
+            raise TypeError("Missing 'bug_updates_available' argument")
+        if child_software_sources is None and 'childSoftwareSources' in kwargs:
             child_software_sources = kwargs['childSoftwareSources']
-        if 'compartmentId' in kwargs:
+        if child_software_sources is None:
+            raise TypeError("Missing 'child_software_sources' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'enhancementUpdatesAvailable' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if enhancement_updates_available is None and 'enhancementUpdatesAvailable' in kwargs:
             enhancement_updates_available = kwargs['enhancementUpdatesAvailable']
-        if 'isDataCollectionAuthorized' in kwargs:
+        if enhancement_updates_available is None:
+            raise TypeError("Missing 'enhancement_updates_available' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_data_collection_authorized is None and 'isDataCollectionAuthorized' in kwargs:
             is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
-        if 'isRebootRequired' in kwargs:
+        if is_data_collection_authorized is None:
+            raise TypeError("Missing 'is_data_collection_authorized' argument")
+        if is_reboot_required is None and 'isRebootRequired' in kwargs:
             is_reboot_required = kwargs['isRebootRequired']
-        if 'kspliceEffectiveKernelVersion' in kwargs:
+        if is_reboot_required is None:
+            raise TypeError("Missing 'is_reboot_required' argument")
+        if ksplice_effective_kernel_version is None and 'kspliceEffectiveKernelVersion' in kwargs:
             ksplice_effective_kernel_version = kwargs['kspliceEffectiveKernelVersion']
-        if 'lastBoot' in kwargs:
+        if ksplice_effective_kernel_version is None:
+            raise TypeError("Missing 'ksplice_effective_kernel_version' argument")
+        if last_boot is None and 'lastBoot' in kwargs:
             last_boot = kwargs['lastBoot']
-        if 'lastCheckin' in kwargs:
+        if last_boot is None:
+            raise TypeError("Missing 'last_boot' argument")
+        if last_checkin is None and 'lastCheckin' in kwargs:
             last_checkin = kwargs['lastCheckin']
-        if 'managedInstanceGroups' in kwargs:
+        if last_checkin is None:
+            raise TypeError("Missing 'last_checkin' argument")
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
             managed_instance_groups = kwargs['managedInstanceGroups']
-        if 'managedInstanceId' in kwargs:
+        if managed_instance_groups is None:
+            raise TypeError("Missing 'managed_instance_groups' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'notificationTopicId' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if notification_topic_id is None and 'notificationTopicId' in kwargs:
             notification_topic_id = kwargs['notificationTopicId']
-        if 'osFamily' in kwargs:
+        if notification_topic_id is None:
+            raise TypeError("Missing 'notification_topic_id' argument")
+        if os_family is None and 'osFamily' in kwargs:
             os_family = kwargs['osFamily']
-        if 'osKernelVersion' in kwargs:
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if os_kernel_version is None and 'osKernelVersion' in kwargs:
             os_kernel_version = kwargs['osKernelVersion']
-        if 'osName' in kwargs:
+        if os_kernel_version is None:
+            raise TypeError("Missing 'os_kernel_version' argument")
+        if os_name is None and 'osName' in kwargs:
             os_name = kwargs['osName']
-        if 'osVersion' in kwargs:
+        if os_name is None:
+            raise TypeError("Missing 'os_name' argument")
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'otherUpdatesAvailable' in kwargs:
+        if os_version is None:
+            raise TypeError("Missing 'os_version' argument")
+        if other_updates_available is None and 'otherUpdatesAvailable' in kwargs:
             other_updates_available = kwargs['otherUpdatesAvailable']
-        if 'parentSoftwareSources' in kwargs:
+        if other_updates_available is None:
+            raise TypeError("Missing 'other_updates_available' argument")
+        if parent_software_sources is None and 'parentSoftwareSources' in kwargs:
             parent_software_sources = kwargs['parentSoftwareSources']
-        if 'scheduledJobCount' in kwargs:
+        if parent_software_sources is None:
+            raise TypeError("Missing 'parent_software_sources' argument")
+        if scheduled_job_count is None and 'scheduledJobCount' in kwargs:
             scheduled_job_count = kwargs['scheduledJobCount']
-        if 'securityUpdatesAvailable' in kwargs:
+        if scheduled_job_count is None:
+            raise TypeError("Missing 'scheduled_job_count' argument")
+        if security_updates_available is None and 'securityUpdatesAvailable' in kwargs:
             security_updates_available = kwargs['securityUpdatesAvailable']
-        if 'updatesAvailable' in kwargs:
+        if security_updates_available is None:
+            raise TypeError("Missing 'security_updates_available' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if updates_available is None and 'updatesAvailable' in kwargs:
             updates_available = kwargs['updatesAvailable']
-        if 'workRequestCount' in kwargs:
+        if updates_available is None:
+            raise TypeError("Missing 'updates_available' argument")
+        if work_request_count is None and 'workRequestCount' in kwargs:
             work_request_count = kwargs['workRequestCount']
+        if work_request_count is None:
+            raise TypeError("Missing 'work_request_count' argument")
 
         _setter("autonomouses", autonomouses)
         _setter("bug_updates_available", bug_updates_available)
@@ -1820,11 +1964,13 @@ class GetManagedInstancesManagedInstanceAutonomouseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_auto_update_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isAutoUpdateEnabled' in kwargs:
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
             is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+        if is_auto_update_enabled is None:
+            raise TypeError("Missing 'is_auto_update_enabled' argument")
 
         _setter("is_auto_update_enabled", is_auto_update_enabled)
 
@@ -1854,10 +2000,14 @@ class GetManagedInstancesManagedInstanceChildSoftwareSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("id", id)
         _setter("name", name)
@@ -1896,12 +2046,16 @@ class GetManagedInstancesManagedInstanceManagedInstanceGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -1940,10 +2094,14 @@ class GetManagedInstancesManagedInstanceParentSoftwareSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("id", id)
         _setter("name", name)
@@ -1982,12 +2140,16 @@ class GetSoftwareSourceAssociatedManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)
@@ -2024,11 +2186,15 @@ class GetSoftwareSourceStreamProfileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2071,17 +2237,23 @@ class GetSoftwareSourceStreamProfileModuleStreamProfileResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             module_name: str,
-             profile_name: str,
-             stream_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'moduleName' in kwargs:
+        if module_name is None and 'moduleName' in kwargs:
             module_name = kwargs['moduleName']
-        if 'profileName' in kwargs:
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
             profile_name = kwargs['profileName']
-        if 'streamName' in kwargs:
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
 
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
@@ -2127,11 +2299,15 @@ class GetSoftwareSourcesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2231,62 +2407,106 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             arch_type: str,
-             associated_managed_instances: Sequence['outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult'],
-             checksum_type: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             gpg_key_fingerprint: str,
-             gpg_key_id: str,
-             gpg_key_url: str,
-             id: str,
-             maintainer_email: str,
-             maintainer_name: str,
-             maintainer_phone: str,
-             packages: int,
-             parent_id: str,
-             parent_name: str,
-             repo_type: str,
-             state: str,
-             status: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             arch_type: Optional[str] = None,
+             associated_managed_instances: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult']] = None,
+             checksum_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gpg_key_fingerprint: Optional[str] = None,
+             gpg_key_id: Optional[str] = None,
+             gpg_key_url: Optional[str] = None,
+             id: Optional[str] = None,
+             maintainer_email: Optional[str] = None,
+             maintainer_name: Optional[str] = None,
+             maintainer_phone: Optional[str] = None,
+             packages: Optional[int] = None,
+             parent_id: Optional[str] = None,
+             parent_name: Optional[str] = None,
+             repo_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'archType' in kwargs:
+        if arch_type is None and 'archType' in kwargs:
             arch_type = kwargs['archType']
-        if 'associatedManagedInstances' in kwargs:
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if associated_managed_instances is None and 'associatedManagedInstances' in kwargs:
             associated_managed_instances = kwargs['associatedManagedInstances']
-        if 'checksumType' in kwargs:
+        if associated_managed_instances is None:
+            raise TypeError("Missing 'associated_managed_instances' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
             checksum_type = kwargs['checksumType']
-        if 'compartmentId' in kwargs:
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gpgKeyFingerprint' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gpg_key_fingerprint is None and 'gpgKeyFingerprint' in kwargs:
             gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
-        if 'gpgKeyId' in kwargs:
+        if gpg_key_fingerprint is None:
+            raise TypeError("Missing 'gpg_key_fingerprint' argument")
+        if gpg_key_id is None and 'gpgKeyId' in kwargs:
             gpg_key_id = kwargs['gpgKeyId']
-        if 'gpgKeyUrl' in kwargs:
+        if gpg_key_id is None:
+            raise TypeError("Missing 'gpg_key_id' argument")
+        if gpg_key_url is None and 'gpgKeyUrl' in kwargs:
             gpg_key_url = kwargs['gpgKeyUrl']
-        if 'maintainerEmail' in kwargs:
+        if gpg_key_url is None:
+            raise TypeError("Missing 'gpg_key_url' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if maintainer_email is None and 'maintainerEmail' in kwargs:
             maintainer_email = kwargs['maintainerEmail']
-        if 'maintainerName' in kwargs:
+        if maintainer_email is None:
+            raise TypeError("Missing 'maintainer_email' argument")
+        if maintainer_name is None and 'maintainerName' in kwargs:
             maintainer_name = kwargs['maintainerName']
-        if 'maintainerPhone' in kwargs:
+        if maintainer_name is None:
+            raise TypeError("Missing 'maintainer_name' argument")
+        if maintainer_phone is None and 'maintainerPhone' in kwargs:
             maintainer_phone = kwargs['maintainerPhone']
-        if 'parentId' in kwargs:
+        if maintainer_phone is None:
+            raise TypeError("Missing 'maintainer_phone' argument")
+        if packages is None:
+            raise TypeError("Missing 'packages' argument")
+        if parent_id is None and 'parentId' in kwargs:
             parent_id = kwargs['parentId']
-        if 'parentName' in kwargs:
+        if parent_id is None:
+            raise TypeError("Missing 'parent_id' argument")
+        if parent_name is None and 'parentName' in kwargs:
             parent_name = kwargs['parentName']
-        if 'repoType' in kwargs:
+        if parent_name is None:
+            raise TypeError("Missing 'parent_name' argument")
+        if repo_type is None and 'repoType' in kwargs:
             repo_type = kwargs['repoType']
+        if repo_type is None:
+            raise TypeError("Missing 'repo_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("arch_type", arch_type)
         _setter("associated_managed_instances", associated_managed_instances)
@@ -2505,12 +2725,16 @@ class GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("display_name", display_name)
         _setter("id", id)

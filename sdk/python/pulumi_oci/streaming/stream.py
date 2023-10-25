@@ -48,24 +48,26 @@ class StreamArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             partitions: pulumi.Input[int],
+             partitions: Optional[pulumi.Input[int]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              retention_in_hours: Optional[pulumi.Input[int]] = None,
              stream_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if partitions is None:
+            raise TypeError("Missing 'partitions' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'retentionInHours' in kwargs:
+        if retention_in_hours is None and 'retentionInHours' in kwargs:
             retention_in_hours = kwargs['retentionInHours']
-        if 'streamPoolId' in kwargs:
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
             stream_pool_id = kwargs['streamPoolId']
 
         _setter("partitions", partitions)
@@ -231,23 +233,23 @@ class _StreamState:
              state: Optional[pulumi.Input[str]] = None,
              stream_pool_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleStateDetails' in kwargs:
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'messagesEndpoint' in kwargs:
+        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
             messages_endpoint = kwargs['messagesEndpoint']
-        if 'retentionInHours' in kwargs:
+        if retention_in_hours is None and 'retentionInHours' in kwargs:
             retention_in_hours = kwargs['retentionInHours']
-        if 'streamPoolId' in kwargs:
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
             stream_pool_id = kwargs['streamPoolId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

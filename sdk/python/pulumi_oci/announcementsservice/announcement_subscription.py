@@ -56,32 +56,38 @@ class AnnouncementSubscriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             ons_topic_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             ons_topic_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              filter_groups: Optional[pulumi.Input['AnnouncementSubscriptionFilterGroupsArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              preferred_language: Optional[pulumi.Input[str]] = None,
              preferred_time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'onsTopicId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if ons_topic_id is None and 'onsTopicId' in kwargs:
             ons_topic_id = kwargs['onsTopicId']
-        if 'definedTags' in kwargs:
+        if ons_topic_id is None:
+            raise TypeError("Missing 'ons_topic_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'filterGroups' in kwargs:
+        if filter_groups is None and 'filterGroups' in kwargs:
             filter_groups = kwargs['filterGroups']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'preferredTimeZone' in kwargs:
+        if preferred_time_zone is None and 'preferredTimeZone' in kwargs:
             preferred_time_zone = kwargs['preferredTimeZone']
 
         _setter("compartment_id", compartment_id)
@@ -285,31 +291,31 @@ class _AnnouncementSubscriptionState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterGroups' in kwargs:
+        if filter_groups is None and 'filterGroups' in kwargs:
             filter_groups = kwargs['filterGroups']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'onsTopicId' in kwargs:
+        if ons_topic_id is None and 'onsTopicId' in kwargs:
             ons_topic_id = kwargs['onsTopicId']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'preferredTimeZone' in kwargs:
+        if preferred_time_zone is None and 'preferredTimeZone' in kwargs:
             preferred_time_zone = kwargs['preferredTimeZone']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -680,11 +686,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if filter_groups is not None and not isinstance(filter_groups, AnnouncementSubscriptionFilterGroupsArgs):
-                filter_groups = filter_groups or {}
-                def _setter(key, value):
-                    filter_groups[key] = value
-                AnnouncementSubscriptionFilterGroupsArgs._configure(_setter, **filter_groups)
+            filter_groups = _utilities.configure(filter_groups, AnnouncementSubscriptionFilterGroupsArgs, True)
             __props__.__dict__["filter_groups"] = filter_groups
             __props__.__dict__["freeform_tags"] = freeform_tags
             if ons_topic_id is None and not opts.urn:

@@ -44,12 +44,12 @@ import (
 //					},
 //				},
 //				ConfigItemsApplicableContexts: pulumi.Any(_var.Opsi_configuration_config_items_applicable_context),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Opsi_configuration_description),
 //				DisplayName: pulumi.Any(_var.Opsi_configuration_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				OpsiConfigFields: pulumi.Any(_var.Opsi_configuration_opsi_config_field),

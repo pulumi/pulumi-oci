@@ -53,31 +53,43 @@ class AgentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_type: pulumi.Input[str],
-             agent_version: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             environment_id: pulumi.Input[str],
-             os_version: pulumi.Input[str],
+             agent_type: Optional[pulumi.Input[str]] = None,
+             agent_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             environment_id: Optional[pulumi.Input[str]] = None,
+             os_version: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentType' in kwargs:
+        if agent_type is None and 'agentType' in kwargs:
             agent_type = kwargs['agentType']
-        if 'agentVersion' in kwargs:
+        if agent_type is None:
+            raise TypeError("Missing 'agent_type' argument")
+        if agent_version is None and 'agentVersion' in kwargs:
             agent_version = kwargs['agentVersion']
-        if 'compartmentId' in kwargs:
+        if agent_version is None:
+            raise TypeError("Missing 'agent_version' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'environmentId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if environment_id is None and 'environmentId' in kwargs:
             environment_id = kwargs['environmentId']
-        if 'osVersion' in kwargs:
+        if environment_id is None:
+            raise TypeError("Missing 'environment_id' argument")
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'definedTags' in kwargs:
+        if os_version is None:
+            raise TypeError("Missing 'os_version' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("agent_type", agent_type)
@@ -280,41 +292,41 @@ class _AgentState:
              time_expire_agent_key_in_ms: Optional[pulumi.Input[str]] = None,
              time_last_sync_received: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentPubKey' in kwargs:
+        if agent_pub_key is None and 'agentPubKey' in kwargs:
             agent_pub_key = kwargs['agentPubKey']
-        if 'agentType' in kwargs:
+        if agent_type is None and 'agentType' in kwargs:
             agent_type = kwargs['agentType']
-        if 'agentVersion' in kwargs:
+        if agent_version is None and 'agentVersion' in kwargs:
             agent_version = kwargs['agentVersion']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'environmentId' in kwargs:
+        if environment_id is None and 'environmentId' in kwargs:
             environment_id = kwargs['environmentId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'heartBeatStatus' in kwargs:
+        if heart_beat_status is None and 'heartBeatStatus' in kwargs:
             heart_beat_status = kwargs['heartBeatStatus']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'osVersion' in kwargs:
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'pluginLists' in kwargs:
+        if plugin_lists is None and 'pluginLists' in kwargs:
             plugin_lists = kwargs['pluginLists']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpireAgentKeyInMs' in kwargs:
+        if time_expire_agent_key_in_ms is None and 'timeExpireAgentKeyInMs' in kwargs:
             time_expire_agent_key_in_ms = kwargs['timeExpireAgentKeyInMs']
-        if 'timeLastSyncReceived' in kwargs:
+        if time_last_sync_received is None and 'timeLastSyncReceived' in kwargs:
             time_last_sync_received = kwargs['timeLastSyncReceived']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if agent_pub_key is not None:

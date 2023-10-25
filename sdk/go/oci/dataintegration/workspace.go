@@ -34,7 +34,7 @@ import (
 //			_, err := DataIntegration.NewWorkspace(ctx, "testWorkspace", &DataIntegration.WorkspaceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Workspace_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description:           pulumi.Any(_var.Workspace_description),
@@ -43,7 +43,7 @@ import (
 //				EndpointCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
 //				EndpointId:            pulumi.Any(oci_dataintegration_endpoint.Test_endpoint.Id),
 //				EndpointName:          pulumi.Any(_var.Workspace_endpoint_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsPrivateNetworkEnabled: pulumi.Any(_var.Workspace_is_private_network_enabled),

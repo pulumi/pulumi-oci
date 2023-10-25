@@ -37,10 +37,10 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				CpuAllocated:  pulumi.Any(_var.Operations_insights_warehouse_cpu_allocated),
 //				DisplayName:   pulumi.Any(_var.Operations_insights_warehouse_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				StorageAllocatedInGbs: pulumi.Any(_var.Operations_insights_warehouse_storage_allocated_in_gbs),

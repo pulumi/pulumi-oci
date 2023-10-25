@@ -58,38 +58,50 @@ class ProtectedDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             db_unique_name: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             password: pulumi.Input[str],
-             protection_policy_id: pulumi.Input[str],
-             recovery_service_subnets: pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             protection_policy_id: Optional[pulumi.Input[str]] = None,
+             recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
              database_id: Optional[pulumi.Input[str]] = None,
              database_size: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbUniqueName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'displayName' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'protectionPolicyId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if protection_policy_id is None and 'protectionPolicyId' in kwargs:
             protection_policy_id = kwargs['protectionPolicyId']
-        if 'recoveryServiceSubnets' in kwargs:
+        if protection_policy_id is None:
+            raise TypeError("Missing 'protection_policy_id' argument")
+        if recovery_service_subnets is None and 'recoveryServiceSubnets' in kwargs:
             recovery_service_subnets = kwargs['recoveryServiceSubnets']
-        if 'databaseId' in kwargs:
+        if recovery_service_subnets is None:
+            raise TypeError("Missing 'recovery_service_subnets' argument")
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseSize' in kwargs:
+        if database_size is None and 'databaseSize' in kwargs:
             database_size = kwargs['databaseSize']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRedoLogsShipped' in kwargs:
+        if is_redo_logs_shipped is None and 'isRedoLogsShipped' in kwargs:
             is_redo_logs_shipped = kwargs['isRedoLogsShipped']
 
         _setter("compartment_id", compartment_id)
@@ -341,41 +353,41 @@ class _ProtectedDatabaseState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vpc_user_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseSize' in kwargs:
+        if database_size is None and 'databaseSize' in kwargs:
             database_size = kwargs['databaseSize']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'healthDetails' in kwargs:
+        if health_details is None and 'healthDetails' in kwargs:
             health_details = kwargs['healthDetails']
-        if 'isReadOnlyResource' in kwargs:
+        if is_read_only_resource is None and 'isReadOnlyResource' in kwargs:
             is_read_only_resource = kwargs['isReadOnlyResource']
-        if 'isRedoLogsShipped' in kwargs:
+        if is_redo_logs_shipped is None and 'isRedoLogsShipped' in kwargs:
             is_redo_logs_shipped = kwargs['isRedoLogsShipped']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'protectionPolicyId' in kwargs:
+        if protection_policy_id is None and 'protectionPolicyId' in kwargs:
             protection_policy_id = kwargs['protectionPolicyId']
-        if 'recoveryServiceSubnets' in kwargs:
+        if recovery_service_subnets is None and 'recoveryServiceSubnets' in kwargs:
             recovery_service_subnets = kwargs['recoveryServiceSubnets']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vpcUserName' in kwargs:
+        if vpc_user_name is None and 'vpcUserName' in kwargs:
             vpc_user_name = kwargs['vpcUserName']
 
         if compartment_id is not None:

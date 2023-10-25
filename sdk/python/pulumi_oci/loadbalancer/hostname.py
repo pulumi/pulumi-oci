@@ -36,13 +36,17 @@ class HostnameArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: pulumi.Input[str],
-             load_balancer_id: pulumi.Input[str],
+             hostname: Optional[pulumi.Input[str]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
 
         _setter("hostname", hostname)
         _setter("load_balancer_id", load_balancer_id)
@@ -121,9 +125,9 @@ class _HostnameState:
              load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if hostname is not None:

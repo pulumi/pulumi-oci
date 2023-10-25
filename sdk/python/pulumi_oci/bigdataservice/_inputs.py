@@ -75,12 +75,16 @@ class AutoScalingConfigurationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: pulumi.Input[str],
-             rules: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             policy_type: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
 
         _setter("policy_type", policy_type)
         _setter("rules", rules)
@@ -152,7 +156,7 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: pulumi.Input[str],
+             policy_type: Optional[pulumi.Input[str]] = None,
              action_type: Optional[pulumi.Input[str]] = None,
              scale_down_config: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs']] = None,
              scale_in_config: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgs']] = None,
@@ -161,23 +165,25 @@ class AutoScalingConfigurationPolicyDetailsArgs:
              schedule_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]]] = None,
              timezone: Optional[pulumi.Input[str]] = None,
              trigger_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'actionType' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'scaleDownConfig' in kwargs:
+        if scale_down_config is None and 'scaleDownConfig' in kwargs:
             scale_down_config = kwargs['scaleDownConfig']
-        if 'scaleInConfig' in kwargs:
+        if scale_in_config is None and 'scaleInConfig' in kwargs:
             scale_in_config = kwargs['scaleInConfig']
-        if 'scaleOutConfig' in kwargs:
+        if scale_out_config is None and 'scaleOutConfig' in kwargs:
             scale_out_config = kwargs['scaleOutConfig']
-        if 'scaleUpConfig' in kwargs:
+        if scale_up_config is None and 'scaleUpConfig' in kwargs:
             scale_up_config = kwargs['scaleUpConfig']
-        if 'scheduleDetails' in kwargs:
+        if schedule_details is None and 'scheduleDetails' in kwargs:
             schedule_details = kwargs['scheduleDetails']
-        if 'triggerType' in kwargs:
+        if trigger_type is None and 'triggerType' in kwargs:
             trigger_type = kwargs['triggerType']
 
         _setter("policy_type", policy_type)
@@ -342,15 +348,15 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
              min_memory_per_node: Optional[pulumi.Input[int]] = None,
              min_ocpus_per_node: Optional[pulumi.Input[int]] = None,
              ocpu_step_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryStepSize' in kwargs:
+        if memory_step_size is None and 'memoryStepSize' in kwargs:
             memory_step_size = kwargs['memoryStepSize']
-        if 'minMemoryPerNode' in kwargs:
+        if min_memory_per_node is None and 'minMemoryPerNode' in kwargs:
             min_memory_per_node = kwargs['minMemoryPerNode']
-        if 'minOcpusPerNode' in kwargs:
+        if min_ocpus_per_node is None and 'minOcpusPerNode' in kwargs:
             min_ocpus_per_node = kwargs['minOcpusPerNode']
-        if 'ocpuStepSize' in kwargs:
+        if ocpu_step_size is None and 'ocpuStepSize' in kwargs:
             ocpu_step_size = kwargs['ocpuStepSize']
 
         if memory_step_size is not None:
@@ -444,9 +450,9 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[pulumi.Input[str]] = None,
              threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         if metric_type is not None:
@@ -502,9 +508,9 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
              duration_in_minutes: Optional[pulumi.Input[int]] = None,
              operator: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMinutes' in kwargs:
+        if duration_in_minutes is None and 'durationInMinutes' in kwargs:
             duration_in_minutes = kwargs['durationInMinutes']
 
         if duration_in_minutes is not None:
@@ -574,11 +580,11 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
              metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs']] = None,
              min_node_count: Optional[pulumi.Input[int]] = None,
              step_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'minNodeCount' in kwargs:
+        if min_node_count is None and 'minNodeCount' in kwargs:
             min_node_count = kwargs['minNodeCount']
-        if 'stepSize' in kwargs:
+        if step_size is None and 'stepSize' in kwargs:
             step_size = kwargs['stepSize']
 
         if metric is not None:
@@ -644,9 +650,9 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[pulumi.Input[str]] = None,
              threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         if metric_type is not None:
@@ -702,9 +708,9 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
              duration_in_minutes: Optional[pulumi.Input[int]] = None,
              operator: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMinutes' in kwargs:
+        if duration_in_minutes is None and 'durationInMinutes' in kwargs:
             duration_in_minutes = kwargs['durationInMinutes']
 
         if duration_in_minutes is not None:
@@ -774,11 +780,11 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
              max_node_count: Optional[pulumi.Input[int]] = None,
              metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs']] = None,
              step_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxNodeCount' in kwargs:
+        if max_node_count is None and 'maxNodeCount' in kwargs:
             max_node_count = kwargs['maxNodeCount']
-        if 'stepSize' in kwargs:
+        if step_size is None and 'stepSize' in kwargs:
             step_size = kwargs['stepSize']
 
         if max_node_count is not None:
@@ -844,9 +850,9 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[pulumi.Input[str]] = None,
              threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         if metric_type is not None:
@@ -902,9 +908,9 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
              duration_in_minutes: Optional[pulumi.Input[int]] = None,
              operator: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMinutes' in kwargs:
+        if duration_in_minutes is None and 'durationInMinutes' in kwargs:
             duration_in_minutes = kwargs['durationInMinutes']
 
         if duration_in_minutes is not None:
@@ -982,15 +988,15 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
              memory_step_size: Optional[pulumi.Input[int]] = None,
              metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs']] = None,
              ocpu_step_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxMemoryPerNode' in kwargs:
+        if max_memory_per_node is None and 'maxMemoryPerNode' in kwargs:
             max_memory_per_node = kwargs['maxMemoryPerNode']
-        if 'maxOcpusPerNode' in kwargs:
+        if max_ocpus_per_node is None and 'maxOcpusPerNode' in kwargs:
             max_ocpus_per_node = kwargs['maxOcpusPerNode']
-        if 'memoryStepSize' in kwargs:
+        if memory_step_size is None and 'memoryStepSize' in kwargs:
             memory_step_size = kwargs['memoryStepSize']
-        if 'ocpuStepSize' in kwargs:
+        if ocpu_step_size is None and 'ocpuStepSize' in kwargs:
             ocpu_step_size = kwargs['ocpuStepSize']
 
         if max_memory_per_node is not None:
@@ -1084,9 +1090,9 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[pulumi.Input[str]] = None,
              threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         if metric_type is not None:
@@ -1142,9 +1148,9 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
              duration_in_minutes: Optional[pulumi.Input[int]] = None,
              operator: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMinutes' in kwargs:
+        if duration_in_minutes is None and 'durationInMinutes' in kwargs:
             duration_in_minutes = kwargs['durationInMinutes']
 
         if duration_in_minutes is not None:
@@ -1214,13 +1220,13 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
              schedule_type: Optional[pulumi.Input[str]] = None,
              time_and_horizontal_scaling_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]]] = None,
              time_and_vertical_scaling_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scheduleType' in kwargs:
+        if schedule_type is None and 'scheduleType' in kwargs:
             schedule_type = kwargs['scheduleType']
-        if 'timeAndHorizontalScalingConfigs' in kwargs:
+        if time_and_horizontal_scaling_configs is None and 'timeAndHorizontalScalingConfigs' in kwargs:
             time_and_horizontal_scaling_configs = kwargs['timeAndHorizontalScalingConfigs']
-        if 'timeAndVerticalScalingConfigs' in kwargs:
+        if time_and_vertical_scaling_configs is None and 'timeAndVerticalScalingConfigs' in kwargs:
             time_and_vertical_scaling_configs = kwargs['timeAndVerticalScalingConfigs']
 
         if schedule_type is not None:
@@ -1286,11 +1292,11 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalin
              _setter: Callable[[Any, Any], None],
              target_node_count: Optional[pulumi.Input[int]] = None,
              time_recurrence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetNodeCount' in kwargs:
+        if target_node_count is None and 'targetNodeCount' in kwargs:
             target_node_count = kwargs['targetNodeCount']
-        if 'timeRecurrence' in kwargs:
+        if time_recurrence is None and 'timeRecurrence' in kwargs:
             time_recurrence = kwargs['timeRecurrence']
 
         if target_node_count is not None:
@@ -1350,15 +1356,15 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
              target_ocpus_per_node: Optional[pulumi.Input[int]] = None,
              target_shape: Optional[pulumi.Input[str]] = None,
              time_recurrence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetMemoryPerNode' in kwargs:
+        if target_memory_per_node is None and 'targetMemoryPerNode' in kwargs:
             target_memory_per_node = kwargs['targetMemoryPerNode']
-        if 'targetOcpusPerNode' in kwargs:
+        if target_ocpus_per_node is None and 'targetOcpusPerNode' in kwargs:
             target_ocpus_per_node = kwargs['targetOcpusPerNode']
-        if 'targetShape' in kwargs:
+        if target_shape is None and 'targetShape' in kwargs:
             target_shape = kwargs['targetShape']
-        if 'timeRecurrence' in kwargs:
+        if time_recurrence is None and 'timeRecurrence' in kwargs:
             time_recurrence = kwargs['timeRecurrence']
 
         if target_memory_per_node is not None:
@@ -1436,10 +1442,14 @@ class AutoScalingConfigurationPolicyRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: pulumi.Input[str],
-             metric: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[pulumi.Input[str]] = None,
+             metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if metric is None:
+            raise TypeError("Missing 'metric' argument")
 
         _setter("action", action)
         _setter("metric", metric)
@@ -1486,12 +1496,16 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metric_type: pulumi.Input[str],
-             threshold: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metric_type: Optional[pulumi.Input[str]] = None,
+             threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
+        if metric_type is None:
+            raise TypeError("Missing 'metric_type' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("metric_type", metric_type)
         _setter("threshold", threshold)
@@ -1541,13 +1555,19 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             duration_in_minutes: pulumi.Input[int],
-             operator: pulumi.Input[str],
-             value: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             duration_in_minutes: Optional[pulumi.Input[int]] = None,
+             operator: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'durationInMinutes' in kwargs:
+        if duration_in_minutes is None and 'durationInMinutes' in kwargs:
             duration_in_minutes = kwargs['durationInMinutes']
+        if duration_in_minutes is None:
+            raise TypeError("Missing 'duration_in_minutes' argument")
+        if operator is None:
+            raise TypeError("Missing 'operator' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("duration_in_minutes", duration_in_minutes)
         _setter("operator", operator)
@@ -1627,7 +1647,7 @@ class BdsInstanceCloudSqlDetailArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             shape: pulumi.Input[str],
+             shape: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              ip_address: Optional[pulumi.Input[str]] = None,
              is_kerberos_mapped_to_database_users: Optional[pulumi.Input[bool]] = None,
@@ -1635,17 +1655,19 @@ class BdsInstanceCloudSqlDetailArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isKerberosMappedToDatabaseUsers' in kwargs:
+        if is_kerberos_mapped_to_database_users is None and 'isKerberosMappedToDatabaseUsers' in kwargs:
             is_kerberos_mapped_to_database_users = kwargs['isKerberosMappedToDatabaseUsers']
-        if 'kerberosDetails' in kwargs:
+        if kerberos_details is None and 'kerberosDetails' in kwargs:
             kerberos_details = kwargs['kerberosDetails']
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         _setter("shape", shape)
@@ -1782,11 +1804,11 @@ class BdsInstanceCloudSqlDetailKerberosDetailArgs:
              _setter: Callable[[Any, Any], None],
              keytab_file: Optional[pulumi.Input[str]] = None,
              principal_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keytabFile' in kwargs:
+        if keytab_file is None and 'keytabFile' in kwargs:
             keytab_file = kwargs['keytabFile']
-        if 'principalName' in kwargs:
+        if principal_name is None and 'principalName' in kwargs:
             principal_name = kwargs['principalName']
 
         if keytab_file is not None:
@@ -1890,37 +1912,37 @@ class BdsInstanceClusterDetailArgs:
              os_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_refreshed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ambariUrl' in kwargs:
+        if ambari_url is None and 'ambariUrl' in kwargs:
             ambari_url = kwargs['ambariUrl']
-        if 'bdCellVersion' in kwargs:
+        if bd_cell_version is None and 'bdCellVersion' in kwargs:
             bd_cell_version = kwargs['bdCellVersion']
-        if 'bdaVersion' in kwargs:
+        if bda_version is None and 'bdaVersion' in kwargs:
             bda_version = kwargs['bdaVersion']
-        if 'bdmVersion' in kwargs:
+        if bdm_version is None and 'bdmVersion' in kwargs:
             bdm_version = kwargs['bdmVersion']
-        if 'bdsVersion' in kwargs:
+        if bds_version is None and 'bdsVersion' in kwargs:
             bds_version = kwargs['bdsVersion']
-        if 'bigDataManagerUrl' in kwargs:
+        if big_data_manager_url is None and 'bigDataManagerUrl' in kwargs:
             big_data_manager_url = kwargs['bigDataManagerUrl']
-        if 'clouderaManagerUrl' in kwargs:
+        if cloudera_manager_url is None and 'clouderaManagerUrl' in kwargs:
             cloudera_manager_url = kwargs['clouderaManagerUrl']
-        if 'csqlCellVersion' in kwargs:
+        if csql_cell_version is None and 'csqlCellVersion' in kwargs:
             csql_cell_version = kwargs['csqlCellVersion']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'hueServerUrl' in kwargs:
+        if hue_server_url is None and 'hueServerUrl' in kwargs:
             hue_server_url = kwargs['hueServerUrl']
-        if 'jupyterHubUrl' in kwargs:
+        if jupyter_hub_url is None and 'jupyterHubUrl' in kwargs:
             jupyter_hub_url = kwargs['jupyterHubUrl']
-        if 'odhVersion' in kwargs:
+        if odh_version is None and 'odhVersion' in kwargs:
             odh_version = kwargs['odhVersion']
-        if 'osVersion' in kwargs:
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeRefreshed' in kwargs:
+        if time_refreshed is None and 'timeRefreshed' in kwargs:
             time_refreshed = kwargs['timeRefreshed']
 
         if ambari_url is not None:
@@ -2161,20 +2183,26 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'subnetId' in kwargs:
+        if number_of_nodes is None:
+            raise TypeError("Missing 'number_of_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_nodes", number_of_nodes)
@@ -2271,9 +2299,9 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -2348,20 +2376,26 @@ class BdsInstanceEdgeNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'subnetId' in kwargs:
+        if number_of_nodes is None:
+            raise TypeError("Missing 'number_of_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_nodes", number_of_nodes)
@@ -2458,9 +2492,9 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -2534,20 +2568,26 @@ class BdsInstanceKafkaBrokerNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_kafka_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_kafka_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfKafkaNodes' in kwargs:
+        if number_of_kafka_nodes is None and 'numberOfKafkaNodes' in kwargs:
             number_of_kafka_nodes = kwargs['numberOfKafkaNodes']
-        if 'subnetId' in kwargs:
+        if number_of_kafka_nodes is None:
+            raise TypeError("Missing 'number_of_kafka_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_kafka_nodes", number_of_kafka_nodes)
@@ -2641,9 +2681,9 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -2718,20 +2758,26 @@ class BdsInstanceMasterNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceMasterNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'subnetId' in kwargs:
+        if number_of_nodes is None:
+            raise TypeError("Missing 'number_of_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_nodes", number_of_nodes)
@@ -2828,9 +2874,9 @@ class BdsInstanceMasterNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -2898,11 +2944,11 @@ class BdsInstanceNetworkConfigArgs:
              _setter: Callable[[Any, Any], None],
              cidr_block: Optional[pulumi.Input[str]] = None,
              is_nat_gateway_required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cidrBlock' in kwargs:
+        if cidr_block is None and 'cidrBlock' in kwargs:
             cidr_block = kwargs['cidrBlock']
-        if 'isNatGatewayRequired' in kwargs:
+        if is_nat_gateway_required is None and 'isNatGatewayRequired' in kwargs:
             is_nat_gateway_required = kwargs['isNatGatewayRequired']
 
         if cidr_block is not None:
@@ -3016,33 +3062,33 @@ class BdsInstanceNodeArgs:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachedBlockVolumes' in kwargs:
+        if attached_block_volumes is None and 'attachedBlockVolumes' in kwargs:
             attached_block_volumes = kwargs['attachedBlockVolumes']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
-        if 'nodeType' in kwargs:
+        if node_type is None and 'nodeType' in kwargs:
             node_type = kwargs['nodeType']
-        if 'sshFingerprint' in kwargs:
+        if ssh_fingerprint is None and 'sshFingerprint' in kwargs:
             ssh_fingerprint = kwargs['sshFingerprint']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeMaintenanceRebootDue' in kwargs:
+        if time_maintenance_reboot_due is None and 'timeMaintenanceRebootDue' in kwargs:
             time_maintenance_reboot_due = kwargs['timeMaintenanceRebootDue']
 
         if attached_block_volumes is not None:
@@ -3306,11 +3352,11 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
              _setter: Callable[[Any, Any], None],
              volume_attachment_id: Optional[pulumi.Input[str]] = None,
              volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'volumeAttachmentId' in kwargs:
+        if volume_attachment_id is None and 'volumeAttachmentId' in kwargs:
             volume_attachment_id = kwargs['volumeAttachmentId']
-        if 'volumeSizeInGbs' in kwargs:
+        if volume_size_in_gbs is None and 'volumeSizeInGbs' in kwargs:
             volume_size_in_gbs = kwargs['volumeSizeInGbs']
 
         if volume_attachment_id is not None:
@@ -3369,20 +3415,26 @@ class BdsInstanceUtilNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceUtilNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'subnetId' in kwargs:
+        if number_of_nodes is None:
+            raise TypeError("Missing 'number_of_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_nodes", number_of_nodes)
@@ -3479,9 +3531,9 @@ class BdsInstanceUtilNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -3556,20 +3608,26 @@ class BdsInstanceWorkerNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             number_of_nodes: pulumi.Input[int],
-             shape: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'numberOfNodes' in kwargs:
+        if number_of_nodes is None and 'numberOfNodes' in kwargs:
             number_of_nodes = kwargs['numberOfNodes']
-        if 'subnetId' in kwargs:
+        if number_of_nodes is None:
+            raise TypeError("Missing 'number_of_nodes' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'blockVolumeSizeInGbs' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_volume_size_in_gbs is None and 'blockVolumeSizeInGbs' in kwargs:
             block_volume_size_in_gbs = kwargs['blockVolumeSizeInGbs']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
 
         _setter("number_of_nodes", number_of_nodes)
@@ -3666,9 +3724,9 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[int]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -3732,11 +3790,15 @@ class GetAutoScalingConfigurationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3786,11 +3848,15 @@ class GetBdsInstanceApiKeysFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3840,11 +3906,15 @@ class GetBdsInstanceGetOsPatchFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3894,11 +3964,15 @@ class GetBdsInstanceListOsPatchesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3948,11 +4022,15 @@ class GetBdsInstanceMetastoreConfigsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4002,11 +4080,15 @@ class GetBdsInstancePatchHistoriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4056,11 +4138,15 @@ class GetBdsInstancePatchesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4110,11 +4196,15 @@ class GetBdsInstancesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

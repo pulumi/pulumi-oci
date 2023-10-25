@@ -62,8 +62,8 @@ class DeploymentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_pipeline_id: pulumi.Input[str],
-             deployment_type: pulumi.Input[str],
+             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
              deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -73,29 +73,33 @@ class DeploymentArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              previous_deployment_id: Optional[pulumi.Input[str]] = None,
              trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployPipelineId' in kwargs:
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deploymentType' in kwargs:
+        if deploy_pipeline_id is None:
+            raise TypeError("Missing 'deploy_pipeline_id' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'definedTags' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactOverrideArguments' in kwargs:
+        if deploy_artifact_override_arguments is None and 'deployArtifactOverrideArguments' in kwargs:
             deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'deployStageOverrideArguments' in kwargs:
+        if deploy_stage_override_arguments is None and 'deployStageOverrideArguments' in kwargs:
             deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
-        if 'deploymentArguments' in kwargs:
+        if deployment_arguments is None and 'deploymentArguments' in kwargs:
             deployment_arguments = kwargs['deploymentArguments']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'previousDeploymentId' in kwargs:
+        if previous_deployment_id is None and 'previousDeploymentId' in kwargs:
             previous_deployment_id = kwargs['previousDeploymentId']
-        if 'triggerNewDevopsDeployment' in kwargs:
+        if trigger_new_devops_deployment is None and 'triggerNewDevopsDeployment' in kwargs:
             trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
 
         _setter("deploy_pipeline_id", deploy_pipeline_id)
@@ -356,47 +360,47 @@ class _DeploymentState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactOverrideArguments' in kwargs:
+        if deploy_artifact_override_arguments is None and 'deployArtifactOverrideArguments' in kwargs:
             deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
-        if 'deployPipelineArtifacts' in kwargs:
+        if deploy_pipeline_artifacts is None and 'deployPipelineArtifacts' in kwargs:
             deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
-        if 'deployPipelineEnvironments' in kwargs:
+        if deploy_pipeline_environments is None and 'deployPipelineEnvironments' in kwargs:
             deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
-        if 'deployPipelineId' in kwargs:
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'deployStageOverrideArguments' in kwargs:
+        if deploy_stage_override_arguments is None and 'deployStageOverrideArguments' in kwargs:
             deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
-        if 'deploymentArguments' in kwargs:
+        if deployment_arguments is None and 'deploymentArguments' in kwargs:
             deployment_arguments = kwargs['deploymentArguments']
-        if 'deploymentExecutionProgresses' in kwargs:
+        if deployment_execution_progresses is None and 'deploymentExecutionProgresses' in kwargs:
             deployment_execution_progresses = kwargs['deploymentExecutionProgresses']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'previousDeploymentId' in kwargs:
+        if previous_deployment_id is None and 'previousDeploymentId' in kwargs:
             previous_deployment_id = kwargs['previousDeploymentId']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'triggerNewDevopsDeployment' in kwargs:
+        if trigger_new_devops_deployment is None and 'triggerNewDevopsDeployment' in kwargs:
             trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
 
         if compartment_id is not None:
@@ -806,27 +810,15 @@ class Deployment(pulumi.CustomResource):
             __props__ = DeploymentArgs.__new__(DeploymentArgs)
 
             __props__.__dict__["defined_tags"] = defined_tags
-            if deploy_artifact_override_arguments is not None and not isinstance(deploy_artifact_override_arguments, DeploymentDeployArtifactOverrideArgumentsArgs):
-                deploy_artifact_override_arguments = deploy_artifact_override_arguments or {}
-                def _setter(key, value):
-                    deploy_artifact_override_arguments[key] = value
-                DeploymentDeployArtifactOverrideArgumentsArgs._configure(_setter, **deploy_artifact_override_arguments)
+            deploy_artifact_override_arguments = _utilities.configure(deploy_artifact_override_arguments, DeploymentDeployArtifactOverrideArgumentsArgs, True)
             __props__.__dict__["deploy_artifact_override_arguments"] = deploy_artifact_override_arguments
             if deploy_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_pipeline_id'")
             __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
             __props__.__dict__["deploy_stage_id"] = deploy_stage_id
-            if deploy_stage_override_arguments is not None and not isinstance(deploy_stage_override_arguments, DeploymentDeployStageOverrideArgumentsArgs):
-                deploy_stage_override_arguments = deploy_stage_override_arguments or {}
-                def _setter(key, value):
-                    deploy_stage_override_arguments[key] = value
-                DeploymentDeployStageOverrideArgumentsArgs._configure(_setter, **deploy_stage_override_arguments)
+            deploy_stage_override_arguments = _utilities.configure(deploy_stage_override_arguments, DeploymentDeployStageOverrideArgumentsArgs, True)
             __props__.__dict__["deploy_stage_override_arguments"] = deploy_stage_override_arguments
-            if deployment_arguments is not None and not isinstance(deployment_arguments, DeploymentDeploymentArgumentsArgs):
-                deployment_arguments = deployment_arguments or {}
-                def _setter(key, value):
-                    deployment_arguments[key] = value
-                DeploymentDeploymentArgumentsArgs._configure(_setter, **deployment_arguments)
+            deployment_arguments = _utilities.configure(deployment_arguments, DeploymentDeploymentArgumentsArgs, True)
             __props__.__dict__["deployment_arguments"] = deployment_arguments
             if deployment_type is None and not opts.urn:
                 raise TypeError("Missing required property 'deployment_type'")

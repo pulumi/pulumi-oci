@@ -53,25 +53,29 @@ class NetworkSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             description: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              public_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'publicSourceLists' in kwargs:
+        if public_source_lists is None and 'publicSourceLists' in kwargs:
             public_source_lists = kwargs['publicSourceLists']
-        if 'virtualSourceLists' in kwargs:
+        if virtual_source_lists is None and 'virtualSourceLists' in kwargs:
             virtual_source_lists = kwargs['virtualSourceLists']
 
         _setter("compartment_id", compartment_id)
@@ -250,21 +254,21 @@ class _NetworkSourceState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inactiveState' in kwargs:
+        if inactive_state is None and 'inactiveState' in kwargs:
             inactive_state = kwargs['inactiveState']
-        if 'publicSourceLists' in kwargs:
+        if public_source_lists is None and 'publicSourceLists' in kwargs:
             public_source_lists = kwargs['publicSourceLists']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'virtualSourceLists' in kwargs:
+        if virtual_source_lists is None and 'virtualSourceLists' in kwargs:
             virtual_source_lists = kwargs['virtualSourceLists']
 
         if compartment_id is not None:

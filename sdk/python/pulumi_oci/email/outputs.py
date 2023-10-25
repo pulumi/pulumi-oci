@@ -34,9 +34,11 @@ class GetDkimsDkimCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDkimsDkimCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDkimsDkimCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -102,45 +104,75 @@ class GetDkimsDkimCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cname_record_value: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             dns_subdomain_name: str,
-             email_domain_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             name: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             txt_record_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cname_record_value: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             dns_subdomain_name: Optional[str] = None,
+             email_domain_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             txt_record_value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cnameRecordValue' in kwargs:
+        if cname_record_value is None and 'cnameRecordValue' in kwargs:
             cname_record_value = kwargs['cnameRecordValue']
-        if 'compartmentId' in kwargs:
+        if cname_record_value is None:
+            raise TypeError("Missing 'cname_record_value' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsSubdomainName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if dns_subdomain_name is None and 'dnsSubdomainName' in kwargs:
             dns_subdomain_name = kwargs['dnsSubdomainName']
-        if 'emailDomainId' in kwargs:
+        if dns_subdomain_name is None:
+            raise TypeError("Missing 'dns_subdomain_name' argument")
+        if email_domain_id is None and 'emailDomainId' in kwargs:
             email_domain_id = kwargs['emailDomainId']
-        if 'freeformTags' in kwargs:
+        if email_domain_id is None:
+            raise TypeError("Missing 'email_domain_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'txtRecordValue' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if txt_record_value is None and 'txtRecordValue' in kwargs:
             txt_record_value = kwargs['txtRecordValue']
+        if txt_record_value is None:
+            raise TypeError("Missing 'txt_record_value' argument")
 
         _setter("cname_record_value", cname_record_value)
         _setter("compartment_id", compartment_id)
@@ -297,11 +329,15 @@ class GetDkimsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -338,9 +374,11 @@ class GetEmailDomainsEmailDomainCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -394,33 +432,55 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             active_dkim_id: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_spf: bool,
-             name: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             active_dkim_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_spf: Optional[bool] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeDkimId' in kwargs:
+        if active_dkim_id is None and 'activeDkimId' in kwargs:
             active_dkim_id = kwargs['activeDkimId']
-        if 'compartmentId' in kwargs:
+        if active_dkim_id is None:
+            raise TypeError("Missing 'active_dkim_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSpf' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_spf is None and 'isSpf' in kwargs:
             is_spf = kwargs['isSpf']
-        if 'systemTags' in kwargs:
+        if is_spf is None:
+            raise TypeError("Missing 'is_spf' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("active_dkim_id", active_dkim_id)
         _setter("compartment_id", compartment_id)
@@ -541,11 +601,15 @@ class GetEmailDomainsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -586,11 +650,15 @@ class GetSendersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -651,31 +719,49 @@ class GetSendersSenderResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             email_address: str,
-             email_domain_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_spf: bool,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             email_address: Optional[str] = None,
+             email_domain_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_spf: Optional[bool] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailAddress' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'emailDomainId' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if email_domain_id is None and 'emailDomainId' in kwargs:
             email_domain_id = kwargs['emailDomainId']
-        if 'freeformTags' in kwargs:
+        if email_domain_id is None:
+            raise TypeError("Missing 'email_domain_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSpf' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_spf is None and 'isSpf' in kwargs:
             is_spf = kwargs['isSpf']
-        if 'timeCreated' in kwargs:
+        if is_spf is None:
+            raise TypeError("Missing 'is_spf' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -775,11 +861,15 @@ class GetSuppressionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -840,31 +930,49 @@ class GetSuppressionsSuppressionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             email_address: str,
-             error_detail: str,
-             error_source: str,
-             id: str,
-             message_id: str,
-             reason: str,
-             time_created: str,
-             time_last_suppressed: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             email_address: Optional[str] = None,
+             error_detail: Optional[str] = None,
+             error_source: Optional[str] = None,
+             id: Optional[str] = None,
+             message_id: Optional[str] = None,
+             reason: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_last_suppressed: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'emailAddress' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'errorDetail' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if error_detail is None and 'errorDetail' in kwargs:
             error_detail = kwargs['errorDetail']
-        if 'errorSource' in kwargs:
+        if error_detail is None:
+            raise TypeError("Missing 'error_detail' argument")
+        if error_source is None and 'errorSource' in kwargs:
             error_source = kwargs['errorSource']
-        if 'messageId' in kwargs:
+        if error_source is None:
+            raise TypeError("Missing 'error_source' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if message_id is None and 'messageId' in kwargs:
             message_id = kwargs['messageId']
-        if 'timeCreated' in kwargs:
+        if message_id is None:
+            raise TypeError("Missing 'message_id' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastSuppressed' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_suppressed is None and 'timeLastSuppressed' in kwargs:
             time_last_suppressed = kwargs['timeLastSuppressed']
+        if time_last_suppressed is None:
+            raise TypeError("Missing 'time_last_suppressed' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("email_address", email_address)

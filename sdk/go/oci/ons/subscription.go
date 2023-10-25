@@ -40,10 +40,10 @@ import (
 //				Endpoint:      pulumi.Any(_var.Subscription_endpoint),
 //				Protocol:      pulumi.Any(_var.Subscription_protocol),
 //				TopicId:       pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

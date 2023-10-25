@@ -132,13 +132,13 @@ class PublicationIcon(dict):
              file_extension: Optional[str] = None,
              mime_type: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
 
         if content_url is not None:
@@ -232,20 +232,28 @@ class PublicationPackageDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eulas: Sequence['outputs.PublicationPackageDetailsEula'],
-             operating_system: 'outputs.PublicationPackageDetailsOperatingSystem',
-             package_type: str,
-             package_version: str,
+             eulas: Optional[Sequence['outputs.PublicationPackageDetailsEula']] = None,
+             operating_system: Optional['outputs.PublicationPackageDetailsOperatingSystem'] = None,
+             package_type: Optional[str] = None,
+             package_version: Optional[str] = None,
              image_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operatingSystem' in kwargs:
+        if eulas is None:
+            raise TypeError("Missing 'eulas' argument")
+        if operating_system is None and 'operatingSystem' in kwargs:
             operating_system = kwargs['operatingSystem']
-        if 'packageType' in kwargs:
+        if operating_system is None:
+            raise TypeError("Missing 'operating_system' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'packageVersion' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'imageId' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
 
         _setter("eulas", eulas)
@@ -332,13 +340,15 @@ class PublicationPackageDetailsEula(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eula_type: str,
+             eula_type: Optional[str] = None,
              license_text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'eulaType' in kwargs:
+        if eula_type is None and 'eulaType' in kwargs:
             eula_type = kwargs['eulaType']
-        if 'licenseText' in kwargs:
+        if eula_type is None:
+            raise TypeError("Missing 'eula_type' argument")
+        if license_text is None and 'licenseText' in kwargs:
             license_text = kwargs['licenseText']
 
         _setter("eula_type", eula_type)
@@ -377,7 +387,7 @@ class PublicationPackageDetailsOperatingSystem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -423,7 +433,7 @@ class PublicationSupportContact(dict):
              name: Optional[str] = None,
              phone: Optional[str] = None,
              subject: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if email is not None:
@@ -487,7 +497,7 @@ class PublicationSupportedOperatingSystem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -542,34 +552,54 @@ class GetAcceptedAgreementsAcceptedAgreementResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agreement_id: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             listing_id: str,
-             package_version: str,
-             signature: str,
-             time_accepted: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agreement_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             listing_id: Optional[str] = None,
+             package_version: Optional[str] = None,
+             signature: Optional[str] = None,
+             time_accepted: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agreementId' in kwargs:
+        if agreement_id is None and 'agreementId' in kwargs:
             agreement_id = kwargs['agreementId']
-        if 'compartmentId' in kwargs:
+        if agreement_id is None:
+            raise TypeError("Missing 'agreement_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'listingId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'packageVersion' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'timeAccepted' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if signature is None:
+            raise TypeError("Missing 'signature' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
 
         _setter("agreement_id", agreement_id)
         _setter("compartment_id", compartment_id)
@@ -675,11 +705,15 @@ class GetAcceptedAgreementsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -716,9 +750,11 @@ class GetCategoriesCategoryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -749,11 +785,15 @@ class GetCategoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -802,18 +842,26 @@ class GetListingBannerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -873,13 +921,19 @@ class GetListingDocumentationLinkResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             document_category: str,
-             name: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             document_category: Optional[str] = None,
+             name: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'documentCategory' in kwargs:
+        if document_category is None and 'documentCategory' in kwargs:
             document_category = kwargs['documentCategory']
+        if document_category is None:
+            raise TypeError("Missing 'document_category' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("document_category", document_category)
         _setter("name", name)
@@ -933,18 +987,26 @@ class GetListingIconResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -1001,10 +1063,14 @@ class GetListingLanguageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("name", name)
@@ -1043,10 +1109,14 @@ class GetListingLinkResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             href: str,
-             rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             href: Optional[str] = None,
+             rel: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if href is None:
+            raise TypeError("Missing 'href' argument")
+        if rel is None:
+            raise TypeError("Missing 'rel' argument")
 
         _setter("href", href)
         _setter("rel", rel)
@@ -1091,14 +1161,22 @@ class GetListingPackageAgreementsAgreementResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             author: str,
-             content_url: str,
-             id: str,
-             prompt: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             author: Optional[str] = None,
+             content_url: Optional[str] = None,
+             id: Optional[str] = None,
+             prompt: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if author is None:
+            raise TypeError("Missing 'author' argument")
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if prompt is None:
+            raise TypeError("Missing 'prompt' argument")
 
         _setter("author", author)
         _setter("content_url", content_url)
@@ -1153,11 +1231,15 @@ class GetListingPackageAgreementsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1194,9 +1276,11 @@ class GetListingPackageOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -1235,17 +1319,27 @@ class GetListingPackagePricingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency: str,
-             international_market_prices: Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult'],
-             pay_go_strategy: str,
-             rate: float,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency: Optional[str] = None,
+             international_market_prices: Optional[Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult']] = None,
+             pay_go_strategy: Optional[str] = None,
+             rate: Optional[float] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'internationalMarketPrices' in kwargs:
+        if currency is None:
+            raise TypeError("Missing 'currency' argument")
+        if international_market_prices is None and 'internationalMarketPrices' in kwargs:
             international_market_prices = kwargs['internationalMarketPrices']
-        if 'payGoStrategy' in kwargs:
+        if international_market_prices is None:
+            raise TypeError("Missing 'international_market_prices' argument")
+        if pay_go_strategy is None and 'payGoStrategy' in kwargs:
             pay_go_strategy = kwargs['payGoStrategy']
+        if pay_go_strategy is None:
+            raise TypeError("Missing 'pay_go_strategy' argument")
+        if rate is None:
+            raise TypeError("Missing 'rate' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("currency", currency)
         _setter("international_market_prices", international_market_prices)
@@ -1314,15 +1408,21 @@ class GetListingPackagePricingInternationalMarketPriceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency_code: str,
-             currency_symbol: str,
-             rate: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency_code: Optional[str] = None,
+             currency_symbol: Optional[str] = None,
+             rate: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'currencySymbol' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if currency_symbol is None and 'currencySymbol' in kwargs:
             currency_symbol = kwargs['currencySymbol']
+        if currency_symbol is None:
+            raise TypeError("Missing 'currency_symbol' argument")
+        if rate is None:
+            raise TypeError("Missing 'rate' argument")
 
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
@@ -1373,11 +1473,17 @@ class GetListingPackageRegionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             countries: Sequence['outputs.GetListingPackageRegionCountryResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             countries: Optional[Sequence['outputs.GetListingPackageRegionCountryResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if countries is None:
+            raise TypeError("Missing 'countries' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("countries", countries)
@@ -1425,10 +1531,14 @@ class GetListingPackageRegionCountryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("name", name)
@@ -1479,22 +1589,34 @@ class GetListingPackageVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             data_type: str,
-             default_value: str,
-             description: str,
-             hint_message: str,
-             is_mandatory: bool,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             data_type: Optional[str] = None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             hint_message: Optional[str] = None,
+             is_mandatory: Optional[bool] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'defaultValue' in kwargs:
+        if data_type is None:
+            raise TypeError("Missing 'data_type' argument")
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'hintMessage' in kwargs:
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if hint_message is None and 'hintMessage' in kwargs:
             hint_message = kwargs['hintMessage']
-        if 'isMandatory' in kwargs:
+        if hint_message is None:
+            raise TypeError("Missing 'hint_message' argument")
+        if is_mandatory is None and 'isMandatory' in kwargs:
             is_mandatory = kwargs['isMandatory']
+        if is_mandatory is None:
+            raise TypeError("Missing 'is_mandatory' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("data_type", data_type)
         _setter("default_value", default_value)
@@ -1570,11 +1692,15 @@ class GetListingPackagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1635,28 +1761,44 @@ class GetListingPackagesListingPackageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             listing_id: str,
-             operating_systems: Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult'],
-             package_type: str,
-             package_version: str,
-             pricings: Sequence['outputs.GetListingPackagesListingPackagePricingResult'],
-             regions: Sequence['outputs.GetListingPackagesListingPackageRegionResult'],
-             resource_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             listing_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult']] = None,
+             package_type: Optional[str] = None,
+             package_version: Optional[str] = None,
+             pricings: Optional[Sequence['outputs.GetListingPackagesListingPackagePricingResult']] = None,
+             regions: Optional[Sequence['outputs.GetListingPackagesListingPackageRegionResult']] = None,
+             resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'operatingSystems' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'packageType' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'packageVersion' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'resourceId' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if pricings is None:
+            raise TypeError("Missing 'pricings' argument")
+        if regions is None:
+            raise TypeError("Missing 'regions' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'timeCreated' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("listing_id", listing_id)
         _setter("operating_systems", operating_systems)
@@ -1746,9 +1888,11 @@ class GetListingPackagesListingPackageOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -1787,17 +1931,27 @@ class GetListingPackagesListingPackagePricingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency: str,
-             international_market_prices: Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult'],
-             pay_go_strategy: str,
-             rate: float,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency: Optional[str] = None,
+             international_market_prices: Optional[Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult']] = None,
+             pay_go_strategy: Optional[str] = None,
+             rate: Optional[float] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'internationalMarketPrices' in kwargs:
+        if currency is None:
+            raise TypeError("Missing 'currency' argument")
+        if international_market_prices is None and 'internationalMarketPrices' in kwargs:
             international_market_prices = kwargs['internationalMarketPrices']
-        if 'payGoStrategy' in kwargs:
+        if international_market_prices is None:
+            raise TypeError("Missing 'international_market_prices' argument")
+        if pay_go_strategy is None and 'payGoStrategy' in kwargs:
             pay_go_strategy = kwargs['payGoStrategy']
+        if pay_go_strategy is None:
+            raise TypeError("Missing 'pay_go_strategy' argument")
+        if rate is None:
+            raise TypeError("Missing 'rate' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("currency", currency)
         _setter("international_market_prices", international_market_prices)
@@ -1866,15 +2020,21 @@ class GetListingPackagesListingPackagePricingInternationalMarketPriceResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency_code: str,
-             currency_symbol: str,
-             rate: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency_code: Optional[str] = None,
+             currency_symbol: Optional[str] = None,
+             rate: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'currencySymbol' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if currency_symbol is None and 'currencySymbol' in kwargs:
             currency_symbol = kwargs['currencySymbol']
+        if currency_symbol is None:
+            raise TypeError("Missing 'currency_symbol' argument")
+        if rate is None:
+            raise TypeError("Missing 'rate' argument")
 
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
@@ -1925,11 +2085,17 @@ class GetListingPackagesListingPackageRegionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             countries: Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             countries: Optional[Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if countries is None:
+            raise TypeError("Missing 'countries' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("countries", countries)
@@ -1977,10 +2143,14 @@ class GetListingPackagesListingPackageRegionCountryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("name", name)
@@ -2043,28 +2213,48 @@ class GetListingPublisherResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contact_email: str,
-             contact_phone: str,
-             description: str,
-             hq_address: str,
-             id: str,
-             links: Sequence['outputs.GetListingPublisherLinkResult'],
-             logos: Sequence['outputs.GetListingPublisherLogoResult'],
-             name: str,
-             website_url: str,
-             year_founded: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             contact_email: Optional[str] = None,
+             contact_phone: Optional[str] = None,
+             description: Optional[str] = None,
+             hq_address: Optional[str] = None,
+             id: Optional[str] = None,
+             links: Optional[Sequence['outputs.GetListingPublisherLinkResult']] = None,
+             logos: Optional[Sequence['outputs.GetListingPublisherLogoResult']] = None,
+             name: Optional[str] = None,
+             website_url: Optional[str] = None,
+             year_founded: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contactEmail' in kwargs:
+        if contact_email is None and 'contactEmail' in kwargs:
             contact_email = kwargs['contactEmail']
-        if 'contactPhone' in kwargs:
+        if contact_email is None:
+            raise TypeError("Missing 'contact_email' argument")
+        if contact_phone is None and 'contactPhone' in kwargs:
             contact_phone = kwargs['contactPhone']
-        if 'hqAddress' in kwargs:
+        if contact_phone is None:
+            raise TypeError("Missing 'contact_phone' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if hq_address is None and 'hqAddress' in kwargs:
             hq_address = kwargs['hqAddress']
-        if 'websiteUrl' in kwargs:
+        if hq_address is None:
+            raise TypeError("Missing 'hq_address' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if links is None:
+            raise TypeError("Missing 'links' argument")
+        if logos is None:
+            raise TypeError("Missing 'logos' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if website_url is None and 'websiteUrl' in kwargs:
             website_url = kwargs['websiteUrl']
-        if 'yearFounded' in kwargs:
+        if website_url is None:
+            raise TypeError("Missing 'website_url' argument")
+        if year_founded is None and 'yearFounded' in kwargs:
             year_founded = kwargs['yearFounded']
+        if year_founded is None:
+            raise TypeError("Missing 'year_founded' argument")
 
         _setter("contact_email", contact_email)
         _setter("contact_phone", contact_phone)
@@ -2175,10 +2365,14 @@ class GetListingPublisherLinkResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             href: str,
-             rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             href: Optional[str] = None,
+             rel: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if href is None:
+            raise TypeError("Missing 'href' argument")
+        if rel is None:
+            raise TypeError("Missing 'rel' argument")
 
         _setter("href", href)
         _setter("rel", rel)
@@ -2223,18 +2417,26 @@ class GetListingPublisherLogoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -2294,11 +2496,17 @@ class GetListingRegionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             countries: Sequence['outputs.GetListingRegionCountryResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             countries: Optional[Sequence['outputs.GetListingRegionCountryResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if countries is None:
+            raise TypeError("Missing 'countries' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("countries", countries)
@@ -2346,10 +2554,14 @@ class GetListingRegionCountryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("name", name)
@@ -2397,19 +2609,29 @@ class GetListingScreenshotResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             description: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             description: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("description", description)
@@ -2481,12 +2703,20 @@ class GetListingSupportContactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email: str,
-             name: str,
-             phone: str,
-             subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email: Optional[str] = None,
+             name: Optional[str] = None,
+             phone: Optional[str] = None,
+             subject: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if phone is None:
+            raise TypeError("Missing 'phone' argument")
+        if subject is None:
+            raise TypeError("Missing 'subject' argument")
 
         _setter("email", email)
         _setter("name", name)
@@ -2543,10 +2773,14 @@ class GetListingSupportLinkResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("name", name)
         _setter("url", url)
@@ -2582,9 +2816,11 @@ class GetListingSupportedOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -2615,11 +2851,15 @@ class GetListingTaxesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2668,12 +2908,20 @@ class GetListingTaxesTaxResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             country: str,
-             name: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             country: Optional[str] = None,
+             name: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("code", code)
         _setter("country", country)
@@ -2730,10 +2978,14 @@ class GetListingVideoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("name", name)
         _setter("url", url)
@@ -2773,11 +3025,15 @@ class GetListingsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2861,42 +3117,74 @@ class GetListingsListingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             banners: Sequence['outputs.GetListingsListingBannerResult'],
-             categories: Sequence[str],
-             compatible_architectures: Sequence[str],
-             default_package_version: str,
-             documentation_links: Sequence['outputs.GetListingsListingDocumentationLinkResult'],
-             icons: Sequence['outputs.GetListingsListingIconResult'],
-             id: str,
-             is_featured: bool,
-             listing_type: str,
-             name: str,
-             package_type: str,
-             pricing_types: Sequence[str],
-             publishers: Sequence['outputs.GetListingsListingPublisherResult'],
-             regions: Sequence['outputs.GetListingsListingRegionResult'],
-             short_description: str,
-             supported_operating_systems: Sequence['outputs.GetListingsListingSupportedOperatingSystemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             banners: Optional[Sequence['outputs.GetListingsListingBannerResult']] = None,
+             categories: Optional[Sequence[str]] = None,
+             compatible_architectures: Optional[Sequence[str]] = None,
+             default_package_version: Optional[str] = None,
+             documentation_links: Optional[Sequence['outputs.GetListingsListingDocumentationLinkResult']] = None,
+             icons: Optional[Sequence['outputs.GetListingsListingIconResult']] = None,
+             id: Optional[str] = None,
+             is_featured: Optional[bool] = None,
+             listing_type: Optional[str] = None,
+             name: Optional[str] = None,
+             package_type: Optional[str] = None,
+             pricing_types: Optional[Sequence[str]] = None,
+             publishers: Optional[Sequence['outputs.GetListingsListingPublisherResult']] = None,
+             regions: Optional[Sequence['outputs.GetListingsListingRegionResult']] = None,
+             short_description: Optional[str] = None,
+             supported_operating_systems: Optional[Sequence['outputs.GetListingsListingSupportedOperatingSystemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compatibleArchitectures' in kwargs:
+        if banners is None:
+            raise TypeError("Missing 'banners' argument")
+        if categories is None:
+            raise TypeError("Missing 'categories' argument")
+        if compatible_architectures is None and 'compatibleArchitectures' in kwargs:
             compatible_architectures = kwargs['compatibleArchitectures']
-        if 'defaultPackageVersion' in kwargs:
+        if compatible_architectures is None:
+            raise TypeError("Missing 'compatible_architectures' argument")
+        if default_package_version is None and 'defaultPackageVersion' in kwargs:
             default_package_version = kwargs['defaultPackageVersion']
-        if 'documentationLinks' in kwargs:
+        if default_package_version is None:
+            raise TypeError("Missing 'default_package_version' argument")
+        if documentation_links is None and 'documentationLinks' in kwargs:
             documentation_links = kwargs['documentationLinks']
-        if 'isFeatured' in kwargs:
+        if documentation_links is None:
+            raise TypeError("Missing 'documentation_links' argument")
+        if icons is None:
+            raise TypeError("Missing 'icons' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_featured is None and 'isFeatured' in kwargs:
             is_featured = kwargs['isFeatured']
-        if 'listingType' in kwargs:
+        if is_featured is None:
+            raise TypeError("Missing 'is_featured' argument")
+        if listing_type is None and 'listingType' in kwargs:
             listing_type = kwargs['listingType']
-        if 'packageType' in kwargs:
+        if listing_type is None:
+            raise TypeError("Missing 'listing_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'pricingTypes' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if pricing_types is None and 'pricingTypes' in kwargs:
             pricing_types = kwargs['pricingTypes']
-        if 'shortDescription' in kwargs:
+        if pricing_types is None:
+            raise TypeError("Missing 'pricing_types' argument")
+        if publishers is None:
+            raise TypeError("Missing 'publishers' argument")
+        if regions is None:
+            raise TypeError("Missing 'regions' argument")
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'supportedOperatingSystems' in kwargs:
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if supported_operating_systems is None and 'supportedOperatingSystems' in kwargs:
             supported_operating_systems = kwargs['supportedOperatingSystems']
+        if supported_operating_systems is None:
+            raise TypeError("Missing 'supported_operating_systems' argument")
 
         _setter("banners", banners)
         _setter("categories", categories)
@@ -3064,18 +3352,26 @@ class GetListingsListingBannerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -3135,13 +3431,19 @@ class GetListingsListingDocumentationLinkResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             document_category: str,
-             name: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             document_category: Optional[str] = None,
+             name: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'documentCategory' in kwargs:
+        if document_category is None and 'documentCategory' in kwargs:
             document_category = kwargs['documentCategory']
+        if document_category is None:
+            raise TypeError("Missing 'document_category' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("document_category", document_category)
         _setter("name", name)
@@ -3195,18 +3497,26 @@ class GetListingsListingIconResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -3266,11 +3576,17 @@ class GetListingsListingPublisherResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("description", description)
         _setter("id", id)
@@ -3321,11 +3637,17 @@ class GetListingsListingRegionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             countries: Sequence['outputs.GetListingsListingRegionCountryResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             countries: Optional[Sequence['outputs.GetListingsListingRegionCountryResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if countries is None:
+            raise TypeError("Missing 'countries' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("countries", countries)
@@ -3373,10 +3695,14 @@ class GetListingsListingRegionCountryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("code", code)
         _setter("name", name)
@@ -3412,9 +3738,11 @@ class GetListingsListingSupportedOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -3450,18 +3778,26 @@ class GetPublicationIconResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -3523,21 +3859,31 @@ class GetPublicationPackageDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eulas: Sequence['outputs.GetPublicationPackageDetailEulaResult'],
-             image_id: str,
-             operating_systems: Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult'],
-             package_type: str,
-             package_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eulas: Optional[Sequence['outputs.GetPublicationPackageDetailEulaResult']] = None,
+             image_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult']] = None,
+             package_type: Optional[str] = None,
+             package_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if eulas is None:
+            raise TypeError("Missing 'eulas' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'operatingSystems' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'packageType' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'packageVersion' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
 
         _setter("eulas", eulas)
         _setter("image_id", image_id)
@@ -3587,14 +3933,18 @@ class GetPublicationPackageDetailEulaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eula_type: str,
-             license_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eula_type: Optional[str] = None,
+             license_text: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'eulaType' in kwargs:
+        if eula_type is None and 'eulaType' in kwargs:
             eula_type = kwargs['eulaType']
-        if 'licenseText' in kwargs:
+        if eula_type is None:
+            raise TypeError("Missing 'eula_type' argument")
+        if license_text is None and 'licenseText' in kwargs:
             license_text = kwargs['licenseText']
+        if license_text is None:
+            raise TypeError("Missing 'license_text' argument")
 
         _setter("eula_type", eula_type)
         _setter("license_text", license_text)
@@ -3624,9 +3974,11 @@ class GetPublicationPackageDetailOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -3653,9 +4005,11 @@ class GetPublicationPackageOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -3697,22 +4051,34 @@ class GetPublicationPackageVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             data_type: str,
-             default_value: str,
-             description: str,
-             hint_message: str,
-             is_mandatory: bool,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             data_type: Optional[str] = None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             hint_message: Optional[str] = None,
+             is_mandatory: Optional[bool] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'defaultValue' in kwargs:
+        if data_type is None:
+            raise TypeError("Missing 'data_type' argument")
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'hintMessage' in kwargs:
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if hint_message is None and 'hintMessage' in kwargs:
             hint_message = kwargs['hintMessage']
-        if 'isMandatory' in kwargs:
+        if hint_message is None:
+            raise TypeError("Missing 'hint_message' argument")
+        if is_mandatory is None and 'isMandatory' in kwargs:
             is_mandatory = kwargs['isMandatory']
+        if is_mandatory is None:
+            raise TypeError("Missing 'is_mandatory' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("data_type", data_type)
         _setter("default_value", default_value)
@@ -3788,11 +4154,15 @@ class GetPublicationPackagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3844,23 +4214,33 @@ class GetPublicationPackagesPublicationPackageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             listing_id: str,
-             package_type: str,
-             package_version: str,
-             resource_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             listing_id: Optional[str] = None,
+             package_type: Optional[str] = None,
+             package_version: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'packageType' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'packageVersion' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'resourceId' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'timeCreated' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("listing_id", listing_id)
         _setter("package_type", package_type)
@@ -3932,12 +4312,20 @@ class GetPublicationSupportContactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email: str,
-             name: str,
-             phone: str,
-             subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email: Optional[str] = None,
+             name: Optional[str] = None,
+             phone: Optional[str] = None,
+             subject: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if phone is None:
+            raise TypeError("Missing 'phone' argument")
+        if subject is None:
+            raise TypeError("Missing 'subject' argument")
 
         _setter("email", email)
         _setter("name", name)
@@ -3991,9 +4379,11 @@ class GetPublicationSupportedOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -4024,11 +4414,15 @@ class GetPublicationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4111,48 +4505,80 @@ class GetPublicationsPublicationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             icons: Sequence['outputs.GetPublicationsPublicationIconResult'],
-             id: str,
-             is_agreement_acknowledged: bool,
-             listing_type: str,
-             long_description: str,
-             name: str,
-             package_details: Sequence['outputs.GetPublicationsPublicationPackageDetailResult'],
-             package_type: str,
-             short_description: str,
-             state: str,
-             support_contacts: Sequence['outputs.GetPublicationsPublicationSupportContactResult'],
-             supported_operating_systems: Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult'],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             icons: Optional[Sequence['outputs.GetPublicationsPublicationIconResult']] = None,
+             id: Optional[str] = None,
+             is_agreement_acknowledged: Optional[bool] = None,
+             listing_type: Optional[str] = None,
+             long_description: Optional[str] = None,
+             name: Optional[str] = None,
+             package_details: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailResult']] = None,
+             package_type: Optional[str] = None,
+             short_description: Optional[str] = None,
+             state: Optional[str] = None,
+             support_contacts: Optional[Sequence['outputs.GetPublicationsPublicationSupportContactResult']] = None,
+             supported_operating_systems: Optional[Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult']] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAgreementAcknowledged' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if icons is None:
+            raise TypeError("Missing 'icons' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_agreement_acknowledged is None and 'isAgreementAcknowledged' in kwargs:
             is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
-        if 'listingType' in kwargs:
+        if is_agreement_acknowledged is None:
+            raise TypeError("Missing 'is_agreement_acknowledged' argument")
+        if listing_type is None and 'listingType' in kwargs:
             listing_type = kwargs['listingType']
-        if 'longDescription' in kwargs:
+        if listing_type is None:
+            raise TypeError("Missing 'listing_type' argument")
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
-        if 'packageDetails' in kwargs:
+        if long_description is None:
+            raise TypeError("Missing 'long_description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'packageType' in kwargs:
+        if package_details is None:
+            raise TypeError("Missing 'package_details' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'shortDescription' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'supportContacts' in kwargs:
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if support_contacts is None and 'supportContacts' in kwargs:
             support_contacts = kwargs['supportContacts']
-        if 'supportedOperatingSystems' in kwargs:
+        if support_contacts is None:
+            raise TypeError("Missing 'support_contacts' argument")
+        if supported_operating_systems is None and 'supportedOperatingSystems' in kwargs:
             supported_operating_systems = kwargs['supportedOperatingSystems']
-        if 'timeCreated' in kwargs:
+        if supported_operating_systems is None:
+            raise TypeError("Missing 'supported_operating_systems' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4317,18 +4743,26 @@ class GetPublicationsPublicationIconResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             file_extension: str,
-             mime_type: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'fileExtension' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if file_extension is None and 'fileExtension' in kwargs:
             file_extension = kwargs['fileExtension']
-        if 'mimeType' in kwargs:
+        if file_extension is None:
+            raise TypeError("Missing 'file_extension' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
@@ -4390,21 +4824,31 @@ class GetPublicationsPublicationPackageDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eulas: Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult'],
-             image_id: str,
-             operating_systems: Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult'],
-             package_type: str,
-             package_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eulas: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult']] = None,
+             image_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult']] = None,
+             package_type: Optional[str] = None,
+             package_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if eulas is None:
+            raise TypeError("Missing 'eulas' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'operatingSystems' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'packageType' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'packageVersion' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
 
         _setter("eulas", eulas)
         _setter("image_id", image_id)
@@ -4454,14 +4898,18 @@ class GetPublicationsPublicationPackageDetailEulaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eula_type: str,
-             license_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eula_type: Optional[str] = None,
+             license_text: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'eulaType' in kwargs:
+        if eula_type is None and 'eulaType' in kwargs:
             eula_type = kwargs['eulaType']
-        if 'licenseText' in kwargs:
+        if eula_type is None:
+            raise TypeError("Missing 'eula_type' argument")
+        if license_text is None and 'licenseText' in kwargs:
             license_text = kwargs['licenseText']
+        if license_text is None:
+            raise TypeError("Missing 'license_text' argument")
 
         _setter("eula_type", eula_type)
         _setter("license_text", license_text)
@@ -4491,9 +4939,11 @@ class GetPublicationsPublicationPackageDetailOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -4529,12 +4979,20 @@ class GetPublicationsPublicationSupportContactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email: str,
-             name: str,
-             phone: str,
-             subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email: Optional[str] = None,
+             name: Optional[str] = None,
+             phone: Optional[str] = None,
+             subject: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if phone is None:
+            raise TypeError("Missing 'phone' argument")
+        if subject is None:
+            raise TypeError("Missing 'subject' argument")
 
         _setter("email", email)
         _setter("name", name)
@@ -4588,9 +5046,11 @@ class GetPublicationsPublicationSupportedOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -4621,11 +5081,15 @@ class GetPublishersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4671,11 +5135,17 @@ class GetPublishersPublisherResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("description", description)
         _setter("id", id)

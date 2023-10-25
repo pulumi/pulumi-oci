@@ -36,16 +36,18 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomous_database_id: pulumi.Input[str],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
              grace_period: Optional[pulumi.Input[int]] = None,
              should_rotate: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'gracePeriod' in kwargs:
+        if autonomous_database_id is None:
+            raise TypeError("Missing 'autonomous_database_id' argument")
+        if grace_period is None and 'gracePeriod' in kwargs:
             grace_period = kwargs['gracePeriod']
-        if 'shouldRotate' in kwargs:
+        if should_rotate is None and 'shouldRotate' in kwargs:
             should_rotate = kwargs['shouldRotate']
 
         _setter("autonomous_database_id", autonomous_database_id)
@@ -131,15 +133,15 @@ class _AutonomousDatabaseInstanceWalletManagementState:
              should_rotate: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_rotated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'gracePeriod' in kwargs:
+        if grace_period is None and 'gracePeriod' in kwargs:
             grace_period = kwargs['gracePeriod']
-        if 'shouldRotate' in kwargs:
+        if should_rotate is None and 'shouldRotate' in kwargs:
             should_rotate = kwargs['shouldRotate']
-        if 'timeRotated' in kwargs:
+        if time_rotated is None and 'timeRotated' in kwargs:
             time_rotated = kwargs['timeRotated']
 
         if autonomous_database_id is not None:

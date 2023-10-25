@@ -34,11 +34,11 @@ import (
 //			_, err := Apm.NewApmDomain(ctx, "testApmDomain", &Apm.ApmDomainArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Apm_domain_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Apm_domain_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsFreeTier: pulumi.Any(_var.Apm_domain_is_free_tier),

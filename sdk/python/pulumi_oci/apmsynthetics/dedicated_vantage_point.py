@@ -50,24 +50,32 @@ class DedicatedVantagePointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apm_domain_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             dvp_stack_details: pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'],
-             region: pulumi.Input[str],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dvp_stack_details: Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']] = None,
+             region: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'displayName' in kwargs:
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dvpStackDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dvp_stack_details is None and 'dvpStackDetails' in kwargs:
             dvp_stack_details = kwargs['dvpStackDetails']
-        if 'definedTags' in kwargs:
+        if dvp_stack_details is None:
+            raise TypeError("Missing 'dvp_stack_details' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("apm_domain_id", apm_domain_id)
@@ -230,23 +238,23 @@ class _DedicatedVantagePointState:
              status: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dvpStackDetails' in kwargs:
+        if dvp_stack_details is None and 'dvpStackDetails' in kwargs:
             dvp_stack_details = kwargs['dvpStackDetails']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'monitorStatusCountMaps' in kwargs:
+        if monitor_status_count_maps is None and 'monitorStatusCountMaps' in kwargs:
             monitor_status_count_maps = kwargs['monitorStatusCountMaps']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if apm_domain_id is not None:
@@ -560,11 +568,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if dvp_stack_details is not None and not isinstance(dvp_stack_details, DedicatedVantagePointDvpStackDetailsArgs):
-                dvp_stack_details = dvp_stack_details or {}
-                def _setter(key, value):
-                    dvp_stack_details[key] = value
-                DedicatedVantagePointDvpStackDetailsArgs._configure(_setter, **dvp_stack_details)
+            dvp_stack_details = _utilities.configure(dvp_stack_details, DedicatedVantagePointDvpStackDetailsArgs, True)
             if dvp_stack_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dvp_stack_details'")
             __props__.__dict__["dvp_stack_details"] = dvp_stack_details

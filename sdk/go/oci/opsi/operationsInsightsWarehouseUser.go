@@ -37,10 +37,10 @@ import (
 //				ConnectionPassword:            pulumi.Any(_var.Operations_insights_warehouse_user_connection_password),
 //				IsAwrDataAccess:               pulumi.Any(_var.Operations_insights_warehouse_user_is_awr_data_access),
 //				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsEmDataAccess:   pulumi.Any(_var.Operations_insights_warehouse_user_is_em_data_access),

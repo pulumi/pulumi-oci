@@ -38,10 +38,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Agent_display_name),
 //				EnvironmentId: pulumi.Any(oci_cloud_bridge_environment.Test_environment.Id),
 //				OsVersion:     pulumi.Any(_var.Agent_os_version),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

@@ -86,35 +86,35 @@ class EsxiHostArgs:
              non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
              sddc_id: Optional[pulumi.Input[str]] = None,
              swap_billing_host_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billingDonorHostId' in kwargs:
+        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
             billing_donor_host_id = kwargs['billingDonorHostId']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'currentSku' in kwargs:
+        if current_sku is None and 'currentSku' in kwargs:
             current_sku = kwargs['currentSku']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'failedEsxiHostId' in kwargs:
+        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
             failed_esxi_host_id = kwargs['failedEsxiHostId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostOcpuCount' in kwargs:
+        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
             host_ocpu_count = kwargs['hostOcpuCount']
-        if 'hostShapeName' in kwargs:
+        if host_shape_name is None and 'hostShapeName' in kwargs:
             host_shape_name = kwargs['hostShapeName']
-        if 'nextSku' in kwargs:
+        if next_sku is None and 'nextSku' in kwargs:
             next_sku = kwargs['nextSku']
-        if 'nonUpgradedEsxiHostId' in kwargs:
+        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
             non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
-        if 'sddcId' in kwargs:
+        if sddc_id is None and 'sddcId' in kwargs:
             sddc_id = kwargs['sddcId']
-        if 'swapBillingHostId' in kwargs:
+        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
             swap_billing_host_id = kwargs['swapBillingHostId']
 
         if billing_donor_host_id is not None:
@@ -479,57 +479,57 @@ class _EsxiHostState:
              time_updated: Optional[pulumi.Input[str]] = None,
              upgraded_replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
              vmware_software_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billingContractEndDate' in kwargs:
+        if billing_contract_end_date is None and 'billingContractEndDate' in kwargs:
             billing_contract_end_date = kwargs['billingContractEndDate']
-        if 'billingDonorHostId' in kwargs:
+        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
             billing_donor_host_id = kwargs['billingDonorHostId']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'computeInstanceId' in kwargs:
+        if compute_instance_id is None and 'computeInstanceId' in kwargs:
             compute_instance_id = kwargs['computeInstanceId']
-        if 'currentSku' in kwargs:
+        if current_sku is None and 'currentSku' in kwargs:
             current_sku = kwargs['currentSku']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'failedEsxiHostId' in kwargs:
+        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
             failed_esxi_host_id = kwargs['failedEsxiHostId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gracePeriodEndDate' in kwargs:
+        if grace_period_end_date is None and 'gracePeriodEndDate' in kwargs:
             grace_period_end_date = kwargs['gracePeriodEndDate']
-        if 'hostOcpuCount' in kwargs:
+        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
             host_ocpu_count = kwargs['hostOcpuCount']
-        if 'hostShapeName' in kwargs:
+        if host_shape_name is None and 'hostShapeName' in kwargs:
             host_shape_name = kwargs['hostShapeName']
-        if 'isBillingContinuationInProgress' in kwargs:
+        if is_billing_continuation_in_progress is None and 'isBillingContinuationInProgress' in kwargs:
             is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
-        if 'isBillingSwappingInProgress' in kwargs:
+        if is_billing_swapping_in_progress is None and 'isBillingSwappingInProgress' in kwargs:
             is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
-        if 'nextSku' in kwargs:
+        if next_sku is None and 'nextSku' in kwargs:
             next_sku = kwargs['nextSku']
-        if 'nonUpgradedEsxiHostId' in kwargs:
+        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
             non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
-        if 'replacementEsxiHostId' in kwargs:
+        if replacement_esxi_host_id is None and 'replacementEsxiHostId' in kwargs:
             replacement_esxi_host_id = kwargs['replacementEsxiHostId']
-        if 'sddcId' in kwargs:
+        if sddc_id is None and 'sddcId' in kwargs:
             sddc_id = kwargs['sddcId']
-        if 'swapBillingHostId' in kwargs:
+        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
             swap_billing_host_id = kwargs['swapBillingHostId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradedReplacementEsxiHostId' in kwargs:
+        if upgraded_replacement_esxi_host_id is None and 'upgradedReplacementEsxiHostId' in kwargs:
             upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
-        if 'vmwareSoftwareVersion' in kwargs:
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
             vmware_software_version = kwargs['vmwareSoftwareVersion']
 
         if billing_contract_end_date is not None:

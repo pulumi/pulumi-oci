@@ -37,12 +37,12 @@ import (
 //				AccessToken:    pulumi.Any(_var.Connection_access_token),
 //				AppPassword:    pulumi.Any(_var.Connection_app_password),
 //				BaseUrl:        pulumi.Any(_var.Connection_base_url),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Connection_description),
 //				DisplayName: pulumi.Any(_var.Connection_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				TlsVerifyConfig: &devops.ConnectionTlsVerifyConfigArgs{

@@ -41,19 +41,23 @@ class ExternalNonContainerDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -208,43 +212,43 @@ class _ExternalNonContainerDatabaseState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'characterSet' in kwargs:
+        if character_set is None and 'characterSet' in kwargs:
             character_set = kwargs['characterSet']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseConfiguration' in kwargs:
+        if database_configuration is None and 'databaseConfiguration' in kwargs:
             database_configuration = kwargs['databaseConfiguration']
-        if 'databaseEdition' in kwargs:
+        if database_edition is None and 'databaseEdition' in kwargs:
             database_edition = kwargs['databaseEdition']
-        if 'databaseManagementConfigs' in kwargs:
+        if database_management_configs is None and 'databaseManagementConfigs' in kwargs:
             database_management_configs = kwargs['databaseManagementConfigs']
-        if 'databaseVersion' in kwargs:
+        if database_version is None and 'databaseVersion' in kwargs:
             database_version = kwargs['databaseVersion']
-        if 'dbId' in kwargs:
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbPacks' in kwargs:
+        if db_packs is None and 'dbPacks' in kwargs:
             db_packs = kwargs['dbPacks']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'ncharacterSet' in kwargs:
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
             ncharacter_set = kwargs['ncharacterSet']
-        if 'operationsInsightsConfigs' in kwargs:
+        if operations_insights_configs is None and 'operationsInsightsConfigs' in kwargs:
             operations_insights_configs = kwargs['operationsInsightsConfigs']
-        if 'stackMonitoringConfigs' in kwargs:
+        if stack_monitoring_configs is None and 'stackMonitoringConfigs' in kwargs:
             stack_monitoring_configs = kwargs['stackMonitoringConfigs']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         if character_set is not None:

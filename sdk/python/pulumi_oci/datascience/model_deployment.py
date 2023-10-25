@@ -56,30 +56,36 @@ class ModelDeploymentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             model_deployment_configuration_details: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'],
-             project_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             model_deployment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              category_log_details: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'modelDeploymentConfigurationDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if model_deployment_configuration_details is None and 'modelDeploymentConfigurationDetails' in kwargs:
             model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
-        if 'projectId' in kwargs:
+        if model_deployment_configuration_details is None:
+            raise TypeError("Missing 'model_deployment_configuration_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'categoryLogDetails' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if category_log_details is None and 'categoryLogDetails' in kwargs:
             category_log_details = kwargs['categoryLogDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -279,29 +285,29 @@ class _ModelDeploymentState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryLogDetails' in kwargs:
+        if category_log_details is None and 'categoryLogDetails' in kwargs:
             category_log_details = kwargs['categoryLogDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'modelDeploymentConfigurationDetails' in kwargs:
+        if model_deployment_configuration_details is None and 'modelDeploymentConfigurationDetails' in kwargs:
             model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
-        if 'modelDeploymentUrl' in kwargs:
+        if model_deployment_url is None and 'modelDeploymentUrl' in kwargs:
             model_deployment_url = kwargs['modelDeploymentUrl']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if category_log_details is not None:
@@ -706,11 +712,7 @@ class ModelDeployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ModelDeploymentArgs.__new__(ModelDeploymentArgs)
 
-            if category_log_details is not None and not isinstance(category_log_details, ModelDeploymentCategoryLogDetailsArgs):
-                category_log_details = category_log_details or {}
-                def _setter(key, value):
-                    category_log_details[key] = value
-                ModelDeploymentCategoryLogDetailsArgs._configure(_setter, **category_log_details)
+            category_log_details = _utilities.configure(category_log_details, ModelDeploymentCategoryLogDetailsArgs, True)
             __props__.__dict__["category_log_details"] = category_log_details
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -719,11 +721,7 @@ class ModelDeployment(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if model_deployment_configuration_details is not None and not isinstance(model_deployment_configuration_details, ModelDeploymentModelDeploymentConfigurationDetailsArgs):
-                model_deployment_configuration_details = model_deployment_configuration_details or {}
-                def _setter(key, value):
-                    model_deployment_configuration_details[key] = value
-                ModelDeploymentModelDeploymentConfigurationDetailsArgs._configure(_setter, **model_deployment_configuration_details)
+            model_deployment_configuration_details = _utilities.configure(model_deployment_configuration_details, ModelDeploymentModelDeploymentConfigurationDetailsArgs, True)
             if model_deployment_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'model_deployment_configuration_details'")
             __props__.__dict__["model_deployment_configuration_details"] = model_deployment_configuration_details

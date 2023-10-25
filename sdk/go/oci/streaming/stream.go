@@ -39,7 +39,7 @@ import (
 //				Partitions:    pulumi.Any(_var.Stream_partitions),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DefinedTags:   pulumi.Any(_var.Stream_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				RetentionInHours: pulumi.Any(_var.Stream_retention_in_hours),

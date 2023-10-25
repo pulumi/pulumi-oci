@@ -52,24 +52,28 @@ class SecurityAssessmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             target_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              schedule: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'targetId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'definedTags' in kwargs:
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -294,45 +298,45 @@ class _SecurityAssessmentState:
              time_updated: Optional[pulumi.Input[str]] = None,
              triggered_by: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ignoredAssessmentIds' in kwargs:
+        if ignored_assessment_ids is None and 'ignoredAssessmentIds' in kwargs:
             ignored_assessment_ids = kwargs['ignoredAssessmentIds']
-        if 'ignoredTargets' in kwargs:
+        if ignored_targets is None and 'ignoredTargets' in kwargs:
             ignored_targets = kwargs['ignoredTargets']
-        if 'isBaseline' in kwargs:
+        if is_baseline is None and 'isBaseline' in kwargs:
             is_baseline = kwargs['isBaseline']
-        if 'isDeviatedFromBaseline' in kwargs:
+        if is_deviated_from_baseline is None and 'isDeviatedFromBaseline' in kwargs:
             is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
-        if 'lastComparedBaselineId' in kwargs:
+        if last_compared_baseline_id is None and 'lastComparedBaselineId' in kwargs:
             last_compared_baseline_id = kwargs['lastComparedBaselineId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'scheduleSecurityAssessmentId' in kwargs:
+        if schedule_security_assessment_id is None and 'scheduleSecurityAssessmentId' in kwargs:
             schedule_security_assessment_id = kwargs['scheduleSecurityAssessmentId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'targetIds' in kwargs:
+        if target_ids is None and 'targetIds' in kwargs:
             target_ids = kwargs['targetIds']
-        if 'targetVersion' in kwargs:
+        if target_version is None and 'targetVersion' in kwargs:
             target_version = kwargs['targetVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastAssessed' in kwargs:
+        if time_last_assessed is None and 'timeLastAssessed' in kwargs:
             time_last_assessed = kwargs['timeLastAssessed']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'triggeredBy' in kwargs:
+        if triggered_by is None and 'triggeredBy' in kwargs:
             triggered_by = kwargs['triggeredBy']
 
         if compartment_id is not None:

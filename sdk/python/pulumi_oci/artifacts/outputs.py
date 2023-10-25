@@ -56,10 +56,14 @@ class ContainerRepositoryReadme(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: str,
-             format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content: Optional[str] = None,
+             format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
 
         _setter("content", content)
         _setter("format", format)
@@ -105,15 +109,21 @@ class GetContainerImageLayerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             digest: str,
-             size_in_bytes: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             digest: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sizeInBytes' in kwargs:
+        if digest is None:
+            raise TypeError("Missing 'digest' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'timeCreated' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("digest", digest)
         _setter("size_in_bytes", size_in_bytes)
@@ -164,15 +174,21 @@ class GetContainerImageVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             created_by: str,
-             time_created: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             created_by: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'timeCreated' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("created_by", created_by)
         _setter("time_created", time_created)
@@ -216,12 +232,16 @@ class GetContainerImagesContainerImageCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult'],
-             remaining_items_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult']] = None,
+             remaining_items_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'remainingItemsCount' in kwargs:
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if remaining_items_count is None and 'remainingItemsCount' in kwargs:
             remaining_items_count = kwargs['remainingItemsCount']
+        if remaining_items_count is None:
+            raise TypeError("Missing 'remaining_items_count' argument")
 
         _setter("items", items)
         _setter("remaining_items_count", remaining_items_count)
@@ -305,53 +325,91 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             created_by: str,
-             defined_tags: Mapping[str, Any],
-             digest: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             layers: Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult'],
-             layers_size_in_bytes: str,
-             manifest_size_in_bytes: int,
-             pull_count: str,
-             repository_id: str,
-             repository_name: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_last_pulled: str,
-             version: str,
-             versions: Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             digest: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             layers: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult']] = None,
+             layers_size_in_bytes: Optional[str] = None,
+             manifest_size_in_bytes: Optional[int] = None,
+             pull_count: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             repository_name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_last_pulled: Optional[str] = None,
+             version: Optional[str] = None,
+             versions: Optional[Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if digest is None:
+            raise TypeError("Missing 'digest' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'layersSizeInBytes' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if layers is None:
+            raise TypeError("Missing 'layers' argument")
+        if layers_size_in_bytes is None and 'layersSizeInBytes' in kwargs:
             layers_size_in_bytes = kwargs['layersSizeInBytes']
-        if 'manifestSizeInBytes' in kwargs:
+        if layers_size_in_bytes is None:
+            raise TypeError("Missing 'layers_size_in_bytes' argument")
+        if manifest_size_in_bytes is None and 'manifestSizeInBytes' in kwargs:
             manifest_size_in_bytes = kwargs['manifestSizeInBytes']
-        if 'pullCount' in kwargs:
+        if manifest_size_in_bytes is None:
+            raise TypeError("Missing 'manifest_size_in_bytes' argument")
+        if pull_count is None and 'pullCount' in kwargs:
             pull_count = kwargs['pullCount']
-        if 'repositoryId' in kwargs:
+        if pull_count is None:
+            raise TypeError("Missing 'pull_count' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'repositoryName' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
-        if 'systemTags' in kwargs:
+        if repository_name is None:
+            raise TypeError("Missing 'repository_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastPulled' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_pulled is None and 'timeLastPulled' in kwargs:
             time_last_pulled = kwargs['timeLastPulled']
+        if time_last_pulled is None:
+            raise TypeError("Missing 'time_last_pulled' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if versions is None:
+            raise TypeError("Missing 'versions' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
@@ -546,15 +604,21 @@ class GetContainerImagesContainerImageCollectionItemLayerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             digest: str,
-             size_in_bytes: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             digest: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sizeInBytes' in kwargs:
+        if digest is None:
+            raise TypeError("Missing 'digest' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'timeCreated' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("digest", digest)
         _setter("size_in_bytes", size_in_bytes)
@@ -605,15 +669,21 @@ class GetContainerImagesContainerImageCollectionItemVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             created_by: str,
-             time_created: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             created_by: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'timeCreated' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("created_by", created_by)
         _setter("time_created", time_created)
@@ -659,11 +729,15 @@ class GetContainerImagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -712,24 +786,36 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_count: int,
-             items: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult'],
-             layer_count: int,
-             layers_size_in_bytes: str,
-             remaining_items_count: int,
-             repository_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             image_count: Optional[int] = None,
+             items: Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult']] = None,
+             layer_count: Optional[int] = None,
+             layers_size_in_bytes: Optional[str] = None,
+             remaining_items_count: Optional[int] = None,
+             repository_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageCount' in kwargs:
+        if image_count is None and 'imageCount' in kwargs:
             image_count = kwargs['imageCount']
-        if 'layerCount' in kwargs:
+        if image_count is None:
+            raise TypeError("Missing 'image_count' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if layer_count is None and 'layerCount' in kwargs:
             layer_count = kwargs['layerCount']
-        if 'layersSizeInBytes' in kwargs:
+        if layer_count is None:
+            raise TypeError("Missing 'layer_count' argument")
+        if layers_size_in_bytes is None and 'layersSizeInBytes' in kwargs:
             layers_size_in_bytes = kwargs['layersSizeInBytes']
-        if 'remainingItemsCount' in kwargs:
+        if layers_size_in_bytes is None:
+            raise TypeError("Missing 'layers_size_in_bytes' argument")
+        if remaining_items_count is None and 'remainingItemsCount' in kwargs:
             remaining_items_count = kwargs['remainingItemsCount']
-        if 'repositoryCount' in kwargs:
+        if remaining_items_count is None:
+            raise TypeError("Missing 'remaining_items_count' argument")
+        if repository_count is None and 'repositoryCount' in kwargs:
             repository_count = kwargs['repositoryCount']
+        if repository_count is None:
+            raise TypeError("Missing 'repository_count' argument")
 
         _setter("image_count", image_count)
         _setter("items", items)
@@ -843,54 +929,90 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             billable_size_in_gbs: str,
-             compartment_id: str,
-             created_by: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image_count: int,
-             is_immutable: bool,
-             is_public: bool,
-             layer_count: int,
-             layers_size_in_bytes: str,
-             namespace: str,
-             readmes: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_last_pushed: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             billable_size_in_gbs: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image_count: Optional[int] = None,
+             is_immutable: Optional[bool] = None,
+             is_public: Optional[bool] = None,
+             layer_count: Optional[int] = None,
+             layers_size_in_bytes: Optional[str] = None,
+             namespace: Optional[str] = None,
+             readmes: Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_last_pushed: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billableSizeInGbs' in kwargs:
+        if billable_size_in_gbs is None and 'billableSizeInGbs' in kwargs:
             billable_size_in_gbs = kwargs['billableSizeInGbs']
-        if 'compartmentId' in kwargs:
+        if billable_size_in_gbs is None:
+            raise TypeError("Missing 'billable_size_in_gbs' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageCount' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_count is None and 'imageCount' in kwargs:
             image_count = kwargs['imageCount']
-        if 'isImmutable' in kwargs:
+        if image_count is None:
+            raise TypeError("Missing 'image_count' argument")
+        if is_immutable is None and 'isImmutable' in kwargs:
             is_immutable = kwargs['isImmutable']
-        if 'isPublic' in kwargs:
+        if is_immutable is None:
+            raise TypeError("Missing 'is_immutable' argument")
+        if is_public is None and 'isPublic' in kwargs:
             is_public = kwargs['isPublic']
-        if 'layerCount' in kwargs:
+        if is_public is None:
+            raise TypeError("Missing 'is_public' argument")
+        if layer_count is None and 'layerCount' in kwargs:
             layer_count = kwargs['layerCount']
-        if 'layersSizeInBytes' in kwargs:
+        if layer_count is None:
+            raise TypeError("Missing 'layer_count' argument")
+        if layers_size_in_bytes is None and 'layersSizeInBytes' in kwargs:
             layers_size_in_bytes = kwargs['layersSizeInBytes']
-        if 'systemTags' in kwargs:
+        if layers_size_in_bytes is None:
+            raise TypeError("Missing 'layers_size_in_bytes' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if readmes is None:
+            raise TypeError("Missing 'readmes' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastPushed' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_pushed is None and 'timeLastPushed' in kwargs:
             time_last_pushed = kwargs['timeLastPushed']
+        if time_last_pushed is None:
+            raise TypeError("Missing 'time_last_pushed' argument")
 
         _setter("billable_size_in_gbs", billable_size_in_gbs)
         _setter("compartment_id", compartment_id)
@@ -1073,10 +1195,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: str,
-             format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content: Optional[str] = None,
+             format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
 
         _setter("content", content)
         _setter("format", format)
@@ -1113,11 +1239,15 @@ class GetContainerRepositoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1157,10 +1287,14 @@ class GetContainerRepositoryReadmeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: str,
-             format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content: Optional[str] = None,
+             format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
 
         _setter("content", content)
         _setter("format", format)
@@ -1195,12 +1329,16 @@ class GetContainerSignaturesContainerImageSignatureCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult'],
-             remaining_items_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult']] = None,
+             remaining_items_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'remainingItemsCount' in kwargs:
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if remaining_items_count is None and 'remainingItemsCount' in kwargs:
             remaining_items_count = kwargs['remainingItemsCount']
+        if remaining_items_count is None:
+            raise TypeError("Missing 'remaining_items_count' argument")
 
         _setter("items", items)
         _setter("remaining_items_count", remaining_items_count)
@@ -1272,45 +1410,75 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             created_by: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image_id: str,
-             kms_key_id: str,
-             kms_key_version_id: str,
-             message: str,
-             signature: str,
-             signing_algorithm: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             kms_key_version_id: Optional[str] = None,
+             message: Optional[str] = None,
+             signature: Optional[str] = None,
+             signing_algorithm: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'signingAlgorithm' in kwargs:
+        if kms_key_version_id is None:
+            raise TypeError("Missing 'kms_key_version_id' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if signature is None:
+            raise TypeError("Missing 'signature' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'systemTags' in kwargs:
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
@@ -1464,11 +1632,15 @@ class GetContainerSignaturesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1506,11 +1678,15 @@ class GetGenericArtifactsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1544,9 +1720,11 @@ class GetGenericArtifactsGenericArtifactCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1605,39 +1783,65 @@ class GetGenericArtifactsGenericArtifactCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_id: str,
-             artifact_path: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             repository_id: str,
-             sha256: str,
-             size_in_bytes: str,
-             state: str,
-             time_created: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_id: Optional[str] = None,
+             artifact_path: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             sha256: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactId' in kwargs:
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
-        if 'artifactPath' in kwargs:
+        if artifact_id is None:
+            raise TypeError("Missing 'artifact_id' argument")
+        if artifact_path is None and 'artifactPath' in kwargs:
             artifact_path = kwargs['artifactPath']
-        if 'compartmentId' in kwargs:
+        if artifact_path is None:
+            raise TypeError("Missing 'artifact_path' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'repositoryId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'sizeInBytes' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if sha256 is None:
+            raise TypeError("Missing 'sha256' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'timeCreated' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("artifact_id", artifact_id)
         _setter("artifact_path", artifact_path)
@@ -1770,11 +1974,15 @@ class GetRepositoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1808,9 +2016,11 @@ class GetRepositoriesRepositoryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1861,32 +2071,52 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_immutable: bool,
-             repository_type: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_immutable: Optional[bool] = None,
+             repository_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isImmutable' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_immutable is None and 'isImmutable' in kwargs:
             is_immutable = kwargs['isImmutable']
-        if 'repositoryType' in kwargs:
+        if is_immutable is None:
+            raise TypeError("Missing 'is_immutable' argument")
+        if repository_type is None and 'repositoryType' in kwargs:
             repository_type = kwargs['repositoryType']
-        if 'timeCreated' in kwargs:
+        if repository_type is None:
+            raise TypeError("Missing 'repository_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

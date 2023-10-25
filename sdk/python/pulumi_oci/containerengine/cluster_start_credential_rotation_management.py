@@ -33,14 +33,18 @@ class ClusterStartCredentialRotationManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auto_completion_delay_duration: pulumi.Input[str],
-             cluster_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             auto_completion_delay_duration: Optional[pulumi.Input[str]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCompletionDelayDuration' in kwargs:
+        if auto_completion_delay_duration is None and 'autoCompletionDelayDuration' in kwargs:
             auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
-        if 'clusterId' in kwargs:
+        if auto_completion_delay_duration is None:
+            raise TypeError("Missing 'auto_completion_delay_duration' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
 
         _setter("auto_completion_delay_duration", auto_completion_delay_duration)
         _setter("cluster_id", cluster_id)
@@ -98,11 +102,11 @@ class _ClusterStartCredentialRotationManagementState:
              _setter: Callable[[Any, Any], None],
              auto_completion_delay_duration: Optional[pulumi.Input[str]] = None,
              cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCompletionDelayDuration' in kwargs:
+        if auto_completion_delay_duration is None and 'autoCompletionDelayDuration' in kwargs:
             auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
 
         if auto_completion_delay_duration is not None:

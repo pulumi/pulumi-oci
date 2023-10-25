@@ -85,27 +85,27 @@ class ProviderArgs:
              retry_duration_seconds: Optional[pulumi.Input[int]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configFileProfile' in kwargs:
+        if config_file_profile is None and 'configFileProfile' in kwargs:
             config_file_profile = kwargs['configFileProfile']
-        if 'disableAutoRetries' in kwargs:
+        if disable_auto_retries is None and 'disableAutoRetries' in kwargs:
             disable_auto_retries = kwargs['disableAutoRetries']
-        if 'ignoreDefinedTags' in kwargs:
+        if ignore_defined_tags is None and 'ignoreDefinedTags' in kwargs:
             ignore_defined_tags = kwargs['ignoreDefinedTags']
-        if 'privateKey' in kwargs:
+        if private_key is None and 'privateKey' in kwargs:
             private_key = kwargs['privateKey']
-        if 'privateKeyPassword' in kwargs:
+        if private_key_password is None and 'privateKeyPassword' in kwargs:
             private_key_password = kwargs['privateKeyPassword']
-        if 'privateKeyPath' in kwargs:
+        if private_key_path is None and 'privateKeyPath' in kwargs:
             private_key_path = kwargs['privateKeyPath']
-        if 'realmSpecificServiceEndpointTemplateEnabled' in kwargs:
+        if realm_specific_service_endpoint_template_enabled is None and 'realmSpecificServiceEndpointTemplateEnabled' in kwargs:
             realm_specific_service_endpoint_template_enabled = kwargs['realmSpecificServiceEndpointTemplateEnabled']
-        if 'retryDurationSeconds' in kwargs:
+        if retry_duration_seconds is None and 'retryDurationSeconds' in kwargs:
             retry_duration_seconds = kwargs['retryDurationSeconds']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'userOcid' in kwargs:
+        if user_ocid is None and 'userOcid' in kwargs:
             user_ocid = kwargs['userOcid']
 
         if auth is not None:

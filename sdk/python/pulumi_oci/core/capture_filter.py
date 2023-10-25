@@ -46,28 +46,32 @@ class CaptureFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             filter_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             filter_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'filterType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if filter_type is None and 'filterType' in kwargs:
             filter_type = kwargs['filterType']
-        if 'definedTags' in kwargs:
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'flowLogCaptureFilterRules' in kwargs:
+        if flow_log_capture_filter_rules is None and 'flowLogCaptureFilterRules' in kwargs:
             flow_log_capture_filter_rules = kwargs['flowLogCaptureFilterRules']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'vtapCaptureFilterRules' in kwargs:
+        if vtap_capture_filter_rules is None and 'vtapCaptureFilterRules' in kwargs:
             vtap_capture_filter_rules = kwargs['vtapCaptureFilterRules']
 
         _setter("compartment_id", compartment_id)
@@ -216,23 +220,23 @@ class _CaptureFilterState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterType' in kwargs:
+        if filter_type is None and 'filterType' in kwargs:
             filter_type = kwargs['filterType']
-        if 'flowLogCaptureFilterRules' in kwargs:
+        if flow_log_capture_filter_rules is None and 'flowLogCaptureFilterRules' in kwargs:
             flow_log_capture_filter_rules = kwargs['flowLogCaptureFilterRules']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vtapCaptureFilterRules' in kwargs:
+        if vtap_capture_filter_rules is None and 'vtapCaptureFilterRules' in kwargs:
             vtap_capture_filter_rules = kwargs['vtapCaptureFilterRules']
 
         if compartment_id is not None:

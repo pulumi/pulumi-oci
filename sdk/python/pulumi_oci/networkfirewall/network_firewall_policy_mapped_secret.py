@@ -45,20 +45,30 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: pulumi.Input[str],
-             source: pulumi.Input[str],
-             type: pulumi.Input[str],
-             vault_secret_id: pulumi.Input[str],
-             version_number: pulumi.Input[int],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_secret_id: Optional[pulumi.Input[str]] = None,
+             version_number: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'vaultSecretId' in kwargs:
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
             vault_secret_id = kwargs['vaultSecretId']
-        if 'versionNumber' in kwargs:
+        if vault_secret_id is None:
+            raise TypeError("Missing 'vault_secret_id' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("network_firewall_policy_id", network_firewall_policy_id)
         _setter("source", source)
@@ -189,15 +199,15 @@ class _NetworkFirewallPolicyMappedSecretState:
              type: Optional[pulumi.Input[str]] = None,
              vault_secret_id: Optional[pulumi.Input[str]] = None,
              version_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
-        if 'vaultSecretId' in kwargs:
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
             vault_secret_id = kwargs['vaultSecretId']
-        if 'versionNumber' in kwargs:
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
 
         if name is not None:

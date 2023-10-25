@@ -128,8 +128,8 @@ class DomainsMyAuthTokenArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_endpoint: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              expires_on: Optional[pulumi.Input[str]] = None,
@@ -138,13 +138,17 @@ class DomainsMyAuthTokenArgs:
              status: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyAuthTokenTagArgs']]]] = None,
              user: Optional[pulumi.Input['DomainsMyAuthTokenUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'expiresOn' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if expires_on is None and 'expiresOn' in kwargs:
             expires_on = kwargs['expiresOn']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("idcs_endpoint", idcs_endpoint)
@@ -606,29 +610,29 @@ class _DomainsMyAuthTokenState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyAuthTokenTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user: Optional[pulumi.Input['DomainsMyAuthTokenUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'expiresOn' in kwargs:
+        if expires_on is None and 'expiresOn' in kwargs:
             expires_on = kwargs['expiresOn']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
 
         if authorization is not None:
@@ -1242,11 +1246,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
-            if user is not None and not isinstance(user, DomainsMyAuthTokenUserArgs):
-                user = user or {}
-                def _setter(key, value):
-                    user[key] = value
-                DomainsMyAuthTokenUserArgs._configure(_setter, **user)
+            user = _utilities.configure(user, DomainsMyAuthTokenUserArgs, True)
             __props__.__dict__["user"] = user
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

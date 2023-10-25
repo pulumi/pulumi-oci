@@ -67,10 +67,10 @@ class KeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             key_shape: pulumi.Input['KeyKeyShapeArgs'],
-             management_endpoint: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             key_shape: Optional[pulumi.Input['KeyKeyShapeArgs']] = None,
+             management_endpoint: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              desired_state: Optional[pulumi.Input[str]] = None,
              external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
@@ -80,33 +80,41 @@ class KeyArgs:
              restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
              restore_trigger: Optional[pulumi.Input[bool]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'keyShape' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if key_shape is None and 'keyShape' in kwargs:
             key_shape = kwargs['keyShape']
-        if 'managementEndpoint' in kwargs:
+        if key_shape is None:
+            raise TypeError("Missing 'key_shape' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'definedTags' in kwargs:
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
-        if 'externalKeyReference' in kwargs:
+        if external_key_reference is None and 'externalKeyReference' in kwargs:
             external_key_reference = kwargs['externalKeyReference']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'restoreFromFile' in kwargs:
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
             restore_from_file = kwargs['restoreFromFile']
-        if 'restoreFromObjectStore' in kwargs:
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
             restore_from_object_store = kwargs['restoreFromObjectStore']
-        if 'restoreTrigger' in kwargs:
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
 
         _setter("compartment_id", compartment_id)
@@ -391,47 +399,47 @@ class _KeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'currentKeyVersion' in kwargs:
+        if current_key_version is None and 'currentKeyVersion' in kwargs:
             current_key_version = kwargs['currentKeyVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyReference' in kwargs:
+        if external_key_reference is None and 'externalKeyReference' in kwargs:
             external_key_reference = kwargs['externalKeyReference']
-        if 'externalKeyReferenceDetails' in kwargs:
+        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
             external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPrimary' in kwargs:
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'keyShape' in kwargs:
+        if key_shape is None and 'keyShape' in kwargs:
             key_shape = kwargs['keyShape']
-        if 'managementEndpoint' in kwargs:
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'replicaDetails' in kwargs:
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoreFromFile' in kwargs:
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
             restore_from_file = kwargs['restoreFromFile']
-        if 'restoreFromObjectStore' in kwargs:
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
             restore_from_object_store = kwargs['restoreFromObjectStore']
-        if 'restoreTrigger' in kwargs:
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'restoredFromKeyId' in kwargs:
+        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
             restored_from_key_id = kwargs['restoredFromKeyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if compartment_id is not None:
@@ -862,18 +870,10 @@ class Key(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if external_key_reference is not None and not isinstance(external_key_reference, KeyExternalKeyReferenceArgs):
-                external_key_reference = external_key_reference or {}
-                def _setter(key, value):
-                    external_key_reference[key] = value
-                KeyExternalKeyReferenceArgs._configure(_setter, **external_key_reference)
+            external_key_reference = _utilities.configure(external_key_reference, KeyExternalKeyReferenceArgs, True)
             __props__.__dict__["external_key_reference"] = external_key_reference
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if key_shape is not None and not isinstance(key_shape, KeyKeyShapeArgs):
-                key_shape = key_shape or {}
-                def _setter(key, value):
-                    key_shape[key] = value
-                KeyKeyShapeArgs._configure(_setter, **key_shape)
+            key_shape = _utilities.configure(key_shape, KeyKeyShapeArgs, True)
             if key_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'key_shape'")
             __props__.__dict__["key_shape"] = key_shape
@@ -881,17 +881,9 @@ class Key(pulumi.CustomResource):
                 raise TypeError("Missing required property 'management_endpoint'")
             __props__.__dict__["management_endpoint"] = management_endpoint
             __props__.__dict__["protection_mode"] = protection_mode
-            if restore_from_file is not None and not isinstance(restore_from_file, KeyRestoreFromFileArgs):
-                restore_from_file = restore_from_file or {}
-                def _setter(key, value):
-                    restore_from_file[key] = value
-                KeyRestoreFromFileArgs._configure(_setter, **restore_from_file)
+            restore_from_file = _utilities.configure(restore_from_file, KeyRestoreFromFileArgs, True)
             __props__.__dict__["restore_from_file"] = restore_from_file
-            if restore_from_object_store is not None and not isinstance(restore_from_object_store, KeyRestoreFromObjectStoreArgs):
-                restore_from_object_store = restore_from_object_store or {}
-                def _setter(key, value):
-                    restore_from_object_store[key] = value
-                KeyRestoreFromObjectStoreArgs._configure(_setter, **restore_from_object_store)
+            restore_from_object_store = _utilities.configure(restore_from_object_store, KeyRestoreFromObjectStoreArgs, True)
             __props__.__dict__["restore_from_object_store"] = restore_from_object_store
             __props__.__dict__["restore_trigger"] = restore_trigger
             __props__.__dict__["time_of_deletion"] = time_of_deletion

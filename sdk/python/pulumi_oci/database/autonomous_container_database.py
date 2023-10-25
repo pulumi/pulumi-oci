@@ -116,8 +116,8 @@ class AutonomousContainerDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             patch_model: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             patch_model: Optional[pulumi.Input[str]] = None,
              autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
              autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
              backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
@@ -146,67 +146,71 @@ class AutonomousContainerDatabaseArgs:
              standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              version_preference: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'patchModel' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if patch_model is None and 'patchModel' in kwargs:
             patch_model = kwargs['patchModel']
-        if 'autonomousExadataInfrastructureId' in kwargs:
+        if patch_model is None:
+            raise TypeError("Missing 'patch_model' argument")
+        if autonomous_exadata_infrastructure_id is None and 'autonomousExadataInfrastructureId' in kwargs:
             autonomous_exadata_infrastructure_id = kwargs['autonomousExadataInfrastructureId']
-        if 'autonomousVmClusterId' in kwargs:
+        if autonomous_vm_cluster_id is None and 'autonomousVmClusterId' in kwargs:
             autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
-        if 'backupConfig' in kwargs:
+        if backup_config is None and 'backupConfig' in kwargs:
             backup_config = kwargs['backupConfig']
-        if 'cloudAutonomousVmClusterId' in kwargs:
+        if cloud_autonomous_vm_cluster_id is None and 'cloudAutonomousVmClusterId' in kwargs:
             cloud_autonomous_vm_cluster_id = kwargs['cloudAutonomousVmClusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbName' in kwargs:
+        if db_name is None and 'dbName' in kwargs:
             db_name = kwargs['dbName']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+        if fast_start_fail_over_lag_limit_in_seconds is None and 'fastStartFailOverLagLimitInSeconds' in kwargs:
             fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutomaticFailoverEnabled' in kwargs:
+        if is_automatic_failover_enabled is None and 'isAutomaticFailoverEnabled' in kwargs:
             is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'maintenanceWindowDetails' in kwargs:
+        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
             maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
+        if peer_autonomous_container_database_backup_config is None and 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
             peer_autonomous_container_database_backup_config = kwargs['peerAutonomousContainerDatabaseBackupConfig']
-        if 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
+        if peer_autonomous_container_database_compartment_id is None and 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
             peer_autonomous_container_database_compartment_id = kwargs['peerAutonomousContainerDatabaseCompartmentId']
-        if 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
+        if peer_autonomous_container_database_display_name is None and 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
             peer_autonomous_container_database_display_name = kwargs['peerAutonomousContainerDatabaseDisplayName']
-        if 'peerAutonomousExadataInfrastructureId' in kwargs:
+        if peer_autonomous_exadata_infrastructure_id is None and 'peerAutonomousExadataInfrastructureId' in kwargs:
             peer_autonomous_exadata_infrastructure_id = kwargs['peerAutonomousExadataInfrastructureId']
-        if 'peerAutonomousVmClusterId' in kwargs:
+        if peer_autonomous_vm_cluster_id is None and 'peerAutonomousVmClusterId' in kwargs:
             peer_autonomous_vm_cluster_id = kwargs['peerAutonomousVmClusterId']
-        if 'peerCloudAutonomousVmClusterId' in kwargs:
+        if peer_cloud_autonomous_vm_cluster_id is None and 'peerCloudAutonomousVmClusterId' in kwargs:
             peer_cloud_autonomous_vm_cluster_id = kwargs['peerCloudAutonomousVmClusterId']
-        if 'peerDbUniqueName' in kwargs:
+        if peer_db_unique_name is None and 'peerDbUniqueName' in kwargs:
             peer_db_unique_name = kwargs['peerDbUniqueName']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'serviceLevelAgreementType' in kwargs:
+        if service_level_agreement_type is None and 'serviceLevelAgreementType' in kwargs:
             service_level_agreement_type = kwargs['serviceLevelAgreementType']
-        if 'standbyMaintenanceBufferInDays' in kwargs:
+        if standby_maintenance_buffer_in_days is None and 'standbyMaintenanceBufferInDays' in kwargs:
             standby_maintenance_buffer_in_days = kwargs['standbyMaintenanceBufferInDays']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'versionPreference' in kwargs:
+        if version_preference is None and 'versionPreference' in kwargs:
             version_preference = kwargs['versionPreference']
 
         _setter("display_name", display_name)
@@ -849,107 +853,107 @@ class _AutonomousContainerDatabaseState:
              total_cpus: Optional[pulumi.Input[int]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              version_preference: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousExadataInfrastructureId' in kwargs:
+        if autonomous_exadata_infrastructure_id is None and 'autonomousExadataInfrastructureId' in kwargs:
             autonomous_exadata_infrastructure_id = kwargs['autonomousExadataInfrastructureId']
-        if 'autonomousVmClusterId' in kwargs:
+        if autonomous_vm_cluster_id is None and 'autonomousVmClusterId' in kwargs:
             autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'availableCpus' in kwargs:
+        if available_cpus is None and 'availableCpus' in kwargs:
             available_cpus = kwargs['availableCpus']
-        if 'backupConfig' in kwargs:
+        if backup_config is None and 'backupConfig' in kwargs:
             backup_config = kwargs['backupConfig']
-        if 'cloudAutonomousVmClusterId' in kwargs:
+        if cloud_autonomous_vm_cluster_id is None and 'cloudAutonomousVmClusterId' in kwargs:
             cloud_autonomous_vm_cluster_id = kwargs['cloudAutonomousVmClusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeModel' in kwargs:
+        if compute_model is None and 'computeModel' in kwargs:
             compute_model = kwargs['computeModel']
-        if 'dbName' in kwargs:
+        if db_name is None and 'dbName' in kwargs:
             db_name = kwargs['dbName']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+        if fast_start_fail_over_lag_limit_in_seconds is None and 'fastStartFailOverLagLimitInSeconds' in kwargs:
             fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infrastructureType' in kwargs:
+        if infrastructure_type is None and 'infrastructureType' in kwargs:
             infrastructure_type = kwargs['infrastructureType']
-        if 'isAutomaticFailoverEnabled' in kwargs:
+        if is_automatic_failover_enabled is None and 'isAutomaticFailoverEnabled' in kwargs:
             is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
-        if 'keyHistoryEntries' in kwargs:
+        if key_history_entries is None and 'keyHistoryEntries' in kwargs:
             key_history_entries = kwargs['keyHistoryEntries']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'keyStoreWalletName' in kwargs:
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
             key_store_wallet_name = kwargs['keyStoreWalletName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'largestProvisionableAutonomousDatabaseInCpus' in kwargs:
+        if largest_provisionable_autonomous_database_in_cpus is None and 'largestProvisionableAutonomousDatabaseInCpus' in kwargs:
             largest_provisionable_autonomous_database_in_cpus = kwargs['largestProvisionableAutonomousDatabaseInCpus']
-        if 'lastMaintenanceRunId' in kwargs:
+        if last_maintenance_run_id is None and 'lastMaintenanceRunId' in kwargs:
             last_maintenance_run_id = kwargs['lastMaintenanceRunId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceWindowDetails' in kwargs:
+        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
             maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if 'maintenanceWindows' in kwargs:
+        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
             maintenance_windows = kwargs['maintenanceWindows']
-        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+        if memory_per_oracle_compute_unit_in_gbs is None and 'memoryPerOracleComputeUnitInGbs' in kwargs:
             memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
-        if 'nextMaintenanceRunId' in kwargs:
+        if next_maintenance_run_id is None and 'nextMaintenanceRunId' in kwargs:
             next_maintenance_run_id = kwargs['nextMaintenanceRunId']
-        if 'patchId' in kwargs:
+        if patch_id is None and 'patchId' in kwargs:
             patch_id = kwargs['patchId']
-        if 'patchModel' in kwargs:
+        if patch_model is None and 'patchModel' in kwargs:
             patch_model = kwargs['patchModel']
-        if 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
+        if peer_autonomous_container_database_backup_config is None and 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
             peer_autonomous_container_database_backup_config = kwargs['peerAutonomousContainerDatabaseBackupConfig']
-        if 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
+        if peer_autonomous_container_database_compartment_id is None and 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
             peer_autonomous_container_database_compartment_id = kwargs['peerAutonomousContainerDatabaseCompartmentId']
-        if 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
+        if peer_autonomous_container_database_display_name is None and 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
             peer_autonomous_container_database_display_name = kwargs['peerAutonomousContainerDatabaseDisplayName']
-        if 'peerAutonomousExadataInfrastructureId' in kwargs:
+        if peer_autonomous_exadata_infrastructure_id is None and 'peerAutonomousExadataInfrastructureId' in kwargs:
             peer_autonomous_exadata_infrastructure_id = kwargs['peerAutonomousExadataInfrastructureId']
-        if 'peerAutonomousVmClusterId' in kwargs:
+        if peer_autonomous_vm_cluster_id is None and 'peerAutonomousVmClusterId' in kwargs:
             peer_autonomous_vm_cluster_id = kwargs['peerAutonomousVmClusterId']
-        if 'peerCloudAutonomousVmClusterId' in kwargs:
+        if peer_cloud_autonomous_vm_cluster_id is None and 'peerCloudAutonomousVmClusterId' in kwargs:
             peer_cloud_autonomous_vm_cluster_id = kwargs['peerCloudAutonomousVmClusterId']
-        if 'peerDbUniqueName' in kwargs:
+        if peer_db_unique_name is None and 'peerDbUniqueName' in kwargs:
             peer_db_unique_name = kwargs['peerDbUniqueName']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'provisionableCpuses' in kwargs:
+        if provisionable_cpuses is None and 'provisionableCpuses' in kwargs:
             provisionable_cpuses = kwargs['provisionableCpuses']
-        if 'provisionedCpus' in kwargs:
+        if provisioned_cpus is None and 'provisionedCpus' in kwargs:
             provisioned_cpus = kwargs['provisionedCpus']
-        if 'reclaimableCpus' in kwargs:
+        if reclaimable_cpus is None and 'reclaimableCpus' in kwargs:
             reclaimable_cpus = kwargs['reclaimableCpus']
-        if 'reservedCpus' in kwargs:
+        if reserved_cpus is None and 'reservedCpus' in kwargs:
             reserved_cpus = kwargs['reservedCpus']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'serviceLevelAgreementType' in kwargs:
+        if service_level_agreement_type is None and 'serviceLevelAgreementType' in kwargs:
             service_level_agreement_type = kwargs['serviceLevelAgreementType']
-        if 'standbyMaintenanceBufferInDays' in kwargs:
+        if standby_maintenance_buffer_in_days is None and 'standbyMaintenanceBufferInDays' in kwargs:
             standby_maintenance_buffer_in_days = kwargs['standbyMaintenanceBufferInDays']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeSnapshotStandbyRevert' in kwargs:
+        if time_snapshot_standby_revert is None and 'timeSnapshotStandbyRevert' in kwargs:
             time_snapshot_standby_revert = kwargs['timeSnapshotStandbyRevert']
-        if 'totalCpus' in kwargs:
+        if total_cpus is None and 'totalCpus' in kwargs:
             total_cpus = kwargs['totalCpus']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'versionPreference' in kwargs:
+        if version_preference is None and 'versionPreference' in kwargs:
             version_preference = kwargs['versionPreference']
 
         if autonomous_exadata_infrastructure_id is not None:
@@ -1843,11 +1847,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
             __props__.__dict__["autonomous_exadata_infrastructure_id"] = autonomous_exadata_infrastructure_id
             __props__.__dict__["autonomous_vm_cluster_id"] = autonomous_vm_cluster_id
-            if backup_config is not None and not isinstance(backup_config, AutonomousContainerDatabaseBackupConfigArgs):
-                backup_config = backup_config or {}
-                def _setter(key, value):
-                    backup_config[key] = value
-                AutonomousContainerDatabaseBackupConfigArgs._configure(_setter, **backup_config)
+            backup_config = _utilities.configure(backup_config, AutonomousContainerDatabaseBackupConfigArgs, True)
             __props__.__dict__["backup_config"] = backup_config
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1863,20 +1863,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
             __props__.__dict__["key_store_id"] = key_store_id
             __props__.__dict__["kms_key_id"] = kms_key_id
-            if maintenance_window_details is not None and not isinstance(maintenance_window_details, AutonomousContainerDatabaseMaintenanceWindowDetailsArgs):
-                maintenance_window_details = maintenance_window_details or {}
-                def _setter(key, value):
-                    maintenance_window_details[key] = value
-                AutonomousContainerDatabaseMaintenanceWindowDetailsArgs._configure(_setter, **maintenance_window_details)
+            maintenance_window_details = _utilities.configure(maintenance_window_details, AutonomousContainerDatabaseMaintenanceWindowDetailsArgs, True)
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             if patch_model is None and not opts.urn:
                 raise TypeError("Missing required property 'patch_model'")
             __props__.__dict__["patch_model"] = patch_model
-            if peer_autonomous_container_database_backup_config is not None and not isinstance(peer_autonomous_container_database_backup_config, AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs):
-                peer_autonomous_container_database_backup_config = peer_autonomous_container_database_backup_config or {}
-                def _setter(key, value):
-                    peer_autonomous_container_database_backup_config[key] = value
-                AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs._configure(_setter, **peer_autonomous_container_database_backup_config)
+            peer_autonomous_container_database_backup_config = _utilities.configure(peer_autonomous_container_database_backup_config, AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs, True)
             __props__.__dict__["peer_autonomous_container_database_backup_config"] = peer_autonomous_container_database_backup_config
             __props__.__dict__["peer_autonomous_container_database_compartment_id"] = peer_autonomous_container_database_compartment_id
             __props__.__dict__["peer_autonomous_container_database_display_name"] = peer_autonomous_container_database_display_name

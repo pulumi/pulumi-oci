@@ -36,17 +36,23 @@ class ExternalNonContainerDatabasesStackMonitoringArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_stack_monitoring: pulumi.Input[bool],
-             external_database_connector_id: pulumi.Input[str],
-             external_non_container_database_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_non_container_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableStackMonitoring' in kwargs:
+        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
             enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if enable_stack_monitoring is None:
+            raise TypeError("Missing 'enable_stack_monitoring' argument")
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalNonContainerDatabaseId' in kwargs:
+        if external_database_connector_id is None:
+            raise TypeError("Missing 'external_database_connector_id' argument")
+        if external_non_container_database_id is None and 'externalNonContainerDatabaseId' in kwargs:
             external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+        if external_non_container_database_id is None:
+            raise TypeError("Missing 'external_non_container_database_id' argument")
 
         _setter("enable_stack_monitoring", enable_stack_monitoring)
         _setter("external_database_connector_id", external_database_connector_id)
@@ -121,13 +127,13 @@ class _ExternalNonContainerDatabasesStackMonitoringState:
              enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableStackMonitoring' in kwargs:
+        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
             enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalNonContainerDatabaseId' in kwargs:
+        if external_non_container_database_id is None and 'externalNonContainerDatabaseId' in kwargs:
             external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
 
         if enable_stack_monitoring is not None:

@@ -40,11 +40,11 @@ import (
 //				},
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				UsagePlans:    pulumi.Any(_var.Subscriber_usage_plans),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Subscriber_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

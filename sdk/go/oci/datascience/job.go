@@ -50,12 +50,12 @@ import (
 //					SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				},
 //				ProjectId: pulumi.Any(oci_datascience_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Job_description),
 //				DisplayName: pulumi.Any(_var.Job_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				JobLogConfigurationDetails: &datascience.JobJobLogConfigurationDetailsArgs{

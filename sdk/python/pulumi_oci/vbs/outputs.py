@@ -34,11 +34,15 @@ class GetInstVbsInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -75,9 +79,11 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -142,47 +148,77 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             idcs_access_token: str,
-             is_resource_usage_agreement_granted: bool,
-             lifecyle_details: str,
-             name: str,
-             resource_compartment_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             vbs_access_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             idcs_access_token: Optional[str] = None,
+             is_resource_usage_agreement_granted: Optional[bool] = None,
+             lifecyle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             resource_compartment_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vbs_access_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'isResourceUsageAgreementGranted' in kwargs:
+        if idcs_access_token is None:
+            raise TypeError("Missing 'idcs_access_token' argument")
+        if is_resource_usage_agreement_granted is None and 'isResourceUsageAgreementGranted' in kwargs:
             is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
-        if 'lifecyleDetails' in kwargs:
+        if is_resource_usage_agreement_granted is None:
+            raise TypeError("Missing 'is_resource_usage_agreement_granted' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'resourceCompartmentId' in kwargs:
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'systemTags' in kwargs:
+        if resource_compartment_id is None:
+            raise TypeError("Missing 'resource_compartment_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vbsAccessUrl' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vbs_access_url is None and 'vbsAccessUrl' in kwargs:
             vbs_access_url = kwargs['vbsAccessUrl']
+        if vbs_access_url is None:
+            raise TypeError("Missing 'vbs_access_url' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

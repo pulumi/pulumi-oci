@@ -57,7 +57,7 @@ class ManagementAgentManagementAgentProperty(dict):
              name: Optional[str] = None,
              units: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -160,21 +160,21 @@ class ManagementAgentPluginList(dict):
              plugin_status: Optional[str] = None,
              plugin_status_message: Optional[str] = None,
              plugin_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pluginDisplayName' in kwargs:
+        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
             plugin_display_name = kwargs['pluginDisplayName']
-        if 'pluginId' in kwargs:
+        if plugin_id is None and 'pluginId' in kwargs:
             plugin_id = kwargs['pluginId']
-        if 'pluginName' in kwargs:
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'pluginStatus' in kwargs:
+        if plugin_status is None and 'pluginStatus' in kwargs:
             plugin_status = kwargs['pluginStatus']
-        if 'pluginStatusMessage' in kwargs:
+        if plugin_status_message is None and 'pluginStatusMessage' in kwargs:
             plugin_status_message = kwargs['pluginStatusMessage']
-        if 'pluginVersion' in kwargs:
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
 
         if is_enabled is not None:
@@ -272,20 +272,28 @@ class GetManagementAgentAvailableHistoriesAvailabilityHistoryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_status: str,
-             management_agent_id: str,
-             time_availability_status_ended: str,
-             time_availability_status_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_status: Optional[str] = None,
+             management_agent_id: Optional[str] = None,
+             time_availability_status_ended: Optional[str] = None,
+             time_availability_status_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityStatus' in kwargs:
+        if availability_status is None and 'availabilityStatus' in kwargs:
             availability_status = kwargs['availabilityStatus']
-        if 'managementAgentId' in kwargs:
+        if availability_status is None:
+            raise TypeError("Missing 'availability_status' argument")
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'timeAvailabilityStatusEnded' in kwargs:
+        if management_agent_id is None:
+            raise TypeError("Missing 'management_agent_id' argument")
+        if time_availability_status_ended is None and 'timeAvailabilityStatusEnded' in kwargs:
             time_availability_status_ended = kwargs['timeAvailabilityStatusEnded']
-        if 'timeAvailabilityStatusStarted' in kwargs:
+        if time_availability_status_ended is None:
+            raise TypeError("Missing 'time_availability_status_ended' argument")
+        if time_availability_status_started is None and 'timeAvailabilityStatusStarted' in kwargs:
             time_availability_status_started = kwargs['timeAvailabilityStatusStarted']
+        if time_availability_status_started is None:
+            raise TypeError("Missing 'time_availability_status_started' argument")
 
         _setter("availability_status", availability_status)
         _setter("management_agent_id", management_agent_id)
@@ -340,11 +348,15 @@ class GetManagementAgentAvailableHistoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -384,10 +396,14 @@ class GetManagementAgentCountItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             dimensions: Sequence['outputs.GetManagementAgentCountItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             dimensions: Optional[Sequence['outputs.GetManagementAgentCountItemDimensionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
 
         _setter("count", count)
         _setter("dimensions", dimensions)
@@ -435,21 +451,31 @@ class GetManagementAgentCountItemDimensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_status: str,
-             has_plugins: bool,
-             install_type: str,
-             platform_type: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_status: Optional[str] = None,
+             has_plugins: Optional[bool] = None,
+             install_type: Optional[str] = None,
+             platform_type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityStatus' in kwargs:
+        if availability_status is None and 'availabilityStatus' in kwargs:
             availability_status = kwargs['availabilityStatus']
-        if 'hasPlugins' in kwargs:
+        if availability_status is None:
+            raise TypeError("Missing 'availability_status' argument")
+        if has_plugins is None and 'hasPlugins' in kwargs:
             has_plugins = kwargs['hasPlugins']
-        if 'installType' in kwargs:
+        if has_plugins is None:
+            raise TypeError("Missing 'has_plugins' argument")
+        if install_type is None and 'installType' in kwargs:
             install_type = kwargs['installType']
-        if 'platformType' in kwargs:
+        if install_type is None:
+            raise TypeError("Missing 'install_type' argument")
+        if platform_type is None and 'platformType' in kwargs:
             platform_type = kwargs['platformType']
+        if platform_type is None:
+            raise TypeError("Missing 'platform_type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("availability_status", availability_status)
         _setter("has_plugins", has_plugins)
@@ -516,11 +542,15 @@ class GetManagementAgentImagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -590,31 +620,53 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             checksum: str,
-             id: str,
-             image_object_storage_details: Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult'],
-             object_url: str,
-             package_architecture_type: str,
-             package_type: str,
-             platform_name: str,
-             platform_type: str,
-             size: float,
-             state: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             checksum: Optional[str] = None,
+             id: Optional[str] = None,
+             image_object_storage_details: Optional[Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult']] = None,
+             object_url: Optional[str] = None,
+             package_architecture_type: Optional[str] = None,
+             package_type: Optional[str] = None,
+             platform_name: Optional[str] = None,
+             platform_type: Optional[str] = None,
+             size: Optional[float] = None,
+             state: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageObjectStorageDetails' in kwargs:
+        if checksum is None:
+            raise TypeError("Missing 'checksum' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_object_storage_details is None and 'imageObjectStorageDetails' in kwargs:
             image_object_storage_details = kwargs['imageObjectStorageDetails']
-        if 'objectUrl' in kwargs:
+        if image_object_storage_details is None:
+            raise TypeError("Missing 'image_object_storage_details' argument")
+        if object_url is None and 'objectUrl' in kwargs:
             object_url = kwargs['objectUrl']
-        if 'packageArchitectureType' in kwargs:
+        if object_url is None:
+            raise TypeError("Missing 'object_url' argument")
+        if package_architecture_type is None and 'packageArchitectureType' in kwargs:
             package_architecture_type = kwargs['packageArchitectureType']
-        if 'packageType' in kwargs:
+        if package_architecture_type is None:
+            raise TypeError("Missing 'package_architecture_type' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'platformName' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if platform_name is None and 'platformName' in kwargs:
             platform_name = kwargs['platformName']
-        if 'platformType' in kwargs:
+        if platform_name is None:
+            raise TypeError("Missing 'platform_name' argument")
+        if platform_type is None and 'platformType' in kwargs:
             platform_type = kwargs['platformType']
+        if platform_type is None:
+            raise TypeError("Missing 'platform_type' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("checksum", checksum)
         _setter("id", id)
@@ -743,19 +795,29 @@ class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             checksum: str,
-             object: str,
-             object_bucket: str,
-             object_namespace: str,
-             object_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             checksum: Optional[str] = None,
+             object: Optional[str] = None,
+             object_bucket: Optional[str] = None,
+             object_namespace: Optional[str] = None,
+             object_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectBucket' in kwargs:
+        if checksum is None:
+            raise TypeError("Missing 'checksum' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if object_bucket is None and 'objectBucket' in kwargs:
             object_bucket = kwargs['objectBucket']
-        if 'objectNamespace' in kwargs:
+        if object_bucket is None:
+            raise TypeError("Missing 'object_bucket' argument")
+        if object_namespace is None and 'objectNamespace' in kwargs:
             object_namespace = kwargs['objectNamespace']
-        if 'objectUrl' in kwargs:
+        if object_namespace is None:
+            raise TypeError("Missing 'object_namespace' argument")
+        if object_url is None and 'objectUrl' in kwargs:
             object_url = kwargs['objectUrl']
+        if object_url is None:
+            raise TypeError("Missing 'object_url' argument")
 
         _setter("checksum", checksum)
         _setter("object", object)
@@ -819,11 +881,15 @@ class GetManagementAgentInstallKeysFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -896,41 +962,67 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_key_install_count: int,
-             compartment_id: str,
-             created_by_principal_id: str,
-             current_key_install_count: int,
-             display_name: str,
-             id: str,
-             is_unlimited: bool,
-             key: str,
-             lifecycle_details: str,
-             state: str,
-             time_created: str,
-             time_expires: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_key_install_count: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             created_by_principal_id: Optional[str] = None,
+             current_key_install_count: Optional[int] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_unlimited: Optional[bool] = None,
+             key: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_expires: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedKeyInstallCount' in kwargs:
+        if allowed_key_install_count is None and 'allowedKeyInstallCount' in kwargs:
             allowed_key_install_count = kwargs['allowedKeyInstallCount']
-        if 'compartmentId' in kwargs:
+        if allowed_key_install_count is None:
+            raise TypeError("Missing 'allowed_key_install_count' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdByPrincipalId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by_principal_id is None and 'createdByPrincipalId' in kwargs:
             created_by_principal_id = kwargs['createdByPrincipalId']
-        if 'currentKeyInstallCount' in kwargs:
+        if created_by_principal_id is None:
+            raise TypeError("Missing 'created_by_principal_id' argument")
+        if current_key_install_count is None and 'currentKeyInstallCount' in kwargs:
             current_key_install_count = kwargs['currentKeyInstallCount']
-        if 'displayName' in kwargs:
+        if current_key_install_count is None:
+            raise TypeError("Missing 'current_key_install_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isUnlimited' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'lifecycleDetails' in kwargs:
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpires' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
-        if 'timeUpdated' in kwargs:
+        if time_expires is None:
+            raise TypeError("Missing 'time_expires' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("allowed_key_install_count", allowed_key_install_count)
         _setter("compartment_id", compartment_id)
@@ -1071,11 +1163,17 @@ class GetManagementAgentManagementAgentPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             units: str,
-             values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             units: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if units is None:
+            raise TypeError("Missing 'units' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("units", units)
@@ -1123,10 +1221,14 @@ class GetManagementAgentPluginCountItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             dimensions: Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             dimensions: Optional[Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
 
         _setter("count", count)
         _setter("dimensions", dimensions)
@@ -1165,14 +1267,18 @@ class GetManagementAgentPluginCountItemDimensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             plugin_display_name: str,
-             plugin_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             plugin_display_name: Optional[str] = None,
+             plugin_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pluginDisplayName' in kwargs:
+        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
             plugin_display_name = kwargs['pluginDisplayName']
-        if 'pluginName' in kwargs:
+        if plugin_display_name is None:
+            raise TypeError("Missing 'plugin_display_name' argument")
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
+        if plugin_name is None:
+            raise TypeError("Missing 'plugin_name' argument")
 
         _setter("plugin_display_name", plugin_display_name)
         _setter("plugin_name", plugin_name)
@@ -1226,29 +1332,43 @@ class GetManagementAgentPluginListResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             plugin_display_name: str,
-             plugin_id: str,
-             plugin_name: str,
-             plugin_status: str,
-             plugin_status_message: str,
-             plugin_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             plugin_display_name: Optional[str] = None,
+             plugin_id: Optional[str] = None,
+             plugin_name: Optional[str] = None,
+             plugin_status: Optional[str] = None,
+             plugin_status_message: Optional[str] = None,
+             plugin_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pluginDisplayName' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
             plugin_display_name = kwargs['pluginDisplayName']
-        if 'pluginId' in kwargs:
+        if plugin_display_name is None:
+            raise TypeError("Missing 'plugin_display_name' argument")
+        if plugin_id is None and 'pluginId' in kwargs:
             plugin_id = kwargs['pluginId']
-        if 'pluginName' in kwargs:
+        if plugin_id is None:
+            raise TypeError("Missing 'plugin_id' argument")
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'pluginStatus' in kwargs:
+        if plugin_name is None:
+            raise TypeError("Missing 'plugin_name' argument")
+        if plugin_status is None and 'pluginStatus' in kwargs:
             plugin_status = kwargs['pluginStatus']
-        if 'pluginStatusMessage' in kwargs:
+        if plugin_status is None:
+            raise TypeError("Missing 'plugin_status' argument")
+        if plugin_status_message is None and 'pluginStatusMessage' in kwargs:
             plugin_status_message = kwargs['pluginStatusMessage']
-        if 'pluginVersion' in kwargs:
+        if plugin_status_message is None:
+            raise TypeError("Missing 'plugin_status_message' argument")
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
+        if plugin_version is None:
+            raise TypeError("Missing 'plugin_version' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("plugin_display_name", plugin_display_name)
@@ -1333,11 +1453,15 @@ class GetManagementAgentPluginsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1398,22 +1522,38 @@ class GetManagementAgentPluginsManagementAgentPluginResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             display_name: str,
-             id: str,
-             is_console_deployable: bool,
-             name: str,
-             state: str,
-             supported_platform_types: Sequence[str],
-             version: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_console_deployable: Optional[bool] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             supported_platform_types: Optional[Sequence[str]] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isConsoleDeployable' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_console_deployable is None and 'isConsoleDeployable' in kwargs:
             is_console_deployable = kwargs['isConsoleDeployable']
-        if 'supportedPlatformTypes' in kwargs:
+        if is_console_deployable is None:
+            raise TypeError("Missing 'is_console_deployable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if supported_platform_types is None and 'supportedPlatformTypes' in kwargs:
             supported_platform_types = kwargs['supportedPlatformTypes']
+        if supported_platform_types is None:
+            raise TypeError("Missing 'supported_platform_types' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("description", description)
         _setter("display_name", display_name)
@@ -1508,11 +1648,15 @@ class GetManagementAgentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1631,81 +1775,135 @@ class GetManagementAgentsManagementAgentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_status: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             deploy_plugins_ids: Sequence[str],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             host: str,
-             host_id: str,
-             id: str,
-             install_key_id: str,
-             install_path: str,
-             install_type: str,
-             is_agent_auto_upgradable: bool,
-             is_customer_deployed: bool,
-             lifecycle_details: str,
-             managed_agent_id: str,
-             management_agent_properties: Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult'],
-             platform_name: str,
-             platform_type: str,
-             platform_version: str,
-             plugin_lists: Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult'],
-             resource_artifact_version: str,
-             state: str,
-             time_created: str,
-             time_last_heartbeat: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_status: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_plugins_ids: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             host: Optional[str] = None,
+             host_id: Optional[str] = None,
+             id: Optional[str] = None,
+             install_key_id: Optional[str] = None,
+             install_path: Optional[str] = None,
+             install_type: Optional[str] = None,
+             is_agent_auto_upgradable: Optional[bool] = None,
+             is_customer_deployed: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             managed_agent_id: Optional[str] = None,
+             management_agent_properties: Optional[Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult']] = None,
+             platform_name: Optional[str] = None,
+             platform_type: Optional[str] = None,
+             platform_version: Optional[str] = None,
+             plugin_lists: Optional[Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult']] = None,
+             resource_artifact_version: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_last_heartbeat: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityStatus' in kwargs:
+        if availability_status is None and 'availabilityStatus' in kwargs:
             availability_status = kwargs['availabilityStatus']
-        if 'compartmentId' in kwargs:
+        if availability_status is None:
+            raise TypeError("Missing 'availability_status' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPluginsIds' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_plugins_ids is None and 'deployPluginsIds' in kwargs:
             deploy_plugins_ids = kwargs['deployPluginsIds']
-        if 'displayName' in kwargs:
+        if deploy_plugins_ids is None:
+            raise TypeError("Missing 'deploy_plugins_ids' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if host_id is None and 'hostId' in kwargs:
             host_id = kwargs['hostId']
-        if 'installKeyId' in kwargs:
+        if host_id is None:
+            raise TypeError("Missing 'host_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if install_key_id is None and 'installKeyId' in kwargs:
             install_key_id = kwargs['installKeyId']
-        if 'installPath' in kwargs:
+        if install_key_id is None:
+            raise TypeError("Missing 'install_key_id' argument")
+        if install_path is None and 'installPath' in kwargs:
             install_path = kwargs['installPath']
-        if 'installType' in kwargs:
+        if install_path is None:
+            raise TypeError("Missing 'install_path' argument")
+        if install_type is None and 'installType' in kwargs:
             install_type = kwargs['installType']
-        if 'isAgentAutoUpgradable' in kwargs:
+        if install_type is None:
+            raise TypeError("Missing 'install_type' argument")
+        if is_agent_auto_upgradable is None and 'isAgentAutoUpgradable' in kwargs:
             is_agent_auto_upgradable = kwargs['isAgentAutoUpgradable']
-        if 'isCustomerDeployed' in kwargs:
+        if is_agent_auto_upgradable is None:
+            raise TypeError("Missing 'is_agent_auto_upgradable' argument")
+        if is_customer_deployed is None and 'isCustomerDeployed' in kwargs:
             is_customer_deployed = kwargs['isCustomerDeployed']
-        if 'lifecycleDetails' in kwargs:
+        if is_customer_deployed is None:
+            raise TypeError("Missing 'is_customer_deployed' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'managedAgentId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if managed_agent_id is None and 'managedAgentId' in kwargs:
             managed_agent_id = kwargs['managedAgentId']
-        if 'managementAgentProperties' in kwargs:
+        if managed_agent_id is None:
+            raise TypeError("Missing 'managed_agent_id' argument")
+        if management_agent_properties is None and 'managementAgentProperties' in kwargs:
             management_agent_properties = kwargs['managementAgentProperties']
-        if 'platformName' in kwargs:
+        if management_agent_properties is None:
+            raise TypeError("Missing 'management_agent_properties' argument")
+        if platform_name is None and 'platformName' in kwargs:
             platform_name = kwargs['platformName']
-        if 'platformType' in kwargs:
+        if platform_name is None:
+            raise TypeError("Missing 'platform_name' argument")
+        if platform_type is None and 'platformType' in kwargs:
             platform_type = kwargs['platformType']
-        if 'platformVersion' in kwargs:
+        if platform_type is None:
+            raise TypeError("Missing 'platform_type' argument")
+        if platform_version is None and 'platformVersion' in kwargs:
             platform_version = kwargs['platformVersion']
-        if 'pluginLists' in kwargs:
+        if platform_version is None:
+            raise TypeError("Missing 'platform_version' argument")
+        if plugin_lists is None and 'pluginLists' in kwargs:
             plugin_lists = kwargs['pluginLists']
-        if 'resourceArtifactVersion' in kwargs:
+        if plugin_lists is None:
+            raise TypeError("Missing 'plugin_lists' argument")
+        if resource_artifact_version is None and 'resourceArtifactVersion' in kwargs:
             resource_artifact_version = kwargs['resourceArtifactVersion']
-        if 'timeCreated' in kwargs:
+        if resource_artifact_version is None:
+            raise TypeError("Missing 'resource_artifact_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastHeartbeat' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_heartbeat is None and 'timeLastHeartbeat' in kwargs:
             time_last_heartbeat = kwargs['timeLastHeartbeat']
-        if 'timeUpdated' in kwargs:
+        if time_last_heartbeat is None:
+            raise TypeError("Missing 'time_last_heartbeat' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("availability_status", availability_status)
         _setter("compartment_id", compartment_id)
@@ -1966,11 +2164,17 @@ class GetManagementAgentsManagementAgentManagementAgentPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             units: str,
-             values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             units: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if units is None:
+            raise TypeError("Missing 'units' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("units", units)
@@ -2033,29 +2237,43 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             plugin_display_name: str,
-             plugin_id: str,
-             plugin_name: str,
-             plugin_status: str,
-             plugin_status_message: str,
-             plugin_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             plugin_display_name: Optional[str] = None,
+             plugin_id: Optional[str] = None,
+             plugin_name: Optional[str] = None,
+             plugin_status: Optional[str] = None,
+             plugin_status_message: Optional[str] = None,
+             plugin_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'pluginDisplayName' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
             plugin_display_name = kwargs['pluginDisplayName']
-        if 'pluginId' in kwargs:
+        if plugin_display_name is None:
+            raise TypeError("Missing 'plugin_display_name' argument")
+        if plugin_id is None and 'pluginId' in kwargs:
             plugin_id = kwargs['pluginId']
-        if 'pluginName' in kwargs:
+        if plugin_id is None:
+            raise TypeError("Missing 'plugin_id' argument")
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'pluginStatus' in kwargs:
+        if plugin_name is None:
+            raise TypeError("Missing 'plugin_name' argument")
+        if plugin_status is None and 'pluginStatus' in kwargs:
             plugin_status = kwargs['pluginStatus']
-        if 'pluginStatusMessage' in kwargs:
+        if plugin_status is None:
+            raise TypeError("Missing 'plugin_status' argument")
+        if plugin_status_message is None and 'pluginStatusMessage' in kwargs:
             plugin_status_message = kwargs['pluginStatusMessage']
-        if 'pluginVersion' in kwargs:
+        if plugin_status_message is None:
+            raise TypeError("Missing 'plugin_status_message' argument")
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
+        if plugin_version is None:
+            raise TypeError("Missing 'plugin_version' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("plugin_display_name", plugin_display_name)

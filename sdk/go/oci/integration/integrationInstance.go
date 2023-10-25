@@ -48,11 +48,11 @@ import (
 //					Hostname:            pulumi.Any(_var.Integration_instance_custom_endpoint_hostname),
 //					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DomainId: pulumi.Any(oci_identity_domain.Test_domain.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IdcsAt:                 pulumi.Any(_var.Integration_instance_idcs_at),

@@ -42,7 +42,7 @@ import (
 //					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
 //				},
 //				DefinedTags: pulumi.Any(_var.Key_store_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

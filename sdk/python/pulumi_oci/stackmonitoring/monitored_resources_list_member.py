@@ -38,16 +38,18 @@ class MonitoredResourcesListMemberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             monitored_resource_id: pulumi.Input[str],
+             monitored_resource_id: Optional[pulumi.Input[str]] = None,
              destination_resource_id: Optional[pulumi.Input[str]] = None,
              limit_level: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'monitoredResourceId' in kwargs:
+        if monitored_resource_id is None and 'monitoredResourceId' in kwargs:
             monitored_resource_id = kwargs['monitoredResourceId']
-        if 'destinationResourceId' in kwargs:
+        if monitored_resource_id is None:
+            raise TypeError("Missing 'monitored_resource_id' argument")
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'limitLevel' in kwargs:
+        if limit_level is None and 'limitLevel' in kwargs:
             limit_level = kwargs['limitLevel']
 
         _setter("monitored_resource_id", monitored_resource_id)
@@ -129,13 +131,13 @@ class _MonitoredResourcesListMemberState:
              items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]] = None,
              limit_level: Optional[pulumi.Input[int]] = None,
              monitored_resource_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationResourceId' in kwargs:
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'limitLevel' in kwargs:
+        if limit_level is None and 'limitLevel' in kwargs:
             limit_level = kwargs['limitLevel']
-        if 'monitoredResourceId' in kwargs:
+        if monitored_resource_id is None and 'monitoredResourceId' in kwargs:
             monitored_resource_id = kwargs['monitoredResourceId']
 
         if destination_resource_id is not None:

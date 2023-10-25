@@ -37,10 +37,10 @@ import (
 //				ContentType:     pulumi.Any(_var.Script_content_type),
 //				DisplayName:     pulumi.Any(_var.Script_display_name),
 //				ContentFileName: pulumi.Any(_var.Script_content_file_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Parameters: apmsynthetics.ScriptParameterArray{

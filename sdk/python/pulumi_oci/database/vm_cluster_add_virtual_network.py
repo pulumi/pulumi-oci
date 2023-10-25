@@ -35,14 +35,18 @@ class VmClusterAddVirtualNetworkArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_servers: pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]],
-             vm_cluster_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]]] = None,
+             vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'vmClusterId' in kwargs:
+        if db_servers is None:
+            raise TypeError("Missing 'db_servers' argument")
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
+        if vm_cluster_id is None:
+            raise TypeError("Missing 'vm_cluster_id' argument")
 
         _setter("db_servers", db_servers)
         _setter("vm_cluster_id", vm_cluster_id)
@@ -203,59 +207,59 @@ class _VmClusterAddVirtualNetworkState:
              time_zone: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
              vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpusEnabled' in kwargs:
+        if cpus_enabled is None and 'cpusEnabled' in kwargs:
             cpus_enabled = kwargs['cpusEnabled']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'giVersion' in kwargs:
+        if gi_version is None and 'giVersion' in kwargs:
             gi_version = kwargs['giVersion']
-        if 'isLocalBackupEnabled' in kwargs:
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
             is_local_backup_enabled = kwargs['isLocalBackupEnabled']
-        if 'isSparseDiskgroupEnabled' in kwargs:
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
             is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
-        if 'lastPatchHistoryEntryId' in kwargs:
+        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
             last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'ocpusEnabled' in kwargs:
+        if ocpus_enabled is None and 'ocpusEnabled' in kwargs:
             ocpus_enabled = kwargs['ocpusEnabled']
-        if 'sshPublicKeys' in kwargs:
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'systemVersion' in kwargs:
+        if system_version is None and 'systemVersion' in kwargs:
             system_version = kwargs['systemVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
-        if 'vmClusterNetworkId' in kwargs:
+        if vm_cluster_network_id is None and 'vmClusterNetworkId' in kwargs:
             vm_cluster_network_id = kwargs['vmClusterNetworkId']
 
         if availability_domain is not None:

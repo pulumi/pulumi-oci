@@ -35,13 +35,15 @@ class ExternalClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_cluster_id: pulumi.Input[str],
+             external_cluster_id: Optional[pulumi.Input[str]] = None,
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalClusterId' in kwargs:
+        if external_cluster_id is None and 'externalClusterId' in kwargs:
             external_cluster_id = kwargs['externalClusterId']
-        if 'externalConnectorId' in kwargs:
+        if external_cluster_id is None:
+            raise TypeError("Missing 'external_cluster_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
 
         _setter("external_cluster_id", external_cluster_id)
@@ -165,39 +167,39 @@ class _ExternalClusterState:
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
              vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalClusterVipConfigurationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalClusterId' in kwargs:
+        if external_cluster_id is None and 'externalClusterId' in kwargs:
             external_cluster_id = kwargs['externalClusterId']
-        if 'externalConnectorId' in kwargs:
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'gridHome' in kwargs:
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'isFlexCluster' in kwargs:
+        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
             is_flex_cluster = kwargs['isFlexCluster']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'networkConfigurations' in kwargs:
+        if network_configurations is None and 'networkConfigurations' in kwargs:
             network_configurations = kwargs['networkConfigurations']
-        if 'ocrFileLocation' in kwargs:
+        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
             ocr_file_location = kwargs['ocrFileLocation']
-        if 'scanConfigurations' in kwargs:
+        if scan_configurations is None and 'scanConfigurations' in kwargs:
             scan_configurations = kwargs['scanConfigurations']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vipConfigurations' in kwargs:
+        if vip_configurations is None and 'vipConfigurations' in kwargs:
             vip_configurations = kwargs['vipConfigurations']
 
         if additional_details is not None:

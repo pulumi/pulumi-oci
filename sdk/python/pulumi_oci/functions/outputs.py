@@ -144,13 +144,15 @@ class ApplicationImagePolicyConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_policy_enabled: bool,
+             is_policy_enabled: Optional[bool] = None,
              key_details: Optional[Sequence['outputs.ApplicationImagePolicyConfigKeyDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPolicyEnabled' in kwargs:
+        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
             is_policy_enabled = kwargs['isPolicyEnabled']
-        if 'keyDetails' in kwargs:
+        if is_policy_enabled is None:
+            raise TypeError("Missing 'is_policy_enabled' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
 
         _setter("is_policy_enabled", is_policy_enabled)
@@ -205,11 +207,13 @@ class ApplicationImagePolicyConfigKeyDetail(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("kms_key_id", kms_key_id)
 
@@ -264,11 +268,11 @@ class ApplicationTraceConfig(dict):
              _setter: Callable[[Any, Any], None],
              domain_id: Optional[str] = None,
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if domain_id is not None:
@@ -314,10 +318,12 @@ class FunctionProvisionedConcurrencyConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             strategy: str,
+             strategy: Optional[str] = None,
              count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if strategy is None:
+            raise TypeError("Missing 'strategy' argument")
 
         _setter("strategy", strategy)
         if count is not None:
@@ -376,14 +382,18 @@ class FunctionSourceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pbf_listing_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pbf_listing_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pbfListingId' in kwargs:
+        if pbf_listing_id is None and 'pbfListingId' in kwargs:
             pbf_listing_id = kwargs['pbfListingId']
-        if 'sourceType' in kwargs:
+        if pbf_listing_id is None:
+            raise TypeError("Missing 'pbf_listing_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
@@ -441,9 +451,9 @@ class FunctionTraceConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -479,14 +489,18 @@ class GetApplicationImagePolicyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_policy_enabled: bool,
-             key_details: Sequence['outputs.GetApplicationImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_policy_enabled: Optional[bool] = None,
+             key_details: Optional[Sequence['outputs.GetApplicationImagePolicyConfigKeyDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPolicyEnabled' in kwargs:
+        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
             is_policy_enabled = kwargs['isPolicyEnabled']
-        if 'keyDetails' in kwargs:
+        if is_policy_enabled is None:
+            raise TypeError("Missing 'is_policy_enabled' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
 
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
@@ -522,11 +536,13 @@ class GetApplicationImagePolicyConfigKeyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("kms_key_id", kms_key_id)
 
@@ -556,14 +572,18 @@ class GetApplicationTraceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain_id: str,
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain_id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'isEnabled' in kwargs:
+        if domain_id is None:
+            raise TypeError("Missing 'domain_id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("domain_id", domain_id)
         _setter("is_enabled", is_enabled)
@@ -641,45 +661,75 @@ class GetApplicationsApplicationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             config: Mapping[str, Any],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image_policy_configs: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigResult'],
-             network_security_group_ids: Sequence[str],
-             shape: str,
-             state: str,
-             subnet_ids: Sequence[str],
-             syslog_url: str,
-             time_created: str,
-             time_updated: str,
-             trace_configs: Sequence['outputs.GetApplicationsApplicationTraceConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             config: Optional[Mapping[str, Any]] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image_policy_configs: Optional[Sequence['outputs.GetApplicationsApplicationImagePolicyConfigResult']] = None,
+             network_security_group_ids: Optional[Sequence[str]] = None,
+             shape: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_ids: Optional[Sequence[str]] = None,
+             syslog_url: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trace_configs: Optional[Sequence['outputs.GetApplicationsApplicationTraceConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config is None:
+            raise TypeError("Missing 'config' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfigs' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_policy_configs is None and 'imagePolicyConfigs' in kwargs:
             image_policy_configs = kwargs['imagePolicyConfigs']
-        if 'networkSecurityGroupIds' in kwargs:
+        if image_policy_configs is None:
+            raise TypeError("Missing 'image_policy_configs' argument")
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
             network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if 'subnetIds' in kwargs:
+        if network_security_group_ids is None:
+            raise TypeError("Missing 'network_security_group_ids' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
-        if 'syslogUrl' in kwargs:
+        if subnet_ids is None:
+            raise TypeError("Missing 'subnet_ids' argument")
+        if syslog_url is None and 'syslogUrl' in kwargs:
             syslog_url = kwargs['syslogUrl']
-        if 'timeCreated' in kwargs:
+        if syslog_url is None:
+            raise TypeError("Missing 'syslog_url' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'traceConfigs' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trace_configs is None and 'traceConfigs' in kwargs:
             trace_configs = kwargs['traceConfigs']
+        if trace_configs is None:
+            raise TypeError("Missing 'trace_configs' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("config", config)
@@ -835,14 +885,18 @@ class GetApplicationsApplicationImagePolicyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_policy_enabled: bool,
-             key_details: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_policy_enabled: Optional[bool] = None,
+             key_details: Optional[Sequence['outputs.GetApplicationsApplicationImagePolicyConfigKeyDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPolicyEnabled' in kwargs:
+        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
             is_policy_enabled = kwargs['isPolicyEnabled']
-        if 'keyDetails' in kwargs:
+        if is_policy_enabled is None:
+            raise TypeError("Missing 'is_policy_enabled' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
 
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
@@ -878,11 +932,13 @@ class GetApplicationsApplicationImagePolicyConfigKeyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("kms_key_id", kms_key_id)
 
@@ -912,14 +968,18 @@ class GetApplicationsApplicationTraceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain_id: str,
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain_id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'isEnabled' in kwargs:
+        if domain_id is None:
+            raise TypeError("Missing 'domain_id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("domain_id", domain_id)
         _setter("is_enabled", is_enabled)
@@ -956,11 +1016,15 @@ class GetApplicationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1000,10 +1064,14 @@ class GetFunctionProvisionedConcurrencyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             strategy: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             strategy: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if strategy is None:
+            raise TypeError("Missing 'strategy' argument")
 
         _setter("count", count)
         _setter("strategy", strategy)
@@ -1042,14 +1110,18 @@ class GetFunctionSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pbf_listing_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pbf_listing_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pbfListingId' in kwargs:
+        if pbf_listing_id is None and 'pbfListingId' in kwargs:
             pbf_listing_id = kwargs['pbfListingId']
-        if 'sourceType' in kwargs:
+        if pbf_listing_id is None:
+            raise TypeError("Missing 'pbf_listing_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
@@ -1085,11 +1157,13 @@ class GetFunctionTraceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -1117,11 +1191,15 @@ class GetFunctionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1212,55 +1290,93 @@ class GetFunctionsFunctionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_id: str,
-             compartment_id: str,
-             config: Mapping[str, Any],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image: str,
-             image_digest: str,
-             invoke_endpoint: str,
-             memory_in_mbs: str,
-             provisioned_concurrency_configs: Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult'],
-             shape: str,
-             source_details: Sequence['outputs.GetFunctionsFunctionSourceDetailResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             timeout_in_seconds: int,
-             trace_configs: Sequence['outputs.GetFunctionsFunctionTraceConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             config: Optional[Mapping[str, Any]] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image: Optional[str] = None,
+             image_digest: Optional[str] = None,
+             invoke_endpoint: Optional[str] = None,
+             memory_in_mbs: Optional[str] = None,
+             provisioned_concurrency_configs: Optional[Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult']] = None,
+             shape: Optional[str] = None,
+             source_details: Optional[Sequence['outputs.GetFunctionsFunctionSourceDetailResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             trace_configs: Optional[Sequence['outputs.GetFunctionsFunctionTraceConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationId' in kwargs:
+        if application_id is None and 'applicationId' in kwargs:
             application_id = kwargs['applicationId']
-        if 'compartmentId' in kwargs:
+        if application_id is None:
+            raise TypeError("Missing 'application_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config is None:
+            raise TypeError("Missing 'config' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageDigest' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image is None:
+            raise TypeError("Missing 'image' argument")
+        if image_digest is None and 'imageDigest' in kwargs:
             image_digest = kwargs['imageDigest']
-        if 'invokeEndpoint' in kwargs:
+        if image_digest is None:
+            raise TypeError("Missing 'image_digest' argument")
+        if invoke_endpoint is None and 'invokeEndpoint' in kwargs:
             invoke_endpoint = kwargs['invokeEndpoint']
-        if 'memoryInMbs' in kwargs:
+        if invoke_endpoint is None:
+            raise TypeError("Missing 'invoke_endpoint' argument")
+        if memory_in_mbs is None and 'memoryInMbs' in kwargs:
             memory_in_mbs = kwargs['memoryInMbs']
-        if 'provisionedConcurrencyConfigs' in kwargs:
+        if memory_in_mbs is None:
+            raise TypeError("Missing 'memory_in_mbs' argument")
+        if provisioned_concurrency_configs is None and 'provisionedConcurrencyConfigs' in kwargs:
             provisioned_concurrency_configs = kwargs['provisionedConcurrencyConfigs']
-        if 'sourceDetails' in kwargs:
+        if provisioned_concurrency_configs is None:
+            raise TypeError("Missing 'provisioned_concurrency_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'timeCreated' in kwargs:
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeoutInSeconds' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'traceConfigs' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if trace_configs is None and 'traceConfigs' in kwargs:
             trace_configs = kwargs['traceConfigs']
+        if trace_configs is None:
+            raise TypeError("Missing 'trace_configs' argument")
 
         _setter("application_id", application_id)
         _setter("compartment_id", compartment_id)
@@ -1452,10 +1568,14 @@ class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             strategy: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             strategy: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if strategy is None:
+            raise TypeError("Missing 'strategy' argument")
 
         _setter("count", count)
         _setter("strategy", strategy)
@@ -1494,14 +1614,18 @@ class GetFunctionsFunctionSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pbf_listing_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pbf_listing_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pbfListingId' in kwargs:
+        if pbf_listing_id is None and 'pbfListingId' in kwargs:
             pbf_listing_id = kwargs['pbfListingId']
-        if 'sourceType' in kwargs:
+        if pbf_listing_id is None:
+            raise TypeError("Missing 'pbf_listing_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
@@ -1537,11 +1661,13 @@ class GetFunctionsFunctionTraceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -1577,18 +1703,26 @@ class GetFusionEnvironmentAdminUserItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: str,
-             first_name: str,
-             last_name: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -1642,9 +1776,11 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1690,24 +1826,40 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: str,
-             first_name: str,
-             fusion_environment_id: str,
-             id: str,
-             items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult'],
-             last_name: str,
-             password: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             fusion_environment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult']] = None,
+             last_name: Optional[str] = None,
+             password: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'fusionEnvironmentId' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lastName' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -1800,18 +1952,26 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: str,
-             first_name: str,
-             last_name: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -1866,11 +2026,15 @@ class GetFusionEnvironmentAdminUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1912,19 +2076,29 @@ class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: str,
-             first_name: str,
-             last_name: str,
-             password: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             password: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -1969,9 +2143,11 @@ class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2009,22 +2185,34 @@ class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fusion_environment_id: str,
-             id: str,
-             is_resume_data_masking: bool,
-             state: str,
-             time_masking_finish: str,
-             time_masking_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             fusion_environment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_resume_data_masking: Optional[bool] = None,
+             state: Optional[str] = None,
+             time_masking_finish: Optional[str] = None,
+             time_masking_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'isResumeDataMasking' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_resume_data_masking is None and 'isResumeDataMasking' in kwargs:
             is_resume_data_masking = kwargs['isResumeDataMasking']
-        if 'timeMaskingFinish' in kwargs:
+        if is_resume_data_masking is None:
+            raise TypeError("Missing 'is_resume_data_masking' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_masking_finish is None and 'timeMaskingFinish' in kwargs:
             time_masking_finish = kwargs['timeMaskingFinish']
-        if 'timeMaskingStart' in kwargs:
+        if time_masking_finish is None:
+            raise TypeError("Missing 'time_masking_finish' argument")
+        if time_masking_start is None and 'timeMaskingStart' in kwargs:
             time_masking_start = kwargs['timeMaskingStart']
+        if time_masking_start is None:
+            raise TypeError("Missing 'time_masking_start' argument")
 
         _setter("fusion_environment_id", fusion_environment_id)
         _setter("id", id)
@@ -2094,11 +2282,15 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2136,11 +2328,15 @@ class GetFusionEnvironmentFamiliesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2174,9 +2370,11 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2235,43 +2433,69 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             family_maintenance_policies: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_subscription_update_needed: bool,
-             lifecycle_details: str,
-             state: str,
-             subscription_ids: Sequence[str],
-             system_name: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             family_maintenance_policies: Optional[Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_subscription_update_needed: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             subscription_ids: Optional[Sequence[str]] = None,
+             system_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'familyMaintenancePolicies' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if family_maintenance_policies is None and 'familyMaintenancePolicies' in kwargs:
             family_maintenance_policies = kwargs['familyMaintenancePolicies']
-        if 'freeformTags' in kwargs:
+        if family_maintenance_policies is None:
+            raise TypeError("Missing 'family_maintenance_policies' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSubscriptionUpdateNeeded' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_subscription_update_needed is None and 'isSubscriptionUpdateNeeded' in kwargs:
             is_subscription_update_needed = kwargs['isSubscriptionUpdateNeeded']
-        if 'lifecycleDetails' in kwargs:
+        if is_subscription_update_needed is None:
+            raise TypeError("Missing 'is_subscription_update_needed' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'subscriptionIds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subscription_ids is None and 'subscriptionIds' in kwargs:
             subscription_ids = kwargs['subscriptionIds']
-        if 'systemName' in kwargs:
+        if subscription_ids is None:
+            raise TypeError("Missing 'subscription_ids' argument")
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
-        if 'timeCreated' in kwargs:
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2409,17 +2633,23 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMai
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             concurrent_maintenance: str,
-             is_monthly_patching_enabled: bool,
-             quarterly_upgrade_begin_times: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             concurrent_maintenance: Optional[str] = None,
+             is_monthly_patching_enabled: Optional[bool] = None,
+             quarterly_upgrade_begin_times: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'concurrentMaintenance' in kwargs:
+        if concurrent_maintenance is None and 'concurrentMaintenance' in kwargs:
             concurrent_maintenance = kwargs['concurrentMaintenance']
-        if 'isMonthlyPatchingEnabled' in kwargs:
+        if concurrent_maintenance is None:
+            raise TypeError("Missing 'concurrent_maintenance' argument")
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
             is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
-        if 'quarterlyUpgradeBeginTimes' in kwargs:
+        if is_monthly_patching_enabled is None:
+            raise TypeError("Missing 'is_monthly_patching_enabled' argument")
+        if quarterly_upgrade_begin_times is None and 'quarterlyUpgradeBeginTimes' in kwargs:
             quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+        if quarterly_upgrade_begin_times is None:
+            raise TypeError("Missing 'quarterly_upgrade_begin_times' argument")
 
         _setter("concurrent_maintenance", concurrent_maintenance)
         _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
@@ -2470,17 +2700,23 @@ class GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             concurrent_maintenance: str,
-             is_monthly_patching_enabled: bool,
-             quarterly_upgrade_begin_times: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             concurrent_maintenance: Optional[str] = None,
+             is_monthly_patching_enabled: Optional[bool] = None,
+             quarterly_upgrade_begin_times: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'concurrentMaintenance' in kwargs:
+        if concurrent_maintenance is None and 'concurrentMaintenance' in kwargs:
             concurrent_maintenance = kwargs['concurrentMaintenance']
-        if 'isMonthlyPatchingEnabled' in kwargs:
+        if concurrent_maintenance is None:
+            raise TypeError("Missing 'concurrent_maintenance' argument")
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
             is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
-        if 'quarterlyUpgradeBeginTimes' in kwargs:
+        if is_monthly_patching_enabled is None:
+            raise TypeError("Missing 'is_monthly_patching_enabled' argument")
+        if quarterly_upgrade_begin_times is None and 'quarterlyUpgradeBeginTimes' in kwargs:
             quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+        if quarterly_upgrade_begin_times is None:
+            raise TypeError("Missing 'quarterly_upgrade_begin_times' argument")
 
         _setter("concurrent_maintenance", concurrent_maintenance)
         _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
@@ -2527,10 +2763,14 @@ class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             limit: int,
-             usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             limit: Optional[int] = None,
+             usage: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if limit is None:
+            raise TypeError("Missing 'limit' argument")
+        if usage is None:
+            raise TypeError("Missing 'usage' argument")
 
         _setter("limit", limit)
         _setter("usage", usage)
@@ -2565,10 +2805,14 @@ class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             limit: int,
-             usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             limit: Optional[int] = None,
+             usage: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if limit is None:
+            raise TypeError("Missing 'limit' argument")
+        if usage is None:
+            raise TypeError("Missing 'usage' argument")
 
         _setter("limit", limit)
         _setter("usage", usage)
@@ -2603,10 +2847,14 @@ class GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             limit: int,
-             usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             limit: Optional[int] = None,
+             usage: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if limit is None:
+            raise TypeError("Missing 'limit' argument")
+        if usage is None:
+            raise TypeError("Missing 'usage' argument")
 
         _setter("limit", limit)
         _setter("usage", usage)
@@ -2648,16 +2896,24 @@ class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             classic_subscription_id: str,
-             id: str,
-             service_name: str,
-             skuses: Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             classic_subscription_id: Optional[str] = None,
+             id: Optional[str] = None,
+             service_name: Optional[str] = None,
+             skuses: Optional[Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'classicSubscriptionId' in kwargs:
+        if classic_subscription_id is None and 'classicSubscriptionId' in kwargs:
             classic_subscription_id = kwargs['classicSubscriptionId']
-        if 'serviceName' in kwargs:
+        if classic_subscription_id is None:
+            raise TypeError("Missing 'classic_subscription_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if skuses is None:
+            raise TypeError("Missing 'skuses' argument")
 
         _setter("classic_subscription_id", classic_subscription_id)
         _setter("id", id)
@@ -2723,17 +2979,27 @@ class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             license_part_description: str,
-             metric_name: str,
-             quantity: int,
-             sku: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             license_part_description: Optional[str] = None,
+             metric_name: Optional[str] = None,
+             quantity: Optional[int] = None,
+             sku: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licensePartDescription' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if license_part_description is None and 'licensePartDescription' in kwargs:
             license_part_description = kwargs['licensePartDescription']
-        if 'metricName' in kwargs:
+        if license_part_description is None:
+            raise TypeError("Missing 'license_part_description' argument")
+        if metric_name is None and 'metricName' in kwargs:
             metric_name = kwargs['metricName']
+        if metric_name is None:
+            raise TypeError("Missing 'metric_name' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if sku is None:
+            raise TypeError("Missing 'sku' argument")
 
         _setter("description", description)
         _setter("license_part_description", license_part_description)
@@ -2805,29 +3071,43 @@ class GetFusionEnvironmentKmsKeyInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             active_key_id: str,
-             active_key_version: str,
-             current_key_lifecycle_state: str,
-             scheduled_key_id: str,
-             scheduled_key_status: str,
-             scheduled_key_version: str,
-             scheduled_lifecycle_state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             active_key_id: Optional[str] = None,
+             active_key_version: Optional[str] = None,
+             current_key_lifecycle_state: Optional[str] = None,
+             scheduled_key_id: Optional[str] = None,
+             scheduled_key_status: Optional[str] = None,
+             scheduled_key_version: Optional[str] = None,
+             scheduled_lifecycle_state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeKeyId' in kwargs:
+        if active_key_id is None and 'activeKeyId' in kwargs:
             active_key_id = kwargs['activeKeyId']
-        if 'activeKeyVersion' in kwargs:
+        if active_key_id is None:
+            raise TypeError("Missing 'active_key_id' argument")
+        if active_key_version is None and 'activeKeyVersion' in kwargs:
             active_key_version = kwargs['activeKeyVersion']
-        if 'currentKeyLifecycleState' in kwargs:
+        if active_key_version is None:
+            raise TypeError("Missing 'active_key_version' argument")
+        if current_key_lifecycle_state is None and 'currentKeyLifecycleState' in kwargs:
             current_key_lifecycle_state = kwargs['currentKeyLifecycleState']
-        if 'scheduledKeyId' in kwargs:
+        if current_key_lifecycle_state is None:
+            raise TypeError("Missing 'current_key_lifecycle_state' argument")
+        if scheduled_key_id is None and 'scheduledKeyId' in kwargs:
             scheduled_key_id = kwargs['scheduledKeyId']
-        if 'scheduledKeyStatus' in kwargs:
+        if scheduled_key_id is None:
+            raise TypeError("Missing 'scheduled_key_id' argument")
+        if scheduled_key_status is None and 'scheduledKeyStatus' in kwargs:
             scheduled_key_status = kwargs['scheduledKeyStatus']
-        if 'scheduledKeyVersion' in kwargs:
+        if scheduled_key_status is None:
+            raise TypeError("Missing 'scheduled_key_status' argument")
+        if scheduled_key_version is None and 'scheduledKeyVersion' in kwargs:
             scheduled_key_version = kwargs['scheduledKeyVersion']
-        if 'scheduledLifecycleState' in kwargs:
+        if scheduled_key_version is None:
+            raise TypeError("Missing 'scheduled_key_version' argument")
+        if scheduled_lifecycle_state is None and 'scheduledLifecycleState' in kwargs:
             scheduled_lifecycle_state = kwargs['scheduledLifecycleState']
+        if scheduled_lifecycle_state is None:
+            raise TypeError("Missing 'scheduled_lifecycle_state' argument")
 
         _setter("active_key_id", active_key_id)
         _setter("active_key_version", active_key_version)
@@ -2893,17 +3173,23 @@ class GetFusionEnvironmentMaintenancePolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             environment_maintenance_override: str,
-             monthly_patching_override: str,
-             quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             environment_maintenance_override: Optional[str] = None,
+             monthly_patching_override: Optional[str] = None,
+             quarterly_upgrade_begin_times: Optional[Sequence['outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'environmentMaintenanceOverride' in kwargs:
+        if environment_maintenance_override is None and 'environmentMaintenanceOverride' in kwargs:
             environment_maintenance_override = kwargs['environmentMaintenanceOverride']
-        if 'monthlyPatchingOverride' in kwargs:
+        if environment_maintenance_override is None:
+            raise TypeError("Missing 'environment_maintenance_override' argument")
+        if monthly_patching_override is None and 'monthlyPatchingOverride' in kwargs:
             monthly_patching_override = kwargs['monthlyPatchingOverride']
-        if 'quarterlyUpgradeBeginTimes' in kwargs:
+        if monthly_patching_override is None:
+            raise TypeError("Missing 'monthly_patching_override' argument")
+        if quarterly_upgrade_begin_times is None and 'quarterlyUpgradeBeginTimes' in kwargs:
             quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+        if quarterly_upgrade_begin_times is None:
+            raise TypeError("Missing 'quarterly_upgrade_begin_times' argument")
 
         _setter("environment_maintenance_override", environment_maintenance_override)
         _setter("monthly_patching_override", monthly_patching_override)
@@ -2951,14 +3237,18 @@ class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             begin_times_value: str,
-             override_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             begin_times_value: Optional[str] = None,
+             override_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'beginTimesValue' in kwargs:
+        if begin_times_value is None and 'beginTimesValue' in kwargs:
             begin_times_value = kwargs['beginTimesValue']
-        if 'overrideType' in kwargs:
+        if begin_times_value is None:
+            raise TypeError("Missing 'begin_times_value' argument")
+        if override_type is None and 'overrideType' in kwargs:
             override_type = kwargs['overrideType']
+        if override_type is None:
+            raise TypeError("Missing 'override_type' argument")
 
         _setter("begin_times_value", begin_times_value)
         _setter("override_type", override_type)
@@ -3000,17 +3290,23 @@ class GetFusionEnvironmentRefreshResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_fusion_environment_id: str,
-             time_finished: str,
-             time_of_restoration_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             source_fusion_environment_id: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_of_restoration_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceFusionEnvironmentId' in kwargs:
+        if source_fusion_environment_id is None and 'sourceFusionEnvironmentId' in kwargs:
             source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
-        if 'timeFinished' in kwargs:
+        if source_fusion_environment_id is None:
+            raise TypeError("Missing 'source_fusion_environment_id' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeOfRestorationPoint' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_of_restoration_point is None and 'timeOfRestorationPoint' in kwargs:
             time_of_restoration_point = kwargs['timeOfRestorationPoint']
+        if time_of_restoration_point is None:
+            raise TypeError("Missing 'time_of_restoration_point' argument")
 
         _setter("source_fusion_environment_id", source_fusion_environment_id)
         _setter("time_finished", time_finished)
@@ -3056,11 +3352,15 @@ class GetFusionEnvironmentRefreshActivitiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3094,9 +3394,11 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3158,46 +3460,74 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             fusion_environment_id: str,
-             id: str,
-             lifecycle_details: str,
-             refresh_activity_id: str,
-             refresh_issue_details_lists: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult'],
-             service_availability: str,
-             source_fusion_environment_id: str,
-             state: str,
-             time_accepted: str,
-             time_expected_finish: str,
-             time_finished: str,
-             time_of_restoration_point: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             fusion_environment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             refresh_activity_id: Optional[str] = None,
+             refresh_issue_details_lists: Optional[Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult']] = None,
+             service_availability: Optional[str] = None,
+             source_fusion_environment_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_accepted: Optional[str] = None,
+             time_expected_finish: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_of_restoration_point: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'fusionEnvironmentId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lifecycleDetails' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'refreshActivityId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if refresh_activity_id is None and 'refreshActivityId' in kwargs:
             refresh_activity_id = kwargs['refreshActivityId']
-        if 'refreshIssueDetailsLists' in kwargs:
+        if refresh_activity_id is None:
+            raise TypeError("Missing 'refresh_activity_id' argument")
+        if refresh_issue_details_lists is None and 'refreshIssueDetailsLists' in kwargs:
             refresh_issue_details_lists = kwargs['refreshIssueDetailsLists']
-        if 'serviceAvailability' in kwargs:
+        if refresh_issue_details_lists is None:
+            raise TypeError("Missing 'refresh_issue_details_lists' argument")
+        if service_availability is None and 'serviceAvailability' in kwargs:
             service_availability = kwargs['serviceAvailability']
-        if 'sourceFusionEnvironmentId' in kwargs:
+        if service_availability is None:
+            raise TypeError("Missing 'service_availability' argument")
+        if source_fusion_environment_id is None and 'sourceFusionEnvironmentId' in kwargs:
             source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
-        if 'timeAccepted' in kwargs:
+        if source_fusion_environment_id is None:
+            raise TypeError("Missing 'source_fusion_environment_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeExpectedFinish' in kwargs:
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
+        if time_expected_finish is None and 'timeExpectedFinish' in kwargs:
             time_expected_finish = kwargs['timeExpectedFinish']
-        if 'timeFinished' in kwargs:
+        if time_expected_finish is None:
+            raise TypeError("Missing 'time_expected_finish' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeOfRestorationPoint' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_of_restoration_point is None and 'timeOfRestorationPoint' in kwargs:
             time_of_restoration_point = kwargs['timeOfRestorationPoint']
-        if 'timeUpdated' in kwargs:
+        if time_of_restoration_point is None:
+            raise TypeError("Missing 'time_of_restoration_point' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("display_name", display_name)
         _setter("fusion_environment_id", fusion_environment_id)
@@ -3338,11 +3668,13 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshI
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             refresh_issues: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             refresh_issues: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'refreshIssues' in kwargs:
+        if refresh_issues is None and 'refreshIssues' in kwargs:
             refresh_issues = kwargs['refreshIssues']
+        if refresh_issues is None:
+            raise TypeError("Missing 'refresh_issues' argument")
 
         _setter("refresh_issues", refresh_issues)
 
@@ -3369,11 +3701,13 @@ class GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             refresh_issues: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             refresh_issues: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'refreshIssues' in kwargs:
+        if refresh_issues is None and 'refreshIssues' in kwargs:
             refresh_issues = kwargs['refreshIssues']
+        if refresh_issues is None:
+            raise TypeError("Missing 'refresh_issues' argument")
 
         _setter("refresh_issues", refresh_issues)
 
@@ -3405,11 +3739,17 @@ class GetFusionEnvironmentRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             conditions: Sequence['outputs.GetFusionEnvironmentRuleConditionResult'],
-             description: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             conditions: Optional[Sequence['outputs.GetFusionEnvironmentRuleConditionResult']] = None,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if conditions is None:
+            raise TypeError("Missing 'conditions' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
 
         _setter("action", action)
         _setter("conditions", conditions)
@@ -3454,14 +3794,18 @@ class GetFusionEnvironmentRuleConditionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attribute_name: str,
-             attribute_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attribute_name: Optional[str] = None,
+             attribute_value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeName' in kwargs:
+        if attribute_name is None and 'attributeName' in kwargs:
             attribute_name = kwargs['attributeName']
-        if 'attributeValue' in kwargs:
+        if attribute_name is None:
+            raise TypeError("Missing 'attribute_name' argument")
+        if attribute_value is None and 'attributeValue' in kwargs:
             attribute_value = kwargs['attributeValue']
+        if attribute_value is None:
+            raise TypeError("Missing 'attribute_value' argument")
 
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
@@ -3498,11 +3842,15 @@ class GetFusionEnvironmentScheduledActivitiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3536,9 +3884,11 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3602,47 +3952,77 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult'],
-             delay_in_hours: int,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             fusion_environment_id: str,
-             id: str,
-             lifecycle_details: str,
-             run_cycle: str,
-             service_availability: str,
-             state: str,
-             time_accepted: str,
-             time_expected_finish: str,
-             time_finished: str,
-             time_scheduled_start: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult']] = None,
+             delay_in_hours: Optional[int] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             fusion_environment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             run_cycle: Optional[str] = None,
+             service_availability: Optional[str] = None,
+             state: Optional[str] = None,
+             time_accepted: Optional[str] = None,
+             time_expected_finish: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_scheduled_start: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'delayInHours' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if delay_in_hours is None and 'delayInHours' in kwargs:
             delay_in_hours = kwargs['delayInHours']
-        if 'displayName' in kwargs:
+        if delay_in_hours is None:
+            raise TypeError("Missing 'delay_in_hours' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fusionEnvironmentId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lifecycleDetails' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'runCycle' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if run_cycle is None and 'runCycle' in kwargs:
             run_cycle = kwargs['runCycle']
-        if 'serviceAvailability' in kwargs:
+        if run_cycle is None:
+            raise TypeError("Missing 'run_cycle' argument")
+        if service_availability is None and 'serviceAvailability' in kwargs:
             service_availability = kwargs['serviceAvailability']
-        if 'timeAccepted' in kwargs:
+        if service_availability is None:
+            raise TypeError("Missing 'service_availability' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeExpectedFinish' in kwargs:
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
+        if time_expected_finish is None and 'timeExpectedFinish' in kwargs:
             time_expected_finish = kwargs['timeExpectedFinish']
-        if 'timeFinished' in kwargs:
+        if time_expected_finish is None:
+            raise TypeError("Missing 'time_expected_finish' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeScheduledStart' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_scheduled_start is None and 'timeScheduledStart' in kwargs:
             time_scheduled_start = kwargs['timeScheduledStart']
-        if 'timeUpdated' in kwargs:
+        if time_scheduled_start is None:
+            raise TypeError("Missing 'time_scheduled_start' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("actions", actions)
         _setter("delay_in_hours", delay_in_hours)
@@ -3813,21 +4193,39 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             artifact: str,
-             category: str,
-             description: str,
-             mode: str,
-             qualifier: str,
-             reference_key: str,
-             state: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action_type: Optional[str] = None,
+             artifact: Optional[str] = None,
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             mode: Optional[str] = None,
+             qualifier: Optional[str] = None,
+             reference_key: Optional[str] = None,
+             state: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'referenceKey' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if artifact is None:
+            raise TypeError("Missing 'artifact' argument")
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
+        if qualifier is None:
+            raise TypeError("Missing 'qualifier' argument")
+        if reference_key is None and 'referenceKey' in kwargs:
             reference_key = kwargs['referenceKey']
+        if reference_key is None:
+            raise TypeError("Missing 'reference_key' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("action_type", action_type)
         _setter("artifact", artifact)
@@ -3950,21 +4348,39 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             artifact: str,
-             category: str,
-             description: str,
-             mode: str,
-             qualifier: str,
-             reference_key: str,
-             state: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action_type: Optional[str] = None,
+             artifact: Optional[str] = None,
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             mode: Optional[str] = None,
+             qualifier: Optional[str] = None,
+             reference_key: Optional[str] = None,
+             state: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'referenceKey' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if artifact is None:
+            raise TypeError("Missing 'artifact' argument")
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
+        if qualifier is None:
+            raise TypeError("Missing 'qualifier' argument")
+        if reference_key is None and 'referenceKey' in kwargs:
             reference_key = kwargs['referenceKey']
+        if reference_key is None:
+            raise TypeError("Missing 'reference_key' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("action_type", action_type)
         _setter("artifact", artifact)
@@ -4064,11 +4480,15 @@ class GetFusionEnvironmentServiceAttachmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4102,9 +4522,11 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -4164,43 +4586,69 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             fusion_environment_id: str,
-             id: str,
-             is_sku_based: bool,
-             service_instance_id: str,
-             service_instance_type: str,
-             service_url: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             fusion_environment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_sku_based: Optional[bool] = None,
+             service_instance_id: Optional[str] = None,
+             service_instance_type: Optional[str] = None,
+             service_url: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fusionEnvironmentId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'isSkuBased' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_sku_based is None and 'isSkuBased' in kwargs:
             is_sku_based = kwargs['isSkuBased']
-        if 'serviceInstanceId' in kwargs:
+        if is_sku_based is None:
+            raise TypeError("Missing 'is_sku_based' argument")
+        if service_instance_id is None and 'serviceInstanceId' in kwargs:
             service_instance_id = kwargs['serviceInstanceId']
-        if 'serviceInstanceType' in kwargs:
+        if service_instance_id is None:
+            raise TypeError("Missing 'service_instance_id' argument")
+        if service_instance_type is None and 'serviceInstanceType' in kwargs:
             service_instance_type = kwargs['serviceInstanceType']
-        if 'serviceUrl' in kwargs:
+        if service_instance_type is None:
+            raise TypeError("Missing 'service_instance_type' argument")
+        if service_url is None and 'serviceUrl' in kwargs:
             service_url = kwargs['serviceUrl']
-        if 'timeCreated' in kwargs:
+        if service_url is None:
+            raise TypeError("Missing 'service_url' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4335,11 +4783,13 @@ class GetFusionEnvironmentTimeAvailableForRefreshItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_available_for_refresh: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_available_for_refresh: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeAvailableForRefresh' in kwargs:
+        if time_available_for_refresh is None and 'timeAvailableForRefresh' in kwargs:
             time_available_for_refresh = kwargs['timeAvailableForRefresh']
+        if time_available_for_refresh is None:
+            raise TypeError("Missing 'time_available_for_refresh' argument")
 
         _setter("time_available_for_refresh", time_available_for_refresh)
 
@@ -4367,11 +4817,15 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4408,9 +4862,11 @@ class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -4437,11 +4893,13 @@ class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_available_for_refresh: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_available_for_refresh: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeAvailableForRefresh' in kwargs:
+        if time_available_for_refresh is None and 'timeAvailableForRefresh' in kwargs:
             time_available_for_refresh = kwargs['timeAvailableForRefresh']
+        if time_available_for_refresh is None:
+            raise TypeError("Missing 'time_available_for_refresh' argument")
 
         _setter("time_available_for_refresh", time_available_for_refresh)
 
@@ -4469,11 +4927,15 @@ class GetFusionEnvironmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4507,9 +4969,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -4616,85 +5080,143 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_language_packs: Sequence[str],
-             applied_patch_bundles: Sequence[str],
-             compartment_id: str,
-             create_fusion_environment_admin_user_details: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult'],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             dns_prefix: str,
-             domain_id: str,
-             freeform_tags: Mapping[str, Any],
-             fusion_environment_family_id: str,
-             fusion_environment_type: str,
-             id: str,
-             idcs_domain_url: str,
-             is_break_glass_enabled: bool,
-             kms_key_id: str,
-             kms_key_infos: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult'],
-             lifecycle_details: str,
-             lockbox_id: str,
-             maintenance_policies: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult'],
-             public_url: str,
-             refreshes: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult'],
-             rules: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult'],
-             state: str,
-             subscription_ids: Sequence[str],
-             system_name: str,
-             time_created: str,
-             time_upcoming_maintenance: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_language_packs: Optional[Sequence[str]] = None,
+             applied_patch_bundles: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             create_fusion_environment_admin_user_details: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             dns_prefix: Optional[str] = None,
+             domain_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             fusion_environment_family_id: Optional[str] = None,
+             fusion_environment_type: Optional[str] = None,
+             id: Optional[str] = None,
+             idcs_domain_url: Optional[str] = None,
+             is_break_glass_enabled: Optional[bool] = None,
+             kms_key_id: Optional[str] = None,
+             kms_key_infos: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             lockbox_id: Optional[str] = None,
+             maintenance_policies: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult']] = None,
+             public_url: Optional[str] = None,
+             refreshes: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult']] = None,
+             rules: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult']] = None,
+             state: Optional[str] = None,
+             subscription_ids: Optional[Sequence[str]] = None,
+             system_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_upcoming_maintenance: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalLanguagePacks' in kwargs:
+        if additional_language_packs is None and 'additionalLanguagePacks' in kwargs:
             additional_language_packs = kwargs['additionalLanguagePacks']
-        if 'appliedPatchBundles' in kwargs:
+        if additional_language_packs is None:
+            raise TypeError("Missing 'additional_language_packs' argument")
+        if applied_patch_bundles is None and 'appliedPatchBundles' in kwargs:
             applied_patch_bundles = kwargs['appliedPatchBundles']
-        if 'compartmentId' in kwargs:
+        if applied_patch_bundles is None:
+            raise TypeError("Missing 'applied_patch_bundles' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_fusion_environment_admin_user_details is None and 'createFusionEnvironmentAdminUserDetails' in kwargs:
             create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
-        if 'definedTags' in kwargs:
+        if create_fusion_environment_admin_user_details is None:
+            raise TypeError("Missing 'create_fusion_environment_admin_user_details' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsPrefix' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_prefix is None and 'dnsPrefix' in kwargs:
             dns_prefix = kwargs['dnsPrefix']
-        if 'domainId' in kwargs:
+        if dns_prefix is None:
+            raise TypeError("Missing 'dns_prefix' argument")
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'freeformTags' in kwargs:
+        if domain_id is None:
+            raise TypeError("Missing 'domain_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fusionEnvironmentFamilyId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if fusion_environment_family_id is None and 'fusionEnvironmentFamilyId' in kwargs:
             fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
-        if 'fusionEnvironmentType' in kwargs:
+        if fusion_environment_family_id is None:
+            raise TypeError("Missing 'fusion_environment_family_id' argument")
+        if fusion_environment_type is None and 'fusionEnvironmentType' in kwargs:
             fusion_environment_type = kwargs['fusionEnvironmentType']
-        if 'idcsDomainUrl' in kwargs:
+        if fusion_environment_type is None:
+            raise TypeError("Missing 'fusion_environment_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idcs_domain_url is None and 'idcsDomainUrl' in kwargs:
             idcs_domain_url = kwargs['idcsDomainUrl']
-        if 'isBreakGlassEnabled' in kwargs:
+        if idcs_domain_url is None:
+            raise TypeError("Missing 'idcs_domain_url' argument")
+        if is_break_glass_enabled is None and 'isBreakGlassEnabled' in kwargs:
             is_break_glass_enabled = kwargs['isBreakGlassEnabled']
-        if 'kmsKeyId' in kwargs:
+        if is_break_glass_enabled is None:
+            raise TypeError("Missing 'is_break_glass_enabled' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyInfos' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if kms_key_infos is None and 'kmsKeyInfos' in kwargs:
             kms_key_infos = kwargs['kmsKeyInfos']
-        if 'lifecycleDetails' in kwargs:
+        if kms_key_infos is None:
+            raise TypeError("Missing 'kms_key_infos' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lockboxId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if lockbox_id is None and 'lockboxId' in kwargs:
             lockbox_id = kwargs['lockboxId']
-        if 'maintenancePolicies' in kwargs:
+        if lockbox_id is None:
+            raise TypeError("Missing 'lockbox_id' argument")
+        if maintenance_policies is None and 'maintenancePolicies' in kwargs:
             maintenance_policies = kwargs['maintenancePolicies']
-        if 'publicUrl' in kwargs:
+        if maintenance_policies is None:
+            raise TypeError("Missing 'maintenance_policies' argument")
+        if public_url is None and 'publicUrl' in kwargs:
             public_url = kwargs['publicUrl']
-        if 'subscriptionIds' in kwargs:
+        if public_url is None:
+            raise TypeError("Missing 'public_url' argument")
+        if refreshes is None:
+            raise TypeError("Missing 'refreshes' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subscription_ids is None and 'subscriptionIds' in kwargs:
             subscription_ids = kwargs['subscriptionIds']
-        if 'systemName' in kwargs:
+        if subscription_ids is None:
+            raise TypeError("Missing 'subscription_ids' argument")
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
-        if 'timeCreated' in kwargs:
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpcomingMaintenance' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_upcoming_maintenance is None and 'timeUpcomingMaintenance' in kwargs:
             time_upcoming_maintenance = kwargs['timeUpcomingMaintenance']
-        if 'timeUpdated' in kwargs:
+        if time_upcoming_maintenance is None:
+            raise TypeError("Missing 'time_upcoming_maintenance' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_language_packs", additional_language_packs)
         _setter("applied_patch_bundles", applied_patch_bundles)
@@ -4975,19 +5497,29 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmen
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_address: str,
-             first_name: str,
-             last_name: str,
-             password: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             password: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'firstName' in kwargs:
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("email_address", email_address)
         _setter("first_name", first_name)
@@ -5044,29 +5576,43 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             active_key_id: str,
-             active_key_version: str,
-             current_key_lifecycle_state: str,
-             scheduled_key_id: str,
-             scheduled_key_status: str,
-             scheduled_key_version: str,
-             scheduled_lifecycle_state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             active_key_id: Optional[str] = None,
+             active_key_version: Optional[str] = None,
+             current_key_lifecycle_state: Optional[str] = None,
+             scheduled_key_id: Optional[str] = None,
+             scheduled_key_status: Optional[str] = None,
+             scheduled_key_version: Optional[str] = None,
+             scheduled_lifecycle_state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeKeyId' in kwargs:
+        if active_key_id is None and 'activeKeyId' in kwargs:
             active_key_id = kwargs['activeKeyId']
-        if 'activeKeyVersion' in kwargs:
+        if active_key_id is None:
+            raise TypeError("Missing 'active_key_id' argument")
+        if active_key_version is None and 'activeKeyVersion' in kwargs:
             active_key_version = kwargs['activeKeyVersion']
-        if 'currentKeyLifecycleState' in kwargs:
+        if active_key_version is None:
+            raise TypeError("Missing 'active_key_version' argument")
+        if current_key_lifecycle_state is None and 'currentKeyLifecycleState' in kwargs:
             current_key_lifecycle_state = kwargs['currentKeyLifecycleState']
-        if 'scheduledKeyId' in kwargs:
+        if current_key_lifecycle_state is None:
+            raise TypeError("Missing 'current_key_lifecycle_state' argument")
+        if scheduled_key_id is None and 'scheduledKeyId' in kwargs:
             scheduled_key_id = kwargs['scheduledKeyId']
-        if 'scheduledKeyStatus' in kwargs:
+        if scheduled_key_id is None:
+            raise TypeError("Missing 'scheduled_key_id' argument")
+        if scheduled_key_status is None and 'scheduledKeyStatus' in kwargs:
             scheduled_key_status = kwargs['scheduledKeyStatus']
-        if 'scheduledKeyVersion' in kwargs:
+        if scheduled_key_status is None:
+            raise TypeError("Missing 'scheduled_key_status' argument")
+        if scheduled_key_version is None and 'scheduledKeyVersion' in kwargs:
             scheduled_key_version = kwargs['scheduledKeyVersion']
-        if 'scheduledLifecycleState' in kwargs:
+        if scheduled_key_version is None:
+            raise TypeError("Missing 'scheduled_key_version' argument")
+        if scheduled_lifecycle_state is None and 'scheduledLifecycleState' in kwargs:
             scheduled_lifecycle_state = kwargs['scheduledLifecycleState']
+        if scheduled_lifecycle_state is None:
+            raise TypeError("Missing 'scheduled_lifecycle_state' argument")
 
         _setter("active_key_id", active_key_id)
         _setter("active_key_version", active_key_version)
@@ -5132,17 +5678,23 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             environment_maintenance_override: str,
-             monthly_patching_override: str,
-             quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             environment_maintenance_override: Optional[str] = None,
+             monthly_patching_override: Optional[str] = None,
+             quarterly_upgrade_begin_times: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'environmentMaintenanceOverride' in kwargs:
+        if environment_maintenance_override is None and 'environmentMaintenanceOverride' in kwargs:
             environment_maintenance_override = kwargs['environmentMaintenanceOverride']
-        if 'monthlyPatchingOverride' in kwargs:
+        if environment_maintenance_override is None:
+            raise TypeError("Missing 'environment_maintenance_override' argument")
+        if monthly_patching_override is None and 'monthlyPatchingOverride' in kwargs:
             monthly_patching_override = kwargs['monthlyPatchingOverride']
-        if 'quarterlyUpgradeBeginTimes' in kwargs:
+        if monthly_patching_override is None:
+            raise TypeError("Missing 'monthly_patching_override' argument")
+        if quarterly_upgrade_begin_times is None and 'quarterlyUpgradeBeginTimes' in kwargs:
             quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+        if quarterly_upgrade_begin_times is None:
+            raise TypeError("Missing 'quarterly_upgrade_begin_times' argument")
 
         _setter("environment_maintenance_override", environment_maintenance_override)
         _setter("monthly_patching_override", monthly_patching_override)
@@ -5190,14 +5742,18 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuart
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             begin_times_value: str,
-             override_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             begin_times_value: Optional[str] = None,
+             override_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'beginTimesValue' in kwargs:
+        if begin_times_value is None and 'beginTimesValue' in kwargs:
             begin_times_value = kwargs['beginTimesValue']
-        if 'overrideType' in kwargs:
+        if begin_times_value is None:
+            raise TypeError("Missing 'begin_times_value' argument")
+        if override_type is None and 'overrideType' in kwargs:
             override_type = kwargs['overrideType']
+        if override_type is None:
+            raise TypeError("Missing 'override_type' argument")
 
         _setter("begin_times_value", begin_times_value)
         _setter("override_type", override_type)
@@ -5239,17 +5795,23 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_fusion_environment_id: str,
-             time_finished: str,
-             time_of_restoration_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             source_fusion_environment_id: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_of_restoration_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceFusionEnvironmentId' in kwargs:
+        if source_fusion_environment_id is None and 'sourceFusionEnvironmentId' in kwargs:
             source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
-        if 'timeFinished' in kwargs:
+        if source_fusion_environment_id is None:
+            raise TypeError("Missing 'source_fusion_environment_id' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeOfRestorationPoint' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_of_restoration_point is None and 'timeOfRestorationPoint' in kwargs:
             time_of_restoration_point = kwargs['timeOfRestorationPoint']
+        if time_of_restoration_point is None:
+            raise TypeError("Missing 'time_of_restoration_point' argument")
 
         _setter("source_fusion_environment_id", source_fusion_environment_id)
         _setter("time_finished", time_finished)
@@ -5299,11 +5861,17 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             conditions: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult'],
-             description: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             conditions: Optional[Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult']] = None,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if conditions is None:
+            raise TypeError("Missing 'conditions' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
 
         _setter("action", action)
         _setter("conditions", conditions)
@@ -5348,14 +5916,18 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attribute_name: str,
-             attribute_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attribute_name: Optional[str] = None,
+             attribute_value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeName' in kwargs:
+        if attribute_name is None and 'attributeName' in kwargs:
             attribute_name = kwargs['attributeName']
-        if 'attributeValue' in kwargs:
+        if attribute_name is None:
+            raise TypeError("Missing 'attribute_name' argument")
+        if attribute_value is None and 'attributeValue' in kwargs:
             attribute_value = kwargs['attributeValue']
+        if attribute_value is None:
+            raise TypeError("Missing 'attribute_value' argument")
 
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
@@ -5391,9 +5963,11 @@ class GetPbfListingPublisherDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -5420,9 +5994,11 @@ class GetPbfListingTriggerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -5453,11 +6029,15 @@ class GetPbfListingTriggersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5497,9 +6077,11 @@ class GetPbfListingTriggersTriggersCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPbfListingTriggersTriggersCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPbfListingTriggersTriggersCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -5526,9 +6108,11 @@ class GetPbfListingTriggersTriggersCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -5561,13 +6145,19 @@ class GetPbfListingVersionConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             is_optional: bool,
-             key: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             is_optional: Optional[bool] = None,
+             key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isOptional' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_optional is None and 'isOptional' in kwargs:
             is_optional = kwargs['isOptional']
+        if is_optional is None:
+            raise TypeError("Missing 'is_optional' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
 
         _setter("description", description)
         _setter("is_optional", is_optional)
@@ -5615,12 +6205,16 @@ class GetPbfListingVersionRequirementResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             min_memory_required_in_mbs: str,
-             policies: Sequence['outputs.GetPbfListingVersionRequirementPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             min_memory_required_in_mbs: Optional[str] = None,
+             policies: Optional[Sequence['outputs.GetPbfListingVersionRequirementPolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'minMemoryRequiredInMbs' in kwargs:
+        if min_memory_required_in_mbs is None and 'minMemoryRequiredInMbs' in kwargs:
             min_memory_required_in_mbs = kwargs['minMemoryRequiredInMbs']
+        if min_memory_required_in_mbs is None:
+            raise TypeError("Missing 'min_memory_required_in_mbs' argument")
+        if policies is None:
+            raise TypeError("Missing 'policies' argument")
 
         _setter("min_memory_required_in_mbs", min_memory_required_in_mbs)
         _setter("policies", policies)
@@ -5659,10 +6253,14 @@ class GetPbfListingVersionRequirementPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             policy: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             policy: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
 
         _setter("description", description)
         _setter("policy", policy)
@@ -5698,9 +6296,11 @@ class GetPbfListingVersionTriggerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -5731,11 +6331,15 @@ class GetPbfListingVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5775,9 +6379,11 @@ class GetPbfListingVersionsPbfListingVersionsCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -5840,35 +6446,61 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             change_summary: str,
-             configs: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult'],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             name: str,
-             pbf_listing_id: str,
-             requirements: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             triggers: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             change_summary: Optional[str] = None,
+             configs: Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             pbf_listing_id: Optional[str] = None,
+             requirements: Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             triggers: Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'changeSummary' in kwargs:
+        if change_summary is None and 'changeSummary' in kwargs:
             change_summary = kwargs['changeSummary']
-        if 'definedTags' in kwargs:
+        if change_summary is None:
+            raise TypeError("Missing 'change_summary' argument")
+        if configs is None:
+            raise TypeError("Missing 'configs' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'pbfListingId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if pbf_listing_id is None and 'pbfListingId' in kwargs:
             pbf_listing_id = kwargs['pbfListingId']
-        if 'systemTags' in kwargs:
+        if pbf_listing_id is None:
+            raise TypeError("Missing 'pbf_listing_id' argument")
+        if requirements is None:
+            raise TypeError("Missing 'requirements' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if triggers is None:
+            raise TypeError("Missing 'triggers' argument")
 
         _setter("change_summary", change_summary)
         _setter("configs", configs)
@@ -6009,13 +6641,19 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             is_optional: bool,
-             key: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             is_optional: Optional[bool] = None,
+             key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isOptional' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_optional is None and 'isOptional' in kwargs:
             is_optional = kwargs['isOptional']
+        if is_optional is None:
+            raise TypeError("Missing 'is_optional' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
 
         _setter("description", description)
         _setter("is_optional", is_optional)
@@ -6063,12 +6701,16 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             min_memory_required_in_mbs: str,
-             policies: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             min_memory_required_in_mbs: Optional[str] = None,
+             policies: Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'minMemoryRequiredInMbs' in kwargs:
+        if min_memory_required_in_mbs is None and 'minMemoryRequiredInMbs' in kwargs:
             min_memory_required_in_mbs = kwargs['minMemoryRequiredInMbs']
+        if min_memory_required_in_mbs is None:
+            raise TypeError("Missing 'min_memory_required_in_mbs' argument")
+        if policies is None:
+            raise TypeError("Missing 'policies' argument")
 
         _setter("min_memory_required_in_mbs", min_memory_required_in_mbs)
         _setter("policies", policies)
@@ -6107,10 +6749,14 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             policy: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             policy: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
 
         _setter("description", description)
         _setter("policy", policy)
@@ -6146,9 +6792,11 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -6179,11 +6827,15 @@ class GetPbfListingsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6223,9 +6875,11 @@ class GetPbfListingsPbfListingsCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPbfListingsPbfListingsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6282,31 +6936,53 @@ class GetPbfListingsPbfListingsCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             name: str,
-             publisher_details: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetailResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             triggers: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             publisher_details: Optional[Sequence['outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetailResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             triggers: Optional[Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'publisherDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if publisher_details is None and 'publisherDetails' in kwargs:
             publisher_details = kwargs['publisherDetails']
-        if 'systemTags' in kwargs:
+        if publisher_details is None:
+            raise TypeError("Missing 'publisher_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if triggers is None:
+            raise TypeError("Missing 'triggers' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -6423,9 +7099,11 @@ class GetPbfListingsPbfListingsCollectionItemPublisherDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -6452,9 +7130,11 @@ class GetPbfListingsPbfListingsCollectionItemTriggerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 

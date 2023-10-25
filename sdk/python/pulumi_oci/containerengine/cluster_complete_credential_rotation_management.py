@@ -30,11 +30,13 @@ class ClusterCompleteCredentialRotationManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
 
         _setter("cluster_id", cluster_id)
 
@@ -75,9 +77,9 @@ class _ClusterCompleteCredentialRotationManagementState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
 
         if cluster_id is not None:

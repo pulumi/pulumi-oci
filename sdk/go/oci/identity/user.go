@@ -64,11 +64,11 @@ import (
 //			_, err := Identity.NewUser(ctx, "testUser", &Identity.UserArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.User_description),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Email: pulumi.Any(_var.User_email),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

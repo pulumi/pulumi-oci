@@ -73,7 +73,7 @@ import (
 //						ScanListenerPortTcp: pulumi.Any(_var.Vm_cluster_network_dr_scans_scan_listener_port_tcp),
 //					},
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Ntps:                     pulumi.Any(_var.Vm_cluster_network_ntp),

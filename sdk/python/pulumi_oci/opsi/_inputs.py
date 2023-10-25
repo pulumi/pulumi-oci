@@ -72,17 +72,17 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
              role: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialSourceName' in kwargs:
+        if credential_source_name is None and 'credentialSourceName' in kwargs:
             credential_source_name = kwargs['credentialSourceName']
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'walletSecretId' in kwargs:
+        if wallet_secret_id is None and 'walletSecretId' in kwargs:
             wallet_secret_id = kwargs['walletSecretId']
 
         if credential_source_name is not None:
@@ -202,11 +202,11 @@ class DatabaseInsightConnectionDetailsArgs:
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
 
         if host_name is not None:
@@ -300,9 +300,9 @@ class DatabaseInsightConnectionDetailsHostArgs:
              _setter: Callable[[Any, Any], None],
              host_ip: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostIp' in kwargs:
+        if host_ip is None and 'hostIp' in kwargs:
             host_ip = kwargs['hostIp']
 
         if host_ip is not None:
@@ -364,23 +364,25 @@ class DatabaseInsightCredentialDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_type: pulumi.Input[str],
+             credential_type: Optional[pulumi.Input[str]] = None,
              credential_source_name: Optional[pulumi.Input[str]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'credentialSourceName' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if credential_source_name is None and 'credentialSourceName' in kwargs:
             credential_source_name = kwargs['credentialSourceName']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'walletSecretId' in kwargs:
+        if wallet_secret_id is None and 'walletSecretId' in kwargs:
             wallet_secret_id = kwargs['walletSecretId']
 
         _setter("credential_type", credential_type)
@@ -499,17 +501,17 @@ class ExadataInsightMemberVmClusterDetailArgs:
              member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
              opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              vmcluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbmPrivateEndpointId' in kwargs:
+        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
             dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if 'memberDatabaseDetails' in kwargs:
+        if member_database_details is None and 'memberDatabaseDetails' in kwargs:
             member_database_details = kwargs['memberDatabaseDetails']
-        if 'opsiPrivateEndpointId' in kwargs:
+        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
             opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if 'vmclusterId' in kwargs:
+        if vmcluster_id is None and 'vmclusterId' in kwargs:
             vmcluster_id = kwargs['vmclusterId']
 
         if compartment_id is not None:
@@ -647,33 +649,33 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
              opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionDetails' in kwargs:
+        if connection_details is None and 'connectionDetails' in kwargs:
             connection_details = kwargs['connectionDetails']
-        if 'credentialDetails' in kwargs:
+        if credential_details is None and 'credentialDetails' in kwargs:
             credential_details = kwargs['credentialDetails']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseResourceType' in kwargs:
+        if database_resource_type is None and 'databaseResourceType' in kwargs:
             database_resource_type = kwargs['databaseResourceType']
-        if 'dbmPrivateEndpointId' in kwargs:
+        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
             dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'entitySource' in kwargs:
+        if entity_source is None and 'entitySource' in kwargs:
             entity_source = kwargs['entitySource']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'opsiPrivateEndpointId' in kwargs:
+        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
             opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         if compartment_id is not None:
@@ -883,9 +885,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
              hosts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
 
         if hosts is not None:
@@ -951,9 +953,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
              _setter: Callable[[Any, Any], None],
              host_ip: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostIp' in kwargs:
+        if host_ip is None and 'hostIp' in kwargs:
             host_ip = kwargs['hostIp']
 
         if host_ip is not None:
@@ -1015,23 +1017,25 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_type: pulumi.Input[str],
+             credential_type: Optional[pulumi.Input[str]] = None,
              credential_source_name: Optional[pulumi.Input[str]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'credentialSourceName' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if credential_source_name is None and 'credentialSourceName' in kwargs:
             credential_source_name = kwargs['credentialSourceName']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'walletSecretId' in kwargs:
+        if wallet_secret_id is None and 'walletSecretId' in kwargs:
             wallet_secret_id = kwargs['walletSecretId']
 
         _setter("credential_type", credential_type)
@@ -1133,11 +1137,13 @@ class NewsReportContentTypesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_planning_resources: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_planning_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityPlanningResources' in kwargs:
+        if capacity_planning_resources is None and 'capacityPlanningResources' in kwargs:
             capacity_planning_resources = kwargs['capacityPlanningResources']
+        if capacity_planning_resources is None:
+            raise TypeError("Missing 'capacity_planning_resources' argument")
 
         _setter("capacity_planning_resources", capacity_planning_resources)
 
@@ -1183,19 +1189,21 @@ class OpsiConfigurationConfigItemArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_item_type: pulumi.Input[str],
+             config_item_type: Optional[pulumi.Input[str]] = None,
              applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              default_value: Optional[pulumi.Input[str]] = None,
              metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configItemType' in kwargs:
+        if config_item_type is None and 'configItemType' in kwargs:
             config_item_type = kwargs['configItemType']
-        if 'applicableContexts' in kwargs:
+        if config_item_type is None:
+            raise TypeError("Missing 'config_item_type' argument")
+        if applicable_contexts is None and 'applicableContexts' in kwargs:
             applicable_contexts = kwargs['applicableContexts']
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
 
         _setter("config_item_type", config_item_type)
@@ -1318,17 +1326,17 @@ class OpsiConfigurationConfigItemMetadataArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              unit_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]] = None,
              value_input_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configItemType' in kwargs:
+        if config_item_type is None and 'configItemType' in kwargs:
             config_item_type = kwargs['configItemType']
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'unitDetails' in kwargs:
+        if unit_details is None and 'unitDetails' in kwargs:
             unit_details = kwargs['unitDetails']
-        if 'valueInputDetails' in kwargs:
+        if value_input_details is None and 'valueInputDetails' in kwargs:
             value_input_details = kwargs['valueInputDetails']
 
         if config_item_type is not None:
@@ -1436,9 +1444,9 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
              _setter: Callable[[Any, Any], None],
              display_name: Optional[pulumi.Input[str]] = None,
              unit: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -1498,15 +1506,15 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
              max_value: Optional[pulumi.Input[str]] = None,
              min_value: Optional[pulumi.Input[str]] = None,
              possible_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedValueType' in kwargs:
+        if allowed_value_type is None and 'allowedValueType' in kwargs:
             allowed_value_type = kwargs['allowedValueType']
-        if 'maxValue' in kwargs:
+        if max_value is None and 'maxValue' in kwargs:
             max_value = kwargs['maxValue']
-        if 'minValue' in kwargs:
+        if min_value is None and 'minValue' in kwargs:
             min_value = kwargs['minValue']
-        if 'possibleValues' in kwargs:
+        if possible_values is None and 'possibleValues' in kwargs:
             possible_values = kwargs['possibleValues']
 
         if allowed_value_type is not None:
@@ -1582,11 +1590,15 @@ class GetAwrHubAwrSnapshotsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1636,11 +1648,15 @@ class GetAwrHubsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1690,11 +1706,15 @@ class GetDatabaseInsightsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1744,11 +1764,15 @@ class GetEnterpriseManagerBridgesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1798,11 +1822,15 @@ class GetExadataInsightsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1852,11 +1880,15 @@ class GetHostInsightsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1909,11 +1941,15 @@ class GetNewsReportsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1966,11 +2002,15 @@ class GetOperationsInsightsPrivateEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2023,11 +2063,15 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2080,11 +2124,15 @@ class GetOperationsInsightsWarehousesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2137,11 +2185,15 @@ class GetOpsiConfigurationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

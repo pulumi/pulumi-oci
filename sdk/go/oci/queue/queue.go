@@ -37,10 +37,10 @@ import (
 //				ChannelConsumptionLimit:      pulumi.Any(_var.Queue_channel_consumption_limit),
 //				CustomEncryptionKeyId:        pulumi.Any(oci_kms_key.Test_key.Id),
 //				DeadLetterQueueDeliveryCount: pulumi.Any(_var.Queue_dead_letter_queue_delivery_count),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				RetentionInSeconds:  pulumi.Any(_var.Queue_retention_in_seconds),

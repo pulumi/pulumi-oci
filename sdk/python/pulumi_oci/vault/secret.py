@@ -59,33 +59,43 @@ class SecretArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             key_id: pulumi.Input[str],
-             secret_content: pulumi.Input['SecretSecretContentArgs'],
-             secret_name: pulumi.Input[str],
-             vault_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
+             secret_name: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'keyId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'secretContent' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if secret_content is None and 'secretContent' in kwargs:
             secret_content = kwargs['secretContent']
-        if 'secretName' in kwargs:
+        if secret_content is None:
+            raise TypeError("Missing 'secret_content' argument")
+        if secret_name is None and 'secretName' in kwargs:
             secret_name = kwargs['secretName']
-        if 'vaultId' in kwargs:
+        if secret_name is None:
+            raise TypeError("Missing 'secret_name' argument")
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
-        if 'definedTags' in kwargs:
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'secretRules' in kwargs:
+        if secret_rules is None and 'secretRules' in kwargs:
             secret_rules = kwargs['secretRules']
 
         _setter("compartment_id", compartment_id)
@@ -309,33 +319,33 @@ class _SecretState:
              time_of_current_version_expiry: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'currentVersionNumber' in kwargs:
+        if current_version_number is None and 'currentVersionNumber' in kwargs:
             current_version_number = kwargs['currentVersionNumber']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'secretContent' in kwargs:
+        if secret_content is None and 'secretContent' in kwargs:
             secret_content = kwargs['secretContent']
-        if 'secretName' in kwargs:
+        if secret_name is None and 'secretName' in kwargs:
             secret_name = kwargs['secretName']
-        if 'secretRules' in kwargs:
+        if secret_rules is None and 'secretRules' in kwargs:
             secret_rules = kwargs['secretRules']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfCurrentVersionExpiry' in kwargs:
+        if time_of_current_version_expiry is None and 'timeOfCurrentVersionExpiry' in kwargs:
             time_of_current_version_expiry = kwargs['timeOfCurrentVersionExpiry']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if compartment_id is not None:
@@ -681,11 +691,7 @@ class Secret(pulumi.CustomResource):
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
             __props__.__dict__["metadata"] = metadata
-            if secret_content is not None and not isinstance(secret_content, SecretSecretContentArgs):
-                secret_content = secret_content or {}
-                def _setter(key, value):
-                    secret_content[key] = value
-                SecretSecretContentArgs._configure(_setter, **secret_content)
+            secret_content = _utilities.configure(secret_content, SecretSecretContentArgs, True)
             if secret_content is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_content'")
             __props__.__dict__["secret_content"] = secret_content

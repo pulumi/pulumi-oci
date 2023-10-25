@@ -61,9 +61,9 @@ class PipelineRunArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             pipeline_id: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             pipeline_id: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
@@ -72,29 +72,35 @@ class PipelineRunArgs:
              log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
              step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'pipelineId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if pipeline_id is None and 'pipelineId' in kwargs:
             pipeline_id = kwargs['pipelineId']
-        if 'projectId' in kwargs:
+        if pipeline_id is None:
+            raise TypeError("Missing 'pipeline_id' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'configurationOverrideDetails' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if configuration_override_details is None and 'configurationOverrideDetails' in kwargs:
             configuration_override_details = kwargs['configurationOverrideDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedJobRuns' in kwargs:
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
             delete_related_job_runs = kwargs['deleteRelatedJobRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'logConfigurationOverrideDetails' in kwargs:
+        if log_configuration_override_details is None and 'logConfigurationOverrideDetails' in kwargs:
             log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
-        if 'stepOverrideDetails' in kwargs:
+        if step_override_details is None and 'stepOverrideDetails' in kwargs:
             step_override_details = kwargs['stepOverrideDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("compartment_id", compartment_id)
@@ -350,47 +356,47 @@ class _PipelineRunState:
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationDetails' in kwargs:
+        if configuration_details is None and 'configurationDetails' in kwargs:
             configuration_details = kwargs['configurationDetails']
-        if 'configurationOverrideDetails' in kwargs:
+        if configuration_override_details is None and 'configurationOverrideDetails' in kwargs:
             configuration_override_details = kwargs['configurationOverrideDetails']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedJobRuns' in kwargs:
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
             delete_related_job_runs = kwargs['deleteRelatedJobRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'logConfigurationOverrideDetails' in kwargs:
+        if log_configuration_override_details is None and 'logConfigurationOverrideDetails' in kwargs:
             log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
-        if 'logDetails' in kwargs:
+        if log_details is None and 'logDetails' in kwargs:
             log_details = kwargs['logDetails']
-        if 'pipelineId' in kwargs:
+        if pipeline_id is None and 'pipelineId' in kwargs:
             pipeline_id = kwargs['pipelineId']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'stepOverrideDetails' in kwargs:
+        if step_override_details is None and 'stepOverrideDetails' in kwargs:
             step_override_details = kwargs['stepOverrideDetails']
-        if 'stepRuns' in kwargs:
+        if step_runs is None and 'stepRuns' in kwargs:
             step_runs = kwargs['stepRuns']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeAccepted' in kwargs:
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -878,21 +884,13 @@ class PipelineRun(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if configuration_override_details is not None and not isinstance(configuration_override_details, PipelineRunConfigurationOverrideDetailsArgs):
-                configuration_override_details = configuration_override_details or {}
-                def _setter(key, value):
-                    configuration_override_details[key] = value
-                PipelineRunConfigurationOverrideDetailsArgs._configure(_setter, **configuration_override_details)
+            configuration_override_details = _utilities.configure(configuration_override_details, PipelineRunConfigurationOverrideDetailsArgs, True)
             __props__.__dict__["configuration_override_details"] = configuration_override_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["delete_related_job_runs"] = delete_related_job_runs
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if log_configuration_override_details is not None and not isinstance(log_configuration_override_details, PipelineRunLogConfigurationOverrideDetailsArgs):
-                log_configuration_override_details = log_configuration_override_details or {}
-                def _setter(key, value):
-                    log_configuration_override_details[key] = value
-                PipelineRunLogConfigurationOverrideDetailsArgs._configure(_setter, **log_configuration_override_details)
+            log_configuration_override_details = _utilities.configure(log_configuration_override_details, PipelineRunLogConfigurationOverrideDetailsArgs, True)
             __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
             if pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pipeline_id'")

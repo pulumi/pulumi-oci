@@ -48,7 +48,7 @@ import (
 //				DbNodeStorageSizeInGbs: pulumi.Any(_var.Vm_cluster_db_node_storage_size_in_gbs),
 //				DbServers:              pulumi.Any(_var.Vm_cluster_db_servers),
 //				DefinedTags:            pulumi.Any(_var.Vm_cluster_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsLocalBackupEnabled:     pulumi.Any(_var.Vm_cluster_is_local_backup_enabled),

@@ -34,11 +34,11 @@ import (
 //			_, err := DataScience.NewModelVersionSet(ctx, "testModelVersionSet", &DataScience.ModelVersionSetArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Model_version_set_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

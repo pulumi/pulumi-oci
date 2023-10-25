@@ -29,14 +29,18 @@ class ListingResourceVersionAgreementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             listing_id: pulumi.Input[str],
-             listing_resource_version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             listing_resource_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingResourceVersion' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if listing_resource_version is None and 'listingResourceVersion' in kwargs:
             listing_resource_version = kwargs['listingResourceVersion']
+        if listing_resource_version is None:
+            raise TypeError("Missing 'listing_resource_version' argument")
 
         _setter("listing_id", listing_id)
         _setter("listing_resource_version", listing_resource_version)
@@ -102,17 +106,17 @@ class _ListingResourceVersionAgreementState:
              oracle_terms_of_use_link: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              time_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'eulaLink' in kwargs:
+        if eula_link is None and 'eulaLink' in kwargs:
             eula_link = kwargs['eulaLink']
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingResourceVersion' in kwargs:
+        if listing_resource_version is None and 'listingResourceVersion' in kwargs:
             listing_resource_version = kwargs['listingResourceVersion']
-        if 'oracleTermsOfUseLink' in kwargs:
+        if oracle_terms_of_use_link is None and 'oracleTermsOfUseLink' in kwargs:
             oracle_terms_of_use_link = kwargs['oracleTermsOfUseLink']
-        if 'timeRetrieved' in kwargs:
+        if time_retrieved is None and 'timeRetrieved' in kwargs:
             time_retrieved = kwargs['timeRetrieved']
 
         if eula_link is not None:

@@ -51,7 +51,7 @@ class AuditTrailArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             audit_trail_id: pulumi.Input[str],
+             audit_trail_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -59,19 +59,21 @@ class AuditTrailArgs:
              is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
              resume_trigger: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditTrailId' in kwargs:
+        if audit_trail_id is None and 'auditTrailId' in kwargs:
             audit_trail_id = kwargs['auditTrailId']
-        if 'definedTags' in kwargs:
+        if audit_trail_id is None:
+            raise TypeError("Missing 'audit_trail_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoPurgeEnabled' in kwargs:
+        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
             is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if 'resumeTrigger' in kwargs:
+        if resume_trigger is None and 'resumeTrigger' in kwargs:
             resume_trigger = kwargs['resumeTrigger']
 
         _setter("audit_trail_id", audit_trail_id)
@@ -287,41 +289,41 @@ class _AuditTrailState:
              time_updated: Optional[pulumi.Input[str]] = None,
              trail_location: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditCollectionStartTime' in kwargs:
+        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
             audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if 'auditProfileId' in kwargs:
+        if audit_profile_id is None and 'auditProfileId' in kwargs:
             audit_profile_id = kwargs['auditProfileId']
-        if 'auditTrailId' in kwargs:
+        if audit_trail_id is None and 'auditTrailId' in kwargs:
             audit_trail_id = kwargs['auditTrailId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoPurgeEnabled' in kwargs:
+        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
             is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'resumeTrigger' in kwargs:
+        if resume_trigger is None and 'resumeTrigger' in kwargs:
             resume_trigger = kwargs['resumeTrigger']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastCollected' in kwargs:
+        if time_last_collected is None and 'timeLastCollected' in kwargs:
             time_last_collected = kwargs['timeLastCollected']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'trailLocation' in kwargs:
+        if trail_location is None and 'trailLocation' in kwargs:
             trail_location = kwargs['trailLocation']
-        if 'workRequestId' in kwargs:
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
 
         if audit_collection_start_time is not None:

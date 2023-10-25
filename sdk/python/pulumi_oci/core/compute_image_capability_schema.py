@@ -44,28 +44,36 @@ class ComputeImageCapabilitySchemaArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             compute_global_image_capability_schema_version_name: pulumi.Input[str],
-             image_id: pulumi.Input[str],
-             schema_data: pulumi.Input[Mapping[str, Any]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_global_image_capability_schema_version_name: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             schema_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_global_image_capability_schema_version_name is None and 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
             compute_global_image_capability_schema_version_name = kwargs['computeGlobalImageCapabilitySchemaVersionName']
-        if 'imageId' in kwargs:
+        if compute_global_image_capability_schema_version_name is None:
+            raise TypeError("Missing 'compute_global_image_capability_schema_version_name' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'schemaData' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if schema_data is None and 'schemaData' in kwargs:
             schema_data = kwargs['schemaData']
-        if 'definedTags' in kwargs:
+        if schema_data is None:
+            raise TypeError("Missing 'schema_data' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -212,25 +220,25 @@ class _ComputeImageCapabilitySchemaState:
              image_id: Optional[pulumi.Input[str]] = None,
              schema_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeGlobalImageCapabilitySchemaId' in kwargs:
+        if compute_global_image_capability_schema_id is None and 'computeGlobalImageCapabilitySchemaId' in kwargs:
             compute_global_image_capability_schema_id = kwargs['computeGlobalImageCapabilitySchemaId']
-        if 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
+        if compute_global_image_capability_schema_version_name is None and 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
             compute_global_image_capability_schema_version_name = kwargs['computeGlobalImageCapabilitySchemaVersionName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'schemaData' in kwargs:
+        if schema_data is None and 'schemaData' in kwargs:
             schema_data = kwargs['schemaData']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

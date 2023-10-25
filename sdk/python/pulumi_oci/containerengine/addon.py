@@ -44,19 +44,25 @@ class AddonArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             addon_name: pulumi.Input[str],
-             cluster_id: pulumi.Input[str],
-             remove_addon_resources_on_delete: pulumi.Input[bool],
+             addon_name: Optional[pulumi.Input[str]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             remove_addon_resources_on_delete: Optional[pulumi.Input[bool]] = None,
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addonName' in kwargs:
+        if addon_name is None and 'addonName' in kwargs:
             addon_name = kwargs['addonName']
-        if 'clusterId' in kwargs:
+        if addon_name is None:
+            raise TypeError("Missing 'addon_name' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'removeAddonResourcesOnDelete' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if remove_addon_resources_on_delete is None and 'removeAddonResourcesOnDelete' in kwargs:
             remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
+        if remove_addon_resources_on_delete is None:
+            raise TypeError("Missing 'remove_addon_resources_on_delete' argument")
 
         _setter("addon_name", addon_name)
         _setter("cluster_id", cluster_id)
@@ -183,19 +189,19 @@ class _AddonState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addonErrors' in kwargs:
+        if addon_errors is None and 'addonErrors' in kwargs:
             addon_errors = kwargs['addonErrors']
-        if 'addonName' in kwargs:
+        if addon_name is None and 'addonName' in kwargs:
             addon_name = kwargs['addonName']
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'currentInstalledVersion' in kwargs:
+        if current_installed_version is None and 'currentInstalledVersion' in kwargs:
             current_installed_version = kwargs['currentInstalledVersion']
-        if 'removeAddonResourcesOnDelete' in kwargs:
+        if remove_addon_resources_on_delete is None and 'removeAddonResourcesOnDelete' in kwargs:
             remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if addon_errors is not None:

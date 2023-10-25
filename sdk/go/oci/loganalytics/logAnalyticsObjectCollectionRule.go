@@ -40,12 +40,12 @@ import (
 //				OsNamespace:    pulumi.Any(_var.Log_analytics_object_collection_rule_os_namespace),
 //				CharEncoding:   pulumi.Any(_var.Log_analytics_object_collection_rule_char_encoding),
 //				CollectionType: pulumi.Any(_var.Log_analytics_object_collection_rule_collection_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Log_analytics_object_collection_rule_description),
 //				EntityId:    pulumi.Any(oci_log_analytics_entity.Test_entity.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsEnabled:         pulumi.Any(_var.Log_analytics_object_collection_rule_is_enabled),

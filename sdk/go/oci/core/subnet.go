@@ -66,13 +66,13 @@ import (
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
 //				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //				AvailabilityDomain: pulumi.Any(_var.Subnet_availability_domain),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DhcpOptionsId: pulumi.Any(oci_core_dhcp_options.Test_dhcp_options.Id),
 //				DisplayName:   pulumi.Any(_var.Subnet_display_name),
 //				DnsLabel:      pulumi.Any(_var.Subnet_dns_label),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Ipv6cidrBlock:           pulumi.Any(_var.Subnet_ipv6cidr_block),

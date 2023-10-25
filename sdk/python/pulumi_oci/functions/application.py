@@ -60,9 +60,9 @@ class ApplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             subnet_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -71,25 +71,31 @@ class ApplicationArgs:
              shape: Optional[pulumi.Input[str]] = None,
              syslog_url: Optional[pulumi.Input[str]] = None,
              trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'subnetIds' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
-        if 'definedTags' in kwargs:
+        if subnet_ids is None:
+            raise TypeError("Missing 'subnet_ids' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfig' in kwargs:
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
             image_policy_config = kwargs['imagePolicyConfig']
-        if 'networkSecurityGroupIds' in kwargs:
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
             network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if 'syslogUrl' in kwargs:
+        if syslog_url is None and 'syslogUrl' in kwargs:
             syslog_url = kwargs['syslogUrl']
-        if 'traceConfig' in kwargs:
+        if trace_config is None and 'traceConfig' in kwargs:
             trace_config = kwargs['traceConfig']
 
         _setter("compartment_id", compartment_id)
@@ -317,29 +323,29 @@ class _ApplicationState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfig' in kwargs:
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
             image_policy_config = kwargs['imagePolicyConfig']
-        if 'networkSecurityGroupIds' in kwargs:
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
             network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if 'subnetIds' in kwargs:
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
-        if 'syslogUrl' in kwargs:
+        if syslog_url is None and 'syslogUrl' in kwargs:
             syslog_url = kwargs['syslogUrl']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'traceConfig' in kwargs:
+        if trace_config is None and 'traceConfig' in kwargs:
             trace_config = kwargs['traceConfig']
 
         if compartment_id is not None:
@@ -711,11 +717,7 @@ class Application(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if image_policy_config is not None and not isinstance(image_policy_config, ApplicationImagePolicyConfigArgs):
-                image_policy_config = image_policy_config or {}
-                def _setter(key, value):
-                    image_policy_config[key] = value
-                ApplicationImagePolicyConfigArgs._configure(_setter, **image_policy_config)
+            image_policy_config = _utilities.configure(image_policy_config, ApplicationImagePolicyConfigArgs, True)
             __props__.__dict__["image_policy_config"] = image_policy_config
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["shape"] = shape
@@ -723,11 +725,7 @@ class Application(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_ids'")
             __props__.__dict__["subnet_ids"] = subnet_ids
             __props__.__dict__["syslog_url"] = syslog_url
-            if trace_config is not None and not isinstance(trace_config, ApplicationTraceConfigArgs):
-                trace_config = trace_config or {}
-                def _setter(key, value):
-                    trace_config[key] = value
-                ApplicationTraceConfigArgs._configure(_setter, **trace_config)
+            trace_config = _utilities.configure(trace_config, ApplicationTraceConfigArgs, True)
             __props__.__dict__["trace_config"] = trace_config
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

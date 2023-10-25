@@ -37,19 +37,21 @@ class ManagedInstanceManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             managed_instance_id: pulumi.Input[str],
+             managed_instance_id: Optional[pulumi.Input[str]] = None,
              child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementChildSoftwareSourceArgs']]]] = None,
              managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementManagedInstanceGroupArgs']]]] = None,
              parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedInstanceId' in kwargs:
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'childSoftwareSources' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if child_software_sources is None and 'childSoftwareSources' in kwargs:
             child_software_sources = kwargs['childSoftwareSources']
-        if 'managedInstanceGroups' in kwargs:
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
             managed_instance_groups = kwargs['managedInstanceGroups']
-        if 'parentSoftwareSource' in kwargs:
+        if parent_software_source is None and 'parentSoftwareSource' in kwargs:
             parent_software_source = kwargs['parentSoftwareSource']
 
         _setter("managed_instance_id", managed_instance_id)
@@ -177,31 +179,31 @@ class _ManagedInstanceManagementState:
              parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
              status: Optional[pulumi.Input[str]] = None,
              updates_available: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'childSoftwareSources' in kwargs:
+        if child_software_sources is None and 'childSoftwareSources' in kwargs:
             child_software_sources = kwargs['childSoftwareSources']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'lastBoot' in kwargs:
+        if last_boot is None and 'lastBoot' in kwargs:
             last_boot = kwargs['lastBoot']
-        if 'lastCheckin' in kwargs:
+        if last_checkin is None and 'lastCheckin' in kwargs:
             last_checkin = kwargs['lastCheckin']
-        if 'managedInstanceGroups' in kwargs:
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
             managed_instance_groups = kwargs['managedInstanceGroups']
-        if 'managedInstanceId' in kwargs:
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'osKernelVersion' in kwargs:
+        if os_kernel_version is None and 'osKernelVersion' in kwargs:
             os_kernel_version = kwargs['osKernelVersion']
-        if 'osName' in kwargs:
+        if os_name is None and 'osName' in kwargs:
             os_name = kwargs['osName']
-        if 'osVersion' in kwargs:
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'parentSoftwareSource' in kwargs:
+        if parent_software_source is None and 'parentSoftwareSource' in kwargs:
             parent_software_source = kwargs['parentSoftwareSource']
-        if 'updatesAvailable' in kwargs:
+        if updates_available is None and 'updatesAvailable' in kwargs:
             updates_available = kwargs['updatesAvailable']
 
         if child_software_sources is not None:
@@ -546,11 +548,7 @@ class ManagedInstanceManagement(pulumi.CustomResource):
             if managed_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'managed_instance_id'")
             __props__.__dict__["managed_instance_id"] = managed_instance_id
-            if parent_software_source is not None and not isinstance(parent_software_source, ManagedInstanceManagementParentSoftwareSourceArgs):
-                parent_software_source = parent_software_source or {}
-                def _setter(key, value):
-                    parent_software_source[key] = value
-                ManagedInstanceManagementParentSoftwareSourceArgs._configure(_setter, **parent_software_source)
+            parent_software_source = _utilities.configure(parent_software_source, ManagedInstanceManagementParentSoftwareSourceArgs, True)
             __props__.__dict__["parent_software_source"] = parent_software_source
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["description"] = None

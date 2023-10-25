@@ -35,17 +35,23 @@ class PublicIpPoolCapacityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             byoip_id: pulumi.Input[str],
-             cidr_block: pulumi.Input[str],
-             public_ip_pool_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             byoip_id: Optional[pulumi.Input[str]] = None,
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             public_ip_pool_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'byoipId' in kwargs:
+        if byoip_id is None and 'byoipId' in kwargs:
             byoip_id = kwargs['byoipId']
-        if 'cidrBlock' in kwargs:
+        if byoip_id is None:
+            raise TypeError("Missing 'byoip_id' argument")
+        if cidr_block is None and 'cidrBlock' in kwargs:
             cidr_block = kwargs['cidrBlock']
-        if 'publicIpPoolId' in kwargs:
+        if cidr_block is None:
+            raise TypeError("Missing 'cidr_block' argument")
+        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
             public_ip_pool_id = kwargs['publicIpPoolId']
+        if public_ip_pool_id is None:
+            raise TypeError("Missing 'public_ip_pool_id' argument")
 
         _setter("byoip_id", byoip_id)
         _setter("cidr_block", cidr_block)
@@ -118,13 +124,13 @@ class _PublicIpPoolCapacityState:
              byoip_id: Optional[pulumi.Input[str]] = None,
              cidr_block: Optional[pulumi.Input[str]] = None,
              public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'byoipId' in kwargs:
+        if byoip_id is None and 'byoipId' in kwargs:
             byoip_id = kwargs['byoipId']
-        if 'cidrBlock' in kwargs:
+        if cidr_block is None and 'cidrBlock' in kwargs:
             cidr_block = kwargs['cidrBlock']
-        if 'publicIpPoolId' in kwargs:
+        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
             public_ip_pool_id = kwargs['publicIpPoolId']
 
         if byoip_id is not None:

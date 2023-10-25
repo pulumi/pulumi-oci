@@ -39,12 +39,12 @@ import (
 //				CommentPattern:         pulumi.Any(_var.Sensitive_type_comment_pattern),
 //				DataPattern:            pulumi.Any(_var.Sensitive_type_data_pattern),
 //				DefaultMaskingFormatId: pulumi.Any(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Sensitive_type_description),
 //				DisplayName: pulumi.Any(_var.Sensitive_type_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NamePattern:      pulumi.Any(_var.Sensitive_type_name_pattern),

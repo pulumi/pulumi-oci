@@ -35,10 +35,10 @@ import (
 //				CompartmentId:        pulumi.Any(_var.Compartment_id),
 //				DisplayName:          pulumi.Any(_var.Replication_schedule_display_name),
 //				ExecutionRecurrences: pulumi.Any(_var.Replication_schedule_execution_recurrences),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

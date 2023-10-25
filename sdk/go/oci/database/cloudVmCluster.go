@@ -54,7 +54,7 @@ import (
 //				DbServers:              pulumi.Any(_var.Cloud_vm_cluster_db_servers),
 //				DefinedTags:            pulumi.Any(_var.Cloud_vm_cluster_defined_tags),
 //				Domain:                 pulumi.Any(_var.Cloud_vm_cluster_domain),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsLocalBackupEnabled:     pulumi.Any(_var.Cloud_vm_cluster_is_local_backup_enabled),

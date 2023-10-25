@@ -37,10 +37,10 @@ import (
 //				DisplayName:          pulumi.Any(_var.Ekms_private_endpoint_display_name),
 //				ExternalKeyManagerIp: pulumi.Any(_var.Ekms_private_endpoint_external_key_manager_ip),
 //				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Port: pulumi.Any(_var.Ekms_private_endpoint_port),

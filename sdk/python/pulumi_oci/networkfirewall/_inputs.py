@@ -48,11 +48,11 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
              _setter: Callable[[Any, Any], None],
              destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationAddresses' in kwargs:
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
             destination_addresses = kwargs['destinationAddresses']
-        if 'sourceAddresses' in kwargs:
+        if source_addresses is None and 'sourceAddresses' in kwargs:
             source_addresses = kwargs['sourceAddresses']
 
         if destination_addresses is not None:
@@ -108,11 +108,11 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
              _setter: Callable[[Any, Any], None],
              after_rule: Optional[pulumi.Input[str]] = None,
              before_rule: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'afterRule' in kwargs:
+        if after_rule is None and 'afterRule' in kwargs:
             after_rule = kwargs['afterRule']
-        if 'beforeRule' in kwargs:
+        if before_rule is None and 'beforeRule' in kwargs:
             before_rule = kwargs['beforeRule']
 
         if after_rule is not None:
@@ -175,17 +175,27 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             applications: pulumi.Input[Sequence[pulumi.Input[str]]],
-             destination_addresses: pulumi.Input[Sequence[pulumi.Input[str]]],
-             services: pulumi.Input[Sequence[pulumi.Input[str]]],
-             source_addresses: pulumi.Input[Sequence[pulumi.Input[str]]],
-             urls: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             applications: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             urls: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationAddresses' in kwargs:
+        if applications is None:
+            raise TypeError("Missing 'applications' argument")
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
             destination_addresses = kwargs['destinationAddresses']
-        if 'sourceAddresses' in kwargs:
+        if destination_addresses is None:
+            raise TypeError("Missing 'destination_addresses' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
+        if source_addresses is None and 'sourceAddresses' in kwargs:
             source_addresses = kwargs['sourceAddresses']
+        if source_addresses is None:
+            raise TypeError("Missing 'source_addresses' argument")
+        if urls is None:
+            raise TypeError("Missing 'urls' argument")
 
         _setter("applications", applications)
         _setter("destination_addresses", destination_addresses)
@@ -277,11 +287,11 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
              _setter: Callable[[Any, Any], None],
              after_rule: Optional[pulumi.Input[str]] = None,
              before_rule: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'afterRule' in kwargs:
+        if after_rule is None and 'afterRule' in kwargs:
             after_rule = kwargs['afterRule']
-        if 'beforeRule' in kwargs:
+        if before_rule is None and 'beforeRule' in kwargs:
             before_rule = kwargs['beforeRule']
 
         if after_rule is not None:
@@ -335,13 +345,15 @@ class NetworkFirewallPolicyServicePortRangeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             minimum_port: pulumi.Input[int],
+             minimum_port: Optional[pulumi.Input[int]] = None,
              maximum_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'minimumPort' in kwargs:
+        if minimum_port is None and 'minimumPort' in kwargs:
             minimum_port = kwargs['minimumPort']
-        if 'maximumPort' in kwargs:
+        if minimum_port is None:
+            raise TypeError("Missing 'minimum_port' argument")
+        if maximum_port is None and 'maximumPort' in kwargs:
             maximum_port = kwargs['maximumPort']
 
         _setter("minimum_port", minimum_port)
@@ -395,10 +407,14 @@ class NetworkFirewallPolicyUrlListUrlArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pattern: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pattern: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if pattern is None:
+            raise TypeError("Missing 'pattern' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("pattern", pattern)
         _setter("type", type)
@@ -448,11 +464,15 @@ class GetNetworkFirewallPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -505,11 +525,15 @@ class GetNetworkFirewallPolicyAddressListsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -565,11 +589,15 @@ class GetNetworkFirewallPolicyApplicationGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -625,11 +653,15 @@ class GetNetworkFirewallPolicyApplicationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -685,11 +717,15 @@ class GetNetworkFirewallPolicyDecryptionProfilesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -745,11 +781,15 @@ class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -805,11 +845,15 @@ class GetNetworkFirewallPolicySecurityRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -865,11 +909,15 @@ class GetNetworkFirewallPolicyServiceListsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -925,11 +973,15 @@ class GetNetworkFirewallPolicyServicesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -985,11 +1037,15 @@ class GetNetworkFirewallPolicyUrlListsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1042,11 +1098,15 @@ class GetNetworkFirewallsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

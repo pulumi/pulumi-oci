@@ -37,19 +37,25 @@ class ExternalContainerDatabaseManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_management: pulumi.Input[bool],
-             external_container_database_id: pulumi.Input[str],
-             external_database_connector_id: pulumi.Input[str],
+             enable_management: Optional[pulumi.Input[bool]] = None,
+             external_container_database_id: Optional[pulumi.Input[str]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableManagement' in kwargs:
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'externalContainerDatabaseId' in kwargs:
+        if enable_management is None:
+            raise TypeError("Missing 'enable_management' argument")
+        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
             external_container_database_id = kwargs['externalContainerDatabaseId']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if external_container_database_id is None:
+            raise TypeError("Missing 'external_container_database_id' argument")
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'licenseModel' in kwargs:
+        if external_database_connector_id is None:
+            raise TypeError("Missing 'external_database_connector_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         _setter("enable_management", enable_management)
@@ -137,15 +143,15 @@ class _ExternalContainerDatabaseManagementState:
              external_container_database_id: Optional[pulumi.Input[str]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableManagement' in kwargs:
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'externalContainerDatabaseId' in kwargs:
+        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
             external_container_database_id = kwargs['externalContainerDatabaseId']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         if enable_management is not None:

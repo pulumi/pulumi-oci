@@ -38,14 +38,18 @@ class SecretSecretContentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: pulumi.Input[str],
-             content_type: pulumi.Input[str],
+             content: Optional[pulumi.Input[str]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              stage: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentType' in kwargs:
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
+        if content_type is None:
+            raise TypeError("Missing 'content_type' argument")
 
         _setter("content", content)
         _setter("content_type", content_type)
@@ -129,22 +133,24 @@ class SecretSecretRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rule_type: pulumi.Input[str],
+             rule_type: Optional[pulumi.Input[str]] = None,
              is_enforced_on_deleted_secret_versions: Optional[pulumi.Input[bool]] = None,
              is_secret_content_retrieval_blocked_on_expiry: Optional[pulumi.Input[bool]] = None,
              secret_version_expiry_interval: Optional[pulumi.Input[str]] = None,
              time_of_absolute_expiry: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ruleType' in kwargs:
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
-        if 'isEnforcedOnDeletedSecretVersions' in kwargs:
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
+        if is_enforced_on_deleted_secret_versions is None and 'isEnforcedOnDeletedSecretVersions' in kwargs:
             is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
-        if 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
+        if is_secret_content_retrieval_blocked_on_expiry is None and 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
             is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
-        if 'secretVersionExpiryInterval' in kwargs:
+        if secret_version_expiry_interval is None and 'secretVersionExpiryInterval' in kwargs:
             secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
-        if 'timeOfAbsoluteExpiry' in kwargs:
+        if time_of_absolute_expiry is None and 'timeOfAbsoluteExpiry' in kwargs:
             time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
 
         _setter("rule_type", rule_type)
@@ -236,11 +242,15 @@ class GetSecretsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

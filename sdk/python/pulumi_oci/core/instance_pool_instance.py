@@ -39,19 +39,23 @@ class InstancePoolInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             instance_id: pulumi.Input[str],
-             instance_pool_id: pulumi.Input[str],
+             instance_id: Optional[pulumi.Input[str]] = None,
+             instance_pool_id: Optional[pulumi.Input[str]] = None,
              auto_terminate_instance_on_delete: Optional[pulumi.Input[bool]] = None,
              decrement_size_on_delete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'instancePoolId' in kwargs:
+        if instance_id is None:
+            raise TypeError("Missing 'instance_id' argument")
+        if instance_pool_id is None and 'instancePoolId' in kwargs:
             instance_pool_id = kwargs['instancePoolId']
-        if 'autoTerminateInstanceOnDelete' in kwargs:
+        if instance_pool_id is None:
+            raise TypeError("Missing 'instance_pool_id' argument")
+        if auto_terminate_instance_on_delete is None and 'autoTerminateInstanceOnDelete' in kwargs:
             auto_terminate_instance_on_delete = kwargs['autoTerminateInstanceOnDelete']
-        if 'decrementSizeOnDelete' in kwargs:
+        if decrement_size_on_delete is None and 'decrementSizeOnDelete' in kwargs:
             decrement_size_on_delete = kwargs['decrementSizeOnDelete']
 
         _setter("instance_id", instance_id)
@@ -178,29 +182,29 @@ class _InstancePoolInstanceState:
              shape: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoTerminateInstanceOnDelete' in kwargs:
+        if auto_terminate_instance_on_delete is None and 'autoTerminateInstanceOnDelete' in kwargs:
             auto_terminate_instance_on_delete = kwargs['autoTerminateInstanceOnDelete']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'decrementSizeOnDelete' in kwargs:
+        if decrement_size_on_delete is None and 'decrementSizeOnDelete' in kwargs:
             decrement_size_on_delete = kwargs['decrementSizeOnDelete']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'instanceConfigurationId' in kwargs:
+        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
             instance_configuration_id = kwargs['instanceConfigurationId']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'instancePoolId' in kwargs:
+        if instance_pool_id is None and 'instancePoolId' in kwargs:
             instance_pool_id = kwargs['instancePoolId']
-        if 'loadBalancerBackends' in kwargs:
+        if load_balancer_backends is None and 'loadBalancerBackends' in kwargs:
             load_balancer_backends = kwargs['loadBalancerBackends']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if auto_terminate_instance_on_delete is not None:

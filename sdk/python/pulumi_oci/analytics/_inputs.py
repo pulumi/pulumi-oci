@@ -35,14 +35,18 @@ class AnalyticsInstanceCapacityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_type: pulumi.Input[str],
-             capacity_value: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_type: Optional[pulumi.Input[str]] = None,
+             capacity_value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityType' in kwargs:
+        if capacity_type is None and 'capacityType' in kwargs:
             capacity_type = kwargs['capacityType']
-        if 'capacityValue' in kwargs:
+        if capacity_type is None:
+            raise TypeError("Missing 'capacity_type' argument")
+        if capacity_value is None and 'capacityValue' in kwargs:
             capacity_value = kwargs['capacityValue']
+        if capacity_value is None:
+            raise TypeError("Missing 'capacity_value' argument")
 
         _setter("capacity_type", capacity_type)
         _setter("capacity_value", capacity_value)
@@ -104,28 +108,30 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_endpoint_type: pulumi.Input[str],
+             network_endpoint_type: Optional[pulumi.Input[str]] = None,
              network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              whitelisted_services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              whitelisted_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkEndpointType' in kwargs:
+        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
             network_endpoint_type = kwargs['networkEndpointType']
-        if 'networkSecurityGroupIds' in kwargs:
+        if network_endpoint_type is None:
+            raise TypeError("Missing 'network_endpoint_type' argument")
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
             network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'whitelistedIps' in kwargs:
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
             whitelisted_ips = kwargs['whitelistedIps']
-        if 'whitelistedServices' in kwargs:
+        if whitelisted_services is None and 'whitelistedServices' in kwargs:
             whitelisted_services = kwargs['whitelistedServices']
-        if 'whitelistedVcns' in kwargs:
+        if whitelisted_vcns is None and 'whitelistedVcns' in kwargs:
             whitelisted_vcns = kwargs['whitelistedVcns']
 
         _setter("network_endpoint_type", network_endpoint_type)
@@ -246,9 +252,9 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'whitelistedIps' in kwargs:
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
             whitelisted_ips = kwargs['whitelistedIps']
 
         if id is not None:
@@ -298,12 +304,14 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dns_zone: pulumi.Input[str],
+             dns_zone: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dnsZone' in kwargs:
+        if dns_zone is None and 'dnsZone' in kwargs:
             dns_zone = kwargs['dnsZone']
+        if dns_zone is None:
+            raise TypeError("Missing 'dns_zone' argument")
 
         _setter("dns_zone", dns_zone)
         if description is not None:
@@ -354,15 +362,19 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             scan_hostname: pulumi.Input[str],
-             scan_port: pulumi.Input[int],
+             scan_hostname: Optional[pulumi.Input[str]] = None,
+             scan_port: Optional[pulumi.Input[int]] = None,
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scanHostname' in kwargs:
+        if scan_hostname is None and 'scanHostname' in kwargs:
             scan_hostname = kwargs['scanHostname']
-        if 'scanPort' in kwargs:
+        if scan_hostname is None:
+            raise TypeError("Missing 'scan_hostname' argument")
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
+        if scan_port is None:
+            raise TypeError("Missing 'scan_port' argument")
 
         _setter("scan_hostname", scan_hostname)
         _setter("scan_port", scan_port)
@@ -424,11 +436,15 @@ class GetAnalyticsInstancesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

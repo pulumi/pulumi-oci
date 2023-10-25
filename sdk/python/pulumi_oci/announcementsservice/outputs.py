@@ -40,10 +40,12 @@ class AnnouncementSubscriptionFilterGroups(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             filters: Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter'],
+             filters: Optional[Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter']] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
 
         _setter("filters", filters)
         if name is not None:
@@ -83,10 +85,14 @@ class AnnouncementSubscriptionFilterGroupsFilter(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -125,10 +131,14 @@ class AnnouncementSubscriptionsFilterGroupFilter(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -167,10 +177,14 @@ class GetAnnouncementSubscriptionFilterGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             filters: Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             filters: Optional[Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("filters", filters)
         _setter("name", name)
@@ -209,10 +223,14 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -245,9 +263,11 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -313,47 +333,77 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             filter_groups: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             ons_topic_id: str,
-             preferred_language: str,
-             preferred_time_zone: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             filter_groups: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             ons_topic_id: Optional[str] = None,
+             preferred_language: Optional[str] = None,
+             preferred_time_zone: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterGroups' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if filter_groups is None and 'filterGroups' in kwargs:
             filter_groups = kwargs['filterGroups']
-        if 'freeformTags' in kwargs:
+        if filter_groups is None:
+            raise TypeError("Missing 'filter_groups' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'onsTopicId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if ons_topic_id is None and 'onsTopicId' in kwargs:
             ons_topic_id = kwargs['onsTopicId']
-        if 'preferredLanguage' in kwargs:
+        if ons_topic_id is None:
+            raise TypeError("Missing 'ons_topic_id' argument")
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'preferredTimeZone' in kwargs:
+        if preferred_language is None:
+            raise TypeError("Missing 'preferred_language' argument")
+        if preferred_time_zone is None and 'preferredTimeZone' in kwargs:
             preferred_time_zone = kwargs['preferredTimeZone']
-        if 'systemTags' in kwargs:
+        if preferred_time_zone is None:
+            raise TypeError("Missing 'preferred_time_zone' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -509,10 +559,14 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             filters: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             filters: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("filters", filters)
         _setter("name", name)
@@ -551,10 +605,14 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -594,11 +652,15 @@ class GetAnnouncementSubscriptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

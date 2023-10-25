@@ -35,7 +35,7 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DdlStatement:  pulumi.Any(_var.Table_ddl_statement),
 //				DefinedTags:   pulumi.Any(_var.Table_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsAutoReclaimable: pulumi.Any(_var.Table_is_auto_reclaimable),

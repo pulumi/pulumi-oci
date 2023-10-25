@@ -78,12 +78,12 @@ class InstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_email: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             idcs_access_token: pulumi.Input[str],
-             object_storage_namespace: pulumi.Input[str],
-             tenancy_id: pulumi.Input[str],
-             tenancy_name: pulumi.Input[str],
+             admin_email: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             idcs_access_token: Optional[pulumi.Input[str]] = None,
+             object_storage_namespace: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             tenancy_name: Optional[pulumi.Input[str]] = None,
              add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -95,37 +95,49 @@ class InstanceArgs:
              name: Optional[pulumi.Input[str]] = None,
              upgrade_schedule: Optional[pulumi.Input[str]] = None,
              waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminEmail' in kwargs:
+        if admin_email is None and 'adminEmail' in kwargs:
             admin_email = kwargs['adminEmail']
-        if 'compartmentId' in kwargs:
+        if admin_email is None:
+            raise TypeError("Missing 'admin_email' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'idcsAccessToken' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'objectStorageNamespace' in kwargs:
+        if idcs_access_token is None:
+            raise TypeError("Missing 'idcs_access_token' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'tenancyId' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'tenancyName' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if tenancy_name is None and 'tenancyName' in kwargs:
             tenancy_name = kwargs['tenancyName']
-        if 'addOnFeatures' in kwargs:
+        if tenancy_name is None:
+            raise TypeError("Missing 'tenancy_name' argument")
+        if add_on_features is None and 'addOnFeatures' in kwargs:
             add_on_features = kwargs['addOnFeatures']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'drRegion' in kwargs:
+        if dr_region is None and 'drRegion' in kwargs:
             dr_region = kwargs['drRegion']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceAccessType' in kwargs:
+        if instance_access_type is None and 'instanceAccessType' in kwargs:
             instance_access_type = kwargs['instanceAccessType']
-        if 'instanceLicenseType' in kwargs:
+        if instance_license_type is None and 'instanceLicenseType' in kwargs:
             instance_license_type = kwargs['instanceLicenseType']
-        if 'instanceUsageType' in kwargs:
+        if instance_usage_type is None and 'instanceUsageType' in kwargs:
             instance_usage_type = kwargs['instanceUsageType']
-        if 'upgradeSchedule' in kwargs:
+        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
             upgrade_schedule = kwargs['upgradeSchedule']
-        if 'wafPrimaryDomain' in kwargs:
+        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
             waf_primary_domain = kwargs['wafPrimaryDomain']
 
         _setter("admin_email", admin_email)
@@ -486,49 +498,49 @@ class _InstanceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              upgrade_schedule: Optional[pulumi.Input[str]] = None,
              waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addOnFeatures' in kwargs:
+        if add_on_features is None and 'addOnFeatures' in kwargs:
             add_on_features = kwargs['addOnFeatures']
-        if 'adminEmail' in kwargs:
+        if admin_email is None and 'adminEmail' in kwargs:
             admin_email = kwargs['adminEmail']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'drRegion' in kwargs:
+        if dr_region is None and 'drRegion' in kwargs:
             dr_region = kwargs['drRegion']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'idcsTenancy' in kwargs:
+        if idcs_tenancy is None and 'idcsTenancy' in kwargs:
             idcs_tenancy = kwargs['idcsTenancy']
-        if 'instanceAccessType' in kwargs:
+        if instance_access_type is None and 'instanceAccessType' in kwargs:
             instance_access_type = kwargs['instanceAccessType']
-        if 'instanceLicenseType' in kwargs:
+        if instance_license_type is None and 'instanceLicenseType' in kwargs:
             instance_license_type = kwargs['instanceLicenseType']
-        if 'instanceUsageType' in kwargs:
+        if instance_usage_type is None and 'instanceUsageType' in kwargs:
             instance_usage_type = kwargs['instanceUsageType']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'stateMessage' in kwargs:
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'tenancyName' in kwargs:
+        if tenancy_name is None and 'tenancyName' in kwargs:
             tenancy_name = kwargs['tenancyName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradeSchedule' in kwargs:
+        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
             upgrade_schedule = kwargs['upgradeSchedule']
-        if 'wafPrimaryDomain' in kwargs:
+        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
             waf_primary_domain = kwargs['wafPrimaryDomain']
 
         if add_on_features is not None:

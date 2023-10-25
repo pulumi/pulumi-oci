@@ -60,23 +60,25 @@ class CustomTableSavedCustomTableArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
              column_group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              compartment_depth: Optional[pulumi.Input[float]] = None,
              group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]]] = None,
              row_group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              version: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'columnGroupBies' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if column_group_bies is None and 'columnGroupBies' in kwargs:
             column_group_bies = kwargs['columnGroupBies']
-        if 'compartmentDepth' in kwargs:
+        if compartment_depth is None and 'compartmentDepth' in kwargs:
             compartment_depth = kwargs['compartmentDepth']
-        if 'groupByTags' in kwargs:
+        if group_by_tags is None and 'groupByTags' in kwargs:
             group_by_tags = kwargs['groupByTags']
-        if 'rowGroupBies' in kwargs:
+        if row_group_bies is None and 'rowGroupBies' in kwargs:
             row_group_bies = kwargs['rowGroupBies']
 
         _setter("display_name", display_name)
@@ -187,7 +189,7 @@ class CustomTableSavedCustomTableGroupByTagArgs:
              key: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -261,18 +263,26 @@ class QueryQueryDefinitionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cost_analysis_ui: pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgs'],
-             display_name: pulumi.Input[str],
-             report_query: pulumi.Input['QueryQueryDefinitionReportQueryArgs'],
-             version: pulumi.Input[float],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cost_analysis_ui: Optional[pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             report_query: Optional[pulumi.Input['QueryQueryDefinitionReportQueryArgs']] = None,
+             version: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'costAnalysisUi' in kwargs:
+        if cost_analysis_ui is None and 'costAnalysisUi' in kwargs:
             cost_analysis_ui = kwargs['costAnalysisUi']
-        if 'displayName' in kwargs:
+        if cost_analysis_ui is None:
+            raise TypeError("Missing 'cost_analysis_ui' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'reportQuery' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if report_query is None and 'reportQuery' in kwargs:
             report_query = kwargs['reportQuery']
+        if report_query is None:
+            raise TypeError("Missing 'report_query' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("cost_analysis_ui", cost_analysis_ui)
         _setter("display_name", display_name)
@@ -351,9 +361,9 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
              _setter: Callable[[Any, Any], None],
              graph: Optional[pulumi.Input[str]] = None,
              is_cumulative_graph: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isCumulativeGraph' in kwargs:
+        if is_cumulative_graph is None and 'isCumulativeGraph' in kwargs:
             is_cumulative_graph = kwargs['isCumulativeGraph']
 
         if graph is not None:
@@ -433,8 +443,8 @@ class QueryQueryDefinitionReportQueryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             granularity: pulumi.Input[str],
-             tenant_id: pulumi.Input[str],
+             granularity: Optional[pulumi.Input[str]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
              compartment_depth: Optional[pulumi.Input[float]] = None,
              date_range_name: Optional[pulumi.Input[str]] = None,
              filter: Optional[pulumi.Input[str]] = None,
@@ -445,25 +455,29 @@ class QueryQueryDefinitionReportQueryArgs:
              query_type: Optional[pulumi.Input[str]] = None,
              time_usage_ended: Optional[pulumi.Input[str]] = None,
              time_usage_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tenantId' in kwargs:
+        if granularity is None:
+            raise TypeError("Missing 'granularity' argument")
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'compartmentDepth' in kwargs:
+        if tenant_id is None:
+            raise TypeError("Missing 'tenant_id' argument")
+        if compartment_depth is None and 'compartmentDepth' in kwargs:
             compartment_depth = kwargs['compartmentDepth']
-        if 'dateRangeName' in kwargs:
+        if date_range_name is None and 'dateRangeName' in kwargs:
             date_range_name = kwargs['dateRangeName']
-        if 'groupBies' in kwargs:
+        if group_bies is None and 'groupBies' in kwargs:
             group_bies = kwargs['groupBies']
-        if 'groupByTags' in kwargs:
+        if group_by_tags is None and 'groupByTags' in kwargs:
             group_by_tags = kwargs['groupByTags']
-        if 'isAggregateByTime' in kwargs:
+        if is_aggregate_by_time is None and 'isAggregateByTime' in kwargs:
             is_aggregate_by_time = kwargs['isAggregateByTime']
-        if 'queryType' in kwargs:
+        if query_type is None and 'queryType' in kwargs:
             query_type = kwargs['queryType']
-        if 'timeUsageEnded' in kwargs:
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
             time_usage_ended = kwargs['timeUsageEnded']
-        if 'timeUsageStarted' in kwargs:
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
             time_usage_started = kwargs['timeUsageStarted']
 
         _setter("granularity", granularity)
@@ -654,16 +668,18 @@ class QueryQueryDefinitionReportQueryForecastArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_forecast_ended: pulumi.Input[str],
+             time_forecast_ended: Optional[pulumi.Input[str]] = None,
              forecast_type: Optional[pulumi.Input[str]] = None,
              time_forecast_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeForecastEnded' in kwargs:
+        if time_forecast_ended is None and 'timeForecastEnded' in kwargs:
             time_forecast_ended = kwargs['timeForecastEnded']
-        if 'forecastType' in kwargs:
+        if time_forecast_ended is None:
+            raise TypeError("Missing 'time_forecast_ended' argument")
+        if forecast_type is None and 'forecastType' in kwargs:
             forecast_type = kwargs['forecastType']
-        if 'timeForecastStarted' in kwargs:
+        if time_forecast_started is None and 'timeForecastStarted' in kwargs:
             time_forecast_started = kwargs['timeForecastStarted']
 
         _setter("time_forecast_ended", time_forecast_ended)
@@ -732,7 +748,7 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
              key: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -814,27 +830,31 @@ class ScheduleQueryPropertiesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             date_range: pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'],
-             granularity: pulumi.Input[str],
+             date_range: Optional[pulumi.Input['ScheduleQueryPropertiesDateRangeArgs']] = None,
+             granularity: Optional[pulumi.Input[str]] = None,
              compartment_depth: Optional[pulumi.Input[float]] = None,
              filter: Optional[pulumi.Input[str]] = None,
              group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]] = None,
              is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
              query_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dateRange' in kwargs:
+        if date_range is None and 'dateRange' in kwargs:
             date_range = kwargs['dateRange']
-        if 'compartmentDepth' in kwargs:
+        if date_range is None:
+            raise TypeError("Missing 'date_range' argument")
+        if granularity is None:
+            raise TypeError("Missing 'granularity' argument")
+        if compartment_depth is None and 'compartmentDepth' in kwargs:
             compartment_depth = kwargs['compartmentDepth']
-        if 'groupBies' in kwargs:
+        if group_bies is None and 'groupBies' in kwargs:
             group_bies = kwargs['groupBies']
-        if 'groupByTags' in kwargs:
+        if group_by_tags is None and 'groupByTags' in kwargs:
             group_by_tags = kwargs['groupByTags']
-        if 'isAggregateByTime' in kwargs:
+        if is_aggregate_by_time is None and 'isAggregateByTime' in kwargs:
             is_aggregate_by_time = kwargs['isAggregateByTime']
-        if 'queryType' in kwargs:
+        if query_type is None and 'queryType' in kwargs:
             query_type = kwargs['queryType']
 
         _setter("date_range", date_range)
@@ -971,19 +991,21 @@ class ScheduleQueryPropertiesDateRangeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             date_range_type: pulumi.Input[str],
+             date_range_type: Optional[pulumi.Input[str]] = None,
              dynamic_date_range_type: Optional[pulumi.Input[str]] = None,
              time_usage_ended: Optional[pulumi.Input[str]] = None,
              time_usage_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dateRangeType' in kwargs:
+        if date_range_type is None and 'dateRangeType' in kwargs:
             date_range_type = kwargs['dateRangeType']
-        if 'dynamicDateRangeType' in kwargs:
+        if date_range_type is None:
+            raise TypeError("Missing 'date_range_type' argument")
+        if dynamic_date_range_type is None and 'dynamicDateRangeType' in kwargs:
             dynamic_date_range_type = kwargs['dynamicDateRangeType']
-        if 'timeUsageEnded' in kwargs:
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
             time_usage_ended = kwargs['timeUsageEnded']
-        if 'timeUsageStarted' in kwargs:
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
             time_usage_started = kwargs['timeUsageStarted']
 
         _setter("date_range_type", date_range_type)
@@ -1063,7 +1085,7 @@ class ScheduleQueryPropertiesGroupByTagArgs:
              key: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -1133,14 +1155,22 @@ class ScheduleResultLocationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             location_type: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             region: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             location_type: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'locationType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if location_type is None and 'locationType' in kwargs:
             location_type = kwargs['locationType']
+        if location_type is None:
+            raise TypeError("Missing 'location_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
 
         _setter("bucket", bucket)
         _setter("location_type", location_type)
@@ -1216,16 +1246,18 @@ class UsageForecastArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_forecast_ended: pulumi.Input[str],
+             time_forecast_ended: Optional[pulumi.Input[str]] = None,
              forecast_type: Optional[pulumi.Input[str]] = None,
              time_forecast_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeForecastEnded' in kwargs:
+        if time_forecast_ended is None and 'timeForecastEnded' in kwargs:
             time_forecast_ended = kwargs['timeForecastEnded']
-        if 'forecastType' in kwargs:
+        if time_forecast_ended is None:
+            raise TypeError("Missing 'time_forecast_ended' argument")
+        if forecast_type is None and 'forecastType' in kwargs:
             forecast_type = kwargs['forecastType']
-        if 'timeForecastStarted' in kwargs:
+        if time_forecast_started is None and 'timeForecastStarted' in kwargs:
             time_forecast_started = kwargs['timeForecastStarted']
 
         _setter("time_forecast_ended", time_forecast_ended)
@@ -1294,7 +1326,7 @@ class UsageGroupByTagArgs:
              key: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -1472,43 +1504,43 @@ class UsageItemArgs:
              unit: Optional[pulumi.Input[str]] = None,
              unit_price: Optional[pulumi.Input[float]] = None,
              weight: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentName' in kwargs:
+        if compartment_name is None and 'compartmentName' in kwargs:
             compartment_name = kwargs['compartmentName']
-        if 'compartmentPath' in kwargs:
+        if compartment_path is None and 'compartmentPath' in kwargs:
             compartment_path = kwargs['compartmentPath']
-        if 'computedAmount' in kwargs:
+        if computed_amount is None and 'computedAmount' in kwargs:
             computed_amount = kwargs['computedAmount']
-        if 'computedQuantity' in kwargs:
+        if computed_quantity is None and 'computedQuantity' in kwargs:
             computed_quantity = kwargs['computedQuantity']
-        if 'isForecast' in kwargs:
+        if is_forecast is None and 'isForecast' in kwargs:
             is_forecast = kwargs['isForecast']
-        if 'listRate' in kwargs:
+        if list_rate is None and 'listRate' in kwargs:
             list_rate = kwargs['listRate']
-        if 'overagesFlag' in kwargs:
+        if overages_flag is None and 'overagesFlag' in kwargs:
             overages_flag = kwargs['overagesFlag']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'skuName' in kwargs:
+        if sku_name is None and 'skuName' in kwargs:
             sku_name = kwargs['skuName']
-        if 'skuPartNumber' in kwargs:
+        if sku_part_number is None and 'skuPartNumber' in kwargs:
             sku_part_number = kwargs['skuPartNumber']
-        if 'subscriptionId' in kwargs:
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'tenantId' in kwargs:
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'tenantName' in kwargs:
+        if tenant_name is None and 'tenantName' in kwargs:
             tenant_name = kwargs['tenantName']
-        if 'timeUsageEnded' in kwargs:
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
             time_usage_ended = kwargs['timeUsageEnded']
-        if 'timeUsageStarted' in kwargs:
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
             time_usage_started = kwargs['timeUsageStarted']
-        if 'unitPrice' in kwargs:
+        if unit_price is None and 'unitPrice' in kwargs:
             unit_price = kwargs['unitPrice']
 
         if ad is not None:
@@ -1946,7 +1978,7 @@ class UsageItemTagArgs:
              key: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -2008,11 +2040,15 @@ class GetCustomTablesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2062,11 +2098,15 @@ class GetQueriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2116,11 +2156,15 @@ class GetScheduledRunsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2173,11 +2217,15 @@ class GetSchedulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

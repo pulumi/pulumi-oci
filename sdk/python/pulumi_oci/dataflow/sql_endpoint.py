@@ -70,50 +70,68 @@ class SqlEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             driver_shape: pulumi.Input[str],
-             executor_shape: pulumi.Input[str],
-             max_executor_count: pulumi.Input[int],
-             metastore_id: pulumi.Input[str],
-             min_executor_count: pulumi.Input[int],
-             network_configuration: pulumi.Input['SqlEndpointNetworkConfigurationArgs'],
-             sql_endpoint_version: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             driver_shape: Optional[pulumi.Input[str]] = None,
+             executor_shape: Optional[pulumi.Input[str]] = None,
+             max_executor_count: Optional[pulumi.Input[int]] = None,
+             metastore_id: Optional[pulumi.Input[str]] = None,
+             min_executor_count: Optional[pulumi.Input[int]] = None,
+             network_configuration: Optional[pulumi.Input['SqlEndpointNetworkConfigurationArgs']] = None,
+             sql_endpoint_version: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              driver_shape_config: Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']] = None,
              executor_shape_config: Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'executorShape' in kwargs:
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'maxExecutorCount' in kwargs:
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if max_executor_count is None and 'maxExecutorCount' in kwargs:
             max_executor_count = kwargs['maxExecutorCount']
-        if 'metastoreId' in kwargs:
+        if max_executor_count is None:
+            raise TypeError("Missing 'max_executor_count' argument")
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'minExecutorCount' in kwargs:
+        if metastore_id is None:
+            raise TypeError("Missing 'metastore_id' argument")
+        if min_executor_count is None and 'minExecutorCount' in kwargs:
             min_executor_count = kwargs['minExecutorCount']
-        if 'networkConfiguration' in kwargs:
+        if min_executor_count is None:
+            raise TypeError("Missing 'min_executor_count' argument")
+        if network_configuration is None and 'networkConfiguration' in kwargs:
             network_configuration = kwargs['networkConfiguration']
-        if 'sqlEndpointVersion' in kwargs:
+        if network_configuration is None:
+            raise TypeError("Missing 'network_configuration' argument")
+        if sql_endpoint_version is None and 'sqlEndpointVersion' in kwargs:
             sql_endpoint_version = kwargs['sqlEndpointVersion']
-        if 'definedTags' in kwargs:
+        if sql_endpoint_version is None:
+            raise TypeError("Missing 'sql_endpoint_version' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sparkAdvancedConfigurations' in kwargs:
+        if spark_advanced_configurations is None and 'sparkAdvancedConfigurations' in kwargs:
             spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
 
         _setter("compartment_id", compartment_id)
@@ -431,51 +449,51 @@ class _SqlEndpointState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShape' in kwargs:
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jdbcEndpointUrl' in kwargs:
+        if jdbc_endpoint_url is None and 'jdbcEndpointUrl' in kwargs:
             jdbc_endpoint_url = kwargs['jdbcEndpointUrl']
-        if 'lakeId' in kwargs:
+        if lake_id is None and 'lakeId' in kwargs:
             lake_id = kwargs['lakeId']
-        if 'lastAcceptedRequestToken' in kwargs:
+        if last_accepted_request_token is None and 'lastAcceptedRequestToken' in kwargs:
             last_accepted_request_token = kwargs['lastAcceptedRequestToken']
-        if 'maxExecutorCount' in kwargs:
+        if max_executor_count is None and 'maxExecutorCount' in kwargs:
             max_executor_count = kwargs['maxExecutorCount']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'minExecutorCount' in kwargs:
+        if min_executor_count is None and 'minExecutorCount' in kwargs:
             min_executor_count = kwargs['minExecutorCount']
-        if 'networkConfiguration' in kwargs:
+        if network_configuration is None and 'networkConfiguration' in kwargs:
             network_configuration = kwargs['networkConfiguration']
-        if 'sparkAdvancedConfigurations' in kwargs:
+        if spark_advanced_configurations is None and 'sparkAdvancedConfigurations' in kwargs:
             spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
-        if 'sqlEndpointVersion' in kwargs:
+        if sql_endpoint_version is None and 'sqlEndpointVersion' in kwargs:
             sql_endpoint_version = kwargs['sqlEndpointVersion']
-        if 'stateMessage' in kwargs:
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'warehouseBucketUri' in kwargs:
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
             warehouse_bucket_uri = kwargs['warehouseBucketUri']
 
         if compartment_id is not None:
@@ -951,20 +969,12 @@ class SqlEndpoint(pulumi.CustomResource):
             if driver_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'driver_shape'")
             __props__.__dict__["driver_shape"] = driver_shape
-            if driver_shape_config is not None and not isinstance(driver_shape_config, SqlEndpointDriverShapeConfigArgs):
-                driver_shape_config = driver_shape_config or {}
-                def _setter(key, value):
-                    driver_shape_config[key] = value
-                SqlEndpointDriverShapeConfigArgs._configure(_setter, **driver_shape_config)
+            driver_shape_config = _utilities.configure(driver_shape_config, SqlEndpointDriverShapeConfigArgs, True)
             __props__.__dict__["driver_shape_config"] = driver_shape_config
             if executor_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'executor_shape'")
             __props__.__dict__["executor_shape"] = executor_shape
-            if executor_shape_config is not None and not isinstance(executor_shape_config, SqlEndpointExecutorShapeConfigArgs):
-                executor_shape_config = executor_shape_config or {}
-                def _setter(key, value):
-                    executor_shape_config[key] = value
-                SqlEndpointExecutorShapeConfigArgs._configure(_setter, **executor_shape_config)
+            executor_shape_config = _utilities.configure(executor_shape_config, SqlEndpointExecutorShapeConfigArgs, True)
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["freeform_tags"] = freeform_tags
             if max_executor_count is None and not opts.urn:
@@ -976,11 +986,7 @@ class SqlEndpoint(pulumi.CustomResource):
             if min_executor_count is None and not opts.urn:
                 raise TypeError("Missing required property 'min_executor_count'")
             __props__.__dict__["min_executor_count"] = min_executor_count
-            if network_configuration is not None and not isinstance(network_configuration, SqlEndpointNetworkConfigurationArgs):
-                network_configuration = network_configuration or {}
-                def _setter(key, value):
-                    network_configuration[key] = value
-                SqlEndpointNetworkConfigurationArgs._configure(_setter, **network_configuration)
+            network_configuration = _utilities.configure(network_configuration, SqlEndpointNetworkConfigurationArgs, True)
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration

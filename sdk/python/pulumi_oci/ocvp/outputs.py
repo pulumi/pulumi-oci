@@ -74,15 +74,19 @@ class SddcDatastore(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_volume_ids: Sequence[str],
-             datastore_type: str,
+             block_volume_ids: Optional[Sequence[str]] = None,
+             datastore_type: Optional[str] = None,
              capacity: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumeIds' in kwargs:
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
             block_volume_ids = kwargs['blockVolumeIds']
-        if 'datastoreType' in kwargs:
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
             datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
 
         _setter("block_volume_ids", block_volume_ids)
         _setter("datastore_type", datastore_type)
@@ -156,11 +160,11 @@ class SddcHcxOnPremLicense(dict):
              activation_key: Optional[str] = None,
              status: Optional[str] = None,
              system_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationKey' in kwargs:
+        if activation_key is None and 'activationKey' in kwargs:
             activation_key = kwargs['activationKey']
-        if 'systemName' in kwargs:
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
 
         if activation_key is not None:
@@ -233,11 +237,11 @@ class SddcUpgradeLicense(dict):
              _setter: Callable[[Any, Any], None],
              license_key: Optional[str] = None,
              license_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseKey' in kwargs:
+        if license_key is None and 'licenseKey' in kwargs:
             license_key = kwargs['licenseKey']
-        if 'licenseType' in kwargs:
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
 
         if license_key is not None:
@@ -300,11 +304,11 @@ class SddcVsphereUpgradeObject(dict):
              _setter: Callable[[Any, Any], None],
              download_link: Optional[str] = None,
              link_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'downloadLink' in kwargs:
+        if download_link is None and 'downloadLink' in kwargs:
             download_link = kwargs['downloadLink']
-        if 'linkDescription' in kwargs:
+        if link_description is None and 'linkDescription' in kwargs:
             link_description = kwargs['linkDescription']
 
         if download_link is not None:
@@ -421,85 +425,139 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             billing_contract_end_date: str,
-             billing_donor_host_id: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             compute_availability_domain: str,
-             compute_instance_id: str,
-             current_sku: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             failed_esxi_host_id: str,
-             freeform_tags: Mapping[str, Any],
-             grace_period_end_date: str,
-             host_ocpu_count: float,
-             host_shape_name: str,
-             id: str,
-             is_billing_continuation_in_progress: bool,
-             is_billing_swapping_in_progress: bool,
-             next_sku: str,
-             non_upgraded_esxi_host_id: str,
-             replacement_esxi_host_id: str,
-             sddc_id: str,
-             state: str,
-             swap_billing_host_id: str,
-             time_created: str,
-             time_updated: str,
-             upgraded_replacement_esxi_host_id: str,
-             vmware_software_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             billing_contract_end_date: Optional[str] = None,
+             billing_donor_host_id: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_availability_domain: Optional[str] = None,
+             compute_instance_id: Optional[str] = None,
+             current_sku: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             failed_esxi_host_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             grace_period_end_date: Optional[str] = None,
+             host_ocpu_count: Optional[float] = None,
+             host_shape_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_billing_continuation_in_progress: Optional[bool] = None,
+             is_billing_swapping_in_progress: Optional[bool] = None,
+             next_sku: Optional[str] = None,
+             non_upgraded_esxi_host_id: Optional[str] = None,
+             replacement_esxi_host_id: Optional[str] = None,
+             sddc_id: Optional[str] = None,
+             state: Optional[str] = None,
+             swap_billing_host_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgraded_replacement_esxi_host_id: Optional[str] = None,
+             vmware_software_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billingContractEndDate' in kwargs:
+        if billing_contract_end_date is None and 'billingContractEndDate' in kwargs:
             billing_contract_end_date = kwargs['billingContractEndDate']
-        if 'billingDonorHostId' in kwargs:
+        if billing_contract_end_date is None:
+            raise TypeError("Missing 'billing_contract_end_date' argument")
+        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
             billing_donor_host_id = kwargs['billingDonorHostId']
-        if 'capacityReservationId' in kwargs:
+        if billing_donor_host_id is None:
+            raise TypeError("Missing 'billing_donor_host_id' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'computeInstanceId' in kwargs:
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if compute_instance_id is None and 'computeInstanceId' in kwargs:
             compute_instance_id = kwargs['computeInstanceId']
-        if 'currentSku' in kwargs:
+        if compute_instance_id is None:
+            raise TypeError("Missing 'compute_instance_id' argument")
+        if current_sku is None and 'currentSku' in kwargs:
             current_sku = kwargs['currentSku']
-        if 'definedTags' in kwargs:
+        if current_sku is None:
+            raise TypeError("Missing 'current_sku' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'failedEsxiHostId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
             failed_esxi_host_id = kwargs['failedEsxiHostId']
-        if 'freeformTags' in kwargs:
+        if failed_esxi_host_id is None:
+            raise TypeError("Missing 'failed_esxi_host_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gracePeriodEndDate' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if grace_period_end_date is None and 'gracePeriodEndDate' in kwargs:
             grace_period_end_date = kwargs['gracePeriodEndDate']
-        if 'hostOcpuCount' in kwargs:
+        if grace_period_end_date is None:
+            raise TypeError("Missing 'grace_period_end_date' argument")
+        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
             host_ocpu_count = kwargs['hostOcpuCount']
-        if 'hostShapeName' in kwargs:
+        if host_ocpu_count is None:
+            raise TypeError("Missing 'host_ocpu_count' argument")
+        if host_shape_name is None and 'hostShapeName' in kwargs:
             host_shape_name = kwargs['hostShapeName']
-        if 'isBillingContinuationInProgress' in kwargs:
+        if host_shape_name is None:
+            raise TypeError("Missing 'host_shape_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_billing_continuation_in_progress is None and 'isBillingContinuationInProgress' in kwargs:
             is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
-        if 'isBillingSwappingInProgress' in kwargs:
+        if is_billing_continuation_in_progress is None:
+            raise TypeError("Missing 'is_billing_continuation_in_progress' argument")
+        if is_billing_swapping_in_progress is None and 'isBillingSwappingInProgress' in kwargs:
             is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
-        if 'nextSku' in kwargs:
+        if is_billing_swapping_in_progress is None:
+            raise TypeError("Missing 'is_billing_swapping_in_progress' argument")
+        if next_sku is None and 'nextSku' in kwargs:
             next_sku = kwargs['nextSku']
-        if 'nonUpgradedEsxiHostId' in kwargs:
+        if next_sku is None:
+            raise TypeError("Missing 'next_sku' argument")
+        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
             non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
-        if 'replacementEsxiHostId' in kwargs:
+        if non_upgraded_esxi_host_id is None:
+            raise TypeError("Missing 'non_upgraded_esxi_host_id' argument")
+        if replacement_esxi_host_id is None and 'replacementEsxiHostId' in kwargs:
             replacement_esxi_host_id = kwargs['replacementEsxiHostId']
-        if 'sddcId' in kwargs:
+        if replacement_esxi_host_id is None:
+            raise TypeError("Missing 'replacement_esxi_host_id' argument")
+        if sddc_id is None and 'sddcId' in kwargs:
             sddc_id = kwargs['sddcId']
-        if 'swapBillingHostId' in kwargs:
+        if sddc_id is None:
+            raise TypeError("Missing 'sddc_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
             swap_billing_host_id = kwargs['swapBillingHostId']
-        if 'timeCreated' in kwargs:
+        if swap_billing_host_id is None:
+            raise TypeError("Missing 'swap_billing_host_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradedReplacementEsxiHostId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgraded_replacement_esxi_host_id is None and 'upgradedReplacementEsxiHostId' in kwargs:
             upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
-        if 'vmwareSoftwareVersion' in kwargs:
+        if upgraded_replacement_esxi_host_id is None:
+            raise TypeError("Missing 'upgraded_replacement_esxi_host_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
             vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
 
         _setter("billing_contract_end_date", billing_contract_end_date)
         _setter("billing_donor_host_id", billing_donor_host_id)
@@ -779,11 +837,15 @@ class GetExsiHostsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -826,15 +888,21 @@ class GetSddcDatastoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_volume_ids: Sequence[str],
-             capacity: float,
-             datastore_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_volume_ids: Optional[Sequence[str]] = None,
+             capacity: Optional[float] = None,
+             datastore_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumeIds' in kwargs:
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
             block_volume_ids = kwargs['blockVolumeIds']
-        if 'datastoreType' in kwargs:
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if capacity is None:
+            raise TypeError("Missing 'capacity' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
             datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
 
         _setter("block_volume_ids", block_volume_ids)
         _setter("capacity", capacity)
@@ -885,15 +953,21 @@ class GetSddcHcxOnPremLicenseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             activation_key: str,
-             status: str,
-             system_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationKey' in kwargs:
+        if activation_key is None and 'activationKey' in kwargs:
             activation_key = kwargs['activationKey']
-        if 'systemName' in kwargs:
+        if activation_key is None:
+            raise TypeError("Missing 'activation_key' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
 
         _setter("activation_key", activation_key)
         _setter("status", status)
@@ -941,14 +1015,18 @@ class GetSddcUpgradeLicenseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             license_key: str,
-             license_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseKey' in kwargs:
+        if license_key is None and 'licenseKey' in kwargs:
             license_key = kwargs['licenseKey']
-        if 'licenseType' in kwargs:
+        if license_key is None:
+            raise TypeError("Missing 'license_key' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
 
         _setter("license_key", license_key)
         _setter("license_type", license_type)
@@ -987,14 +1065,18 @@ class GetSddcVsphereUpgradeObjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             download_link: str,
-             link_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'downloadLink' in kwargs:
+        if download_link is None and 'downloadLink' in kwargs:
             download_link = kwargs['downloadLink']
-        if 'linkDescription' in kwargs:
+        if download_link is None:
+            raise TypeError("Missing 'download_link' argument")
+        if link_description is None and 'linkDescription' in kwargs:
             link_description = kwargs['linkDescription']
+        if link_description is None:
+            raise TypeError("Missing 'link_description' argument")
 
         _setter("download_link", download_link)
         _setter("link_description", link_description)
@@ -1031,11 +1113,15 @@ class GetSddcsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1243,179 +1329,297 @@ class GetSddcsSddcCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actual_esxi_hosts_count: int,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             compute_availability_domain: str,
-             datastores: Sequence['outputs.GetSddcsSddcCollectionDatastoreResult'],
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             esxi_hosts_count: int,
-             freeform_tags: Mapping[str, Any],
-             hcx_action: str,
-             hcx_fqdn: str,
-             hcx_initial_password: str,
-             hcx_on_prem_key: str,
-             hcx_on_prem_licenses: Sequence['outputs.GetSddcsSddcCollectionHcxOnPremLicenseResult'],
-             hcx_private_ip_id: str,
-             hcx_vlan_id: str,
-             id: str,
-             initial_host_ocpu_count: float,
-             initial_host_shape_name: str,
-             initial_sku: str,
-             instance_display_name_prefix: str,
-             is_hcx_enabled: bool,
-             is_hcx_enterprise_enabled: bool,
-             is_hcx_pending_downgrade: bool,
-             is_shielded_instance_enabled: bool,
-             is_single_host_sddc: bool,
-             nsx_edge_uplink1vlan_id: str,
-             nsx_edge_uplink2vlan_id: str,
-             nsx_edge_uplink_ip_id: str,
-             nsx_edge_vtep_vlan_id: str,
-             nsx_manager_fqdn: str,
-             nsx_manager_initial_password: str,
-             nsx_manager_private_ip_id: str,
-             nsx_manager_username: str,
-             nsx_overlay_segment_name: str,
-             nsx_vtep_vlan_id: str,
-             provisioning_subnet_id: str,
-             provisioning_vlan_id: str,
-             refresh_hcx_license_status: bool,
-             replication_vlan_id: str,
-             reserving_hcx_on_premise_license_keys: Sequence[str],
-             ssh_authorized_keys: str,
-             state: str,
-             time_created: str,
-             time_hcx_billing_cycle_end: str,
-             time_hcx_license_status_updated: str,
-             time_updated: str,
-             upgrade_licenses: Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult'],
-             vcenter_fqdn: str,
-             vcenter_initial_password: str,
-             vcenter_private_ip_id: str,
-             vcenter_username: str,
-             vmotion_vlan_id: str,
-             vmware_software_version: str,
-             vsan_vlan_id: str,
-             vsphere_upgrade_guide: str,
-             vsphere_upgrade_objects: Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult'],
-             vsphere_vlan_id: str,
-             workload_network_cidr: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actual_esxi_hosts_count: Optional[int] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_availability_domain: Optional[str] = None,
+             datastores: Optional[Sequence['outputs.GetSddcsSddcCollectionDatastoreResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             esxi_hosts_count: Optional[int] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hcx_action: Optional[str] = None,
+             hcx_fqdn: Optional[str] = None,
+             hcx_initial_password: Optional[str] = None,
+             hcx_on_prem_key: Optional[str] = None,
+             hcx_on_prem_licenses: Optional[Sequence['outputs.GetSddcsSddcCollectionHcxOnPremLicenseResult']] = None,
+             hcx_private_ip_id: Optional[str] = None,
+             hcx_vlan_id: Optional[str] = None,
+             id: Optional[str] = None,
+             initial_host_ocpu_count: Optional[float] = None,
+             initial_host_shape_name: Optional[str] = None,
+             initial_sku: Optional[str] = None,
+             instance_display_name_prefix: Optional[str] = None,
+             is_hcx_enabled: Optional[bool] = None,
+             is_hcx_enterprise_enabled: Optional[bool] = None,
+             is_hcx_pending_downgrade: Optional[bool] = None,
+             is_shielded_instance_enabled: Optional[bool] = None,
+             is_single_host_sddc: Optional[bool] = None,
+             nsx_edge_uplink1vlan_id: Optional[str] = None,
+             nsx_edge_uplink2vlan_id: Optional[str] = None,
+             nsx_edge_uplink_ip_id: Optional[str] = None,
+             nsx_edge_vtep_vlan_id: Optional[str] = None,
+             nsx_manager_fqdn: Optional[str] = None,
+             nsx_manager_initial_password: Optional[str] = None,
+             nsx_manager_private_ip_id: Optional[str] = None,
+             nsx_manager_username: Optional[str] = None,
+             nsx_overlay_segment_name: Optional[str] = None,
+             nsx_vtep_vlan_id: Optional[str] = None,
+             provisioning_subnet_id: Optional[str] = None,
+             provisioning_vlan_id: Optional[str] = None,
+             refresh_hcx_license_status: Optional[bool] = None,
+             replication_vlan_id: Optional[str] = None,
+             reserving_hcx_on_premise_license_keys: Optional[Sequence[str]] = None,
+             ssh_authorized_keys: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_hcx_billing_cycle_end: Optional[str] = None,
+             time_hcx_license_status_updated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgrade_licenses: Optional[Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult']] = None,
+             vcenter_fqdn: Optional[str] = None,
+             vcenter_initial_password: Optional[str] = None,
+             vcenter_private_ip_id: Optional[str] = None,
+             vcenter_username: Optional[str] = None,
+             vmotion_vlan_id: Optional[str] = None,
+             vmware_software_version: Optional[str] = None,
+             vsan_vlan_id: Optional[str] = None,
+             vsphere_upgrade_guide: Optional[str] = None,
+             vsphere_upgrade_objects: Optional[Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult']] = None,
+             vsphere_vlan_id: Optional[str] = None,
+             workload_network_cidr: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actualEsxiHostsCount' in kwargs:
+        if actual_esxi_hosts_count is None and 'actualEsxiHostsCount' in kwargs:
             actual_esxi_hosts_count = kwargs['actualEsxiHostsCount']
-        if 'capacityReservationId' in kwargs:
+        if actual_esxi_hosts_count is None:
+            raise TypeError("Missing 'actual_esxi_hosts_count' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'definedTags' in kwargs:
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if datastores is None:
+            raise TypeError("Missing 'datastores' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'esxiHostsCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
             esxi_hosts_count = kwargs['esxiHostsCount']
-        if 'freeformTags' in kwargs:
+        if esxi_hosts_count is None:
+            raise TypeError("Missing 'esxi_hosts_count' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hcxAction' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hcx_action is None and 'hcxAction' in kwargs:
             hcx_action = kwargs['hcxAction']
-        if 'hcxFqdn' in kwargs:
+        if hcx_action is None:
+            raise TypeError("Missing 'hcx_action' argument")
+        if hcx_fqdn is None and 'hcxFqdn' in kwargs:
             hcx_fqdn = kwargs['hcxFqdn']
-        if 'hcxInitialPassword' in kwargs:
+        if hcx_fqdn is None:
+            raise TypeError("Missing 'hcx_fqdn' argument")
+        if hcx_initial_password is None and 'hcxInitialPassword' in kwargs:
             hcx_initial_password = kwargs['hcxInitialPassword']
-        if 'hcxOnPremKey' in kwargs:
+        if hcx_initial_password is None:
+            raise TypeError("Missing 'hcx_initial_password' argument")
+        if hcx_on_prem_key is None and 'hcxOnPremKey' in kwargs:
             hcx_on_prem_key = kwargs['hcxOnPremKey']
-        if 'hcxOnPremLicenses' in kwargs:
+        if hcx_on_prem_key is None:
+            raise TypeError("Missing 'hcx_on_prem_key' argument")
+        if hcx_on_prem_licenses is None and 'hcxOnPremLicenses' in kwargs:
             hcx_on_prem_licenses = kwargs['hcxOnPremLicenses']
-        if 'hcxPrivateIpId' in kwargs:
+        if hcx_on_prem_licenses is None:
+            raise TypeError("Missing 'hcx_on_prem_licenses' argument")
+        if hcx_private_ip_id is None and 'hcxPrivateIpId' in kwargs:
             hcx_private_ip_id = kwargs['hcxPrivateIpId']
-        if 'hcxVlanId' in kwargs:
+        if hcx_private_ip_id is None:
+            raise TypeError("Missing 'hcx_private_ip_id' argument")
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
             hcx_vlan_id = kwargs['hcxVlanId']
-        if 'initialHostOcpuCount' in kwargs:
+        if hcx_vlan_id is None:
+            raise TypeError("Missing 'hcx_vlan_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
             initial_host_ocpu_count = kwargs['initialHostOcpuCount']
-        if 'initialHostShapeName' in kwargs:
+        if initial_host_ocpu_count is None:
+            raise TypeError("Missing 'initial_host_ocpu_count' argument")
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
             initial_host_shape_name = kwargs['initialHostShapeName']
-        if 'initialSku' in kwargs:
+        if initial_host_shape_name is None:
+            raise TypeError("Missing 'initial_host_shape_name' argument")
+        if initial_sku is None and 'initialSku' in kwargs:
             initial_sku = kwargs['initialSku']
-        if 'instanceDisplayNamePrefix' in kwargs:
+        if initial_sku is None:
+            raise TypeError("Missing 'initial_sku' argument")
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
             instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
-        if 'isHcxEnabled' in kwargs:
+        if instance_display_name_prefix is None:
+            raise TypeError("Missing 'instance_display_name_prefix' argument")
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
             is_hcx_enabled = kwargs['isHcxEnabled']
-        if 'isHcxEnterpriseEnabled' in kwargs:
+        if is_hcx_enabled is None:
+            raise TypeError("Missing 'is_hcx_enabled' argument")
+        if is_hcx_enterprise_enabled is None and 'isHcxEnterpriseEnabled' in kwargs:
             is_hcx_enterprise_enabled = kwargs['isHcxEnterpriseEnabled']
-        if 'isHcxPendingDowngrade' in kwargs:
+        if is_hcx_enterprise_enabled is None:
+            raise TypeError("Missing 'is_hcx_enterprise_enabled' argument")
+        if is_hcx_pending_downgrade is None and 'isHcxPendingDowngrade' in kwargs:
             is_hcx_pending_downgrade = kwargs['isHcxPendingDowngrade']
-        if 'isShieldedInstanceEnabled' in kwargs:
+        if is_hcx_pending_downgrade is None:
+            raise TypeError("Missing 'is_hcx_pending_downgrade' argument")
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
             is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
-        if 'isSingleHostSddc' in kwargs:
+        if is_shielded_instance_enabled is None:
+            raise TypeError("Missing 'is_shielded_instance_enabled' argument")
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
             is_single_host_sddc = kwargs['isSingleHostSddc']
-        if 'nsxEdgeUplink1vlanId' in kwargs:
+        if is_single_host_sddc is None:
+            raise TypeError("Missing 'is_single_host_sddc' argument")
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
             nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
-        if 'nsxEdgeUplink2vlanId' in kwargs:
+        if nsx_edge_uplink1vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink1vlan_id' argument")
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
             nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
-        if 'nsxEdgeUplinkIpId' in kwargs:
+        if nsx_edge_uplink2vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink2vlan_id' argument")
+        if nsx_edge_uplink_ip_id is None and 'nsxEdgeUplinkIpId' in kwargs:
             nsx_edge_uplink_ip_id = kwargs['nsxEdgeUplinkIpId']
-        if 'nsxEdgeVtepVlanId' in kwargs:
+        if nsx_edge_uplink_ip_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink_ip_id' argument")
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
             nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
-        if 'nsxManagerFqdn' in kwargs:
+        if nsx_edge_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_vtep_vlan_id' argument")
+        if nsx_manager_fqdn is None and 'nsxManagerFqdn' in kwargs:
             nsx_manager_fqdn = kwargs['nsxManagerFqdn']
-        if 'nsxManagerInitialPassword' in kwargs:
+        if nsx_manager_fqdn is None:
+            raise TypeError("Missing 'nsx_manager_fqdn' argument")
+        if nsx_manager_initial_password is None and 'nsxManagerInitialPassword' in kwargs:
             nsx_manager_initial_password = kwargs['nsxManagerInitialPassword']
-        if 'nsxManagerPrivateIpId' in kwargs:
+        if nsx_manager_initial_password is None:
+            raise TypeError("Missing 'nsx_manager_initial_password' argument")
+        if nsx_manager_private_ip_id is None and 'nsxManagerPrivateIpId' in kwargs:
             nsx_manager_private_ip_id = kwargs['nsxManagerPrivateIpId']
-        if 'nsxManagerUsername' in kwargs:
+        if nsx_manager_private_ip_id is None:
+            raise TypeError("Missing 'nsx_manager_private_ip_id' argument")
+        if nsx_manager_username is None and 'nsxManagerUsername' in kwargs:
             nsx_manager_username = kwargs['nsxManagerUsername']
-        if 'nsxOverlaySegmentName' in kwargs:
+        if nsx_manager_username is None:
+            raise TypeError("Missing 'nsx_manager_username' argument")
+        if nsx_overlay_segment_name is None and 'nsxOverlaySegmentName' in kwargs:
             nsx_overlay_segment_name = kwargs['nsxOverlaySegmentName']
-        if 'nsxVtepVlanId' in kwargs:
+        if nsx_overlay_segment_name is None:
+            raise TypeError("Missing 'nsx_overlay_segment_name' argument")
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
             nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
-        if 'provisioningSubnetId' in kwargs:
+        if nsx_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_vtep_vlan_id' argument")
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
             provisioning_subnet_id = kwargs['provisioningSubnetId']
-        if 'provisioningVlanId' in kwargs:
+        if provisioning_subnet_id is None:
+            raise TypeError("Missing 'provisioning_subnet_id' argument")
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
             provisioning_vlan_id = kwargs['provisioningVlanId']
-        if 'refreshHcxLicenseStatus' in kwargs:
+        if provisioning_vlan_id is None:
+            raise TypeError("Missing 'provisioning_vlan_id' argument")
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
             refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
-        if 'replicationVlanId' in kwargs:
+        if refresh_hcx_license_status is None:
+            raise TypeError("Missing 'refresh_hcx_license_status' argument")
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
             replication_vlan_id = kwargs['replicationVlanId']
-        if 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+        if replication_vlan_id is None:
+            raise TypeError("Missing 'replication_vlan_id' argument")
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
             reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
-        if 'sshAuthorizedKeys' in kwargs:
+        if reserving_hcx_on_premise_license_keys is None:
+            raise TypeError("Missing 'reserving_hcx_on_premise_license_keys' argument")
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
             ssh_authorized_keys = kwargs['sshAuthorizedKeys']
-        if 'timeCreated' in kwargs:
+        if ssh_authorized_keys is None:
+            raise TypeError("Missing 'ssh_authorized_keys' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeHcxBillingCycleEnd' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_hcx_billing_cycle_end is None and 'timeHcxBillingCycleEnd' in kwargs:
             time_hcx_billing_cycle_end = kwargs['timeHcxBillingCycleEnd']
-        if 'timeHcxLicenseStatusUpdated' in kwargs:
+        if time_hcx_billing_cycle_end is None:
+            raise TypeError("Missing 'time_hcx_billing_cycle_end' argument")
+        if time_hcx_license_status_updated is None and 'timeHcxLicenseStatusUpdated' in kwargs:
             time_hcx_license_status_updated = kwargs['timeHcxLicenseStatusUpdated']
-        if 'timeUpdated' in kwargs:
+        if time_hcx_license_status_updated is None:
+            raise TypeError("Missing 'time_hcx_license_status_updated' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradeLicenses' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgrade_licenses is None and 'upgradeLicenses' in kwargs:
             upgrade_licenses = kwargs['upgradeLicenses']
-        if 'vcenterFqdn' in kwargs:
+        if upgrade_licenses is None:
+            raise TypeError("Missing 'upgrade_licenses' argument")
+        if vcenter_fqdn is None and 'vcenterFqdn' in kwargs:
             vcenter_fqdn = kwargs['vcenterFqdn']
-        if 'vcenterInitialPassword' in kwargs:
+        if vcenter_fqdn is None:
+            raise TypeError("Missing 'vcenter_fqdn' argument")
+        if vcenter_initial_password is None and 'vcenterInitialPassword' in kwargs:
             vcenter_initial_password = kwargs['vcenterInitialPassword']
-        if 'vcenterPrivateIpId' in kwargs:
+        if vcenter_initial_password is None:
+            raise TypeError("Missing 'vcenter_initial_password' argument")
+        if vcenter_private_ip_id is None and 'vcenterPrivateIpId' in kwargs:
             vcenter_private_ip_id = kwargs['vcenterPrivateIpId']
-        if 'vcenterUsername' in kwargs:
+        if vcenter_private_ip_id is None:
+            raise TypeError("Missing 'vcenter_private_ip_id' argument")
+        if vcenter_username is None and 'vcenterUsername' in kwargs:
             vcenter_username = kwargs['vcenterUsername']
-        if 'vmotionVlanId' in kwargs:
+        if vcenter_username is None:
+            raise TypeError("Missing 'vcenter_username' argument")
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
             vmotion_vlan_id = kwargs['vmotionVlanId']
-        if 'vmwareSoftwareVersion' in kwargs:
+        if vmotion_vlan_id is None:
+            raise TypeError("Missing 'vmotion_vlan_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
             vmware_software_version = kwargs['vmwareSoftwareVersion']
-        if 'vsanVlanId' in kwargs:
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
             vsan_vlan_id = kwargs['vsanVlanId']
-        if 'vsphereUpgradeGuide' in kwargs:
+        if vsan_vlan_id is None:
+            raise TypeError("Missing 'vsan_vlan_id' argument")
+        if vsphere_upgrade_guide is None and 'vsphereUpgradeGuide' in kwargs:
             vsphere_upgrade_guide = kwargs['vsphereUpgradeGuide']
-        if 'vsphereUpgradeObjects' in kwargs:
+        if vsphere_upgrade_guide is None:
+            raise TypeError("Missing 'vsphere_upgrade_guide' argument")
+        if vsphere_upgrade_objects is None and 'vsphereUpgradeObjects' in kwargs:
             vsphere_upgrade_objects = kwargs['vsphereUpgradeObjects']
-        if 'vsphereVlanId' in kwargs:
+        if vsphere_upgrade_objects is None:
+            raise TypeError("Missing 'vsphere_upgrade_objects' argument")
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
             vsphere_vlan_id = kwargs['vsphereVlanId']
-        if 'workloadNetworkCidr' in kwargs:
+        if vsphere_vlan_id is None:
+            raise TypeError("Missing 'vsphere_vlan_id' argument")
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
             workload_network_cidr = kwargs['workloadNetworkCidr']
+        if workload_network_cidr is None:
+            raise TypeError("Missing 'workload_network_cidr' argument")
 
         _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
         _setter("capacity_reservation_id", capacity_reservation_id)
@@ -2057,15 +2261,21 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_volume_ids: Sequence[str],
-             capacity: float,
-             datastore_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_volume_ids: Optional[Sequence[str]] = None,
+             capacity: Optional[float] = None,
+             datastore_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumeIds' in kwargs:
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
             block_volume_ids = kwargs['blockVolumeIds']
-        if 'datastoreType' in kwargs:
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if capacity is None:
+            raise TypeError("Missing 'capacity' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
             datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
 
         _setter("block_volume_ids", block_volume_ids)
         _setter("capacity", capacity)
@@ -2116,15 +2326,21 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             activation_key: str,
-             status: str,
-             system_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationKey' in kwargs:
+        if activation_key is None and 'activationKey' in kwargs:
             activation_key = kwargs['activationKey']
-        if 'systemName' in kwargs:
+        if activation_key is None:
+            raise TypeError("Missing 'activation_key' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
 
         _setter("activation_key", activation_key)
         _setter("status", status)
@@ -2172,14 +2388,18 @@ class GetSddcsSddcCollectionUpgradeLicenseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             license_key: str,
-             license_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseKey' in kwargs:
+        if license_key is None and 'licenseKey' in kwargs:
             license_key = kwargs['licenseKey']
-        if 'licenseType' in kwargs:
+        if license_key is None:
+            raise TypeError("Missing 'license_key' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
 
         _setter("license_key", license_key)
         _setter("license_type", license_type)
@@ -2218,14 +2438,18 @@ class GetSddcsSddcCollectionVsphereUpgradeObjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             download_link: str,
-             link_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'downloadLink' in kwargs:
+        if download_link is None and 'downloadLink' in kwargs:
             download_link = kwargs['downloadLink']
-        if 'linkDescription' in kwargs:
+        if download_link is None:
+            raise TypeError("Missing 'download_link' argument")
+        if link_description is None and 'linkDescription' in kwargs:
             link_description = kwargs['linkDescription']
+        if link_description is None:
+            raise TypeError("Missing 'link_description' argument")
 
         _setter("download_link", download_link)
         _setter("link_description", link_description)
@@ -2265,11 +2489,15 @@ class GetSupportedHostShapesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2336,34 +2564,54 @@ class GetSupportedHostShapesItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_ocpu_count: float,
-             description: str,
-             is_support_monthly_sku: bool,
-             is_support_shielded_instances: bool,
-             name: str,
-             shape_family: str,
-             supported_ocpu_counts: Sequence[float],
-             supported_operations: Sequence[str],
-             supported_sddc_types: Sequence[str],
-             supported_vmware_software_versions: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_ocpu_count: Optional[float] = None,
+             description: Optional[str] = None,
+             is_support_monthly_sku: Optional[bool] = None,
+             is_support_shielded_instances: Optional[bool] = None,
+             name: Optional[str] = None,
+             shape_family: Optional[str] = None,
+             supported_ocpu_counts: Optional[Sequence[float]] = None,
+             supported_operations: Optional[Sequence[str]] = None,
+             supported_sddc_types: Optional[Sequence[str]] = None,
+             supported_vmware_software_versions: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultOcpuCount' in kwargs:
+        if default_ocpu_count is None and 'defaultOcpuCount' in kwargs:
             default_ocpu_count = kwargs['defaultOcpuCount']
-        if 'isSupportMonthlySku' in kwargs:
+        if default_ocpu_count is None:
+            raise TypeError("Missing 'default_ocpu_count' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_support_monthly_sku is None and 'isSupportMonthlySku' in kwargs:
             is_support_monthly_sku = kwargs['isSupportMonthlySku']
-        if 'isSupportShieldedInstances' in kwargs:
+        if is_support_monthly_sku is None:
+            raise TypeError("Missing 'is_support_monthly_sku' argument")
+        if is_support_shielded_instances is None and 'isSupportShieldedInstances' in kwargs:
             is_support_shielded_instances = kwargs['isSupportShieldedInstances']
-        if 'shapeFamily' in kwargs:
+        if is_support_shielded_instances is None:
+            raise TypeError("Missing 'is_support_shielded_instances' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_family is None and 'shapeFamily' in kwargs:
             shape_family = kwargs['shapeFamily']
-        if 'supportedOcpuCounts' in kwargs:
+        if shape_family is None:
+            raise TypeError("Missing 'shape_family' argument")
+        if supported_ocpu_counts is None and 'supportedOcpuCounts' in kwargs:
             supported_ocpu_counts = kwargs['supportedOcpuCounts']
-        if 'supportedOperations' in kwargs:
+        if supported_ocpu_counts is None:
+            raise TypeError("Missing 'supported_ocpu_counts' argument")
+        if supported_operations is None and 'supportedOperations' in kwargs:
             supported_operations = kwargs['supportedOperations']
-        if 'supportedSddcTypes' in kwargs:
+        if supported_operations is None:
+            raise TypeError("Missing 'supported_operations' argument")
+        if supported_sddc_types is None and 'supportedSddcTypes' in kwargs:
             supported_sddc_types = kwargs['supportedSddcTypes']
-        if 'supportedVmwareSoftwareVersions' in kwargs:
+        if supported_sddc_types is None:
+            raise TypeError("Missing 'supported_sddc_types' argument")
+        if supported_vmware_software_versions is None and 'supportedVmwareSoftwareVersions' in kwargs:
             supported_vmware_software_versions = kwargs['supportedVmwareSoftwareVersions']
+        if supported_vmware_software_versions is None:
+            raise TypeError("Missing 'supported_vmware_software_versions' argument")
 
         _setter("default_ocpu_count", default_ocpu_count)
         _setter("description", description)
@@ -2478,11 +2726,15 @@ class GetSupportedSkusFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2522,9 +2774,11 @@ class GetSupportedSkusItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -2552,11 +2806,15 @@ class GetSupportedVmwareSoftwareVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2596,10 +2854,14 @@ class GetSupportedVmwareSoftwareVersionsItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("description", description)
         _setter("version", version)

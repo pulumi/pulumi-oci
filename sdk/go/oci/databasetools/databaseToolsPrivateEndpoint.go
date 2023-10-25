@@ -36,11 +36,11 @@ import (
 //				DisplayName:       pulumi.Any(_var.Database_tools_private_endpoint_display_name),
 //				EndpointServiceId: pulumi.Any(oci_core_service.Test_service.Id),
 //				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Database_tools_private_endpoint_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				NsgIds:            pulumi.Any(_var.Database_tools_private_endpoint_nsg_ids),

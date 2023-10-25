@@ -59,10 +59,14 @@ class AutoScalingConfigurationAutoScalingResources(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("id", id)
         _setter("type", type)
@@ -147,7 +151,7 @@ class AutoScalingConfigurationPolicy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: str,
+             policy_type: Optional[str] = None,
              capacity: Optional['outputs.AutoScalingConfigurationPolicyCapacity'] = None,
              display_name: Optional[str] = None,
              execution_schedule: Optional['outputs.AutoScalingConfigurationPolicyExecutionSchedule'] = None,
@@ -156,19 +160,21 @@ class AutoScalingConfigurationPolicy(dict):
              resource_action: Optional['outputs.AutoScalingConfigurationPolicyResourceAction'] = None,
              rules: Optional[Sequence['outputs.AutoScalingConfigurationPolicyRule']] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'displayName' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionSchedule' in kwargs:
+        if execution_schedule is None and 'executionSchedule' in kwargs:
             execution_schedule = kwargs['executionSchedule']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'resourceAction' in kwargs:
+        if resource_action is None and 'resourceAction' in kwargs:
             resource_action = kwargs['resourceAction']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         _setter("policy_type", policy_type)
@@ -285,7 +291,7 @@ class AutoScalingConfigurationPolicyCapacity(dict):
              initial: Optional[int] = None,
              max: Optional[int] = None,
              min: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if initial is not None:
@@ -354,11 +360,17 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expression: str,
-             timezone: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expression: Optional[str] = None,
+             timezone: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if timezone is None:
+            raise TypeError("Missing 'timezone' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("expression", expression)
         _setter("timezone", timezone)
@@ -431,12 +443,16 @@ class AutoScalingConfigurationPolicyResourceAction(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
 
         _setter("action", action)
         _setter("action_type", action_type)
@@ -497,14 +513,16 @@ class AutoScalingConfigurationPolicyRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
+             display_name: Optional[str] = None,
              action: Optional['outputs.AutoScalingConfigurationPolicyRuleAction'] = None,
              id: Optional[str] = None,
              metric: Optional['outputs.AutoScalingConfigurationPolicyRuleMetric'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("display_name", display_name)
         if action is not None:
@@ -564,7 +582,7 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if type is not None:
@@ -622,9 +640,9 @@ class AutoScalingConfigurationPolicyRuleMetric(dict):
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[str] = None,
              threshold: Optional['outputs.AutoScalingConfigurationPolicyRuleMetricThreshold'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         if metric_type is not None:
@@ -663,7 +681,7 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
              _setter: Callable[[Any, Any], None],
              operator: Optional[str] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if operator is not None:
@@ -706,10 +724,14 @@ class GetAutoScalingConfigurationAutoScalingResourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("id", id)
         _setter("type", type)
@@ -768,29 +790,47 @@ class GetAutoScalingConfigurationPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacities: Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult'],
-             display_name: str,
-             execution_schedules: Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult'],
-             id: str,
-             is_enabled: bool,
-             policy_type: str,
-             resource_actions: Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult'],
-             rules: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult'],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacities: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult']] = None,
+             display_name: Optional[str] = None,
+             execution_schedules: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult']] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             policy_type: Optional[str] = None,
+             resource_actions: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult']] = None,
+             rules: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult']] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if capacities is None:
+            raise TypeError("Missing 'capacities' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionSchedules' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if execution_schedules is None and 'executionSchedules' in kwargs:
             execution_schedules = kwargs['executionSchedules']
-        if 'isEnabled' in kwargs:
+        if execution_schedules is None:
+            raise TypeError("Missing 'execution_schedules' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'policyType' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'resourceActions' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if resource_actions is None and 'resourceActions' in kwargs:
             resource_actions = kwargs['resourceActions']
-        if 'timeCreated' in kwargs:
+        if resource_actions is None:
+            raise TypeError("Missing 'resource_actions' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("capacities", capacities)
         _setter("display_name", display_name)
@@ -892,11 +932,17 @@ class GetAutoScalingConfigurationPolicyCapacityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             initial: int,
-             max: int,
-             min: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             initial: Optional[int] = None,
+             max: Optional[int] = None,
+             min: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if initial is None:
+            raise TypeError("Missing 'initial' argument")
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
 
         _setter("initial", initial)
         _setter("max", max)
@@ -947,11 +993,17 @@ class GetAutoScalingConfigurationPolicyExecutionScheduleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expression: str,
-             timezone: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expression: Optional[str] = None,
+             timezone: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if timezone is None:
+            raise TypeError("Missing 'timezone' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("expression", expression)
         _setter("timezone", timezone)
@@ -999,12 +1051,16 @@ class GetAutoScalingConfigurationPolicyResourceActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
 
         _setter("action", action)
         _setter("action_type", action_type)
@@ -1049,14 +1105,22 @@ class GetAutoScalingConfigurationPolicyRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult'],
-             display_name: str,
-             id: str,
-             metrics: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult']] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             metrics: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
 
         _setter("actions", actions)
         _setter("display_name", display_name)
@@ -1112,10 +1176,14 @@ class GetAutoScalingConfigurationPolicyRuleActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -1147,12 +1215,16 @@ class GetAutoScalingConfigurationPolicyRuleMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metric_type: str,
-             thresholds: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metric_type: Optional[str] = None,
+             thresholds: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
+        if metric_type is None:
+            raise TypeError("Missing 'metric_type' argument")
+        if thresholds is None:
+            raise TypeError("Missing 'thresholds' argument")
 
         _setter("metric_type", metric_type)
         _setter("thresholds", thresholds)
@@ -1184,10 +1256,14 @@ class GetAutoScalingConfigurationPolicyRuleMetricThresholdResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operator: str,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operator: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operator is None:
+            raise TypeError("Missing 'operator' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("operator", operator)
         _setter("value", value)
@@ -1253,40 +1329,64 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auto_scaling_resources: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult'],
-             compartment_id: str,
-             cool_down_in_seconds: int,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             max_resource_count: int,
-             min_resource_count: int,
-             policies: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult'],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             auto_scaling_resources: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult']] = None,
+             compartment_id: Optional[str] = None,
+             cool_down_in_seconds: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             max_resource_count: Optional[int] = None,
+             min_resource_count: Optional[int] = None,
+             policies: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult']] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoScalingResources' in kwargs:
+        if auto_scaling_resources is None and 'autoScalingResources' in kwargs:
             auto_scaling_resources = kwargs['autoScalingResources']
-        if 'compartmentId' in kwargs:
+        if auto_scaling_resources is None:
+            raise TypeError("Missing 'auto_scaling_resources' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'coolDownInSeconds' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if cool_down_in_seconds is None and 'coolDownInSeconds' in kwargs:
             cool_down_in_seconds = kwargs['coolDownInSeconds']
-        if 'definedTags' in kwargs:
+        if cool_down_in_seconds is None:
+            raise TypeError("Missing 'cool_down_in_seconds' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxResourceCount' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if max_resource_count is None and 'maxResourceCount' in kwargs:
             max_resource_count = kwargs['maxResourceCount']
-        if 'minResourceCount' in kwargs:
+        if max_resource_count is None:
+            raise TypeError("Missing 'max_resource_count' argument")
+        if min_resource_count is None and 'minResourceCount' in kwargs:
             min_resource_count = kwargs['minResourceCount']
-        if 'timeCreated' in kwargs:
+        if min_resource_count is None:
+            raise TypeError("Missing 'min_resource_count' argument")
+        if policies is None:
+            raise TypeError("Missing 'policies' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("auto_scaling_resources", auto_scaling_resources)
         _setter("compartment_id", compartment_id)
@@ -1415,10 +1515,14 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("id", id)
         _setter("type", type)
@@ -1477,29 +1581,47 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacities: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult'],
-             display_name: str,
-             execution_schedules: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult'],
-             id: str,
-             is_enabled: bool,
-             policy_type: str,
-             resource_actions: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult'],
-             rules: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult'],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacities: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult']] = None,
+             display_name: Optional[str] = None,
+             execution_schedules: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult']] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             policy_type: Optional[str] = None,
+             resource_actions: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult']] = None,
+             rules: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult']] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if capacities is None:
+            raise TypeError("Missing 'capacities' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionSchedules' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if execution_schedules is None and 'executionSchedules' in kwargs:
             execution_schedules = kwargs['executionSchedules']
-        if 'isEnabled' in kwargs:
+        if execution_schedules is None:
+            raise TypeError("Missing 'execution_schedules' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'policyType' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'resourceActions' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if resource_actions is None and 'resourceActions' in kwargs:
             resource_actions = kwargs['resourceActions']
-        if 'timeCreated' in kwargs:
+        if resource_actions is None:
+            raise TypeError("Missing 'resource_actions' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("capacities", capacities)
         _setter("display_name", display_name)
@@ -1601,11 +1723,17 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             initial: int,
-             max: int,
-             min: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             initial: Optional[int] = None,
+             max: Optional[int] = None,
+             min: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if initial is None:
+            raise TypeError("Missing 'initial' argument")
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
 
         _setter("initial", initial)
         _setter("max", max)
@@ -1656,11 +1784,17 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expression: str,
-             timezone: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expression: Optional[str] = None,
+             timezone: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if timezone is None:
+            raise TypeError("Missing 'timezone' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("expression", expression)
         _setter("timezone", timezone)
@@ -1708,12 +1842,16 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             action_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
 
         _setter("action", action)
         _setter("action_type", action_type)
@@ -1758,14 +1896,22 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult'],
-             display_name: str,
-             id: str,
-             metrics: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult']] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             metrics: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
 
         _setter("actions", actions)
         _setter("display_name", display_name)
@@ -1821,10 +1967,14 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -1856,12 +2006,16 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metric_type: str,
-             thresholds: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metric_type: Optional[str] = None,
+             thresholds: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
+        if metric_type is None:
+            raise TypeError("Missing 'metric_type' argument")
+        if thresholds is None:
+            raise TypeError("Missing 'thresholds' argument")
 
         _setter("metric_type", metric_type)
         _setter("thresholds", thresholds)
@@ -1893,10 +2047,14 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresh
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operator: str,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operator: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operator is None:
+            raise TypeError("Missing 'operator' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("operator", operator)
         _setter("value", value)
@@ -1930,11 +2088,15 @@ class GetAutoScalingConfigurationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

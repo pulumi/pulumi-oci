@@ -48,10 +48,10 @@ import (
 //				},
 //				DisplayName:           pulumi.Any(_var.Stream_cdn_config_display_name),
 //				DistributionChannelId: pulumi.Any(oci_mysql_channel.Test_channel.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsEnabled: pulumi.Any(_var.Stream_cdn_config_is_enabled),

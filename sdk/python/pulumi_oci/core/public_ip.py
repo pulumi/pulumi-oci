@@ -52,26 +52,30 @@ class PublicIpArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             lifetime: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             lifetime: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              private_ip_id: Optional[pulumi.Input[str]] = None,
              public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if lifetime is None:
+            raise TypeError("Missing 'lifetime' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'privateIpId' in kwargs:
+        if private_ip_id is None and 'privateIpId' in kwargs:
             private_ip_id = kwargs['privateIpId']
-        if 'publicIpPoolId' in kwargs:
+        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
             public_ip_pool_id = kwargs['publicIpPoolId']
 
         _setter("compartment_id", compartment_id)
@@ -256,29 +260,29 @@ class _PublicIpState:
              scope: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignedEntityId' in kwargs:
+        if assigned_entity_id is None and 'assignedEntityId' in kwargs:
             assigned_entity_id = kwargs['assignedEntityId']
-        if 'assignedEntityType' in kwargs:
+        if assigned_entity_type is None and 'assignedEntityType' in kwargs:
             assigned_entity_type = kwargs['assignedEntityType']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'privateIpId' in kwargs:
+        if private_ip_id is None and 'privateIpId' in kwargs:
             private_ip_id = kwargs['privateIpId']
-        if 'publicIpPoolId' in kwargs:
+        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
             public_ip_pool_id = kwargs['publicIpPoolId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if assigned_entity_id is not None:

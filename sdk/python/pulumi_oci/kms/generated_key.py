@@ -47,25 +47,33 @@ class GeneratedKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             crypto_endpoint: pulumi.Input[str],
-             include_plaintext_key: pulumi.Input[bool],
-             key_id: pulumi.Input[str],
-             key_shape: pulumi.Input['GeneratedKeyKeyShapeArgs'],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             include_plaintext_key: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_shape: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']] = None,
              associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'includePlaintextKey' in kwargs:
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if include_plaintext_key is None and 'includePlaintextKey' in kwargs:
             include_plaintext_key = kwargs['includePlaintextKey']
-        if 'keyId' in kwargs:
+        if include_plaintext_key is None:
+            raise TypeError("Missing 'include_plaintext_key' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyShape' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if key_shape is None and 'keyShape' in kwargs:
             key_shape = kwargs['keyShape']
-        if 'associatedData' in kwargs:
+        if key_shape is None:
+            raise TypeError("Missing 'key_shape' argument")
+        if associated_data is None and 'associatedData' in kwargs:
             associated_data = kwargs['associatedData']
-        if 'loggingContext' in kwargs:
+        if logging_context is None and 'loggingContext' in kwargs:
             logging_context = kwargs['loggingContext']
 
         _setter("crypto_endpoint", crypto_endpoint)
@@ -206,21 +214,21 @@ class _GeneratedKeyState:
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              plaintext: Optional[pulumi.Input[str]] = None,
              plaintext_checksum: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedData' in kwargs:
+        if associated_data is None and 'associatedData' in kwargs:
             associated_data = kwargs['associatedData']
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'includePlaintextKey' in kwargs:
+        if include_plaintext_key is None and 'includePlaintextKey' in kwargs:
             include_plaintext_key = kwargs['includePlaintextKey']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyShape' in kwargs:
+        if key_shape is None and 'keyShape' in kwargs:
             key_shape = kwargs['keyShape']
-        if 'loggingContext' in kwargs:
+        if logging_context is None and 'loggingContext' in kwargs:
             logging_context = kwargs['loggingContext']
-        if 'plaintextChecksum' in kwargs:
+        if plaintext_checksum is None and 'plaintextChecksum' in kwargs:
             plaintext_checksum = kwargs['plaintextChecksum']
 
         if associated_data is not None:
@@ -486,11 +494,7 @@ class GeneratedKey(pulumi.CustomResource):
             if key_id is None and not opts.urn:
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
-            if key_shape is not None and not isinstance(key_shape, GeneratedKeyKeyShapeArgs):
-                key_shape = key_shape or {}
-                def _setter(key, value):
-                    key_shape[key] = value
-                GeneratedKeyKeyShapeArgs._configure(_setter, **key_shape)
+            key_shape = _utilities.configure(key_shape, GeneratedKeyKeyShapeArgs, True)
             if key_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'key_shape'")
             __props__.__dict__["key_shape"] = key_shape

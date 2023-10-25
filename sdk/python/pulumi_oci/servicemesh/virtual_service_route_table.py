@@ -53,25 +53,31 @@ class VirtualServiceRouteTableArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             route_rules: pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]],
-             virtual_service_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             route_rules: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]]] = None,
+             virtual_service_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'routeRules' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if route_rules is None and 'routeRules' in kwargs:
             route_rules = kwargs['routeRules']
-        if 'virtualServiceId' in kwargs:
+        if route_rules is None:
+            raise TypeError("Missing 'route_rules' argument")
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
             virtual_service_id = kwargs['virtualServiceId']
-        if 'definedTags' in kwargs:
+        if virtual_service_id is None:
+            raise TypeError("Missing 'virtual_service_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -257,25 +263,25 @@ class _VirtualServiceRouteTableState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'routeRules' in kwargs:
+        if route_rules is None and 'routeRules' in kwargs:
             route_rules = kwargs['routeRules']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'virtualServiceId' in kwargs:
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
             virtual_service_id = kwargs['virtualServiceId']
 
         if compartment_id is not None:

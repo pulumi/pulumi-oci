@@ -45,19 +45,25 @@ class PingProbeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             protocol: pulumi.Input[str],
-             targets: pulumi.Input[Sequence[pulumi.Input[str]]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              port: Optional[pulumi.Input[int]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'timeoutInSeconds' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'vantagePointNames' in kwargs:
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
             vantage_point_names = kwargs['vantagePointNames']
 
         _setter("compartment_id", compartment_id)
@@ -199,19 +205,19 @@ class _PingProbeState:
              time_created: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'homeRegion' in kwargs:
+        if home_region is None and 'homeRegion' in kwargs:
             home_region = kwargs['homeRegion']
-        if 'resultsUrl' in kwargs:
+        if results_url is None and 'resultsUrl' in kwargs:
             results_url = kwargs['resultsUrl']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'vantagePointNames' in kwargs:
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
             vantage_point_names = kwargs['vantagePointNames']
 
         if compartment_id is not None:

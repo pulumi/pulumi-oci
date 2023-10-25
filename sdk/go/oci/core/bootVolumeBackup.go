@@ -37,11 +37,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewBootVolumeBackup(ctx, "testBootVolumeBackup", &Core.BootVolumeBackupArgs{
 //				BootVolumeId: pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Boot_volume_backup_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),

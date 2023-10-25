@@ -56,10 +56,10 @@ import (
 //				AdminFirstName: pulumi.Any(_var.Domain_admin_first_name),
 //				AdminLastName:  pulumi.Any(_var.Domain_admin_last_name),
 //				AdminUserName:  pulumi.Any(oci_identity_user.Test_user.Name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsHiddenOnLogin:        pulumi.Any(_var.Domain_is_hidden_on_login),

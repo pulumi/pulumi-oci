@@ -47,23 +47,25 @@ class DeployPipelineArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             project_id: pulumi.Input[str],
+             project_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              deploy_pipeline_parameters: Optional[pulumi.Input['DeployPipelineDeployPipelineParametersArgs']] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'definedTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPipelineParameters' in kwargs:
+        if deploy_pipeline_parameters is None and 'deployPipelineParameters' in kwargs:
             deploy_pipeline_parameters = kwargs['deployPipelineParameters']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("project_id", project_id)
@@ -227,31 +229,31 @@ class _DeployPipelineState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPipelineArtifacts' in kwargs:
+        if deploy_pipeline_artifacts is None and 'deployPipelineArtifacts' in kwargs:
             deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
-        if 'deployPipelineEnvironments' in kwargs:
+        if deploy_pipeline_environments is None and 'deployPipelineEnvironments' in kwargs:
             deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
-        if 'deployPipelineParameters' in kwargs:
+        if deploy_pipeline_parameters is None and 'deployPipelineParameters' in kwargs:
             deploy_pipeline_parameters = kwargs['deployPipelineParameters']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -598,11 +600,7 @@ class DeployPipeline(pulumi.CustomResource):
             __props__ = DeployPipelineArgs.__new__(DeployPipelineArgs)
 
             __props__.__dict__["defined_tags"] = defined_tags
-            if deploy_pipeline_parameters is not None and not isinstance(deploy_pipeline_parameters, DeployPipelineDeployPipelineParametersArgs):
-                deploy_pipeline_parameters = deploy_pipeline_parameters or {}
-                def _setter(key, value):
-                    deploy_pipeline_parameters[key] = value
-                DeployPipelineDeployPipelineParametersArgs._configure(_setter, **deploy_pipeline_parameters)
+            deploy_pipeline_parameters = _utilities.configure(deploy_pipeline_parameters, DeployPipelineDeployPipelineParametersArgs, True)
             __props__.__dict__["deploy_pipeline_parameters"] = deploy_pipeline_parameters
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name

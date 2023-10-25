@@ -162,10 +162,10 @@ class DomainsGrantArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             grant_mechanism: pulumi.Input[str],
-             grantee: pulumi.Input['DomainsGrantGranteeArgs'],
-             idcs_endpoint: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             grant_mechanism: Optional[pulumi.Input[str]] = None,
+             grantee: Optional[pulumi.Input['DomainsGrantGranteeArgs']] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              app: Optional[pulumi.Input['DomainsGrantAppArgs']] = None,
              app_entitlement_collection: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -176,19 +176,27 @@ class DomainsGrantArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
-        if 'idcsEndpoint' in kwargs:
+        if grant_mechanism is None:
+            raise TypeError("Missing 'grant_mechanism' argument")
+        if grantee is None:
+            raise TypeError("Missing 'grantee' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'appEntitlementCollection' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if app_entitlement_collection is None and 'appEntitlementCollection' in kwargs:
             app_entitlement_collection = kwargs['appEntitlementCollection']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'grantedAttributeValuesJson' in kwargs:
+        if granted_attribute_values_json is None and 'grantedAttributeValuesJson' in kwargs:
             granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("grant_mechanism", grant_mechanism)
@@ -810,39 +818,39 @@ class _DomainsGrantState:
              schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appEntitlementCollection' in kwargs:
+        if app_entitlement_collection is None and 'appEntitlementCollection' in kwargs:
             app_entitlement_collection = kwargs['appEntitlementCollection']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'compositeKey' in kwargs:
+        if composite_key is None and 'compositeKey' in kwargs:
             composite_key = kwargs['compositeKey']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
-        if 'grantedAttributeValuesJson' in kwargs:
+        if granted_attribute_values_json is None and 'grantedAttributeValuesJson' in kwargs:
             granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'isFulfilled' in kwargs:
+        if is_fulfilled is None and 'isFulfilled' in kwargs:
             is_fulfilled = kwargs['isFulfilled']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
 
         if app is not None:
@@ -1631,36 +1639,20 @@ class DomainsGrant(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DomainsGrantArgs.__new__(DomainsGrantArgs)
 
-            if app is not None and not isinstance(app, DomainsGrantAppArgs):
-                app = app or {}
-                def _setter(key, value):
-                    app[key] = value
-                DomainsGrantAppArgs._configure(_setter, **app)
+            app = _utilities.configure(app, DomainsGrantAppArgs, True)
             __props__.__dict__["app"] = app
-            if app_entitlement_collection is not None and not isinstance(app_entitlement_collection, DomainsGrantAppEntitlementCollectionArgs):
-                app_entitlement_collection = app_entitlement_collection or {}
-                def _setter(key, value):
-                    app_entitlement_collection[key] = value
-                DomainsGrantAppEntitlementCollectionArgs._configure(_setter, **app_entitlement_collection)
+            app_entitlement_collection = _utilities.configure(app_entitlement_collection, DomainsGrantAppEntitlementCollectionArgs, True)
             __props__.__dict__["app_entitlement_collection"] = app_entitlement_collection
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authorization"] = authorization
-            if entitlement is not None and not isinstance(entitlement, DomainsGrantEntitlementArgs):
-                entitlement = entitlement or {}
-                def _setter(key, value):
-                    entitlement[key] = value
-                DomainsGrantEntitlementArgs._configure(_setter, **entitlement)
+            entitlement = _utilities.configure(entitlement, DomainsGrantEntitlementArgs, True)
             __props__.__dict__["entitlement"] = entitlement
             if grant_mechanism is None and not opts.urn:
                 raise TypeError("Missing required property 'grant_mechanism'")
             __props__.__dict__["grant_mechanism"] = grant_mechanism
             __props__.__dict__["granted_attribute_values_json"] = granted_attribute_values_json
-            if grantee is not None and not isinstance(grantee, DomainsGrantGranteeArgs):
-                grantee = grantee or {}
-                def _setter(key, value):
-                    grantee[key] = value
-                DomainsGrantGranteeArgs._configure(_setter, **grantee)
+            grantee = _utilities.configure(grantee, DomainsGrantGranteeArgs, True)
             if grantee is None and not opts.urn:
                 raise TypeError("Missing required property 'grantee'")
             __props__.__dict__["grantee"] = grantee

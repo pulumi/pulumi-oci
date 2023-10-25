@@ -35,10 +35,10 @@ import (
 //				DisplayName:         pulumi.Any(_var.Dr_plan_display_name),
 //				DrProtectionGroupId: pulumi.Any(oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id),
 //				Type:                pulumi.Any(_var.Dr_plan_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

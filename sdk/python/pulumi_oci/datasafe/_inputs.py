@@ -112,15 +112,15 @@ class AuditPolicyAuditConditionArgs:
              enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]] = None,
              is_data_safe_service_account_audited: Optional[pulumi.Input[bool]] = None,
              is_priv_users_managed_by_data_safe: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditPolicyName' in kwargs:
+        if audit_policy_name is None and 'auditPolicyName' in kwargs:
             audit_policy_name = kwargs['auditPolicyName']
-        if 'enableConditions' in kwargs:
+        if enable_conditions is None and 'enableConditions' in kwargs:
             enable_conditions = kwargs['enableConditions']
-        if 'isDataSafeServiceAccountAudited' in kwargs:
+        if is_data_safe_service_account_audited is None and 'isDataSafeServiceAccountAudited' in kwargs:
             is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
-        if 'isPrivUsersManagedByDataSafe' in kwargs:
+        if is_priv_users_managed_by_data_safe is None and 'isPrivUsersManagedByDataSafe' in kwargs:
             is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
 
         if audit_policy_name is not None:
@@ -208,15 +208,15 @@ class AuditPolicyAuditConditionEnableConditionArgs:
              entity_selection: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              operation_status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityNames' in kwargs:
+        if entity_names is None and 'entityNames' in kwargs:
             entity_names = kwargs['entityNames']
-        if 'entitySelection' in kwargs:
+        if entity_selection is None and 'entitySelection' in kwargs:
             entity_selection = kwargs['entitySelection']
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'operationStatus' in kwargs:
+        if operation_status is None and 'operationStatus' in kwargs:
             operation_status = kwargs['operationStatus']
 
         if entity_names is not None:
@@ -332,29 +332,29 @@ class AuditPolicyAuditSpecificationArgs:
              is_seeded_in_target: Optional[pulumi.Input[bool]] = None,
              is_view_only: Optional[pulumi.Input[bool]] = None,
              partially_enabled_msg: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditPolicyCategory' in kwargs:
+        if audit_policy_category is None and 'auditPolicyCategory' in kwargs:
             audit_policy_category = kwargs['auditPolicyCategory']
-        if 'auditPolicyName' in kwargs:
+        if audit_policy_name is None and 'auditPolicyName' in kwargs:
             audit_policy_name = kwargs['auditPolicyName']
-        if 'databasePolicyNames' in kwargs:
+        if database_policy_names is None and 'databasePolicyNames' in kwargs:
             database_policy_names = kwargs['databasePolicyNames']
-        if 'enableStatus' in kwargs:
+        if enable_status is None and 'enableStatus' in kwargs:
             enable_status = kwargs['enableStatus']
-        if 'enabledEntities' in kwargs:
+        if enabled_entities is None and 'enabledEntities' in kwargs:
             enabled_entities = kwargs['enabledEntities']
-        if 'isCreated' in kwargs:
+        if is_created is None and 'isCreated' in kwargs:
             is_created = kwargs['isCreated']
-        if 'isEnabledForAllUsers' in kwargs:
+        if is_enabled_for_all_users is None and 'isEnabledForAllUsers' in kwargs:
             is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
-        if 'isSeededInDataSafe' in kwargs:
+        if is_seeded_in_data_safe is None and 'isSeededInDataSafe' in kwargs:
             is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
-        if 'isSeededInTarget' in kwargs:
+        if is_seeded_in_target is None and 'isSeededInTarget' in kwargs:
             is_seeded_in_target = kwargs['isSeededInTarget']
-        if 'isViewOnly' in kwargs:
+        if is_view_only is None and 'isViewOnly' in kwargs:
             is_view_only = kwargs['isViewOnly']
-        if 'partiallyEnabledMsg' in kwargs:
+        if partially_enabled_msg is None and 'partiallyEnabledMsg' in kwargs:
             partially_enabled_msg = kwargs['partiallyEnabledMsg']
 
         if audit_policy_category is not None:
@@ -600,37 +600,37 @@ class AuditProfileAuditTrailArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              trail_location: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditCollectionStartTime' in kwargs:
+        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
             audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if 'auditProfileId' in kwargs:
+        if audit_profile_id is None and 'auditProfileId' in kwargs:
             audit_profile_id = kwargs['auditProfileId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoPurgeEnabled' in kwargs:
+        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
             is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastCollected' in kwargs:
+        if time_last_collected is None and 'timeLastCollected' in kwargs:
             time_last_collected = kwargs['timeLastCollected']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'trailLocation' in kwargs:
+        if trail_location is None and 'trailLocation' in kwargs:
             trail_location = kwargs['trailLocation']
-        if 'workRequestId' in kwargs:
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
 
         if audit_collection_start_time is not None:
@@ -924,13 +924,13 @@ class DataSafeConfigurationGlobalSettingArgs:
              is_paid_usage: Optional[pulumi.Input[bool]] = None,
              offline_retention_period: Optional[pulumi.Input[int]] = None,
              online_retention_period: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPaidUsage' in kwargs:
+        if is_paid_usage is None and 'isPaidUsage' in kwargs:
             is_paid_usage = kwargs['isPaidUsage']
-        if 'offlineRetentionPeriod' in kwargs:
+        if offline_retention_period is None and 'offlineRetentionPeriod' in kwargs:
             offline_retention_period = kwargs['offlineRetentionPeriod']
-        if 'onlineRetentionPeriod' in kwargs:
+        if online_retention_period is None and 'onlineRetentionPeriod' in kwargs:
             online_retention_period = kwargs['onlineRetentionPeriod']
 
         if is_paid_usage is not None:
@@ -996,11 +996,11 @@ class DiscoveryJobsResultModifiedAttributeArgs:
              _setter: Callable[[Any, Any], None],
              app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appDefinedChildColumnKeys' in kwargs:
+        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
             app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if 'dbDefinedChildColumnKeys' in kwargs:
+        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
             db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
 
         if app_defined_child_column_keys is not None:
@@ -1117,7 +1117,7 @@ class LibraryMasingFormatFormatEntryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              column_name: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              end_date: Optional[pulumi.Input[str]] = None,
@@ -1140,47 +1140,49 @@ class LibraryMasingFormatFormatEntryArgs:
              start_value: Optional[pulumi.Input[float]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              user_defined_function: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'endDate' in kwargs:
+        if end_date is None and 'endDate' in kwargs:
             end_date = kwargs['endDate']
-        if 'endLength' in kwargs:
+        if end_length is None and 'endLength' in kwargs:
             end_length = kwargs['endLength']
-        if 'endValue' in kwargs:
+        if end_value is None and 'endValue' in kwargs:
             end_value = kwargs['endValue']
-        if 'fixedNumber' in kwargs:
+        if fixed_number is None and 'fixedNumber' in kwargs:
             fixed_number = kwargs['fixedNumber']
-        if 'fixedString' in kwargs:
+        if fixed_string is None and 'fixedString' in kwargs:
             fixed_string = kwargs['fixedString']
-        if 'groupingColumns' in kwargs:
+        if grouping_columns is None and 'groupingColumns' in kwargs:
             grouping_columns = kwargs['groupingColumns']
-        if 'libraryMaskingFormatId' in kwargs:
+        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
             library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if 'postProcessingFunction' in kwargs:
+        if post_processing_function is None and 'postProcessingFunction' in kwargs:
             post_processing_function = kwargs['postProcessingFunction']
-        if 'randomLists' in kwargs:
+        if random_lists is None and 'randomLists' in kwargs:
             random_lists = kwargs['randomLists']
-        if 'regularExpression' in kwargs:
+        if regular_expression is None and 'regularExpression' in kwargs:
             regular_expression = kwargs['regularExpression']
-        if 'replaceWith' in kwargs:
+        if replace_with is None and 'replaceWith' in kwargs:
             replace_with = kwargs['replaceWith']
-        if 'schemaName' in kwargs:
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'sqlExpression' in kwargs:
+        if sql_expression is None and 'sqlExpression' in kwargs:
             sql_expression = kwargs['sqlExpression']
-        if 'startDate' in kwargs:
+        if start_date is None and 'startDate' in kwargs:
             start_date = kwargs['startDate']
-        if 'startLength' in kwargs:
+        if start_length is None and 'startLength' in kwargs:
             start_length = kwargs['startLength']
-        if 'startPosition' in kwargs:
+        if start_position is None and 'startPosition' in kwargs:
             start_position = kwargs['startPosition']
-        if 'startValue' in kwargs:
+        if start_value is None and 'startValue' in kwargs:
             start_value = kwargs['startValue']
-        if 'tableName' in kwargs:
+        if table_name is None and 'tableName' in kwargs:
             table_name = kwargs['tableName']
-        if 'userDefinedFunction' in kwargs:
+        if user_defined_function is None and 'userDefinedFunction' in kwargs:
             user_defined_function = kwargs['userDefinedFunction']
 
         _setter("type", type)
@@ -1530,13 +1532,15 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]],
+             format_entries: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formatEntries' in kwargs:
+        if format_entries is None and 'formatEntries' in kwargs:
             format_entries = kwargs['formatEntries']
+        if format_entries is None:
+            raise TypeError("Missing 'format_entries' argument")
 
         _setter("format_entries", format_entries)
         if condition is not None:
@@ -1665,7 +1669,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              column_name: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              end_date: Optional[pulumi.Input[str]] = None,
@@ -1688,47 +1692,49 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
              start_value: Optional[pulumi.Input[float]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              user_defined_function: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'endDate' in kwargs:
+        if end_date is None and 'endDate' in kwargs:
             end_date = kwargs['endDate']
-        if 'endLength' in kwargs:
+        if end_length is None and 'endLength' in kwargs:
             end_length = kwargs['endLength']
-        if 'endValue' in kwargs:
+        if end_value is None and 'endValue' in kwargs:
             end_value = kwargs['endValue']
-        if 'fixedNumber' in kwargs:
+        if fixed_number is None and 'fixedNumber' in kwargs:
             fixed_number = kwargs['fixedNumber']
-        if 'fixedString' in kwargs:
+        if fixed_string is None and 'fixedString' in kwargs:
             fixed_string = kwargs['fixedString']
-        if 'groupingColumns' in kwargs:
+        if grouping_columns is None and 'groupingColumns' in kwargs:
             grouping_columns = kwargs['groupingColumns']
-        if 'libraryMaskingFormatId' in kwargs:
+        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
             library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if 'postProcessingFunction' in kwargs:
+        if post_processing_function is None and 'postProcessingFunction' in kwargs:
             post_processing_function = kwargs['postProcessingFunction']
-        if 'randomLists' in kwargs:
+        if random_lists is None and 'randomLists' in kwargs:
             random_lists = kwargs['randomLists']
-        if 'regularExpression' in kwargs:
+        if regular_expression is None and 'regularExpression' in kwargs:
             regular_expression = kwargs['regularExpression']
-        if 'replaceWith' in kwargs:
+        if replace_with is None and 'replaceWith' in kwargs:
             replace_with = kwargs['replaceWith']
-        if 'schemaName' in kwargs:
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'sqlExpression' in kwargs:
+        if sql_expression is None and 'sqlExpression' in kwargs:
             sql_expression = kwargs['sqlExpression']
-        if 'startDate' in kwargs:
+        if start_date is None and 'startDate' in kwargs:
             start_date = kwargs['startDate']
-        if 'startLength' in kwargs:
+        if start_length is None and 'startLength' in kwargs:
             start_length = kwargs['startLength']
-        if 'startPosition' in kwargs:
+        if start_position is None and 'startPosition' in kwargs:
             start_position = kwargs['startPosition']
-        if 'startValue' in kwargs:
+        if start_value is None and 'startValue' in kwargs:
             start_value = kwargs['startValue']
-        if 'tableName' in kwargs:
+        if table_name is None and 'tableName' in kwargs:
             table_name = kwargs['tableName']
-        if 'userDefinedFunction' in kwargs:
+        if user_defined_function is None and 'userDefinedFunction' in kwargs:
             user_defined_function = kwargs['userDefinedFunction']
 
         _setter("type", type)
@@ -2078,16 +2084,18 @@ class MaskingPolicyColumnSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_source: pulumi.Input[str],
+             column_source: Optional[pulumi.Input[str]] = None,
              sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnSource' in kwargs:
+        if column_source is None and 'columnSource' in kwargs:
             column_source = kwargs['columnSource']
-        if 'sensitiveDataModelId' in kwargs:
+        if column_source is None:
+            raise TypeError("Missing 'column_source' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
 
         _setter("column_source", column_source)
@@ -2159,19 +2167,29 @@ class ReportDefinitionColumnFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             expressions: pulumi.Input[Sequence[pulumi.Input[str]]],
-             field_name: pulumi.Input[str],
-             is_enabled: pulumi.Input[bool],
-             is_hidden: pulumi.Input[bool],
-             operator: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             expressions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             field_name: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             is_hidden: Optional[pulumi.Input[bool]] = None,
+             operator: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fieldName' in kwargs:
+        if expressions is None:
+            raise TypeError("Missing 'expressions' argument")
+        if field_name is None and 'fieldName' in kwargs:
             field_name = kwargs['fieldName']
-        if 'isEnabled' in kwargs:
+        if field_name is None:
+            raise TypeError("Missing 'field_name' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isHidden' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_hidden is None and 'isHidden' in kwargs:
             is_hidden = kwargs['isHidden']
+        if is_hidden is None:
+            raise TypeError("Missing 'is_hidden' argument")
+        if operator is None:
+            raise TypeError("Missing 'operator' argument")
 
         _setter("expressions", expressions)
         _setter("field_name", field_name)
@@ -2266,22 +2284,30 @@ class ReportDefinitionColumnInfoArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             display_order: pulumi.Input[int],
-             field_name: pulumi.Input[str],
-             is_hidden: pulumi.Input[bool],
+             display_name: Optional[pulumi.Input[str]] = None,
+             display_order: Optional[pulumi.Input[int]] = None,
+             field_name: Optional[pulumi.Input[str]] = None,
+             is_hidden: Optional[pulumi.Input[bool]] = None,
              data_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'displayOrder' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if display_order is None and 'displayOrder' in kwargs:
             display_order = kwargs['displayOrder']
-        if 'fieldName' in kwargs:
+        if display_order is None:
+            raise TypeError("Missing 'display_order' argument")
+        if field_name is None and 'fieldName' in kwargs:
             field_name = kwargs['fieldName']
-        if 'isHidden' in kwargs:
+        if field_name is None:
+            raise TypeError("Missing 'field_name' argument")
+        if is_hidden is None and 'isHidden' in kwargs:
             is_hidden = kwargs['isHidden']
-        if 'dataType' in kwargs:
+        if is_hidden is None:
+            raise TypeError("Missing 'is_hidden' argument")
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
 
         _setter("display_name", display_name)
@@ -2372,17 +2398,23 @@ class ReportDefinitionColumnSortingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             field_name: pulumi.Input[str],
-             is_ascending: pulumi.Input[bool],
-             sorting_order: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             field_name: Optional[pulumi.Input[str]] = None,
+             is_ascending: Optional[pulumi.Input[bool]] = None,
+             sorting_order: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fieldName' in kwargs:
+        if field_name is None and 'fieldName' in kwargs:
             field_name = kwargs['fieldName']
-        if 'isAscending' in kwargs:
+        if field_name is None:
+            raise TypeError("Missing 'field_name' argument")
+        if is_ascending is None and 'isAscending' in kwargs:
             is_ascending = kwargs['isAscending']
-        if 'sortingOrder' in kwargs:
+        if is_ascending is None:
+            raise TypeError("Missing 'is_ascending' argument")
+        if sorting_order is None and 'sortingOrder' in kwargs:
             sorting_order = kwargs['sortingOrder']
+        if sorting_order is None:
+            raise TypeError("Missing 'sorting_order' argument")
 
         _setter("field_name", field_name)
         _setter("is_ascending", is_ascending)
@@ -2458,23 +2490,27 @@ class ReportDefinitionSummaryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_order: pulumi.Input[int],
-             name: pulumi.Input[str],
+             display_order: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
              count_of: Optional[pulumi.Input[str]] = None,
              group_by_field_name: Optional[pulumi.Input[str]] = None,
              is_hidden: Optional[pulumi.Input[bool]] = None,
              scim_filter: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayOrder' in kwargs:
+        if display_order is None and 'displayOrder' in kwargs:
             display_order = kwargs['displayOrder']
-        if 'countOf' in kwargs:
+        if display_order is None:
+            raise TypeError("Missing 'display_order' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if count_of is None and 'countOf' in kwargs:
             count_of = kwargs['countOf']
-        if 'groupByFieldName' in kwargs:
+        if group_by_field_name is None and 'groupByFieldName' in kwargs:
             group_by_field_name = kwargs['groupByFieldName']
-        if 'isHidden' in kwargs:
+        if is_hidden is None and 'isHidden' in kwargs:
             is_hidden = kwargs['isHidden']
-        if 'scimFilter' in kwargs:
+        if scim_filter is None and 'scimFilter' in kwargs:
             scim_filter = kwargs['scimFilter']
 
         _setter("display_order", display_order)
@@ -2604,15 +2640,15 @@ class SecurityAssessmentStatisticArgs:
              medium_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]] = None,
              passes: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'highRisks' in kwargs:
+        if high_risks is None and 'highRisks' in kwargs:
             high_risks = kwargs['highRisks']
-        if 'lowRisks' in kwargs:
+        if low_risks is None and 'lowRisks' in kwargs:
             low_risks = kwargs['lowRisks']
-        if 'mediumRisks' in kwargs:
+        if medium_risks is None and 'mediumRisks' in kwargs:
             medium_risks = kwargs['mediumRisks']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
 
         if advisories is not None:
@@ -2758,23 +2794,23 @@ class SecurityAssessmentStatisticAdvisoryArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -2934,23 +2970,23 @@ class SecurityAssessmentStatisticEvaluateArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -3110,23 +3146,23 @@ class SecurityAssessmentStatisticHighRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -3286,23 +3322,23 @@ class SecurityAssessmentStatisticLowRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -3462,23 +3498,23 @@ class SecurityAssessmentStatisticMediumRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -3638,23 +3674,23 @@ class SecurityAssessmentStatisticPassArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditingFindingsCount' in kwargs:
+        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
             auditing_findings_count = kwargs['auditingFindingsCount']
-        if 'authorizationControlFindingsCount' in kwargs:
+        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
             authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if 'dataEncryptionFindingsCount' in kwargs:
+        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
             data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if 'dbConfigurationFindingsCount' in kwargs:
+        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
             db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
             fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if 'privilegesAndRolesFindingsCount' in kwargs:
+        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
             privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if 'targetsCount' in kwargs:
+        if targets_count is None and 'targetsCount' in kwargs:
             targets_count = kwargs['targetsCount']
-        if 'userAccountsFindingsCount' in kwargs:
+        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
             user_accounts_findings_count = kwargs['userAccountsFindingsCount']
 
         if auditing_findings_count is not None:
@@ -3793,16 +3829,18 @@ class TargetDatabaseConnectionOptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connection_type: pulumi.Input[str],
+             connection_type: Optional[pulumi.Input[str]] = None,
              datasafe_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              on_prem_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionType' in kwargs:
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'datasafePrivateEndpointId' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if datasafe_private_endpoint_id is None and 'datasafePrivateEndpointId' in kwargs:
             datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
-        if 'onPremConnectorId' in kwargs:
+        if on_prem_connector_id is None and 'onPremConnectorId' in kwargs:
             on_prem_connector_id = kwargs['onPremConnectorId']
 
         _setter("connection_type", connection_type)
@@ -3867,12 +3905,16 @@ class TargetDatabaseCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: pulumi.Input[str],
-             user_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userName' in kwargs:
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("password", password)
         _setter("user_name", user_name)
@@ -3940,8 +3982,8 @@ class TargetDatabaseDatabaseDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             database_type: pulumi.Input[str],
-             infrastructure_type: pulumi.Input[str],
+             database_type: Optional[pulumi.Input[str]] = None,
+             infrastructure_type: Optional[pulumi.Input[str]] = None,
              autonomous_database_id: Optional[pulumi.Input[str]] = None,
              db_system_id: Optional[pulumi.Input[str]] = None,
              instance_id: Optional[pulumi.Input[str]] = None,
@@ -3949,25 +3991,29 @@ class TargetDatabaseDatabaseDetailsArgs:
              listener_port: Optional[pulumi.Input[int]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'infrastructureType' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if infrastructure_type is None and 'infrastructureType' in kwargs:
             infrastructure_type = kwargs['infrastructureType']
-        if 'autonomousDatabaseId' in kwargs:
+        if infrastructure_type is None:
+            raise TypeError("Missing 'infrastructure_type' argument")
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'ipAddresses' in kwargs:
+        if ip_addresses is None and 'ipAddresses' in kwargs:
             ip_addresses = kwargs['ipAddresses']
-        if 'listenerPort' in kwargs:
+        if listener_port is None and 'listenerPort' in kwargs:
             listener_port = kwargs['listenerPort']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'vmClusterId' in kwargs:
+        if vm_cluster_id is None and 'vmClusterId' in kwargs:
             vm_cluster_id = kwargs['vmClusterId']
 
         _setter("database_type", database_type)
@@ -4126,20 +4172,22 @@ class TargetDatabaseTlsConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             status: pulumi.Input[str],
+             status: Optional[pulumi.Input[str]] = None,
              certificate_store_type: Optional[pulumi.Input[str]] = None,
              key_store_content: Optional[pulumi.Input[str]] = None,
              store_password: Optional[pulumi.Input[str]] = None,
              trust_store_content: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateStoreType' in kwargs:
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if certificate_store_type is None and 'certificateStoreType' in kwargs:
             certificate_store_type = kwargs['certificateStoreType']
-        if 'keyStoreContent' in kwargs:
+        if key_store_content is None and 'keyStoreContent' in kwargs:
             key_store_content = kwargs['keyStoreContent']
-        if 'storePassword' in kwargs:
+        if store_password is None and 'storePassword' in kwargs:
             store_password = kwargs['storePassword']
-        if 'trustStoreContent' in kwargs:
+        if trust_store_content is None and 'trustStoreContent' in kwargs:
             trust_store_content = kwargs['trustStoreContent']
 
         _setter("status", status)
@@ -4242,13 +4290,13 @@ class UserAssessmentIgnoredTargetArgs:
              lifecycle_state: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lifecycleState' in kwargs:
+        if lifecycle_state is None and 'lifecycleState' in kwargs:
             lifecycle_state = kwargs['lifecycleState']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'userAssessmentId' in kwargs:
+        if user_assessment_id is None and 'userAssessmentId' in kwargs:
             user_assessment_id = kwargs['userAssessmentId']
 
         if lifecycle_state is not None:
@@ -4308,11 +4356,15 @@ class GetAlertPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4362,11 +4414,15 @@ class GetAlertPolicyRulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4416,11 +4472,15 @@ class GetAlertsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4470,11 +4530,15 @@ class GetAuditArchiveRetrievalsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4524,11 +4588,15 @@ class GetAuditEventsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4578,11 +4646,15 @@ class GetAuditPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4632,11 +4704,15 @@ class GetAuditProfileAvailableAuditVolumesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4686,11 +4762,15 @@ class GetAuditProfileCollectedAuditVolumesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4740,11 +4820,15 @@ class GetAuditProfilesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4794,11 +4878,15 @@ class GetAuditTrailsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4848,11 +4936,15 @@ class GetDataSafePrivateEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4902,11 +4994,15 @@ class GetDiscoveryAnalyticsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4956,11 +5052,15 @@ class GetDiscoveryJobsResultsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5010,11 +5110,15 @@ class GetLibraryMaskingFormatsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5064,11 +5168,15 @@ class GetListUserGrantsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5118,11 +5226,15 @@ class GetMaskingAnalyticsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5172,11 +5284,15 @@ class GetMaskingPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5226,11 +5342,15 @@ class GetMaskingPoliciesMaskingColumnsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5280,11 +5400,15 @@ class GetMaskingPolicyMaskingObjectsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5334,11 +5458,15 @@ class GetMaskingPolicyMaskingSchemasFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5388,11 +5516,15 @@ class GetMaskingReportMaskedColumnsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5442,11 +5574,15 @@ class GetMaskingReportsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5496,11 +5632,15 @@ class GetOnpremConnectorsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5553,11 +5693,15 @@ class GetReportDefinitionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5610,11 +5754,15 @@ class GetReportsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5664,11 +5812,15 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5718,11 +5870,15 @@ class GetSdmMaskingPolicyDifferencesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5772,11 +5928,15 @@ class GetSecurityAssessmentFindingFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5826,11 +5986,15 @@ class GetSecurityAssessmentFindingsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5880,11 +6044,15 @@ class GetSecurityAssessmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5934,11 +6102,15 @@ class GetSensitiveDataModelSensitiveObjectsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5988,11 +6160,15 @@ class GetSensitiveDataModelSensitiveSchemasFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6042,11 +6218,15 @@ class GetSensitiveDataModelsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6096,11 +6276,15 @@ class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6150,11 +6334,15 @@ class GetSensitiveTypesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6204,11 +6392,15 @@ class GetTargetAlertPolicyAssociationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6258,11 +6450,15 @@ class GetTargetDatabaseRoleFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6312,11 +6508,15 @@ class GetTargetDatabaseRolesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6366,11 +6566,15 @@ class GetTargetDatabasesColumnsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6420,11 +6624,15 @@ class GetTargetDatabasesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6474,11 +6682,15 @@ class GetTargetDatabasesSchemasFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6528,11 +6740,15 @@ class GetTargetDatabasesTablesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6582,11 +6798,15 @@ class GetUserAssessmentProfileAnalyticsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6636,11 +6856,15 @@ class GetUserAssessmentProfilesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6690,11 +6914,15 @@ class GetUserAssessmentUserAnalyticsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6744,11 +6972,15 @@ class GetUserAssessmentUsersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6798,11 +7030,15 @@ class GetUserAssessmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

@@ -45,13 +45,13 @@ class DatabaseToolsConnectionKeyStoreArgs:
              key_store_content: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']] = None,
              key_store_password: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']] = None,
              key_store_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyStoreContent' in kwargs:
+        if key_store_content is None and 'keyStoreContent' in kwargs:
             key_store_content = kwargs['keyStoreContent']
-        if 'keyStorePassword' in kwargs:
+        if key_store_password is None and 'keyStorePassword' in kwargs:
             key_store_password = kwargs['keyStorePassword']
-        if 'keyStoreType' in kwargs:
+        if key_store_type is None and 'keyStoreType' in kwargs:
             key_store_type = kwargs['keyStoreType']
 
         if key_store_content is not None:
@@ -119,13 +119,15 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value_type: pulumi.Input[str],
+             value_type: Optional[pulumi.Input[str]] = None,
              secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueType' in kwargs:
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
-        if 'secretId' in kwargs:
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
 
         _setter("value_type", value_type)
@@ -182,13 +184,15 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value_type: pulumi.Input[str],
+             value_type: Optional[pulumi.Input[str]] = None,
              secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueType' in kwargs:
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
-        if 'secretId' in kwargs:
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
 
         _setter("value_type", value_type)
@@ -241,12 +245,16 @@ class DatabaseToolsConnectionRelatedResourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_type: pulumi.Input[str],
-             identifier: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             entity_type: Optional[pulumi.Input[str]] = None,
+             identifier: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
 
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
@@ -297,14 +305,18 @@ class DatabaseToolsConnectionUserPasswordArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: pulumi.Input[str],
-             value_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             value_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -353,9 +365,9 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              reverse_connections_source_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'reverseConnectionsSourceIps' in kwargs:
+        if reverse_connections_source_ips is None and 'reverseConnectionsSourceIps' in kwargs:
             reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
 
         if reverse_connections_source_ips is not None:
@@ -389,9 +401,9 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
     def _configure(
              _setter: Callable[[Any, Any], None],
              source_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceIp' in kwargs:
+        if source_ip is None and 'sourceIp' in kwargs:
             source_ip = kwargs['sourceIp']
 
         if source_ip is not None:
@@ -425,11 +437,15 @@ class GetDatabaseToolsConnectionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -482,11 +498,15 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -539,11 +559,15 @@ class GetDatabaseToolsPrivateEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

@@ -35,7 +35,7 @@ import (
 //				CompartmentId:   pulumi.Any(_var.Compartment_id),
 //				DisplayName:     pulumi.Any(_var.Fusion_environment_family_display_name),
 //				SubscriptionIds: pulumi.Any(_var.Fusion_environment_family_subscription_ids),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FamilyMaintenancePolicy: &fusionapps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs{
@@ -43,7 +43,7 @@ import (
 //					IsMonthlyPatchingEnabled:   pulumi.Any(_var.Fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled),
 //					QuarterlyUpgradeBeginTimes: pulumi.Any(_var.Fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

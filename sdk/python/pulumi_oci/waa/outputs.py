@@ -70,9 +70,9 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
             is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
 
         if is_response_header_based_caching_enabled is not None:
@@ -129,9 +129,9 @@ class AppAccelerationPolicyResponseCompressionPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compression: Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gzipCompression' in kwargs:
+        if gzip_compression is None and 'gzipCompression' in kwargs:
             gzip_compression = kwargs['gzipCompression']
 
         if gzip_compression is not None:
@@ -180,9 +180,9 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -214,11 +214,15 @@ class GetAppAccelerationPoliciesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -252,9 +256,11 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -311,40 +317,64 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             response_caching_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult'],
-             response_compression_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             response_caching_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult']] = None,
+             response_compression_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'responseCachingPolicies' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if response_caching_policies is None and 'responseCachingPolicies' in kwargs:
             response_caching_policies = kwargs['responseCachingPolicies']
-        if 'responseCompressionPolicies' in kwargs:
+        if response_caching_policies is None:
+            raise TypeError("Missing 'response_caching_policies' argument")
+        if response_compression_policies is None and 'responseCompressionPolicies' in kwargs:
             response_compression_policies = kwargs['responseCompressionPolicies']
-        if 'systemTags' in kwargs:
+        if response_compression_policies is None:
+            raise TypeError("Missing 'response_compression_policies' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -470,11 +500,13 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_response_header_based_caching_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
             is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+        if is_response_header_based_caching_enabled is None:
+            raise TypeError("Missing 'is_response_header_based_caching_enabled' argument")
 
         _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
@@ -501,11 +533,13 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gzip_compressions: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gzipCompressions' in kwargs:
+        if gzip_compressions is None and 'gzipCompressions' in kwargs:
             gzip_compressions = kwargs['gzipCompressions']
+        if gzip_compressions is None:
+            raise TypeError("Missing 'gzip_compressions' argument")
 
         _setter("gzip_compressions", gzip_compressions)
 
@@ -532,11 +566,13 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -563,11 +599,13 @@ class GetAppAccelerationPolicyResponseCachingPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_response_header_based_caching_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
             is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+        if is_response_header_based_caching_enabled is None:
+            raise TypeError("Missing 'is_response_header_based_caching_enabled' argument")
 
         _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
@@ -594,11 +632,13 @@ class GetAppAccelerationPolicyResponseCompressionPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gzip_compressions: Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gzipCompressions' in kwargs:
+        if gzip_compressions is None and 'gzipCompressions' in kwargs:
             gzip_compressions = kwargs['gzipCompressions']
+        if gzip_compressions is None:
+            raise TypeError("Missing 'gzip_compressions' argument")
 
         _setter("gzip_compressions", gzip_compressions)
 
@@ -625,11 +665,13 @@ class GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -657,11 +699,15 @@ class GetAppAccelerationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -695,9 +741,11 @@ class GetAppAccelerationsWebAppAccelerationCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -757,43 +805,69 @@ class GetAppAccelerationsWebAppAccelerationCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_type: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             load_balancer_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             web_app_acceleration_policy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             web_app_acceleration_policy_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendType' in kwargs:
+        if backend_type is None and 'backendType' in kwargs:
             backend_type = kwargs['backendType']
-        if 'compartmentId' in kwargs:
+        if backend_type is None:
+            raise TypeError("Missing 'backend_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'loadBalancerId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'systemTags' in kwargs:
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'webAppAccelerationPolicyId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if web_app_acceleration_policy_id is None and 'webAppAccelerationPolicyId' in kwargs:
             web_app_acceleration_policy_id = kwargs['webAppAccelerationPolicyId']
+        if web_app_acceleration_policy_id is None:
+            raise TypeError("Missing 'web_app_acceleration_policy_id' argument")
 
         _setter("backend_type", backend_type)
         _setter("compartment_id", compartment_id)

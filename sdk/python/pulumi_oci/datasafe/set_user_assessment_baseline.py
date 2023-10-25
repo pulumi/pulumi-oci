@@ -33,13 +33,15 @@ class SetUserAssessmentBaselineArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             user_assessment_id: pulumi.Input[str],
+             user_assessment_id: Optional[pulumi.Input[str]] = None,
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userAssessmentId' in kwargs:
+        if user_assessment_id is None and 'userAssessmentId' in kwargs:
             user_assessment_id = kwargs['userAssessmentId']
-        if 'assessmentIds' in kwargs:
+        if user_assessment_id is None:
+            raise TypeError("Missing 'user_assessment_id' argument")
+        if assessment_ids is None and 'assessmentIds' in kwargs:
             assessment_ids = kwargs['assessmentIds']
 
         _setter("user_assessment_id", user_assessment_id)
@@ -99,11 +101,11 @@ class _SetUserAssessmentBaselineState:
              _setter: Callable[[Any, Any], None],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assessmentIds' in kwargs:
+        if assessment_ids is None and 'assessmentIds' in kwargs:
             assessment_ids = kwargs['assessmentIds']
-        if 'userAssessmentId' in kwargs:
+        if user_assessment_id is None and 'userAssessmentId' in kwargs:
             user_assessment_id = kwargs['userAssessmentId']
 
         if assessment_ids is not None:

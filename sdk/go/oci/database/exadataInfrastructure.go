@@ -58,7 +58,7 @@ import (
 //				},
 //				CorporateProxy: pulumi.Any(_var.Exadata_infrastructure_corporate_proxy),
 //				DefinedTags:    pulumi.Any(_var.Exadata_infrastructure_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsCpsOfflineReportEnabled: pulumi.Any(_var.Exadata_infrastructure_is_cps_offline_report_enabled),

@@ -36,11 +36,11 @@ import (
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
 //				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //				AvailabilityDomain: pulumi.Any(_var.Vlan_availability_domain),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Vlan_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NsgIds:       pulumi.Any(_var.Vlan_nsg_ids),

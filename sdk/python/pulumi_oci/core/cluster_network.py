@@ -50,28 +50,34 @@ class ClusterNetworkArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             instance_pools: pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]],
-             placement_configuration: pulumi.Input['ClusterNetworkPlacementConfigurationArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
+             placement_configuration: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']] = None,
              cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'instancePools' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if instance_pools is None and 'instancePools' in kwargs:
             instance_pools = kwargs['instancePools']
-        if 'placementConfiguration' in kwargs:
+        if instance_pools is None:
+            raise TypeError("Missing 'instance_pools' argument")
+        if placement_configuration is None and 'placementConfiguration' in kwargs:
             placement_configuration = kwargs['placementConfiguration']
-        if 'clusterConfiguration' in kwargs:
+        if placement_configuration is None:
+            raise TypeError("Missing 'placement_configuration' argument")
+        if cluster_configuration is None and 'clusterConfiguration' in kwargs:
             cluster_configuration = kwargs['clusterConfiguration']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -239,29 +245,29 @@ class _ClusterNetworkState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterConfiguration' in kwargs:
+        if cluster_configuration is None and 'clusterConfiguration' in kwargs:
             cluster_configuration = kwargs['clusterConfiguration']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hpcIslandId' in kwargs:
+        if hpc_island_id is None and 'hpcIslandId' in kwargs:
             hpc_island_id = kwargs['hpcIslandId']
-        if 'instancePools' in kwargs:
+        if instance_pools is None and 'instancePools' in kwargs:
             instance_pools = kwargs['instancePools']
-        if 'networkBlockIds' in kwargs:
+        if network_block_ids is None and 'networkBlockIds' in kwargs:
             network_block_ids = kwargs['networkBlockIds']
-        if 'placementConfiguration' in kwargs:
+        if placement_configuration is None and 'placementConfiguration' in kwargs:
             placement_configuration = kwargs['placementConfiguration']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if cluster_configuration is not None:
@@ -660,11 +666,7 @@ class ClusterNetwork(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterNetworkArgs.__new__(ClusterNetworkArgs)
 
-            if cluster_configuration is not None and not isinstance(cluster_configuration, ClusterNetworkClusterConfigurationArgs):
-                cluster_configuration = cluster_configuration or {}
-                def _setter(key, value):
-                    cluster_configuration[key] = value
-                ClusterNetworkClusterConfigurationArgs._configure(_setter, **cluster_configuration)
+            cluster_configuration = _utilities.configure(cluster_configuration, ClusterNetworkClusterConfigurationArgs, True)
             __props__.__dict__["cluster_configuration"] = cluster_configuration
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -675,11 +677,7 @@ class ClusterNetwork(pulumi.CustomResource):
             if instance_pools is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_pools'")
             __props__.__dict__["instance_pools"] = instance_pools
-            if placement_configuration is not None and not isinstance(placement_configuration, ClusterNetworkPlacementConfigurationArgs):
-                placement_configuration = placement_configuration or {}
-                def _setter(key, value):
-                    placement_configuration[key] = value
-                ClusterNetworkPlacementConfigurationArgs._configure(_setter, **placement_configuration)
+            placement_configuration = _utilities.configure(placement_configuration, ClusterNetworkPlacementConfigurationArgs, True)
             if placement_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configuration'")
             __props__.__dict__["placement_configuration"] = placement_configuration

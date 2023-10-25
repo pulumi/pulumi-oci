@@ -37,11 +37,11 @@ class OdaInstanceRestrictedOperationArgs:
              _setter: Callable[[Any, Any], None],
              operation_name: Optional[pulumi.Input[str]] = None,
              restricting_service: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationName' in kwargs:
+        if operation_name is None and 'operationName' in kwargs:
             operation_name = kwargs['operationName']
-        if 'restrictingService' in kwargs:
+        if restricting_service is None and 'restrictingService' in kwargs:
             restricting_service = kwargs['restrictingService']
 
         if operation_name is not None:
@@ -97,13 +97,13 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
              scan_listener_fqdn: Optional[pulumi.Input[str]] = None,
              scan_listener_ip: Optional[pulumi.Input[str]] = None,
              scan_listener_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scanListenerFqdn' in kwargs:
+        if scan_listener_fqdn is None and 'scanListenerFqdn' in kwargs:
             scan_listener_fqdn = kwargs['scanListenerFqdn']
-        if 'scanListenerIp' in kwargs:
+        if scan_listener_ip is None and 'scanListenerIp' in kwargs:
             scan_listener_ip = kwargs['scanListenerIp']
-        if 'scanListenerPort' in kwargs:
+        if scan_listener_port is None and 'scanListenerPort' in kwargs:
             scan_listener_port = kwargs['scanListenerPort']
 
         if scan_listener_fqdn is not None:
@@ -165,11 +165,15 @@ class GetOdaInstancesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -219,11 +223,15 @@ class GetOdaPrivateEndpointAttachmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -273,11 +281,15 @@ class GetOdaPrivateEndpointScanProxiesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -327,11 +339,15 @@ class GetOdaPrivateEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

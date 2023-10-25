@@ -51,29 +51,39 @@ class EkmsPrivateEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_bundle: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             external_key_manager_ip: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             ca_bundle: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_key_manager_ip: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caBundle' in kwargs:
+        if ca_bundle is None and 'caBundle' in kwargs:
             ca_bundle = kwargs['caBundle']
-        if 'compartmentId' in kwargs:
+        if ca_bundle is None:
+            raise TypeError("Missing 'ca_bundle' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyManagerIp' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key_manager_ip is None and 'externalKeyManagerIp' in kwargs:
             external_key_manager_ip = kwargs['externalKeyManagerIp']
-        if 'subnetId' in kwargs:
+        if external_key_manager_ip is None:
+            raise TypeError("Missing 'external_key_manager_ip' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("ca_bundle", ca_bundle)
@@ -257,29 +267,29 @@ class _EkmsPrivateEndpointState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caBundle' in kwargs:
+        if ca_bundle is None and 'caBundle' in kwargs:
             ca_bundle = kwargs['caBundle']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyManagerIp' in kwargs:
+        if external_key_manager_ip is None and 'externalKeyManagerIp' in kwargs:
             external_key_manager_ip = kwargs['externalKeyManagerIp']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if ca_bundle is not None:

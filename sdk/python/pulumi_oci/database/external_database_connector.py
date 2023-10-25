@@ -53,31 +53,41 @@ class ExternalDatabaseConnectorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connection_credentials: pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs'],
-             connection_string: pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs'],
-             connector_agent_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             external_database_id: pulumi.Input[str],
+             connection_credentials: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs']] = None,
+             connection_string: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs']] = None,
+             connector_agent_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_database_id: Optional[pulumi.Input[str]] = None,
              connector_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionCredentials' in kwargs:
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionString' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'connectorAgentId' in kwargs:
+        if connection_string is None:
+            raise TypeError("Missing 'connection_string' argument")
+        if connector_agent_id is None and 'connectorAgentId' in kwargs:
             connector_agent_id = kwargs['connectorAgentId']
-        if 'displayName' in kwargs:
+        if connector_agent_id is None:
+            raise TypeError("Missing 'connector_agent_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDatabaseId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_database_id is None and 'externalDatabaseId' in kwargs:
             external_database_id = kwargs['externalDatabaseId']
-        if 'connectorType' in kwargs:
+        if external_database_id is None:
+            raise TypeError("Missing 'external_database_id' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("connection_credentials", connection_credentials)
@@ -265,33 +275,33 @@ class _ExternalDatabaseConnectorState:
              state: Optional[pulumi.Input[str]] = None,
              time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionCredentials' in kwargs:
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStatus' in kwargs:
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'connectorAgentId' in kwargs:
+        if connector_agent_id is None and 'connectorAgentId' in kwargs:
             connector_agent_id = kwargs['connectorAgentId']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDatabaseId' in kwargs:
+        if external_database_id is None and 'externalDatabaseId' in kwargs:
             external_database_id = kwargs['externalDatabaseId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -655,19 +665,11 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ExternalDatabaseConnectorArgs.__new__(ExternalDatabaseConnectorArgs)
 
-            if connection_credentials is not None and not isinstance(connection_credentials, ExternalDatabaseConnectorConnectionCredentialsArgs):
-                connection_credentials = connection_credentials or {}
-                def _setter(key, value):
-                    connection_credentials[key] = value
-                ExternalDatabaseConnectorConnectionCredentialsArgs._configure(_setter, **connection_credentials)
+            connection_credentials = _utilities.configure(connection_credentials, ExternalDatabaseConnectorConnectionCredentialsArgs, True)
             if connection_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_credentials'")
             __props__.__dict__["connection_credentials"] = connection_credentials
-            if connection_string is not None and not isinstance(connection_string, ExternalDatabaseConnectorConnectionStringArgs):
-                connection_string = connection_string or {}
-                def _setter(key, value):
-                    connection_string[key] = value
-                ExternalDatabaseConnectorConnectionStringArgs._configure(_setter, **connection_string)
+            connection_string = _utilities.configure(connection_string, ExternalDatabaseConnectorConnectionStringArgs, True)
             if connection_string is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_string'")
             __props__.__dict__["connection_string"] = connection_string

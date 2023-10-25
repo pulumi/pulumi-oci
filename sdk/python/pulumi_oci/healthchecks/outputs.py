@@ -44,11 +44,15 @@ class GetHttpMonitorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -136,48 +140,84 @@ class GetHttpMonitorsHttpMonitorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             headers: Mapping[str, Any],
-             home_region: str,
-             id: str,
-             interval_in_seconds: int,
-             is_enabled: bool,
-             method: str,
-             path: str,
-             port: int,
-             protocol: str,
-             results_url: str,
-             targets: Sequence[str],
-             time_created: str,
-             timeout_in_seconds: int,
-             vantage_point_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             headers: Optional[Mapping[str, Any]] = None,
+             home_region: Optional[str] = None,
+             id: Optional[str] = None,
+             interval_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             method: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             results_url: Optional[str] = None,
+             targets: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             vantage_point_names: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'homeRegion' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if home_region is None and 'homeRegion' in kwargs:
             home_region = kwargs['homeRegion']
-        if 'intervalInSeconds' in kwargs:
+        if home_region is None:
+            raise TypeError("Missing 'home_region' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'isEnabled' in kwargs:
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'resultsUrl' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if method is None:
+            raise TypeError("Missing 'method' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if results_url is None and 'resultsUrl' in kwargs:
             results_url = kwargs['resultsUrl']
-        if 'timeCreated' in kwargs:
+        if results_url is None:
+            raise TypeError("Missing 'results_url' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeoutInSeconds' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'vantagePointNames' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
             vantage_point_names = kwargs['vantagePointNames']
+        if vantage_point_names is None:
+            raise TypeError("Missing 'vantage_point_names' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -358,11 +398,15 @@ class GetHttpProbeResultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -473,68 +517,116 @@ class GetHttpProbeResultsHttpProbeResultResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connect_end: float,
-             connect_start: float,
-             connections: Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult'],
-             dns: Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult'],
-             domain_lookup_end: float,
-             domain_lookup_start: float,
-             duration: float,
-             encoded_body_size: int,
-             error_category: str,
-             error_message: str,
-             fetch_start: float,
-             is_healthy: bool,
-             is_timed_out: bool,
-             key: str,
-             probe_configuration_id: str,
-             protocol: str,
-             request_start: float,
-             response_end: float,
-             response_start: float,
-             secure_connection_start: float,
-             start_time: float,
-             status_code: int,
-             target: str,
-             vantage_point_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connect_end: Optional[float] = None,
+             connect_start: Optional[float] = None,
+             connections: Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult']] = None,
+             dns: Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult']] = None,
+             domain_lookup_end: Optional[float] = None,
+             domain_lookup_start: Optional[float] = None,
+             duration: Optional[float] = None,
+             encoded_body_size: Optional[int] = None,
+             error_category: Optional[str] = None,
+             error_message: Optional[str] = None,
+             fetch_start: Optional[float] = None,
+             is_healthy: Optional[bool] = None,
+             is_timed_out: Optional[bool] = None,
+             key: Optional[str] = None,
+             probe_configuration_id: Optional[str] = None,
+             protocol: Optional[str] = None,
+             request_start: Optional[float] = None,
+             response_end: Optional[float] = None,
+             response_start: Optional[float] = None,
+             secure_connection_start: Optional[float] = None,
+             start_time: Optional[float] = None,
+             status_code: Optional[int] = None,
+             target: Optional[str] = None,
+             vantage_point_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectEnd' in kwargs:
+        if connect_end is None and 'connectEnd' in kwargs:
             connect_end = kwargs['connectEnd']
-        if 'connectStart' in kwargs:
+        if connect_end is None:
+            raise TypeError("Missing 'connect_end' argument")
+        if connect_start is None and 'connectStart' in kwargs:
             connect_start = kwargs['connectStart']
-        if 'domainLookupEnd' in kwargs:
+        if connect_start is None:
+            raise TypeError("Missing 'connect_start' argument")
+        if connections is None:
+            raise TypeError("Missing 'connections' argument")
+        if dns is None:
+            raise TypeError("Missing 'dns' argument")
+        if domain_lookup_end is None and 'domainLookupEnd' in kwargs:
             domain_lookup_end = kwargs['domainLookupEnd']
-        if 'domainLookupStart' in kwargs:
+        if domain_lookup_end is None:
+            raise TypeError("Missing 'domain_lookup_end' argument")
+        if domain_lookup_start is None and 'domainLookupStart' in kwargs:
             domain_lookup_start = kwargs['domainLookupStart']
-        if 'encodedBodySize' in kwargs:
+        if domain_lookup_start is None:
+            raise TypeError("Missing 'domain_lookup_start' argument")
+        if duration is None:
+            raise TypeError("Missing 'duration' argument")
+        if encoded_body_size is None and 'encodedBodySize' in kwargs:
             encoded_body_size = kwargs['encodedBodySize']
-        if 'errorCategory' in kwargs:
+        if encoded_body_size is None:
+            raise TypeError("Missing 'encoded_body_size' argument")
+        if error_category is None and 'errorCategory' in kwargs:
             error_category = kwargs['errorCategory']
-        if 'errorMessage' in kwargs:
+        if error_category is None:
+            raise TypeError("Missing 'error_category' argument")
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'fetchStart' in kwargs:
+        if error_message is None:
+            raise TypeError("Missing 'error_message' argument")
+        if fetch_start is None and 'fetchStart' in kwargs:
             fetch_start = kwargs['fetchStart']
-        if 'isHealthy' in kwargs:
+        if fetch_start is None:
+            raise TypeError("Missing 'fetch_start' argument")
+        if is_healthy is None and 'isHealthy' in kwargs:
             is_healthy = kwargs['isHealthy']
-        if 'isTimedOut' in kwargs:
+        if is_healthy is None:
+            raise TypeError("Missing 'is_healthy' argument")
+        if is_timed_out is None and 'isTimedOut' in kwargs:
             is_timed_out = kwargs['isTimedOut']
-        if 'probeConfigurationId' in kwargs:
+        if is_timed_out is None:
+            raise TypeError("Missing 'is_timed_out' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if probe_configuration_id is None and 'probeConfigurationId' in kwargs:
             probe_configuration_id = kwargs['probeConfigurationId']
-        if 'requestStart' in kwargs:
+        if probe_configuration_id is None:
+            raise TypeError("Missing 'probe_configuration_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if request_start is None and 'requestStart' in kwargs:
             request_start = kwargs['requestStart']
-        if 'responseEnd' in kwargs:
+        if request_start is None:
+            raise TypeError("Missing 'request_start' argument")
+        if response_end is None and 'responseEnd' in kwargs:
             response_end = kwargs['responseEnd']
-        if 'responseStart' in kwargs:
+        if response_end is None:
+            raise TypeError("Missing 'response_end' argument")
+        if response_start is None and 'responseStart' in kwargs:
             response_start = kwargs['responseStart']
-        if 'secureConnectionStart' in kwargs:
+        if response_start is None:
+            raise TypeError("Missing 'response_start' argument")
+        if secure_connection_start is None and 'secureConnectionStart' in kwargs:
             secure_connection_start = kwargs['secureConnectionStart']
-        if 'startTime' in kwargs:
+        if secure_connection_start is None:
+            raise TypeError("Missing 'secure_connection_start' argument")
+        if start_time is None and 'startTime' in kwargs:
             start_time = kwargs['startTime']
-        if 'statusCode' in kwargs:
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+        if status_code is None and 'statusCode' in kwargs:
             status_code = kwargs['statusCode']
-        if 'vantagePointName' in kwargs:
+        if status_code is None:
+            raise TypeError("Missing 'status_code' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if vantage_point_name is None and 'vantagePointName' in kwargs:
             vantage_point_name = kwargs['vantagePointName']
+        if vantage_point_name is None:
+            raise TypeError("Missing 'vantage_point_name' argument")
 
         _setter("connect_end", connect_end)
         _setter("connect_start", connect_start)
@@ -782,16 +874,24 @@ class GetHttpProbeResultsHttpProbeResultConnectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             connect_duration: float,
-             port: int,
-             secure_connect_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             connect_duration: Optional[float] = None,
+             port: Optional[int] = None,
+             secure_connect_duration: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectDuration' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if connect_duration is None and 'connectDuration' in kwargs:
             connect_duration = kwargs['connectDuration']
-        if 'secureConnectDuration' in kwargs:
+        if connect_duration is None:
+            raise TypeError("Missing 'connect_duration' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if secure_connect_duration is None and 'secureConnectDuration' in kwargs:
             secure_connect_duration = kwargs['secureConnectDuration']
+        if secure_connect_duration is None:
+            raise TypeError("Missing 'secure_connect_duration' argument")
 
         _setter("address", address)
         _setter("connect_duration", connect_duration)
@@ -848,12 +948,16 @@ class GetHttpProbeResultsHttpProbeResultDnResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             addresses: Sequence[str],
-             domain_lookup_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             addresses: Optional[Sequence[str]] = None,
+             domain_lookup_duration: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainLookupDuration' in kwargs:
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if domain_lookup_duration is None and 'domainLookupDuration' in kwargs:
             domain_lookup_duration = kwargs['domainLookupDuration']
+        if domain_lookup_duration is None:
+            raise TypeError("Missing 'domain_lookup_duration' argument")
 
         _setter("addresses", addresses)
         _setter("domain_lookup_duration", domain_lookup_duration)
@@ -890,11 +994,15 @@ class GetPingMonitorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -973,45 +1081,75 @@ class GetPingMonitorsPingMonitorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             home_region: str,
-             id: str,
-             interval_in_seconds: int,
-             is_enabled: bool,
-             port: int,
-             protocol: str,
-             results_url: str,
-             targets: Sequence[str],
-             time_created: str,
-             timeout_in_seconds: int,
-             vantage_point_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             home_region: Optional[str] = None,
+             id: Optional[str] = None,
+             interval_in_seconds: Optional[int] = None,
+             is_enabled: Optional[bool] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             results_url: Optional[str] = None,
+             targets: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             vantage_point_names: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'homeRegion' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if home_region is None and 'homeRegion' in kwargs:
             home_region = kwargs['homeRegion']
-        if 'intervalInSeconds' in kwargs:
+        if home_region is None:
+            raise TypeError("Missing 'home_region' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'isEnabled' in kwargs:
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'resultsUrl' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if results_url is None and 'resultsUrl' in kwargs:
             results_url = kwargs['resultsUrl']
-        if 'timeCreated' in kwargs:
+        if results_url is None:
+            raise TypeError("Missing 'results_url' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeoutInSeconds' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'vantagePointNames' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
             vantage_point_names = kwargs['vantagePointNames']
+        if vantage_point_names is None:
+            raise TypeError("Missing 'vantage_point_names' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1165,11 +1303,15 @@ class GetPingProbeResultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1256,46 +1398,78 @@ class GetPingProbeResultsPingProbeResultResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connections: Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult'],
-             dns: Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult'],
-             domain_lookup_end: float,
-             domain_lookup_start: float,
-             error_category: str,
-             error_message: str,
-             icmp_code: int,
-             is_healthy: bool,
-             is_timed_out: bool,
-             key: str,
-             latency_in_ms: float,
-             probe_configuration_id: str,
-             protocol: str,
-             start_time: float,
-             target: str,
-             vantage_point_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connections: Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult']] = None,
+             dns: Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult']] = None,
+             domain_lookup_end: Optional[float] = None,
+             domain_lookup_start: Optional[float] = None,
+             error_category: Optional[str] = None,
+             error_message: Optional[str] = None,
+             icmp_code: Optional[int] = None,
+             is_healthy: Optional[bool] = None,
+             is_timed_out: Optional[bool] = None,
+             key: Optional[str] = None,
+             latency_in_ms: Optional[float] = None,
+             probe_configuration_id: Optional[str] = None,
+             protocol: Optional[str] = None,
+             start_time: Optional[float] = None,
+             target: Optional[str] = None,
+             vantage_point_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainLookupEnd' in kwargs:
+        if connections is None:
+            raise TypeError("Missing 'connections' argument")
+        if dns is None:
+            raise TypeError("Missing 'dns' argument")
+        if domain_lookup_end is None and 'domainLookupEnd' in kwargs:
             domain_lookup_end = kwargs['domainLookupEnd']
-        if 'domainLookupStart' in kwargs:
+        if domain_lookup_end is None:
+            raise TypeError("Missing 'domain_lookup_end' argument")
+        if domain_lookup_start is None and 'domainLookupStart' in kwargs:
             domain_lookup_start = kwargs['domainLookupStart']
-        if 'errorCategory' in kwargs:
+        if domain_lookup_start is None:
+            raise TypeError("Missing 'domain_lookup_start' argument")
+        if error_category is None and 'errorCategory' in kwargs:
             error_category = kwargs['errorCategory']
-        if 'errorMessage' in kwargs:
+        if error_category is None:
+            raise TypeError("Missing 'error_category' argument")
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'icmpCode' in kwargs:
+        if error_message is None:
+            raise TypeError("Missing 'error_message' argument")
+        if icmp_code is None and 'icmpCode' in kwargs:
             icmp_code = kwargs['icmpCode']
-        if 'isHealthy' in kwargs:
+        if icmp_code is None:
+            raise TypeError("Missing 'icmp_code' argument")
+        if is_healthy is None and 'isHealthy' in kwargs:
             is_healthy = kwargs['isHealthy']
-        if 'isTimedOut' in kwargs:
+        if is_healthy is None:
+            raise TypeError("Missing 'is_healthy' argument")
+        if is_timed_out is None and 'isTimedOut' in kwargs:
             is_timed_out = kwargs['isTimedOut']
-        if 'latencyInMs' in kwargs:
+        if is_timed_out is None:
+            raise TypeError("Missing 'is_timed_out' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if latency_in_ms is None and 'latencyInMs' in kwargs:
             latency_in_ms = kwargs['latencyInMs']
-        if 'probeConfigurationId' in kwargs:
+        if latency_in_ms is None:
+            raise TypeError("Missing 'latency_in_ms' argument")
+        if probe_configuration_id is None and 'probeConfigurationId' in kwargs:
             probe_configuration_id = kwargs['probeConfigurationId']
-        if 'startTime' in kwargs:
+        if probe_configuration_id is None:
+            raise TypeError("Missing 'probe_configuration_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if start_time is None and 'startTime' in kwargs:
             start_time = kwargs['startTime']
-        if 'vantagePointName' in kwargs:
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if vantage_point_name is None and 'vantagePointName' in kwargs:
             vantage_point_name = kwargs['vantagePointName']
+        if vantage_point_name is None:
+            raise TypeError("Missing 'vantage_point_name' argument")
 
         _setter("connections", connections)
         _setter("dns", dns)
@@ -1465,10 +1639,14 @@ class GetPingProbeResultsPingProbeResultConnectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             port: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("address", address)
         _setter("port", port)
@@ -1507,12 +1685,16 @@ class GetPingProbeResultsPingProbeResultDnResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             addresses: Sequence[str],
-             domain_lookup_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             addresses: Optional[Sequence[str]] = None,
+             domain_lookup_duration: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainLookupDuration' in kwargs:
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if domain_lookup_duration is None and 'domainLookupDuration' in kwargs:
             domain_lookup_duration = kwargs['domainLookupDuration']
+        if domain_lookup_duration is None:
+            raise TypeError("Missing 'domain_lookup_duration' argument")
 
         _setter("addresses", addresses)
         _setter("domain_lookup_duration", domain_lookup_duration)
@@ -1552,11 +1734,15 @@ class GetVantagePointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1608,17 +1794,27 @@ class GetVantagePointsHealthChecksVantagePointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             geos: Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult'],
-             name: str,
-             provider_name: str,
-             routings: Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             geos: Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult']] = None,
+             name: Optional[str] = None,
+             provider_name: Optional[str] = None,
+             routings: Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'providerName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if geos is None:
+            raise TypeError("Missing 'geos' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if provider_name is None and 'providerName' in kwargs:
             provider_name = kwargs['providerName']
+        if provider_name is None:
+            raise TypeError("Missing 'provider_name' argument")
+        if routings is None:
+            raise TypeError("Missing 'routings' argument")
 
         _setter("display_name", display_name)
         _setter("geos", geos)
@@ -1699,25 +1895,39 @@ class GetVantagePointsHealthChecksVantagePointGeoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_div_code: str,
-             city_name: str,
-             country_code: str,
-             country_name: str,
-             geo_key: str,
-             latitude: float,
-             longitude: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_div_code: Optional[str] = None,
+             city_name: Optional[str] = None,
+             country_code: Optional[str] = None,
+             country_name: Optional[str] = None,
+             geo_key: Optional[str] = None,
+             latitude: Optional[float] = None,
+             longitude: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminDivCode' in kwargs:
+        if admin_div_code is None and 'adminDivCode' in kwargs:
             admin_div_code = kwargs['adminDivCode']
-        if 'cityName' in kwargs:
+        if admin_div_code is None:
+            raise TypeError("Missing 'admin_div_code' argument")
+        if city_name is None and 'cityName' in kwargs:
             city_name = kwargs['cityName']
-        if 'countryCode' in kwargs:
+        if city_name is None:
+            raise TypeError("Missing 'city_name' argument")
+        if country_code is None and 'countryCode' in kwargs:
             country_code = kwargs['countryCode']
-        if 'countryName' in kwargs:
+        if country_code is None:
+            raise TypeError("Missing 'country_code' argument")
+        if country_name is None and 'countryName' in kwargs:
             country_name = kwargs['countryName']
-        if 'geoKey' in kwargs:
+        if country_name is None:
+            raise TypeError("Missing 'country_name' argument")
+        if geo_key is None and 'geoKey' in kwargs:
             geo_key = kwargs['geoKey']
+        if geo_key is None:
+            raise TypeError("Missing 'geo_key' argument")
+        if latitude is None:
+            raise TypeError("Missing 'latitude' argument")
+        if longitude is None:
+            raise TypeError("Missing 'longitude' argument")
 
         _setter("admin_div_code", admin_div_code)
         _setter("city_name", city_name)
@@ -1807,14 +2017,22 @@ class GetVantagePointsHealthChecksVantagePointRoutingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             as_label: str,
-             asn: int,
-             prefix: str,
-             weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             as_label: Optional[str] = None,
+             asn: Optional[int] = None,
+             prefix: Optional[str] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'asLabel' in kwargs:
+        if as_label is None and 'asLabel' in kwargs:
             as_label = kwargs['asLabel']
+        if as_label is None:
+            raise TypeError("Missing 'as_label' argument")
+        if asn is None:
+            raise TypeError("Missing 'asn' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if weight is None:
+            raise TypeError("Missing 'weight' argument")
 
         _setter("as_label", as_label)
         _setter("asn", asn)

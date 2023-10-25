@@ -56,32 +56,38 @@ class AtCustomerCccInfrastructureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
              connection_details: Optional[pulumi.Input[str]] = None,
              connection_state: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'subnetId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'cccUpgradeScheduleId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if ccc_upgrade_schedule_id is None and 'cccUpgradeScheduleId' in kwargs:
             ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
-        if 'connectionDetails' in kwargs:
+        if connection_details is None and 'connectionDetails' in kwargs:
             connection_details = kwargs['connectionDetails']
-        if 'connectionState' in kwargs:
+        if connection_state is None and 'connectionState' in kwargs:
             connection_state = kwargs['connectionState']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -309,43 +315,43 @@ class _AtCustomerCccInfrastructureState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cccUpgradeScheduleId' in kwargs:
+        if ccc_upgrade_schedule_id is None and 'cccUpgradeScheduleId' in kwargs:
             ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionDetails' in kwargs:
+        if connection_details is None and 'connectionDetails' in kwargs:
             connection_details = kwargs['connectionDetails']
-        if 'connectionState' in kwargs:
+        if connection_state is None and 'connectionState' in kwargs:
             connection_state = kwargs['connectionState']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infrastructureInventories' in kwargs:
+        if infrastructure_inventories is None and 'infrastructureInventories' in kwargs:
             infrastructure_inventories = kwargs['infrastructureInventories']
-        if 'infrastructureNetworkConfigurations' in kwargs:
+        if infrastructure_network_configurations is None and 'infrastructureNetworkConfigurations' in kwargs:
             infrastructure_network_configurations = kwargs['infrastructureNetworkConfigurations']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'provisioningFingerprint' in kwargs:
+        if provisioning_fingerprint is None and 'provisioningFingerprint' in kwargs:
             provisioning_fingerprint = kwargs['provisioningFingerprint']
-        if 'provisioningPin' in kwargs:
+        if provisioning_pin is None and 'provisioningPin' in kwargs:
             provisioning_pin = kwargs['provisioningPin']
-        if 'shortName' in kwargs:
+        if short_name is None and 'shortName' in kwargs:
             short_name = kwargs['shortName']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradeInformations' in kwargs:
+        if upgrade_informations is None and 'upgradeInformations' in kwargs:
             upgrade_informations = kwargs['upgradeInformations']
 
         if ccc_upgrade_schedule_id is not None:

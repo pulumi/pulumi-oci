@@ -83,7 +83,7 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Migration_display_name),
@@ -107,7 +107,7 @@ import (
 //						Type:                               pulumi.Any(_var.Migration_exclude_objects_type),
 //					},
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				GoldenGateDetails: &databasemigration.MigrationGoldenGateDetailsArgs{

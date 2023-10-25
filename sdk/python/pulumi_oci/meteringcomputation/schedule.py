@@ -62,10 +62,10 @@ class ScheduleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             result_location: pulumi.Input['ScheduleResultLocationArgs'],
-             schedule_recurrences: pulumi.Input[str],
-             time_scheduled: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             result_location: Optional[pulumi.Input['ScheduleResultLocationArgs']] = None,
+             schedule_recurrences: Optional[pulumi.Input[str]] = None,
+             time_scheduled: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -73,25 +73,33 @@ class ScheduleArgs:
              output_file_format: Optional[pulumi.Input[str]] = None,
              query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
              saved_report_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'resultLocation' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if result_location is None and 'resultLocation' in kwargs:
             result_location = kwargs['resultLocation']
-        if 'scheduleRecurrences' in kwargs:
+        if result_location is None:
+            raise TypeError("Missing 'result_location' argument")
+        if schedule_recurrences is None and 'scheduleRecurrences' in kwargs:
             schedule_recurrences = kwargs['scheduleRecurrences']
-        if 'timeScheduled' in kwargs:
+        if schedule_recurrences is None:
+            raise TypeError("Missing 'schedule_recurrences' argument")
+        if time_scheduled is None and 'timeScheduled' in kwargs:
             time_scheduled = kwargs['timeScheduled']
-        if 'definedTags' in kwargs:
+        if time_scheduled is None:
+            raise TypeError("Missing 'time_scheduled' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'outputFileFormat' in kwargs:
+        if output_file_format is None and 'outputFileFormat' in kwargs:
             output_file_format = kwargs['outputFileFormat']
-        if 'queryProperties' in kwargs:
+        if query_properties is None and 'queryProperties' in kwargs:
             query_properties = kwargs['queryProperties']
-        if 'savedReportId' in kwargs:
+        if saved_report_id is None and 'savedReportId' in kwargs:
             saved_report_id = kwargs['savedReportId']
 
         _setter("compartment_id", compartment_id)
@@ -326,31 +334,31 @@ class _ScheduleState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_next_run: Optional[pulumi.Input[str]] = None,
              time_scheduled: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'outputFileFormat' in kwargs:
+        if output_file_format is None and 'outputFileFormat' in kwargs:
             output_file_format = kwargs['outputFileFormat']
-        if 'queryProperties' in kwargs:
+        if query_properties is None and 'queryProperties' in kwargs:
             query_properties = kwargs['queryProperties']
-        if 'resultLocation' in kwargs:
+        if result_location is None and 'resultLocation' in kwargs:
             result_location = kwargs['resultLocation']
-        if 'savedReportId' in kwargs:
+        if saved_report_id is None and 'savedReportId' in kwargs:
             saved_report_id = kwargs['savedReportId']
-        if 'scheduleRecurrences' in kwargs:
+        if schedule_recurrences is None and 'scheduleRecurrences' in kwargs:
             schedule_recurrences = kwargs['scheduleRecurrences']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeNextRun' in kwargs:
+        if time_next_run is None and 'timeNextRun' in kwargs:
             time_next_run = kwargs['timeNextRun']
-        if 'timeScheduled' in kwargs:
+        if time_scheduled is None and 'timeScheduled' in kwargs:
             time_scheduled = kwargs['timeScheduled']
 
         if compartment_id is not None:
@@ -775,17 +783,9 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
             __props__.__dict__["output_file_format"] = output_file_format
-            if query_properties is not None and not isinstance(query_properties, ScheduleQueryPropertiesArgs):
-                query_properties = query_properties or {}
-                def _setter(key, value):
-                    query_properties[key] = value
-                ScheduleQueryPropertiesArgs._configure(_setter, **query_properties)
+            query_properties = _utilities.configure(query_properties, ScheduleQueryPropertiesArgs, True)
             __props__.__dict__["query_properties"] = query_properties
-            if result_location is not None and not isinstance(result_location, ScheduleResultLocationArgs):
-                result_location = result_location or {}
-                def _setter(key, value):
-                    result_location[key] = value
-                ScheduleResultLocationArgs._configure(_setter, **result_location)
+            result_location = _utilities.configure(result_location, ScheduleResultLocationArgs, True)
             if result_location is None and not opts.urn:
                 raise TypeError("Missing required property 'result_location'")
             __props__.__dict__["result_location"] = result_location

@@ -36,13 +36,17 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apps: pulumi.Input[Sequence[pulumi.Input[str]]],
-             network_firewall_policy_id: pulumi.Input[str],
+             apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if apps is None:
+            raise TypeError("Missing 'apps' argument")
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
 
         _setter("apps", apps)
         _setter("network_firewall_policy_id", network_firewall_policy_id)
@@ -126,13 +130,13 @@ class _NetworkFirewallPolicyApplicationGroupState:
              network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
              parent_resource_id: Optional[pulumi.Input[str]] = None,
              total_apps: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
-        if 'totalApps' in kwargs:
+        if total_apps is None and 'totalApps' in kwargs:
             total_apps = kwargs['totalApps']
 
         if apps is not None:

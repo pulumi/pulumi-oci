@@ -47,25 +47,31 @@ class ExternalExadataInfrastructureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             db_system_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              discovery_key: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
              storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbSystemIds' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_system_ids is None and 'dbSystemIds' in kwargs:
             db_system_ids = kwargs['dbSystemIds']
-        if 'displayName' in kwargs:
+        if db_system_ids is None:
+            raise TypeError("Missing 'db_system_ids' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'discoveryKey' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if discovery_key is None and 'discoveryKey' in kwargs:
             discovery_key = kwargs['discoveryKey']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'storageServerNames' in kwargs:
+        if storage_server_names is None and 'storageServerNames' in kwargs:
             storage_server_names = kwargs['storageServerNames']
 
         _setter("compartment_id", compartment_id)
@@ -243,37 +249,37 @@ class _ExternalExadataInfrastructureState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseCompartments' in kwargs:
+        if database_compartments is None and 'databaseCompartments' in kwargs:
             database_compartments = kwargs['databaseCompartments']
-        if 'databaseSystems' in kwargs:
+        if database_systems is None and 'databaseSystems' in kwargs:
             database_systems = kwargs['databaseSystems']
-        if 'dbSystemIds' in kwargs:
+        if db_system_ids is None and 'dbSystemIds' in kwargs:
             db_system_ids = kwargs['dbSystemIds']
-        if 'discoveryKey' in kwargs:
+        if discovery_key is None and 'discoveryKey' in kwargs:
             discovery_key = kwargs['discoveryKey']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'rackSize' in kwargs:
+        if rack_size is None and 'rackSize' in kwargs:
             rack_size = kwargs['rackSize']
-        if 'storageGrids' in kwargs:
+        if storage_grids is None and 'storageGrids' in kwargs:
             storage_grids = kwargs['storageGrids']
-        if 'storageServerNames' in kwargs:
+        if storage_server_names is None and 'storageServerNames' in kwargs:
             storage_server_names = kwargs['storageServerNames']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_details is not None:

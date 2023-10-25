@@ -110,12 +110,16 @@ class GeneratedKeyKeyShape(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             length: int,
+             algorithm: Optional[str] = None,
+             length: Optional[int] = None,
              curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'curveId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if length is None:
+            raise TypeError("Missing 'length' argument")
+        if curve_id is None and 'curveId' in kwargs:
             curve_id = kwargs['curveId']
 
         _setter("algorithm", algorithm)
@@ -182,11 +186,13 @@ class KeyExternalKeyReference(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
 
         _setter("external_key_id", external_key_id)
 
@@ -237,11 +243,11 @@ class KeyExternalKeyReferenceDetail(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[str] = None,
              external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
 
         if external_key_id is not None:
@@ -306,12 +312,16 @@ class KeyKeyShape(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             length: int,
+             algorithm: Optional[str] = None,
+             length: Optional[int] = None,
              curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'curveId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if length is None:
+            raise TypeError("Missing 'length' argument")
+        if curve_id is None and 'curveId' in kwargs:
             curve_id = kwargs['curveId']
 
         _setter("algorithm", algorithm)
@@ -379,9 +389,9 @@ class KeyReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
 
         if replication_id is not None:
@@ -437,16 +447,20 @@ class KeyRestoreFromFile(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             restore_key_from_file_details: str,
+             content_length: Optional[str] = None,
+             restore_key_from_file_details: Optional[str] = None,
              content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'restoreKeyFromFileDetails' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
             restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
-        if 'contentMd5' in kwargs:
+        if restore_key_from_file_details is None:
+            raise TypeError("Missing 'restore_key_from_file_details' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
 
         _setter("content_length", content_length)
@@ -505,13 +519,15 @@ class KeyRestoreFromObjectStore(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             destination: str,
+             destination: Optional[str] = None,
              bucket: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
 
         _setter("destination", destination)
         if bucket is not None:
@@ -602,11 +618,11 @@ class KeyVersionExternalKeyReferenceDetail(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[str] = None,
              external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
 
         if external_key_id is not None:
@@ -663,9 +679,9 @@ class KeyVersionReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
 
         if replication_id is not None:
@@ -721,17 +737,23 @@ class VaultExternalKeyManagerMetadata(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: str,
-             oauth_metadata: 'outputs.VaultExternalKeyManagerMetadataOauthMetadata',
-             private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_vault_endpoint_url: Optional[str] = None,
+             oauth_metadata: Optional['outputs.VaultExternalKeyManagerMetadataOauthMetadata'] = None,
+             private_endpoint_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadata' in kwargs:
+        if external_vault_endpoint_url is None:
+            raise TypeError("Missing 'external_vault_endpoint_url' argument")
+        if oauth_metadata is None and 'oauthMetadata' in kwargs:
             oauth_metadata = kwargs['oauthMetadata']
-        if 'privateEndpointId' in kwargs:
+        if oauth_metadata is None:
+            raise TypeError("Missing 'oauth_metadata' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
 
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata", oauth_metadata)
@@ -803,17 +825,23 @@ class VaultExternalKeyManagerMetadataOauthMetadata(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_app_id: str,
-             client_app_secret: str,
-             idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             client_app_id: Optional[str] = None,
+             client_app_secret: Optional[str] = None,
+             idcs_account_name_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'clientAppSecret' in kwargs:
+        if client_app_id is None:
+            raise TypeError("Missing 'client_app_id' argument")
+        if client_app_secret is None and 'clientAppSecret' in kwargs:
             client_app_secret = kwargs['clientAppSecret']
-        if 'idcsAccountNameUrl' in kwargs:
+        if client_app_secret is None:
+            raise TypeError("Missing 'client_app_secret' argument")
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
+        if idcs_account_name_url is None:
+            raise TypeError("Missing 'idcs_account_name_url' argument")
 
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
@@ -892,13 +920,13 @@ class VaultExternalKeyManagerMetadataSummary(dict):
              oauth_metadata_summaries: Optional[Sequence['outputs.VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary']] = None,
              private_endpoint_id: Optional[str] = None,
              vendor: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadataSummaries' in kwargs:
+        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
             oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
 
         if external_vault_endpoint_url is not None:
@@ -981,11 +1009,11 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary(dict):
              _setter: Callable[[Any, Any], None],
              client_app_id: Optional[str] = None,
              idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'idcsAccountNameUrl' in kwargs:
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
 
         if client_app_id is not None:
@@ -1042,9 +1070,9 @@ class VaultReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
 
         if replication_id is not None:
@@ -1100,16 +1128,20 @@ class VaultRestoreFromFile(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             restore_vault_from_file_details: str,
+             content_length: Optional[str] = None,
+             restore_vault_from_file_details: Optional[str] = None,
              content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'restoreVaultFromFileDetails' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
             restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
-        if 'contentMd5' in kwargs:
+        if restore_vault_from_file_details is None:
+            raise TypeError("Missing 'restore_vault_from_file_details' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
 
         _setter("content_length", content_length)
@@ -1168,13 +1200,15 @@ class VaultRestoreFromObjectStore(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             destination: str,
+             destination: Optional[str] = None,
              bucket: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
 
         _setter("destination", destination)
         if bucket is not None:
@@ -1280,44 +1314,72 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_bundle: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             external_key_manager_ip: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             port: int,
-             private_endpoint_ip: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ca_bundle: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             external_key_manager_ip: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             port: Optional[int] = None,
+             private_endpoint_ip: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caBundle' in kwargs:
+        if ca_bundle is None and 'caBundle' in kwargs:
             ca_bundle = kwargs['caBundle']
-        if 'compartmentId' in kwargs:
+        if ca_bundle is None:
+            raise TypeError("Missing 'ca_bundle' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyManagerIp' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key_manager_ip is None and 'externalKeyManagerIp' in kwargs:
             external_key_manager_ip = kwargs['externalKeyManagerIp']
-        if 'freeformTags' in kwargs:
+        if external_key_manager_ip is None:
+            raise TypeError("Missing 'external_key_manager_ip' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'privateEndpointIp' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("ca_bundle", ca_bundle)
         _setter("compartment_id", compartment_id)
@@ -1462,11 +1524,15 @@ class GetEkmsPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1503,11 +1569,13 @@ class GetKeyExternalKeyReferenceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
 
         _setter("external_key_id", external_key_id)
 
@@ -1537,14 +1605,18 @@ class GetKeyExternalKeyReferenceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             external_key_version_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
+        if external_key_version_id is None:
+            raise TypeError("Missing 'external_key_version_id' argument")
 
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
@@ -1589,13 +1661,19 @@ class GetKeyKeyShapeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             curve_id: str,
-             length: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             curve_id: Optional[str] = None,
+             length: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'curveId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if curve_id is None and 'curveId' in kwargs:
             curve_id = kwargs['curveId']
+        if curve_id is None:
+            raise TypeError("Missing 'curve_id' argument")
+        if length is None:
+            raise TypeError("Missing 'length' argument")
 
         _setter("algorithm", algorithm)
         _setter("curve_id", curve_id)
@@ -1643,11 +1721,13 @@ class GetKeyReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -1680,17 +1760,23 @@ class GetKeyRestoreFromFileResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             content_md5: str,
-             restore_key_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_length: Optional[str] = None,
+             content_md5: Optional[str] = None,
+             restore_key_from_file_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'contentMd5' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'restoreKeyFromFileDetails' in kwargs:
+        if content_md5 is None:
+            raise TypeError("Missing 'content_md5' argument")
+        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
             restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+        if restore_key_from_file_details is None:
+            raise TypeError("Missing 'restore_key_from_file_details' argument")
 
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
@@ -1747,13 +1833,23 @@ class GetKeyRestoreFromObjectStoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             destination: str,
-             namespace: str,
-             object: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             destination: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("bucket", bucket)
         _setter("destination", destination)
@@ -1819,14 +1915,18 @@ class GetKeyVersionExternalKeyReferenceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             external_key_version_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
+        if external_key_version_id is None:
+            raise TypeError("Missing 'external_key_version_id' argument")
 
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
@@ -1862,11 +1962,13 @@ class GetKeyVersionReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -1894,11 +1996,15 @@ class GetKeyVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1979,52 +2085,84 @@ class GetKeyVersionsKeyVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             external_key_reference_details: Sequence['outputs.GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult'],
-             external_key_version_id: str,
-             id: str,
-             is_primary: bool,
-             key_id: str,
-             key_version_id: str,
-             management_endpoint: str,
-             public_key: str,
-             replica_details: Sequence['outputs.GetKeyVersionsKeyVersionReplicaDetailResult'],
-             restored_from_key_id: str,
-             restored_from_key_version_id: str,
-             state: str,
-             time_created: str,
-             time_of_deletion: str,
-             vault_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             external_key_reference_details: Optional[Sequence['outputs.GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult']] = None,
+             external_key_version_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_primary: Optional[bool] = None,
+             key_id: Optional[str] = None,
+             key_version_id: Optional[str] = None,
+             management_endpoint: Optional[str] = None,
+             public_key: Optional[str] = None,
+             replica_details: Optional[Sequence['outputs.GetKeyVersionsKeyVersionReplicaDetailResult']] = None,
+             restored_from_key_id: Optional[str] = None,
+             restored_from_key_version_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             vault_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'externalKeyReferenceDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
             external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_reference_details is None:
+            raise TypeError("Missing 'external_key_reference_details' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
-        if 'isPrimary' in kwargs:
+        if external_key_version_id is None:
+            raise TypeError("Missing 'external_key_version_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'keyId' in kwargs:
+        if is_primary is None:
+            raise TypeError("Missing 'is_primary' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyVersionId' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if key_version_id is None and 'keyVersionId' in kwargs:
             key_version_id = kwargs['keyVersionId']
-        if 'managementEndpoint' in kwargs:
+        if key_version_id is None:
+            raise TypeError("Missing 'key_version_id' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'publicKey' in kwargs:
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if public_key is None and 'publicKey' in kwargs:
             public_key = kwargs['publicKey']
-        if 'replicaDetails' in kwargs:
+        if public_key is None:
+            raise TypeError("Missing 'public_key' argument")
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoredFromKeyId' in kwargs:
+        if replica_details is None:
+            raise TypeError("Missing 'replica_details' argument")
+        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
             restored_from_key_id = kwargs['restoredFromKeyId']
-        if 'restoredFromKeyVersionId' in kwargs:
+        if restored_from_key_id is None:
+            raise TypeError("Missing 'restored_from_key_id' argument")
+        if restored_from_key_version_id is None and 'restoredFromKeyVersionId' in kwargs:
             restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
-        if 'timeCreated' in kwargs:
+        if restored_from_key_version_id is None:
+            raise TypeError("Missing 'restored_from_key_version_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultId' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("external_key_reference_details", external_key_reference_details)
@@ -2186,14 +2324,18 @@ class GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             external_key_version_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
+        if external_key_version_id is None:
+            raise TypeError("Missing 'external_key_version_id' argument")
 
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
@@ -2229,11 +2371,13 @@ class GetKeyVersionsKeyVersionReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -2261,11 +2405,15 @@ class GetKeysFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2359,70 +2507,114 @@ class GetKeysKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             current_key_version: str,
-             defined_tags: Mapping[str, Any],
-             desired_state: str,
-             display_name: str,
-             external_key_reference_details: Sequence['outputs.GetKeysKeyExternalKeyReferenceDetailResult'],
-             external_key_references: Sequence['outputs.GetKeysKeyExternalKeyReferenceResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_primary: bool,
-             key_shapes: Sequence['outputs.GetKeysKeyKeyShapeResult'],
-             management_endpoint: str,
-             protection_mode: str,
-             replica_details: Sequence['outputs.GetKeysKeyReplicaDetailResult'],
-             restore_from_files: Sequence['outputs.GetKeysKeyRestoreFromFileResult'],
-             restore_from_object_stores: Sequence['outputs.GetKeysKeyRestoreFromObjectStoreResult'],
-             restore_trigger: bool,
-             restored_from_key_id: str,
-             state: str,
-             time_created: str,
-             time_of_deletion: str,
-             vault_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             current_key_version: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             desired_state: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_key_reference_details: Optional[Sequence['outputs.GetKeysKeyExternalKeyReferenceDetailResult']] = None,
+             external_key_references: Optional[Sequence['outputs.GetKeysKeyExternalKeyReferenceResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_primary: Optional[bool] = None,
+             key_shapes: Optional[Sequence['outputs.GetKeysKeyKeyShapeResult']] = None,
+             management_endpoint: Optional[str] = None,
+             protection_mode: Optional[str] = None,
+             replica_details: Optional[Sequence['outputs.GetKeysKeyReplicaDetailResult']] = None,
+             restore_from_files: Optional[Sequence['outputs.GetKeysKeyRestoreFromFileResult']] = None,
+             restore_from_object_stores: Optional[Sequence['outputs.GetKeysKeyRestoreFromObjectStoreResult']] = None,
+             restore_trigger: Optional[bool] = None,
+             restored_from_key_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             vault_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'currentKeyVersion' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if current_key_version is None and 'currentKeyVersion' in kwargs:
             current_key_version = kwargs['currentKeyVersion']
-        if 'definedTags' in kwargs:
+        if current_key_version is None:
+            raise TypeError("Missing 'current_key_version' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'desiredState' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
-        if 'displayName' in kwargs:
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyReferenceDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
             external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if 'externalKeyReferences' in kwargs:
+        if external_key_reference_details is None:
+            raise TypeError("Missing 'external_key_reference_details' argument")
+        if external_key_references is None and 'externalKeyReferences' in kwargs:
             external_key_references = kwargs['externalKeyReferences']
-        if 'freeformTags' in kwargs:
+        if external_key_references is None:
+            raise TypeError("Missing 'external_key_references' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPrimary' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'keyShapes' in kwargs:
+        if is_primary is None:
+            raise TypeError("Missing 'is_primary' argument")
+        if key_shapes is None and 'keyShapes' in kwargs:
             key_shapes = kwargs['keyShapes']
-        if 'managementEndpoint' in kwargs:
+        if key_shapes is None:
+            raise TypeError("Missing 'key_shapes' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'protectionMode' in kwargs:
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'replicaDetails' in kwargs:
+        if protection_mode is None:
+            raise TypeError("Missing 'protection_mode' argument")
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoreFromFiles' in kwargs:
+        if replica_details is None:
+            raise TypeError("Missing 'replica_details' argument")
+        if restore_from_files is None and 'restoreFromFiles' in kwargs:
             restore_from_files = kwargs['restoreFromFiles']
-        if 'restoreFromObjectStores' in kwargs:
+        if restore_from_files is None:
+            raise TypeError("Missing 'restore_from_files' argument")
+        if restore_from_object_stores is None and 'restoreFromObjectStores' in kwargs:
             restore_from_object_stores = kwargs['restoreFromObjectStores']
-        if 'restoreTrigger' in kwargs:
+        if restore_from_object_stores is None:
+            raise TypeError("Missing 'restore_from_object_stores' argument")
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'restoredFromKeyId' in kwargs:
+        if restore_trigger is None:
+            raise TypeError("Missing 'restore_trigger' argument")
+        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
             restored_from_key_id = kwargs['restoredFromKeyId']
-        if 'timeCreated' in kwargs:
+        if restored_from_key_id is None:
+            raise TypeError("Missing 'restored_from_key_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultId' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("current_key_version", current_key_version)
@@ -2620,11 +2812,13 @@ class GetKeysKeyExternalKeyReferenceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
 
         _setter("external_key_id", external_key_id)
 
@@ -2654,14 +2848,18 @@ class GetKeysKeyExternalKeyReferenceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_key_id: str,
-             external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_key_id: Optional[str] = None,
+             external_key_version_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalKeyId' in kwargs:
+        if external_key_id is None and 'externalKeyId' in kwargs:
             external_key_id = kwargs['externalKeyId']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_id is None:
+            raise TypeError("Missing 'external_key_id' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
+        if external_key_version_id is None:
+            raise TypeError("Missing 'external_key_version_id' argument")
 
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
@@ -2703,13 +2901,19 @@ class GetKeysKeyKeyShapeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             curve_id: str,
-             length: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             curve_id: Optional[str] = None,
+             length: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'curveId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if curve_id is None and 'curveId' in kwargs:
             curve_id = kwargs['curveId']
+        if curve_id is None:
+            raise TypeError("Missing 'curve_id' argument")
+        if length is None:
+            raise TypeError("Missing 'length' argument")
 
         _setter("algorithm", algorithm)
         _setter("curve_id", curve_id)
@@ -2754,11 +2958,13 @@ class GetKeysKeyReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -2786,17 +2992,23 @@ class GetKeysKeyRestoreFromFileResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             content_md5: str,
-             restore_key_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_length: Optional[str] = None,
+             content_md5: Optional[str] = None,
+             restore_key_from_file_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'contentMd5' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'restoreKeyFromFileDetails' in kwargs:
+        if content_md5 is None:
+            raise TypeError("Missing 'content_md5' argument")
+        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
             restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+        if restore_key_from_file_details is None:
+            raise TypeError("Missing 'restore_key_from_file_details' argument")
 
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
@@ -2837,13 +3049,23 @@ class GetKeysKeyRestoreFromObjectStoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             destination: str,
-             namespace: str,
-             object: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             destination: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("bucket", bucket)
         _setter("destination", destination)
@@ -2894,10 +3116,14 @@ class GetReplicationStatusReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             region: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             region: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("region", region)
         _setter("status", status)
@@ -2938,17 +3164,23 @@ class GetVaultExternalKeyManagerMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: str,
-             oauth_metadatas: Sequence['outputs.GetVaultExternalKeyManagerMetadataOauthMetadataResult'],
-             private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_vault_endpoint_url: Optional[str] = None,
+             oauth_metadatas: Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataOauthMetadataResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadatas' in kwargs:
+        if external_vault_endpoint_url is None:
+            raise TypeError("Missing 'external_vault_endpoint_url' argument")
+        if oauth_metadatas is None and 'oauthMetadatas' in kwargs:
             oauth_metadatas = kwargs['oauthMetadatas']
-        if 'privateEndpointId' in kwargs:
+        if oauth_metadatas is None:
+            raise TypeError("Missing 'oauth_metadatas' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
 
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadatas", oauth_metadatas)
@@ -2995,17 +3227,23 @@ class GetVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_app_id: str,
-             client_app_secret: str,
-             idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             client_app_id: Optional[str] = None,
+             client_app_secret: Optional[str] = None,
+             idcs_account_name_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'clientAppSecret' in kwargs:
+        if client_app_id is None:
+            raise TypeError("Missing 'client_app_id' argument")
+        if client_app_secret is None and 'clientAppSecret' in kwargs:
             client_app_secret = kwargs['clientAppSecret']
-        if 'idcsAccountNameUrl' in kwargs:
+        if client_app_secret is None:
+            raise TypeError("Missing 'client_app_secret' argument")
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
+        if idcs_account_name_url is None:
+            raise TypeError("Missing 'idcs_account_name_url' argument")
 
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
@@ -3056,18 +3294,26 @@ class GetVaultExternalKeyManagerMetadataSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: str,
-             oauth_metadata_summaries: Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult'],
-             private_endpoint_id: str,
-             vendor: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_vault_endpoint_url: Optional[str] = None,
+             oauth_metadata_summaries: Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             vendor: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadataSummaries' in kwargs:
+        if external_vault_endpoint_url is None:
+            raise TypeError("Missing 'external_vault_endpoint_url' argument")
+        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
             oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if 'privateEndpointId' in kwargs:
+        if oauth_metadata_summaries is None:
+            raise TypeError("Missing 'oauth_metadata_summaries' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if vendor is None:
+            raise TypeError("Missing 'vendor' argument")
 
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata_summaries", oauth_metadata_summaries)
@@ -3124,14 +3370,18 @@ class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_app_id: str,
-             idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             client_app_id: Optional[str] = None,
+             idcs_account_name_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'idcsAccountNameUrl' in kwargs:
+        if client_app_id is None:
+            raise TypeError("Missing 'client_app_id' argument")
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
+        if idcs_account_name_url is None:
+            raise TypeError("Missing 'idcs_account_name_url' argument")
 
         _setter("client_app_id", client_app_id)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -3167,11 +3417,13 @@ class GetVaultReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -3199,11 +3451,15 @@ class GetVaultReplicasFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3249,16 +3505,24 @@ class GetVaultReplicasVaultReplicaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             crypto_endpoint: str,
-             management_endpoint: str,
-             region: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             crypto_endpoint: Optional[str] = None,
+             management_endpoint: Optional[str] = None,
+             region: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'managementEndpoint' in kwargs:
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("management_endpoint", management_endpoint)
@@ -3318,17 +3582,23 @@ class GetVaultRestoreFromFileResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             content_md5: str,
-             restore_vault_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_length: Optional[str] = None,
+             content_md5: Optional[str] = None,
+             restore_vault_from_file_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'contentMd5' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'restoreVaultFromFileDetails' in kwargs:
+        if content_md5 is None:
+            raise TypeError("Missing 'content_md5' argument")
+        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
             restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+        if restore_vault_from_file_details is None:
+            raise TypeError("Missing 'restore_vault_from_file_details' argument")
 
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
@@ -3385,13 +3655,23 @@ class GetVaultRestoreFromObjectStoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             destination: str,
-             namespace: str,
-             object: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             destination: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("bucket", bucket)
         _setter("destination", destination)
@@ -3455,11 +3735,15 @@ class GetVaultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3546,61 +3830,99 @@ class GetVaultsVaultResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             crypto_endpoint: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             external_key_manager_metadata_summaries: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryResult'],
-             external_key_manager_metadatas: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_primary: bool,
-             management_endpoint: str,
-             replica_details: Sequence['outputs.GetVaultsVaultReplicaDetailResult'],
-             restore_from_files: Sequence['outputs.GetVaultsVaultRestoreFromFileResult'],
-             restore_from_object_stores: Sequence['outputs.GetVaultsVaultRestoreFromObjectStoreResult'],
-             restore_trigger: bool,
-             restored_from_vault_id: str,
-             state: str,
-             time_created: str,
-             time_of_deletion: str,
-             vault_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             crypto_endpoint: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             external_key_manager_metadata_summaries: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryResult']] = None,
+             external_key_manager_metadatas: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_primary: Optional[bool] = None,
+             management_endpoint: Optional[str] = None,
+             replica_details: Optional[Sequence['outputs.GetVaultsVaultReplicaDetailResult']] = None,
+             restore_from_files: Optional[Sequence['outputs.GetVaultsVaultRestoreFromFileResult']] = None,
+             restore_from_object_stores: Optional[Sequence['outputs.GetVaultsVaultRestoreFromObjectStoreResult']] = None,
+             restore_trigger: Optional[bool] = None,
+             restored_from_vault_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             vault_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cryptoEndpoint' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'definedTags' in kwargs:
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyManagerMetadataSummaries' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key_manager_metadata_summaries is None and 'externalKeyManagerMetadataSummaries' in kwargs:
             external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
-        if 'externalKeyManagerMetadatas' in kwargs:
+        if external_key_manager_metadata_summaries is None:
+            raise TypeError("Missing 'external_key_manager_metadata_summaries' argument")
+        if external_key_manager_metadatas is None and 'externalKeyManagerMetadatas' in kwargs:
             external_key_manager_metadatas = kwargs['externalKeyManagerMetadatas']
-        if 'freeformTags' in kwargs:
+        if external_key_manager_metadatas is None:
+            raise TypeError("Missing 'external_key_manager_metadatas' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPrimary' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'managementEndpoint' in kwargs:
+        if is_primary is None:
+            raise TypeError("Missing 'is_primary' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'replicaDetails' in kwargs:
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoreFromFiles' in kwargs:
+        if replica_details is None:
+            raise TypeError("Missing 'replica_details' argument")
+        if restore_from_files is None and 'restoreFromFiles' in kwargs:
             restore_from_files = kwargs['restoreFromFiles']
-        if 'restoreFromObjectStores' in kwargs:
+        if restore_from_files is None:
+            raise TypeError("Missing 'restore_from_files' argument")
+        if restore_from_object_stores is None and 'restoreFromObjectStores' in kwargs:
             restore_from_object_stores = kwargs['restoreFromObjectStores']
-        if 'restoreTrigger' in kwargs:
+        if restore_from_object_stores is None:
+            raise TypeError("Missing 'restore_from_object_stores' argument")
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'restoredFromVaultId' in kwargs:
+        if restore_trigger is None:
+            raise TypeError("Missing 'restore_trigger' argument")
+        if restored_from_vault_id is None and 'restoredFromVaultId' in kwargs:
             restored_from_vault_id = kwargs['restoredFromVaultId']
-        if 'timeCreated' in kwargs:
+        if restored_from_vault_id is None:
+            raise TypeError("Missing 'restored_from_vault_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultType' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if vault_type is None and 'vaultType' in kwargs:
             vault_type = kwargs['vaultType']
+        if vault_type is None:
+            raise TypeError("Missing 'vault_type' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("crypto_endpoint", crypto_endpoint)
@@ -3782,17 +4104,23 @@ class GetVaultsVaultExternalKeyManagerMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: str,
-             oauth_metadatas: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult'],
-             private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_vault_endpoint_url: Optional[str] = None,
+             oauth_metadatas: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadatas' in kwargs:
+        if external_vault_endpoint_url is None:
+            raise TypeError("Missing 'external_vault_endpoint_url' argument")
+        if oauth_metadatas is None and 'oauthMetadatas' in kwargs:
             oauth_metadatas = kwargs['oauthMetadatas']
-        if 'privateEndpointId' in kwargs:
+        if oauth_metadatas is None:
+            raise TypeError("Missing 'oauth_metadatas' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
 
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadatas", oauth_metadatas)
@@ -3839,17 +4167,23 @@ class GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_app_id: str,
-             client_app_secret: str,
-             idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             client_app_id: Optional[str] = None,
+             client_app_secret: Optional[str] = None,
+             idcs_account_name_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'clientAppSecret' in kwargs:
+        if client_app_id is None:
+            raise TypeError("Missing 'client_app_id' argument")
+        if client_app_secret is None and 'clientAppSecret' in kwargs:
             client_app_secret = kwargs['clientAppSecret']
-        if 'idcsAccountNameUrl' in kwargs:
+        if client_app_secret is None:
+            raise TypeError("Missing 'client_app_secret' argument")
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
+        if idcs_account_name_url is None:
+            raise TypeError("Missing 'idcs_account_name_url' argument")
 
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
@@ -3900,18 +4234,26 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: str,
-             oauth_metadata_summaries: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult'],
-             private_endpoint_id: str,
-             vendor: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             external_vault_endpoint_url: Optional[str] = None,
+             oauth_metadata_summaries: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             vendor: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'externalVaultEndpointUrl' in kwargs:
+        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
             external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if 'oauthMetadataSummaries' in kwargs:
+        if external_vault_endpoint_url is None:
+            raise TypeError("Missing 'external_vault_endpoint_url' argument")
+        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
             oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if 'privateEndpointId' in kwargs:
+        if oauth_metadata_summaries is None:
+            raise TypeError("Missing 'oauth_metadata_summaries' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if vendor is None:
+            raise TypeError("Missing 'vendor' argument")
 
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata_summaries", oauth_metadata_summaries)
@@ -3968,14 +4310,18 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_app_id: str,
-             idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             client_app_id: Optional[str] = None,
+             idcs_account_name_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAppId' in kwargs:
+        if client_app_id is None and 'clientAppId' in kwargs:
             client_app_id = kwargs['clientAppId']
-        if 'idcsAccountNameUrl' in kwargs:
+        if client_app_id is None:
+            raise TypeError("Missing 'client_app_id' argument")
+        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
             idcs_account_name_url = kwargs['idcsAccountNameUrl']
+        if idcs_account_name_url is None:
+            raise TypeError("Missing 'idcs_account_name_url' argument")
 
         _setter("client_app_id", client_app_id)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -4011,11 +4357,13 @@ class GetVaultsVaultReplicaDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             replication_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'replicationId' in kwargs:
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
 
         _setter("replication_id", replication_id)
 
@@ -4043,17 +4391,23 @@ class GetVaultsVaultRestoreFromFileResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_length: str,
-             content_md5: str,
-             restore_vault_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_length: Optional[str] = None,
+             content_md5: Optional[str] = None,
+             restore_vault_from_file_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'contentMd5' in kwargs:
+        if content_length is None:
+            raise TypeError("Missing 'content_length' argument")
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'restoreVaultFromFileDetails' in kwargs:
+        if content_md5 is None:
+            raise TypeError("Missing 'content_md5' argument")
+        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
             restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+        if restore_vault_from_file_details is None:
+            raise TypeError("Missing 'restore_vault_from_file_details' argument")
 
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
@@ -4094,13 +4448,23 @@ class GetVaultsVaultRestoreFromObjectStoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             destination: str,
-             namespace: str,
-             object: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             destination: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("bucket", bucket)
         _setter("destination", destination)

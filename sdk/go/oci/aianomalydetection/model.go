@@ -41,12 +41,12 @@ import (
 //					WindowSize:       pulumi.Any(_var.Model_model_training_details_window_size),
 //				},
 //				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Model_description),
 //				DisplayName: pulumi.Any(_var.Model_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

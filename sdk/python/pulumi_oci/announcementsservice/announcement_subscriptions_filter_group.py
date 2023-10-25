@@ -38,13 +38,17 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             announcement_subscription_id: pulumi.Input[str],
-             filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]],
+             announcement_subscription_id: Optional[pulumi.Input[str]] = None,
+             filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'announcementSubscriptionId' in kwargs:
+        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
             announcement_subscription_id = kwargs['announcementSubscriptionId']
+        if announcement_subscription_id is None:
+            raise TypeError("Missing 'announcement_subscription_id' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
 
         _setter("announcement_subscription_id", announcement_subscription_id)
         _setter("filters", filters)
@@ -120,9 +124,9 @@ class _AnnouncementSubscriptionsFilterGroupState:
              announcement_subscription_id: Optional[pulumi.Input[str]] = None,
              filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'announcementSubscriptionId' in kwargs:
+        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
             announcement_subscription_id = kwargs['announcementSubscriptionId']
 
         if announcement_subscription_id is not None:

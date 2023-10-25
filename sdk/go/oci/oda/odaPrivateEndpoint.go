@@ -37,12 +37,12 @@ import (
 //			_, err := Oda.NewOdaPrivateEndpoint(ctx, "testOdaPrivateEndpoint", &Oda.OdaPrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Oda_private_endpoint_description),
 //				DisplayName: pulumi.Any(_var.Oda_private_endpoint_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				NsgIds: pulumi.Any(_var.Oda_private_endpoint_nsg_ids),

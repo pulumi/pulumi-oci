@@ -37,7 +37,7 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Announcement_subscription_display_name),
 //				OnsTopicId:    pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Announcement_subscription_description),
@@ -49,7 +49,7 @@ import (
 //						},
 //					},
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				PreferredLanguage: pulumi.Any(_var.Announcement_subscription_preferred_language),

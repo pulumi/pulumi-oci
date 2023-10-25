@@ -112,20 +112,28 @@ class DiscoveryJobDiscoveryDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             properties: 'outputs.DiscoveryJobDiscoveryDetailsProperties',
-             resource_name: str,
-             resource_type: str,
+             agent_id: Optional[str] = None,
+             properties: Optional['outputs.DiscoveryJobDiscoveryDetailsProperties'] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
              credentials: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentials'] = None,
              tags: Optional['outputs.DiscoveryJobDiscoveryDetailsTags'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'resourceName' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
 
         _setter("agent_id", agent_id)
         _setter("properties", properties)
@@ -199,9 +207,11 @@ class DiscoveryJobDiscoveryDetailsCredentials(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.DiscoveryJobDiscoveryDetailsCredentialsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.DiscoveryJobDiscoveryDetailsCredentialsItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -253,15 +263,21 @@ class DiscoveryJobDiscoveryDetailsCredentialsItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             properties: 'outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             properties: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -324,9 +340,9 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemProperties(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
 
         if properties_map is not None:
@@ -373,9 +389,9 @@ class DiscoveryJobDiscoveryDetailsProperties(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
 
         if properties_map is not None:
@@ -422,9 +438,9 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
 
         if properties_map is not None:
@@ -459,11 +475,17 @@ class MonitoredResourceAdditionalAlias(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential: 'outputs.MonitoredResourceAdditionalAliasCredential',
-             name: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential: Optional['outputs.MonitoredResourceAdditionalAliasCredential'] = None,
+             name: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if credential is None:
+            raise TypeError("Missing 'credential' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("credential", credential)
         _setter("name", name)
@@ -514,11 +536,17 @@ class MonitoredResourceAdditionalAliasCredential(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             service: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             service: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("name", name)
         _setter("service", service)
@@ -614,11 +642,11 @@ class MonitoredResourceAdditionalCredential(dict):
              properties: Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']] = None,
              source: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
 
         if credential_type is not None:
@@ -719,7 +747,7 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -764,11 +792,17 @@ class MonitoredResourceAliases(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential: 'outputs.MonitoredResourceAliasesCredential',
-             name: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential: Optional['outputs.MonitoredResourceAliasesCredential'] = None,
+             name: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if credential is None:
+            raise TypeError("Missing 'credential' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("credential", credential)
         _setter("name", name)
@@ -819,11 +853,17 @@ class MonitoredResourceAliasesCredential(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             service: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             service: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("name", name)
         _setter("service", service)
@@ -919,11 +959,11 @@ class MonitoredResourceCredentials(dict):
              properties: Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']] = None,
              source: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
 
         if credential_type is not None:
@@ -1024,7 +1064,7 @@ class MonitoredResourceCredentialsProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -1106,24 +1146,30 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             port: int,
-             protocol: str,
-             service_name: str,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service_name: Optional[str] = None,
              connector_id: Optional[str] = None,
              db_id: Optional[str] = None,
              db_unique_name: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'serviceName' in kwargs:
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'connectorId' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'dbId' in kwargs:
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
 
         _setter("port", port)
@@ -1214,7 +1260,7 @@ class MonitoredResourceProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -1279,9 +1325,9 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if compartment_id is not None:
@@ -1356,9 +1402,9 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if compartment_id is not None:
@@ -1489,29 +1535,29 @@ class MonitoredResourcesListMemberItem(dict):
              resource_type: Optional[str] = None,
              state: Optional[str] = None,
              system_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'parentId' in kwargs:
+        if parent_id is None and 'parentId' in kwargs:
             parent_id = kwargs['parentId']
-        if 'resourceDisplayName' in kwargs:
+        if resource_display_name is None and 'resourceDisplayName' in kwargs:
             resource_display_name = kwargs['resourceDisplayName']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         if compartment_id is not None:
@@ -1698,19 +1744,19 @@ class MonitoredResourcesSearchAssociationItem(dict):
              source_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail']] = None,
              source_resource_id: Optional[str] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'destinationResourceDetails' in kwargs:
+        if destination_resource_details is None and 'destinationResourceDetails' in kwargs:
             destination_resource_details = kwargs['destinationResourceDetails']
-        if 'destinationResourceId' in kwargs:
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'sourceResourceDetails' in kwargs:
+        if source_resource_details is None and 'sourceResourceDetails' in kwargs:
             source_resource_details = kwargs['sourceResourceDetails']
-        if 'sourceResourceId' in kwargs:
+        if source_resource_id is None and 'sourceResourceId' in kwargs:
             source_resource_id = kwargs['sourceResourceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if association_type is not None:
@@ -1815,9 +1861,9 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if compartment_id is not None:
@@ -1892,9 +1938,9 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if compartment_id is not None:
@@ -2033,25 +2079,25 @@ class MonitoredResourcesSearchItem(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if defined_tags is not None:
@@ -2219,7 +2265,7 @@ class MonitoredResourcesSearchItemProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -2255,9 +2301,11 @@ class GetConfigsConfigCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetConfigsConfigCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2314,40 +2362,64 @@ class GetConfigsConfigCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             config_type: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             resource_type: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             config_type: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'definedTags' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'resourceType' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'systemTags' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("config_type", config_type)
@@ -2474,11 +2546,15 @@ class GetConfigsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2530,20 +2606,32 @@ class GetDiscoveryJobDiscoveryDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             credentials: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialResult'],
-             properties: Sequence['outputs.GetDiscoveryJobDiscoveryDetailPropertyResult'],
-             resource_name: str,
-             resource_type: str,
-             tags: Sequence['outputs.GetDiscoveryJobDiscoveryDetailTagResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             credentials: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialResult']] = None,
+             properties: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailPropertyResult']] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             tags: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailTagResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'resourceName' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if credentials is None:
+            raise TypeError("Missing 'credentials' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if tags is None:
+            raise TypeError("Missing 'tags' argument")
 
         _setter("agent_id", agent_id)
         _setter("credentials", credentials)
@@ -2615,9 +2703,11 @@ class GetDiscoveryJobDiscoveryDetailCredentialResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2650,15 +2740,21 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             properties: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             properties: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -2703,11 +2799,13 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
+        if properties_map is None:
+            raise TypeError("Missing 'properties_map' argument")
 
         _setter("properties_map", properties_map)
 
@@ -2734,11 +2832,13 @@ class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
+        if properties_map is None:
+            raise TypeError("Missing 'properties_map' argument")
 
         _setter("properties_map", properties_map)
 
@@ -2765,11 +2865,13 @@ class GetDiscoveryJobDiscoveryDetailTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertiesMap' in kwargs:
+        if properties_map is None and 'propertiesMap' in kwargs:
             properties_map = kwargs['propertiesMap']
+        if properties_map is None:
+            raise TypeError("Missing 'properties_map' argument")
 
         _setter("properties_map", properties_map)
 
@@ -2796,9 +2898,11 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2834,18 +2938,26 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             log_message: str,
-             log_type: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             log_message: Optional[str] = None,
+             log_type: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logMessage' in kwargs:
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if log_message is None and 'logMessage' in kwargs:
             log_message = kwargs['logMessage']
-        if 'logType' in kwargs:
+        if log_message is None:
+            raise TypeError("Missing 'log_message' argument")
+        if log_type is None and 'logType' in kwargs:
             log_type = kwargs['logType']
-        if 'timeCreated' in kwargs:
+        if log_type is None:
+            raise TypeError("Missing 'log_type' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("id", id)
         _setter("log_message", log_message)
@@ -2900,11 +3012,15 @@ class GetDiscoveryJobLogsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2941,9 +3057,11 @@ class GetDiscoveryJobsDiscoveryJobCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3009,44 +3127,72 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             discovery_type: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             resource_name: str,
-             resource_type: str,
-             state: str,
-             status: str,
-             status_message: str,
-             system_tags: Mapping[str, Any],
-             tenant_id: str,
-             time_updated: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             discovery_type: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             status_message: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             tenant_id: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryType' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if discovery_type is None and 'discoveryType' in kwargs:
             discovery_type = kwargs['discoveryType']
-        if 'freeformTags' in kwargs:
+        if discovery_type is None:
+            raise TypeError("Missing 'discovery_type' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'resourceName' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'statusMessage' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_message is None and 'statusMessage' in kwargs:
             status_message = kwargs['statusMessage']
-        if 'systemTags' in kwargs:
+        if status_message is None:
+            raise TypeError("Missing 'status_message' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenantId' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'timeUpdated' in kwargs:
+        if tenant_id is None:
+            raise TypeError("Missing 'tenant_id' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3194,11 +3340,15 @@ class GetDiscoveryJobsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3244,11 +3394,17 @@ class GetMonitoredResourceAdditionalAliasResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credentials: Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult'],
-             name: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credentials: Optional[Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult']] = None,
+             name: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if credentials is None:
+            raise TypeError("Missing 'credentials' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("credentials", credentials)
         _setter("name", name)
@@ -3299,11 +3455,17 @@ class GetMonitoredResourceAdditionalAliasCredentialResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             service: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             service: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("name", name)
         _setter("service", service)
@@ -3369,19 +3531,33 @@ class GetMonitoredResourceAdditionalCredentialResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_type: str,
-             description: str,
-             key_id: str,
-             name: str,
-             properties: Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult'],
-             source: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_type: Optional[str] = None,
+             description: Optional[str] = None,
+             key_id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult']] = None,
+             source: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'keyId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("credential_type", credential_type)
         _setter("description", description)
@@ -3468,10 +3644,14 @@ class GetMonitoredResourceAdditionalCredentialPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -3513,11 +3693,17 @@ class GetMonitoredResourceAliasResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credentials: Sequence['outputs.GetMonitoredResourceAliasCredentialResult'],
-             name: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credentials: Optional[Sequence['outputs.GetMonitoredResourceAliasCredentialResult']] = None,
+             name: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if credentials is None:
+            raise TypeError("Missing 'credentials' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("credentials", credentials)
         _setter("name", name)
@@ -3568,11 +3754,17 @@ class GetMonitoredResourceAliasCredentialResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             service: str,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             service: Optional[str] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("name", name)
         _setter("service", service)
@@ -3638,19 +3830,33 @@ class GetMonitoredResourceCredentialResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_type: str,
-             description: str,
-             key_id: str,
-             name: str,
-             properties: Sequence['outputs.GetMonitoredResourceCredentialPropertyResult'],
-             source: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_type: Optional[str] = None,
+             description: Optional[str] = None,
+             key_id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.GetMonitoredResourceCredentialPropertyResult']] = None,
+             source: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'keyId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("credential_type", credential_type)
         _setter("description", description)
@@ -3737,10 +3943,14 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -3794,25 +4004,39 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_id: str,
-             db_id: str,
-             db_unique_name: str,
-             port: int,
-             protocol: str,
-             service_name: str,
-             ssl_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connector_id: Optional[str] = None,
+             db_id: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service_name: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorId' in kwargs:
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'dbId' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbUniqueName' in kwargs:
+        if db_id is None:
+            raise TypeError("Missing 'db_id' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'serviceName' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'sslSecretId' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
 
         _setter("connector_id", connector_id)
         _setter("db_id", db_id)
@@ -3896,10 +4120,14 @@ class GetMonitoredResourcePropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)

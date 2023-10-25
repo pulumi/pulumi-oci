@@ -66,11 +66,11 @@ import (
 //				AvailabilityDomain: pulumi.Any(_var.Mount_target_availability_domain),
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
 //				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Mount_target_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				HostnameLabel: pulumi.Any(_var.Mount_target_hostname_label),

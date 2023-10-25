@@ -153,9 +153,9 @@ class DomainsGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             idcs_endpoint: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -170,29 +170,35 @@ class DomainsGroupArgs:
              urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'idcsEndpoint' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'attributeSets' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'nonUniqueDisplayName' in kwargs:
+        if non_unique_display_name is None and 'nonUniqueDisplayName' in kwargs:
             non_unique_display_name = kwargs['nonUniqueDisplayName']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondynamic_group is None and 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondynamic_group = kwargs['urnietfparamsscimschemasoracleidcsextensiondynamicGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiongroup_group is None and 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiongroup_group = kwargs['urnietfparamsscimschemasoracleidcsextensiongroupGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionposix_group is None and 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionposix_group = kwargs['urnietfparamsscimschemasoracleidcsextensionposixGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionrequestable_group is None and 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionrequestable_group = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableGroup']
 
         _setter("display_name", display_name)
@@ -791,47 +797,47 @@ class _DomainsGroupState:
              urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'nonUniqueDisplayName' in kwargs:
+        if non_unique_display_name is None and 'nonUniqueDisplayName' in kwargs:
             non_unique_display_name = kwargs['nonUniqueDisplayName']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbcsGroups' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondbcs_groups is None and 'urnietfparamsscimschemasoracleidcsextensiondbcsGroups' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondbcs_groups = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsGroups']
-        if 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondynamic_group is None and 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondynamic_group = kwargs['urnietfparamsscimschemasoracleidcsextensiondynamicGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiongroup_group is None and 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiongroup_group = kwargs['urnietfparamsscimschemasoracleidcsextensiongroupGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionposix_group is None and 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionposix_group = kwargs['urnietfparamsscimschemasoracleidcsextensionposixGroup']
-        if 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionrequestable_group is None and 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionrequestable_group = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableGroup']
 
         if attribute_sets is not None:
@@ -1591,35 +1597,15 @@ class DomainsGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'schemas'")
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["tags"] = tags
-            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
-                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
-                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = _utilities.configure(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
-            if urnietfparamsscimschemasoracleidcsextensiondynamic_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondynamic_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs):
-                urnietfparamsscimschemasoracleidcsextensiondynamic_group = urnietfparamsscimschemasoracleidcsextensiondynamic_group or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensiondynamic_group[key] = value
-                DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondynamic_group)
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group = _utilities.configure(urnietfparamsscimschemasoracleidcsextensiondynamic_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondynamic_group"] = urnietfparamsscimschemasoracleidcsextensiondynamic_group
-            if urnietfparamsscimschemasoracleidcsextensiongroup_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiongroup_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs):
-                urnietfparamsscimschemasoracleidcsextensiongroup_group = urnietfparamsscimschemasoracleidcsextensiongroup_group or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensiongroup_group[key] = value
-                DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiongroup_group)
+            urnietfparamsscimschemasoracleidcsextensiongroup_group = _utilities.configure(urnietfparamsscimschemasoracleidcsextensiongroup_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiongroup_group"] = urnietfparamsscimschemasoracleidcsextensiongroup_group
-            if urnietfparamsscimschemasoracleidcsextensionposix_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionposix_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs):
-                urnietfparamsscimschemasoracleidcsextensionposix_group = urnietfparamsscimschemasoracleidcsextensionposix_group or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionposix_group[key] = value
-                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionposix_group)
+            urnietfparamsscimschemasoracleidcsextensionposix_group = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionposix_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionposix_group"] = urnietfparamsscimschemasoracleidcsextensionposix_group
-            if urnietfparamsscimschemasoracleidcsextensionrequestable_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionrequestable_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs):
-                urnietfparamsscimschemasoracleidcsextensionrequestable_group = urnietfparamsscimschemasoracleidcsextensionrequestable_group or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionrequestable_group[key] = value
-                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionrequestable_group)
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionrequestable_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionrequestable_group"] = urnietfparamsscimschemasoracleidcsextensionrequestable_group
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

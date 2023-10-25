@@ -46,26 +46,36 @@ class TargetAssetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_excluded_from_execution: pulumi.Input[bool],
-             migration_plan_id: pulumi.Input[str],
-             preferred_shape_type: pulumi.Input[str],
-             type: pulumi.Input[str],
-             user_spec: pulumi.Input['TargetAssetUserSpecArgs'],
+             is_excluded_from_execution: Optional[pulumi.Input[bool]] = None,
+             migration_plan_id: Optional[pulumi.Input[str]] = None,
+             preferred_shape_type: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None,
              block_volumes_performance: Optional[pulumi.Input[int]] = None,
              ms_license: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isExcludedFromExecution' in kwargs:
+        if is_excluded_from_execution is None and 'isExcludedFromExecution' in kwargs:
             is_excluded_from_execution = kwargs['isExcludedFromExecution']
-        if 'migrationPlanId' in kwargs:
+        if is_excluded_from_execution is None:
+            raise TypeError("Missing 'is_excluded_from_execution' argument")
+        if migration_plan_id is None and 'migrationPlanId' in kwargs:
             migration_plan_id = kwargs['migrationPlanId']
-        if 'preferredShapeType' in kwargs:
+        if migration_plan_id is None:
+            raise TypeError("Missing 'migration_plan_id' argument")
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'userSpec' in kwargs:
+        if preferred_shape_type is None:
+            raise TypeError("Missing 'preferred_shape_type' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if user_spec is None and 'userSpec' in kwargs:
             user_spec = kwargs['userSpec']
-        if 'blockVolumesPerformance' in kwargs:
+        if user_spec is None:
+            raise TypeError("Missing 'user_spec' argument")
+        if block_volumes_performance is None and 'blockVolumesPerformance' in kwargs:
             block_volumes_performance = kwargs['blockVolumesPerformance']
-        if 'msLicense' in kwargs:
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
 
         _setter("is_excluded_from_execution", is_excluded_from_execution)
@@ -255,43 +265,43 @@ class _TargetAssetState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumesPerformance' in kwargs:
+        if block_volumes_performance is None and 'blockVolumesPerformance' in kwargs:
             block_volumes_performance = kwargs['blockVolumesPerformance']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compatibilityMessages' in kwargs:
+        if compatibility_messages is None and 'compatibilityMessages' in kwargs:
             compatibility_messages = kwargs['compatibilityMessages']
-        if 'createdResourceId' in kwargs:
+        if created_resource_id is None and 'createdResourceId' in kwargs:
             created_resource_id = kwargs['createdResourceId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'estimatedCosts' in kwargs:
+        if estimated_costs is None and 'estimatedCosts' in kwargs:
             estimated_costs = kwargs['estimatedCosts']
-        if 'isExcludedFromExecution' in kwargs:
+        if is_excluded_from_execution is None and 'isExcludedFromExecution' in kwargs:
             is_excluded_from_execution = kwargs['isExcludedFromExecution']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationAssets' in kwargs:
+        if migration_assets is None and 'migrationAssets' in kwargs:
             migration_assets = kwargs['migrationAssets']
-        if 'migrationPlanId' in kwargs:
+        if migration_plan_id is None and 'migrationPlanId' in kwargs:
             migration_plan_id = kwargs['migrationPlanId']
-        if 'msLicense' in kwargs:
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
-        if 'preferredShapeType' in kwargs:
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'recommendedSpecs' in kwargs:
+        if recommended_specs is None and 'recommendedSpecs' in kwargs:
             recommended_specs = kwargs['recommendedSpecs']
-        if 'testSpecs' in kwargs:
+        if test_specs is None and 'testSpecs' in kwargs:
             test_specs = kwargs['testSpecs']
-        if 'timeAssessed' in kwargs:
+        if time_assessed is None and 'timeAssessed' in kwargs:
             time_assessed = kwargs['timeAssessed']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userSpec' in kwargs:
+        if user_spec is None and 'userSpec' in kwargs:
             user_spec = kwargs['userSpec']
 
         if block_volumes_performance is not None:
@@ -842,11 +852,7 @@ class TargetAsset(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
-            if user_spec is not None and not isinstance(user_spec, TargetAssetUserSpecArgs):
-                user_spec = user_spec or {}
-                def _setter(key, value):
-                    user_spec[key] = value
-                TargetAssetUserSpecArgs._configure(_setter, **user_spec)
+            user_spec = _utilities.configure(user_spec, TargetAssetUserSpecArgs, True)
             if user_spec is None and not opts.urn:
                 raise TypeError("Missing required property 'user_spec'")
             __props__.__dict__["user_spec"] = user_spec

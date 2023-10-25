@@ -44,7 +44,7 @@ class ProfileLevelsConfigurationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -82,9 +82,9 @@ class ProfileLevelsConfigurationItemArgs:
              _setter: Callable[[Any, Any], None],
              level: Optional[pulumi.Input[str]] = None,
              recommendation_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recommendationId' in kwargs:
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
 
         if level is not None:
@@ -131,9 +131,11 @@ class ProfileTargetCompartmentsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -164,9 +166,11 @@ class ProfileTargetTagsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -214,19 +218,25 @@ class ProfileTargetTagsItemArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             tag_definition_name: pulumi.Input[str],
-             tag_namespace_name: pulumi.Input[str],
-             tag_value_type: pulumi.Input[str],
+             tag_definition_name: Optional[pulumi.Input[str]] = None,
+             tag_namespace_name: Optional[pulumi.Input[str]] = None,
+             tag_value_type: Optional[pulumi.Input[str]] = None,
              tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tagDefinitionName' in kwargs:
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
             tag_definition_name = kwargs['tagDefinitionName']
-        if 'tagNamespaceName' in kwargs:
+        if tag_definition_name is None:
+            raise TypeError("Missing 'tag_definition_name' argument")
+        if tag_namespace_name is None and 'tagNamespaceName' in kwargs:
             tag_namespace_name = kwargs['tagNamespaceName']
-        if 'tagValueType' in kwargs:
+        if tag_namespace_name is None:
+            raise TypeError("Missing 'tag_namespace_name' argument")
+        if tag_value_type is None and 'tagValueType' in kwargs:
             tag_value_type = kwargs['tagValueType']
-        if 'tagValues' in kwargs:
+        if tag_value_type is None:
+            raise TypeError("Missing 'tag_value_type' argument")
+        if tag_values is None and 'tagValues' in kwargs:
             tag_values = kwargs['tagValues']
 
         _setter("tag_definition_name", tag_definition_name)
@@ -311,7 +321,7 @@ class RecommendationResourceCountArgs:
              _setter: Callable[[Any, Any], None],
              count: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if count is not None:
@@ -359,7 +369,7 @@ class RecommendationSupportedLevelArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -393,7 +403,7 @@ class RecommendationSupportedLevelItemArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -435,7 +445,7 @@ class ResourceActionActionArgs:
              description: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -500,11 +510,15 @@ class GetCategoriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -557,11 +571,15 @@ class GetEnrollmentStatusesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -614,11 +632,15 @@ class GetHistoriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -674,11 +696,15 @@ class GetProfileLevelsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -734,11 +760,15 @@ class GetProfilesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -794,11 +824,15 @@ class GetRecommendationStrategiesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -854,11 +888,15 @@ class GetRecommendationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -914,11 +952,15 @@ class GetResourceActionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

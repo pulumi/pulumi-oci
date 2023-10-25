@@ -65,11 +65,11 @@ import (
 //				StaticRoutes:           pulumi.Any(_var.Ip_sec_connection_static_routes),
 //				CpeLocalIdentifier:     pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier),
 //				CpeLocalIdentifierType: pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Ip_sec_connection_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

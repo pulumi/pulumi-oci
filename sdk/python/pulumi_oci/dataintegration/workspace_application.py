@@ -71,9 +71,9 @@ class WorkspaceApplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             identifier: pulumi.Input[str],
-             model_type: pulumi.Input[str],
-             workspace_id: pulumi.Input[str],
+             identifier: Optional[pulumi.Input[str]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -85,25 +85,31 @@ class WorkspaceApplicationArgs:
              registry_metadata: Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']] = None,
              source_application_info: Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelType' in kwargs:
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'workspaceId' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
-        if 'definedTags' in kwargs:
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
-        if 'registryMetadata' in kwargs:
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
-        if 'sourceApplicationInfo' in kwargs:
+        if source_application_info is None and 'sourceApplicationInfo' in kwargs:
             source_application_info = kwargs['sourceApplicationInfo']
 
         _setter("identifier", identifier)
@@ -421,45 +427,45 @@ class _WorkspaceApplicationState:
              time_patched: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationVersion' in kwargs:
+        if application_version is None and 'applicationVersion' in kwargs:
             application_version = kwargs['applicationVersion']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dependentObjectMetadatas' in kwargs:
+        if dependent_object_metadatas is None and 'dependentObjectMetadatas' in kwargs:
             dependent_object_metadatas = kwargs['dependentObjectMetadatas']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'keyMap' in kwargs:
+        if key_map is None and 'keyMap' in kwargs:
             key_map = kwargs['keyMap']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
-        if 'parentReves' in kwargs:
+        if parent_reves is None and 'parentReves' in kwargs:
             parent_reves = kwargs['parentReves']
-        if 'publishedObjectMetadatas' in kwargs:
+        if published_object_metadatas is None and 'publishedObjectMetadatas' in kwargs:
             published_object_metadatas = kwargs['publishedObjectMetadatas']
-        if 'registryMetadata' in kwargs:
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
-        if 'sourceApplicationInfo' in kwargs:
+        if source_application_info is None and 'sourceApplicationInfo' in kwargs:
             source_application_info = kwargs['sourceApplicationInfo']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timePatched' in kwargs:
+        if time_patched is None and 'timePatched' in kwargs:
             time_patched = kwargs['timePatched']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if application_version is not None:
@@ -1019,17 +1025,9 @@ class WorkspaceApplication(pulumi.CustomResource):
             __props__.__dict__["model_version"] = model_version
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
-            if registry_metadata is not None and not isinstance(registry_metadata, WorkspaceApplicationRegistryMetadataArgs):
-                registry_metadata = registry_metadata or {}
-                def _setter(key, value):
-                    registry_metadata[key] = value
-                WorkspaceApplicationRegistryMetadataArgs._configure(_setter, **registry_metadata)
+            registry_metadata = _utilities.configure(registry_metadata, WorkspaceApplicationRegistryMetadataArgs, True)
             __props__.__dict__["registry_metadata"] = registry_metadata
-            if source_application_info is not None and not isinstance(source_application_info, WorkspaceApplicationSourceApplicationInfoArgs):
-                source_application_info = source_application_info or {}
-                def _setter(key, value):
-                    source_application_info[key] = value
-                WorkspaceApplicationSourceApplicationInfoArgs._configure(_setter, **source_application_info)
+            source_application_info = _utilities.configure(source_application_info, WorkspaceApplicationSourceApplicationInfoArgs, True)
             __props__.__dict__["source_application_info"] = source_application_info
             __props__.__dict__["state"] = state
             if workspace_id is None and not opts.urn:

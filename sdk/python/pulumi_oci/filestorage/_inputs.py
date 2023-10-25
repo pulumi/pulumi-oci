@@ -64,7 +64,7 @@ class ExportExportOptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source: pulumi.Input[str],
+             source: Optional[pulumi.Input[str]] = None,
              access: Optional[pulumi.Input[str]] = None,
              allowed_auths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              anonymous_gid: Optional[pulumi.Input[str]] = None,
@@ -72,19 +72,21 @@ class ExportExportOptionArgs:
              identity_squash: Optional[pulumi.Input[str]] = None,
              is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
              require_privileged_source_port: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedAuths' in kwargs:
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if allowed_auths is None and 'allowedAuths' in kwargs:
             allowed_auths = kwargs['allowedAuths']
-        if 'anonymousGid' in kwargs:
+        if anonymous_gid is None and 'anonymousGid' in kwargs:
             anonymous_gid = kwargs['anonymousGid']
-        if 'anonymousUid' in kwargs:
+        if anonymous_uid is None and 'anonymousUid' in kwargs:
             anonymous_uid = kwargs['anonymousUid']
-        if 'identitySquash' in kwargs:
+        if identity_squash is None and 'identitySquash' in kwargs:
             identity_squash = kwargs['identitySquash']
-        if 'isAnonymousAccessAllowed' in kwargs:
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
             is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if 'requirePrivilegedSourcePort' in kwargs:
+        if require_privileged_source_port is None and 'requirePrivilegedSourcePort' in kwargs:
             require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
 
         _setter("source", source)
@@ -225,11 +227,11 @@ class FileSystemSourceDetailArgs:
              _setter: Callable[[Any, Any], None],
              parent_file_system_id: Optional[pulumi.Input[str]] = None,
              source_snapshot_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parentFileSystemId' in kwargs:
+        if parent_file_system_id is None and 'parentFileSystemId' in kwargs:
             parent_file_system_id = kwargs['parentFileSystemId']
-        if 'sourceSnapshotId' in kwargs:
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
 
         if parent_file_system_id is not None:
@@ -304,8 +306,8 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             period: pulumi.Input[str],
-             time_zone: pulumi.Input[str],
+             period: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
              day_of_month: Optional[pulumi.Input[int]] = None,
              day_of_week: Optional[pulumi.Input[str]] = None,
              hour_of_day: Optional[pulumi.Input[int]] = None,
@@ -313,21 +315,25 @@ class FilesystemSnapshotPolicyScheduleArgs:
              retention_duration_in_seconds: Optional[pulumi.Input[str]] = None,
              schedule_prefix: Optional[pulumi.Input[str]] = None,
              time_schedule_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeZone' in kwargs:
+        if period is None:
+            raise TypeError("Missing 'period' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'dayOfMonth' in kwargs:
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if day_of_month is None and 'dayOfMonth' in kwargs:
             day_of_month = kwargs['dayOfMonth']
-        if 'dayOfWeek' in kwargs:
+        if day_of_week is None and 'dayOfWeek' in kwargs:
             day_of_week = kwargs['dayOfWeek']
-        if 'hourOfDay' in kwargs:
+        if hour_of_day is None and 'hourOfDay' in kwargs:
             hour_of_day = kwargs['hourOfDay']
-        if 'retentionDurationInSeconds' in kwargs:
+        if retention_duration_in_seconds is None and 'retentionDurationInSeconds' in kwargs:
             retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
-        if 'schedulePrefix' in kwargs:
+        if schedule_prefix is None and 'schedulePrefix' in kwargs:
             schedule_prefix = kwargs['schedulePrefix']
-        if 'timeScheduleStart' in kwargs:
+        if time_schedule_start is None and 'timeScheduleStart' in kwargs:
             time_schedule_start = kwargs['timeScheduleStart']
 
         _setter("period", period)
@@ -482,22 +488,24 @@ class MountTargetKerberosArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kerberos_realm: pulumi.Input[str],
+             kerberos_realm: Optional[pulumi.Input[str]] = None,
              backup_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
              current_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
              is_kerberos_enabled: Optional[pulumi.Input[bool]] = None,
              key_tab_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kerberosRealm' in kwargs:
+        if kerberos_realm is None and 'kerberosRealm' in kwargs:
             kerberos_realm = kwargs['kerberosRealm']
-        if 'backupKeyTabSecretVersion' in kwargs:
+        if kerberos_realm is None:
+            raise TypeError("Missing 'kerberos_realm' argument")
+        if backup_key_tab_secret_version is None and 'backupKeyTabSecretVersion' in kwargs:
             backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
-        if 'currentKeyTabSecretVersion' in kwargs:
+        if current_key_tab_secret_version is None and 'currentKeyTabSecretVersion' in kwargs:
             current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
-        if 'isKerberosEnabled' in kwargs:
+        if is_kerberos_enabled is None and 'isKerberosEnabled' in kwargs:
             is_kerberos_enabled = kwargs['isKerberosEnabled']
-        if 'keyTabSecretId' in kwargs:
+        if key_tab_secret_id is None and 'keyTabSecretId' in kwargs:
             key_tab_secret_id = kwargs['keyTabSecretId']
 
         _setter("kerberos_realm", kerberos_realm)
@@ -614,23 +622,23 @@ class MountTargetLdapIdmapArgs:
              outbound_connector2id: Optional[pulumi.Input[str]] = None,
              schema_type: Optional[pulumi.Input[str]] = None,
              user_search_base: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheLifetimeSeconds' in kwargs:
+        if cache_lifetime_seconds is None and 'cacheLifetimeSeconds' in kwargs:
             cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
-        if 'cacheRefreshIntervalSeconds' in kwargs:
+        if cache_refresh_interval_seconds is None and 'cacheRefreshIntervalSeconds' in kwargs:
             cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
-        if 'groupSearchBase' in kwargs:
+        if group_search_base is None and 'groupSearchBase' in kwargs:
             group_search_base = kwargs['groupSearchBase']
-        if 'negativeCacheLifetimeSeconds' in kwargs:
+        if negative_cache_lifetime_seconds is None and 'negativeCacheLifetimeSeconds' in kwargs:
             negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
-        if 'outboundConnector1id' in kwargs:
+        if outbound_connector1id is None and 'outboundConnector1id' in kwargs:
             outbound_connector1id = kwargs['outboundConnector1id']
-        if 'outboundConnector2id' in kwargs:
+        if outbound_connector2id is None and 'outboundConnector2id' in kwargs:
             outbound_connector2id = kwargs['outboundConnector2id']
-        if 'schemaType' in kwargs:
+        if schema_type is None and 'schemaType' in kwargs:
             schema_type = kwargs['schemaType']
-        if 'userSearchBase' in kwargs:
+        if user_search_base is None and 'userSearchBase' in kwargs:
             user_search_base = kwargs['userSearchBase']
 
         if cache_lifetime_seconds is not None:
@@ -764,10 +772,14 @@ class OutboundConnectorEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: pulumi.Input[str],
-             port: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("hostname", hostname)
         _setter("port", port)
@@ -812,11 +824,15 @@ class GetExportSetsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -866,11 +882,15 @@ class GetExportsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -920,11 +940,15 @@ class GetFileSystemsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -974,11 +998,15 @@ class GetFilesystemSnapshotPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1028,11 +1056,15 @@ class GetMountTargetsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1082,11 +1114,15 @@ class GetOutboundConnectorsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1136,11 +1172,15 @@ class GetReplicationTargetsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1190,11 +1230,15 @@ class GetReplicationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1247,11 +1291,15 @@ class GetSnapshotsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

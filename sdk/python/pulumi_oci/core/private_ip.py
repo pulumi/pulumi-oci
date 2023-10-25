@@ -61,21 +61,21 @@ class PrivateIpArgs:
              ip_address: Optional[pulumi.Input[str]] = None,
              vlan_id: Optional[pulumi.Input[str]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'vlanId' in kwargs:
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
-        if 'vnicId' in kwargs:
+        if vnic_id is None and 'vnicId' in kwargs:
             vnic_id = kwargs['vnicId']
 
         if defined_tags is not None:
@@ -262,33 +262,33 @@ class _PrivateIpState:
              time_created: Optional[pulumi.Input[str]] = None,
              vlan_id: Optional[pulumi.Input[str]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isPrimary' in kwargs:
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'isReserved' in kwargs:
+        if is_reserved is None and 'isReserved' in kwargs:
             is_reserved = kwargs['isReserved']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vlanId' in kwargs:
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
-        if 'vnicId' in kwargs:
+        if vnic_id is None and 'vnicId' in kwargs:
             vnic_id = kwargs['vnicId']
 
         if availability_domain is not None:

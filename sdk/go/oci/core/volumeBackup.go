@@ -37,11 +37,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewVolumeBackup(ctx, "testVolumeBackup", &Core.VolumeBackupArgs{
 //				VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Volume_backup_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),

@@ -72,12 +72,12 @@ import (
 //						LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Model_deployment_description),
 //				DisplayName: pulumi.Any(_var.Model_deployment_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

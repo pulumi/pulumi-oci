@@ -109,7 +109,7 @@ class ExportExportOption(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source: str,
+             source: Optional[str] = None,
              access: Optional[str] = None,
              allowed_auths: Optional[Sequence[str]] = None,
              anonymous_gid: Optional[str] = None,
@@ -117,19 +117,21 @@ class ExportExportOption(dict):
              identity_squash: Optional[str] = None,
              is_anonymous_access_allowed: Optional[bool] = None,
              require_privileged_source_port: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedAuths' in kwargs:
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if allowed_auths is None and 'allowedAuths' in kwargs:
             allowed_auths = kwargs['allowedAuths']
-        if 'anonymousGid' in kwargs:
+        if anonymous_gid is None and 'anonymousGid' in kwargs:
             anonymous_gid = kwargs['anonymousGid']
-        if 'anonymousUid' in kwargs:
+        if anonymous_uid is None and 'anonymousUid' in kwargs:
             anonymous_uid = kwargs['anonymousUid']
-        if 'identitySquash' in kwargs:
+        if identity_squash is None and 'identitySquash' in kwargs:
             identity_squash = kwargs['identitySquash']
-        if 'isAnonymousAccessAllowed' in kwargs:
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
             is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if 'requirePrivilegedSourcePort' in kwargs:
+        if require_privileged_source_port is None and 'requirePrivilegedSourcePort' in kwargs:
             require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
 
         _setter("source", source)
@@ -257,11 +259,11 @@ class FileSystemSourceDetail(dict):
              _setter: Callable[[Any, Any], None],
              parent_file_system_id: Optional[str] = None,
              source_snapshot_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parentFileSystemId' in kwargs:
+        if parent_file_system_id is None and 'parentFileSystemId' in kwargs:
             parent_file_system_id = kwargs['parentFileSystemId']
-        if 'sourceSnapshotId' in kwargs:
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
 
         if parent_file_system_id is not None:
@@ -357,8 +359,8 @@ class FilesystemSnapshotPolicySchedule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             period: str,
-             time_zone: str,
+             period: Optional[str] = None,
+             time_zone: Optional[str] = None,
              day_of_month: Optional[int] = None,
              day_of_week: Optional[str] = None,
              hour_of_day: Optional[int] = None,
@@ -366,21 +368,25 @@ class FilesystemSnapshotPolicySchedule(dict):
              retention_duration_in_seconds: Optional[str] = None,
              schedule_prefix: Optional[str] = None,
              time_schedule_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeZone' in kwargs:
+        if period is None:
+            raise TypeError("Missing 'period' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'dayOfMonth' in kwargs:
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if day_of_month is None and 'dayOfMonth' in kwargs:
             day_of_month = kwargs['dayOfMonth']
-        if 'dayOfWeek' in kwargs:
+        if day_of_week is None and 'dayOfWeek' in kwargs:
             day_of_week = kwargs['dayOfWeek']
-        if 'hourOfDay' in kwargs:
+        if hour_of_day is None and 'hourOfDay' in kwargs:
             hour_of_day = kwargs['hourOfDay']
-        if 'retentionDurationInSeconds' in kwargs:
+        if retention_duration_in_seconds is None and 'retentionDurationInSeconds' in kwargs:
             retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
-        if 'schedulePrefix' in kwargs:
+        if schedule_prefix is None and 'schedulePrefix' in kwargs:
             schedule_prefix = kwargs['schedulePrefix']
-        if 'timeScheduleStart' in kwargs:
+        if time_schedule_start is None and 'timeScheduleStart' in kwargs:
             time_schedule_start = kwargs['timeScheduleStart']
 
         _setter("period", period)
@@ -524,22 +530,24 @@ class MountTargetKerberos(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kerberos_realm: str,
+             kerberos_realm: Optional[str] = None,
              backup_key_tab_secret_version: Optional[int] = None,
              current_key_tab_secret_version: Optional[int] = None,
              is_kerberos_enabled: Optional[bool] = None,
              key_tab_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kerberosRealm' in kwargs:
+        if kerberos_realm is None and 'kerberosRealm' in kwargs:
             kerberos_realm = kwargs['kerberosRealm']
-        if 'backupKeyTabSecretVersion' in kwargs:
+        if kerberos_realm is None:
+            raise TypeError("Missing 'kerberos_realm' argument")
+        if backup_key_tab_secret_version is None and 'backupKeyTabSecretVersion' in kwargs:
             backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
-        if 'currentKeyTabSecretVersion' in kwargs:
+        if current_key_tab_secret_version is None and 'currentKeyTabSecretVersion' in kwargs:
             current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
-        if 'isKerberosEnabled' in kwargs:
+        if is_kerberos_enabled is None and 'isKerberosEnabled' in kwargs:
             is_kerberos_enabled = kwargs['isKerberosEnabled']
-        if 'keyTabSecretId' in kwargs:
+        if key_tab_secret_id is None and 'keyTabSecretId' in kwargs:
             key_tab_secret_id = kwargs['keyTabSecretId']
 
         _setter("kerberos_realm", kerberos_realm)
@@ -667,23 +675,23 @@ class MountTargetLdapIdmap(dict):
              outbound_connector2id: Optional[str] = None,
              schema_type: Optional[str] = None,
              user_search_base: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheLifetimeSeconds' in kwargs:
+        if cache_lifetime_seconds is None and 'cacheLifetimeSeconds' in kwargs:
             cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
-        if 'cacheRefreshIntervalSeconds' in kwargs:
+        if cache_refresh_interval_seconds is None and 'cacheRefreshIntervalSeconds' in kwargs:
             cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
-        if 'groupSearchBase' in kwargs:
+        if group_search_base is None and 'groupSearchBase' in kwargs:
             group_search_base = kwargs['groupSearchBase']
-        if 'negativeCacheLifetimeSeconds' in kwargs:
+        if negative_cache_lifetime_seconds is None and 'negativeCacheLifetimeSeconds' in kwargs:
             negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
-        if 'outboundConnector1id' in kwargs:
+        if outbound_connector1id is None and 'outboundConnector1id' in kwargs:
             outbound_connector1id = kwargs['outboundConnector1id']
-        if 'outboundConnector2id' in kwargs:
+        if outbound_connector2id is None and 'outboundConnector2id' in kwargs:
             outbound_connector2id = kwargs['outboundConnector2id']
-        if 'schemaType' in kwargs:
+        if schema_type is None and 'schemaType' in kwargs:
             schema_type = kwargs['schemaType']
-        if 'userSearchBase' in kwargs:
+        if user_search_base is None and 'userSearchBase' in kwargs:
             user_search_base = kwargs['userSearchBase']
 
         if cache_lifetime_seconds is not None:
@@ -785,10 +793,14 @@ class OutboundConnectorEndpoint(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             port: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("hostname", hostname)
         _setter("port", port)
@@ -850,34 +862,54 @@ class GetExportSetsExportSetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             max_fs_stat_bytes: str,
-             max_fs_stat_files: str,
-             mount_target_id: str,
-             state: str,
-             time_created: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             max_fs_stat_bytes: Optional[str] = None,
+             max_fs_stat_files: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'maxFsStatBytes' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if max_fs_stat_bytes is None and 'maxFsStatBytes' in kwargs:
             max_fs_stat_bytes = kwargs['maxFsStatBytes']
-        if 'maxFsStatFiles' in kwargs:
+        if max_fs_stat_bytes is None:
+            raise TypeError("Missing 'max_fs_stat_bytes' argument")
+        if max_fs_stat_files is None and 'maxFsStatFiles' in kwargs:
             max_fs_stat_files = kwargs['maxFsStatFiles']
-        if 'mountTargetId' in kwargs:
+        if max_fs_stat_files is None:
+            raise TypeError("Missing 'max_fs_stat_files' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
             mount_target_id = kwargs['mountTargetId']
-        if 'timeCreated' in kwargs:
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -983,11 +1015,15 @@ class GetExportSetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1045,26 +1081,42 @@ class GetExportsExportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             export_options: Sequence['outputs.GetExportsExportExportOptionResult'],
-             export_set_id: str,
-             file_system_id: str,
-             id: str,
-             is_idmap_groups_for_sys_auth: bool,
-             path: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             export_options: Optional[Sequence['outputs.GetExportsExportExportOptionResult']] = None,
+             export_set_id: Optional[str] = None,
+             file_system_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_idmap_groups_for_sys_auth: Optional[bool] = None,
+             path: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'exportOptions' in kwargs:
+        if export_options is None and 'exportOptions' in kwargs:
             export_options = kwargs['exportOptions']
-        if 'exportSetId' in kwargs:
+        if export_options is None:
+            raise TypeError("Missing 'export_options' argument")
+        if export_set_id is None and 'exportSetId' in kwargs:
             export_set_id = kwargs['exportSetId']
-        if 'fileSystemId' in kwargs:
+        if export_set_id is None:
+            raise TypeError("Missing 'export_set_id' argument")
+        if file_system_id is None and 'fileSystemId' in kwargs:
             file_system_id = kwargs['fileSystemId']
-        if 'isIdmapGroupsForSysAuth' in kwargs:
+        if file_system_id is None:
+            raise TypeError("Missing 'file_system_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_idmap_groups_for_sys_auth is None and 'isIdmapGroupsForSysAuth' in kwargs:
             is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
-        if 'timeCreated' in kwargs:
+        if is_idmap_groups_for_sys_auth is None:
+            raise TypeError("Missing 'is_idmap_groups_for_sys_auth' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("export_options", export_options)
         _setter("export_set_id", export_set_id)
@@ -1175,28 +1227,44 @@ class GetExportsExportExportOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access: str,
-             allowed_auths: Sequence[str],
-             anonymous_gid: str,
-             anonymous_uid: str,
-             identity_squash: str,
-             is_anonymous_access_allowed: bool,
-             require_privileged_source_port: bool,
-             source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access: Optional[str] = None,
+             allowed_auths: Optional[Sequence[str]] = None,
+             anonymous_gid: Optional[str] = None,
+             anonymous_uid: Optional[str] = None,
+             identity_squash: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             require_privileged_source_port: Optional[bool] = None,
+             source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedAuths' in kwargs:
+        if access is None:
+            raise TypeError("Missing 'access' argument")
+        if allowed_auths is None and 'allowedAuths' in kwargs:
             allowed_auths = kwargs['allowedAuths']
-        if 'anonymousGid' in kwargs:
+        if allowed_auths is None:
+            raise TypeError("Missing 'allowed_auths' argument")
+        if anonymous_gid is None and 'anonymousGid' in kwargs:
             anonymous_gid = kwargs['anonymousGid']
-        if 'anonymousUid' in kwargs:
+        if anonymous_gid is None:
+            raise TypeError("Missing 'anonymous_gid' argument")
+        if anonymous_uid is None and 'anonymousUid' in kwargs:
             anonymous_uid = kwargs['anonymousUid']
-        if 'identitySquash' in kwargs:
+        if anonymous_uid is None:
+            raise TypeError("Missing 'anonymous_uid' argument")
+        if identity_squash is None and 'identitySquash' in kwargs:
             identity_squash = kwargs['identitySquash']
-        if 'isAnonymousAccessAllowed' in kwargs:
+        if identity_squash is None:
+            raise TypeError("Missing 'identity_squash' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
             is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if 'requirePrivilegedSourcePort' in kwargs:
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if require_privileged_source_port is None and 'requirePrivilegedSourcePort' in kwargs:
             require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
+        if require_privileged_source_port is None:
+            raise TypeError("Missing 'require_privileged_source_port' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("access", access)
         _setter("allowed_auths", allowed_auths)
@@ -1287,11 +1355,15 @@ class GetExportsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1379,58 +1451,94 @@ class GetFileSystemsFileSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             filesystem_snapshot_policy_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_clone_parent: bool,
-             is_hydrated: bool,
-             is_targetable: bool,
-             kms_key_id: str,
-             lifecycle_details: str,
-             metered_bytes: str,
-             replication_target_id: str,
-             source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
-             source_snapshot_id: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             filesystem_snapshot_policy_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_clone_parent: Optional[bool] = None,
+             is_hydrated: Optional[bool] = None,
+             is_targetable: Optional[bool] = None,
+             kms_key_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             metered_bytes: Optional[str] = None,
+             replication_target_id: Optional[str] = None,
+             source_details: Optional[Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult']] = None,
+             source_snapshot_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filesystemSnapshotPolicyId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
             filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
-        if 'freeformTags' in kwargs:
+        if filesystem_snapshot_policy_id is None:
+            raise TypeError("Missing 'filesystem_snapshot_policy_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCloneParent' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_clone_parent is None and 'isCloneParent' in kwargs:
             is_clone_parent = kwargs['isCloneParent']
-        if 'isHydrated' in kwargs:
+        if is_clone_parent is None:
+            raise TypeError("Missing 'is_clone_parent' argument")
+        if is_hydrated is None and 'isHydrated' in kwargs:
             is_hydrated = kwargs['isHydrated']
-        if 'isTargetable' in kwargs:
+        if is_hydrated is None:
+            raise TypeError("Missing 'is_hydrated' argument")
+        if is_targetable is None and 'isTargetable' in kwargs:
             is_targetable = kwargs['isTargetable']
-        if 'kmsKeyId' in kwargs:
+        if is_targetable is None:
+            raise TypeError("Missing 'is_targetable' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'lifecycleDetails' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'meteredBytes' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if metered_bytes is None and 'meteredBytes' in kwargs:
             metered_bytes = kwargs['meteredBytes']
-        if 'replicationTargetId' in kwargs:
+        if metered_bytes is None:
+            raise TypeError("Missing 'metered_bytes' argument")
+        if replication_target_id is None and 'replicationTargetId' in kwargs:
             replication_target_id = kwargs['replicationTargetId']
-        if 'sourceDetails' in kwargs:
+        if replication_target_id is None:
+            raise TypeError("Missing 'replication_target_id' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'sourceSnapshotId' in kwargs:
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
-        if 'timeCreated' in kwargs:
+        if source_snapshot_id is None:
+            raise TypeError("Missing 'source_snapshot_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -1613,14 +1721,18 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             parent_file_system_id: str,
-             source_snapshot_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             parent_file_system_id: Optional[str] = None,
+             source_snapshot_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parentFileSystemId' in kwargs:
+        if parent_file_system_id is None and 'parentFileSystemId' in kwargs:
             parent_file_system_id = kwargs['parentFileSystemId']
-        if 'sourceSnapshotId' in kwargs:
+        if parent_file_system_id is None:
+            raise TypeError("Missing 'parent_file_system_id' argument")
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
+        if source_snapshot_id is None:
+            raise TypeError("Missing 'source_snapshot_id' argument")
 
         _setter("parent_file_system_id", parent_file_system_id)
         _setter("source_snapshot_id", source_snapshot_id)
@@ -1657,11 +1769,15 @@ class GetFileSystemsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1725,32 +1841,52 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             policy_prefix: str,
-             schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             policy_prefix: Optional[str] = None,
+             schedules: Optional[Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'policyPrefix' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if policy_prefix is None and 'policyPrefix' in kwargs:
             policy_prefix = kwargs['policyPrefix']
-        if 'timeCreated' in kwargs:
+        if policy_prefix is None:
+            raise TypeError("Missing 'policy_prefix' argument")
+        if schedules is None:
+            raise TypeError("Missing 'schedules' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -1882,31 +2018,49 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             day_of_month: int,
-             day_of_week: str,
-             hour_of_day: int,
-             month: str,
-             period: str,
-             retention_duration_in_seconds: str,
-             schedule_prefix: str,
-             time_schedule_start: str,
-             time_zone: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             day_of_month: Optional[int] = None,
+             day_of_week: Optional[str] = None,
+             hour_of_day: Optional[int] = None,
+             month: Optional[str] = None,
+             period: Optional[str] = None,
+             retention_duration_in_seconds: Optional[str] = None,
+             schedule_prefix: Optional[str] = None,
+             time_schedule_start: Optional[str] = None,
+             time_zone: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dayOfMonth' in kwargs:
+        if day_of_month is None and 'dayOfMonth' in kwargs:
             day_of_month = kwargs['dayOfMonth']
-        if 'dayOfWeek' in kwargs:
+        if day_of_month is None:
+            raise TypeError("Missing 'day_of_month' argument")
+        if day_of_week is None and 'dayOfWeek' in kwargs:
             day_of_week = kwargs['dayOfWeek']
-        if 'hourOfDay' in kwargs:
+        if day_of_week is None:
+            raise TypeError("Missing 'day_of_week' argument")
+        if hour_of_day is None and 'hourOfDay' in kwargs:
             hour_of_day = kwargs['hourOfDay']
-        if 'retentionDurationInSeconds' in kwargs:
+        if hour_of_day is None:
+            raise TypeError("Missing 'hour_of_day' argument")
+        if month is None:
+            raise TypeError("Missing 'month' argument")
+        if period is None:
+            raise TypeError("Missing 'period' argument")
+        if retention_duration_in_seconds is None and 'retentionDurationInSeconds' in kwargs:
             retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
-        if 'schedulePrefix' in kwargs:
+        if retention_duration_in_seconds is None:
+            raise TypeError("Missing 'retention_duration_in_seconds' argument")
+        if schedule_prefix is None and 'schedulePrefix' in kwargs:
             schedule_prefix = kwargs['schedulePrefix']
-        if 'timeScheduleStart' in kwargs:
+        if schedule_prefix is None:
+            raise TypeError("Missing 'schedule_prefix' argument")
+        if time_schedule_start is None and 'timeScheduleStart' in kwargs:
             time_schedule_start = kwargs['timeScheduleStart']
-        if 'timeZone' in kwargs:
+        if time_schedule_start is None:
+            raise TypeError("Missing 'time_schedule_start' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
 
         _setter("day_of_month", day_of_month)
         _setter("day_of_week", day_of_week)
@@ -2006,11 +2160,15 @@ class GetFilesystemSnapshotPoliciesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2071,31 +2229,49 @@ class GetFilesystemSnapshotPolicyScheduleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             day_of_month: int,
-             day_of_week: str,
-             hour_of_day: int,
-             month: str,
-             period: str,
-             retention_duration_in_seconds: str,
-             schedule_prefix: str,
-             time_schedule_start: str,
-             time_zone: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             day_of_month: Optional[int] = None,
+             day_of_week: Optional[str] = None,
+             hour_of_day: Optional[int] = None,
+             month: Optional[str] = None,
+             period: Optional[str] = None,
+             retention_duration_in_seconds: Optional[str] = None,
+             schedule_prefix: Optional[str] = None,
+             time_schedule_start: Optional[str] = None,
+             time_zone: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dayOfMonth' in kwargs:
+        if day_of_month is None and 'dayOfMonth' in kwargs:
             day_of_month = kwargs['dayOfMonth']
-        if 'dayOfWeek' in kwargs:
+        if day_of_month is None:
+            raise TypeError("Missing 'day_of_month' argument")
+        if day_of_week is None and 'dayOfWeek' in kwargs:
             day_of_week = kwargs['dayOfWeek']
-        if 'hourOfDay' in kwargs:
+        if day_of_week is None:
+            raise TypeError("Missing 'day_of_week' argument")
+        if hour_of_day is None and 'hourOfDay' in kwargs:
             hour_of_day = kwargs['hourOfDay']
-        if 'retentionDurationInSeconds' in kwargs:
+        if hour_of_day is None:
+            raise TypeError("Missing 'hour_of_day' argument")
+        if month is None:
+            raise TypeError("Missing 'month' argument")
+        if period is None:
+            raise TypeError("Missing 'period' argument")
+        if retention_duration_in_seconds is None and 'retentionDurationInSeconds' in kwargs:
             retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
-        if 'schedulePrefix' in kwargs:
+        if retention_duration_in_seconds is None:
+            raise TypeError("Missing 'retention_duration_in_seconds' argument")
+        if schedule_prefix is None and 'schedulePrefix' in kwargs:
             schedule_prefix = kwargs['schedulePrefix']
-        if 'timeScheduleStart' in kwargs:
+        if schedule_prefix is None:
+            raise TypeError("Missing 'schedule_prefix' argument")
+        if time_schedule_start is None and 'timeScheduleStart' in kwargs:
             time_schedule_start = kwargs['timeScheduleStart']
-        if 'timeZone' in kwargs:
+        if time_schedule_start is None:
+            raise TypeError("Missing 'time_schedule_start' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
 
         _setter("day_of_month", day_of_month)
         _setter("day_of_week", day_of_week)
@@ -2195,11 +2371,15 @@ class GetMountTargetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2285,56 +2465,92 @@ class GetMountTargetsMountTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             export_set_id: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             id: str,
-             idmap_type: str,
-             ip_address: str,
-             kerberos: Sequence['outputs.GetMountTargetsMountTargetKerberoResult'],
-             ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
-             lifecycle_details: str,
-             nsg_ids: Sequence[str],
-             private_ip_ids: Sequence[str],
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             export_set_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             idmap_type: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             kerberos: Optional[Sequence['outputs.GetMountTargetsMountTargetKerberoResult']] = None,
+             ldap_idmaps: Optional[Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip_ids: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exportSetId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if export_set_id is None and 'exportSetId' in kwargs:
             export_set_id = kwargs['exportSetId']
-        if 'freeformTags' in kwargs:
+        if export_set_id is None:
+            raise TypeError("Missing 'export_set_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'idmapType' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idmap_type is None and 'idmapType' in kwargs:
             idmap_type = kwargs['idmapType']
-        if 'ipAddress' in kwargs:
+        if idmap_type is None:
+            raise TypeError("Missing 'idmap_type' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'ldapIdmaps' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if kerberos is None:
+            raise TypeError("Missing 'kerberos' argument")
+        if ldap_idmaps is None and 'ldapIdmaps' in kwargs:
             ldap_idmaps = kwargs['ldapIdmaps']
-        if 'lifecycleDetails' in kwargs:
+        if ldap_idmaps is None:
+            raise TypeError("Missing 'ldap_idmaps' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIpIds' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip_ids is None and 'privateIpIds' in kwargs:
             private_ip_ids = kwargs['privateIpIds']
-        if 'subnetId' in kwargs:
+        if private_ip_ids is None:
+            raise TypeError("Missing 'private_ip_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -2520,23 +2736,33 @@ class GetMountTargetsMountTargetKerberoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_key_tab_secret_version: int,
-             current_key_tab_secret_version: int,
-             is_kerberos_enabled: bool,
-             kerberos_realm: str,
-             key_tab_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backup_key_tab_secret_version: Optional[int] = None,
+             current_key_tab_secret_version: Optional[int] = None,
+             is_kerberos_enabled: Optional[bool] = None,
+             kerberos_realm: Optional[str] = None,
+             key_tab_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupKeyTabSecretVersion' in kwargs:
+        if backup_key_tab_secret_version is None and 'backupKeyTabSecretVersion' in kwargs:
             backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
-        if 'currentKeyTabSecretVersion' in kwargs:
+        if backup_key_tab_secret_version is None:
+            raise TypeError("Missing 'backup_key_tab_secret_version' argument")
+        if current_key_tab_secret_version is None and 'currentKeyTabSecretVersion' in kwargs:
             current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
-        if 'isKerberosEnabled' in kwargs:
+        if current_key_tab_secret_version is None:
+            raise TypeError("Missing 'current_key_tab_secret_version' argument")
+        if is_kerberos_enabled is None and 'isKerberosEnabled' in kwargs:
             is_kerberos_enabled = kwargs['isKerberosEnabled']
-        if 'kerberosRealm' in kwargs:
+        if is_kerberos_enabled is None:
+            raise TypeError("Missing 'is_kerberos_enabled' argument")
+        if kerberos_realm is None and 'kerberosRealm' in kwargs:
             kerberos_realm = kwargs['kerberosRealm']
-        if 'keyTabSecretId' in kwargs:
+        if kerberos_realm is None:
+            raise TypeError("Missing 'kerberos_realm' argument")
+        if key_tab_secret_id is None and 'keyTabSecretId' in kwargs:
             key_tab_secret_id = kwargs['keyTabSecretId']
+        if key_tab_secret_id is None:
+            raise TypeError("Missing 'key_tab_secret_id' argument")
 
         _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
         _setter("current_key_tab_secret_version", current_key_tab_secret_version)
@@ -2620,32 +2846,48 @@ class GetMountTargetsMountTargetLdapIdmapResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cache_lifetime_seconds: int,
-             cache_refresh_interval_seconds: int,
-             group_search_base: str,
-             negative_cache_lifetime_seconds: int,
-             outbound_connector1id: str,
-             outbound_connector2id: str,
-             schema_type: str,
-             user_search_base: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cache_lifetime_seconds: Optional[int] = None,
+             cache_refresh_interval_seconds: Optional[int] = None,
+             group_search_base: Optional[str] = None,
+             negative_cache_lifetime_seconds: Optional[int] = None,
+             outbound_connector1id: Optional[str] = None,
+             outbound_connector2id: Optional[str] = None,
+             schema_type: Optional[str] = None,
+             user_search_base: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheLifetimeSeconds' in kwargs:
+        if cache_lifetime_seconds is None and 'cacheLifetimeSeconds' in kwargs:
             cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
-        if 'cacheRefreshIntervalSeconds' in kwargs:
+        if cache_lifetime_seconds is None:
+            raise TypeError("Missing 'cache_lifetime_seconds' argument")
+        if cache_refresh_interval_seconds is None and 'cacheRefreshIntervalSeconds' in kwargs:
             cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
-        if 'groupSearchBase' in kwargs:
+        if cache_refresh_interval_seconds is None:
+            raise TypeError("Missing 'cache_refresh_interval_seconds' argument")
+        if group_search_base is None and 'groupSearchBase' in kwargs:
             group_search_base = kwargs['groupSearchBase']
-        if 'negativeCacheLifetimeSeconds' in kwargs:
+        if group_search_base is None:
+            raise TypeError("Missing 'group_search_base' argument")
+        if negative_cache_lifetime_seconds is None and 'negativeCacheLifetimeSeconds' in kwargs:
             negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
-        if 'outboundConnector1id' in kwargs:
+        if negative_cache_lifetime_seconds is None:
+            raise TypeError("Missing 'negative_cache_lifetime_seconds' argument")
+        if outbound_connector1id is None and 'outboundConnector1id' in kwargs:
             outbound_connector1id = kwargs['outboundConnector1id']
-        if 'outboundConnector2id' in kwargs:
+        if outbound_connector1id is None:
+            raise TypeError("Missing 'outbound_connector1id' argument")
+        if outbound_connector2id is None and 'outboundConnector2id' in kwargs:
             outbound_connector2id = kwargs['outboundConnector2id']
-        if 'schemaType' in kwargs:
+        if outbound_connector2id is None:
+            raise TypeError("Missing 'outbound_connector2id' argument")
+        if schema_type is None and 'schemaType' in kwargs:
             schema_type = kwargs['schemaType']
-        if 'userSearchBase' in kwargs:
+        if schema_type is None:
+            raise TypeError("Missing 'schema_type' argument")
+        if user_search_base is None and 'userSearchBase' in kwargs:
             user_search_base = kwargs['userSearchBase']
+        if user_search_base is None:
+            raise TypeError("Missing 'user_search_base' argument")
 
         _setter("cache_lifetime_seconds", cache_lifetime_seconds)
         _setter("cache_refresh_interval_seconds", cache_refresh_interval_seconds)
@@ -2738,10 +2980,14 @@ class GetOutboundConnectorEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             port: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("hostname", hostname)
         _setter("port", port)
@@ -2778,11 +3024,15 @@ class GetOutboundConnectorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2855,41 +3105,67 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             bind_distinguished_name: str,
-             compartment_id: str,
-             connector_type: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             endpoints: Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             password_secret_id: str,
-             password_secret_version: int,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             bind_distinguished_name: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             password_secret_version: Optional[int] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'bindDistinguishedName' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if bind_distinguished_name is None and 'bindDistinguishedName' in kwargs:
             bind_distinguished_name = kwargs['bindDistinguishedName']
-        if 'compartmentId' in kwargs:
+        if bind_distinguished_name is None:
+            raise TypeError("Missing 'bind_distinguished_name' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectorType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'definedTags' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'passwordSecretId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'passwordSecretVersion' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if password_secret_version is None and 'passwordSecretVersion' in kwargs:
             password_secret_version = kwargs['passwordSecretVersion']
-        if 'timeCreated' in kwargs:
+        if password_secret_version is None:
+            raise TypeError("Missing 'password_secret_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("bind_distinguished_name", bind_distinguished_name)
@@ -3027,10 +3303,14 @@ class GetOutboundConnectorsOutboundConnectorEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             port: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("hostname", hostname)
         _setter("port", port)
@@ -3067,11 +3347,15 @@ class GetReplicationTargetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3153,52 +3437,84 @@ class GetReplicationTargetsReplicationTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             delta_progress: str,
-             delta_status: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             last_snapshot_id: str,
-             lifecycle_details: str,
-             recovery_point_time: str,
-             replication_id: str,
-             source_id: str,
-             state: str,
-             target_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delta_progress: Optional[str] = None,
+             delta_status: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             last_snapshot_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             recovery_point_time: Optional[str] = None,
+             replication_id: Optional[str] = None,
+             source_id: Optional[str] = None,
+             state: Optional[str] = None,
+             target_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deltaProgress' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delta_progress is None and 'deltaProgress' in kwargs:
             delta_progress = kwargs['deltaProgress']
-        if 'deltaStatus' in kwargs:
+        if delta_progress is None:
+            raise TypeError("Missing 'delta_progress' argument")
+        if delta_status is None and 'deltaStatus' in kwargs:
             delta_status = kwargs['deltaStatus']
-        if 'displayName' in kwargs:
+        if delta_status is None:
+            raise TypeError("Missing 'delta_status' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastSnapshotId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if last_snapshot_id is None and 'lastSnapshotId' in kwargs:
             last_snapshot_id = kwargs['lastSnapshotId']
-        if 'lifecycleDetails' in kwargs:
+        if last_snapshot_id is None:
+            raise TypeError("Missing 'last_snapshot_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'recoveryPointTime' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if recovery_point_time is None and 'recoveryPointTime' in kwargs:
             recovery_point_time = kwargs['recoveryPointTime']
-        if 'replicationId' in kwargs:
+        if recovery_point_time is None:
+            raise TypeError("Missing 'recovery_point_time' argument")
+        if replication_id is None and 'replicationId' in kwargs:
             replication_id = kwargs['replicationId']
-        if 'sourceId' in kwargs:
+        if replication_id is None:
+            raise TypeError("Missing 'replication_id' argument")
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'targetId' in kwargs:
+        if source_id is None:
+            raise TypeError("Missing 'source_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -3361,11 +3677,15 @@ class GetReplicationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3450,55 +3770,89 @@ class GetReplicationsReplicationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             delta_progress: str,
-             delta_status: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             last_snapshot_id: str,
-             lifecycle_details: str,
-             recovery_point_time: str,
-             replication_interval: str,
-             replication_target_id: str,
-             source_id: str,
-             state: str,
-             target_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delta_progress: Optional[str] = None,
+             delta_status: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             last_snapshot_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             recovery_point_time: Optional[str] = None,
+             replication_interval: Optional[str] = None,
+             replication_target_id: Optional[str] = None,
+             source_id: Optional[str] = None,
+             state: Optional[str] = None,
+             target_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deltaProgress' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delta_progress is None and 'deltaProgress' in kwargs:
             delta_progress = kwargs['deltaProgress']
-        if 'deltaStatus' in kwargs:
+        if delta_progress is None:
+            raise TypeError("Missing 'delta_progress' argument")
+        if delta_status is None and 'deltaStatus' in kwargs:
             delta_status = kwargs['deltaStatus']
-        if 'displayName' in kwargs:
+        if delta_status is None:
+            raise TypeError("Missing 'delta_status' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastSnapshotId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if last_snapshot_id is None and 'lastSnapshotId' in kwargs:
             last_snapshot_id = kwargs['lastSnapshotId']
-        if 'lifecycleDetails' in kwargs:
+        if last_snapshot_id is None:
+            raise TypeError("Missing 'last_snapshot_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'recoveryPointTime' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if recovery_point_time is None and 'recoveryPointTime' in kwargs:
             recovery_point_time = kwargs['recoveryPointTime']
-        if 'replicationInterval' in kwargs:
+        if recovery_point_time is None:
+            raise TypeError("Missing 'recovery_point_time' argument")
+        if replication_interval is None and 'replicationInterval' in kwargs:
             replication_interval = kwargs['replicationInterval']
-        if 'replicationTargetId' in kwargs:
+        if replication_interval is None:
+            raise TypeError("Missing 'replication_interval' argument")
+        if replication_target_id is None and 'replicationTargetId' in kwargs:
             replication_target_id = kwargs['replicationTargetId']
-        if 'sourceId' in kwargs:
+        if replication_target_id is None:
+            raise TypeError("Missing 'replication_target_id' argument")
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'targetId' in kwargs:
+        if source_id is None:
+            raise TypeError("Missing 'source_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -3673,11 +4027,15 @@ class GetSnapshotsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3759,44 +4117,72 @@ class GetSnapshotsSnapshotResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             expiration_time: str,
-             file_system_id: str,
-             filesystem_snapshot_policy_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_clone_source: bool,
-             lifecycle_details: str,
-             name: str,
-             provenance_id: str,
-             snapshot_time: str,
-             snapshot_type: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             expiration_time: Optional[str] = None,
+             file_system_id: Optional[str] = None,
+             filesystem_snapshot_policy_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_clone_source: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             provenance_id: Optional[str] = None,
+             snapshot_time: Optional[str] = None,
+             snapshot_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'expirationTime' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if expiration_time is None and 'expirationTime' in kwargs:
             expiration_time = kwargs['expirationTime']
-        if 'fileSystemId' in kwargs:
+        if expiration_time is None:
+            raise TypeError("Missing 'expiration_time' argument")
+        if file_system_id is None and 'fileSystemId' in kwargs:
             file_system_id = kwargs['fileSystemId']
-        if 'filesystemSnapshotPolicyId' in kwargs:
+        if file_system_id is None:
+            raise TypeError("Missing 'file_system_id' argument")
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
             filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
-        if 'freeformTags' in kwargs:
+        if filesystem_snapshot_policy_id is None:
+            raise TypeError("Missing 'filesystem_snapshot_policy_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCloneSource' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_clone_source is None and 'isCloneSource' in kwargs:
             is_clone_source = kwargs['isCloneSource']
-        if 'lifecycleDetails' in kwargs:
+        if is_clone_source is None:
+            raise TypeError("Missing 'is_clone_source' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'provenanceId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if provenance_id is None and 'provenanceId' in kwargs:
             provenance_id = kwargs['provenanceId']
-        if 'snapshotTime' in kwargs:
+        if provenance_id is None:
+            raise TypeError("Missing 'provenance_id' argument")
+        if snapshot_time is None and 'snapshotTime' in kwargs:
             snapshot_time = kwargs['snapshotTime']
-        if 'snapshotType' in kwargs:
+        if snapshot_time is None:
+            raise TypeError("Missing 'snapshot_time' argument")
+        if snapshot_type is None and 'snapshotType' in kwargs:
             snapshot_type = kwargs['snapshotType']
-        if 'timeCreated' in kwargs:
+        if snapshot_type is None:
+            raise TypeError("Missing 'snapshot_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("expiration_time", expiration_time)

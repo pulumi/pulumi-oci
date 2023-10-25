@@ -43,10 +43,10 @@ import (
 //					PeerId:     pulumi.Any(oci_blockchain_peer.Test_peer.Id),
 //					PeerRegion: pulumi.Any(_var.Dr_protection_group_association_peer_region),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Members: disasterrecovery.DrProtectionGroupMemberArray{

@@ -36,11 +36,11 @@ import (
 //				JobId:         pulumi.Any(oci_datascience_job.Test_job.Id),
 //				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
 //				Asynchronous:  pulumi.Any(_var.Asynchronous),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Job_run_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				JobConfigurationOverrideDetails: &datascience.JobRunJobConfigurationOverrideDetailsArgs{

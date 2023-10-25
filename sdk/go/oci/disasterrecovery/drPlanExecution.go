@@ -38,11 +38,11 @@ import (
 //					AreWarningsIgnored:  pulumi.Any(_var.Dr_plan_execution_execution_options_are_warnings_ignored),
 //				},
 //				PlanId: pulumi.Any(oci_disaster_recovery_plan.Test_plan.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Dr_plan_execution_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

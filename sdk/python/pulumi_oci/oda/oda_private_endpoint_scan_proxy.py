@@ -41,18 +41,26 @@ class OdaPrivateEndpointScanProxyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             oda_private_endpoint_id: pulumi.Input[str],
-             protocol: pulumi.Input[str],
-             scan_listener_infos: pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]],
-             scan_listener_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
+             scan_listener_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'odaPrivateEndpointId' in kwargs:
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if 'scanListenerInfos' in kwargs:
+        if oda_private_endpoint_id is None:
+            raise TypeError("Missing 'oda_private_endpoint_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if scan_listener_infos is None and 'scanListenerInfos' in kwargs:
             scan_listener_infos = kwargs['scanListenerInfos']
-        if 'scanListenerType' in kwargs:
+        if scan_listener_infos is None:
+            raise TypeError("Missing 'scan_listener_infos' argument")
+        if scan_listener_type is None and 'scanListenerType' in kwargs:
             scan_listener_type = kwargs['scanListenerType']
+        if scan_listener_type is None:
+            raise TypeError("Missing 'scan_listener_type' argument")
 
         _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         _setter("protocol", protocol)
@@ -152,15 +160,15 @@ class _OdaPrivateEndpointScanProxyState:
              scan_listener_type: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'odaPrivateEndpointId' in kwargs:
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if 'scanListenerInfos' in kwargs:
+        if scan_listener_infos is None and 'scanListenerInfos' in kwargs:
             scan_listener_infos = kwargs['scanListenerInfos']
-        if 'scanListenerType' in kwargs:
+        if scan_listener_type is None and 'scanListenerType' in kwargs:
             scan_listener_type = kwargs['scanListenerType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if oda_private_endpoint_id is not None:

@@ -55,12 +55,12 @@ import (
 //				PortSpeedShapeName:    pulumi.Any(_var.Cross_connect_port_speed_shape_name),
 //				CrossConnectGroupId:   pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
 //				CustomerReferenceName: pulumi.Any(_var.Cross_connect_customer_reference_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName:                          pulumi.Any(_var.Cross_connect_display_name),
 //				FarCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MacsecProperties: &core.CrossConnectMacsecPropertiesArgs{

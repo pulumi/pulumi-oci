@@ -34,10 +34,10 @@ import (
 //			_, err := CloudMigrations.NewMigration(ctx, "testMigration", &CloudMigrations.MigrationArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Migration_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsCompleted:           pulumi.Any(_var.Migration_is_completed),

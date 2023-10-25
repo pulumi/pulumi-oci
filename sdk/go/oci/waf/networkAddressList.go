@@ -35,11 +35,11 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Type:          pulumi.Any(_var.Network_address_list_type),
 //				Addresses:     pulumi.Any(_var.Network_address_list_addresses),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Network_address_list_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				SystemTags: pulumi.Any(_var.Network_address_list_system_tags),

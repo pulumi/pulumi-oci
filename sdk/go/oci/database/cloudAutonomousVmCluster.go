@@ -43,7 +43,7 @@ import (
 //				DbServers:                      pulumi.Any(_var.Cloud_autonomous_vm_cluster_db_servers),
 //				DefinedTags:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_defined_tags),
 //				Description:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsMtlsEnabledVmCluster: pulumi.Any(_var.Cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster),

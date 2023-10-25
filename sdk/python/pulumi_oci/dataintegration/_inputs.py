@@ -81,11 +81,11 @@ class WorkspaceApplicationDependentObjectMetadataArgs:
              name_path: Optional[pulumi.Input[str]] = None,
              object_version: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'namePath' in kwargs:
+        if name_path is None and 'namePath' in kwargs:
             name_path = kwargs['namePath']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
 
         if action is not None:
@@ -255,31 +255,31 @@ class WorkspaceApplicationMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'countStatistics' in kwargs:
+        if count_statistics is None and 'countStatistics' in kwargs:
             count_statistics = kwargs['countStatistics']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'createdByName' in kwargs:
+        if created_by_name is None and 'createdByName' in kwargs:
             created_by_name = kwargs['createdByName']
-        if 'identifierPath' in kwargs:
+        if identifier_path is None and 'identifierPath' in kwargs:
             identifier_path = kwargs['identifierPath']
-        if 'infoFields' in kwargs:
+        if info_fields is None and 'infoFields' in kwargs:
             info_fields = kwargs['infoFields']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedBy' in kwargs:
+        if updated_by is None and 'updatedBy' in kwargs:
             updated_by = kwargs['updatedBy']
-        if 'updatedByName' in kwargs:
+        if updated_by_name is None and 'updatedByName' in kwargs:
             updated_by_name = kwargs['updatedByName']
 
         if aggregator_key is not None:
@@ -511,7 +511,7 @@ class WorkspaceApplicationMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -601,9 +601,9 @@ class WorkspaceApplicationMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectTypeCountLists' in kwargs:
+        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
             object_type_count_lists = kwargs['objectTypeCountLists']
 
         if object_type_count_lists is not None:
@@ -641,11 +641,11 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectCount' in kwargs:
+        if object_count is None and 'objectCount' in kwargs:
             object_count = kwargs['objectCount']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
 
         if object_count is not None:
@@ -697,9 +697,9 @@ class WorkspaceApplicationParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'rootDocId' in kwargs:
+        if root_doc_id is None and 'rootDocId' in kwargs:
             root_doc_id = kwargs['rootDocId']
 
         if parent is not None:
@@ -771,11 +771,11 @@ class WorkspaceApplicationPublishedObjectMetadataArgs:
              name_path: Optional[pulumi.Input[str]] = None,
              object_version: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'namePath' in kwargs:
+        if name_path is None and 'namePath' in kwargs:
             name_path = kwargs['namePath']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
 
         if action is not None:
@@ -909,13 +909,13 @@ class WorkspaceApplicationRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
 
         if aggregator_key is not None:
@@ -1025,17 +1025,17 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
              copy_type: Optional[pulumi.Input[str]] = None,
              last_patch_key: Optional[pulumi.Input[str]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationKey' in kwargs:
+        if application_key is None and 'applicationKey' in kwargs:
             application_key = kwargs['applicationKey']
-        if 'applicationVersion' in kwargs:
+        if application_version is None and 'applicationVersion' in kwargs:
             application_version = kwargs['applicationVersion']
-        if 'copyType' in kwargs:
+        if copy_type is None and 'copyType' in kwargs:
             copy_type = kwargs['copyType']
-        if 'lastPatchKey' in kwargs:
+        if last_patch_key is None and 'lastPatchKey' in kwargs:
             last_patch_key = kwargs['lastPatchKey']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if application_key is not None:
@@ -1157,17 +1157,17 @@ class WorkspaceExportRequestExportedItemArgs:
              object_type: Optional[pulumi.Input[str]] = None,
              object_version: Optional[pulumi.Input[str]] = None,
              time_updated_in_millis: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'namePath' in kwargs:
+        if name_path is None and 'namePath' in kwargs:
             name_path = kwargs['namePath']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
-        if 'timeUpdatedInMillis' in kwargs:
+        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
             time_updated_in_millis = kwargs['timeUpdatedInMillis']
 
         if aggregator_key is not None:
@@ -1351,31 +1351,31 @@ class WorkspaceFolderMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'countStatistics' in kwargs:
+        if count_statistics is None and 'countStatistics' in kwargs:
             count_statistics = kwargs['countStatistics']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'createdByName' in kwargs:
+        if created_by_name is None and 'createdByName' in kwargs:
             created_by_name = kwargs['createdByName']
-        if 'identifierPath' in kwargs:
+        if identifier_path is None and 'identifierPath' in kwargs:
             identifier_path = kwargs['identifierPath']
-        if 'infoFields' in kwargs:
+        if info_fields is None and 'infoFields' in kwargs:
             info_fields = kwargs['infoFields']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedBy' in kwargs:
+        if updated_by is None and 'updatedBy' in kwargs:
             updated_by = kwargs['updatedBy']
-        if 'updatedByName' in kwargs:
+        if updated_by_name is None and 'updatedByName' in kwargs:
             updated_by_name = kwargs['updatedByName']
 
         if aggregator_key is not None:
@@ -1607,7 +1607,7 @@ class WorkspaceFolderMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -1697,9 +1697,9 @@ class WorkspaceFolderMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectTypeCountLists' in kwargs:
+        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
             object_type_count_lists = kwargs['objectTypeCountLists']
 
         if object_type_count_lists is not None:
@@ -1737,11 +1737,11 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectCount' in kwargs:
+        if object_count is None and 'objectCount' in kwargs:
             object_count = kwargs['objectCount']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
 
         if object_count is not None:
@@ -1793,9 +1793,9 @@ class WorkspaceFolderParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'rootDocId' in kwargs:
+        if root_doc_id is None and 'rootDocId' in kwargs:
             root_doc_id = kwargs['rootDocId']
 
         if parent is not None:
@@ -1859,13 +1859,13 @@ class WorkspaceFolderRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
 
         if aggregator_key is not None:
@@ -1960,16 +1960,18 @@ class WorkspaceImportRequestImportConflictResolutionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             import_conflict_resolution_type: pulumi.Input[str],
+             import_conflict_resolution_type: Optional[pulumi.Input[str]] = None,
              duplicate_prefix: Optional[pulumi.Input[str]] = None,
              duplicate_suffix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importConflictResolutionType' in kwargs:
+        if import_conflict_resolution_type is None and 'importConflictResolutionType' in kwargs:
             import_conflict_resolution_type = kwargs['importConflictResolutionType']
-        if 'duplicatePrefix' in kwargs:
+        if import_conflict_resolution_type is None:
+            raise TypeError("Missing 'import_conflict_resolution_type' argument")
+        if duplicate_prefix is None and 'duplicatePrefix' in kwargs:
             duplicate_prefix = kwargs['duplicatePrefix']
-        if 'duplicateSuffix' in kwargs:
+        if duplicate_suffix is None and 'duplicateSuffix' in kwargs:
             duplicate_suffix = kwargs['duplicateSuffix']
 
         _setter("import_conflict_resolution_type", import_conflict_resolution_type)
@@ -2066,23 +2068,23 @@ class WorkspaceImportRequestImportedObjectArgs:
              old_key: Optional[pulumi.Input[str]] = None,
              resolution_action: Optional[pulumi.Input[str]] = None,
              time_updated_in_millis: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'namePath' in kwargs:
+        if name_path is None and 'namePath' in kwargs:
             name_path = kwargs['namePath']
-        if 'newKey' in kwargs:
+        if new_key is None and 'newKey' in kwargs:
             new_key = kwargs['newKey']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
-        if 'oldKey' in kwargs:
+        if old_key is None and 'oldKey' in kwargs:
             old_key = kwargs['oldKey']
-        if 'resolutionAction' in kwargs:
+        if resolution_action is None and 'resolutionAction' in kwargs:
             resolution_action = kwargs['resolutionAction']
-        if 'timeUpdatedInMillis' in kwargs:
+        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
             time_updated_in_millis = kwargs['timeUpdatedInMillis']
 
         if aggregator_key is not None:
@@ -2294,31 +2296,31 @@ class WorkspaceProjectMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'countStatistics' in kwargs:
+        if count_statistics is None and 'countStatistics' in kwargs:
             count_statistics = kwargs['countStatistics']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'createdByName' in kwargs:
+        if created_by_name is None and 'createdByName' in kwargs:
             created_by_name = kwargs['createdByName']
-        if 'identifierPath' in kwargs:
+        if identifier_path is None and 'identifierPath' in kwargs:
             identifier_path = kwargs['identifierPath']
-        if 'infoFields' in kwargs:
+        if info_fields is None and 'infoFields' in kwargs:
             info_fields = kwargs['infoFields']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedBy' in kwargs:
+        if updated_by is None and 'updatedBy' in kwargs:
             updated_by = kwargs['updatedBy']
-        if 'updatedByName' in kwargs:
+        if updated_by_name is None and 'updatedByName' in kwargs:
             updated_by_name = kwargs['updatedByName']
 
         if aggregator_key is not None:
@@ -2550,7 +2552,7 @@ class WorkspaceProjectMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -2640,9 +2642,9 @@ class WorkspaceProjectMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectTypeCountLists' in kwargs:
+        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
             object_type_count_lists = kwargs['objectTypeCountLists']
 
         if object_type_count_lists is not None:
@@ -2680,11 +2682,11 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectCount' in kwargs:
+        if object_count is None and 'objectCount' in kwargs:
             object_count = kwargs['objectCount']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
 
         if object_count is not None:
@@ -2736,9 +2738,9 @@ class WorkspaceProjectParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'rootDocId' in kwargs:
+        if root_doc_id is None and 'rootDocId' in kwargs:
             root_doc_id = kwargs['rootDocId']
 
         if parent is not None:
@@ -2802,13 +2804,13 @@ class WorkspaceProjectRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregatorKey' in kwargs:
+        if aggregator_key is None and 'aggregatorKey' in kwargs:
             aggregator_key = kwargs['aggregatorKey']
-        if 'isFavorite' in kwargs:
+        if is_favorite is None and 'isFavorite' in kwargs:
             is_favorite = kwargs['isFavorite']
-        if 'registryVersion' in kwargs:
+        if registry_version is None and 'registryVersion' in kwargs:
             registry_version = kwargs['registryVersion']
 
         if aggregator_key is not None:
@@ -2901,11 +2903,15 @@ class GetWorkspaceApplicationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2961,11 +2967,15 @@ class GetWorkspaceExportRequestsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3021,11 +3031,15 @@ class GetWorkspaceFoldersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3081,11 +3095,15 @@ class GetWorkspaceImportRequestsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3141,11 +3159,15 @@ class GetWorkspaceProjectsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3201,11 +3223,15 @@ class GetWorkspacesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

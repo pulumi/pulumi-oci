@@ -30,11 +30,13 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operations_insights_warehouse_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if operations_insights_warehouse_id is None:
+            raise TypeError("Missing 'operations_insights_warehouse_id' argument")
 
         _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
 
@@ -75,9 +77,9 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
 
         if operations_insights_warehouse_id is not None:

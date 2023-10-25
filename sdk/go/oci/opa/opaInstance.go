@@ -36,11 +36,11 @@ import (
 //				DisplayName:      pulumi.Any(_var.Opa_instance_display_name),
 //				ShapeName:        pulumi.Any(oci_core_shape.Test_shape.Name),
 //				ConsumptionModel: pulumi.Any(_var.Opa_instance_consumption_model),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Opa_instance_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IdcsAt:              pulumi.Any(_var.Opa_instance_idcs_at),

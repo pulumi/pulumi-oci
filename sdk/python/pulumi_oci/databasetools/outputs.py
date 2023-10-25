@@ -87,13 +87,13 @@ class DatabaseToolsConnectionKeyStore(dict):
              key_store_content: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStoreContent'] = None,
              key_store_password: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStorePassword'] = None,
              key_store_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyStoreContent' in kwargs:
+        if key_store_content is None and 'keyStoreContent' in kwargs:
             key_store_content = kwargs['keyStoreContent']
-        if 'keyStorePassword' in kwargs:
+        if key_store_password is None and 'keyStorePassword' in kwargs:
             key_store_password = kwargs['keyStorePassword']
-        if 'keyStoreType' in kwargs:
+        if key_store_type is None and 'keyStoreType' in kwargs:
             key_store_type = kwargs['keyStoreType']
 
         if key_store_content is not None:
@@ -168,13 +168,15 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value_type: str,
+             value_type: Optional[str] = None,
              secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueType' in kwargs:
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
-        if 'secretId' in kwargs:
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
 
         _setter("value_type", value_type)
@@ -242,13 +244,15 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value_type: str,
+             value_type: Optional[str] = None,
              secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueType' in kwargs:
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
-        if 'secretId' in kwargs:
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
 
         _setter("value_type", value_type)
@@ -310,12 +314,16 @@ class DatabaseToolsConnectionRelatedResource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_type: str,
-             identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             entity_type: Optional[str] = None,
+             identifier: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
 
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
@@ -377,14 +385,18 @@ class DatabaseToolsConnectionUserPassword(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -442,9 +454,9 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfiguration(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              reverse_connections_source_ips: Optional[Sequence['outputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'reverseConnectionsSourceIps' in kwargs:
+        if reverse_connections_source_ips is None and 'reverseConnectionsSourceIps' in kwargs:
             reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
 
         if reverse_connections_source_ips is not None:
@@ -491,9 +503,9 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
     def _configure(
              _setter: Callable[[Any, Any], None],
              source_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceIp' in kwargs:
+        if source_ip is None and 'sourceIp' in kwargs:
             source_ip = kwargs['sourceIp']
 
         if source_ip is not None:
@@ -528,17 +540,23 @@ class GetDatabaseToolsConnectionKeyStoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult'],
-             key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult'],
-             key_store_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_store_contents: Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult']] = None,
+             key_store_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult']] = None,
+             key_store_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyStoreContents' in kwargs:
+        if key_store_contents is None and 'keyStoreContents' in kwargs:
             key_store_contents = kwargs['keyStoreContents']
-        if 'keyStorePasswords' in kwargs:
+        if key_store_contents is None:
+            raise TypeError("Missing 'key_store_contents' argument")
+        if key_store_passwords is None and 'keyStorePasswords' in kwargs:
             key_store_passwords = kwargs['keyStorePasswords']
-        if 'keyStoreType' in kwargs:
+        if key_store_passwords is None:
+            raise TypeError("Missing 'key_store_passwords' argument")
+        if key_store_type is None and 'keyStoreType' in kwargs:
             key_store_type = kwargs['keyStoreType']
+        if key_store_type is None:
+            raise TypeError("Missing 'key_store_type' argument")
 
         _setter("key_store_contents", key_store_contents)
         _setter("key_store_passwords", key_store_passwords)
@@ -586,14 +604,18 @@ class GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -632,14 +654,18 @@ class GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -678,12 +704,16 @@ class GetDatabaseToolsConnectionRelatedResourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_type: str,
-             identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             entity_type: Optional[str] = None,
+             identifier: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
 
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
@@ -722,14 +752,18 @@ class GetDatabaseToolsConnectionUserPasswordResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -762,9 +796,11 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -839,56 +875,92 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             advanced_properties: Mapping[str, Any],
-             compartment_id: str,
-             connection_string: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             key_stores: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult'],
-             lifecycle_details: str,
-             private_endpoint_id: str,
-             related_resources: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             type: str,
-             user_name: str,
-             user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             advanced_properties: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             connection_string: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             key_stores: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             private_endpoint_id: Optional[str] = None,
+             related_resources: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             user_name: Optional[str] = None,
+             user_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advancedProperties' in kwargs:
+        if advanced_properties is None and 'advancedProperties' in kwargs:
             advanced_properties = kwargs['advancedProperties']
-        if 'compartmentId' in kwargs:
+        if advanced_properties is None:
+            raise TypeError("Missing 'advanced_properties' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionString' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'definedTags' in kwargs:
+        if connection_string is None:
+            raise TypeError("Missing 'connection_string' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'keyStores' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if key_stores is None and 'keyStores' in kwargs:
             key_stores = kwargs['keyStores']
-        if 'lifecycleDetails' in kwargs:
+        if key_stores is None:
+            raise TypeError("Missing 'key_stores' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'privateEndpointId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'relatedResources' in kwargs:
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if related_resources is None and 'relatedResources' in kwargs:
             related_resources = kwargs['relatedResources']
-        if 'systemTags' in kwargs:
+        if related_resources is None:
+            raise TypeError("Missing 'related_resources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userName' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'userPasswords' in kwargs:
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+        if user_passwords is None and 'userPasswords' in kwargs:
             user_passwords = kwargs['userPasswords']
+        if user_passwords is None:
+            raise TypeError("Missing 'user_passwords' argument")
 
         _setter("advanced_properties", advanced_properties)
         _setter("compartment_id", compartment_id)
@@ -1074,17 +1146,23 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult'],
-             key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult'],
-             key_store_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_store_contents: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult']] = None,
+             key_store_passwords: Optional[Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult']] = None,
+             key_store_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyStoreContents' in kwargs:
+        if key_store_contents is None and 'keyStoreContents' in kwargs:
             key_store_contents = kwargs['keyStoreContents']
-        if 'keyStorePasswords' in kwargs:
+        if key_store_contents is None:
+            raise TypeError("Missing 'key_store_contents' argument")
+        if key_store_passwords is None and 'keyStorePasswords' in kwargs:
             key_store_passwords = kwargs['keyStorePasswords']
-        if 'keyStoreType' in kwargs:
+        if key_store_passwords is None:
+            raise TypeError("Missing 'key_store_passwords' argument")
+        if key_store_type is None and 'keyStoreType' in kwargs:
             key_store_type = kwargs['keyStoreType']
+        if key_store_type is None:
+            raise TypeError("Missing 'key_store_type' argument")
 
         _setter("key_store_contents", key_store_contents)
         _setter("key_store_passwords", key_store_passwords)
@@ -1132,14 +1210,18 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -1178,14 +1260,18 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -1224,12 +1310,16 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_type: str,
-             identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             entity_type: Optional[str] = None,
+             identifier: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
 
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
@@ -1268,14 +1358,18 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'valueType' in kwargs:
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
@@ -1312,11 +1406,15 @@ class GetDatabaseToolsConnectionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1350,9 +1448,11 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1409,36 +1509,60 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             name: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1568,11 +1692,15 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1612,11 +1740,13 @@ class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             reverse_connections_source_ips: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'reverseConnectionsSourceIps' in kwargs:
+        if reverse_connections_source_ips is None and 'reverseConnectionsSourceIps' in kwargs:
             reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+        if reverse_connections_source_ips is None:
+            raise TypeError("Missing 'reverse_connections_source_ips' argument")
 
         _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
@@ -1643,11 +1773,13 @@ class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnec
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             source_ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceIp' in kwargs:
+        if source_ip is None and 'sourceIp' in kwargs:
             source_ip = kwargs['sourceIp']
+        if source_ip is None:
+            raise TypeError("Missing 'source_ip' argument")
 
         _setter("source_ip", source_ip)
 
@@ -1671,9 +1803,11 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1754,62 +1888,102 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_fqdns: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             endpoint_fqdn: str,
-             endpoint_service_id: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             nsg_ids: Sequence[str],
-             private_endpoint_ip: str,
-             private_endpoint_vnic_id: str,
-             reverse_connection_configurations: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult'],
-             state: str,
-             subnet_id: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_fqdns: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoint_fqdn: Optional[str] = None,
+             endpoint_service_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_endpoint_ip: Optional[str] = None,
+             private_endpoint_vnic_id: Optional[str] = None,
+             reverse_connection_configurations: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult']] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalFqdns' in kwargs:
+        if additional_fqdns is None and 'additionalFqdns' in kwargs:
             additional_fqdns = kwargs['additionalFqdns']
-        if 'compartmentId' in kwargs:
+        if additional_fqdns is None:
+            raise TypeError("Missing 'additional_fqdns' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'endpointFqdn' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
             endpoint_fqdn = kwargs['endpointFqdn']
-        if 'endpointServiceId' in kwargs:
+        if endpoint_fqdn is None:
+            raise TypeError("Missing 'endpoint_fqdn' argument")
+        if endpoint_service_id is None and 'endpointServiceId' in kwargs:
             endpoint_service_id = kwargs['endpointServiceId']
-        if 'freeformTags' in kwargs:
+        if endpoint_service_id is None:
+            raise TypeError("Missing 'endpoint_service_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'privateEndpointVnicId' in kwargs:
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if private_endpoint_vnic_id is None and 'privateEndpointVnicId' in kwargs:
             private_endpoint_vnic_id = kwargs['privateEndpointVnicId']
-        if 'reverseConnectionConfigurations' in kwargs:
+        if private_endpoint_vnic_id is None:
+            raise TypeError("Missing 'private_endpoint_vnic_id' argument")
+        if reverse_connection_configurations is None and 'reverseConnectionConfigurations' in kwargs:
             reverse_connection_configurations = kwargs['reverseConnectionConfigurations']
-        if 'subnetId' in kwargs:
+        if reverse_connection_configurations is None:
+            raise TypeError("Missing 'reverse_connection_configurations' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vcnId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("additional_fqdns", additional_fqdns)
         _setter("compartment_id", compartment_id)
@@ -2007,11 +2181,13 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             reverse_connections_source_ips: Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'reverseConnectionsSourceIps' in kwargs:
+        if reverse_connections_source_ips is None and 'reverseConnectionsSourceIps' in kwargs:
             reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+        if reverse_connections_source_ips is None:
+            raise TypeError("Missing 'reverse_connections_source_ips' argument")
 
         _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
@@ -2038,11 +2214,13 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             source_ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceIp' in kwargs:
+        if source_ip is None and 'sourceIp' in kwargs:
             source_ip = kwargs['sourceIp']
+        if source_ip is None:
+            raise TypeError("Missing 'source_ip' argument")
 
         _setter("source_ip", source_ip)
 
@@ -2070,11 +2248,15 @@ class GetDatabaseToolsPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

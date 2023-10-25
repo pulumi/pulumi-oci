@@ -33,14 +33,18 @@ class ImportStandardTagsManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             standard_tag_namespace_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'standardTagNamespaceName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if standard_tag_namespace_name is None and 'standardTagNamespaceName' in kwargs:
             standard_tag_namespace_name = kwargs['standardTagNamespaceName']
+        if standard_tag_namespace_name is None:
+            raise TypeError("Missing 'standard_tag_namespace_name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("standard_tag_namespace_name", standard_tag_namespace_name)
@@ -101,13 +105,13 @@ class _ImportStandardTagsManagementState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'standardTagNamespaceName' in kwargs:
+        if standard_tag_namespace_name is None and 'standardTagNamespaceName' in kwargs:
             standard_tag_namespace_name = kwargs['standardTagNamespaceName']
-        if 'workRequestId' in kwargs:
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
 
         if compartment_id is not None:

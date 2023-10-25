@@ -38,11 +38,11 @@ import (
 //				ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
 //				PackageVersion: pulumi.Any(_var.Accepted_agreement_package_version),
 //				Signature:      pulumi.Any(_var.Accepted_agreement_signature),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Accepted_agreement_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

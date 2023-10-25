@@ -42,9 +42,9 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
             is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
 
         if is_response_header_based_caching_enabled is not None:
@@ -88,9 +88,9 @@ class AppAccelerationPolicyResponseCompressionPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compression: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gzipCompression' in kwargs:
+        if gzip_compression is None and 'gzipCompression' in kwargs:
             gzip_compression = kwargs['gzipCompression']
 
         if gzip_compression is not None:
@@ -126,9 +126,9 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -164,11 +164,15 @@ class GetAppAccelerationPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -218,11 +222,15 @@ class GetAppAccelerationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

@@ -129,10 +129,10 @@ class DomainsMyRequestArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_endpoint: pulumi.Input[str],
-             justification: pulumi.Input[str],
-             requesting: pulumi.Input['DomainsMyRequestRequestingArgs'],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             justification: Optional[pulumi.Input[str]] = None,
+             requesting: Optional[pulumi.Input['DomainsMyRequestRequestingArgs']] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -141,13 +141,21 @@ class DomainsMyRequestArgs:
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'attributeSets' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if justification is None:
+            raise TypeError("Missing 'justification' argument")
+        if requesting is None:
+            raise TypeError("Missing 'requesting' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("idcs_endpoint", idcs_endpoint)
@@ -637,29 +645,29 @@ class _DomainsMyRequestState:
              status: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
 
         if attribute_sets is not None:
@@ -1290,19 +1298,11 @@ class DomainsMyRequest(pulumi.CustomResource):
                 raise TypeError("Missing required property 'justification'")
             __props__.__dict__["justification"] = justification
             __props__.__dict__["ocid"] = ocid
-            if requesting is not None and not isinstance(requesting, DomainsMyRequestRequestingArgs):
-                requesting = requesting or {}
-                def _setter(key, value):
-                    requesting[key] = value
-                DomainsMyRequestRequestingArgs._configure(_setter, **requesting)
+            requesting = _utilities.configure(requesting, DomainsMyRequestRequestingArgs, True)
             if requesting is None and not opts.urn:
                 raise TypeError("Missing required property 'requesting'")
             __props__.__dict__["requesting"] = requesting
-            if requestor is not None and not isinstance(requestor, DomainsMyRequestRequestorArgs):
-                requestor = requestor or {}
-                def _setter(key, value):
-                    requestor[key] = value
-                DomainsMyRequestRequestorArgs._configure(_setter, **requestor)
+            requestor = _utilities.configure(requestor, DomainsMyRequestRequestorArgs, True)
             __props__.__dict__["requestor"] = requestor
             __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
             if schemas is None and not opts.urn:

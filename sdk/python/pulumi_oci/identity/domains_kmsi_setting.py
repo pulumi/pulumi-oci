@@ -191,9 +191,9 @@ class DomainsKmsiSettingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_endpoint: pulumi.Input[str],
-             kmsi_setting_id: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             kmsi_setting_id: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -208,31 +208,37 @@ class DomainsKmsiSettingArgs:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingTagArgs']]]] = None,
              token_validity_in_days: Optional[pulumi.Input[int]] = None,
              tou_prompt_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'kmsiSettingId' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if kmsi_setting_id is None and 'kmsiSettingId' in kwargs:
             kmsi_setting_id = kwargs['kmsiSettingId']
-        if 'attributeSets' in kwargs:
+        if kmsi_setting_id is None:
+            raise TypeError("Missing 'kmsi_setting_id' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'kmsiFeatureEnabled' in kwargs:
+        if kmsi_feature_enabled is None and 'kmsiFeatureEnabled' in kwargs:
             kmsi_feature_enabled = kwargs['kmsiFeatureEnabled']
-        if 'kmsiPromptEnabled' in kwargs:
+        if kmsi_prompt_enabled is None and 'kmsiPromptEnabled' in kwargs:
             kmsi_prompt_enabled = kwargs['kmsiPromptEnabled']
-        if 'lastEnabledOn' in kwargs:
+        if last_enabled_on is None and 'lastEnabledOn' in kwargs:
             last_enabled_on = kwargs['lastEnabledOn']
-        if 'lastUsedValidityInDays' in kwargs:
+        if last_used_validity_in_days is None and 'lastUsedValidityInDays' in kwargs:
             last_used_validity_in_days = kwargs['lastUsedValidityInDays']
-        if 'maxAllowedSessions' in kwargs:
+        if max_allowed_sessions is None and 'maxAllowedSessions' in kwargs:
             max_allowed_sessions = kwargs['maxAllowedSessions']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tokenValidityInDays' in kwargs:
+        if token_validity_in_days is None and 'tokenValidityInDays' in kwargs:
             token_validity_in_days = kwargs['tokenValidityInDays']
-        if 'touPromptDisabled' in kwargs:
+        if tou_prompt_disabled is None and 'touPromptDisabled' in kwargs:
             tou_prompt_disabled = kwargs['touPromptDisabled']
 
         _setter("idcs_endpoint", idcs_endpoint)
@@ -903,47 +909,47 @@ class _DomainsKmsiSettingState:
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              token_validity_in_days: Optional[pulumi.Input[int]] = None,
              tou_prompt_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'kmsiFeatureEnabled' in kwargs:
+        if kmsi_feature_enabled is None and 'kmsiFeatureEnabled' in kwargs:
             kmsi_feature_enabled = kwargs['kmsiFeatureEnabled']
-        if 'kmsiPromptEnabled' in kwargs:
+        if kmsi_prompt_enabled is None and 'kmsiPromptEnabled' in kwargs:
             kmsi_prompt_enabled = kwargs['kmsiPromptEnabled']
-        if 'kmsiSettingId' in kwargs:
+        if kmsi_setting_id is None and 'kmsiSettingId' in kwargs:
             kmsi_setting_id = kwargs['kmsiSettingId']
-        if 'lastEnabledOn' in kwargs:
+        if last_enabled_on is None and 'lastEnabledOn' in kwargs:
             last_enabled_on = kwargs['lastEnabledOn']
-        if 'lastUsedValidityInDays' in kwargs:
+        if last_used_validity_in_days is None and 'lastUsedValidityInDays' in kwargs:
             last_used_validity_in_days = kwargs['lastUsedValidityInDays']
-        if 'maxAllowedSessions' in kwargs:
+        if max_allowed_sessions is None and 'maxAllowedSessions' in kwargs:
             max_allowed_sessions = kwargs['maxAllowedSessions']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'tokenValidityInDays' in kwargs:
+        if token_validity_in_days is None and 'tokenValidityInDays' in kwargs:
             token_validity_in_days = kwargs['tokenValidityInDays']
-        if 'touPromptDisabled' in kwargs:
+        if tou_prompt_disabled is None and 'touPromptDisabled' in kwargs:
             tou_prompt_disabled = kwargs['touPromptDisabled']
 
         if attribute_sets is not None:

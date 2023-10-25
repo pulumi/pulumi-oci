@@ -37,10 +37,10 @@ import (
 //				EnterpriseManagerEntityIdentifier: pulumi.Any(_var.Exadata_insight_enterprise_manager_entity_identifier),
 //				EnterpriseManagerIdentifier:       pulumi.Any(_var.Exadata_insight_enterprise_manager_identifier),
 //				EntitySource:                      pulumi.Any(_var.Exadata_insight_entity_source),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsAutoSyncEnabled: pulumi.Any(_var.Exadata_insight_is_auto_sync_enabled),

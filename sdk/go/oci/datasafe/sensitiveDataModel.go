@@ -37,12 +37,12 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
 //				AppSuiteName:  pulumi.Any(_var.Sensitive_data_model_app_suite_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Sensitive_data_model_description),
 //				DisplayName: pulumi.Any(_var.Sensitive_data_model_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Sensitive_data_model_is_app_defined_relation_discovery_enabled),

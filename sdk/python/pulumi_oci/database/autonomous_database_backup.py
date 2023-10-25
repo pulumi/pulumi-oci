@@ -44,22 +44,24 @@ class AutonomousDatabaseBackupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomous_database_id: pulumi.Input[str],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
              backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              is_long_term_backup: Optional[pulumi.Input[bool]] = None,
              retention_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'backupDestinationDetails' in kwargs:
+        if autonomous_database_id is None:
+            raise TypeError("Missing 'autonomous_database_id' argument")
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
             backup_destination_details = kwargs['backupDestinationDetails']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isLongTermBackup' in kwargs:
+        if is_long_term_backup is None and 'isLongTermBackup' in kwargs:
             is_long_term_backup = kwargs['isLongTermBackup']
-        if 'retentionPeriodInDays' in kwargs:
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
             retention_period_in_days = kwargs['retentionPeriodInDays']
 
         _setter("autonomous_database_id", autonomous_database_id)
@@ -241,47 +243,47 @@ class _AutonomousDatabaseBackupState:
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'backupDestinationDetails' in kwargs:
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
             backup_destination_details = kwargs['backupDestinationDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSizeInTbs' in kwargs:
+        if database_size_in_tbs is None and 'databaseSizeInTbs' in kwargs:
             database_size_in_tbs = kwargs['databaseSizeInTbs']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isAutomatic' in kwargs:
+        if is_automatic is None and 'isAutomatic' in kwargs:
             is_automatic = kwargs['isAutomatic']
-        if 'isLongTermBackup' in kwargs:
+        if is_long_term_backup is None and 'isLongTermBackup' in kwargs:
             is_long_term_backup = kwargs['isLongTermBackup']
-        if 'isRestorable' in kwargs:
+        if is_restorable is None and 'isRestorable' in kwargs:
             is_restorable = kwargs['isRestorable']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'keyStoreWalletName' in kwargs:
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
             key_store_wallet_name = kwargs['keyStoreWalletName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'retentionPeriodInDays' in kwargs:
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
             retention_period_in_days = kwargs['retentionPeriodInDays']
-        if 'sizeInTbs' in kwargs:
+        if size_in_tbs is None and 'sizeInTbs' in kwargs:
             size_in_tbs = kwargs['sizeInTbs']
-        if 'timeAvailableTill' in kwargs:
+        if time_available_till is None and 'timeAvailableTill' in kwargs:
             time_available_till = kwargs['timeAvailableTill']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if autonomous_database_id is not None:
@@ -715,11 +717,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             if autonomous_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_database_id'")
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
-            if backup_destination_details is not None and not isinstance(backup_destination_details, AutonomousDatabaseBackupBackupDestinationDetailsArgs):
-                backup_destination_details = backup_destination_details or {}
-                def _setter(key, value):
-                    backup_destination_details[key] = value
-                AutonomousDatabaseBackupBackupDestinationDetailsArgs._configure(_setter, **backup_destination_details)
+            backup_destination_details = _utilities.configure(backup_destination_details, AutonomousDatabaseBackupBackupDestinationDetailsArgs, True)
             __props__.__dict__["backup_destination_details"] = backup_destination_details
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["is_long_term_backup"] = is_long_term_backup

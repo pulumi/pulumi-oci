@@ -51,23 +51,31 @@ class PreauthrequestArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_type: pulumi.Input[str],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             time_expires: pulumi.Input[str],
+             access_type: Optional[pulumi.Input[str]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             time_expires: Optional[pulumi.Input[str]] = None,
              bucket_listing_action: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
              object_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessType' in kwargs:
+        if access_type is None and 'accessType' in kwargs:
             access_type = kwargs['accessType']
-        if 'timeExpires' in kwargs:
+        if access_type is None:
+            raise TypeError("Missing 'access_type' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
-        if 'bucketListingAction' in kwargs:
+        if time_expires is None:
+            raise TypeError("Missing 'time_expires' argument")
+        if bucket_listing_action is None and 'bucketListingAction' in kwargs:
             bucket_listing_action = kwargs['bucketListingAction']
-        if 'objectName' in kwargs:
+        if object_name is None and 'objectName' in kwargs:
             object_name = kwargs['objectName']
 
         _setter("access_type", access_type)
@@ -254,23 +262,23 @@ class _PreauthrequestState:
              par_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessType' in kwargs:
+        if access_type is None and 'accessType' in kwargs:
             access_type = kwargs['accessType']
-        if 'accessUri' in kwargs:
+        if access_uri is None and 'accessUri' in kwargs:
             access_uri = kwargs['accessUri']
-        if 'bucketListingAction' in kwargs:
+        if bucket_listing_action is None and 'bucketListingAction' in kwargs:
             bucket_listing_action = kwargs['bucketListingAction']
-        if 'fullPath' in kwargs:
+        if full_path is None and 'fullPath' in kwargs:
             full_path = kwargs['fullPath']
-        if 'objectName' in kwargs:
+        if object_name is None and 'objectName' in kwargs:
             object_name = kwargs['objectName']
-        if 'parId' in kwargs:
+        if par_id is None and 'parId' in kwargs:
             par_id = kwargs['parId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpires' in kwargs:
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
 
         if access_type is not None:

@@ -53,7 +53,7 @@ class AuditPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             audit_policy_id: pulumi.Input[str],
+             audit_policy_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -61,21 +61,23 @@ class AuditPolicyArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              provision_trigger: Optional[pulumi.Input[int]] = None,
              retrieve_from_target_trigger: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditPolicyId' in kwargs:
+        if audit_policy_id is None and 'auditPolicyId' in kwargs:
             audit_policy_id = kwargs['auditPolicyId']
-        if 'compartmentId' in kwargs:
+        if audit_policy_id is None:
+            raise TypeError("Missing 'audit_policy_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'provisionTrigger' in kwargs:
+        if provision_trigger is None and 'provisionTrigger' in kwargs:
             provision_trigger = kwargs['provisionTrigger']
-        if 'retrieveFromTargetTrigger' in kwargs:
+        if retrieve_from_target_trigger is None and 'retrieveFromTargetTrigger' in kwargs:
             retrieve_from_target_trigger = kwargs['retrieveFromTargetTrigger']
 
         _setter("audit_policy_id", audit_policy_id)
@@ -287,41 +289,41 @@ class _AuditPolicyState:
              time_last_provisioned: Optional[pulumi.Input[str]] = None,
              time_last_retrieved: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'auditConditions' in kwargs:
+        if audit_conditions is None and 'auditConditions' in kwargs:
             audit_conditions = kwargs['auditConditions']
-        if 'auditPolicyId' in kwargs:
+        if audit_policy_id is None and 'auditPolicyId' in kwargs:
             audit_policy_id = kwargs['auditPolicyId']
-        if 'auditSpecifications' in kwargs:
+        if audit_specifications is None and 'auditSpecifications' in kwargs:
             audit_specifications = kwargs['auditSpecifications']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDataSafeServiceAccountExcluded' in kwargs:
+        if is_data_safe_service_account_excluded is None and 'isDataSafeServiceAccountExcluded' in kwargs:
             is_data_safe_service_account_excluded = kwargs['isDataSafeServiceAccountExcluded']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'provisionTrigger' in kwargs:
+        if provision_trigger is None and 'provisionTrigger' in kwargs:
             provision_trigger = kwargs['provisionTrigger']
-        if 'retrieveFromTargetTrigger' in kwargs:
+        if retrieve_from_target_trigger is None and 'retrieveFromTargetTrigger' in kwargs:
             retrieve_from_target_trigger = kwargs['retrieveFromTargetTrigger']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastProvisioned' in kwargs:
+        if time_last_provisioned is None and 'timeLastProvisioned' in kwargs:
             time_last_provisioned = kwargs['timeLastProvisioned']
-        if 'timeLastRetrieved' in kwargs:
+        if time_last_retrieved is None and 'timeLastRetrieved' in kwargs:
             time_last_retrieved = kwargs['timeLastRetrieved']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if audit_conditions is not None:

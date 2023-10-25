@@ -61,33 +61,41 @@ class TargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             target_resource_id: pulumi.Input[str],
-             target_resource_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             target_resource_id: Optional[pulumi.Input[str]] = None,
+             target_resource_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]] = None,
              target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'targetResourceId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceType' in kwargs:
+        if target_resource_id is None:
+            raise TypeError("Missing 'target_resource_id' argument")
+        if target_resource_type is None and 'targetResourceType' in kwargs:
             target_resource_type = kwargs['targetResourceType']
-        if 'definedTags' in kwargs:
+        if target_resource_type is None:
+            raise TypeError("Missing 'target_resource_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'targetDetectorRecipes' in kwargs:
+        if target_detector_recipes is None and 'targetDetectorRecipes' in kwargs:
             target_detector_recipes = kwargs['targetDetectorRecipes']
-        if 'targetResponderRecipes' in kwargs:
+        if target_responder_recipes is None and 'targetResponderRecipes' in kwargs:
             target_responder_recipes = kwargs['targetResponderRecipes']
 
         _setter("compartment_id", compartment_id)
@@ -320,37 +328,37 @@ class _TargetState:
              target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inheritedByCompartments' in kwargs:
+        if inherited_by_compartments is None and 'inheritedByCompartments' in kwargs:
             inherited_by_compartments = kwargs['inheritedByCompartments']
-        if 'lifecyleDetails' in kwargs:
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'recipeCount' in kwargs:
+        if recipe_count is None and 'recipeCount' in kwargs:
             recipe_count = kwargs['recipeCount']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetDetails' in kwargs:
+        if target_details is None and 'targetDetails' in kwargs:
             target_details = kwargs['targetDetails']
-        if 'targetDetectorRecipes' in kwargs:
+        if target_detector_recipes is None and 'targetDetectorRecipes' in kwargs:
             target_detector_recipes = kwargs['targetDetectorRecipes']
-        if 'targetResourceId' in kwargs:
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceType' in kwargs:
+        if target_resource_type is None and 'targetResourceType' in kwargs:
             target_resource_type = kwargs['targetResourceType']
-        if 'targetResponderRecipes' in kwargs:
+        if target_responder_recipes is None and 'targetResponderRecipes' in kwargs:
             target_responder_recipes = kwargs['targetResponderRecipes']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

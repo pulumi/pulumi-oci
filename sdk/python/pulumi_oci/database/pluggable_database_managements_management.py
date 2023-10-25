@@ -56,28 +56,38 @@ class PluggableDatabaseManagementsManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_details: pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'],
-             enable_pluggabledatabasemanagement: pulumi.Input[bool],
-             pluggable_database_id: pulumi.Input[str],
-             private_end_point_id: pulumi.Input[str],
-             service_name: pulumi.Input[str],
+             credential_details: Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] = None,
+             enable_pluggabledatabasemanagement: Optional[pulumi.Input[bool]] = None,
+             pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             private_end_point_id: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialDetails' in kwargs:
+        if credential_details is None and 'credentialDetails' in kwargs:
             credential_details = kwargs['credentialDetails']
-        if 'enablePluggabledatabasemanagement' in kwargs:
+        if credential_details is None:
+            raise TypeError("Missing 'credential_details' argument")
+        if enable_pluggabledatabasemanagement is None and 'enablePluggabledatabasemanagement' in kwargs:
             enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
-        if 'pluggableDatabaseId' in kwargs:
+        if enable_pluggabledatabasemanagement is None:
+            raise TypeError("Missing 'enable_pluggabledatabasemanagement' argument")
+        if pluggable_database_id is None and 'pluggableDatabaseId' in kwargs:
             pluggable_database_id = kwargs['pluggableDatabaseId']
-        if 'privateEndPointId' in kwargs:
+        if pluggable_database_id is None:
+            raise TypeError("Missing 'pluggable_database_id' argument")
+        if private_end_point_id is None and 'privateEndPointId' in kwargs:
             private_end_point_id = kwargs['privateEndPointId']
-        if 'serviceName' in kwargs:
+        if private_end_point_id is None:
+            raise TypeError("Missing 'private_end_point_id' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'sslSecretId' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
 
         _setter("credential_details", credential_details)
@@ -307,41 +317,41 @@ class _PluggableDatabaseManagementsManagementState:
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'credentialDetails' in kwargs:
+        if credential_details is None and 'credentialDetails' in kwargs:
             credential_details = kwargs['credentialDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'enablePluggabledatabasemanagement' in kwargs:
+        if enable_pluggabledatabasemanagement is None and 'enablePluggabledatabasemanagement' in kwargs:
             enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRestricted' in kwargs:
+        if is_restricted is None and 'isRestricted' in kwargs:
             is_restricted = kwargs['isRestricted']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'openMode' in kwargs:
+        if open_mode is None and 'openMode' in kwargs:
             open_mode = kwargs['openMode']
-        if 'pdbName' in kwargs:
+        if pdb_name is None and 'pdbName' in kwargs:
             pdb_name = kwargs['pdbName']
-        if 'pluggableDatabaseId' in kwargs:
+        if pluggable_database_id is None and 'pluggableDatabaseId' in kwargs:
             pluggable_database_id = kwargs['pluggableDatabaseId']
-        if 'pluggableDatabaseManagementConfigs' in kwargs:
+        if pluggable_database_management_configs is None and 'pluggableDatabaseManagementConfigs' in kwargs:
             pluggable_database_management_configs = kwargs['pluggableDatabaseManagementConfigs']
-        if 'privateEndPointId' in kwargs:
+        if private_end_point_id is None and 'privateEndPointId' in kwargs:
             private_end_point_id = kwargs['privateEndPointId']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -770,11 +780,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PluggableDatabaseManagementsManagementArgs.__new__(PluggableDatabaseManagementsManagementArgs)
 
-            if credential_details is not None and not isinstance(credential_details, PluggableDatabaseManagementsManagementCredentialDetailsArgs):
-                credential_details = credential_details or {}
-                def _setter(key, value):
-                    credential_details[key] = value
-                PluggableDatabaseManagementsManagementCredentialDetailsArgs._configure(_setter, **credential_details)
+            credential_details = _utilities.configure(credential_details, PluggableDatabaseManagementsManagementCredentialDetailsArgs, True)
             if credential_details is None and not opts.urn:
                 raise TypeError("Missing required property 'credential_details'")
             __props__.__dict__["credential_details"] = credential_details

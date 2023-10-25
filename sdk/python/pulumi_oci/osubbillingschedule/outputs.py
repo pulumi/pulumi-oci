@@ -63,38 +63,62 @@ class GetBillingScheduleBillingScheduleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             amount: str,
-             ar_customer_transaction_id: str,
-             ar_invoice_number: str,
-             billing_frequency: str,
-             invoice_status: str,
-             net_unit_price: str,
-             order_number: str,
-             products: Sequence['outputs.GetBillingScheduleBillingScheduleProductResult'],
-             quantity: str,
-             time_end: str,
-             time_invoicing: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             amount: Optional[str] = None,
+             ar_customer_transaction_id: Optional[str] = None,
+             ar_invoice_number: Optional[str] = None,
+             billing_frequency: Optional[str] = None,
+             invoice_status: Optional[str] = None,
+             net_unit_price: Optional[str] = None,
+             order_number: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetBillingScheduleBillingScheduleProductResult']] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_invoicing: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'arCustomerTransactionId' in kwargs:
+        if amount is None:
+            raise TypeError("Missing 'amount' argument")
+        if ar_customer_transaction_id is None and 'arCustomerTransactionId' in kwargs:
             ar_customer_transaction_id = kwargs['arCustomerTransactionId']
-        if 'arInvoiceNumber' in kwargs:
+        if ar_customer_transaction_id is None:
+            raise TypeError("Missing 'ar_customer_transaction_id' argument")
+        if ar_invoice_number is None and 'arInvoiceNumber' in kwargs:
             ar_invoice_number = kwargs['arInvoiceNumber']
-        if 'billingFrequency' in kwargs:
+        if ar_invoice_number is None:
+            raise TypeError("Missing 'ar_invoice_number' argument")
+        if billing_frequency is None and 'billingFrequency' in kwargs:
             billing_frequency = kwargs['billingFrequency']
-        if 'invoiceStatus' in kwargs:
+        if billing_frequency is None:
+            raise TypeError("Missing 'billing_frequency' argument")
+        if invoice_status is None and 'invoiceStatus' in kwargs:
             invoice_status = kwargs['invoiceStatus']
-        if 'netUnitPrice' in kwargs:
+        if invoice_status is None:
+            raise TypeError("Missing 'invoice_status' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
             net_unit_price = kwargs['netUnitPrice']
-        if 'orderNumber' in kwargs:
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if order_number is None and 'orderNumber' in kwargs:
             order_number = kwargs['orderNumber']
-        if 'timeEnd' in kwargs:
+        if order_number is None:
+            raise TypeError("Missing 'order_number' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeInvoicing' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_invoicing is None and 'timeInvoicing' in kwargs:
             time_invoicing = kwargs['timeInvoicing']
-        if 'timeStart' in kwargs:
+        if time_invoicing is None:
+            raise TypeError("Missing 'time_invoicing' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("amount", amount)
         _setter("ar_customer_transaction_id", ar_customer_transaction_id)
@@ -223,12 +247,16 @@ class GetBillingScheduleBillingScheduleProductResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             part_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'partNumber' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
             part_number = kwargs['partNumber']
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
 
         _setter("name", name)
         _setter("part_number", part_number)
@@ -268,11 +296,15 @@ class GetBillingScheduleFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

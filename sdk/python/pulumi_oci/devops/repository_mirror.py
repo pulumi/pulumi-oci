@@ -30,11 +30,13 @@ class RepositoryMirrorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             repository_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             repository_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
 
         _setter("repository_id", repository_id)
 
@@ -75,9 +77,9 @@ class _RepositoryMirrorState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              repository_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
 
         if repository_id is not None:

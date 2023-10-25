@@ -58,25 +58,39 @@ class GetCommitmentsCommitmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             available_amount: str,
-             funded_allocation_value: str,
-             id: str,
-             quantity: str,
-             time_end: str,
-             time_start: str,
-             used_amount: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             available_amount: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             id: Optional[str] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             used_amount: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableAmount' in kwargs:
+        if available_amount is None and 'availableAmount' in kwargs:
             available_amount = kwargs['availableAmount']
-        if 'fundedAllocationValue' in kwargs:
+        if available_amount is None:
+            raise TypeError("Missing 'available_amount' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
             funded_allocation_value = kwargs['fundedAllocationValue']
-        if 'timeEnd' in kwargs:
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'usedAmount' in kwargs:
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if used_amount is None and 'usedAmount' in kwargs:
             used_amount = kwargs['usedAmount']
+        if used_amount is None:
+            raise TypeError("Missing 'used_amount' argument")
 
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
@@ -158,11 +172,15 @@ class GetCommitmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -203,11 +221,15 @@ class GetRatecardsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -271,31 +293,49 @@ class GetRatecardsRateCardResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currencies: Sequence['outputs.GetRatecardsRateCardCurrencyResult'],
-             discretionary_discount_percentage: str,
-             is_tier: bool,
-             net_unit_price: str,
-             overage_price: str,
-             products: Sequence['outputs.GetRatecardsRateCardProductResult'],
-             rate_card_tiers: Sequence['outputs.GetRatecardsRateCardRateCardTierResult'],
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currencies: Optional[Sequence['outputs.GetRatecardsRateCardCurrencyResult']] = None,
+             discretionary_discount_percentage: Optional[str] = None,
+             is_tier: Optional[bool] = None,
+             net_unit_price: Optional[str] = None,
+             overage_price: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetRatecardsRateCardProductResult']] = None,
+             rate_card_tiers: Optional[Sequence['outputs.GetRatecardsRateCardRateCardTierResult']] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'discretionaryDiscountPercentage' in kwargs:
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if discretionary_discount_percentage is None and 'discretionaryDiscountPercentage' in kwargs:
             discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
-        if 'isTier' in kwargs:
+        if discretionary_discount_percentage is None:
+            raise TypeError("Missing 'discretionary_discount_percentage' argument")
+        if is_tier is None and 'isTier' in kwargs:
             is_tier = kwargs['isTier']
-        if 'netUnitPrice' in kwargs:
+        if is_tier is None:
+            raise TypeError("Missing 'is_tier' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
             net_unit_price = kwargs['netUnitPrice']
-        if 'overagePrice' in kwargs:
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if overage_price is None and 'overagePrice' in kwargs:
             overage_price = kwargs['overagePrice']
-        if 'rateCardTiers' in kwargs:
+        if overage_price is None:
+            raise TypeError("Missing 'overage_price' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if rate_card_tiers is None and 'rateCardTiers' in kwargs:
             rate_card_tiers = kwargs['rateCardTiers']
-        if 'timeEnd' in kwargs:
+        if rate_card_tiers is None:
+            raise TypeError("Missing 'rate_card_tiers' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("currencies", currencies)
         _setter("discretionary_discount_percentage", discretionary_discount_percentage)
@@ -400,15 +440,21 @@ class GetRatecardsRateCardCurrencyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             iso_code: str,
-             name: str,
-             std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isoCode' in kwargs:
+        if iso_code is None and 'isoCode' in kwargs:
             iso_code = kwargs['isoCode']
-        if 'stdPrecision' in kwargs:
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
             std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
 
         _setter("iso_code", iso_code)
         _setter("name", name)
@@ -468,24 +514,36 @@ class GetRatecardsRateCardProductResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             billing_category: str,
-             name: str,
-             part_number: str,
-             product_category: str,
-             ucm_rate_card_part_type: str,
-             unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             billing_category: Optional[str] = None,
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             product_category: Optional[str] = None,
+             ucm_rate_card_part_type: Optional[str] = None,
+             unit_of_measure: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'billingCategory' in kwargs:
+        if billing_category is None and 'billingCategory' in kwargs:
             billing_category = kwargs['billingCategory']
-        if 'partNumber' in kwargs:
+        if billing_category is None:
+            raise TypeError("Missing 'billing_category' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
             part_number = kwargs['partNumber']
-        if 'productCategory' in kwargs:
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
+        if product_category is None and 'productCategory' in kwargs:
             product_category = kwargs['productCategory']
-        if 'ucmRateCardPartType' in kwargs:
+        if product_category is None:
+            raise TypeError("Missing 'product_category' argument")
+        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
             ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if 'unitOfMeasure' in kwargs:
+        if ucm_rate_card_part_type is None:
+            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
+        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
             unit_of_measure = kwargs['unitOfMeasure']
+        if unit_of_measure is None:
+            raise TypeError("Missing 'unit_of_measure' argument")
 
         _setter("billing_category", billing_category)
         _setter("name", name)
@@ -563,17 +621,23 @@ class GetRatecardsRateCardRateCardTierResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             net_unit_price: str,
-             overage_price: str,
-             up_to_quantity: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             net_unit_price: Optional[str] = None,
+             overage_price: Optional[str] = None,
+             up_to_quantity: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'netUnitPrice' in kwargs:
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
             net_unit_price = kwargs['netUnitPrice']
-        if 'overagePrice' in kwargs:
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if overage_price is None and 'overagePrice' in kwargs:
             overage_price = kwargs['overagePrice']
-        if 'upToQuantity' in kwargs:
+        if overage_price is None:
+            raise TypeError("Missing 'overage_price' argument")
+        if up_to_quantity is None and 'upToQuantity' in kwargs:
             up_to_quantity = kwargs['upToQuantity']
+        if up_to_quantity is None:
+            raise TypeError("Missing 'up_to_quantity' argument")
 
         _setter("net_unit_price", net_unit_price)
         _setter("overage_price", overage_price)
@@ -622,11 +686,15 @@ class GetSubscriptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -681,22 +749,34 @@ class GetSubscriptionsSubscriptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currencies: Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult'],
-             service_name: str,
-             status: str,
-             subscribed_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult'],
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currencies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult']] = None,
+             service_name: Optional[str] = None,
+             status: Optional[str] = None,
+             subscribed_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult']] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'serviceName' in kwargs:
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'subscribedServices' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if subscribed_services is None and 'subscribedServices' in kwargs:
             subscribed_services = kwargs['subscribedServices']
-        if 'timeEnd' in kwargs:
+        if subscribed_services is None:
+            raise TypeError("Missing 'subscribed_services' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("currencies", currencies)
         _setter("service_name", service_name)
@@ -774,15 +854,21 @@ class GetSubscriptionsSubscriptionCurrencyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             iso_code: str,
-             name: str,
-             std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isoCode' in kwargs:
+        if iso_code is None and 'isoCode' in kwargs:
             iso_code = kwargs['isoCode']
-        if 'stdPrecision' in kwargs:
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
             std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
 
         _setter("iso_code", iso_code)
         _setter("name", name)
@@ -890,64 +976,108 @@ class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             booking_opty_number: str,
-             commitment_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult'],
-             csi: str,
-             data_center_region: str,
-             funded_allocation_value: str,
-             id: str,
-             is_intent_to_pay: bool,
-             net_unit_price: str,
-             operation_type: str,
-             order_number: str,
-             partner_transaction_type: str,
-             pricing_model: str,
-             products: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult'],
-             program_type: str,
-             promo_type: str,
-             quantity: str,
-             status: str,
-             term_value: str,
-             term_value_uom: str,
-             time_end: str,
-             time_start: str,
-             total_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             booking_opty_number: Optional[str] = None,
+             commitment_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult']] = None,
+             csi: Optional[str] = None,
+             data_center_region: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             id: Optional[str] = None,
+             is_intent_to_pay: Optional[bool] = None,
+             net_unit_price: Optional[str] = None,
+             operation_type: Optional[str] = None,
+             order_number: Optional[str] = None,
+             partner_transaction_type: Optional[str] = None,
+             pricing_model: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult']] = None,
+             program_type: Optional[str] = None,
+             promo_type: Optional[str] = None,
+             quantity: Optional[str] = None,
+             status: Optional[str] = None,
+             term_value: Optional[str] = None,
+             term_value_uom: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             total_value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bookingOptyNumber' in kwargs:
+        if booking_opty_number is None and 'bookingOptyNumber' in kwargs:
             booking_opty_number = kwargs['bookingOptyNumber']
-        if 'commitmentServices' in kwargs:
+        if booking_opty_number is None:
+            raise TypeError("Missing 'booking_opty_number' argument")
+        if commitment_services is None and 'commitmentServices' in kwargs:
             commitment_services = kwargs['commitmentServices']
-        if 'dataCenterRegion' in kwargs:
+        if commitment_services is None:
+            raise TypeError("Missing 'commitment_services' argument")
+        if csi is None:
+            raise TypeError("Missing 'csi' argument")
+        if data_center_region is None and 'dataCenterRegion' in kwargs:
             data_center_region = kwargs['dataCenterRegion']
-        if 'fundedAllocationValue' in kwargs:
+        if data_center_region is None:
+            raise TypeError("Missing 'data_center_region' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
             funded_allocation_value = kwargs['fundedAllocationValue']
-        if 'isIntentToPay' in kwargs:
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
             is_intent_to_pay = kwargs['isIntentToPay']
-        if 'netUnitPrice' in kwargs:
+        if is_intent_to_pay is None:
+            raise TypeError("Missing 'is_intent_to_pay' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
             net_unit_price = kwargs['netUnitPrice']
-        if 'operationType' in kwargs:
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if operation_type is None and 'operationType' in kwargs:
             operation_type = kwargs['operationType']
-        if 'orderNumber' in kwargs:
+        if operation_type is None:
+            raise TypeError("Missing 'operation_type' argument")
+        if order_number is None and 'orderNumber' in kwargs:
             order_number = kwargs['orderNumber']
-        if 'partnerTransactionType' in kwargs:
+        if order_number is None:
+            raise TypeError("Missing 'order_number' argument")
+        if partner_transaction_type is None and 'partnerTransactionType' in kwargs:
             partner_transaction_type = kwargs['partnerTransactionType']
-        if 'pricingModel' in kwargs:
+        if partner_transaction_type is None:
+            raise TypeError("Missing 'partner_transaction_type' argument")
+        if pricing_model is None and 'pricingModel' in kwargs:
             pricing_model = kwargs['pricingModel']
-        if 'programType' in kwargs:
+        if pricing_model is None:
+            raise TypeError("Missing 'pricing_model' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if program_type is None and 'programType' in kwargs:
             program_type = kwargs['programType']
-        if 'promoType' in kwargs:
+        if program_type is None:
+            raise TypeError("Missing 'program_type' argument")
+        if promo_type is None and 'promoType' in kwargs:
             promo_type = kwargs['promoType']
-        if 'termValue' in kwargs:
+        if promo_type is None:
+            raise TypeError("Missing 'promo_type' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if term_value is None and 'termValue' in kwargs:
             term_value = kwargs['termValue']
-        if 'termValueUom' in kwargs:
+        if term_value is None:
+            raise TypeError("Missing 'term_value' argument")
+        if term_value_uom is None and 'termValueUom' in kwargs:
             term_value_uom = kwargs['termValueUom']
-        if 'timeEnd' in kwargs:
+        if term_value_uom is None:
+            raise TypeError("Missing 'term_value_uom' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'totalValue' in kwargs:
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if total_value is None and 'totalValue' in kwargs:
             total_value = kwargs['totalValue']
+        if total_value is None:
+            raise TypeError("Missing 'total_value' argument")
 
         _setter("booking_opty_number", booking_opty_number)
         _setter("commitment_services", commitment_services)
@@ -1178,24 +1308,36 @@ class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             available_amount: str,
-             funded_allocation_value: str,
-             line_net_amount: str,
-             quantity: str,
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             available_amount: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             line_net_amount: Optional[str] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableAmount' in kwargs:
+        if available_amount is None and 'availableAmount' in kwargs:
             available_amount = kwargs['availableAmount']
-        if 'fundedAllocationValue' in kwargs:
+        if available_amount is None:
+            raise TypeError("Missing 'available_amount' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
             funded_allocation_value = kwargs['fundedAllocationValue']
-        if 'lineNetAmount' in kwargs:
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if line_net_amount is None and 'lineNetAmount' in kwargs:
             line_net_amount = kwargs['lineNetAmount']
-        if 'timeEnd' in kwargs:
+        if line_net_amount is None:
+            raise TypeError("Missing 'line_net_amount' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
@@ -1276,18 +1418,26 @@ class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             part_number: str,
-             provisioning_group: str,
-             unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             provisioning_group: Optional[str] = None,
+             unit_of_measure: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'partNumber' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
             part_number = kwargs['partNumber']
-        if 'provisioningGroup' in kwargs:
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
+        if provisioning_group is None and 'provisioningGroup' in kwargs:
             provisioning_group = kwargs['provisioningGroup']
-        if 'unitOfMeasure' in kwargs:
+        if provisioning_group is None:
+            raise TypeError("Missing 'provisioning_group' argument")
+        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
             unit_of_measure = kwargs['unitOfMeasure']
+        if unit_of_measure is None:
+            raise TypeError("Missing 'unit_of_measure' argument")
 
         _setter("name", name)
         _setter("part_number", part_number)

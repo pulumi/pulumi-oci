@@ -50,10 +50,10 @@ import (
 //			_, err := Identity.NewNetworkSource(ctx, "testNetworkSource", &Identity.NetworkSourceArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Network_source_description),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PublicSourceLists:  pulumi.Any(_var.Network_source_public_source_list),

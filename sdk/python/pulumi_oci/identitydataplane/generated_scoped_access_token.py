@@ -33,12 +33,16 @@ class GeneratedScopedAccessTokenArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             public_key: pulumi.Input[str],
-             scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             public_key: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKey' in kwargs:
+        if public_key is None and 'publicKey' in kwargs:
             public_key = kwargs['publicKey']
+        if public_key is None:
+            raise TypeError("Missing 'public_key' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
 
         _setter("public_key", public_key)
         _setter("scope", scope)
@@ -100,9 +104,9 @@ class _GeneratedScopedAccessTokenState:
              public_key: Optional[pulumi.Input[str]] = None,
              scope: Optional[pulumi.Input[str]] = None,
              token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKey' in kwargs:
+        if public_key is None and 'publicKey' in kwargs:
             public_key = kwargs['publicKey']
 
         if public_key is not None:

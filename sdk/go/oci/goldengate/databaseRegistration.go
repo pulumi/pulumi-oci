@@ -41,11 +41,11 @@ import (
 //				Username:         pulumi.Any(_var.Database_registration_username),
 //				ConnectionString: pulumi.Any(_var.Database_registration_connection_string),
 //				DatabaseId:       pulumi.Any(oci_database_database.Test_database.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Database_registration_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IpAddress:           pulumi.Any(_var.Database_registration_ip_address),

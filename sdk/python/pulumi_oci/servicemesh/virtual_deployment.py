@@ -56,8 +56,8 @@ class VirtualDeploymentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             virtual_service_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             virtual_service_id: Optional[pulumi.Input[str]] = None,
              access_logging: Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -65,19 +65,23 @@ class VirtualDeploymentArgs:
              listeners: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'virtualServiceId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
             virtual_service_id = kwargs['virtualServiceId']
-        if 'accessLogging' in kwargs:
+        if virtual_service_id is None:
+            raise TypeError("Missing 'virtual_service_id' argument")
+        if access_logging is None and 'accessLogging' in kwargs:
             access_logging = kwargs['accessLogging']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'serviceDiscovery' in kwargs:
+        if service_discovery is None and 'serviceDiscovery' in kwargs:
             service_discovery = kwargs['serviceDiscovery']
 
         _setter("compartment_id", compartment_id)
@@ -282,27 +286,27 @@ class _VirtualDeploymentState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessLogging' in kwargs:
+        if access_logging is None and 'accessLogging' in kwargs:
             access_logging = kwargs['accessLogging']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'serviceDiscovery' in kwargs:
+        if service_discovery is None and 'serviceDiscovery' in kwargs:
             service_discovery = kwargs['serviceDiscovery']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'virtualServiceId' in kwargs:
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
             virtual_service_id = kwargs['virtualServiceId']
 
         if access_logging is not None:
@@ -669,11 +673,7 @@ class VirtualDeployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VirtualDeploymentArgs.__new__(VirtualDeploymentArgs)
 
-            if access_logging is not None and not isinstance(access_logging, VirtualDeploymentAccessLoggingArgs):
-                access_logging = access_logging or {}
-                def _setter(key, value):
-                    access_logging[key] = value
-                VirtualDeploymentAccessLoggingArgs._configure(_setter, **access_logging)
+            access_logging = _utilities.configure(access_logging, VirtualDeploymentAccessLoggingArgs, True)
             __props__.__dict__["access_logging"] = access_logging
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -683,11 +683,7 @@ class VirtualDeployment(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["listeners"] = listeners
             __props__.__dict__["name"] = name
-            if service_discovery is not None and not isinstance(service_discovery, VirtualDeploymentServiceDiscoveryArgs):
-                service_discovery = service_discovery or {}
-                def _setter(key, value):
-                    service_discovery[key] = value
-                VirtualDeploymentServiceDiscoveryArgs._configure(_setter, **service_discovery)
+            service_discovery = _utilities.configure(service_discovery, VirtualDeploymentServiceDiscoveryArgs, True)
             __props__.__dict__["service_discovery"] = service_discovery
             if virtual_service_id is None and not opts.urn:
                 raise TypeError("Missing required property 'virtual_service_id'")

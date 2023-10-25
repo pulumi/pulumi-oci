@@ -50,28 +50,32 @@ class DiscoveryJobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             discovery_details: pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             discovery_details: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              discovery_client: Optional[pulumi.Input[str]] = None,
              discovery_type: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'discoveryDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if discovery_details is None and 'discoveryDetails' in kwargs:
             discovery_details = kwargs['discoveryDetails']
-        if 'definedTags' in kwargs:
+        if discovery_details is None:
+            raise TypeError("Missing 'discovery_details' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryClient' in kwargs:
+        if discovery_client is None and 'discoveryClient' in kwargs:
             discovery_client = kwargs['discoveryClient']
-        if 'discoveryType' in kwargs:
+        if discovery_type is None and 'discoveryType' in kwargs:
             discovery_type = kwargs['discoveryType']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'shouldPropagateTagsToDiscoveredResources' in kwargs:
+        if should_propagate_tags_to_discovered_resources is None and 'shouldPropagateTagsToDiscoveredResources' in kwargs:
             should_propagate_tags_to_discovered_resources = kwargs['shouldPropagateTagsToDiscoveredResources']
 
         _setter("compartment_id", compartment_id)
@@ -248,31 +252,31 @@ class _DiscoveryJobState:
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryClient' in kwargs:
+        if discovery_client is None and 'discoveryClient' in kwargs:
             discovery_client = kwargs['discoveryClient']
-        if 'discoveryDetails' in kwargs:
+        if discovery_details is None and 'discoveryDetails' in kwargs:
             discovery_details = kwargs['discoveryDetails']
-        if 'discoveryType' in kwargs:
+        if discovery_type is None and 'discoveryType' in kwargs:
             discovery_type = kwargs['discoveryType']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'shouldPropagateTagsToDiscoveredResources' in kwargs:
+        if should_propagate_tags_to_discovered_resources is None and 'shouldPropagateTagsToDiscoveredResources' in kwargs:
             should_propagate_tags_to_discovered_resources = kwargs['shouldPropagateTagsToDiscoveredResources']
-        if 'statusMessage' in kwargs:
+        if status_message is None and 'statusMessage' in kwargs:
             status_message = kwargs['statusMessage']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenantId' in kwargs:
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if compartment_id is not None:
@@ -654,11 +658,7 @@ class DiscoveryJob(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["discovery_client"] = discovery_client
-            if discovery_details is not None and not isinstance(discovery_details, DiscoveryJobDiscoveryDetailsArgs):
-                discovery_details = discovery_details or {}
-                def _setter(key, value):
-                    discovery_details[key] = value
-                DiscoveryJobDiscoveryDetailsArgs._configure(_setter, **discovery_details)
+            discovery_details = _utilities.configure(discovery_details, DiscoveryJobDiscoveryDetailsArgs, True)
             if discovery_details is None and not opts.urn:
                 raise TypeError("Missing required property 'discovery_details'")
             __props__.__dict__["discovery_details"] = discovery_details

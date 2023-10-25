@@ -36,11 +36,11 @@ import (
 //				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
 //				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				AvailabilityDomain:      pulumi.Any(_var.Network_firewall_availability_domain),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Network_firewall_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Ipv4address:             pulumi.Any(_var.Network_firewall_ipv4address),

@@ -63,11 +63,11 @@ class OperatorControlArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approver_groups_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
-             compartment_id: pulumi.Input[str],
-             is_fully_pre_approved: pulumi.Input[bool],
-             operator_control_name: pulumi.Input[str],
-             resource_type: pulumi.Input[str],
+             approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
+             operator_control_name: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
              approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -75,29 +75,39 @@ class OperatorControlArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              system_message: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approverGroupsLists' in kwargs:
+        if approver_groups_lists is None and 'approverGroupsLists' in kwargs:
             approver_groups_lists = kwargs['approverGroupsLists']
-        if 'compartmentId' in kwargs:
+        if approver_groups_lists is None:
+            raise TypeError("Missing 'approver_groups_lists' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isFullyPreApproved' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_fully_pre_approved is None and 'isFullyPreApproved' in kwargs:
             is_fully_pre_approved = kwargs['isFullyPreApproved']
-        if 'operatorControlName' in kwargs:
+        if is_fully_pre_approved is None:
+            raise TypeError("Missing 'is_fully_pre_approved' argument")
+        if operator_control_name is None and 'operatorControlName' in kwargs:
             operator_control_name = kwargs['operatorControlName']
-        if 'resourceType' in kwargs:
+        if operator_control_name is None:
+            raise TypeError("Missing 'operator_control_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'approversLists' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if approvers_lists is None and 'approversLists' in kwargs:
             approvers_lists = kwargs['approversLists']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailIdLists' in kwargs:
+        if email_id_lists is None and 'emailIdLists' in kwargs:
             email_id_lists = kwargs['emailIdLists']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'preApprovedOpActionLists' in kwargs:
+        if pre_approved_op_action_lists is None and 'preApprovedOpActionLists' in kwargs:
             pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
-        if 'systemMessage' in kwargs:
+        if system_message is None and 'systemMessage' in kwargs:
             system_message = kwargs['systemMessage']
 
         _setter("approver_groups_lists", approver_groups_lists)
@@ -361,41 +371,41 @@ class _OperatorControlState:
              time_of_creation: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              time_of_modification: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalRequiredOpActionLists' in kwargs:
+        if approval_required_op_action_lists is None and 'approvalRequiredOpActionLists' in kwargs:
             approval_required_op_action_lists = kwargs['approvalRequiredOpActionLists']
-        if 'approverGroupsLists' in kwargs:
+        if approver_groups_lists is None and 'approverGroupsLists' in kwargs:
             approver_groups_lists = kwargs['approverGroupsLists']
-        if 'approversLists' in kwargs:
+        if approvers_lists is None and 'approversLists' in kwargs:
             approvers_lists = kwargs['approversLists']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailIdLists' in kwargs:
+        if email_id_lists is None and 'emailIdLists' in kwargs:
             email_id_lists = kwargs['emailIdLists']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDefaultOperatorControl' in kwargs:
+        if is_default_operator_control is None and 'isDefaultOperatorControl' in kwargs:
             is_default_operator_control = kwargs['isDefaultOperatorControl']
-        if 'isFullyPreApproved' in kwargs:
+        if is_fully_pre_approved is None and 'isFullyPreApproved' in kwargs:
             is_fully_pre_approved = kwargs['isFullyPreApproved']
-        if 'lastModifiedInfo' in kwargs:
+        if last_modified_info is None and 'lastModifiedInfo' in kwargs:
             last_modified_info = kwargs['lastModifiedInfo']
-        if 'operatorControlName' in kwargs:
+        if operator_control_name is None and 'operatorControlName' in kwargs:
             operator_control_name = kwargs['operatorControlName']
-        if 'preApprovedOpActionLists' in kwargs:
+        if pre_approved_op_action_lists is None and 'preApprovedOpActionLists' in kwargs:
             pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'systemMessage' in kwargs:
+        if system_message is None and 'systemMessage' in kwargs:
             system_message = kwargs['systemMessage']
-        if 'timeOfCreation' in kwargs:
+        if time_of_creation is None and 'timeOfCreation' in kwargs:
             time_of_creation = kwargs['timeOfCreation']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'timeOfModification' in kwargs:
+        if time_of_modification is None and 'timeOfModification' in kwargs:
             time_of_modification = kwargs['timeOfModification']
 
         if approval_required_op_action_lists is not None:

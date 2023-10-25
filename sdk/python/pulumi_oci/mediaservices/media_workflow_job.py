@@ -56,8 +56,8 @@ class MediaWorkflowJobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             workflow_identifier_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             workflow_identifier_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -65,23 +65,27 @@ class MediaWorkflowJobArgs:
              media_workflow_id: Optional[pulumi.Input[str]] = None,
              media_workflow_name: Optional[pulumi.Input[str]] = None,
              parameters: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'workflowIdentifierType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if workflow_identifier_type is None and 'workflowIdentifierType' in kwargs:
             workflow_identifier_type = kwargs['workflowIdentifierType']
-        if 'definedTags' in kwargs:
+        if workflow_identifier_type is None:
+            raise TypeError("Missing 'workflow_identifier_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'mediaWorkflowConfigurationIds' in kwargs:
+        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
             media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if 'mediaWorkflowId' in kwargs:
+        if media_workflow_id is None and 'mediaWorkflowId' in kwargs:
             media_workflow_id = kwargs['mediaWorkflowId']
-        if 'mediaWorkflowName' in kwargs:
+        if media_workflow_name is None and 'mediaWorkflowName' in kwargs:
             media_workflow_name = kwargs['mediaWorkflowName']
 
         _setter("compartment_id", compartment_id)
@@ -306,37 +310,37 @@ class _MediaWorkflowJobState:
              time_started: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              workflow_identifier_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mediaWorkflowConfigurationIds' in kwargs:
+        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
             media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if 'mediaWorkflowId' in kwargs:
+        if media_workflow_id is None and 'mediaWorkflowId' in kwargs:
             media_workflow_id = kwargs['mediaWorkflowId']
-        if 'mediaWorkflowName' in kwargs:
+        if media_workflow_name is None and 'mediaWorkflowName' in kwargs:
             media_workflow_name = kwargs['mediaWorkflowName']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'taskLifecycleStates' in kwargs:
+        if task_lifecycle_states is None and 'taskLifecycleStates' in kwargs:
             task_lifecycle_states = kwargs['taskLifecycleStates']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'workflowIdentifierType' in kwargs:
+        if workflow_identifier_type is None and 'workflowIdentifierType' in kwargs:
             workflow_identifier_type = kwargs['workflowIdentifierType']
 
         if compartment_id is not None:

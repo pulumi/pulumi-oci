@@ -46,11 +46,11 @@ import (
 //					RepositoryBranch: pulumi.Any(_var.Build_run_commit_info_repository_branch),
 //					RepositoryUrl:    pulumi.Any(_var.Build_run_commit_info_repository_url),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Build_run_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

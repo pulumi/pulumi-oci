@@ -59,9 +59,9 @@ class PipelineArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             project_id: pulumi.Input[str],
-             step_details: pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             step_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]]] = None,
              configuration_details: Optional[pulumi.Input['PipelineConfigurationDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
@@ -71,29 +71,35 @@ class PipelineArgs:
              infrastructure_configuration_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']] = None,
              log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
              step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'projectId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'stepDetails' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if step_details is None and 'stepDetails' in kwargs:
             step_details = kwargs['stepDetails']
-        if 'configurationDetails' in kwargs:
+        if step_details is None:
+            raise TypeError("Missing 'step_details' argument")
+        if configuration_details is None and 'configurationDetails' in kwargs:
             configuration_details = kwargs['configurationDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedPipelineRuns' in kwargs:
+        if delete_related_pipeline_runs is None and 'deleteRelatedPipelineRuns' in kwargs:
             delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infrastructureConfigurationDetails' in kwargs:
+        if infrastructure_configuration_details is None and 'infrastructureConfigurationDetails' in kwargs:
             infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
-        if 'logConfigurationDetails' in kwargs:
+        if log_configuration_details is None and 'logConfigurationDetails' in kwargs:
             log_configuration_details = kwargs['logConfigurationDetails']
-        if 'stepArtifact' in kwargs:
+        if step_artifact is None and 'stepArtifact' in kwargs:
             step_artifact = kwargs['stepArtifact']
 
         _setter("compartment_id", compartment_id)
@@ -339,39 +345,39 @@ class _PipelineState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationDetails' in kwargs:
+        if configuration_details is None and 'configurationDetails' in kwargs:
             configuration_details = kwargs['configurationDetails']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deleteRelatedPipelineRuns' in kwargs:
+        if delete_related_pipeline_runs is None and 'deleteRelatedPipelineRuns' in kwargs:
             delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infrastructureConfigurationDetails' in kwargs:
+        if infrastructure_configuration_details is None and 'infrastructureConfigurationDetails' in kwargs:
             infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'logConfigurationDetails' in kwargs:
+        if log_configuration_details is None and 'logConfigurationDetails' in kwargs:
             log_configuration_details = kwargs['logConfigurationDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'stepArtifact' in kwargs:
+        if step_artifact is None and 'stepArtifact' in kwargs:
             step_artifact = kwargs['stepArtifact']
-        if 'stepDetails' in kwargs:
+        if step_details is None and 'stepDetails' in kwargs:
             step_details = kwargs['stepDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -848,37 +854,21 @@ class Pipeline(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if configuration_details is not None and not isinstance(configuration_details, PipelineConfigurationDetailsArgs):
-                configuration_details = configuration_details or {}
-                def _setter(key, value):
-                    configuration_details[key] = value
-                PipelineConfigurationDetailsArgs._configure(_setter, **configuration_details)
+            configuration_details = _utilities.configure(configuration_details, PipelineConfigurationDetailsArgs, True)
             __props__.__dict__["configuration_details"] = configuration_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["delete_related_pipeline_runs"] = delete_related_pipeline_runs
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if infrastructure_configuration_details is not None and not isinstance(infrastructure_configuration_details, PipelineInfrastructureConfigurationDetailsArgs):
-                infrastructure_configuration_details = infrastructure_configuration_details or {}
-                def _setter(key, value):
-                    infrastructure_configuration_details[key] = value
-                PipelineInfrastructureConfigurationDetailsArgs._configure(_setter, **infrastructure_configuration_details)
+            infrastructure_configuration_details = _utilities.configure(infrastructure_configuration_details, PipelineInfrastructureConfigurationDetailsArgs, True)
             __props__.__dict__["infrastructure_configuration_details"] = infrastructure_configuration_details
-            if log_configuration_details is not None and not isinstance(log_configuration_details, PipelineLogConfigurationDetailsArgs):
-                log_configuration_details = log_configuration_details or {}
-                def _setter(key, value):
-                    log_configuration_details[key] = value
-                PipelineLogConfigurationDetailsArgs._configure(_setter, **log_configuration_details)
+            log_configuration_details = _utilities.configure(log_configuration_details, PipelineLogConfigurationDetailsArgs, True)
             __props__.__dict__["log_configuration_details"] = log_configuration_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            if step_artifact is not None and not isinstance(step_artifact, PipelineStepArtifactArgs):
-                step_artifact = step_artifact or {}
-                def _setter(key, value):
-                    step_artifact[key] = value
-                PipelineStepArtifactArgs._configure(_setter, **step_artifact)
+            step_artifact = _utilities.configure(step_artifact, PipelineStepArtifactArgs, True)
             __props__.__dict__["step_artifact"] = step_artifact
             if step_details is None and not opts.urn:
                 raise TypeError("Missing required property 'step_details'")

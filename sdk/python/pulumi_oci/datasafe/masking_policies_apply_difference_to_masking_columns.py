@@ -27,14 +27,18 @@ class MaskingPoliciesApplyDifferenceToMaskingColumnsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             masking_policy_id: pulumi.Input[str],
-             sdm_masking_policy_difference_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maskingPolicyId' in kwargs:
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'sdmMaskingPolicyDifferenceId' in kwargs:
+        if masking_policy_id is None:
+            raise TypeError("Missing 'masking_policy_id' argument")
+        if sdm_masking_policy_difference_id is None and 'sdmMaskingPolicyDifferenceId' in kwargs:
             sdm_masking_policy_difference_id = kwargs['sdmMaskingPolicyDifferenceId']
+        if sdm_masking_policy_difference_id is None:
+            raise TypeError("Missing 'sdm_masking_policy_difference_id' argument")
 
         _setter("masking_policy_id", masking_policy_id)
         _setter("sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
@@ -76,11 +80,11 @@ class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: Optional[pulumi.Input[str]] = None,
              sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maskingPolicyId' in kwargs:
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'sdmMaskingPolicyDifferenceId' in kwargs:
+        if sdm_masking_policy_difference_id is None and 'sdmMaskingPolicyDifferenceId' in kwargs:
             sdm_masking_policy_difference_id = kwargs['sdmMaskingPolicyDifferenceId']
 
         if masking_policy_id is not None:

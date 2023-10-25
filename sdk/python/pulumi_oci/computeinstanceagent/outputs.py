@@ -34,11 +34,15 @@ class GetInstanceAgentPluginsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -87,14 +91,22 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             name: str,
-             status: str,
-             time_last_updated_utc: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             name: Optional[str] = None,
+             status: Optional[str] = None,
+             time_last_updated_utc: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeLastUpdatedUtc' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_last_updated_utc is None and 'timeLastUpdatedUtc' in kwargs:
             time_last_updated_utc = kwargs['timeLastUpdatedUtc']
+        if time_last_updated_utc is None:
+            raise TypeError("Missing 'time_last_updated_utc' argument")
 
         _setter("message", message)
         _setter("name", name)
@@ -157,16 +169,24 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled_by_default: bool,
-             is_supported: bool,
-             name: str,
-             summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled_by_default: Optional[bool] = None,
+             is_supported: Optional[bool] = None,
+             name: Optional[str] = None,
+             summary: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabledByDefault' in kwargs:
+        if is_enabled_by_default is None and 'isEnabledByDefault' in kwargs:
             is_enabled_by_default = kwargs['isEnabledByDefault']
-        if 'isSupported' in kwargs:
+        if is_enabled_by_default is None:
+            raise TypeError("Missing 'is_enabled_by_default' argument")
+        if is_supported is None and 'isSupported' in kwargs:
             is_supported = kwargs['isSupported']
+        if is_supported is None:
+            raise TypeError("Missing 'is_supported' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
 
         _setter("is_enabled_by_default", is_enabled_by_default)
         _setter("is_supported", is_supported)
@@ -224,11 +244,15 @@ class GetInstanceAvailablePluginFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

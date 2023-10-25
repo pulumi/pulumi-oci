@@ -45,25 +45,27 @@ class UserCapabilitiesManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             user_id: pulumi.Input[str],
+             user_id: Optional[pulumi.Input[str]] = None,
              can_use_api_keys: Optional[pulumi.Input[bool]] = None,
              can_use_auth_tokens: Optional[pulumi.Input[bool]] = None,
              can_use_console_password: Optional[pulumi.Input[bool]] = None,
              can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'canUseApiKeys' in kwargs:
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
+        if can_use_api_keys is None and 'canUseApiKeys' in kwargs:
             can_use_api_keys = kwargs['canUseApiKeys']
-        if 'canUseAuthTokens' in kwargs:
+        if can_use_auth_tokens is None and 'canUseAuthTokens' in kwargs:
             can_use_auth_tokens = kwargs['canUseAuthTokens']
-        if 'canUseConsolePassword' in kwargs:
+        if can_use_console_password is None and 'canUseConsolePassword' in kwargs:
             can_use_console_password = kwargs['canUseConsolePassword']
-        if 'canUseCustomerSecretKeys' in kwargs:
+        if can_use_customer_secret_keys is None and 'canUseCustomerSecretKeys' in kwargs:
             can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
-        if 'canUseSmtpCredentials' in kwargs:
+        if can_use_smtp_credentials is None and 'canUseSmtpCredentials' in kwargs:
             can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
 
         _setter("user_id", user_id)
@@ -195,19 +197,19 @@ class _UserCapabilitiesManagementState:
              can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'canUseApiKeys' in kwargs:
+        if can_use_api_keys is None and 'canUseApiKeys' in kwargs:
             can_use_api_keys = kwargs['canUseApiKeys']
-        if 'canUseAuthTokens' in kwargs:
+        if can_use_auth_tokens is None and 'canUseAuthTokens' in kwargs:
             can_use_auth_tokens = kwargs['canUseAuthTokens']
-        if 'canUseConsolePassword' in kwargs:
+        if can_use_console_password is None and 'canUseConsolePassword' in kwargs:
             can_use_console_password = kwargs['canUseConsolePassword']
-        if 'canUseCustomerSecretKeys' in kwargs:
+        if can_use_customer_secret_keys is None and 'canUseCustomerSecretKeys' in kwargs:
             can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
-        if 'canUseSmtpCredentials' in kwargs:
+        if can_use_smtp_credentials is None and 'canUseSmtpCredentials' in kwargs:
             can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if can_use_api_keys is not None:

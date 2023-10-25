@@ -64,13 +64,13 @@ import (
 //				DatabaseId:         pulumi.Any(oci_database_database.Test_database.Id),
 //				DatabaseName:       pulumi.Any(oci_database_database.Test_database.Name),
 //				DbSystemId:         pulumi.Any(oci_database_db_system.Test_db_system.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeploymentId: pulumi.Any(oci_golden_gate_deployment.Test_deployment.Id),
 //				Description:  pulumi.Any(_var.Connection_description),
 //				Endpoint:     pulumi.Any(_var.Connection_endpoint),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Host:                            pulumi.Any(_var.Connection_host),

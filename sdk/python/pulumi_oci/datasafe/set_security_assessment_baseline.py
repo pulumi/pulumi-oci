@@ -33,13 +33,15 @@ class SetSecurityAssessmentBaselineArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             security_assessment_id: pulumi.Input[str],
+             security_assessment_id: Optional[pulumi.Input[str]] = None,
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'securityAssessmentId' in kwargs:
+        if security_assessment_id is None and 'securityAssessmentId' in kwargs:
             security_assessment_id = kwargs['securityAssessmentId']
-        if 'assessmentIds' in kwargs:
+        if security_assessment_id is None:
+            raise TypeError("Missing 'security_assessment_id' argument")
+        if assessment_ids is None and 'assessmentIds' in kwargs:
             assessment_ids = kwargs['assessmentIds']
 
         _setter("security_assessment_id", security_assessment_id)
@@ -99,11 +101,11 @@ class _SetSecurityAssessmentBaselineState:
              _setter: Callable[[Any, Any], None],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              security_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assessmentIds' in kwargs:
+        if assessment_ids is None and 'assessmentIds' in kwargs:
             assessment_ids = kwargs['assessmentIds']
-        if 'securityAssessmentId' in kwargs:
+        if security_assessment_id is None and 'securityAssessmentId' in kwargs:
             security_assessment_id = kwargs['securityAssessmentId']
 
         if assessment_ids is not None:

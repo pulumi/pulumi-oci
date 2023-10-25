@@ -36,16 +36,18 @@ class DbNodeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_node_id: pulumi.Input[str],
+             db_node_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbNodeId' in kwargs:
+        if db_node_id is None and 'dbNodeId' in kwargs:
             db_node_id = kwargs['dbNodeId']
-        if 'definedTags' in kwargs:
+        if db_node_id is None:
+            raise TypeError("Missing 'db_node_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("db_node_id", db_node_id)
@@ -207,49 +209,49 @@ class _DbNodeState:
              time_maintenance_window_start: Optional[pulumi.Input[str]] = None,
              vnic2id: Optional[pulumi.Input[str]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'backupIpId' in kwargs:
+        if backup_ip_id is None and 'backupIpId' in kwargs:
             backup_ip_id = kwargs['backupIpId']
-        if 'backupVnic2id' in kwargs:
+        if backup_vnic2id is None and 'backupVnic2id' in kwargs:
             backup_vnic2id = kwargs['backupVnic2id']
-        if 'backupVnicId' in kwargs:
+        if backup_vnic_id is None and 'backupVnicId' in kwargs:
             backup_vnic_id = kwargs['backupVnicId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'dbNodeId' in kwargs:
+        if db_node_id is None and 'dbNodeId' in kwargs:
             db_node_id = kwargs['dbNodeId']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServerId' in kwargs:
+        if db_server_id is None and 'dbServerId' in kwargs:
             db_server_id = kwargs['dbServerId']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostIpId' in kwargs:
+        if host_ip_id is None and 'hostIpId' in kwargs:
             host_ip_id = kwargs['hostIpId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceType' in kwargs:
+        if maintenance_type is None and 'maintenanceType' in kwargs:
             maintenance_type = kwargs['maintenanceType']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'softwareStorageSizeInGb' in kwargs:
+        if software_storage_size_in_gb is None and 'softwareStorageSizeInGb' in kwargs:
             software_storage_size_in_gb = kwargs['softwareStorageSizeInGb']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeMaintenanceWindowEnd' in kwargs:
+        if time_maintenance_window_end is None and 'timeMaintenanceWindowEnd' in kwargs:
             time_maintenance_window_end = kwargs['timeMaintenanceWindowEnd']
-        if 'timeMaintenanceWindowStart' in kwargs:
+        if time_maintenance_window_start is None and 'timeMaintenanceWindowStart' in kwargs:
             time_maintenance_window_start = kwargs['timeMaintenanceWindowStart']
-        if 'vnicId' in kwargs:
+        if vnic_id is None and 'vnicId' in kwargs:
             vnic_id = kwargs['vnicId']
 
         if additional_details is not None:

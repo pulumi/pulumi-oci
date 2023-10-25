@@ -29,14 +29,16 @@ class NamespaceMetadataArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             namespace: pulumi.Input[str],
+             namespace: Optional[pulumi.Input[str]] = None,
              default_s3compartment_id: Optional[pulumi.Input[str]] = None,
              default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultS3compartmentId' in kwargs:
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if default_s3compartment_id is None and 'defaultS3compartmentId' in kwargs:
             default_s3compartment_id = kwargs['defaultS3compartmentId']
-        if 'defaultSwiftCompartmentId' in kwargs:
+        if default_swift_compartment_id is None and 'defaultSwiftCompartmentId' in kwargs:
             default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
 
         _setter("namespace", namespace)
@@ -94,11 +96,11 @@ class _NamespaceMetadataState:
              default_s3compartment_id: Optional[pulumi.Input[str]] = None,
              default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultS3compartmentId' in kwargs:
+        if default_s3compartment_id is None and 'defaultS3compartmentId' in kwargs:
             default_s3compartment_id = kwargs['defaultS3compartmentId']
-        if 'defaultSwiftCompartmentId' in kwargs:
+        if default_swift_compartment_id is None and 'defaultSwiftCompartmentId' in kwargs:
             default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
 
         if default_s3compartment_id is not None:

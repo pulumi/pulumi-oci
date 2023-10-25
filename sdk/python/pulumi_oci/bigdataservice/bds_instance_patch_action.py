@@ -36,15 +36,21 @@ class BdsInstancePatchActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bds_instance_id: pulumi.Input[str],
-             cluster_admin_password: pulumi.Input[str],
-             version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bdsInstanceId' in kwargs:
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'clusterAdminPassword' in kwargs:
+        if bds_instance_id is None:
+            raise TypeError("Missing 'bds_instance_id' argument")
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
+        if cluster_admin_password is None:
+            raise TypeError("Missing 'cluster_admin_password' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("bds_instance_id", bds_instance_id)
         _setter("cluster_admin_password", cluster_admin_password)
@@ -119,11 +125,11 @@ class _BdsInstancePatchActionState:
              bds_instance_id: Optional[pulumi.Input[str]] = None,
              cluster_admin_password: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bdsInstanceId' in kwargs:
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'clusterAdminPassword' in kwargs:
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
 
         if bds_instance_id is not None:

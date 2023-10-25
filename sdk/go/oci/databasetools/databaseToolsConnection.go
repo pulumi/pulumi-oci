@@ -37,10 +37,10 @@ import (
 //				Type:               pulumi.Any(_var.Database_tools_connection_type),
 //				AdvancedProperties: pulumi.Any(_var.Database_tools_connection_advanced_properties),
 //				ConnectionString:   pulumi.Any(_var.Database_tools_connection_connection_string),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				KeyStores: databasetools.DatabaseToolsConnectionKeyStoreArray{

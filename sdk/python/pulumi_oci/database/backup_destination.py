@@ -56,32 +56,38 @@ class BackupDestinationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              connection_string: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              local_mount_point_path: Optional[pulumi.Input[str]] = None,
              mount_type_details: Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']] = None,
              vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'connectionString' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'localMountPointPath' in kwargs:
+        if local_mount_point_path is None and 'localMountPointPath' in kwargs:
             local_mount_point_path = kwargs['localMountPointPath']
-        if 'mountTypeDetails' in kwargs:
+        if mount_type_details is None and 'mountTypeDetails' in kwargs:
             mount_type_details = kwargs['mountTypeDetails']
-        if 'vpcUsers' in kwargs:
+        if vpc_users is None and 'vpcUsers' in kwargs:
             vpc_users = kwargs['vpcUsers']
 
         _setter("compartment_id", compartment_id)
@@ -299,35 +305,35 @@ class _BackupDestinationState:
              time_created: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedDatabases' in kwargs:
+        if associated_databases is None and 'associatedDatabases' in kwargs:
             associated_databases = kwargs['associatedDatabases']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'localMountPointPath' in kwargs:
+        if local_mount_point_path is None and 'localMountPointPath' in kwargs:
             local_mount_point_path = kwargs['localMountPointPath']
-        if 'mountTypeDetails' in kwargs:
+        if mount_type_details is None and 'mountTypeDetails' in kwargs:
             mount_type_details = kwargs['mountTypeDetails']
-        if 'nfsMountType' in kwargs:
+        if nfs_mount_type is None and 'nfsMountType' in kwargs:
             nfs_mount_type = kwargs['nfsMountType']
-        if 'nfsServerExport' in kwargs:
+        if nfs_server_export is None and 'nfsServerExport' in kwargs:
             nfs_server_export = kwargs['nfsServerExport']
-        if 'nfsServers' in kwargs:
+        if nfs_servers is None and 'nfsServers' in kwargs:
             nfs_servers = kwargs['nfsServers']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vpcUsers' in kwargs:
+        if vpc_users is None and 'vpcUsers' in kwargs:
             vpc_users = kwargs['vpcUsers']
 
         if associated_databases is not None:
@@ -726,11 +732,7 @@ class BackupDestination(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["local_mount_point_path"] = local_mount_point_path
-            if mount_type_details is not None and not isinstance(mount_type_details, BackupDestinationMountTypeDetailsArgs):
-                mount_type_details = mount_type_details or {}
-                def _setter(key, value):
-                    mount_type_details[key] = value
-                BackupDestinationMountTypeDetailsArgs._configure(_setter, **mount_type_details)
+            mount_type_details = _utilities.configure(mount_type_details, BackupDestinationMountTypeDetailsArgs, True)
             __props__.__dict__["mount_type_details"] = mount_type_details
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

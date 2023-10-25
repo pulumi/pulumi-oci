@@ -53,11 +53,11 @@ import (
 //				MetadataUrl:   pulumi.Any(_var.Identity_provider_metadata_url),
 //				ProductType:   pulumi.Any(_var.Identity_provider_product_type),
 //				Protocol:      pulumi.Any(_var.Identity_provider_protocol),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformAttributes: pulumi.Any(_var.Identity_provider_freeform_attributes),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

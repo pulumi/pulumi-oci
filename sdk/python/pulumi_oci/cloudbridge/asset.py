@@ -64,11 +64,11 @@ class AssetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asset_type: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             external_asset_key: pulumi.Input[str],
-             inventory_id: pulumi.Input[str],
-             source_key: pulumi.Input[str],
+             asset_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             external_asset_key: Optional[pulumi.Input[str]] = None,
+             inventory_id: Optional[pulumi.Input[str]] = None,
+             source_key: Optional[pulumi.Input[str]] = None,
              asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -77,29 +77,39 @@ class AssetArgs:
              vm: Optional[pulumi.Input['AssetVmArgs']] = None,
              vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
              vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetType' in kwargs:
+        if asset_type is None and 'assetType' in kwargs:
             asset_type = kwargs['assetType']
-        if 'compartmentId' in kwargs:
+        if asset_type is None:
+            raise TypeError("Missing 'asset_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'externalAssetKey' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if external_asset_key is None and 'externalAssetKey' in kwargs:
             external_asset_key = kwargs['externalAssetKey']
-        if 'inventoryId' in kwargs:
+        if external_asset_key is None:
+            raise TypeError("Missing 'external_asset_key' argument")
+        if inventory_id is None and 'inventoryId' in kwargs:
             inventory_id = kwargs['inventoryId']
-        if 'sourceKey' in kwargs:
+        if inventory_id is None:
+            raise TypeError("Missing 'inventory_id' argument")
+        if source_key is None and 'sourceKey' in kwargs:
             source_key = kwargs['sourceKey']
-        if 'assetSourceIds' in kwargs:
+        if source_key is None:
+            raise TypeError("Missing 'source_key' argument")
+        if asset_source_ids is None and 'assetSourceIds' in kwargs:
             asset_source_ids = kwargs['assetSourceIds']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'vmwareVcenter' in kwargs:
+        if vmware_vcenter is None and 'vmwareVcenter' in kwargs:
             vmware_vcenter = kwargs['vmwareVcenter']
-        if 'vmwareVm' in kwargs:
+        if vmware_vm is None and 'vmwareVm' in kwargs:
             vmware_vm = kwargs['vmwareVm']
 
         _setter("asset_type", asset_type)
@@ -361,35 +371,35 @@ class _AssetState:
              vm: Optional[pulumi.Input['AssetVmArgs']] = None,
              vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
              vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetSourceIds' in kwargs:
+        if asset_source_ids is None and 'assetSourceIds' in kwargs:
             asset_source_ids = kwargs['assetSourceIds']
-        if 'assetType' in kwargs:
+        if asset_type is None and 'assetType' in kwargs:
             asset_type = kwargs['assetType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalAssetKey' in kwargs:
+        if external_asset_key is None and 'externalAssetKey' in kwargs:
             external_asset_key = kwargs['externalAssetKey']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inventoryId' in kwargs:
+        if inventory_id is None and 'inventoryId' in kwargs:
             inventory_id = kwargs['inventoryId']
-        if 'sourceKey' in kwargs:
+        if source_key is None and 'sourceKey' in kwargs:
             source_key = kwargs['sourceKey']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vmwareVcenter' in kwargs:
+        if vmware_vcenter is None and 'vmwareVcenter' in kwargs:
             vmware_vcenter = kwargs['vmwareVcenter']
-        if 'vmwareVm' in kwargs:
+        if vmware_vm is None and 'vmwareVm' in kwargs:
             vmware_vm = kwargs['vmwareVm']
 
         if asset_source_ids is not None:
@@ -969,11 +979,7 @@ class Asset(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if compute is not None and not isinstance(compute, AssetComputeArgs):
-                compute = compute or {}
-                def _setter(key, value):
-                    compute[key] = value
-                AssetComputeArgs._configure(_setter, **compute)
+            compute = _utilities.configure(compute, AssetComputeArgs, True)
             __props__.__dict__["compute"] = compute
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
@@ -987,23 +993,11 @@ class Asset(pulumi.CustomResource):
             if source_key is None and not opts.urn:
                 raise TypeError("Missing required property 'source_key'")
             __props__.__dict__["source_key"] = source_key
-            if vm is not None and not isinstance(vm, AssetVmArgs):
-                vm = vm or {}
-                def _setter(key, value):
-                    vm[key] = value
-                AssetVmArgs._configure(_setter, **vm)
+            vm = _utilities.configure(vm, AssetVmArgs, True)
             __props__.__dict__["vm"] = vm
-            if vmware_vcenter is not None and not isinstance(vmware_vcenter, AssetVmwareVcenterArgs):
-                vmware_vcenter = vmware_vcenter or {}
-                def _setter(key, value):
-                    vmware_vcenter[key] = value
-                AssetVmwareVcenterArgs._configure(_setter, **vmware_vcenter)
+            vmware_vcenter = _utilities.configure(vmware_vcenter, AssetVmwareVcenterArgs, True)
             __props__.__dict__["vmware_vcenter"] = vmware_vcenter
-            if vmware_vm is not None and not isinstance(vmware_vm, AssetVmwareVmArgs):
-                vmware_vm = vmware_vm or {}
-                def _setter(key, value):
-                    vmware_vm[key] = value
-                AssetVmwareVmArgs._configure(_setter, **vmware_vm)
+            vmware_vm = _utilities.configure(vmware_vm, AssetVmwareVmArgs, True)
             __props__.__dict__["vmware_vm"] = vmware_vm
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None

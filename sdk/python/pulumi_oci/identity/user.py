@@ -47,19 +47,21 @@ class UserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              email: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("description", description)
@@ -234,29 +236,29 @@ class _UserState:
              previous_successful_login_time: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbUserName' in kwargs:
+        if db_user_name is None and 'dbUserName' in kwargs:
             db_user_name = kwargs['dbUserName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailVerified' in kwargs:
+        if email_verified is None and 'emailVerified' in kwargs:
             email_verified = kwargs['emailVerified']
-        if 'externalIdentifier' in kwargs:
+        if external_identifier is None and 'externalIdentifier' in kwargs:
             external_identifier = kwargs['externalIdentifier']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'identityProviderId' in kwargs:
+        if identity_provider_id is None and 'identityProviderId' in kwargs:
             identity_provider_id = kwargs['identityProviderId']
-        if 'inactiveState' in kwargs:
+        if inactive_state is None and 'inactiveState' in kwargs:
             inactive_state = kwargs['inactiveState']
-        if 'lastSuccessfulLoginTime' in kwargs:
+        if last_successful_login_time is None and 'lastSuccessfulLoginTime' in kwargs:
             last_successful_login_time = kwargs['lastSuccessfulLoginTime']
-        if 'previousSuccessfulLoginTime' in kwargs:
+        if previous_successful_login_time is None and 'previousSuccessfulLoginTime' in kwargs:
             previous_successful_login_time = kwargs['previousSuccessfulLoginTime']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if capabilities is not None:

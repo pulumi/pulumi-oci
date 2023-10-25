@@ -46,26 +46,30 @@ class TableArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             ddl_statement: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             ddl_statement: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'ddlStatement' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if ddl_statement is None and 'ddlStatement' in kwargs:
             ddl_statement = kwargs['ddlStatement']
-        if 'definedTags' in kwargs:
+        if ddl_statement is None:
+            raise TypeError("Missing 'ddl_statement' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoReclaimable' in kwargs:
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
             is_auto_reclaimable = kwargs['isAutoReclaimable']
-        if 'tableLimits' in kwargs:
+        if table_limits is None and 'tableLimits' in kwargs:
             table_limits = kwargs['tableLimits']
 
         _setter("compartment_id", compartment_id)
@@ -234,29 +238,29 @@ class _TableState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_expiration: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'ddlStatement' in kwargs:
+        if ddl_statement is None and 'ddlStatement' in kwargs:
             ddl_statement = kwargs['ddlStatement']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoReclaimable' in kwargs:
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
             is_auto_reclaimable = kwargs['isAutoReclaimable']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tableLimits' in kwargs:
+        if table_limits is None and 'tableLimits' in kwargs:
             table_limits = kwargs['tableLimits']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfExpiration' in kwargs:
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
             time_of_expiration = kwargs['timeOfExpiration']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -601,11 +605,7 @@ class Table(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
             __props__.__dict__["name"] = name
-            if table_limits is not None and not isinstance(table_limits, TableTableLimitsArgs):
-                table_limits = table_limits or {}
-                def _setter(key, value):
-                    table_limits[key] = value
-                TableTableLimitsArgs._configure(_setter, **table_limits)
+            table_limits = _utilities.configure(table_limits, TableTableLimitsArgs, True)
             __props__.__dict__["table_limits"] = table_limits
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["schemas"] = None

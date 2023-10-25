@@ -42,20 +42,26 @@ class ClusterWorkloadMappingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: pulumi.Input[str],
-             mapped_compartment_id: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             mapped_compartment_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'mappedCompartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if mapped_compartment_id is None and 'mappedCompartmentId' in kwargs:
             mapped_compartment_id = kwargs['mappedCompartmentId']
-        if 'definedTags' in kwargs:
+        if mapped_compartment_id is None:
+            raise TypeError("Missing 'mapped_compartment_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("cluster_id", cluster_id)
@@ -179,19 +185,19 @@ class _ClusterWorkloadMappingState:
              namespace: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'mappedCompartmentId' in kwargs:
+        if mapped_compartment_id is None and 'mappedCompartmentId' in kwargs:
             mapped_compartment_id = kwargs['mappedCompartmentId']
-        if 'mappedTenancyId' in kwargs:
+        if mapped_tenancy_id is None and 'mappedTenancyId' in kwargs:
             mapped_tenancy_id = kwargs['mappedTenancyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if cluster_id is not None:

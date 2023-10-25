@@ -35,13 +35,15 @@ class StreamPoolCustomEncryptionKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: pulumi.Input[str],
+             kms_key_id: Optional[pulumi.Input[str]] = None,
              key_state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'keyState' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if key_state is None and 'keyState' in kwargs:
             key_state = kwargs['keyState']
 
         _setter("kms_key_id", kms_key_id)
@@ -100,15 +102,15 @@ class StreamPoolKafkaSettingsArgs:
              bootstrap_servers: Optional[pulumi.Input[str]] = None,
              log_retention_hours: Optional[pulumi.Input[int]] = None,
              num_partitions: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCreateTopicsEnable' in kwargs:
+        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
             auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if 'bootstrapServers' in kwargs:
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'logRetentionHours' in kwargs:
+        if log_retention_hours is None and 'logRetentionHours' in kwargs:
             log_retention_hours = kwargs['logRetentionHours']
-        if 'numPartitions' in kwargs:
+        if num_partitions is None and 'numPartitions' in kwargs:
             num_partitions = kwargs['numPartitions']
 
         if auto_create_topics_enable is not None:
@@ -196,13 +198,13 @@ class StreamPoolPrivateEndpointSettingsArgs:
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              private_endpoint_ip: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
 
         if nsg_ids is not None:
@@ -271,11 +273,15 @@ class GetConnectHarnessesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -331,11 +337,15 @@ class GetStreamPoolsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -391,11 +401,15 @@ class GetStreamsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

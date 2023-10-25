@@ -36,16 +36,20 @@ class AgentPluginArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: pulumi.Input[str],
-             plugin_name: pulumi.Input[str],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             plugin_name: Optional[pulumi.Input[str]] = None,
              desired_state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'pluginName' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'desiredState' in kwargs:
+        if plugin_name is None:
+            raise TypeError("Missing 'plugin_name' argument")
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
 
         _setter("agent_id", agent_id)
@@ -158,27 +162,27 @@ class _AgentPluginState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'pluginName' in kwargs:
+        if plugin_name is None and 'pluginName' in kwargs:
             plugin_name = kwargs['pluginName']
-        if 'pluginVersion' in kwargs:
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if agent_id is not None:

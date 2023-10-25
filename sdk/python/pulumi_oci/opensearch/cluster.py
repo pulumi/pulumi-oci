@@ -108,25 +108,25 @@ class ClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             data_node_count: pulumi.Input[int],
-             data_node_host_memory_gb: pulumi.Input[int],
-             data_node_host_ocpu_count: pulumi.Input[int],
-             data_node_host_type: pulumi.Input[str],
-             data_node_storage_gb: pulumi.Input[int],
-             display_name: pulumi.Input[str],
-             master_node_count: pulumi.Input[int],
-             master_node_host_memory_gb: pulumi.Input[int],
-             master_node_host_ocpu_count: pulumi.Input[int],
-             master_node_host_type: pulumi.Input[str],
-             opendashboard_node_count: pulumi.Input[int],
-             opendashboard_node_host_memory_gb: pulumi.Input[int],
-             opendashboard_node_host_ocpu_count: pulumi.Input[int],
-             software_version: pulumi.Input[str],
-             subnet_compartment_id: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
-             vcn_compartment_id: pulumi.Input[str],
-             vcn_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_node_count: Optional[pulumi.Input[int]] = None,
+             data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             data_node_host_type: Optional[pulumi.Input[str]] = None,
+             data_node_storage_gb: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             master_node_count: Optional[pulumi.Input[int]] = None,
+             master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             master_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             master_node_host_type: Optional[pulumi.Input[str]] = None,
+             opendashboard_node_count: Optional[pulumi.Input[int]] = None,
+             opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             software_version: Optional[pulumi.Input[str]] = None,
+             subnet_compartment_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vcn_compartment_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
              data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -135,61 +135,99 @@ class ClusterArgs:
              security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
              security_mode: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataNodeCount' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_node_count is None and 'dataNodeCount' in kwargs:
             data_node_count = kwargs['dataNodeCount']
-        if 'dataNodeHostMemoryGb' in kwargs:
+        if data_node_count is None:
+            raise TypeError("Missing 'data_node_count' argument")
+        if data_node_host_memory_gb is None and 'dataNodeHostMemoryGb' in kwargs:
             data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
-        if 'dataNodeHostOcpuCount' in kwargs:
+        if data_node_host_memory_gb is None:
+            raise TypeError("Missing 'data_node_host_memory_gb' argument")
+        if data_node_host_ocpu_count is None and 'dataNodeHostOcpuCount' in kwargs:
             data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
-        if 'dataNodeHostType' in kwargs:
+        if data_node_host_ocpu_count is None:
+            raise TypeError("Missing 'data_node_host_ocpu_count' argument")
+        if data_node_host_type is None and 'dataNodeHostType' in kwargs:
             data_node_host_type = kwargs['dataNodeHostType']
-        if 'dataNodeStorageGb' in kwargs:
+        if data_node_host_type is None:
+            raise TypeError("Missing 'data_node_host_type' argument")
+        if data_node_storage_gb is None and 'dataNodeStorageGb' in kwargs:
             data_node_storage_gb = kwargs['dataNodeStorageGb']
-        if 'displayName' in kwargs:
+        if data_node_storage_gb is None:
+            raise TypeError("Missing 'data_node_storage_gb' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'masterNodeCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if master_node_count is None and 'masterNodeCount' in kwargs:
             master_node_count = kwargs['masterNodeCount']
-        if 'masterNodeHostMemoryGb' in kwargs:
+        if master_node_count is None:
+            raise TypeError("Missing 'master_node_count' argument")
+        if master_node_host_memory_gb is None and 'masterNodeHostMemoryGb' in kwargs:
             master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
-        if 'masterNodeHostOcpuCount' in kwargs:
+        if master_node_host_memory_gb is None:
+            raise TypeError("Missing 'master_node_host_memory_gb' argument")
+        if master_node_host_ocpu_count is None and 'masterNodeHostOcpuCount' in kwargs:
             master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
-        if 'masterNodeHostType' in kwargs:
+        if master_node_host_ocpu_count is None:
+            raise TypeError("Missing 'master_node_host_ocpu_count' argument")
+        if master_node_host_type is None and 'masterNodeHostType' in kwargs:
             master_node_host_type = kwargs['masterNodeHostType']
-        if 'opendashboardNodeCount' in kwargs:
+        if master_node_host_type is None:
+            raise TypeError("Missing 'master_node_host_type' argument")
+        if opendashboard_node_count is None and 'opendashboardNodeCount' in kwargs:
             opendashboard_node_count = kwargs['opendashboardNodeCount']
-        if 'opendashboardNodeHostMemoryGb' in kwargs:
+        if opendashboard_node_count is None:
+            raise TypeError("Missing 'opendashboard_node_count' argument")
+        if opendashboard_node_host_memory_gb is None and 'opendashboardNodeHostMemoryGb' in kwargs:
             opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
-        if 'opendashboardNodeHostOcpuCount' in kwargs:
+        if opendashboard_node_host_memory_gb is None:
+            raise TypeError("Missing 'opendashboard_node_host_memory_gb' argument")
+        if opendashboard_node_host_ocpu_count is None and 'opendashboardNodeHostOcpuCount' in kwargs:
             opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
-        if 'softwareVersion' in kwargs:
+        if opendashboard_node_host_ocpu_count is None:
+            raise TypeError("Missing 'opendashboard_node_host_ocpu_count' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetCompartmentId' in kwargs:
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if subnet_compartment_id is None and 'subnetCompartmentId' in kwargs:
             subnet_compartment_id = kwargs['subnetCompartmentId']
-        if 'subnetId' in kwargs:
+        if subnet_compartment_id is None:
+            raise TypeError("Missing 'subnet_compartment_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnCompartmentId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_compartment_id is None and 'vcnCompartmentId' in kwargs:
             vcn_compartment_id = kwargs['vcnCompartmentId']
-        if 'vcnId' in kwargs:
+        if vcn_compartment_id is None:
+            raise TypeError("Missing 'vcn_compartment_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'dataNodeHostBareMetalShape' in kwargs:
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if data_node_host_bare_metal_shape is None and 'dataNodeHostBareMetalShape' in kwargs:
             data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'masterNodeHostBareMetalShape' in kwargs:
+        if master_node_host_bare_metal_shape is None and 'masterNodeHostBareMetalShape' in kwargs:
             master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
-        if 'securityMasterUserName' in kwargs:
+        if security_master_user_name is None and 'securityMasterUserName' in kwargs:
             security_master_user_name = kwargs['securityMasterUserName']
-        if 'securityMasterUserPasswordHash' in kwargs:
+        if security_master_user_password_hash is None and 'securityMasterUserPasswordHash' in kwargs:
             security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
-        if 'securityMode' in kwargs:
+        if security_mode is None and 'securityMode' in kwargs:
             security_mode = kwargs['securityMode']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("compartment_id", compartment_id)
@@ -729,81 +767,81 @@ class _ClusterState:
              total_storage_gb: Optional[pulumi.Input[int]] = None,
              vcn_compartment_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomains' in kwargs:
+        if availability_domains is None and 'availabilityDomains' in kwargs:
             availability_domains = kwargs['availabilityDomains']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataNodeCount' in kwargs:
+        if data_node_count is None and 'dataNodeCount' in kwargs:
             data_node_count = kwargs['dataNodeCount']
-        if 'dataNodeHostBareMetalShape' in kwargs:
+        if data_node_host_bare_metal_shape is None and 'dataNodeHostBareMetalShape' in kwargs:
             data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
-        if 'dataNodeHostMemoryGb' in kwargs:
+        if data_node_host_memory_gb is None and 'dataNodeHostMemoryGb' in kwargs:
             data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
-        if 'dataNodeHostOcpuCount' in kwargs:
+        if data_node_host_ocpu_count is None and 'dataNodeHostOcpuCount' in kwargs:
             data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
-        if 'dataNodeHostType' in kwargs:
+        if data_node_host_type is None and 'dataNodeHostType' in kwargs:
             data_node_host_type = kwargs['dataNodeHostType']
-        if 'dataNodeStorageGb' in kwargs:
+        if data_node_storage_gb is None and 'dataNodeStorageGb' in kwargs:
             data_node_storage_gb = kwargs['dataNodeStorageGb']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'masterNodeCount' in kwargs:
+        if master_node_count is None and 'masterNodeCount' in kwargs:
             master_node_count = kwargs['masterNodeCount']
-        if 'masterNodeHostBareMetalShape' in kwargs:
+        if master_node_host_bare_metal_shape is None and 'masterNodeHostBareMetalShape' in kwargs:
             master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
-        if 'masterNodeHostMemoryGb' in kwargs:
+        if master_node_host_memory_gb is None and 'masterNodeHostMemoryGb' in kwargs:
             master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
-        if 'masterNodeHostOcpuCount' in kwargs:
+        if master_node_host_ocpu_count is None and 'masterNodeHostOcpuCount' in kwargs:
             master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
-        if 'masterNodeHostType' in kwargs:
+        if master_node_host_type is None and 'masterNodeHostType' in kwargs:
             master_node_host_type = kwargs['masterNodeHostType']
-        if 'opendashboardFqdn' in kwargs:
+        if opendashboard_fqdn is None and 'opendashboardFqdn' in kwargs:
             opendashboard_fqdn = kwargs['opendashboardFqdn']
-        if 'opendashboardNodeCount' in kwargs:
+        if opendashboard_node_count is None and 'opendashboardNodeCount' in kwargs:
             opendashboard_node_count = kwargs['opendashboardNodeCount']
-        if 'opendashboardNodeHostMemoryGb' in kwargs:
+        if opendashboard_node_host_memory_gb is None and 'opendashboardNodeHostMemoryGb' in kwargs:
             opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
-        if 'opendashboardNodeHostOcpuCount' in kwargs:
+        if opendashboard_node_host_ocpu_count is None and 'opendashboardNodeHostOcpuCount' in kwargs:
             opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
-        if 'opendashboardPrivateIp' in kwargs:
+        if opendashboard_private_ip is None and 'opendashboardPrivateIp' in kwargs:
             opendashboard_private_ip = kwargs['opendashboardPrivateIp']
-        if 'opensearchFqdn' in kwargs:
+        if opensearch_fqdn is None and 'opensearchFqdn' in kwargs:
             opensearch_fqdn = kwargs['opensearchFqdn']
-        if 'opensearchPrivateIp' in kwargs:
+        if opensearch_private_ip is None and 'opensearchPrivateIp' in kwargs:
             opensearch_private_ip = kwargs['opensearchPrivateIp']
-        if 'securityMasterUserName' in kwargs:
+        if security_master_user_name is None and 'securityMasterUserName' in kwargs:
             security_master_user_name = kwargs['securityMasterUserName']
-        if 'securityMasterUserPasswordHash' in kwargs:
+        if security_master_user_password_hash is None and 'securityMasterUserPasswordHash' in kwargs:
             security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
-        if 'securityMode' in kwargs:
+        if security_mode is None and 'securityMode' in kwargs:
             security_mode = kwargs['securityMode']
-        if 'softwareVersion' in kwargs:
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetCompartmentId' in kwargs:
+        if subnet_compartment_id is None and 'subnetCompartmentId' in kwargs:
             subnet_compartment_id = kwargs['subnetCompartmentId']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeDeleted' in kwargs:
+        if time_deleted is None and 'timeDeleted' in kwargs:
             time_deleted = kwargs['timeDeleted']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalStorageGb' in kwargs:
+        if total_storage_gb is None and 'totalStorageGb' in kwargs:
             total_storage_gb = kwargs['totalStorageGb']
-        if 'vcnCompartmentId' in kwargs:
+        if vcn_compartment_id is None and 'vcnCompartmentId' in kwargs:
             vcn_compartment_id = kwargs['vcnCompartmentId']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if availability_domains is not None:

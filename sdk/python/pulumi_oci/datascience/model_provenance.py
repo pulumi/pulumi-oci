@@ -48,28 +48,30 @@ class ModelProvenanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             model_id: pulumi.Input[str],
+             model_id: Optional[pulumi.Input[str]] = None,
              git_branch: Optional[pulumi.Input[str]] = None,
              git_commit: Optional[pulumi.Input[str]] = None,
              repository_url: Optional[pulumi.Input[str]] = None,
              script_dir: Optional[pulumi.Input[str]] = None,
              training_id: Optional[pulumi.Input[str]] = None,
              training_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'gitBranch' in kwargs:
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if git_branch is None and 'gitBranch' in kwargs:
             git_branch = kwargs['gitBranch']
-        if 'gitCommit' in kwargs:
+        if git_commit is None and 'gitCommit' in kwargs:
             git_commit = kwargs['gitCommit']
-        if 'repositoryUrl' in kwargs:
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
-        if 'scriptDir' in kwargs:
+        if script_dir is None and 'scriptDir' in kwargs:
             script_dir = kwargs['scriptDir']
-        if 'trainingId' in kwargs:
+        if training_id is None and 'trainingId' in kwargs:
             training_id = kwargs['trainingId']
-        if 'trainingScript' in kwargs:
+        if training_script is None and 'trainingScript' in kwargs:
             training_script = kwargs['trainingScript']
 
         _setter("model_id", model_id)
@@ -219,21 +221,21 @@ class _ModelProvenanceState:
              script_dir: Optional[pulumi.Input[str]] = None,
              training_id: Optional[pulumi.Input[str]] = None,
              training_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gitBranch' in kwargs:
+        if git_branch is None and 'gitBranch' in kwargs:
             git_branch = kwargs['gitBranch']
-        if 'gitCommit' in kwargs:
+        if git_commit is None and 'gitCommit' in kwargs:
             git_commit = kwargs['gitCommit']
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'repositoryUrl' in kwargs:
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
-        if 'scriptDir' in kwargs:
+        if script_dir is None and 'scriptDir' in kwargs:
             script_dir = kwargs['scriptDir']
-        if 'trainingId' in kwargs:
+        if training_id is None and 'trainingId' in kwargs:
             training_id = kwargs['trainingId']
-        if 'trainingScript' in kwargs:
+        if training_script is None and 'trainingScript' in kwargs:
             training_script = kwargs['trainingScript']
 
         if git_branch is not None:

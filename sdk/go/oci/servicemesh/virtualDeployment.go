@@ -37,11 +37,11 @@ import (
 //				AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
 //					IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Virtual_deployment_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Listeners: servicemesh.VirtualDeploymentListenerArray{

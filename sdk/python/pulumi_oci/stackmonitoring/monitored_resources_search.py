@@ -88,7 +88,7 @@ class MonitoredResourcesSearchArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              external_id: Optional[pulumi.Input[str]] = None,
              fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -105,33 +105,35 @@ class MonitoredResourcesSearchArgs:
              time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
              time_updated_less_than: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'excludeFields' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if exclude_fields is None and 'excludeFields' in kwargs:
             exclude_fields = kwargs['excludeFields']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'hostNameContains' in kwargs:
+        if host_name_contains is None and 'hostNameContains' in kwargs:
             host_name_contains = kwargs['hostNameContains']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'nameContains' in kwargs:
+        if name_contains is None and 'nameContains' in kwargs:
             name_contains = kwargs['nameContains']
-        if 'propertyEquals' in kwargs:
+        if property_equals is None and 'propertyEquals' in kwargs:
             property_equals = kwargs['propertyEquals']
-        if 'resourceTimeZone' in kwargs:
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
             resource_time_zone = kwargs['resourceTimeZone']
-        if 'timeCreatedGreaterThanOrEqualTo' in kwargs:
+        if time_created_greater_than_or_equal_to is None and 'timeCreatedGreaterThanOrEqualTo' in kwargs:
             time_created_greater_than_or_equal_to = kwargs['timeCreatedGreaterThanOrEqualTo']
-        if 'timeCreatedLessThan' in kwargs:
+        if time_created_less_than is None and 'timeCreatedLessThan' in kwargs:
             time_created_less_than = kwargs['timeCreatedLessThan']
-        if 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
+        if time_updated_greater_than_or_equal_to is None and 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
             time_updated_greater_than_or_equal_to = kwargs['timeUpdatedGreaterThanOrEqualTo']
-        if 'timeUpdatedLessThan' in kwargs:
+        if time_updated_less_than is None and 'timeUpdatedLessThan' in kwargs:
             time_updated_less_than = kwargs['timeUpdatedLessThan']
 
         _setter("compartment_id", compartment_id)
@@ -481,33 +483,33 @@ class _MonitoredResourcesSearchState:
              time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
              time_updated_less_than: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'excludeFields' in kwargs:
+        if exclude_fields is None and 'excludeFields' in kwargs:
             exclude_fields = kwargs['excludeFields']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'hostNameContains' in kwargs:
+        if host_name_contains is None and 'hostNameContains' in kwargs:
             host_name_contains = kwargs['hostNameContains']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'nameContains' in kwargs:
+        if name_contains is None and 'nameContains' in kwargs:
             name_contains = kwargs['nameContains']
-        if 'propertyEquals' in kwargs:
+        if property_equals is None and 'propertyEquals' in kwargs:
             property_equals = kwargs['propertyEquals']
-        if 'resourceTimeZone' in kwargs:
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
             resource_time_zone = kwargs['resourceTimeZone']
-        if 'timeCreatedGreaterThanOrEqualTo' in kwargs:
+        if time_created_greater_than_or_equal_to is None and 'timeCreatedGreaterThanOrEqualTo' in kwargs:
             time_created_greater_than_or_equal_to = kwargs['timeCreatedGreaterThanOrEqualTo']
-        if 'timeCreatedLessThan' in kwargs:
+        if time_created_less_than is None and 'timeCreatedLessThan' in kwargs:
             time_created_less_than = kwargs['timeCreatedLessThan']
-        if 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
+        if time_updated_greater_than_or_equal_to is None and 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
             time_updated_greater_than_or_equal_to = kwargs['timeUpdatedGreaterThanOrEqualTo']
-        if 'timeUpdatedLessThan' in kwargs:
+        if time_updated_less_than is None and 'timeUpdatedLessThan' in kwargs:
             time_updated_less_than = kwargs['timeUpdatedLessThan']
 
         if compartment_id is not None:

@@ -48,26 +48,38 @@ class AppCatalogSubscriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             listing_id: pulumi.Input[str],
-             listing_resource_version: pulumi.Input[str],
-             oracle_terms_of_use_link: pulumi.Input[str],
-             signature: pulumi.Input[str],
-             time_retrieved: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             listing_resource_version: Optional[pulumi.Input[str]] = None,
+             oracle_terms_of_use_link: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             time_retrieved: Optional[pulumi.Input[str]] = None,
              eula_link: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'listingId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingResourceVersion' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if listing_resource_version is None and 'listingResourceVersion' in kwargs:
             listing_resource_version = kwargs['listingResourceVersion']
-        if 'oracleTermsOfUseLink' in kwargs:
+        if listing_resource_version is None:
+            raise TypeError("Missing 'listing_resource_version' argument")
+        if oracle_terms_of_use_link is None and 'oracleTermsOfUseLink' in kwargs:
             oracle_terms_of_use_link = kwargs['oracleTermsOfUseLink']
-        if 'timeRetrieved' in kwargs:
+        if oracle_terms_of_use_link is None:
+            raise TypeError("Missing 'oracle_terms_of_use_link' argument")
+        if signature is None:
+            raise TypeError("Missing 'signature' argument")
+        if time_retrieved is None and 'timeRetrieved' in kwargs:
             time_retrieved = kwargs['timeRetrieved']
-        if 'eulaLink' in kwargs:
+        if time_retrieved is None:
+            raise TypeError("Missing 'time_retrieved' argument")
+        if eula_link is None and 'eulaLink' in kwargs:
             eula_link = kwargs['eulaLink']
 
         _setter("compartment_id", compartment_id)
@@ -232,27 +244,27 @@ class _AppCatalogSubscriptionState:
              summary: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'eulaLink' in kwargs:
+        if eula_link is None and 'eulaLink' in kwargs:
             eula_link = kwargs['eulaLink']
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingResourceId' in kwargs:
+        if listing_resource_id is None and 'listingResourceId' in kwargs:
             listing_resource_id = kwargs['listingResourceId']
-        if 'listingResourceVersion' in kwargs:
+        if listing_resource_version is None and 'listingResourceVersion' in kwargs:
             listing_resource_version = kwargs['listingResourceVersion']
-        if 'oracleTermsOfUseLink' in kwargs:
+        if oracle_terms_of_use_link is None and 'oracleTermsOfUseLink' in kwargs:
             oracle_terms_of_use_link = kwargs['oracleTermsOfUseLink']
-        if 'publisherName' in kwargs:
+        if publisher_name is None and 'publisherName' in kwargs:
             publisher_name = kwargs['publisherName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeRetrieved' in kwargs:
+        if time_retrieved is None and 'timeRetrieved' in kwargs:
             time_retrieved = kwargs['timeRetrieved']
 
         if compartment_id is not None:

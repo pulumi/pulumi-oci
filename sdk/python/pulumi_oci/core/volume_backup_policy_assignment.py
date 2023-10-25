@@ -33,14 +33,18 @@ class VolumeBackupPolicyAssignmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asset_id: pulumi.Input[str],
-             policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             asset_id: Optional[pulumi.Input[str]] = None,
+             policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetId' in kwargs:
+        if asset_id is None and 'assetId' in kwargs:
             asset_id = kwargs['assetId']
-        if 'policyId' in kwargs:
+        if asset_id is None:
+            raise TypeError("Missing 'asset_id' argument")
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
+        if policy_id is None:
+            raise TypeError("Missing 'policy_id' argument")
 
         _setter("asset_id", asset_id)
         _setter("policy_id", policy_id)
@@ -102,13 +106,13 @@ class _VolumeBackupPolicyAssignmentState:
              asset_id: Optional[pulumi.Input[str]] = None,
              policy_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetId' in kwargs:
+        if asset_id is None and 'assetId' in kwargs:
             asset_id = kwargs['assetId']
-        if 'policyId' in kwargs:
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if asset_id is not None:

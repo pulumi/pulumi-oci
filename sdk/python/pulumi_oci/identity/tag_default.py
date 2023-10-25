@@ -43,17 +43,23 @@ class TagDefaultArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             tag_definition_id: pulumi.Input[str],
-             value: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             tag_definition_id: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              is_required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'tagDefinitionId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if tag_definition_id is None and 'tagDefinitionId' in kwargs:
             tag_definition_id = kwargs['tagDefinitionId']
-        if 'isRequired' in kwargs:
+        if tag_definition_id is None:
+            raise TypeError("Missing 'tag_definition_id' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
 
         _setter("compartment_id", compartment_id)
@@ -171,19 +177,19 @@ class _TagDefaultState:
              tag_namespace_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isRequired' in kwargs:
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
-        if 'tagDefinitionId' in kwargs:
+        if tag_definition_id is None and 'tagDefinitionId' in kwargs:
             tag_definition_id = kwargs['tagDefinitionId']
-        if 'tagDefinitionName' in kwargs:
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
             tag_definition_name = kwargs['tagDefinitionName']
-        if 'tagNamespaceId' in kwargs:
+        if tag_namespace_id is None and 'tagNamespaceId' in kwargs:
             tag_namespace_id = kwargs['tagNamespaceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

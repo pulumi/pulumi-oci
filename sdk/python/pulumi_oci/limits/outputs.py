@@ -66,15 +66,17 @@ class QuotaLock(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
+             type: Optional[str] = None,
              message: Optional[str] = None,
              related_resource_id: Optional[str] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'relatedResourceId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if related_resource_id is None and 'relatedResourceId' in kwargs:
             related_resource_id = kwargs['relatedResourceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         _setter("type", type)
@@ -136,11 +138,15 @@ class GetLimitDefinitionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -204,31 +210,49 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_quotas_supported: bool,
-             description: str,
-             is_deprecated: bool,
-             is_dynamic: bool,
-             is_eligible_for_limit_increase: bool,
-             is_resource_availability_supported: bool,
-             name: str,
-             scope_type: str,
-             service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_quotas_supported: Optional[bool] = None,
+             description: Optional[str] = None,
+             is_deprecated: Optional[bool] = None,
+             is_dynamic: Optional[bool] = None,
+             is_eligible_for_limit_increase: Optional[bool] = None,
+             is_resource_availability_supported: Optional[bool] = None,
+             name: Optional[str] = None,
+             scope_type: Optional[str] = None,
+             service_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areQuotasSupported' in kwargs:
+        if are_quotas_supported is None and 'areQuotasSupported' in kwargs:
             are_quotas_supported = kwargs['areQuotasSupported']
-        if 'isDeprecated' in kwargs:
+        if are_quotas_supported is None:
+            raise TypeError("Missing 'are_quotas_supported' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_deprecated is None and 'isDeprecated' in kwargs:
             is_deprecated = kwargs['isDeprecated']
-        if 'isDynamic' in kwargs:
+        if is_deprecated is None:
+            raise TypeError("Missing 'is_deprecated' argument")
+        if is_dynamic is None and 'isDynamic' in kwargs:
             is_dynamic = kwargs['isDynamic']
-        if 'isEligibleForLimitIncrease' in kwargs:
+        if is_dynamic is None:
+            raise TypeError("Missing 'is_dynamic' argument")
+        if is_eligible_for_limit_increase is None and 'isEligibleForLimitIncrease' in kwargs:
             is_eligible_for_limit_increase = kwargs['isEligibleForLimitIncrease']
-        if 'isResourceAvailabilitySupported' in kwargs:
+        if is_eligible_for_limit_increase is None:
+            raise TypeError("Missing 'is_eligible_for_limit_increase' argument")
+        if is_resource_availability_supported is None and 'isResourceAvailabilitySupported' in kwargs:
             is_resource_availability_supported = kwargs['isResourceAvailabilitySupported']
-        if 'scopeType' in kwargs:
+        if is_resource_availability_supported is None:
+            raise TypeError("Missing 'is_resource_availability_supported' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if scope_type is None and 'scopeType' in kwargs:
             scope_type = kwargs['scopeType']
-        if 'serviceName' in kwargs:
+        if scope_type is None:
+            raise TypeError("Missing 'scope_type' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
 
         _setter("are_quotas_supported", are_quotas_supported)
         _setter("description", description)
@@ -331,11 +355,15 @@ class GetLimitValuesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -384,16 +412,24 @@ class GetLimitValuesLimitValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             name: str,
-             scope_type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             name: Optional[str] = None,
+             scope_type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'scopeType' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if scope_type is None and 'scopeType' in kwargs:
             scope_type = kwargs['scopeType']
+        if scope_type is None:
+            raise TypeError("Missing 'scope_type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("name", name)
@@ -456,16 +492,24 @@ class GetQuotaLockResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             related_resource_id: str,
-             time_created: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             related_resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'relatedResourceId' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if related_resource_id is None and 'relatedResourceId' in kwargs:
             related_resource_id = kwargs['relatedResourceId']
-        if 'timeCreated' in kwargs:
+        if related_resource_id is None:
+            raise TypeError("Missing 'related_resource_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("message", message)
         _setter("related_resource_id", related_resource_id)
@@ -523,11 +567,15 @@ class GetQuotasFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -596,29 +644,51 @@ class GetQuotasQuotaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_lock_override: bool,
-             locks: Sequence['outputs.GetQuotasQuotaLockResult'],
-             name: str,
-             state: str,
-             statements: Sequence[str],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_lock_override: Optional[bool] = None,
+             locks: Optional[Sequence['outputs.GetQuotasQuotaLockResult']] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             statements: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isLockOverride' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_lock_override is None and 'isLockOverride' in kwargs:
             is_lock_override = kwargs['isLockOverride']
-        if 'timeCreated' in kwargs:
+        if is_lock_override is None:
+            raise TypeError("Missing 'is_lock_override' argument")
+        if locks is None:
+            raise TypeError("Missing 'locks' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if statements is None:
+            raise TypeError("Missing 'statements' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -741,16 +811,24 @@ class GetQuotasQuotaLockResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             related_resource_id: str,
-             time_created: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             related_resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'relatedResourceId' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if related_resource_id is None and 'relatedResourceId' in kwargs:
             related_resource_id = kwargs['relatedResourceId']
-        if 'timeCreated' in kwargs:
+        if related_resource_id is None:
+            raise TypeError("Missing 'related_resource_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("message", message)
         _setter("related_resource_id", related_resource_id)
@@ -808,11 +886,15 @@ class GetServicesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -855,10 +937,14 @@ class GetServicesServiceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("description", description)
         _setter("name", name)

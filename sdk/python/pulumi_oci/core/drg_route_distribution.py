@@ -42,22 +42,26 @@ class DrgRouteDistributionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             distribution_type: pulumi.Input[str],
-             drg_id: pulumi.Input[str],
+             distribution_type: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'distributionType' in kwargs:
+        if distribution_type is None and 'distributionType' in kwargs:
             distribution_type = kwargs['distributionType']
-        if 'drgId' in kwargs:
+        if distribution_type is None:
+            raise TypeError("Missing 'distribution_type' argument")
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'definedTags' in kwargs:
+        if drg_id is None:
+            raise TypeError("Missing 'drg_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("distribution_type", distribution_type)
@@ -182,21 +186,21 @@ class _DrgRouteDistributionState:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionType' in kwargs:
+        if distribution_type is None and 'distributionType' in kwargs:
             distribution_type = kwargs['distributionType']
-        if 'drgId' in kwargs:
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

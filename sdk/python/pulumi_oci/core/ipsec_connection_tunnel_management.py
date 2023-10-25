@@ -53,32 +53,38 @@ class IpsecConnectionTunnelManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ipsec_id: pulumi.Input[str],
-             routing: pulumi.Input[str],
-             tunnel_id: pulumi.Input[str],
+             ipsec_id: Optional[pulumi.Input[str]] = None,
+             routing: Optional[pulumi.Input[str]] = None,
+             tunnel_id: Optional[pulumi.Input[str]] = None,
              bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
              encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
              ike_version: Optional[pulumi.Input[str]] = None,
              shared_secret: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipsecId' in kwargs:
+        if ipsec_id is None and 'ipsecId' in kwargs:
             ipsec_id = kwargs['ipsecId']
-        if 'tunnelId' in kwargs:
+        if ipsec_id is None:
+            raise TypeError("Missing 'ipsec_id' argument")
+        if routing is None:
+            raise TypeError("Missing 'routing' argument")
+        if tunnel_id is None and 'tunnelId' in kwargs:
             tunnel_id = kwargs['tunnelId']
-        if 'bgpSessionInfos' in kwargs:
+        if tunnel_id is None:
+            raise TypeError("Missing 'tunnel_id' argument")
+        if bgp_session_infos is None and 'bgpSessionInfos' in kwargs:
             bgp_session_infos = kwargs['bgpSessionInfos']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dpdConfigs' in kwargs:
+        if dpd_configs is None and 'dpdConfigs' in kwargs:
             dpd_configs = kwargs['dpdConfigs']
-        if 'encryptionDomainConfig' in kwargs:
+        if encryption_domain_config is None and 'encryptionDomainConfig' in kwargs:
             encryption_domain_config = kwargs['encryptionDomainConfig']
-        if 'ikeVersion' in kwargs:
+        if ike_version is None and 'ikeVersion' in kwargs:
             ike_version = kwargs['ikeVersion']
-        if 'sharedSecret' in kwargs:
+        if shared_secret is None and 'sharedSecret' in kwargs:
             shared_secret = kwargs['sharedSecret']
 
         _setter("ipsec_id", ipsec_id)
@@ -304,47 +310,47 @@ class _IpsecConnectionTunnelManagementState:
              time_status_updated: Optional[pulumi.Input[str]] = None,
              tunnel_id: Optional[pulumi.Input[str]] = None,
              vpn_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedVirtualCircuits' in kwargs:
+        if associated_virtual_circuits is None and 'associatedVirtualCircuits' in kwargs:
             associated_virtual_circuits = kwargs['associatedVirtualCircuits']
-        if 'bgpSessionInfos' in kwargs:
+        if bgp_session_infos is None and 'bgpSessionInfos' in kwargs:
             bgp_session_infos = kwargs['bgpSessionInfos']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpeIp' in kwargs:
+        if cpe_ip is None and 'cpeIp' in kwargs:
             cpe_ip = kwargs['cpeIp']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dpdConfigs' in kwargs:
+        if dpd_configs is None and 'dpdConfigs' in kwargs:
             dpd_configs = kwargs['dpdConfigs']
-        if 'dpdMode' in kwargs:
+        if dpd_mode is None and 'dpdMode' in kwargs:
             dpd_mode = kwargs['dpdMode']
-        if 'dpdTimeoutInSec' in kwargs:
+        if dpd_timeout_in_sec is None and 'dpdTimeoutInSec' in kwargs:
             dpd_timeout_in_sec = kwargs['dpdTimeoutInSec']
-        if 'encryptionDomainConfig' in kwargs:
+        if encryption_domain_config is None and 'encryptionDomainConfig' in kwargs:
             encryption_domain_config = kwargs['encryptionDomainConfig']
-        if 'ikeVersion' in kwargs:
+        if ike_version is None and 'ikeVersion' in kwargs:
             ike_version = kwargs['ikeVersion']
-        if 'ipsecId' in kwargs:
+        if ipsec_id is None and 'ipsecId' in kwargs:
             ipsec_id = kwargs['ipsecId']
-        if 'natTranslationEnabled' in kwargs:
+        if nat_translation_enabled is None and 'natTranslationEnabled' in kwargs:
             nat_translation_enabled = kwargs['natTranslationEnabled']
-        if 'oracleCanInitiate' in kwargs:
+        if oracle_can_initiate is None and 'oracleCanInitiate' in kwargs:
             oracle_can_initiate = kwargs['oracleCanInitiate']
-        if 'phaseOneDetails' in kwargs:
+        if phase_one_details is None and 'phaseOneDetails' in kwargs:
             phase_one_details = kwargs['phaseOneDetails']
-        if 'phaseTwoDetails' in kwargs:
+        if phase_two_details is None and 'phaseTwoDetails' in kwargs:
             phase_two_details = kwargs['phaseTwoDetails']
-        if 'sharedSecret' in kwargs:
+        if shared_secret is None and 'sharedSecret' in kwargs:
             shared_secret = kwargs['sharedSecret']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusUpdated' in kwargs:
+        if time_status_updated is None and 'timeStatusUpdated' in kwargs:
             time_status_updated = kwargs['timeStatusUpdated']
-        if 'tunnelId' in kwargs:
+        if tunnel_id is None and 'tunnelId' in kwargs:
             tunnel_id = kwargs['tunnelId']
-        if 'vpnIp' in kwargs:
+        if vpn_ip is None and 'vpnIp' in kwargs:
             vpn_ip = kwargs['vpnIp']
 
         if associated_virtual_circuits is not None:
@@ -812,11 +818,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             __props__.__dict__["bgp_session_infos"] = bgp_session_infos
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["dpd_configs"] = dpd_configs
-            if encryption_domain_config is not None and not isinstance(encryption_domain_config, IpsecConnectionTunnelManagementEncryptionDomainConfigArgs):
-                encryption_domain_config = encryption_domain_config or {}
-                def _setter(key, value):
-                    encryption_domain_config[key] = value
-                IpsecConnectionTunnelManagementEncryptionDomainConfigArgs._configure(_setter, **encryption_domain_config)
+            encryption_domain_config = _utilities.configure(encryption_domain_config, IpsecConnectionTunnelManagementEncryptionDomainConfigArgs, True)
             __props__.__dict__["encryption_domain_config"] = encryption_domain_config
             __props__.__dict__["ike_version"] = ike_version
             if ipsec_id is None and not opts.urn:

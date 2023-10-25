@@ -65,39 +65,51 @@ class VirtualNodePoolArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             placement_configurations: pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolPlacementConfigurationArgs']]],
-             pod_configuration: pulumi.Input['VirtualNodePoolPodConfigurationArgs'],
-             size: pulumi.Input[int],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolPlacementConfigurationArgs']]]] = None,
+             pod_configuration: Optional[pulumi.Input['VirtualNodePoolPodConfigurationArgs']] = None,
+             size: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolInitialVirtualNodeLabelArgs']]]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              taints: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]]] = None,
              virtual_node_tags: Optional[pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'placementConfigurations' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if placement_configurations is None and 'placementConfigurations' in kwargs:
             placement_configurations = kwargs['placementConfigurations']
-        if 'podConfiguration' in kwargs:
+        if placement_configurations is None:
+            raise TypeError("Missing 'placement_configurations' argument")
+        if pod_configuration is None and 'podConfiguration' in kwargs:
             pod_configuration = kwargs['podConfiguration']
-        if 'definedTags' in kwargs:
+        if pod_configuration is None:
+            raise TypeError("Missing 'pod_configuration' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialVirtualNodeLabels' in kwargs:
+        if initial_virtual_node_labels is None and 'initialVirtualNodeLabels' in kwargs:
             initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'virtualNodeTags' in kwargs:
+        if virtual_node_tags is None and 'virtualNodeTags' in kwargs:
             virtual_node_tags = kwargs['virtualNodeTags']
 
         _setter("cluster_id", cluster_id)
@@ -356,37 +368,37 @@ class _VirtualNodePoolState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_node_tags: Optional[pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialVirtualNodeLabels' in kwargs:
+        if initial_virtual_node_labels is None and 'initialVirtualNodeLabels' in kwargs:
             initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
-        if 'kubernetesVersion' in kwargs:
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'placementConfigurations' in kwargs:
+        if placement_configurations is None and 'placementConfigurations' in kwargs:
             placement_configurations = kwargs['placementConfigurations']
-        if 'podConfiguration' in kwargs:
+        if pod_configuration is None and 'podConfiguration' in kwargs:
             pod_configuration = kwargs['podConfiguration']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'virtualNodeTags' in kwargs:
+        if virtual_node_tags is None and 'virtualNodeTags' in kwargs:
             virtual_node_tags = kwargs['virtualNodeTags']
 
         if cluster_id is not None:
@@ -866,11 +878,7 @@ class VirtualNodePool(pulumi.CustomResource):
             if placement_configurations is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configurations'")
             __props__.__dict__["placement_configurations"] = placement_configurations
-            if pod_configuration is not None and not isinstance(pod_configuration, VirtualNodePoolPodConfigurationArgs):
-                pod_configuration = pod_configuration or {}
-                def _setter(key, value):
-                    pod_configuration[key] = value
-                VirtualNodePoolPodConfigurationArgs._configure(_setter, **pod_configuration)
+            pod_configuration = _utilities.configure(pod_configuration, VirtualNodePoolPodConfigurationArgs, True)
             if pod_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'pod_configuration'")
             __props__.__dict__["pod_configuration"] = pod_configuration
@@ -878,11 +886,7 @@ class VirtualNodePool(pulumi.CustomResource):
                 raise TypeError("Missing required property 'size'")
             __props__.__dict__["size"] = size
             __props__.__dict__["taints"] = taints
-            if virtual_node_tags is not None and not isinstance(virtual_node_tags, VirtualNodePoolVirtualNodeTagsArgs):
-                virtual_node_tags = virtual_node_tags or {}
-                def _setter(key, value):
-                    virtual_node_tags[key] = value
-                VirtualNodePoolVirtualNodeTagsArgs._configure(_setter, **virtual_node_tags)
+            virtual_node_tags = _utilities.configure(virtual_node_tags, VirtualNodePoolVirtualNodeTagsArgs, True)
             __props__.__dict__["virtual_node_tags"] = virtual_node_tags
             __props__.__dict__["kubernetes_version"] = None
             __props__.__dict__["lifecycle_details"] = None

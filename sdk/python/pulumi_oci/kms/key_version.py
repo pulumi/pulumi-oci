@@ -40,19 +40,23 @@ class KeyVersionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_id: pulumi.Input[str],
-             management_endpoint: pulumi.Input[str],
+             key_id: Optional[pulumi.Input[str]] = None,
+             management_endpoint: Optional[pulumi.Input[str]] = None,
              external_key_version_id: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'managementEndpoint' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'externalKeyVersionId' in kwargs:
+        if management_endpoint is None:
+            raise TypeError("Missing 'management_endpoint' argument")
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
 
         _setter("key_id", key_id)
@@ -187,35 +191,35 @@ class _KeyVersionState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'externalKeyReferenceDetails' in kwargs:
+        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
             external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if 'externalKeyVersionId' in kwargs:
+        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
             external_key_version_id = kwargs['externalKeyVersionId']
-        if 'isPrimary' in kwargs:
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyVersionId' in kwargs:
+        if key_version_id is None and 'keyVersionId' in kwargs:
             key_version_id = kwargs['keyVersionId']
-        if 'managementEndpoint' in kwargs:
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'publicKey' in kwargs:
+        if public_key is None and 'publicKey' in kwargs:
             public_key = kwargs['publicKey']
-        if 'replicaDetails' in kwargs:
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoredFromKeyId' in kwargs:
+        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
             restored_from_key_id = kwargs['restoredFromKeyId']
-        if 'restoredFromKeyVersionId' in kwargs:
+        if restored_from_key_version_id is None and 'restoredFromKeyVersionId' in kwargs:
             restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if compartment_id is not None:

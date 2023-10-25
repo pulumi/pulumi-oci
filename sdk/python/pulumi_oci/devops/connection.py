@@ -62,8 +62,8 @@ class ConnectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connection_type: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             connection_type: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              access_token: Optional[pulumi.Input[str]] = None,
              app_password: Optional[pulumi.Input[str]] = None,
              base_url: Optional[pulumi.Input[str]] = None,
@@ -73,25 +73,29 @@ class ConnectionArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              tls_verify_config: Optional[pulumi.Input['ConnectionTlsVerifyConfigArgs']] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionType' in kwargs:
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'projectId' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'accessToken' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if access_token is None and 'accessToken' in kwargs:
             access_token = kwargs['accessToken']
-        if 'appPassword' in kwargs:
+        if app_password is None and 'appPassword' in kwargs:
             app_password = kwargs['appPassword']
-        if 'baseUrl' in kwargs:
+        if base_url is None and 'baseUrl' in kwargs:
             base_url = kwargs['baseUrl']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tlsVerifyConfig' in kwargs:
+        if tls_verify_config is None and 'tlsVerifyConfig' in kwargs:
             tls_verify_config = kwargs['tlsVerifyConfig']
 
         _setter("connection_type", connection_type)
@@ -336,35 +340,35 @@ class _ConnectionState:
              time_updated: Optional[pulumi.Input[str]] = None,
              tls_verify_config: Optional[pulumi.Input['ConnectionTlsVerifyConfigArgs']] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessToken' in kwargs:
+        if access_token is None and 'accessToken' in kwargs:
             access_token = kwargs['accessToken']
-        if 'appPassword' in kwargs:
+        if app_password is None and 'appPassword' in kwargs:
             app_password = kwargs['appPassword']
-        if 'baseUrl' in kwargs:
+        if base_url is None and 'baseUrl' in kwargs:
             base_url = kwargs['baseUrl']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionType' in kwargs:
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastConnectionValidationResults' in kwargs:
+        if last_connection_validation_results is None and 'lastConnectionValidationResults' in kwargs:
             last_connection_validation_results = kwargs['lastConnectionValidationResults']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'tlsVerifyConfig' in kwargs:
+        if tls_verify_config is None and 'tlsVerifyConfig' in kwargs:
             tls_verify_config = kwargs['tlsVerifyConfig']
 
         if access_token is not None:
@@ -784,11 +788,7 @@ class Connection(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            if tls_verify_config is not None and not isinstance(tls_verify_config, ConnectionTlsVerifyConfigArgs):
-                tls_verify_config = tls_verify_config or {}
-                def _setter(key, value):
-                    tls_verify_config[key] = value
-                ConnectionTlsVerifyConfigArgs._configure(_setter, **tls_verify_config)
+            tls_verify_config = _utilities.configure(tls_verify_config, ConnectionTlsVerifyConfigArgs, True)
             __props__.__dict__["tls_verify_config"] = tls_verify_config
             __props__.__dict__["username"] = username
             __props__.__dict__["compartment_id"] = None

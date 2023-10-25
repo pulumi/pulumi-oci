@@ -64,9 +64,9 @@ class ConfigDimension(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
 
         if name is not None:
@@ -139,13 +139,13 @@ class ConfigInUseBy(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              options_group: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'optionsGroup' in kwargs:
+        if options_group is None and 'optionsGroup' in kwargs:
             options_group = kwargs['optionsGroup']
 
         if config_type is not None:
@@ -234,9 +234,9 @@ class ConfigMetric(dict):
              name: Optional[str] = None,
              unit: Optional[str] = None,
              value_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
 
         if description is not None:
@@ -351,19 +351,19 @@ class ConfigRule(dict):
              priority: Optional[int] = None,
              satisfied_response_time: Optional[int] = None,
              tolerating_response_time: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterText' in kwargs:
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'isApplyToErrorSpans' in kwargs:
+        if is_apply_to_error_spans is None and 'isApplyToErrorSpans' in kwargs:
             is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'satisfiedResponseTime' in kwargs:
+        if satisfied_response_time is None and 'satisfiedResponseTime' in kwargs:
             satisfied_response_time = kwargs['satisfiedResponseTime']
-        if 'toleratingResponseTime' in kwargs:
+        if tolerating_response_time is None and 'toleratingResponseTime' in kwargs:
             tolerating_response_time = kwargs['toleratingResponseTime']
 
         if display_name is not None:
@@ -459,12 +459,16 @@ class GetConfigDimensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
+        if value_source is None:
+            raise TypeError("Missing 'value_source' argument")
 
         _setter("name", name)
         _setter("value_source", value_source)
@@ -509,18 +513,26 @@ class GetConfigInUseByResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
-             display_name: str,
-             id: str,
-             options_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             options_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'displayName' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'optionsGroup' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if options_group is None and 'optionsGroup' in kwargs:
             options_group = kwargs['optionsGroup']
+        if options_group is None:
+            raise TypeError("Missing 'options_group' argument")
 
         _setter("config_type", config_type)
         _setter("display_name", display_name)
@@ -583,14 +595,22 @@ class GetConfigMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             name: str,
-             unit: str,
-             value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             unit: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
+        if value_source is None:
+            raise TypeError("Missing 'value_source' argument")
 
         _setter("description", description)
         _setter("name", name)
@@ -662,27 +682,41 @@ class GetConfigRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             filter_text: str,
-             is_apply_to_error_spans: bool,
-             is_enabled: bool,
-             priority: int,
-             satisfied_response_time: int,
-             tolerating_response_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             filter_text: Optional[str] = None,
+             is_apply_to_error_spans: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             priority: Optional[int] = None,
+             satisfied_response_time: Optional[int] = None,
+             tolerating_response_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterText' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'isApplyToErrorSpans' in kwargs:
+        if filter_text is None:
+            raise TypeError("Missing 'filter_text' argument")
+        if is_apply_to_error_spans is None and 'isApplyToErrorSpans' in kwargs:
             is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
-        if 'isEnabled' in kwargs:
+        if is_apply_to_error_spans is None:
+            raise TypeError("Missing 'is_apply_to_error_spans' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'satisfiedResponseTime' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if priority is None:
+            raise TypeError("Missing 'priority' argument")
+        if satisfied_response_time is None and 'satisfiedResponseTime' in kwargs:
             satisfied_response_time = kwargs['satisfiedResponseTime']
-        if 'toleratingResponseTime' in kwargs:
+        if satisfied_response_time is None:
+            raise TypeError("Missing 'satisfied_response_time' argument")
+        if tolerating_response_time is None and 'toleratingResponseTime' in kwargs:
             tolerating_response_time = kwargs['toleratingResponseTime']
+        if tolerating_response_time is None:
+            raise TypeError("Missing 'tolerating_response_time' argument")
 
         _setter("display_name", display_name)
         _setter("filter_text", filter_text)
@@ -760,9 +794,11 @@ class GetConfigsConfigCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetConfigsConfigCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -847,56 +883,100 @@ class GetConfigsConfigCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apm_domain_id: str,
-             config_type: str,
-             created_by: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             dimensions: Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult'],
-             display_name: str,
-             etag: str,
-             filter_id: str,
-             filter_text: str,
-             freeform_tags: Mapping[str, Any],
-             group: str,
-             id: str,
-             in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
-             metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
-             namespace: str,
-             opc_dry_run: str,
-             options: str,
-             rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
-             time_created: str,
-             time_updated: str,
-             updated_by: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             apm_domain_id: Optional[str] = None,
+             config_type: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult']] = None,
+             display_name: Optional[str] = None,
+             etag: Optional[str] = None,
+             filter_id: Optional[str] = None,
+             filter_text: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             group: Optional[str] = None,
+             id: Optional[str] = None,
+             in_use_bies: Optional[Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult']] = None,
+             metrics: Optional[Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']] = None,
+             namespace: Optional[str] = None,
+             opc_dry_run: Optional[str] = None,
+             options: Optional[str] = None,
+             rules: Optional[Sequence['outputs.GetConfigsConfigCollectionItemRuleResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'configType' in kwargs:
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'createdBy' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if etag is None:
+            raise TypeError("Missing 'etag' argument")
+        if filter_id is None and 'filterId' in kwargs:
             filter_id = kwargs['filterId']
-        if 'filterText' in kwargs:
+        if filter_id is None:
+            raise TypeError("Missing 'filter_id' argument")
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'freeformTags' in kwargs:
+        if filter_text is None:
+            raise TypeError("Missing 'filter_text' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inUseBies' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if group is None:
+            raise TypeError("Missing 'group' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if in_use_bies is None and 'inUseBies' in kwargs:
             in_use_bies = kwargs['inUseBies']
-        if 'opcDryRun' in kwargs:
+        if in_use_bies is None:
+            raise TypeError("Missing 'in_use_bies' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if opc_dry_run is None and 'opcDryRun' in kwargs:
             opc_dry_run = kwargs['opcDryRun']
-        if 'timeCreated' in kwargs:
+        if opc_dry_run is None:
+            raise TypeError("Missing 'opc_dry_run' argument")
+        if options is None:
+            raise TypeError("Missing 'options' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedBy' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if updated_by is None and 'updatedBy' in kwargs:
             updated_by = kwargs['updatedBy']
+        if updated_by is None:
+            raise TypeError("Missing 'updated_by' argument")
 
         _setter("apm_domain_id", apm_domain_id)
         _setter("config_type", config_type)
@@ -1109,12 +1189,16 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
+        if value_source is None:
+            raise TypeError("Missing 'value_source' argument")
 
         _setter("name", name)
         _setter("value_source", value_source)
@@ -1159,18 +1243,26 @@ class GetConfigsConfigCollectionItemInUseByResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
-             display_name: str,
-             id: str,
-             options_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             options_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'displayName' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'optionsGroup' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if options_group is None and 'optionsGroup' in kwargs:
             options_group = kwargs['optionsGroup']
+        if options_group is None:
+            raise TypeError("Missing 'options_group' argument")
 
         _setter("config_type", config_type)
         _setter("display_name", display_name)
@@ -1233,14 +1325,22 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             name: str,
-             unit: str,
-             value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             unit: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'valueSource' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value_source is None and 'valueSource' in kwargs:
             value_source = kwargs['valueSource']
+        if value_source is None:
+            raise TypeError("Missing 'value_source' argument")
 
         _setter("description", description)
         _setter("name", name)
@@ -1312,27 +1412,41 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             filter_text: str,
-             is_apply_to_error_spans: bool,
-             is_enabled: bool,
-             priority: int,
-             satisfied_response_time: int,
-             tolerating_response_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             filter_text: Optional[str] = None,
+             is_apply_to_error_spans: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             priority: Optional[int] = None,
+             satisfied_response_time: Optional[int] = None,
+             tolerating_response_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterText' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'isApplyToErrorSpans' in kwargs:
+        if filter_text is None:
+            raise TypeError("Missing 'filter_text' argument")
+        if is_apply_to_error_spans is None and 'isApplyToErrorSpans' in kwargs:
             is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
-        if 'isEnabled' in kwargs:
+        if is_apply_to_error_spans is None:
+            raise TypeError("Missing 'is_apply_to_error_spans' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'satisfiedResponseTime' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if priority is None:
+            raise TypeError("Missing 'priority' argument")
+        if satisfied_response_time is None and 'satisfiedResponseTime' in kwargs:
             satisfied_response_time = kwargs['satisfiedResponseTime']
-        if 'toleratingResponseTime' in kwargs:
+        if satisfied_response_time is None:
+            raise TypeError("Missing 'satisfied_response_time' argument")
+        if tolerating_response_time is None and 'toleratingResponseTime' in kwargs:
             tolerating_response_time = kwargs['toleratingResponseTime']
+        if tolerating_response_time is None:
+            raise TypeError("Missing 'tolerating_response_time' argument")
 
         _setter("display_name", display_name)
         _setter("filter_text", filter_text)
@@ -1417,11 +1531,15 @@ class GetConfigsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

@@ -75,13 +75,13 @@ class PrivateApplicationLogo(dict):
              content_url: Optional[str] = None,
              display_name: Optional[str] = None,
              mime_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'mimeType' in kwargs:
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
 
         if content_url is not None:
@@ -154,14 +154,18 @@ class PrivateApplicationPackageDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             package_type: str,
-             version: str,
+             package_type: Optional[str] = None,
+             version: Optional[str] = None,
              zip_file_base64encoded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'packageType' in kwargs:
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'zipFileBase64encoded' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
             zip_file_base64encoded = kwargs['zipFileBase64encoded']
 
         _setter("package_type", package_type)
@@ -211,17 +215,23 @@ class GetPrivateApplicationLogoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             display_name: str,
-             mime_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             display_name: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'displayName' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'mimeType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
 
         _setter("content_url", content_url)
         _setter("display_name", display_name)
@@ -270,15 +280,21 @@ class GetPrivateApplicationPackageDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             package_type: str,
-             version: str,
-             zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             package_type: Optional[str] = None,
+             version: Optional[str] = None,
+             zip_file_base64encoded: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'packageType' in kwargs:
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'zipFileBase64encoded' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
             zip_file_base64encoded = kwargs['zipFileBase64encoded']
+        if zip_file_base64encoded is None:
+            raise TypeError("Missing 'zip_file_base64encoded' argument")
 
         _setter("package_type", package_type)
         _setter("version", version)
@@ -318,11 +334,15 @@ class GetPrivateApplicationPackagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -356,9 +376,11 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -401,28 +423,44 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             display_name: str,
-             id: str,
-             mime_type: str,
-             package_type: str,
-             private_application_id: str,
-             time_created: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             package_type: Optional[str] = None,
+             private_application_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'displayName' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'mimeType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
-        if 'packageType' in kwargs:
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'privateApplicationId' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if private_application_id is None and 'privateApplicationId' in kwargs:
             private_application_id = kwargs['privateApplicationId']
-        if 'timeCreated' in kwargs:
+        if private_application_id is None:
+            raise TypeError("Missing 'private_application_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("content_url", content_url)
         _setter("display_name", display_name)
@@ -507,11 +545,15 @@ class GetPrivateApplicationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -545,9 +587,11 @@ class GetPrivateApplicationsPrivateApplicationCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -608,44 +652,72 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             logo_file_base64encoded: str,
-             logos: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult'],
-             long_description: str,
-             package_details: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult'],
-             package_type: str,
-             short_description: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             logo_file_base64encoded: Optional[str] = None,
+             logos: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult']] = None,
+             long_description: Optional[str] = None,
+             package_details: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult']] = None,
+             package_type: Optional[str] = None,
+             short_description: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'logoFileBase64encoded' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
             logo_file_base64encoded = kwargs['logoFileBase64encoded']
-        if 'longDescription' in kwargs:
+        if logo_file_base64encoded is None:
+            raise TypeError("Missing 'logo_file_base64encoded' argument")
+        if logos is None:
+            raise TypeError("Missing 'logos' argument")
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
-        if 'packageDetails' in kwargs:
+        if long_description is None:
+            raise TypeError("Missing 'long_description' argument")
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'packageType' in kwargs:
+        if package_details is None:
+            raise TypeError("Missing 'package_details' argument")
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'shortDescription' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'timeCreated' in kwargs:
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -789,17 +861,23 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content_url: str,
-             display_name: str,
-             mime_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             content_url: Optional[str] = None,
+             display_name: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'displayName' in kwargs:
+        if content_url is None:
+            raise TypeError("Missing 'content_url' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'mimeType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if mime_type is None and 'mimeType' in kwargs:
             mime_type = kwargs['mimeType']
+        if mime_type is None:
+            raise TypeError("Missing 'mime_type' argument")
 
         _setter("content_url", content_url)
         _setter("display_name", display_name)
@@ -848,15 +926,21 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             package_type: str,
-             version: str,
-             zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             package_type: Optional[str] = None,
+             version: Optional[str] = None,
+             zip_file_base64encoded: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'packageType' in kwargs:
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'zipFileBase64encoded' in kwargs:
+        if package_type is None:
+            raise TypeError("Missing 'package_type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
             zip_file_base64encoded = kwargs['zipFileBase64encoded']
+        if zip_file_base64encoded is None:
+            raise TypeError("Missing 'zip_file_base64encoded' argument")
 
         _setter("package_type", package_type)
         _setter("version", version)
@@ -896,11 +980,15 @@ class GetServiceCatalogAssociationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -934,9 +1022,11 @@ class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -972,21 +1062,31 @@ class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_id: str,
-             entity_type: str,
-             id: str,
-             service_catalog_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             entity_id: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             id: Optional[str] = None,
+             service_catalog_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityId' in kwargs:
+        if entity_id is None and 'entityId' in kwargs:
             entity_id = kwargs['entityId']
-        if 'entityType' in kwargs:
+        if entity_id is None:
+            raise TypeError("Missing 'entity_id' argument")
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'serviceCatalogId' in kwargs:
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
             service_catalog_id = kwargs['serviceCatalogId']
-        if 'timeCreated' in kwargs:
+        if service_catalog_id is None:
+            raise TypeError("Missing 'service_catalog_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("entity_id", entity_id)
         _setter("entity_type", entity_type)
@@ -1050,11 +1150,15 @@ class GetServiceCatalogsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1088,9 +1192,11 @@ class GetServiceCatalogsServiceCatalogCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1135,28 +1241,44 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

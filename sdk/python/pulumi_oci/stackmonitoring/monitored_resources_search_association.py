@@ -53,7 +53,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              association_type: Optional[pulumi.Input[str]] = None,
              destination_resource_id: Optional[pulumi.Input[str]] = None,
              destination_resource_name: Optional[pulumi.Input[str]] = None,
@@ -61,23 +61,25 @@ class MonitoredResourcesSearchAssociationArgs:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              source_resource_name: Optional[pulumi.Input[str]] = None,
              source_resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'associationType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'destinationResourceId' in kwargs:
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'destinationResourceName' in kwargs:
+        if destination_resource_name is None and 'destinationResourceName' in kwargs:
             destination_resource_name = kwargs['destinationResourceName']
-        if 'destinationResourceType' in kwargs:
+        if destination_resource_type is None and 'destinationResourceType' in kwargs:
             destination_resource_type = kwargs['destinationResourceType']
-        if 'sourceResourceId' in kwargs:
+        if source_resource_id is None and 'sourceResourceId' in kwargs:
             source_resource_id = kwargs['sourceResourceId']
-        if 'sourceResourceName' in kwargs:
+        if source_resource_name is None and 'sourceResourceName' in kwargs:
             source_resource_name = kwargs['sourceResourceName']
-        if 'sourceResourceType' in kwargs:
+        if source_resource_type is None and 'sourceResourceType' in kwargs:
             source_resource_type = kwargs['sourceResourceType']
 
         _setter("compartment_id", compartment_id)
@@ -249,23 +251,23 @@ class _MonitoredResourcesSearchAssociationState:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              source_resource_name: Optional[pulumi.Input[str]] = None,
              source_resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'destinationResourceId' in kwargs:
+        if destination_resource_id is None and 'destinationResourceId' in kwargs:
             destination_resource_id = kwargs['destinationResourceId']
-        if 'destinationResourceName' in kwargs:
+        if destination_resource_name is None and 'destinationResourceName' in kwargs:
             destination_resource_name = kwargs['destinationResourceName']
-        if 'destinationResourceType' in kwargs:
+        if destination_resource_type is None and 'destinationResourceType' in kwargs:
             destination_resource_type = kwargs['destinationResourceType']
-        if 'sourceResourceId' in kwargs:
+        if source_resource_id is None and 'sourceResourceId' in kwargs:
             source_resource_id = kwargs['sourceResourceId']
-        if 'sourceResourceName' in kwargs:
+        if source_resource_name is None and 'sourceResourceName' in kwargs:
             source_resource_name = kwargs['sourceResourceName']
-        if 'sourceResourceType' in kwargs:
+        if source_resource_type is None and 'sourceResourceType' in kwargs:
             source_resource_type = kwargs['sourceResourceType']
 
         if association_type is not None:

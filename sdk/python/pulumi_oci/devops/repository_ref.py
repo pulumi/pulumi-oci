@@ -42,22 +42,28 @@ class RepositoryRefArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ref_name: pulumi.Input[str],
-             ref_type: pulumi.Input[str],
-             repository_id: pulumi.Input[str],
+             ref_name: Optional[pulumi.Input[str]] = None,
+             ref_type: Optional[pulumi.Input[str]] = None,
+             repository_id: Optional[pulumi.Input[str]] = None,
              commit_id: Optional[pulumi.Input[str]] = None,
              object_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'refName' in kwargs:
+        if ref_name is None and 'refName' in kwargs:
             ref_name = kwargs['refName']
-        if 'refType' in kwargs:
+        if ref_name is None:
+            raise TypeError("Missing 'ref_name' argument")
+        if ref_type is None and 'refType' in kwargs:
             ref_type = kwargs['refType']
-        if 'repositoryId' in kwargs:
+        if ref_type is None:
+            raise TypeError("Missing 'ref_type' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'commitId' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if commit_id is None and 'commitId' in kwargs:
             commit_id = kwargs['commitId']
-        if 'objectId' in kwargs:
+        if object_id is None and 'objectId' in kwargs:
             object_id = kwargs['objectId']
 
         _setter("ref_name", ref_name)
@@ -181,23 +187,23 @@ class _RepositoryRefState:
              ref_name: Optional[pulumi.Input[str]] = None,
              ref_type: Optional[pulumi.Input[str]] = None,
              repository_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commitId' in kwargs:
+        if commit_id is None and 'commitId' in kwargs:
             commit_id = kwargs['commitId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fullRefName' in kwargs:
+        if full_ref_name is None and 'fullRefName' in kwargs:
             full_ref_name = kwargs['fullRefName']
-        if 'objectId' in kwargs:
+        if object_id is None and 'objectId' in kwargs:
             object_id = kwargs['objectId']
-        if 'refName' in kwargs:
+        if ref_name is None and 'refName' in kwargs:
             ref_name = kwargs['refName']
-        if 'refType' in kwargs:
+        if ref_type is None and 'refType' in kwargs:
             ref_type = kwargs['refType']
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
 
         if commit_id is not None:

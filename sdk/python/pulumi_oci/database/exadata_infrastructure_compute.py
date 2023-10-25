@@ -34,19 +34,21 @@ class ExadataInfrastructureComputeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exadata_infrastructure_id: pulumi.Input[str],
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
              activation_file: Optional[pulumi.Input[str]] = None,
              additional_compute_count_compute_managed_resource: Optional[pulumi.Input[int]] = None,
              additional_compute_system_model_compute_managed_resource: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'exadataInfrastructureId' in kwargs:
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'activationFile' in kwargs:
+        if exadata_infrastructure_id is None:
+            raise TypeError("Missing 'exadata_infrastructure_id' argument")
+        if activation_file is None and 'activationFile' in kwargs:
             activation_file = kwargs['activationFile']
-        if 'additionalComputeCountComputeManagedResource' in kwargs:
+        if additional_compute_count_compute_managed_resource is None and 'additionalComputeCountComputeManagedResource' in kwargs:
             additional_compute_count_compute_managed_resource = kwargs['additionalComputeCountComputeManagedResource']
-        if 'additionalComputeSystemModelComputeManagedResource' in kwargs:
+        if additional_compute_system_model_compute_managed_resource is None and 'additionalComputeSystemModelComputeManagedResource' in kwargs:
             additional_compute_system_model_compute_managed_resource = kwargs['additionalComputeSystemModelComputeManagedResource']
 
         _setter("exadata_infrastructure_id", exadata_infrastructure_id)
@@ -285,87 +287,87 @@ class _ExadataInfrastructureComputeState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activatedStorageCount' in kwargs:
+        if activated_storage_count is None and 'activatedStorageCount' in kwargs:
             activated_storage_count = kwargs['activatedStorageCount']
-        if 'activationFile' in kwargs:
+        if activation_file is None and 'activationFile' in kwargs:
             activation_file = kwargs['activationFile']
-        if 'additionalComputeCount' in kwargs:
+        if additional_compute_count is None and 'additionalComputeCount' in kwargs:
             additional_compute_count = kwargs['additionalComputeCount']
-        if 'additionalComputeCountComputeManagedResource' in kwargs:
+        if additional_compute_count_compute_managed_resource is None and 'additionalComputeCountComputeManagedResource' in kwargs:
             additional_compute_count_compute_managed_resource = kwargs['additionalComputeCountComputeManagedResource']
-        if 'additionalComputeSystemModel' in kwargs:
+        if additional_compute_system_model is None and 'additionalComputeSystemModel' in kwargs:
             additional_compute_system_model = kwargs['additionalComputeSystemModel']
-        if 'additionalComputeSystemModelComputeManagedResource' in kwargs:
+        if additional_compute_system_model_compute_managed_resource is None and 'additionalComputeSystemModelComputeManagedResource' in kwargs:
             additional_compute_system_model_compute_managed_resource = kwargs['additionalComputeSystemModelComputeManagedResource']
-        if 'additionalStorageCount' in kwargs:
+        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
             additional_storage_count = kwargs['additionalStorageCount']
-        if 'adminNetworkCidr' in kwargs:
+        if admin_network_cidr is None and 'adminNetworkCidr' in kwargs:
             admin_network_cidr = kwargs['adminNetworkCidr']
-        if 'cloudControlPlaneServer1' in kwargs:
+        if cloud_control_plane_server1 is None and 'cloudControlPlaneServer1' in kwargs:
             cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
-        if 'cloudControlPlaneServer2' in kwargs:
+        if cloud_control_plane_server2 is None and 'cloudControlPlaneServer2' in kwargs:
             cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'corporateProxy' in kwargs:
+        if corporate_proxy is None and 'corporateProxy' in kwargs:
             corporate_proxy = kwargs['corporateProxy']
-        if 'cpusEnabled' in kwargs:
+        if cpus_enabled is None and 'cpusEnabled' in kwargs:
             cpus_enabled = kwargs['cpusEnabled']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'csiNumber' in kwargs:
+        if csi_number is None and 'csiNumber' in kwargs:
             csi_number = kwargs['csiNumber']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServerVersion' in kwargs:
+        if db_server_version is None and 'dbServerVersion' in kwargs:
             db_server_version = kwargs['dbServerVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsServers' in kwargs:
+        if dns_servers is None and 'dnsServers' in kwargs:
             dns_servers = kwargs['dnsServers']
-        if 'exadataInfrastructureId' in kwargs:
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infiniBandNetworkCidr' in kwargs:
+        if infini_band_network_cidr is None and 'infiniBandNetworkCidr' in kwargs:
             infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
-        if 'isCpsOfflineReportEnabled' in kwargs:
+        if is_cps_offline_report_enabled is None and 'isCpsOfflineReportEnabled' in kwargs:
             is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceSloStatus' in kwargs:
+        if maintenance_slo_status is None and 'maintenanceSloStatus' in kwargs:
             maintenance_slo_status = kwargs['maintenanceSloStatus']
-        if 'maintenanceWindows' in kwargs:
+        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
             maintenance_windows = kwargs['maintenanceWindows']
-        if 'maxCpuCount' in kwargs:
+        if max_cpu_count is None and 'maxCpuCount' in kwargs:
             max_cpu_count = kwargs['maxCpuCount']
-        if 'maxDataStorageInTbs' in kwargs:
+        if max_data_storage_in_tbs is None and 'maxDataStorageInTbs' in kwargs:
             max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
-        if 'maxDbNodeStorageInGbs' in kwargs:
+        if max_db_node_storage_in_gbs is None and 'maxDbNodeStorageInGbs' in kwargs:
             max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
-        if 'maxMemoryInGbs' in kwargs:
+        if max_memory_in_gbs is None and 'maxMemoryInGbs' in kwargs:
             max_memory_in_gbs = kwargs['maxMemoryInGbs']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'monthlyDbServerVersion' in kwargs:
+        if monthly_db_server_version is None and 'monthlyDbServerVersion' in kwargs:
             monthly_db_server_version = kwargs['monthlyDbServerVersion']
-        if 'ntpServers' in kwargs:
+        if ntp_servers is None and 'ntpServers' in kwargs:
             ntp_servers = kwargs['ntpServers']
-        if 'storageCount' in kwargs:
+        if storage_count is None and 'storageCount' in kwargs:
             storage_count = kwargs['storageCount']
-        if 'storageServerVersion' in kwargs:
+        if storage_server_version is None and 'storageServerVersion' in kwargs:
             storage_server_version = kwargs['storageServerVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         if activated_storage_count is not None:

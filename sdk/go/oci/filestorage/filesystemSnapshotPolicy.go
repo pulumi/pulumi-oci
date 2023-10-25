@@ -38,11 +38,11 @@ import (
 //			_, err := FileStorage.NewFilesystemSnapshotPolicy(ctx, "testFilesystemSnapshotPolicy", &FileStorage.FilesystemSnapshotPolicyArgs{
 //				AvailabilityDomain: pulumi.Any(_var.Filesystem_snapshot_policy_availability_domain),
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Filesystem_snapshot_policy_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PolicyPrefix: pulumi.Any(_var.Filesystem_snapshot_policy_policy_prefix),

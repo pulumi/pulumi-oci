@@ -424,21 +424,21 @@ class ExternalAsmServicedDatabase(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              is_managed: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'diskGroups' in kwargs:
+        if disk_groups is None and 'diskGroups' in kwargs:
             disk_groups = kwargs['diskGroups']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
 
         if compartment_id is not None:
@@ -565,11 +565,11 @@ class ExternalClusterNetworkConfiguration(dict):
              network_number: Optional[int] = None,
              network_type: Optional[str] = None,
              subnet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
 
         if network_number is not None:
@@ -654,15 +654,15 @@ class ExternalClusterScanConfiguration(dict):
              scan_name: Optional[str] = None,
              scan_port: Optional[int] = None,
              scan_protocol: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
 
         if network_number is not None:
@@ -749,11 +749,11 @@ class ExternalClusterVipConfiguration(dict):
              address: Optional[str] = None,
              network_number: Optional[int] = None,
              node_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
 
         if address is not None:
@@ -829,16 +829,18 @@ class ExternalDbSystemConnectorConnectionInfo(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
+             component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
 
         _setter("component_type", component_type)
@@ -932,17 +934,17 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredential(dict):
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if credential_name is not None:
@@ -1055,9 +1057,9 @@ class ExternalDbSystemConnectorConnectionInfoConnectionString(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
 
         if host_name is not None:
@@ -1143,11 +1145,13 @@ class ExternalDbSystemDatabaseManagementConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             license_model: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
 
         _setter("license_model", license_model)
 
@@ -1456,91 +1460,91 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
              trace_directory: Optional[str] = None,
              version: Optional[str] = None,
              vip_configurations: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'asmInstances' in kwargs:
+        if asm_instances is None and 'asmInstances' in kwargs:
             asm_instances = kwargs['asmInstances']
-        if 'associatedComponents' in kwargs:
+        if associated_components is None and 'associatedComponents' in kwargs:
             associated_components = kwargs['associatedComponents']
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'clusterInstances' in kwargs:
+        if cluster_instances is None and 'clusterInstances' in kwargs:
             cluster_instances = kwargs['clusterInstances']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentId' in kwargs:
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentName' in kwargs:
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'crsBaseDirectory' in kwargs:
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'dbEdition' in kwargs:
+        if db_edition is None and 'dbEdition' in kwargs:
             db_edition = kwargs['dbEdition']
-        if 'dbId' in kwargs:
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbNodeName' in kwargs:
+        if db_node_name is None and 'dbNodeName' in kwargs:
             db_node_name = kwargs['dbNodeName']
-        if 'dbPacks' in kwargs:
+        if db_packs is None and 'dbPacks' in kwargs:
             db_packs = kwargs['dbPacks']
-        if 'dbRole' in kwargs:
+        if db_role is None and 'dbRole' in kwargs:
             db_role = kwargs['dbRole']
-        if 'dbType' in kwargs:
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'gridHome' in kwargs:
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'homeDirectory' in kwargs:
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
-        if 'isCluster' in kwargs:
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'isFlexCluster' in kwargs:
+        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
             is_flex_cluster = kwargs['isFlexCluster']
-        if 'isFlexEnabled' in kwargs:
+        if is_flex_enabled is None and 'isFlexEnabled' in kwargs:
             is_flex_enabled = kwargs['isFlexEnabled']
-        if 'isSelectedForMonitoring' in kwargs:
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
-        if 'listenerAlias' in kwargs:
+        if listener_alias is None and 'listenerAlias' in kwargs:
             listener_alias = kwargs['listenerAlias']
-        if 'listenerType' in kwargs:
+        if listener_type is None and 'listenerType' in kwargs:
             listener_type = kwargs['listenerType']
-        if 'logDirectory' in kwargs:
+        if log_directory is None and 'logDirectory' in kwargs:
             log_directory = kwargs['logDirectory']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'networkConfigurations' in kwargs:
+        if network_configurations is None and 'networkConfigurations' in kwargs:
             network_configurations = kwargs['networkConfigurations']
-        if 'nodeRole' in kwargs:
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
-        if 'ocrFileLocation' in kwargs:
+        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
             ocr_file_location = kwargs['ocrFileLocation']
-        if 'oracleHome' in kwargs:
+        if oracle_home is None and 'oracleHome' in kwargs:
             oracle_home = kwargs['oracleHome']
-        if 'pluggableDatabases' in kwargs:
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
             pluggable_databases = kwargs['pluggableDatabases']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'scanConfigurations' in kwargs:
+        if scan_configurations is None and 'scanConfigurations' in kwargs:
             scan_configurations = kwargs['scanConfigurations']
-        if 'traceDirectory' in kwargs:
+        if trace_directory is None and 'traceDirectory' in kwargs:
             trace_directory = kwargs['traceDirectory']
-        if 'vipConfigurations' in kwargs:
+        if vip_configurations is None and 'vipConfigurations' in kwargs:
             vip_configurations = kwargs['vipConfigurations']
 
         if adr_home_directory is not None:
@@ -2053,13 +2057,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance(dict):
              adr_home_directory: Optional[str] = None,
              host_name: Optional[str] = None,
              instance_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
 
         if adr_home_directory is not None:
@@ -2138,13 +2142,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent(dict):
              association_type: Optional[str] = None,
              component_id: Optional[str] = None,
              component_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'componentId' in kwargs:
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
 
         if association_type is not None:
@@ -2239,17 +2243,17 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance(dict):
              crs_base_directory: Optional[str] = None,
              host_name: Optional[str] = None,
              node_role: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'crsBaseDirectory' in kwargs:
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'nodeRole' in kwargs:
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
 
         if adr_home_directory is not None:
@@ -2382,21 +2386,21 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector(dict)
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
 
         if agent_id is not None:
@@ -2515,13 +2519,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
 
         if component_type is not None:
@@ -2616,17 +2620,17 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if credential_name is not None:
@@ -2739,9 +2743,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
 
         if host_name is not None:
@@ -2864,21 +2868,21 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnector(dict):
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
 
         if agent_id is not None:
@@ -2997,13 +3001,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo(dict):
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
 
         if component_type is not None:
@@ -3098,17 +3102,17 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if credential_name is not None:
@@ -3221,9 +3225,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
 
         if host_name is not None:
@@ -3309,7 +3313,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpoint(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              services: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if host is not None:
@@ -3406,11 +3410,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration(dict):
              network_number: Optional[int] = None,
              network_type: Optional[str] = None,
              subnet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
 
         if network_number is not None:
@@ -3491,11 +3495,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase(dict):
              connectors: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector']] = None,
              container_database_id: Optional[str] = None,
              guid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
 
         if compartment_id is not None:
@@ -3608,21 +3612,21 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector(dic
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
 
         if agent_id is not None:
@@ -3741,13 +3745,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
 
         if component_type is not None:
@@ -3842,17 +3846,17 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if credential_name is not None:
@@ -3965,9 +3969,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
 
         if host_name is not None:
@@ -4072,15 +4076,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration(dict):
              scan_name: Optional[str] = None,
              scan_port: Optional[int] = None,
              scan_protocol: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
 
         if network_number is not None:
@@ -4167,11 +4171,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration(dict):
              address: Optional[str] = None,
              network_number: Optional[int] = None,
              node_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
 
         if address is not None:
@@ -4230,11 +4234,15 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation: str,
-             selection: str,
+             operation: Optional[str] = None,
+             selection: Optional[str] = None,
              value: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValue'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if selection is None:
+            raise TypeError("Missing 'selection' argument")
 
         _setter("operation", operation)
         _setter("selection", selection)
@@ -4318,13 +4326,13 @@ class ExternalDbSystemDiscoveryPatchOperationValue(dict):
              connector: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnector'] = None,
              display_name: Optional[str] = None,
              is_selected_for_monitoring: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isSelectedForMonitoring' in kwargs:
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
 
         if compartment_id is not None:
@@ -4415,19 +4423,23 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnector(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_type: str,
-             display_name: str,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
              agent_id: Optional[str] = None,
              connection_info: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'agentId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionInfo' in kwargs:
+        if connection_info is None and 'connectionInfo' in kwargs:
             connection_info = kwargs['connectionInfo']
 
         _setter("connector_type", connector_type)
@@ -4511,16 +4523,18 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
+             component_type: Optional[str] = None,
              connection_credentials: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials'] = None,
              connection_string: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
 
         _setter("component_type", component_type)
@@ -4608,23 +4622,25 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_type: str,
+             credential_type: Optional[str] = None,
              credential_name: Optional[str] = None,
              password_secret_id: Optional[str] = None,
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialType' in kwargs:
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'credentialName' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         _setter("credential_type", credential_type)
@@ -4736,9 +4752,9 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
 
         if host_name is not None:
@@ -4831,12 +4847,14 @@ class ExternalDbSystemStackMonitoringConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
+             is_enabled: Optional[bool] = None,
              metadata: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
         if metadata is not None:
@@ -4953,23 +4971,23 @@ class ExternalExadataInfrastructureDatabaseSystem(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_details is not None:
@@ -5178,21 +5196,21 @@ class ExternalExadataInfrastructureStorageGrid(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'serverCount' in kwargs:
+        if server_count is None and 'serverCount' in kwargs:
             server_count = kwargs['serverCount']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_details is not None:
@@ -5354,18 +5372,22 @@ class ExternalExadataStorageConnectorCredentialInfo(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: str,
-             username: str,
+             password: Optional[str] = None,
+             username: Optional[str] = None,
              ssl_trust_store_location: Optional[str] = None,
              ssl_trust_store_password: Optional[str] = None,
              ssl_trust_store_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sslTrustStoreLocation' in kwargs:
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+        if ssl_trust_store_location is None and 'sslTrustStoreLocation' in kwargs:
             ssl_trust_store_location = kwargs['sslTrustStoreLocation']
-        if 'sslTrustStorePassword' in kwargs:
+        if ssl_trust_store_password is None and 'sslTrustStorePassword' in kwargs:
             ssl_trust_store_password = kwargs['sslTrustStorePassword']
-        if 'sslTrustStoreType' in kwargs:
+        if ssl_trust_store_type is None and 'sslTrustStoreType' in kwargs:
             ssl_trust_store_type = kwargs['sslTrustStoreType']
 
         _setter("password", password)
@@ -5449,7 +5471,7 @@ class ExternalListenerEndpoint(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              services: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if host is not None:
@@ -5546,11 +5568,11 @@ class ExternalListenerServicedAsm(dict):
              compartment_id: Optional[str] = None,
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if compartment_id is not None:
@@ -5651,19 +5673,19 @@ class ExternalListenerServicedDatabase(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              is_managed: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
 
         if compartment_id is not None:
@@ -5812,19 +5834,19 @@ class ManagedDatabaseGroupManagedDatabase(dict):
              name: Optional[str] = None,
              time_added: Optional[str] = None,
              workload_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'timeAdded' in kwargs:
+        if time_added is None and 'timeAdded' in kwargs:
             time_added = kwargs['timeAdded']
-        if 'workloadType' in kwargs:
+        if workload_type is None and 'workloadType' in kwargs:
             workload_type = kwargs['workloadType']
 
         if compartment_id is not None:
@@ -5959,11 +5981,11 @@ class ManagedDatabasesChangeDatabaseParameterCredentials(dict):
              role: Optional[str] = None,
              secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if password is not None:
@@ -6045,12 +6067,16 @@ class ManagedDatabasesChangeDatabaseParameterParameter(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
              update_comment: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'updateComment' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if update_comment is None and 'updateComment' in kwargs:
             update_comment = kwargs['updateComment']
 
         _setter("name", name)
@@ -6129,11 +6155,11 @@ class ManagedDatabasesResetDatabaseParameterCredentials(dict):
              role: Optional[str] = None,
              secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
 
         if password is not None:
@@ -6201,16 +6227,24 @@ class GetDbManagementPrivateEndpointAssociatedDatabaseItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             name: str,
-             time_registered: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             time_registered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'timeRegistered' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_registered is None and 'timeRegistered' in kwargs:
             time_registered = kwargs['timeRegistered']
+        if time_registered is None:
+            raise TypeError("Missing 'time_registered' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -6264,9 +6298,11 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6302,16 +6338,24 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             name: str,
-             time_registered: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             time_registered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'timeRegistered' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_registered is None and 'timeRegistered' in kwargs:
             time_registered = kwargs['timeRegistered']
+        if time_registered is None:
+            raise TypeError("Missing 'time_registered' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -6369,11 +6413,15 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6410,9 +6458,11 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6466,33 +6516,55 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             description: str,
-             id: str,
-             is_cluster: bool,
-             name: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             name: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isCluster' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'nsgIds' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'subnetId' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("description", description)
@@ -6613,11 +6685,15 @@ class GetDbManagementPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6672,26 +6748,38 @@ class GetExternalAsmConfigurationInitParameterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asm_instance_display_name: str,
-             asm_instance_id: str,
-             auto_mount_disk_groups: Sequence[str],
-             disk_discovery_path: str,
-             preferred_read_failure_groups: Sequence[str],
-             rebalance_power: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             asm_instance_display_name: Optional[str] = None,
+             asm_instance_id: Optional[str] = None,
+             auto_mount_disk_groups: Optional[Sequence[str]] = None,
+             disk_discovery_path: Optional[str] = None,
+             preferred_read_failure_groups: Optional[Sequence[str]] = None,
+             rebalance_power: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'asmInstanceDisplayName' in kwargs:
+        if asm_instance_display_name is None and 'asmInstanceDisplayName' in kwargs:
             asm_instance_display_name = kwargs['asmInstanceDisplayName']
-        if 'asmInstanceId' in kwargs:
+        if asm_instance_display_name is None:
+            raise TypeError("Missing 'asm_instance_display_name' argument")
+        if asm_instance_id is None and 'asmInstanceId' in kwargs:
             asm_instance_id = kwargs['asmInstanceId']
-        if 'autoMountDiskGroups' in kwargs:
+        if asm_instance_id is None:
+            raise TypeError("Missing 'asm_instance_id' argument")
+        if auto_mount_disk_groups is None and 'autoMountDiskGroups' in kwargs:
             auto_mount_disk_groups = kwargs['autoMountDiskGroups']
-        if 'diskDiscoveryPath' in kwargs:
+        if auto_mount_disk_groups is None:
+            raise TypeError("Missing 'auto_mount_disk_groups' argument")
+        if disk_discovery_path is None and 'diskDiscoveryPath' in kwargs:
             disk_discovery_path = kwargs['diskDiscoveryPath']
-        if 'preferredReadFailureGroups' in kwargs:
+        if disk_discovery_path is None:
+            raise TypeError("Missing 'disk_discovery_path' argument")
+        if preferred_read_failure_groups is None and 'preferredReadFailureGroups' in kwargs:
             preferred_read_failure_groups = kwargs['preferredReadFailureGroups']
-        if 'rebalancePower' in kwargs:
+        if preferred_read_failure_groups is None:
+            raise TypeError("Missing 'preferred_read_failure_groups' argument")
+        if rebalance_power is None and 'rebalancePower' in kwargs:
             rebalance_power = kwargs['rebalancePower']
+        if rebalance_power is None:
+            raise TypeError("Missing 'rebalance_power' argument")
 
         _setter("asm_instance_display_name", asm_instance_display_name)
         _setter("asm_instance_id", asm_instance_id)
@@ -6763,9 +6851,11 @@ class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6816,31 +6906,49 @@ class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             databases: Sequence[str],
-             dismounting_instance_count: int,
-             is_sparse: bool,
-             mounting_instance_count: int,
-             name: str,
-             redundancy_type: str,
-             total_size_in_mbs: str,
-             used_percent: float,
-             used_size_in_mbs: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             databases: Optional[Sequence[str]] = None,
+             dismounting_instance_count: Optional[int] = None,
+             is_sparse: Optional[bool] = None,
+             mounting_instance_count: Optional[int] = None,
+             name: Optional[str] = None,
+             redundancy_type: Optional[str] = None,
+             total_size_in_mbs: Optional[str] = None,
+             used_percent: Optional[float] = None,
+             used_size_in_mbs: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dismountingInstanceCount' in kwargs:
+        if databases is None:
+            raise TypeError("Missing 'databases' argument")
+        if dismounting_instance_count is None and 'dismountingInstanceCount' in kwargs:
             dismounting_instance_count = kwargs['dismountingInstanceCount']
-        if 'isSparse' in kwargs:
+        if dismounting_instance_count is None:
+            raise TypeError("Missing 'dismounting_instance_count' argument")
+        if is_sparse is None and 'isSparse' in kwargs:
             is_sparse = kwargs['isSparse']
-        if 'mountingInstanceCount' in kwargs:
+        if is_sparse is None:
+            raise TypeError("Missing 'is_sparse' argument")
+        if mounting_instance_count is None and 'mountingInstanceCount' in kwargs:
             mounting_instance_count = kwargs['mountingInstanceCount']
-        if 'redundancyType' in kwargs:
+        if mounting_instance_count is None:
+            raise TypeError("Missing 'mounting_instance_count' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if redundancy_type is None and 'redundancyType' in kwargs:
             redundancy_type = kwargs['redundancyType']
-        if 'totalSizeInMbs' in kwargs:
+        if redundancy_type is None:
+            raise TypeError("Missing 'redundancy_type' argument")
+        if total_size_in_mbs is None and 'totalSizeInMbs' in kwargs:
             total_size_in_mbs = kwargs['totalSizeInMbs']
-        if 'usedPercent' in kwargs:
+        if total_size_in_mbs is None:
+            raise TypeError("Missing 'total_size_in_mbs' argument")
+        if used_percent is None and 'usedPercent' in kwargs:
             used_percent = kwargs['usedPercent']
-        if 'usedSizeInMbs' in kwargs:
+        if used_percent is None:
+            raise TypeError("Missing 'used_percent' argument")
+        if used_size_in_mbs is None and 'usedSizeInMbs' in kwargs:
             used_size_in_mbs = kwargs['usedSizeInMbs']
+        if used_size_in_mbs is None:
+            raise TypeError("Missing 'used_size_in_mbs' argument")
 
         _setter("databases", databases)
         _setter("dismounting_instance_count", dismounting_instance_count)
@@ -6943,11 +7051,15 @@ class GetExternalAsmDiskGroupsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6984,9 +7096,11 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7046,43 +7160,69 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             compartment_id: str,
-             component_name: str,
-             display_name: str,
-             external_asm_id: str,
-             external_db_node_id: str,
-             external_db_system_id: str,
-             host_name: str,
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_asm_id: Optional[str] = None,
+             external_db_node_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'compartmentId' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalAsmId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_asm_id is None and 'externalAsmId' in kwargs:
             external_asm_id = kwargs['externalAsmId']
-        if 'externalDbNodeId' in kwargs:
+        if external_asm_id is None:
+            raise TypeError("Missing 'external_asm_id' argument")
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_node_id is None:
+            raise TypeError("Missing 'external_db_node_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'hostName' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("compartment_id", compartment_id)
@@ -7218,11 +7358,15 @@ class GetExternalAsmInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7280,30 +7424,46 @@ class GetExternalAsmServicedDatabaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             db_unique_name: str,
-             disk_groups: Sequence[str],
-             display_name: str,
-             id: str,
-             is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             disk_groups: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_managed: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'diskGroups' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if disk_groups is None and 'diskGroups' in kwargs:
             disk_groups = kwargs['diskGroups']
-        if 'displayName' in kwargs:
+        if disk_groups is None:
+            raise TypeError("Missing 'disk_groups' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
+        if is_managed is None:
+            raise TypeError("Missing 'is_managed' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -7393,9 +7553,11 @@ class GetExternalAsmUsersExternalAsmUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalAsmUsersExternalAsmUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalAsmUsersExternalAsmUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7428,13 +7590,19 @@ class GetExternalAsmUsersExternalAsmUserCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             asm_id: str,
-             name: str,
-             privileges: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             asm_id: Optional[str] = None,
+             name: Optional[str] = None,
+             privileges: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'asmId' in kwargs:
+        if asm_id is None and 'asmId' in kwargs:
             asm_id = kwargs['asmId']
+        if asm_id is None:
+            raise TypeError("Missing 'asm_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if privileges is None:
+            raise TypeError("Missing 'privileges' argument")
 
         _setter("asm_id", asm_id)
         _setter("name", name)
@@ -7483,11 +7651,15 @@ class GetExternalAsmUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7524,9 +7696,11 @@ class GetExternalAsmsExternalAsmCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7597,53 +7771,87 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             component_name: str,
-             display_name: str,
-             external_asm_id: str,
-             external_connector_id: str,
-             external_db_system_id: str,
-             grid_home: str,
-             id: str,
-             is_cluster: bool,
-             is_flex_enabled: bool,
-             lifecycle_details: str,
-             serviced_databases: Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemServicedDatabaseResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_asm_id: Optional[str] = None,
+             external_connector_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             grid_home: Optional[str] = None,
+             id: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             is_flex_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             serviced_databases: Optional[Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemServicedDatabaseResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalAsmId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_asm_id is None and 'externalAsmId' in kwargs:
             external_asm_id = kwargs['externalAsmId']
-        if 'externalConnectorId' in kwargs:
+        if external_asm_id is None:
+            raise TypeError("Missing 'external_asm_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbSystemId' in kwargs:
+        if external_connector_id is None:
+            raise TypeError("Missing 'external_connector_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'gridHome' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'isCluster' in kwargs:
+        if grid_home is None:
+            raise TypeError("Missing 'grid_home' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'isFlexEnabled' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if is_flex_enabled is None and 'isFlexEnabled' in kwargs:
             is_flex_enabled = kwargs['isFlexEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if is_flex_enabled is None:
+            raise TypeError("Missing 'is_flex_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'servicedDatabases' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if serviced_databases is None and 'servicedDatabases' in kwargs:
             serviced_databases = kwargs['servicedDatabases']
-        if 'timeCreated' in kwargs:
+        if serviced_databases is None:
+            raise TypeError("Missing 'serviced_databases' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -7832,30 +8040,46 @@ class GetExternalAsmsExternalAsmCollectionItemServicedDatabaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             db_unique_name: str,
-             disk_groups: Sequence[str],
-             display_name: str,
-             id: str,
-             is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             disk_groups: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_managed: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'diskGroups' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if disk_groups is None and 'diskGroups' in kwargs:
             disk_groups = kwargs['diskGroups']
-        if 'displayName' in kwargs:
+        if disk_groups is None:
+            raise TypeError("Missing 'disk_groups' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
+        if is_managed is None:
+            raise TypeError("Missing 'is_managed' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -7946,11 +8170,15 @@ class GetExternalAsmsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7984,9 +8212,11 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8057,55 +8287,89 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             compartment_id: str,
-             component_name: str,
-             crs_base_directory: str,
-             display_name: str,
-             external_cluster_id: str,
-             external_cluster_instance_id: str,
-             external_connector_id: str,
-             external_db_node_id: str,
-             external_db_system_id: str,
-             host_name: str,
-             id: str,
-             lifecycle_details: str,
-             node_role: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             crs_base_directory: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_cluster_id: Optional[str] = None,
+             external_cluster_instance_id: Optional[str] = None,
+             external_connector_id: Optional[str] = None,
+             external_db_node_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             node_role: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'compartmentId' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'crsBaseDirectory' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'displayName' in kwargs:
+        if crs_base_directory is None:
+            raise TypeError("Missing 'crs_base_directory' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalClusterId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_cluster_id is None and 'externalClusterId' in kwargs:
             external_cluster_id = kwargs['externalClusterId']
-        if 'externalClusterInstanceId' in kwargs:
+        if external_cluster_id is None:
+            raise TypeError("Missing 'external_cluster_id' argument")
+        if external_cluster_instance_id is None and 'externalClusterInstanceId' in kwargs:
             external_cluster_instance_id = kwargs['externalClusterInstanceId']
-        if 'externalConnectorId' in kwargs:
+        if external_cluster_instance_id is None:
+            raise TypeError("Missing 'external_cluster_instance_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbNodeId' in kwargs:
+        if external_connector_id is None:
+            raise TypeError("Missing 'external_connector_id' argument")
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_node_id is None:
+            raise TypeError("Missing 'external_db_node_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'hostName' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeRole' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
-        if 'timeCreated' in kwargs:
+        if node_role is None:
+            raise TypeError("Missing 'node_role' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("compartment_id", compartment_id)
@@ -8274,11 +8538,15 @@ class GetExternalClusterInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -8321,15 +8589,21 @@ class GetExternalClusterNetworkConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             network_type: str,
-             subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             network_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
 
         _setter("network_number", network_number)
         _setter("network_type", network_type)
@@ -8383,20 +8657,28 @@ class GetExternalClusterScanConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             scan_name: str,
-             scan_port: int,
-             scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             scan_name: Optional[str] = None,
+             scan_port: Optional[int] = None,
+             scan_protocol: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_name is None:
+            raise TypeError("Missing 'scan_name' argument")
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_port is None:
+            raise TypeError("Missing 'scan_port' argument")
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
+        if scan_protocol is None:
+            raise TypeError("Missing 'scan_protocol' argument")
 
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
@@ -8456,15 +8738,21 @@ class GetExternalClusterVipConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             network_number: int,
-             node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             network_number: Optional[int] = None,
+             node_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
+        if node_name is None:
+            raise TypeError("Missing 'node_name' argument")
 
         _setter("address", address)
         _setter("network_number", network_number)
@@ -8506,9 +8794,11 @@ class GetExternalClustersExternalClusterCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalClustersExternalClusterCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8585,59 +8875,97 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             component_name: str,
-             display_name: str,
-             external_cluster_id: str,
-             external_connector_id: str,
-             external_db_system_id: str,
-             grid_home: str,
-             id: str,
-             is_flex_cluster: bool,
-             lifecycle_details: str,
-             network_configurations: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemNetworkConfigurationResult'],
-             ocr_file_location: str,
-             scan_configurations: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemScanConfigurationResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             vip_configurations: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_cluster_id: Optional[str] = None,
+             external_connector_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             grid_home: Optional[str] = None,
+             id: Optional[str] = None,
+             is_flex_cluster: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             network_configurations: Optional[Sequence['outputs.GetExternalClustersExternalClusterCollectionItemNetworkConfigurationResult']] = None,
+             ocr_file_location: Optional[str] = None,
+             scan_configurations: Optional[Sequence['outputs.GetExternalClustersExternalClusterCollectionItemScanConfigurationResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             vip_configurations: Optional[Sequence['outputs.GetExternalClustersExternalClusterCollectionItemVipConfigurationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalClusterId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_cluster_id is None and 'externalClusterId' in kwargs:
             external_cluster_id = kwargs['externalClusterId']
-        if 'externalConnectorId' in kwargs:
+        if external_cluster_id is None:
+            raise TypeError("Missing 'external_cluster_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbSystemId' in kwargs:
+        if external_connector_id is None:
+            raise TypeError("Missing 'external_connector_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'gridHome' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'isFlexCluster' in kwargs:
+        if grid_home is None:
+            raise TypeError("Missing 'grid_home' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
             is_flex_cluster = kwargs['isFlexCluster']
-        if 'lifecycleDetails' in kwargs:
+        if is_flex_cluster is None:
+            raise TypeError("Missing 'is_flex_cluster' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'networkConfigurations' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if network_configurations is None and 'networkConfigurations' in kwargs:
             network_configurations = kwargs['networkConfigurations']
-        if 'ocrFileLocation' in kwargs:
+        if network_configurations is None:
+            raise TypeError("Missing 'network_configurations' argument")
+        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
             ocr_file_location = kwargs['ocrFileLocation']
-        if 'scanConfigurations' in kwargs:
+        if ocr_file_location is None:
+            raise TypeError("Missing 'ocr_file_location' argument")
+        if scan_configurations is None and 'scanConfigurations' in kwargs:
             scan_configurations = kwargs['scanConfigurations']
-        if 'timeCreated' in kwargs:
+        if scan_configurations is None:
+            raise TypeError("Missing 'scan_configurations' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vipConfigurations' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if vip_configurations is None and 'vipConfigurations' in kwargs:
             vip_configurations = kwargs['vipConfigurations']
+        if vip_configurations is None:
+            raise TypeError("Missing 'vip_configurations' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -8829,15 +9157,21 @@ class GetExternalClustersExternalClusterCollectionItemNetworkConfigurationResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             network_type: str,
-             subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             network_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
 
         _setter("network_number", network_number)
         _setter("network_type", network_type)
@@ -8891,20 +9225,28 @@ class GetExternalClustersExternalClusterCollectionItemScanConfigurationResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             scan_name: str,
-             scan_port: int,
-             scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             scan_name: Optional[str] = None,
+             scan_port: Optional[int] = None,
+             scan_protocol: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_name is None:
+            raise TypeError("Missing 'scan_name' argument")
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_port is None:
+            raise TypeError("Missing 'scan_port' argument")
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
+        if scan_protocol is None:
+            raise TypeError("Missing 'scan_protocol' argument")
 
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
@@ -8964,15 +9306,21 @@ class GetExternalClustersExternalClusterCollectionItemVipConfigurationResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             network_number: int,
-             node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             network_number: Optional[int] = None,
+             node_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
+        if node_name is None:
+            raise TypeError("Missing 'node_name' argument")
 
         _setter("address", address)
         _setter("network_number", network_number)
@@ -9018,11 +9366,15 @@ class GetExternalClustersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9059,9 +9411,11 @@ class GetExternalDatabasesExternalDatabaseCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9124,43 +9478,69 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             db_management_configs: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult'],
-             db_system_infos: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult'],
-             db_unique_name: str,
-             display_name: str,
-             external_container_database_id: str,
-             external_db_home_id: str,
-             id: str,
-             instance_details: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult'],
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_management_configs: Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult']] = None,
+             db_system_infos: Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult']] = None,
+             db_unique_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_container_database_id: Optional[str] = None,
+             external_db_home_id: Optional[str] = None,
+             id: Optional[str] = None,
+             instance_details: Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbManagementConfigs' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_management_configs is None and 'dbManagementConfigs' in kwargs:
             db_management_configs = kwargs['dbManagementConfigs']
-        if 'dbSystemInfos' in kwargs:
+        if db_management_configs is None:
+            raise TypeError("Missing 'db_management_configs' argument")
+        if db_system_infos is None and 'dbSystemInfos' in kwargs:
             db_system_infos = kwargs['dbSystemInfos']
-        if 'dbUniqueName' in kwargs:
+        if db_system_infos is None:
+            raise TypeError("Missing 'db_system_infos' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'displayName' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalContainerDatabaseId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
             external_container_database_id = kwargs['externalContainerDatabaseId']
-        if 'externalDbHomeId' in kwargs:
+        if external_container_database_id is None:
+            raise TypeError("Missing 'external_container_database_id' argument")
+        if external_db_home_id is None and 'externalDbHomeId' in kwargs:
             external_db_home_id = kwargs['externalDbHomeId']
-        if 'instanceDetails' in kwargs:
+        if external_db_home_id is None:
+            raise TypeError("Missing 'external_db_home_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if instance_details is None and 'instanceDetails' in kwargs:
             instance_details = kwargs['instanceDetails']
-        if 'timeCreated' in kwargs:
+        if instance_details is None:
+            raise TypeError("Missing 'instance_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -9301,17 +9681,23 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_id: str,
-             database_management_status: str,
-             license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connector_id: Optional[str] = None,
+             database_management_status: Optional[str] = None,
+             license_model: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorId' in kwargs:
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'databaseManagementStatus' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
             database_management_status = kwargs['databaseManagementStatus']
-        if 'licenseModel' in kwargs:
+        if database_management_status is None:
+            raise TypeError("Missing 'database_management_status' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
 
         _setter("connector_id", connector_id)
         _setter("database_management_status", database_management_status)
@@ -9365,18 +9751,26 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             display_name: str,
-             exadata_infra_infos: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult'],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             exadata_infra_infos: Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult']] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfraInfos' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if exadata_infra_infos is None and 'exadataInfraInfos' in kwargs:
             exadata_infra_infos = kwargs['exadataInfraInfos']
+        if exadata_infra_infos is None:
+            raise TypeError("Missing 'exadata_infra_infos' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -9436,15 +9830,21 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfra
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -9495,17 +9895,23 @@ class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             instance_name: str,
-             instance_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             instance_name: Optional[str] = None,
+             instance_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
-        if 'instanceNumber' in kwargs:
+        if instance_name is None:
+            raise TypeError("Missing 'instance_name' argument")
+        if instance_number is None and 'instanceNumber' in kwargs:
             instance_number = kwargs['instanceNumber']
+        if instance_number is None:
+            raise TypeError("Missing 'instance_number' argument")
 
         _setter("host_name", host_name)
         _setter("instance_name", instance_name)
@@ -9551,11 +9957,15 @@ class GetExternalDatabasesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9589,9 +9999,11 @@ class GetExternalDbHomesExternalDbHomeCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDbHomesExternalDbHomeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDbHomesExternalDbHomeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9645,37 +10057,59 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             component_name: str,
-             display_name: str,
-             external_db_system_id: str,
-             home_directory: str,
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             home_directory: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDbSystemId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'homeDirectory' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'lifecycleDetails' in kwargs:
+        if home_directory is None:
+            raise TypeError("Missing 'home_directory' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -9793,11 +10227,15 @@ class GetExternalDbHomesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9831,9 +10269,11 @@ class GetExternalDbNodesExternalDbNodeCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDbNodesExternalDbNodeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDbNodesExternalDbNodeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9901,52 +10341,84 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             component_name: str,
-             cpu_core_count: float,
-             display_name: str,
-             domain_name: str,
-             external_connector_id: str,
-             external_db_node_id: str,
-             external_db_system_id: str,
-             host_name: str,
-             id: str,
-             lifecycle_details: str,
-             memory_size_in_gbs: float,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             cpu_core_count: Optional[float] = None,
+             display_name: Optional[str] = None,
+             domain_name: Optional[str] = None,
+             external_connector_id: Optional[str] = None,
+             external_db_node_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             memory_size_in_gbs: Optional[float] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'cpuCoreCount' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'displayName' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
-        if 'externalConnectorId' in kwargs:
+        if domain_name is None:
+            raise TypeError("Missing 'domain_name' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbNodeId' in kwargs:
+        if external_connector_id is None:
+            raise TypeError("Missing 'external_connector_id' argument")
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_node_id is None:
+            raise TypeError("Missing 'external_db_node_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'hostName' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'memorySizeInGbs' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'timeCreated' in kwargs:
+        if memory_size_in_gbs is None:
+            raise TypeError("Missing 'memory_size_in_gbs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -10106,11 +10578,15 @@ class GetExternalDbNodesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10153,17 +10629,23 @@ class GetExternalDbSystemConnectorConnectionInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -10223,24 +10705,36 @@ class GetExternalDbSystemConnectorConnectionInfoConnectionCredentialResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -10324,15 +10818,25 @@ class GetExternalDbSystemConnectorConnectionInfoConnectionStringResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -10392,9 +10896,11 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -10457,46 +10963,74 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             compartment_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             external_db_system_id: str,
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             time_connection_status_last_updated: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionFailureMessage' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDbSystemId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'lifecycleDetails' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
-        if 'timeCreated' in kwargs:
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("compartment_id", compartment_id)
@@ -10646,17 +11180,23 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -10716,24 +11256,36 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -10817,15 +11369,25 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -10889,11 +11451,15 @@ class GetExternalDbSystemConnectorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10930,11 +11496,13 @@ class GetExternalDbSystemDatabaseManagementConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             license_model: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
 
         _setter("license_model", license_model)
 
@@ -10958,9 +11526,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -11018,43 +11588,69 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             compartment_id: str,
-             discovered_components: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult'],
-             display_name: str,
-             external_db_system_discovery_id: str,
-             grid_home: str,
-             id: str,
-             lifecycle_details: str,
-             patch_operations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationResult'],
-             resource_id: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             discovered_components: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult']] = None,
+             display_name: Optional[str] = None,
+             external_db_system_discovery_id: Optional[str] = None,
+             grid_home: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             patch_operations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationResult']] = None,
+             resource_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'discoveredComponents' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if discovered_components is None and 'discoveredComponents' in kwargs:
             discovered_components = kwargs['discoveredComponents']
-        if 'displayName' in kwargs:
+        if discovered_components is None:
+            raise TypeError("Missing 'discovered_components' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDbSystemDiscoveryId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_db_system_discovery_id is None and 'externalDbSystemDiscoveryId' in kwargs:
             external_db_system_discovery_id = kwargs['externalDbSystemDiscoveryId']
-        if 'gridHome' in kwargs:
+        if external_db_system_discovery_id is None:
+            raise TypeError("Missing 'external_db_system_discovery_id' argument")
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'lifecycleDetails' in kwargs:
+        if grid_home is None:
+            raise TypeError("Missing 'grid_home' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'patchOperations' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if patch_operations is None and 'patchOperations' in kwargs:
             patch_operations = kwargs['patchOperations']
-        if 'resourceId' in kwargs:
+        if patch_operations is None:
+            raise TypeError("Missing 'patch_operations' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'timeCreated' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("compartment_id", compartment_id)
@@ -11319,139 +11915,233 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             asm_instances: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult'],
-             associated_components: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult'],
-             cluster_id: str,
-             cluster_instances: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult'],
-             compartment_id: str,
-             component_id: str,
-             component_name: str,
-             component_type: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult'],
-             container_database_id: str,
-             cpu_core_count: float,
-             crs_base_directory: str,
-             db_edition: str,
-             db_id: str,
-             db_node_name: str,
-             db_packs: str,
-             db_role: str,
-             db_type: str,
-             db_unique_name: str,
-             db_version: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult'],
-             grid_home: str,
-             guid: str,
-             home_directory: str,
-             host_name: str,
-             instance_name: str,
-             is_cluster: bool,
-             is_flex_cluster: bool,
-             is_flex_enabled: bool,
-             is_selected_for_monitoring: bool,
-             listener_alias: str,
-             listener_type: str,
-             log_directory: str,
-             memory_size_in_gbs: float,
-             network_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult'],
-             node_role: str,
-             ocr_file_location: str,
-             oracle_home: str,
-             pluggable_databases: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult'],
-             resource_id: str,
-             scan_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult'],
-             status: str,
-             trace_directory: str,
-             version: str,
-             vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             asm_instances: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult']] = None,
+             associated_components: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult']] = None,
+             cluster_id: Optional[str] = None,
+             cluster_instances: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult']] = None,
+             compartment_id: Optional[str] = None,
+             component_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             component_type: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult']] = None,
+             container_database_id: Optional[str] = None,
+             cpu_core_count: Optional[float] = None,
+             crs_base_directory: Optional[str] = None,
+             db_edition: Optional[str] = None,
+             db_id: Optional[str] = None,
+             db_node_name: Optional[str] = None,
+             db_packs: Optional[str] = None,
+             db_role: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             db_version: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult']] = None,
+             grid_home: Optional[str] = None,
+             guid: Optional[str] = None,
+             home_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             instance_name: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             is_flex_cluster: Optional[bool] = None,
+             is_flex_enabled: Optional[bool] = None,
+             is_selected_for_monitoring: Optional[bool] = None,
+             listener_alias: Optional[str] = None,
+             listener_type: Optional[str] = None,
+             log_directory: Optional[str] = None,
+             memory_size_in_gbs: Optional[float] = None,
+             network_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult']] = None,
+             node_role: Optional[str] = None,
+             ocr_file_location: Optional[str] = None,
+             oracle_home: Optional[str] = None,
+             pluggable_databases: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult']] = None,
+             resource_id: Optional[str] = None,
+             scan_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult']] = None,
+             status: Optional[str] = None,
+             trace_directory: Optional[str] = None,
+             version: Optional[str] = None,
+             vip_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'asmInstances' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if asm_instances is None and 'asmInstances' in kwargs:
             asm_instances = kwargs['asmInstances']
-        if 'associatedComponents' in kwargs:
+        if asm_instances is None:
+            raise TypeError("Missing 'asm_instances' argument")
+        if associated_components is None and 'associatedComponents' in kwargs:
             associated_components = kwargs['associatedComponents']
-        if 'clusterId' in kwargs:
+        if associated_components is None:
+            raise TypeError("Missing 'associated_components' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'clusterInstances' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if cluster_instances is None and 'clusterInstances' in kwargs:
             cluster_instances = kwargs['clusterInstances']
-        if 'compartmentId' in kwargs:
+        if cluster_instances is None:
+            raise TypeError("Missing 'cluster_instances' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentName' in kwargs:
+        if component_id is None:
+            raise TypeError("Missing 'component_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'componentType' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'containerDatabaseId' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'cpuCoreCount' in kwargs:
+        if container_database_id is None:
+            raise TypeError("Missing 'container_database_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'crsBaseDirectory' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'dbEdition' in kwargs:
+        if crs_base_directory is None:
+            raise TypeError("Missing 'crs_base_directory' argument")
+        if db_edition is None and 'dbEdition' in kwargs:
             db_edition = kwargs['dbEdition']
-        if 'dbId' in kwargs:
+        if db_edition is None:
+            raise TypeError("Missing 'db_edition' argument")
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbNodeName' in kwargs:
+        if db_id is None:
+            raise TypeError("Missing 'db_id' argument")
+        if db_node_name is None and 'dbNodeName' in kwargs:
             db_node_name = kwargs['dbNodeName']
-        if 'dbPacks' in kwargs:
+        if db_node_name is None:
+            raise TypeError("Missing 'db_node_name' argument")
+        if db_packs is None and 'dbPacks' in kwargs:
             db_packs = kwargs['dbPacks']
-        if 'dbRole' in kwargs:
+        if db_packs is None:
+            raise TypeError("Missing 'db_packs' argument")
+        if db_role is None and 'dbRole' in kwargs:
             db_role = kwargs['dbRole']
-        if 'dbType' in kwargs:
+        if db_role is None:
+            raise TypeError("Missing 'db_role' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbUniqueName' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'displayName' in kwargs:
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'gridHome' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'homeDirectory' in kwargs:
+        if grid_home is None:
+            raise TypeError("Missing 'grid_home' argument")
+        if guid is None:
+            raise TypeError("Missing 'guid' argument")
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'hostName' in kwargs:
+        if home_directory is None:
+            raise TypeError("Missing 'home_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
-        if 'isCluster' in kwargs:
+        if instance_name is None:
+            raise TypeError("Missing 'instance_name' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'isFlexCluster' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
             is_flex_cluster = kwargs['isFlexCluster']
-        if 'isFlexEnabled' in kwargs:
+        if is_flex_cluster is None:
+            raise TypeError("Missing 'is_flex_cluster' argument")
+        if is_flex_enabled is None and 'isFlexEnabled' in kwargs:
             is_flex_enabled = kwargs['isFlexEnabled']
-        if 'isSelectedForMonitoring' in kwargs:
+        if is_flex_enabled is None:
+            raise TypeError("Missing 'is_flex_enabled' argument")
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
-        if 'listenerAlias' in kwargs:
+        if is_selected_for_monitoring is None:
+            raise TypeError("Missing 'is_selected_for_monitoring' argument")
+        if listener_alias is None and 'listenerAlias' in kwargs:
             listener_alias = kwargs['listenerAlias']
-        if 'listenerType' in kwargs:
+        if listener_alias is None:
+            raise TypeError("Missing 'listener_alias' argument")
+        if listener_type is None and 'listenerType' in kwargs:
             listener_type = kwargs['listenerType']
-        if 'logDirectory' in kwargs:
+        if listener_type is None:
+            raise TypeError("Missing 'listener_type' argument")
+        if log_directory is None and 'logDirectory' in kwargs:
             log_directory = kwargs['logDirectory']
-        if 'memorySizeInGbs' in kwargs:
+        if log_directory is None:
+            raise TypeError("Missing 'log_directory' argument")
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'networkConfigurations' in kwargs:
+        if memory_size_in_gbs is None:
+            raise TypeError("Missing 'memory_size_in_gbs' argument")
+        if network_configurations is None and 'networkConfigurations' in kwargs:
             network_configurations = kwargs['networkConfigurations']
-        if 'nodeRole' in kwargs:
+        if network_configurations is None:
+            raise TypeError("Missing 'network_configurations' argument")
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
-        if 'ocrFileLocation' in kwargs:
+        if node_role is None:
+            raise TypeError("Missing 'node_role' argument")
+        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
             ocr_file_location = kwargs['ocrFileLocation']
-        if 'oracleHome' in kwargs:
+        if ocr_file_location is None:
+            raise TypeError("Missing 'ocr_file_location' argument")
+        if oracle_home is None and 'oracleHome' in kwargs:
             oracle_home = kwargs['oracleHome']
-        if 'pluggableDatabases' in kwargs:
+        if oracle_home is None:
+            raise TypeError("Missing 'oracle_home' argument")
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
             pluggable_databases = kwargs['pluggableDatabases']
-        if 'resourceId' in kwargs:
+        if pluggable_databases is None:
+            raise TypeError("Missing 'pluggable_databases' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'scanConfigurations' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if scan_configurations is None and 'scanConfigurations' in kwargs:
             scan_configurations = kwargs['scanConfigurations']
-        if 'traceDirectory' in kwargs:
+        if scan_configurations is None:
+            raise TypeError("Missing 'scan_configurations' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if trace_directory is None and 'traceDirectory' in kwargs:
             trace_directory = kwargs['traceDirectory']
-        if 'vipConfigurations' in kwargs:
+        if trace_directory is None:
+            raise TypeError("Missing 'trace_directory' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if vip_configurations is None and 'vipConfigurations' in kwargs:
             vip_configurations = kwargs['vipConfigurations']
+        if vip_configurations is None:
+            raise TypeError("Missing 'vip_configurations' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("asm_instances", asm_instances)
@@ -11892,17 +12582,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             host_name: str,
-             instance_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             instance_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'hostName' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
+        if instance_name is None:
+            raise TypeError("Missing 'instance_name' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("host_name", host_name)
@@ -11953,17 +12649,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             association_type: str,
-             component_id: str,
-             component_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             association_type: Optional[str] = None,
+             component_id: Optional[str] = None,
+             component_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'componentId' in kwargs:
+        if association_type is None:
+            raise TypeError("Missing 'association_type' argument")
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentType' in kwargs:
+        if component_id is None:
+            raise TypeError("Missing 'component_id' argument")
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
 
         _setter("association_type", association_type)
         _setter("component_id", component_id)
@@ -12023,24 +12725,36 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             cluster_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult'],
-             crs_base_directory: str,
-             host_name: str,
-             node_role: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             cluster_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult']] = None,
+             crs_base_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             node_role: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'clusterId' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'crsBaseDirectory' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'hostName' in kwargs:
+        if crs_base_directory is None:
+            raise TypeError("Missing 'crs_base_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'nodeRole' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
+        if node_role is None:
+            raise TypeError("Missing 'node_role' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("cluster_id", cluster_id)
@@ -12130,29 +12844,43 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -12239,17 +12967,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -12309,24 +13043,36 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -12410,15 +13156,25 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -12499,29 +13255,43 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -12608,17 +13378,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -12678,24 +13454,36 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -12779,15 +13567,25 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -12862,13 +13660,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             key: str,
-             port: int,
-             protocol: str,
-             services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             key: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             services: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
 
         _setter("host", host)
         _setter("key", key)
@@ -12937,15 +13745,21 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             network_type: str,
-             subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             network_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
 
         _setter("network_number", network_number)
         _setter("network_type", network_type)
@@ -12999,16 +13813,24 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult'],
-             container_database_id: str,
-             guid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult']] = None,
+             container_database_id: Optional[str] = None,
+             guid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerDatabaseId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
+        if container_database_id is None:
+            raise TypeError("Missing 'container_database_id' argument")
+        if guid is None:
+            raise TypeError("Missing 'guid' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
@@ -13080,29 +13902,43 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -13189,17 +14025,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -13259,24 +14101,36 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -13360,15 +14214,25 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -13440,20 +14304,28 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             scan_name: str,
-             scan_port: int,
-             scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             scan_name: Optional[str] = None,
+             scan_port: Optional[int] = None,
+             scan_protocol: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_name is None:
+            raise TypeError("Missing 'scan_name' argument")
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_port is None:
+            raise TypeError("Missing 'scan_port' argument")
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
+        if scan_protocol is None:
+            raise TypeError("Missing 'scan_protocol' argument")
 
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
@@ -13513,15 +14385,21 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             network_number: int,
-             node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             network_number: Optional[int] = None,
+             node_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
+        if node_name is None:
+            raise TypeError("Missing 'node_name' argument")
 
         _setter("address", address)
         _setter("network_number", network_number)
@@ -13567,11 +14445,17 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation: str,
-             selection: str,
-             values: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation: Optional[str] = None,
+             selection: Optional[str] = None,
+             values: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if selection is None:
+            raise TypeError("Missing 'selection' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("operation", operation)
         _setter("selection", selection)
@@ -13616,18 +14500,26 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult'],
-             display_name: str,
-             is_selected_for_monitoring: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult']] = None,
+             display_name: Optional[str] = None,
+             is_selected_for_monitoring: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isSelectedForMonitoring' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+        if is_selected_for_monitoring is None:
+            raise TypeError("Missing 'is_selected_for_monitoring' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
@@ -13690,20 +14582,28 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult'],
-             connector_type: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult']] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionInfos' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectorType' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_infos", connection_infos)
@@ -13763,17 +14663,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -13833,24 +14739,36 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -13934,15 +14852,25 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -14006,11 +14934,15 @@ class GetExternalDbSystemDiscoveriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -14183,139 +15115,233 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             asm_instances: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult'],
-             associated_components: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult'],
-             cluster_id: str,
-             cluster_instances: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult'],
-             compartment_id: str,
-             component_id: str,
-             component_name: str,
-             component_type: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorResult'],
-             container_database_id: str,
-             cpu_core_count: float,
-             crs_base_directory: str,
-             db_edition: str,
-             db_id: str,
-             db_node_name: str,
-             db_packs: str,
-             db_role: str,
-             db_type: str,
-             db_unique_name: str,
-             db_version: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult'],
-             grid_home: str,
-             guid: str,
-             home_directory: str,
-             host_name: str,
-             instance_name: str,
-             is_cluster: bool,
-             is_flex_cluster: bool,
-             is_flex_enabled: bool,
-             is_selected_for_monitoring: bool,
-             listener_alias: str,
-             listener_type: str,
-             log_directory: str,
-             memory_size_in_gbs: float,
-             network_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult'],
-             node_role: str,
-             ocr_file_location: str,
-             oracle_home: str,
-             pluggable_databases: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult'],
-             resource_id: str,
-             scan_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult'],
-             status: str,
-             trace_directory: str,
-             version: str,
-             vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             asm_instances: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult']] = None,
+             associated_components: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult']] = None,
+             cluster_id: Optional[str] = None,
+             cluster_instances: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult']] = None,
+             compartment_id: Optional[str] = None,
+             component_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             component_type: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorResult']] = None,
+             container_database_id: Optional[str] = None,
+             cpu_core_count: Optional[float] = None,
+             crs_base_directory: Optional[str] = None,
+             db_edition: Optional[str] = None,
+             db_id: Optional[str] = None,
+             db_node_name: Optional[str] = None,
+             db_packs: Optional[str] = None,
+             db_role: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             db_version: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult']] = None,
+             grid_home: Optional[str] = None,
+             guid: Optional[str] = None,
+             home_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             instance_name: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             is_flex_cluster: Optional[bool] = None,
+             is_flex_enabled: Optional[bool] = None,
+             is_selected_for_monitoring: Optional[bool] = None,
+             listener_alias: Optional[str] = None,
+             listener_type: Optional[str] = None,
+             log_directory: Optional[str] = None,
+             memory_size_in_gbs: Optional[float] = None,
+             network_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult']] = None,
+             node_role: Optional[str] = None,
+             ocr_file_location: Optional[str] = None,
+             oracle_home: Optional[str] = None,
+             pluggable_databases: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult']] = None,
+             resource_id: Optional[str] = None,
+             scan_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult']] = None,
+             status: Optional[str] = None,
+             trace_directory: Optional[str] = None,
+             version: Optional[str] = None,
+             vip_configurations: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'asmInstances' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if asm_instances is None and 'asmInstances' in kwargs:
             asm_instances = kwargs['asmInstances']
-        if 'associatedComponents' in kwargs:
+        if asm_instances is None:
+            raise TypeError("Missing 'asm_instances' argument")
+        if associated_components is None and 'associatedComponents' in kwargs:
             associated_components = kwargs['associatedComponents']
-        if 'clusterId' in kwargs:
+        if associated_components is None:
+            raise TypeError("Missing 'associated_components' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'clusterInstances' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if cluster_instances is None and 'clusterInstances' in kwargs:
             cluster_instances = kwargs['clusterInstances']
-        if 'compartmentId' in kwargs:
+        if cluster_instances is None:
+            raise TypeError("Missing 'cluster_instances' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentName' in kwargs:
+        if component_id is None:
+            raise TypeError("Missing 'component_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'componentType' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'containerDatabaseId' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'cpuCoreCount' in kwargs:
+        if container_database_id is None:
+            raise TypeError("Missing 'container_database_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'crsBaseDirectory' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'dbEdition' in kwargs:
+        if crs_base_directory is None:
+            raise TypeError("Missing 'crs_base_directory' argument")
+        if db_edition is None and 'dbEdition' in kwargs:
             db_edition = kwargs['dbEdition']
-        if 'dbId' in kwargs:
+        if db_edition is None:
+            raise TypeError("Missing 'db_edition' argument")
+        if db_id is None and 'dbId' in kwargs:
             db_id = kwargs['dbId']
-        if 'dbNodeName' in kwargs:
+        if db_id is None:
+            raise TypeError("Missing 'db_id' argument")
+        if db_node_name is None and 'dbNodeName' in kwargs:
             db_node_name = kwargs['dbNodeName']
-        if 'dbPacks' in kwargs:
+        if db_node_name is None:
+            raise TypeError("Missing 'db_node_name' argument")
+        if db_packs is None and 'dbPacks' in kwargs:
             db_packs = kwargs['dbPacks']
-        if 'dbRole' in kwargs:
+        if db_packs is None:
+            raise TypeError("Missing 'db_packs' argument")
+        if db_role is None and 'dbRole' in kwargs:
             db_role = kwargs['dbRole']
-        if 'dbType' in kwargs:
+        if db_role is None:
+            raise TypeError("Missing 'db_role' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbUniqueName' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'dbVersion' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'displayName' in kwargs:
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'gridHome' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'homeDirectory' in kwargs:
+        if grid_home is None:
+            raise TypeError("Missing 'grid_home' argument")
+        if guid is None:
+            raise TypeError("Missing 'guid' argument")
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'hostName' in kwargs:
+        if home_directory is None:
+            raise TypeError("Missing 'home_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
-        if 'isCluster' in kwargs:
+        if instance_name is None:
+            raise TypeError("Missing 'instance_name' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'isFlexCluster' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
             is_flex_cluster = kwargs['isFlexCluster']
-        if 'isFlexEnabled' in kwargs:
+        if is_flex_cluster is None:
+            raise TypeError("Missing 'is_flex_cluster' argument")
+        if is_flex_enabled is None and 'isFlexEnabled' in kwargs:
             is_flex_enabled = kwargs['isFlexEnabled']
-        if 'isSelectedForMonitoring' in kwargs:
+        if is_flex_enabled is None:
+            raise TypeError("Missing 'is_flex_enabled' argument")
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
-        if 'listenerAlias' in kwargs:
+        if is_selected_for_monitoring is None:
+            raise TypeError("Missing 'is_selected_for_monitoring' argument")
+        if listener_alias is None and 'listenerAlias' in kwargs:
             listener_alias = kwargs['listenerAlias']
-        if 'listenerType' in kwargs:
+        if listener_alias is None:
+            raise TypeError("Missing 'listener_alias' argument")
+        if listener_type is None and 'listenerType' in kwargs:
             listener_type = kwargs['listenerType']
-        if 'logDirectory' in kwargs:
+        if listener_type is None:
+            raise TypeError("Missing 'listener_type' argument")
+        if log_directory is None and 'logDirectory' in kwargs:
             log_directory = kwargs['logDirectory']
-        if 'memorySizeInGbs' in kwargs:
+        if log_directory is None:
+            raise TypeError("Missing 'log_directory' argument")
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'networkConfigurations' in kwargs:
+        if memory_size_in_gbs is None:
+            raise TypeError("Missing 'memory_size_in_gbs' argument")
+        if network_configurations is None and 'networkConfigurations' in kwargs:
             network_configurations = kwargs['networkConfigurations']
-        if 'nodeRole' in kwargs:
+        if network_configurations is None:
+            raise TypeError("Missing 'network_configurations' argument")
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
-        if 'ocrFileLocation' in kwargs:
+        if node_role is None:
+            raise TypeError("Missing 'node_role' argument")
+        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
             ocr_file_location = kwargs['ocrFileLocation']
-        if 'oracleHome' in kwargs:
+        if ocr_file_location is None:
+            raise TypeError("Missing 'ocr_file_location' argument")
+        if oracle_home is None and 'oracleHome' in kwargs:
             oracle_home = kwargs['oracleHome']
-        if 'pluggableDatabases' in kwargs:
+        if oracle_home is None:
+            raise TypeError("Missing 'oracle_home' argument")
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
             pluggable_databases = kwargs['pluggableDatabases']
-        if 'resourceId' in kwargs:
+        if pluggable_databases is None:
+            raise TypeError("Missing 'pluggable_databases' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'scanConfigurations' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if scan_configurations is None and 'scanConfigurations' in kwargs:
             scan_configurations = kwargs['scanConfigurations']
-        if 'traceDirectory' in kwargs:
+        if scan_configurations is None:
+            raise TypeError("Missing 'scan_configurations' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if trace_directory is None and 'traceDirectory' in kwargs:
             trace_directory = kwargs['traceDirectory']
-        if 'vipConfigurations' in kwargs:
+        if trace_directory is None:
+            raise TypeError("Missing 'trace_directory' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if vip_configurations is None and 'vipConfigurations' in kwargs:
             vip_configurations = kwargs['vipConfigurations']
+        if vip_configurations is None:
+            raise TypeError("Missing 'vip_configurations' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("asm_instances", asm_instances)
@@ -14756,17 +15782,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             host_name: str,
-             instance_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             instance_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'hostName' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'instanceName' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if instance_name is None and 'instanceName' in kwargs:
             instance_name = kwargs['instanceName']
+        if instance_name is None:
+            raise TypeError("Missing 'instance_name' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("host_name", host_name)
@@ -14817,17 +15849,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             association_type: str,
-             component_id: str,
-             component_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             association_type: Optional[str] = None,
+             component_id: Optional[str] = None,
+             component_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associationType' in kwargs:
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'componentId' in kwargs:
+        if association_type is None:
+            raise TypeError("Missing 'association_type' argument")
+        if component_id is None and 'componentId' in kwargs:
             component_id = kwargs['componentId']
-        if 'componentType' in kwargs:
+        if component_id is None:
+            raise TypeError("Missing 'component_id' argument")
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
 
         _setter("association_type", association_type)
         _setter("component_id", component_id)
@@ -14887,24 +15925,36 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adr_home_directory: str,
-             cluster_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult'],
-             crs_base_directory: str,
-             host_name: str,
-             node_role: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adr_home_directory: Optional[str] = None,
+             cluster_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult']] = None,
+             crs_base_directory: Optional[str] = None,
+             host_name: Optional[str] = None,
+             node_role: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adrHomeDirectory' in kwargs:
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'clusterId' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'crsBaseDirectory' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
             crs_base_directory = kwargs['crsBaseDirectory']
-        if 'hostName' in kwargs:
+        if crs_base_directory is None:
+            raise TypeError("Missing 'crs_base_directory' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'nodeRole' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if node_role is None and 'nodeRole' in kwargs:
             node_role = kwargs['nodeRole']
+        if node_role is None:
+            raise TypeError("Missing 'node_role' argument")
 
         _setter("adr_home_directory", adr_home_directory)
         _setter("cluster_id", cluster_id)
@@ -14994,29 +16044,43 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -15103,17 +16167,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -15173,24 +16243,36 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -15274,15 +16356,25 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -15363,29 +16455,43 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -15472,17 +16578,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -15542,24 +16654,36 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConn
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -15643,15 +16767,25 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConn
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -15726,13 +16860,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             key: str,
-             port: int,
-             protocol: str,
-             services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             key: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             services: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
 
         _setter("host", host)
         _setter("key", key)
@@ -15801,15 +16945,21 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             network_type: str,
-             subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             network_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'networkType' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if network_type is None and 'networkType' in kwargs:
             network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
 
         _setter("network_number", network_number)
         _setter("network_type", network_type)
@@ -15863,16 +17013,24 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult'],
-             container_database_id: str,
-             guid: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult']] = None,
+             container_database_id: Optional[str] = None,
+             guid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerDatabaseId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
+        if container_database_id is None:
+            raise TypeError("Missing 'container_database_id' argument")
+        if guid is None:
+            raise TypeError("Missing 'guid' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
@@ -15944,29 +17102,43 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_failure_message: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult'],
-             connection_status: str,
-             connector_type: str,
-             display_name: str,
-             time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_failure_message: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult']] = None,
+             connection_status: Optional[str] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             time_connection_status_last_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionFailureMessage' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_failure_message is None:
+            raise TypeError("Missing 'connection_failure_message' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connection_status is None:
+            raise TypeError("Missing 'connection_status' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if time_connection_status_last_updated is None:
+            raise TypeError("Missing 'time_connection_status_last_updated' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -16053,17 +17225,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -16123,24 +17301,36 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -16224,15 +17414,25 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -16304,20 +17504,28 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_number: int,
-             scan_name: str,
-             scan_port: int,
-             scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_number: Optional[int] = None,
+             scan_name: Optional[str] = None,
+             scan_port: Optional[int] = None,
+             scan_protocol: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'scanName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if scan_name is None and 'scanName' in kwargs:
             scan_name = kwargs['scanName']
-        if 'scanPort' in kwargs:
+        if scan_name is None:
+            raise TypeError("Missing 'scan_name' argument")
+        if scan_port is None and 'scanPort' in kwargs:
             scan_port = kwargs['scanPort']
-        if 'scanProtocol' in kwargs:
+        if scan_port is None:
+            raise TypeError("Missing 'scan_port' argument")
+        if scan_protocol is None and 'scanProtocol' in kwargs:
             scan_protocol = kwargs['scanProtocol']
+        if scan_protocol is None:
+            raise TypeError("Missing 'scan_protocol' argument")
 
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
@@ -16377,15 +17585,21 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             network_number: int,
-             node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             network_number: Optional[int] = None,
+             node_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkNumber' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if network_number is None and 'networkNumber' in kwargs:
             network_number = kwargs['networkNumber']
-        if 'nodeName' in kwargs:
+        if network_number is None:
+            raise TypeError("Missing 'network_number' argument")
+        if node_name is None and 'nodeName' in kwargs:
             node_name = kwargs['nodeName']
+        if node_name is None:
+            raise TypeError("Missing 'node_name' argument")
 
         _setter("address", address)
         _setter("network_number", network_number)
@@ -16431,11 +17645,17 @@ class GetExternalDbSystemDiscoveryPatchOperationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation: str,
-             selection: str,
-             values: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation: Optional[str] = None,
+             selection: Optional[str] = None,
+             values: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if selection is None:
+            raise TypeError("Missing 'selection' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("operation", operation)
         _setter("selection", selection)
@@ -16480,18 +17700,26 @@ class GetExternalDbSystemDiscoveryPatchOperationValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             connectors: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult'],
-             display_name: str,
-             is_selected_for_monitoring: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             connectors: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult']] = None,
+             display_name: Optional[str] = None,
+             is_selected_for_monitoring: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connectors is None:
+            raise TypeError("Missing 'connectors' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isSelectedForMonitoring' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_selected_for_monitoring is None and 'isSelectedForMonitoring' in kwargs:
             is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+        if is_selected_for_monitoring is None:
+            raise TypeError("Missing 'is_selected_for_monitoring' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
@@ -16554,20 +17782,28 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: str,
-             connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult'],
-             connector_type: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_id: Optional[str] = None,
+             connection_infos: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult']] = None,
+             connector_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionInfos' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectorType' in kwargs:
+        if connection_infos is None:
+            raise TypeError("Missing 'connection_infos' argument")
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("agent_id", agent_id)
         _setter("connection_infos", connection_infos)
@@ -16627,17 +17863,23 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component_type: str,
-             connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
-             connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             component_type: Optional[str] = None,
+             connection_credentials: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult']] = None,
+             connection_strings: Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'componentType' in kwargs:
+        if component_type is None and 'componentType' in kwargs:
             component_type = kwargs['componentType']
-        if 'connectionCredentials' in kwargs:
+        if component_type is None:
+            raise TypeError("Missing 'component_type' argument")
+        if connection_credentials is None and 'connectionCredentials' in kwargs:
             connection_credentials = kwargs['connectionCredentials']
-        if 'connectionStrings' in kwargs:
+        if connection_credentials is None:
+            raise TypeError("Missing 'connection_credentials' argument")
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
+        if connection_strings is None:
+            raise TypeError("Missing 'connection_strings' argument")
 
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
@@ -16697,24 +17939,36 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConn
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credential_name: str,
-             credential_type: str,
-             password_secret_id: str,
-             role: str,
-             ssl_secret_id: str,
-             user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             credential_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'credentialName' in kwargs:
+        if credential_name is None and 'credentialName' in kwargs:
             credential_name = kwargs['credentialName']
-        if 'credentialType' in kwargs:
+        if credential_name is None:
+            raise TypeError("Missing 'credential_name' argument")
+        if credential_type is None and 'credentialType' in kwargs:
             credential_type = kwargs['credentialType']
-        if 'passwordSecretId' in kwargs:
+        if credential_type is None:
+            raise TypeError("Missing 'credential_type' argument")
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
-        if 'sslSecretId' in kwargs:
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
-        if 'userName' in kwargs:
+        if ssl_secret_id is None:
+            raise TypeError("Missing 'ssl_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
 
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
@@ -16798,15 +18052,25 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConn
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host_name: str,
-             hosts: Sequence[str],
-             port: int,
-             protocol: str,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("host_name", host_name)
         _setter("hosts", hosts)
@@ -16872,12 +18136,16 @@ class GetExternalDbSystemStackMonitoringConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             metadata: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("metadata", metadata)
@@ -16910,9 +18178,11 @@ class GetExternalDbSystemsExternalDbSystemCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16972,43 +18242,69 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_management_configs: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult'],
-             db_system_discovery_id: str,
-             discovery_agent_id: str,
-             display_name: str,
-             home_directory: str,
-             id: str,
-             is_cluster: bool,
-             lifecycle_details: str,
-             stack_monitoring_configs: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_management_configs: Optional[Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult']] = None,
+             db_system_discovery_id: Optional[str] = None,
+             discovery_agent_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             home_directory: Optional[str] = None,
+             id: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             stack_monitoring_configs: Optional[Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseManagementConfigs' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_management_configs is None and 'databaseManagementConfigs' in kwargs:
             database_management_configs = kwargs['databaseManagementConfigs']
-        if 'dbSystemDiscoveryId' in kwargs:
+        if database_management_configs is None:
+            raise TypeError("Missing 'database_management_configs' argument")
+        if db_system_discovery_id is None and 'dbSystemDiscoveryId' in kwargs:
             db_system_discovery_id = kwargs['dbSystemDiscoveryId']
-        if 'discoveryAgentId' in kwargs:
+        if db_system_discovery_id is None:
+            raise TypeError("Missing 'db_system_discovery_id' argument")
+        if discovery_agent_id is None and 'discoveryAgentId' in kwargs:
             discovery_agent_id = kwargs['discoveryAgentId']
-        if 'displayName' in kwargs:
+        if discovery_agent_id is None:
+            raise TypeError("Missing 'discovery_agent_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'homeDirectory' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'isCluster' in kwargs:
+        if home_directory is None:
+            raise TypeError("Missing 'home_directory' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'lifecycleDetails' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'stackMonitoringConfigs' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if stack_monitoring_configs is None and 'stackMonitoringConfigs' in kwargs:
             stack_monitoring_configs = kwargs['stackMonitoringConfigs']
-        if 'timeCreated' in kwargs:
+        if stack_monitoring_configs is None:
+            raise TypeError("Missing 'stack_monitoring_configs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_management_configs", database_management_configs)
@@ -17143,11 +18439,13 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             license_model: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
 
         _setter("license_model", license_model)
 
@@ -17177,12 +18475,16 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             metadata: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("metadata", metadata)
@@ -17219,11 +18521,15 @@ class GetExternalDbSystemsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -17293,36 +18599,60 @@ class GetExternalExadataInfrastructureDatabaseSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             internal_id: str,
-             license_model: str,
-             lifecycle_details: str,
-             state: str,
-             status: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             license_model: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'licenseModel' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -17478,33 +18808,55 @@ class GetExternalExadataInfrastructureStorageGridResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             display_name: str,
-             id: str,
-             internal_id: str,
-             lifecycle_details: str,
-             server_count: float,
-             state: str,
-             status: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             server_count: Optional[float] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'displayName' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'lifecycleDetails' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'serverCount' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if server_count is None and 'serverCount' in kwargs:
             server_count = kwargs['serverCount']
-        if 'timeCreated' in kwargs:
+        if server_count is None:
+            raise TypeError("Missing 'server_count' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("display_name", display_name)
@@ -17618,9 +18970,11 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17695,57 +19049,95 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             database_compartments: Sequence[str],
-             database_systems: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult'],
-             db_system_ids: Sequence[str],
-             discovery_key: str,
-             display_name: str,
-             id: str,
-             internal_id: str,
-             license_model: str,
-             lifecycle_details: str,
-             rack_size: str,
-             state: str,
-             status: str,
-             storage_grids: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult'],
-             storage_server_names: Sequence[str],
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             database_compartments: Optional[Sequence[str]] = None,
+             database_systems: Optional[Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult']] = None,
+             db_system_ids: Optional[Sequence[str]] = None,
+             discovery_key: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             license_model: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             rack_size: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             storage_grids: Optional[Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult']] = None,
+             storage_server_names: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseCompartments' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_compartments is None and 'databaseCompartments' in kwargs:
             database_compartments = kwargs['databaseCompartments']
-        if 'databaseSystems' in kwargs:
+        if database_compartments is None:
+            raise TypeError("Missing 'database_compartments' argument")
+        if database_systems is None and 'databaseSystems' in kwargs:
             database_systems = kwargs['databaseSystems']
-        if 'dbSystemIds' in kwargs:
+        if database_systems is None:
+            raise TypeError("Missing 'database_systems' argument")
+        if db_system_ids is None and 'dbSystemIds' in kwargs:
             db_system_ids = kwargs['dbSystemIds']
-        if 'discoveryKey' in kwargs:
+        if db_system_ids is None:
+            raise TypeError("Missing 'db_system_ids' argument")
+        if discovery_key is None and 'discoveryKey' in kwargs:
             discovery_key = kwargs['discoveryKey']
-        if 'displayName' in kwargs:
+        if discovery_key is None:
+            raise TypeError("Missing 'discovery_key' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'licenseModel' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'rackSize' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if rack_size is None and 'rackSize' in kwargs:
             rack_size = kwargs['rackSize']
-        if 'storageGrids' in kwargs:
+        if rack_size is None:
+            raise TypeError("Missing 'rack_size' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if storage_grids is None and 'storageGrids' in kwargs:
             storage_grids = kwargs['storageGrids']
-        if 'storageServerNames' in kwargs:
+        if storage_grids is None:
+            raise TypeError("Missing 'storage_grids' argument")
+        if storage_server_names is None and 'storageServerNames' in kwargs:
             storage_server_names = kwargs['storageServerNames']
-        if 'timeCreated' in kwargs:
+        if storage_server_names is None:
+            raise TypeError("Missing 'storage_server_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -17958,36 +19350,60 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             internal_id: str,
-             license_model: str,
-             lifecycle_details: str,
-             state: str,
-             status: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             license_model: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'licenseModel' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if license_model is None:
+            raise TypeError("Missing 'license_model' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -18143,33 +19559,55 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             display_name: str,
-             id: str,
-             internal_id: str,
-             lifecycle_details: str,
-             server_count: float,
-             state: str,
-             status: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             server_count: Optional[float] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'displayName' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'lifecycleDetails' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'serverCount' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if server_count is None and 'serverCount' in kwargs:
             server_count = kwargs['serverCount']
-        if 'timeCreated' in kwargs:
+        if server_count is None:
+            raise TypeError("Missing 'server_count' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("display_name", display_name)
@@ -18287,11 +19725,15 @@ class GetExternalExadataInfrastructuresFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -18333,19 +19775,29 @@ class GetExternalExadataStorageConnectorCredentialInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: str,
-             ssl_trust_store_location: str,
-             ssl_trust_store_password: str,
-             ssl_trust_store_type: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[str] = None,
+             ssl_trust_store_location: Optional[str] = None,
+             ssl_trust_store_password: Optional[str] = None,
+             ssl_trust_store_type: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sslTrustStoreLocation' in kwargs:
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if ssl_trust_store_location is None and 'sslTrustStoreLocation' in kwargs:
             ssl_trust_store_location = kwargs['sslTrustStoreLocation']
-        if 'sslTrustStorePassword' in kwargs:
+        if ssl_trust_store_location is None:
+            raise TypeError("Missing 'ssl_trust_store_location' argument")
+        if ssl_trust_store_password is None and 'sslTrustStorePassword' in kwargs:
             ssl_trust_store_password = kwargs['sslTrustStorePassword']
-        if 'sslTrustStoreType' in kwargs:
+        if ssl_trust_store_password is None:
+            raise TypeError("Missing 'ssl_trust_store_password' argument")
+        if ssl_trust_store_type is None and 'sslTrustStoreType' in kwargs:
             ssl_trust_store_type = kwargs['sslTrustStoreType']
+        if ssl_trust_store_type is None:
+            raise TypeError("Missing 'ssl_trust_store_type' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("ssl_trust_store_location", ssl_trust_store_location)
@@ -18390,9 +19842,11 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -18459,48 +19913,80 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             agent_id: str,
-             connection_uri: str,
-             connector_name: str,
-             credential_infos: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult'],
-             display_name: str,
-             exadata_infrastructure_id: str,
-             id: str,
-             internal_id: str,
-             lifecycle_details: str,
-             state: str,
-             status: str,
-             storage_server_id: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             agent_id: Optional[str] = None,
+             connection_uri: Optional[str] = None,
+             connector_name: Optional[str] = None,
+             credential_infos: Optional[Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult']] = None,
+             display_name: Optional[str] = None,
+             exadata_infrastructure_id: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             storage_server_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'agentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionUri' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_uri is None and 'connectionUri' in kwargs:
             connection_uri = kwargs['connectionUri']
-        if 'connectorName' in kwargs:
+        if connection_uri is None:
+            raise TypeError("Missing 'connection_uri' argument")
+        if connector_name is None and 'connectorName' in kwargs:
             connector_name = kwargs['connectorName']
-        if 'credentialInfos' in kwargs:
+        if connector_name is None:
+            raise TypeError("Missing 'connector_name' argument")
+        if credential_infos is None and 'credentialInfos' in kwargs:
             credential_infos = kwargs['credentialInfos']
-        if 'displayName' in kwargs:
+        if credential_infos is None:
+            raise TypeError("Missing 'credential_infos' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'internalId' in kwargs:
+        if exadata_infrastructure_id is None:
+            raise TypeError("Missing 'exadata_infrastructure_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'lifecycleDetails' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'storageServerId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if storage_server_id is None and 'storageServerId' in kwargs:
             storage_server_id = kwargs['storageServerId']
-        if 'timeCreated' in kwargs:
+        if storage_server_id is None:
+            raise TypeError("Missing 'storage_server_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("agent_id", agent_id)
@@ -18661,19 +20147,29 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             password: str,
-             ssl_trust_store_location: str,
-             ssl_trust_store_password: str,
-             ssl_trust_store_type: str,
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             password: Optional[str] = None,
+             ssl_trust_store_location: Optional[str] = None,
+             ssl_trust_store_password: Optional[str] = None,
+             ssl_trust_store_type: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sslTrustStoreLocation' in kwargs:
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if ssl_trust_store_location is None and 'sslTrustStoreLocation' in kwargs:
             ssl_trust_store_location = kwargs['sslTrustStoreLocation']
-        if 'sslTrustStorePassword' in kwargs:
+        if ssl_trust_store_location is None:
+            raise TypeError("Missing 'ssl_trust_store_location' argument")
+        if ssl_trust_store_password is None and 'sslTrustStorePassword' in kwargs:
             ssl_trust_store_password = kwargs['sslTrustStorePassword']
-        if 'sslTrustStoreType' in kwargs:
+        if ssl_trust_store_password is None:
+            raise TypeError("Missing 'ssl_trust_store_password' argument")
+        if ssl_trust_store_type is None and 'sslTrustStoreType' in kwargs:
             ssl_trust_store_type = kwargs['sslTrustStoreType']
+        if ssl_trust_store_type is None:
+            raise TypeError("Missing 'ssl_trust_store_type' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("password", password)
         _setter("ssl_trust_store_location", ssl_trust_store_location)
@@ -18722,11 +20218,15 @@ class GetExternalExadataStorageConnectorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -18820,60 +20320,100 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             connector_id: str,
-             cpu_count: float,
-             display_name: str,
-             id: str,
-             internal_id: str,
-             ip_address: str,
-             lifecycle_details: str,
-             make_model: str,
-             max_flash_disk_iops: int,
-             max_flash_disk_throughput: int,
-             max_hard_disk_iops: int,
-             max_hard_disk_throughput: int,
-             memory_gb: float,
-             resource_type: str,
-             state: str,
-             status: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             connector_id: Optional[str] = None,
+             cpu_count: Optional[float] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             make_model: Optional[str] = None,
+             max_flash_disk_iops: Optional[int] = None,
+             max_flash_disk_throughput: Optional[int] = None,
+             max_hard_disk_iops: Optional[int] = None,
+             max_hard_disk_throughput: Optional[int] = None,
+             memory_gb: Optional[float] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'connectorId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'cpuCount' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if cpu_count is None and 'cpuCount' in kwargs:
             cpu_count = kwargs['cpuCount']
-        if 'displayName' in kwargs:
+        if cpu_count is None:
+            raise TypeError("Missing 'cpu_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'ipAddress' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'lifecycleDetails' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'makeModel' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if make_model is None and 'makeModel' in kwargs:
             make_model = kwargs['makeModel']
-        if 'maxFlashDiskIops' in kwargs:
+        if make_model is None:
+            raise TypeError("Missing 'make_model' argument")
+        if max_flash_disk_iops is None and 'maxFlashDiskIops' in kwargs:
             max_flash_disk_iops = kwargs['maxFlashDiskIops']
-        if 'maxFlashDiskThroughput' in kwargs:
+        if max_flash_disk_iops is None:
+            raise TypeError("Missing 'max_flash_disk_iops' argument")
+        if max_flash_disk_throughput is None and 'maxFlashDiskThroughput' in kwargs:
             max_flash_disk_throughput = kwargs['maxFlashDiskThroughput']
-        if 'maxHardDiskIops' in kwargs:
+        if max_flash_disk_throughput is None:
+            raise TypeError("Missing 'max_flash_disk_throughput' argument")
+        if max_hard_disk_iops is None and 'maxHardDiskIops' in kwargs:
             max_hard_disk_iops = kwargs['maxHardDiskIops']
-        if 'maxHardDiskThroughput' in kwargs:
+        if max_hard_disk_iops is None:
+            raise TypeError("Missing 'max_hard_disk_iops' argument")
+        if max_hard_disk_throughput is None and 'maxHardDiskThroughput' in kwargs:
             max_hard_disk_throughput = kwargs['maxHardDiskThroughput']
-        if 'memoryGb' in kwargs:
+        if max_hard_disk_throughput is None:
+            raise TypeError("Missing 'max_hard_disk_throughput' argument")
+        if memory_gb is None and 'memoryGb' in kwargs:
             memory_gb = kwargs['memoryGb']
-        if 'resourceType' in kwargs:
+        if memory_gb is None:
+            raise TypeError("Missing 'memory_gb' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'timeCreated' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("connector_id", connector_id)
@@ -19110,42 +20650,70 @@ class GetExternalExadataStorageServerConnectorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             agent_id: str,
-             connection_uri: str,
-             display_name: str,
-             id: str,
-             internal_id: str,
-             lifecycle_details: str,
-             resource_type: str,
-             state: str,
-             status: str,
-             storage_server_id: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             agent_id: Optional[str] = None,
+             connection_uri: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             storage_server_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'agentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionUri' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_uri is None and 'connectionUri' in kwargs:
             connection_uri = kwargs['connectionUri']
-        if 'displayName' in kwargs:
+        if connection_uri is None:
+            raise TypeError("Missing 'connection_uri' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'internalId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'lifecycleDetails' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'resourceType' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'storageServerId' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if storage_server_id is None and 'storageServerId' in kwargs:
             storage_server_id = kwargs['storageServerId']
-        if 'timeCreated' in kwargs:
+        if storage_server_id is None:
+            raise TypeError("Missing 'storage_server_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("agent_id", agent_id)
@@ -19289,9 +20857,11 @@ class GetExternalExadataStorageServerIormPlanDbPlanResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -19370,48 +20940,84 @@ class GetExternalExadataStorageServerIormPlanDbPlanItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allocation: int,
-             asm_cluster: str,
-             flash_cache_limit: str,
-             flash_cache_min: str,
-             flash_cache_size: str,
-             is_flash_cache_on: bool,
-             is_flash_log_on: bool,
-             is_pmem_cache_on: bool,
-             is_pmem_log_on: bool,
-             level: int,
-             limit: int,
-             name: str,
-             pmem_cache_limit: str,
-             pmem_cache_min: str,
-             pmem_cache_size: str,
-             role: str,
-             share: int,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allocation: Optional[int] = None,
+             asm_cluster: Optional[str] = None,
+             flash_cache_limit: Optional[str] = None,
+             flash_cache_min: Optional[str] = None,
+             flash_cache_size: Optional[str] = None,
+             is_flash_cache_on: Optional[bool] = None,
+             is_flash_log_on: Optional[bool] = None,
+             is_pmem_cache_on: Optional[bool] = None,
+             is_pmem_log_on: Optional[bool] = None,
+             level: Optional[int] = None,
+             limit: Optional[int] = None,
+             name: Optional[str] = None,
+             pmem_cache_limit: Optional[str] = None,
+             pmem_cache_min: Optional[str] = None,
+             pmem_cache_size: Optional[str] = None,
+             role: Optional[str] = None,
+             share: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'asmCluster' in kwargs:
+        if allocation is None:
+            raise TypeError("Missing 'allocation' argument")
+        if asm_cluster is None and 'asmCluster' in kwargs:
             asm_cluster = kwargs['asmCluster']
-        if 'flashCacheLimit' in kwargs:
+        if asm_cluster is None:
+            raise TypeError("Missing 'asm_cluster' argument")
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
             flash_cache_limit = kwargs['flashCacheLimit']
-        if 'flashCacheMin' in kwargs:
+        if flash_cache_limit is None:
+            raise TypeError("Missing 'flash_cache_limit' argument")
+        if flash_cache_min is None and 'flashCacheMin' in kwargs:
             flash_cache_min = kwargs['flashCacheMin']
-        if 'flashCacheSize' in kwargs:
+        if flash_cache_min is None:
+            raise TypeError("Missing 'flash_cache_min' argument")
+        if flash_cache_size is None and 'flashCacheSize' in kwargs:
             flash_cache_size = kwargs['flashCacheSize']
-        if 'isFlashCacheOn' in kwargs:
+        if flash_cache_size is None:
+            raise TypeError("Missing 'flash_cache_size' argument")
+        if is_flash_cache_on is None and 'isFlashCacheOn' in kwargs:
             is_flash_cache_on = kwargs['isFlashCacheOn']
-        if 'isFlashLogOn' in kwargs:
+        if is_flash_cache_on is None:
+            raise TypeError("Missing 'is_flash_cache_on' argument")
+        if is_flash_log_on is None and 'isFlashLogOn' in kwargs:
             is_flash_log_on = kwargs['isFlashLogOn']
-        if 'isPmemCacheOn' in kwargs:
+        if is_flash_log_on is None:
+            raise TypeError("Missing 'is_flash_log_on' argument")
+        if is_pmem_cache_on is None and 'isPmemCacheOn' in kwargs:
             is_pmem_cache_on = kwargs['isPmemCacheOn']
-        if 'isPmemLogOn' in kwargs:
+        if is_pmem_cache_on is None:
+            raise TypeError("Missing 'is_pmem_cache_on' argument")
+        if is_pmem_log_on is None and 'isPmemLogOn' in kwargs:
             is_pmem_log_on = kwargs['isPmemLogOn']
-        if 'pmemCacheLimit' in kwargs:
+        if is_pmem_log_on is None:
+            raise TypeError("Missing 'is_pmem_log_on' argument")
+        if level is None:
+            raise TypeError("Missing 'level' argument")
+        if limit is None:
+            raise TypeError("Missing 'limit' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if pmem_cache_limit is None and 'pmemCacheLimit' in kwargs:
             pmem_cache_limit = kwargs['pmemCacheLimit']
-        if 'pmemCacheMin' in kwargs:
+        if pmem_cache_limit is None:
+            raise TypeError("Missing 'pmem_cache_limit' argument")
+        if pmem_cache_min is None and 'pmemCacheMin' in kwargs:
             pmem_cache_min = kwargs['pmemCacheMin']
-        if 'pmemCacheSize' in kwargs:
+        if pmem_cache_min is None:
+            raise TypeError("Missing 'pmem_cache_min' argument")
+        if pmem_cache_size is None and 'pmemCacheSize' in kwargs:
             pmem_cache_size = kwargs['pmemCacheSize']
+        if pmem_cache_size is None:
+            raise TypeError("Missing 'pmem_cache_size' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if share is None:
+            raise TypeError("Missing 'share' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("allocation", allocation)
         _setter("asm_cluster", asm_cluster)
@@ -19599,14 +21205,22 @@ class GetExternalExadataStorageServerOpenAlertHistoryAlertResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             severity: str,
-             time_start_at: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             severity: Optional[str] = None,
+             time_start_at: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeStartAt' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if time_start_at is None and 'timeStartAt' in kwargs:
             time_start_at = kwargs['timeStartAt']
+        if time_start_at is None:
+            raise TypeError("Missing 'time_start_at' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("message", message)
         _setter("severity", severity)
@@ -19666,17 +21280,23 @@ class GetExternalExadataStorageServerTopSqlCpuActivityActivityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cpu_activity: float,
-             database_name: str,
-             sql_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cpu_activity: Optional[float] = None,
+             database_name: Optional[str] = None,
+             sql_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cpuActivity' in kwargs:
+        if cpu_activity is None and 'cpuActivity' in kwargs:
             cpu_activity = kwargs['cpuActivity']
-        if 'databaseName' in kwargs:
+        if cpu_activity is None:
+            raise TypeError("Missing 'cpu_activity' argument")
+        if database_name is None and 'databaseName' in kwargs:
             database_name = kwargs['databaseName']
-        if 'sqlId' in kwargs:
+        if database_name is None:
+            raise TypeError("Missing 'database_name' argument")
+        if sql_id is None and 'sqlId' in kwargs:
             sql_id = kwargs['sqlId']
+        if sql_id is None:
+            raise TypeError("Missing 'sql_id' argument")
 
         _setter("cpu_activity", cpu_activity)
         _setter("database_name", database_name)
@@ -19718,9 +21338,11 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -19806,66 +21428,110 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             connector_id: str,
-             cpu_count: float,
-             display_name: str,
-             exadata_infrastructure_id: str,
-             id: str,
-             internal_id: str,
-             ip_address: str,
-             lifecycle_details: str,
-             make_model: str,
-             max_flash_disk_iops: int,
-             max_flash_disk_throughput: int,
-             max_hard_disk_iops: int,
-             max_hard_disk_throughput: int,
-             memory_gb: float,
-             resource_type: str,
-             state: str,
-             status: str,
-             storage_grid_id: str,
-             time_created: str,
-             time_updated: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             connector_id: Optional[str] = None,
+             cpu_count: Optional[float] = None,
+             display_name: Optional[str] = None,
+             exadata_infrastructure_id: Optional[str] = None,
+             id: Optional[str] = None,
+             internal_id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             make_model: Optional[str] = None,
+             max_flash_disk_iops: Optional[int] = None,
+             max_flash_disk_throughput: Optional[int] = None,
+             max_hard_disk_iops: Optional[int] = None,
+             max_hard_disk_throughput: Optional[int] = None,
+             memory_gb: Optional[float] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             storage_grid_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'connectorId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'cpuCount' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if cpu_count is None and 'cpuCount' in kwargs:
             cpu_count = kwargs['cpuCount']
-        if 'displayName' in kwargs:
+        if cpu_count is None:
+            raise TypeError("Missing 'cpu_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'internalId' in kwargs:
+        if exadata_infrastructure_id is None:
+            raise TypeError("Missing 'exadata_infrastructure_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if internal_id is None and 'internalId' in kwargs:
             internal_id = kwargs['internalId']
-        if 'ipAddress' in kwargs:
+        if internal_id is None:
+            raise TypeError("Missing 'internal_id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'lifecycleDetails' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'makeModel' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if make_model is None and 'makeModel' in kwargs:
             make_model = kwargs['makeModel']
-        if 'maxFlashDiskIops' in kwargs:
+        if make_model is None:
+            raise TypeError("Missing 'make_model' argument")
+        if max_flash_disk_iops is None and 'maxFlashDiskIops' in kwargs:
             max_flash_disk_iops = kwargs['maxFlashDiskIops']
-        if 'maxFlashDiskThroughput' in kwargs:
+        if max_flash_disk_iops is None:
+            raise TypeError("Missing 'max_flash_disk_iops' argument")
+        if max_flash_disk_throughput is None and 'maxFlashDiskThroughput' in kwargs:
             max_flash_disk_throughput = kwargs['maxFlashDiskThroughput']
-        if 'maxHardDiskIops' in kwargs:
+        if max_flash_disk_throughput is None:
+            raise TypeError("Missing 'max_flash_disk_throughput' argument")
+        if max_hard_disk_iops is None and 'maxHardDiskIops' in kwargs:
             max_hard_disk_iops = kwargs['maxHardDiskIops']
-        if 'maxHardDiskThroughput' in kwargs:
+        if max_hard_disk_iops is None:
+            raise TypeError("Missing 'max_hard_disk_iops' argument")
+        if max_hard_disk_throughput is None and 'maxHardDiskThroughput' in kwargs:
             max_hard_disk_throughput = kwargs['maxHardDiskThroughput']
-        if 'memoryGb' in kwargs:
+        if max_hard_disk_throughput is None:
+            raise TypeError("Missing 'max_hard_disk_throughput' argument")
+        if memory_gb is None and 'memoryGb' in kwargs:
             memory_gb = kwargs['memoryGb']
-        if 'resourceType' in kwargs:
+        if memory_gb is None:
+            raise TypeError("Missing 'memory_gb' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'storageGridId' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if storage_grid_id is None and 'storageGridId' in kwargs:
             storage_grid_id = kwargs['storageGridId']
-        if 'timeCreated' in kwargs:
+        if storage_grid_id is None:
+            raise TypeError("Missing 'storage_grid_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("connector_id", connector_id)
@@ -20079,11 +21745,15 @@ class GetExternalExadataStorageServersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -20132,13 +21802,23 @@ class GetExternalListenerEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             key: str,
-             port: int,
-             protocol: str,
-             services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             key: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             services: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
 
         _setter("host", host)
         _setter("key", key)
@@ -20207,15 +21887,21 @@ class GetExternalListenerServicedAsmResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -20278,27 +21964,41 @@ class GetExternalListenerServicedDatabaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             db_unique_name: str,
-             display_name: str,
-             id: str,
-             is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_managed: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'displayName' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
+        if is_managed is None:
+            raise TypeError("Missing 'is_managed' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -20379,9 +22079,11 @@ class GetExternalListenerServicesExternalListenerServiceCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalListenerServicesExternalListenerServiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalListenerServicesExternalListenerServiceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -20414,15 +22116,21 @@ class GetExternalListenerServicesExternalListenerServiceCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             listener_id: str,
-             managed_database_id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             listener_id: Optional[str] = None,
+             managed_database_id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listenerId' in kwargs:
+        if listener_id is None and 'listenerId' in kwargs:
             listener_id = kwargs['listenerId']
-        if 'managedDatabaseId' in kwargs:
+        if listener_id is None:
+            raise TypeError("Missing 'listener_id' argument")
+        if managed_database_id is None and 'managedDatabaseId' in kwargs:
             managed_database_id = kwargs['managedDatabaseId']
+        if managed_database_id is None:
+            raise TypeError("Missing 'managed_database_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("listener_id", listener_id)
         _setter("managed_database_id", managed_database_id)
@@ -20471,11 +22179,15 @@ class GetExternalListenerServicesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -20512,9 +22224,11 @@ class GetExternalListenersExternalListenerCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetExternalListenersExternalListenerCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -20612,78 +22326,130 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             adr_home_directory: str,
-             compartment_id: str,
-             component_name: str,
-             display_name: str,
-             endpoints: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemEndpointResult'],
-             external_connector_id: str,
-             external_db_home_id: str,
-             external_db_node_id: str,
-             external_db_system_id: str,
-             external_listener_id: str,
-             host_name: str,
-             id: str,
-             lifecycle_details: str,
-             listener_alias: str,
-             listener_ora_location: str,
-             listener_type: str,
-             log_directory: str,
-             oracle_home: str,
-             serviced_asms: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedAsmResult'],
-             serviced_databases: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             trace_directory: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             adr_home_directory: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             component_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetExternalListenersExternalListenerCollectionItemEndpointResult']] = None,
+             external_connector_id: Optional[str] = None,
+             external_db_home_id: Optional[str] = None,
+             external_db_node_id: Optional[str] = None,
+             external_db_system_id: Optional[str] = None,
+             external_listener_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             listener_alias: Optional[str] = None,
+             listener_ora_location: Optional[str] = None,
+             listener_type: Optional[str] = None,
+             log_directory: Optional[str] = None,
+             oracle_home: Optional[str] = None,
+             serviced_asms: Optional[Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedAsmResult']] = None,
+             serviced_databases: Optional[Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trace_directory: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'adrHomeDirectory' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
             adr_home_directory = kwargs['adrHomeDirectory']
-        if 'compartmentId' in kwargs:
+        if adr_home_directory is None:
+            raise TypeError("Missing 'adr_home_directory' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_name is None and 'componentName' in kwargs:
             component_name = kwargs['componentName']
-        if 'displayName' in kwargs:
+        if component_name is None:
+            raise TypeError("Missing 'component_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalConnectorId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
             external_connector_id = kwargs['externalConnectorId']
-        if 'externalDbHomeId' in kwargs:
+        if external_connector_id is None:
+            raise TypeError("Missing 'external_connector_id' argument")
+        if external_db_home_id is None and 'externalDbHomeId' in kwargs:
             external_db_home_id = kwargs['externalDbHomeId']
-        if 'externalDbNodeId' in kwargs:
+        if external_db_home_id is None:
+            raise TypeError("Missing 'external_db_home_id' argument")
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
             external_db_node_id = kwargs['externalDbNodeId']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_node_id is None:
+            raise TypeError("Missing 'external_db_node_id' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'externalListenerId' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if external_listener_id is None and 'externalListenerId' in kwargs:
             external_listener_id = kwargs['externalListenerId']
-        if 'hostName' in kwargs:
+        if external_listener_id is None:
+            raise TypeError("Missing 'external_listener_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'lifecycleDetails' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'listenerAlias' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if listener_alias is None and 'listenerAlias' in kwargs:
             listener_alias = kwargs['listenerAlias']
-        if 'listenerOraLocation' in kwargs:
+        if listener_alias is None:
+            raise TypeError("Missing 'listener_alias' argument")
+        if listener_ora_location is None and 'listenerOraLocation' in kwargs:
             listener_ora_location = kwargs['listenerOraLocation']
-        if 'listenerType' in kwargs:
+        if listener_ora_location is None:
+            raise TypeError("Missing 'listener_ora_location' argument")
+        if listener_type is None and 'listenerType' in kwargs:
             listener_type = kwargs['listenerType']
-        if 'logDirectory' in kwargs:
+        if listener_type is None:
+            raise TypeError("Missing 'listener_type' argument")
+        if log_directory is None and 'logDirectory' in kwargs:
             log_directory = kwargs['logDirectory']
-        if 'oracleHome' in kwargs:
+        if log_directory is None:
+            raise TypeError("Missing 'log_directory' argument")
+        if oracle_home is None and 'oracleHome' in kwargs:
             oracle_home = kwargs['oracleHome']
-        if 'servicedAsms' in kwargs:
+        if oracle_home is None:
+            raise TypeError("Missing 'oracle_home' argument")
+        if serviced_asms is None and 'servicedAsms' in kwargs:
             serviced_asms = kwargs['servicedAsms']
-        if 'servicedDatabases' in kwargs:
+        if serviced_asms is None:
+            raise TypeError("Missing 'serviced_asms' argument")
+        if serviced_databases is None and 'servicedDatabases' in kwargs:
             serviced_databases = kwargs['servicedDatabases']
-        if 'timeCreated' in kwargs:
+        if serviced_databases is None:
+            raise TypeError("Missing 'serviced_databases' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'traceDirectory' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trace_directory is None and 'traceDirectory' in kwargs:
             trace_directory = kwargs['traceDirectory']
+        if trace_directory is None:
+            raise TypeError("Missing 'trace_directory' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("additional_details", additional_details)
         _setter("adr_home_directory", adr_home_directory)
@@ -20944,13 +22710,23 @@ class GetExternalListenersExternalListenerCollectionItemEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             host: str,
-             key: str,
-             port: int,
-             protocol: str,
-             services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             host: Optional[str] = None,
+             key: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             services: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if services is None:
+            raise TypeError("Missing 'services' argument")
 
         _setter("host", host)
         _setter("key", key)
@@ -21019,15 +22795,21 @@ class GetExternalListenersExternalListenerCollectionItemServicedAsmResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             display_name: str,
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -21090,27 +22872,41 @@ class GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             db_unique_name: str,
-             display_name: str,
-             id: str,
-             is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_managed: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbUniqueName' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
             db_unique_name = kwargs['dbUniqueName']
-        if 'displayName' in kwargs:
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isManaged' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_managed is None and 'isManaged' in kwargs:
             is_managed = kwargs['isManaged']
+        if is_managed is None:
+            raise TypeError("Missing 'is_managed' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -21192,11 +22988,15 @@ class GetExternalListenersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -21236,10 +23036,14 @@ class GetJobExecutionsStatusItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -21279,11 +23083,15 @@ class GetJobExecutionsStatusesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -21323,9 +23131,11 @@ class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -21355,10 +23165,14 @@ class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -21427,38 +23241,62 @@ class GetManagedDatabaseAddmTaskItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             begin_snapshot_id: str,
-             db_user: str,
-             description: str,
-             end_snapshot_id: str,
-             end_snapshot_time: str,
-             findings: str,
-             how_created: str,
-             start_snapshot_time: str,
-             status: str,
-             task_id: str,
-             task_name: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             begin_snapshot_id: Optional[str] = None,
+             db_user: Optional[str] = None,
+             description: Optional[str] = None,
+             end_snapshot_id: Optional[str] = None,
+             end_snapshot_time: Optional[str] = None,
+             findings: Optional[str] = None,
+             how_created: Optional[str] = None,
+             start_snapshot_time: Optional[str] = None,
+             status: Optional[str] = None,
+             task_id: Optional[str] = None,
+             task_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'beginSnapshotId' in kwargs:
+        if begin_snapshot_id is None and 'beginSnapshotId' in kwargs:
             begin_snapshot_id = kwargs['beginSnapshotId']
-        if 'dbUser' in kwargs:
+        if begin_snapshot_id is None:
+            raise TypeError("Missing 'begin_snapshot_id' argument")
+        if db_user is None and 'dbUser' in kwargs:
             db_user = kwargs['dbUser']
-        if 'endSnapshotId' in kwargs:
+        if db_user is None:
+            raise TypeError("Missing 'db_user' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if end_snapshot_id is None and 'endSnapshotId' in kwargs:
             end_snapshot_id = kwargs['endSnapshotId']
-        if 'endSnapshotTime' in kwargs:
+        if end_snapshot_id is None:
+            raise TypeError("Missing 'end_snapshot_id' argument")
+        if end_snapshot_time is None and 'endSnapshotTime' in kwargs:
             end_snapshot_time = kwargs['endSnapshotTime']
-        if 'howCreated' in kwargs:
+        if end_snapshot_time is None:
+            raise TypeError("Missing 'end_snapshot_time' argument")
+        if findings is None:
+            raise TypeError("Missing 'findings' argument")
+        if how_created is None and 'howCreated' in kwargs:
             how_created = kwargs['howCreated']
-        if 'startSnapshotTime' in kwargs:
+        if how_created is None:
+            raise TypeError("Missing 'how_created' argument")
+        if start_snapshot_time is None and 'startSnapshotTime' in kwargs:
             start_snapshot_time = kwargs['startSnapshotTime']
-        if 'taskId' in kwargs:
+        if start_snapshot_time is None:
+            raise TypeError("Missing 'start_snapshot_time' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if task_id is None and 'taskId' in kwargs:
             task_id = kwargs['taskId']
-        if 'taskName' in kwargs:
+        if task_id is None:
+            raise TypeError("Missing 'task_id' argument")
+        if task_name is None and 'taskName' in kwargs:
             task_name = kwargs['taskName']
-        if 'timeCreated' in kwargs:
+        if task_name is None:
+            raise TypeError("Missing 'task_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("begin_snapshot_id", begin_snapshot_id)
         _setter("db_user", db_user)
@@ -21584,9 +23422,11 @@ class GetManagedDatabaseAddmTasksAddmTasksCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -21646,38 +23486,62 @@ class GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             begin_snapshot_id: str,
-             db_user: str,
-             description: str,
-             end_snapshot_id: str,
-             end_snapshot_time: str,
-             findings: str,
-             how_created: str,
-             start_snapshot_time: str,
-             status: str,
-             task_id: str,
-             task_name: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             begin_snapshot_id: Optional[str] = None,
+             db_user: Optional[str] = None,
+             description: Optional[str] = None,
+             end_snapshot_id: Optional[str] = None,
+             end_snapshot_time: Optional[str] = None,
+             findings: Optional[str] = None,
+             how_created: Optional[str] = None,
+             start_snapshot_time: Optional[str] = None,
+             status: Optional[str] = None,
+             task_id: Optional[str] = None,
+             task_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'beginSnapshotId' in kwargs:
+        if begin_snapshot_id is None and 'beginSnapshotId' in kwargs:
             begin_snapshot_id = kwargs['beginSnapshotId']
-        if 'dbUser' in kwargs:
+        if begin_snapshot_id is None:
+            raise TypeError("Missing 'begin_snapshot_id' argument")
+        if db_user is None and 'dbUser' in kwargs:
             db_user = kwargs['dbUser']
-        if 'endSnapshotId' in kwargs:
+        if db_user is None:
+            raise TypeError("Missing 'db_user' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if end_snapshot_id is None and 'endSnapshotId' in kwargs:
             end_snapshot_id = kwargs['endSnapshotId']
-        if 'endSnapshotTime' in kwargs:
+        if end_snapshot_id is None:
+            raise TypeError("Missing 'end_snapshot_id' argument")
+        if end_snapshot_time is None and 'endSnapshotTime' in kwargs:
             end_snapshot_time = kwargs['endSnapshotTime']
-        if 'howCreated' in kwargs:
+        if end_snapshot_time is None:
+            raise TypeError("Missing 'end_snapshot_time' argument")
+        if findings is None:
+            raise TypeError("Missing 'findings' argument")
+        if how_created is None and 'howCreated' in kwargs:
             how_created = kwargs['howCreated']
-        if 'startSnapshotTime' in kwargs:
+        if how_created is None:
+            raise TypeError("Missing 'how_created' argument")
+        if start_snapshot_time is None and 'startSnapshotTime' in kwargs:
             start_snapshot_time = kwargs['startSnapshotTime']
-        if 'taskId' in kwargs:
+        if start_snapshot_time is None:
+            raise TypeError("Missing 'start_snapshot_time' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if task_id is None and 'taskId' in kwargs:
             task_id = kwargs['taskId']
-        if 'taskName' in kwargs:
+        if task_id is None:
+            raise TypeError("Missing 'task_id' argument")
+        if task_name is None and 'taskName' in kwargs:
             task_name = kwargs['taskName']
-        if 'timeCreated' in kwargs:
+        if task_name is None:
+            raise TypeError("Missing 'task_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("begin_snapshot_id", begin_snapshot_id)
         _setter("db_user", db_user)
@@ -21804,11 +23668,15 @@ class GetManagedDatabaseAddmTasksFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -21848,10 +23716,14 @@ class GetManagedDatabaseAlertLogCountItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("category", category)
         _setter("count", count)
@@ -21887,9 +23759,11 @@ class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -21919,10 +23793,14 @@ class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("category", category)
         _setter("count", count)
@@ -21959,11 +23837,15 @@ class GetManagedDatabaseAlertLogCountsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -22003,10 +23885,14 @@ class GetManagedDatabaseAttentionLogCountItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("category", category)
         _setter("count", count)
@@ -22042,9 +23928,11 @@ class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -22074,10 +23962,14 @@ class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("category", category)
         _setter("count", count)
@@ -22114,11 +24006,15 @@ class GetManagedDatabaseAttentionLogCountsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -22155,9 +24051,11 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -22190,15 +24088,21 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             schema: str,
-             sql_id: str,
-             sql_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             schema: Optional[str] = None,
+             sql_id: Optional[str] = None,
+             sql_text: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sqlId' in kwargs:
+        if schema is None:
+            raise TypeError("Missing 'schema' argument")
+        if sql_id is None and 'sqlId' in kwargs:
             sql_id = kwargs['sqlId']
-        if 'sqlText' in kwargs:
+        if sql_id is None:
+            raise TypeError("Missing 'sql_id' argument")
+        if sql_text is None and 'sqlText' in kwargs:
             sql_text = kwargs['sqlText']
+        if sql_text is None:
+            raise TypeError("Missing 'sql_text' argument")
 
         _setter("schema", schema)
         _setter("sql_id", sql_id)
@@ -22244,11 +24148,15 @@ class GetManagedDatabaseCursorCacheStatementsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -22306,28 +24214,44 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             deployment_type: str,
-             id: str,
-             name: str,
-             time_added: str,
-             workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             deployment_type: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             time_added: Optional[str] = None,
+             workload_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'deploymentType' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'timeAdded' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_added is None and 'timeAdded' in kwargs:
             time_added = kwargs['timeAdded']
-        if 'workloadType' in kwargs:
+        if time_added is None:
+            raise TypeError("Missing 'time_added' argument")
+        if workload_type is None and 'workloadType' in kwargs:
             workload_type = kwargs['workloadType']
+        if workload_type is None:
+            raise TypeError("Missing 'workload_type' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -22421,11 +24345,15 @@ class GetManagedDatabaseGroupsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -22462,9 +24390,11 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -22509,24 +24439,40 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             description: str,
-             id: str,
-             managed_databases: Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult'],
-             name: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_databases: Optional[Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult']] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'managedDatabases' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_databases is None and 'managedDatabases' in kwargs:
             managed_databases = kwargs['managedDatabases']
-        if 'timeCreated' in kwargs:
+        if managed_databases is None:
+            raise TypeError("Missing 'managed_databases' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("description", description)
@@ -22637,28 +24583,44 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             database_sub_type: str,
-             database_type: str,
-             deployment_type: str,
-             id: str,
-             name: str,
-             time_added: str,
-             workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             deployment_type: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             time_added: Optional[str] = None,
+             workload_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSubType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'deploymentType' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'timeAdded' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_added is None and 'timeAdded' in kwargs:
             time_added = kwargs['timeAdded']
-        if 'workloadType' in kwargs:
+        if time_added is None:
+            raise TypeError("Missing 'time_added' argument")
+        if workload_type is None and 'workloadType' in kwargs:
             workload_type = kwargs['workloadType']
+        if workload_type is None:
+            raise TypeError("Missing 'workload_type' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
@@ -22754,13 +24716,19 @@ class GetManagedDatabaseManagedDatabaseGroupResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -22823,25 +24791,39 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             db_deployment_type: str,
-             db_sub_type: str,
-             db_type: str,
-             db_version: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             db_deployment_type: Optional[str] = None,
+             db_sub_type: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_version: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbDeploymentType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_deployment_type is None and 'dbDeploymentType' in kwargs:
             db_deployment_type = kwargs['dbDeploymentType']
-        if 'dbSubType' in kwargs:
+        if db_deployment_type is None:
+            raise TypeError("Missing 'db_deployment_type' argument")
+        if db_sub_type is None and 'dbSubType' in kwargs:
             db_sub_type = kwargs['dbSubType']
-        if 'dbType' in kwargs:
+        if db_sub_type is None:
+            raise TypeError("Missing 'db_sub_type' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbVersion' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
@@ -22925,10 +24907,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult'],
-             summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             rules: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult']] = None,
+             summary: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
 
         _setter("rules", rules)
         _setter("summary", summary)
@@ -22970,11 +24956,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             findings: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if findings is None:
+            raise TypeError("Missing 'findings' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("description", description)
         _setter("findings", findings)
@@ -23025,11 +25017,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult'],
-             message: str,
-             recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             details: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult']] = None,
+             message: Optional[str] = None,
+             recommendations: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if details is None:
+            raise TypeError("Missing 'details' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if recommendations is None:
+            raise TypeError("Missing 'recommendations' argument")
 
         _setter("details", details)
         _setter("message", message)
@@ -23077,10 +25075,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDeta
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operations: Sequence[str],
-             schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operations: Optional[Sequence[str]] = None,
+             schemas: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operations is None:
+            raise TypeError("Missing 'operations' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
 
         _setter("operations", operations)
         _setter("schemas", schemas)
@@ -23119,10 +25121,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDeta
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             objects: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             objects: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if objects is None:
+            raise TypeError("Missing 'objects' argument")
 
         _setter("name", name)
         _setter("objects", objects)
@@ -23164,11 +25170,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult'],
-             message: str,
-             rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             examples: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult']] = None,
+             message: Optional[str] = None,
+             rationales: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if examples is None:
+            raise TypeError("Missing 'examples' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if rationales is None:
+            raise TypeError("Missing 'rationales' argument")
 
         _setter("examples", examples)
         _setter("message", message)
@@ -23213,9 +25225,11 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lines: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if lines is None:
+            raise TypeError("Missing 'lines' argument")
 
         _setter("lines", lines)
 
@@ -23245,10 +25259,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             comment: str,
-             operation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             comment: Optional[str] = None,
+             operation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if comment is None:
+            raise TypeError("Missing 'comment' argument")
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
 
         _setter("comment", comment)
         _setter("operation", operation)
@@ -23284,9 +25302,11 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
 
         _setter("message", message)
 
@@ -23317,11 +25337,15 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -23358,9 +25382,11 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -23411,30 +25437,50 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             databases: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult'],
-             error_message: str,
-             execution_name: str,
-             findings: int,
-             reports: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult'],
-             status: str,
-             status_message: str,
-             task_name: str,
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             databases: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult']] = None,
+             error_message: Optional[str] = None,
+             execution_name: Optional[str] = None,
+             findings: Optional[int] = None,
+             reports: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult']] = None,
+             status: Optional[str] = None,
+             status_message: Optional[str] = None,
+             task_name: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'errorMessage' in kwargs:
+        if databases is None:
+            raise TypeError("Missing 'databases' argument")
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'executionName' in kwargs:
+        if error_message is None:
+            raise TypeError("Missing 'error_message' argument")
+        if execution_name is None and 'executionName' in kwargs:
             execution_name = kwargs['executionName']
-        if 'statusMessage' in kwargs:
+        if execution_name is None:
+            raise TypeError("Missing 'execution_name' argument")
+        if findings is None:
+            raise TypeError("Missing 'findings' argument")
+        if reports is None:
+            raise TypeError("Missing 'reports' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_message is None and 'statusMessage' in kwargs:
             status_message = kwargs['statusMessage']
-        if 'taskName' in kwargs:
+        if status_message is None:
+            raise TypeError("Missing 'status_message' argument")
+        if task_name is None and 'taskName' in kwargs:
             task_name = kwargs['taskName']
-        if 'timeEnd' in kwargs:
+        if task_name is None:
+            raise TypeError("Missing 'task_name' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("databases", databases)
         _setter("error_message", error_message)
@@ -23560,25 +25606,39 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             db_deployment_type: str,
-             db_sub_type: str,
-             db_type: str,
-             db_version: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             db_deployment_type: Optional[str] = None,
+             db_sub_type: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_version: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbDeploymentType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_deployment_type is None and 'dbDeploymentType' in kwargs:
             db_deployment_type = kwargs['dbDeploymentType']
-        if 'dbSubType' in kwargs:
+        if db_deployment_type is None:
+            raise TypeError("Missing 'db_deployment_type' argument")
+        if db_sub_type is None and 'dbSubType' in kwargs:
             db_sub_type = kwargs['dbSubType']
-        if 'dbType' in kwargs:
+        if db_sub_type is None:
+            raise TypeError("Missing 'db_sub_type' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbVersion' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
@@ -23662,10 +25722,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult'],
-             summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             rules: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult']] = None,
+             summary: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
 
         _setter("rules", rules)
         _setter("summary", summary)
@@ -23707,11 +25771,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             findings: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if findings is None:
+            raise TypeError("Missing 'findings' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("description", description)
         _setter("findings", findings)
@@ -23762,11 +25832,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult'],
-             message: str,
-             recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             details: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult']] = None,
+             message: Optional[str] = None,
+             recommendations: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if details is None:
+            raise TypeError("Missing 'details' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if recommendations is None:
+            raise TypeError("Missing 'recommendations' argument")
 
         _setter("details", details)
         _setter("message", message)
@@ -23814,10 +25890,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operations: Sequence[str],
-             schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operations: Optional[Sequence[str]] = None,
+             schemas: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operations is None:
+            raise TypeError("Missing 'operations' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
 
         _setter("operations", operations)
         _setter("schemas", schemas)
@@ -23856,10 +25936,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             objects: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             objects: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if objects is None:
+            raise TypeError("Missing 'objects' argument")
 
         _setter("name", name)
         _setter("objects", objects)
@@ -23901,11 +25985,17 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult'],
-             message: str,
-             rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             examples: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult']] = None,
+             message: Optional[str] = None,
+             rationales: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if examples is None:
+            raise TypeError("Missing 'examples' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if rationales is None:
+            raise TypeError("Missing 'rationales' argument")
 
         _setter("examples", examples)
         _setter("message", message)
@@ -23950,9 +26040,11 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lines: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if lines is None:
+            raise TypeError("Missing 'lines' argument")
 
         _setter("lines", lines)
 
@@ -23982,10 +26074,14 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             comment: str,
-             operation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             comment: Optional[str] = None,
+             operation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if comment is None:
+            raise TypeError("Missing 'comment' argument")
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
 
         _setter("comment", comment)
         _setter("operation", operation)
@@ -24021,9 +26117,11 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
 
         _setter("message", message)
 
@@ -24051,11 +26149,15 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -24092,9 +26194,11 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatis
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -24151,29 +26255,51 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatis
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             completed: int,
-             failed: int,
-             group_by: str,
-             in_progress: int,
-             pending: int,
-             skipped: int,
-             time_end: str,
-             time_start: str,
-             timed_out: int,
-             total: int,
-             unknown: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             completed: Optional[int] = None,
+             failed: Optional[int] = None,
+             group_by: Optional[str] = None,
+             in_progress: Optional[int] = None,
+             pending: Optional[int] = None,
+             skipped: Optional[int] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             timed_out: Optional[int] = None,
+             total: Optional[int] = None,
+             unknown: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupBy' in kwargs:
+        if completed is None:
+            raise TypeError("Missing 'completed' argument")
+        if failed is None:
+            raise TypeError("Missing 'failed' argument")
+        if group_by is None and 'groupBy' in kwargs:
             group_by = kwargs['groupBy']
-        if 'inProgress' in kwargs:
+        if group_by is None:
+            raise TypeError("Missing 'group_by' argument")
+        if in_progress is None and 'inProgress' in kwargs:
             in_progress = kwargs['inProgress']
-        if 'timeEnd' in kwargs:
+        if in_progress is None:
+            raise TypeError("Missing 'in_progress' argument")
+        if pending is None:
+            raise TypeError("Missing 'pending' argument")
+        if skipped is None:
+            raise TypeError("Missing 'skipped' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'timedOut' in kwargs:
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if timed_out is None and 'timedOut' in kwargs:
             timed_out = kwargs['timedOut']
+        if timed_out is None:
+            raise TypeError("Missing 'timed_out' argument")
+        if total is None:
+            raise TypeError("Missing 'total' argument")
+        if unknown is None:
+            raise TypeError("Missing 'unknown' argument")
 
         _setter("completed", completed)
         _setter("failed", failed)
@@ -24308,25 +26434,39 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             db_deployment_type: str,
-             db_sub_type: str,
-             db_type: str,
-             db_version: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             db_deployment_type: Optional[str] = None,
+             db_sub_type: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_version: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbDeploymentType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_deployment_type is None and 'dbDeploymentType' in kwargs:
             db_deployment_type = kwargs['dbDeploymentType']
-        if 'dbSubType' in kwargs:
+        if db_deployment_type is None:
+            raise TypeError("Missing 'db_deployment_type' argument")
+        if db_sub_type is None and 'dbSubType' in kwargs:
             db_sub_type = kwargs['dbSubType']
-        if 'dbType' in kwargs:
+        if db_sub_type is None:
+            raise TypeError("Missing 'db_sub_type' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbVersion' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
@@ -24419,19 +26559,29 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             status: str,
-             target: str,
-             target_type: str,
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             status: Optional[str] = None,
+             target: Optional[str] = None,
+             target_type: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetType' in kwargs:
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'timeEnd' in kwargs:
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("status", status)
         _setter("target", target)
@@ -24498,11 +26648,15 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -24539,9 +26693,11 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -24607,43 +26763,73 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             completed_count: int,
-             databases: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult'],
-             duration_in_seconds: float,
-             end_time: str,
-             failed_count: int,
-             id: int,
-             in_progress_count: int,
-             job_name: str,
-             operation_name: str,
-             start_time: str,
-             status: str,
-             target: str,
-             tasks: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult'],
-             timed_out_count: int,
-             total_objects_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             completed_count: Optional[int] = None,
+             databases: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult']] = None,
+             duration_in_seconds: Optional[float] = None,
+             end_time: Optional[str] = None,
+             failed_count: Optional[int] = None,
+             id: Optional[int] = None,
+             in_progress_count: Optional[int] = None,
+             job_name: Optional[str] = None,
+             operation_name: Optional[str] = None,
+             start_time: Optional[str] = None,
+             status: Optional[str] = None,
+             target: Optional[str] = None,
+             tasks: Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult']] = None,
+             timed_out_count: Optional[int] = None,
+             total_objects_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'completedCount' in kwargs:
+        if completed_count is None and 'completedCount' in kwargs:
             completed_count = kwargs['completedCount']
-        if 'durationInSeconds' in kwargs:
+        if completed_count is None:
+            raise TypeError("Missing 'completed_count' argument")
+        if databases is None:
+            raise TypeError("Missing 'databases' argument")
+        if duration_in_seconds is None and 'durationInSeconds' in kwargs:
             duration_in_seconds = kwargs['durationInSeconds']
-        if 'endTime' in kwargs:
+        if duration_in_seconds is None:
+            raise TypeError("Missing 'duration_in_seconds' argument")
+        if end_time is None and 'endTime' in kwargs:
             end_time = kwargs['endTime']
-        if 'failedCount' in kwargs:
+        if end_time is None:
+            raise TypeError("Missing 'end_time' argument")
+        if failed_count is None and 'failedCount' in kwargs:
             failed_count = kwargs['failedCount']
-        if 'inProgressCount' in kwargs:
+        if failed_count is None:
+            raise TypeError("Missing 'failed_count' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if in_progress_count is None and 'inProgressCount' in kwargs:
             in_progress_count = kwargs['inProgressCount']
-        if 'jobName' in kwargs:
+        if in_progress_count is None:
+            raise TypeError("Missing 'in_progress_count' argument")
+        if job_name is None and 'jobName' in kwargs:
             job_name = kwargs['jobName']
-        if 'operationName' in kwargs:
+        if job_name is None:
+            raise TypeError("Missing 'job_name' argument")
+        if operation_name is None and 'operationName' in kwargs:
             operation_name = kwargs['operationName']
-        if 'startTime' in kwargs:
+        if operation_name is None:
+            raise TypeError("Missing 'operation_name' argument")
+        if start_time is None and 'startTime' in kwargs:
             start_time = kwargs['startTime']
-        if 'timedOutCount' in kwargs:
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if tasks is None:
+            raise TypeError("Missing 'tasks' argument")
+        if timed_out_count is None and 'timedOutCount' in kwargs:
             timed_out_count = kwargs['timedOutCount']
-        if 'totalObjectsCount' in kwargs:
+        if timed_out_count is None:
+            raise TypeError("Missing 'timed_out_count' argument")
+        if total_objects_count is None and 'totalObjectsCount' in kwargs:
             total_objects_count = kwargs['totalObjectsCount']
+        if total_objects_count is None:
+            raise TypeError("Missing 'total_objects_count' argument")
 
         _setter("completed_count", completed_count)
         _setter("databases", databases)
@@ -24814,25 +27000,39 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             db_deployment_type: str,
-             db_sub_type: str,
-             db_type: str,
-             db_version: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             db_deployment_type: Optional[str] = None,
+             db_sub_type: Optional[str] = None,
+             db_type: Optional[str] = None,
+             db_version: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbDeploymentType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_deployment_type is None and 'dbDeploymentType' in kwargs:
             db_deployment_type = kwargs['dbDeploymentType']
-        if 'dbSubType' in kwargs:
+        if db_deployment_type is None:
+            raise TypeError("Missing 'db_deployment_type' argument")
+        if db_sub_type is None and 'dbSubType' in kwargs:
             db_sub_type = kwargs['dbSubType']
-        if 'dbType' in kwargs:
+        if db_sub_type is None:
+            raise TypeError("Missing 'db_sub_type' argument")
+        if db_type is None and 'dbType' in kwargs:
             db_type = kwargs['dbType']
-        if 'dbVersion' in kwargs:
+        if db_type is None:
+            raise TypeError("Missing 'db_type' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
@@ -24925,19 +27125,29 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             status: str,
-             target: str,
-             target_type: str,
-             time_end: str,
-             time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             status: Optional[str] = None,
+             target: Optional[str] = None,
+             target_type: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetType' in kwargs:
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'timeEnd' in kwargs:
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeStart' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
 
         _setter("status", status)
         _setter("target", target)
@@ -25016,21 +27226,31 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             modified_by: str,
-             name: str,
-             time_last_modified: str,
-             values_to_excludes: Sequence[str],
-             values_to_includes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             modified_by: Optional[str] = None,
+             name: Optional[str] = None,
+             time_last_modified: Optional[str] = None,
+             values_to_excludes: Optional[Sequence[str]] = None,
+             values_to_includes: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modifiedBy' in kwargs:
+        if modified_by is None and 'modifiedBy' in kwargs:
             modified_by = kwargs['modifiedBy']
-        if 'timeLastModified' in kwargs:
+        if modified_by is None:
+            raise TypeError("Missing 'modified_by' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_last_modified is None and 'timeLastModified' in kwargs:
             time_last_modified = kwargs['timeLastModified']
-        if 'valuesToExcludes' in kwargs:
+        if time_last_modified is None:
+            raise TypeError("Missing 'time_last_modified' argument")
+        if values_to_excludes is None and 'valuesToExcludes' in kwargs:
             values_to_excludes = kwargs['valuesToExcludes']
-        if 'valuesToIncludes' in kwargs:
+        if values_to_excludes is None:
+            raise TypeError("Missing 'values_to_excludes' argument")
+        if values_to_includes is None and 'valuesToIncludes' in kwargs:
             values_to_includes = kwargs['valuesToIncludes']
+        if values_to_includes is None:
+            raise TypeError("Missing 'values_to_includes' argument")
 
         _setter("modified_by", modified_by)
         _setter("name", name)
@@ -25109,23 +27329,33 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_time_limit: int,
-             alternate_plan_baselines: Sequence[str],
-             alternate_plan_limit: int,
-             alternate_plan_sources: Sequence[str],
-             are_plans_auto_accepted: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_time_limit: Optional[int] = None,
+             alternate_plan_baselines: Optional[Sequence[str]] = None,
+             alternate_plan_limit: Optional[int] = None,
+             alternate_plan_sources: Optional[Sequence[str]] = None,
+             are_plans_auto_accepted: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedTimeLimit' in kwargs:
+        if allowed_time_limit is None and 'allowedTimeLimit' in kwargs:
             allowed_time_limit = kwargs['allowedTimeLimit']
-        if 'alternatePlanBaselines' in kwargs:
+        if allowed_time_limit is None:
+            raise TypeError("Missing 'allowed_time_limit' argument")
+        if alternate_plan_baselines is None and 'alternatePlanBaselines' in kwargs:
             alternate_plan_baselines = kwargs['alternatePlanBaselines']
-        if 'alternatePlanLimit' in kwargs:
+        if alternate_plan_baselines is None:
+            raise TypeError("Missing 'alternate_plan_baselines' argument")
+        if alternate_plan_limit is None and 'alternatePlanLimit' in kwargs:
             alternate_plan_limit = kwargs['alternatePlanLimit']
-        if 'alternatePlanSources' in kwargs:
+        if alternate_plan_limit is None:
+            raise TypeError("Missing 'alternate_plan_limit' argument")
+        if alternate_plan_sources is None and 'alternatePlanSources' in kwargs:
             alternate_plan_sources = kwargs['alternatePlanSources']
-        if 'arePlansAutoAccepted' in kwargs:
+        if alternate_plan_sources is None:
+            raise TypeError("Missing 'alternate_plan_sources' argument")
+        if are_plans_auto_accepted is None and 'arePlansAutoAccepted' in kwargs:
             are_plans_auto_accepted = kwargs['arePlansAutoAccepted']
+        if are_plans_auto_accepted is None:
+            raise TypeError("Missing 'are_plans_auto_accepted' argument")
 
         _setter("allowed_time_limit", allowed_time_limit)
         _setter("alternate_plan_baselines", alternate_plan_baselines)
@@ -25192,11 +27422,15 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -25236,9 +27470,11 @@ class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -25274,14 +27510,22 @@ class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             status: str,
-             time_created: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeCreated' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("name", name)
         _setter("status", status)
@@ -25336,11 +27580,15 @@ class GetManagedDatabaseSqlPlanBaselinesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -25374,9 +27622,11 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -25445,40 +27695,72 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             accepted: str,
-             action: str,
-             adaptive: str,
-             auto_purge: str,
-             enabled: str,
-             execution_plan: str,
-             fixed: str,
-             module: str,
-             origin: str,
-             plan_name: str,
-             reproduced: str,
-             sql_handle: str,
-             sql_text: str,
-             time_created: str,
-             time_last_executed: str,
-             time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             accepted: Optional[str] = None,
+             action: Optional[str] = None,
+             adaptive: Optional[str] = None,
+             auto_purge: Optional[str] = None,
+             enabled: Optional[str] = None,
+             execution_plan: Optional[str] = None,
+             fixed: Optional[str] = None,
+             module: Optional[str] = None,
+             origin: Optional[str] = None,
+             plan_name: Optional[str] = None,
+             reproduced: Optional[str] = None,
+             sql_handle: Optional[str] = None,
+             sql_text: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_last_executed: Optional[str] = None,
+             time_last_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoPurge' in kwargs:
+        if accepted is None:
+            raise TypeError("Missing 'accepted' argument")
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if adaptive is None:
+            raise TypeError("Missing 'adaptive' argument")
+        if auto_purge is None and 'autoPurge' in kwargs:
             auto_purge = kwargs['autoPurge']
-        if 'executionPlan' in kwargs:
+        if auto_purge is None:
+            raise TypeError("Missing 'auto_purge' argument")
+        if enabled is None:
+            raise TypeError("Missing 'enabled' argument")
+        if execution_plan is None and 'executionPlan' in kwargs:
             execution_plan = kwargs['executionPlan']
-        if 'planName' in kwargs:
+        if execution_plan is None:
+            raise TypeError("Missing 'execution_plan' argument")
+        if fixed is None:
+            raise TypeError("Missing 'fixed' argument")
+        if module is None:
+            raise TypeError("Missing 'module' argument")
+        if origin is None:
+            raise TypeError("Missing 'origin' argument")
+        if plan_name is None and 'planName' in kwargs:
             plan_name = kwargs['planName']
-        if 'sqlHandle' in kwargs:
+        if plan_name is None:
+            raise TypeError("Missing 'plan_name' argument")
+        if reproduced is None:
+            raise TypeError("Missing 'reproduced' argument")
+        if sql_handle is None and 'sqlHandle' in kwargs:
             sql_handle = kwargs['sqlHandle']
-        if 'sqlText' in kwargs:
+        if sql_handle is None:
+            raise TypeError("Missing 'sql_handle' argument")
+        if sql_text is None and 'sqlText' in kwargs:
             sql_text = kwargs['sqlText']
-        if 'timeCreated' in kwargs:
+        if sql_text is None:
+            raise TypeError("Missing 'sql_text' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastExecuted' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_executed is None and 'timeLastExecuted' in kwargs:
             time_last_executed = kwargs['timeLastExecuted']
-        if 'timeLastModified' in kwargs:
+        if time_last_executed is None:
+            raise TypeError("Missing 'time_last_executed' argument")
+        if time_last_modified is None and 'timeLastModified' in kwargs:
             time_last_modified = kwargs['timeLastModified']
+        if time_last_modified is None:
+            raise TypeError("Missing 'time_last_modified' argument")
 
         _setter("accepted", accepted)
         _setter("action", action)
@@ -25673,38 +27955,62 @@ class GetManagedDatabaseSqlTuningAdvisorTaskItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             days_to_expire: int,
-             description: str,
-             instance_id: int,
-             name: str,
-             owner: str,
-             recommendation_count: int,
-             sql_tuning_advisor_task_id: str,
-             task_status: str,
-             time_created: str,
-             time_execution_ended: str,
-             time_execution_started: str,
-             total_sql_statements: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             days_to_expire: Optional[int] = None,
+             description: Optional[str] = None,
+             instance_id: Optional[int] = None,
+             name: Optional[str] = None,
+             owner: Optional[str] = None,
+             recommendation_count: Optional[int] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             task_status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_execution_ended: Optional[str] = None,
+             time_execution_started: Optional[str] = None,
+             total_sql_statements: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'daysToExpire' in kwargs:
+        if days_to_expire is None and 'daysToExpire' in kwargs:
             days_to_expire = kwargs['daysToExpire']
-        if 'instanceId' in kwargs:
+        if days_to_expire is None:
+            raise TypeError("Missing 'days_to_expire' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'recommendationCount' in kwargs:
+        if instance_id is None:
+            raise TypeError("Missing 'instance_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if recommendation_count is None and 'recommendationCount' in kwargs:
             recommendation_count = kwargs['recommendationCount']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if recommendation_count is None:
+            raise TypeError("Missing 'recommendation_count' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'taskStatus' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if task_status is None and 'taskStatus' in kwargs:
             task_status = kwargs['taskStatus']
-        if 'timeCreated' in kwargs:
+        if task_status is None:
+            raise TypeError("Missing 'task_status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExecutionEnded' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_execution_ended is None and 'timeExecutionEnded' in kwargs:
             time_execution_ended = kwargs['timeExecutionEnded']
-        if 'timeExecutionStarted' in kwargs:
+        if time_execution_ended is None:
+            raise TypeError("Missing 'time_execution_ended' argument")
+        if time_execution_started is None and 'timeExecutionStarted' in kwargs:
             time_execution_started = kwargs['timeExecutionStarted']
-        if 'totalSqlStatements' in kwargs:
+        if time_execution_started is None:
+            raise TypeError("Missing 'time_execution_started' argument")
+        if total_sql_statements is None and 'totalSqlStatements' in kwargs:
             total_sql_statements = kwargs['totalSqlStatements']
+        if total_sql_statements is None:
+            raise TypeError("Missing 'total_sql_statements' argument")
 
         _setter("days_to_expire", days_to_expire)
         _setter("description", description)
@@ -25836,17 +28142,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifie
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             plan_stats: Mapping[str, Any],
-             plan_status: str,
-             plan_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             plan_stats: Optional[Mapping[str, Any]] = None,
+             plan_status: Optional[str] = None,
+             plan_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'planStats' in kwargs:
+        if plan_stats is None and 'planStats' in kwargs:
             plan_stats = kwargs['planStats']
-        if 'planStatus' in kwargs:
+        if plan_stats is None:
+            raise TypeError("Missing 'plan_stats' argument")
+        if plan_status is None and 'planStatus' in kwargs:
             plan_status = kwargs['planStatus']
-        if 'planType' in kwargs:
+        if plan_status is None:
+            raise TypeError("Missing 'plan_status' argument")
+        if plan_type is None and 'planType' in kwargs:
             plan_type = kwargs['planType']
+        if plan_type is None:
+            raise TypeError("Missing 'plan_type' argument")
 
         _setter("plan_stats", plan_stats)
         _setter("plan_status", plan_status)
@@ -25897,17 +28209,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOrigina
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             plan_stats: Mapping[str, Any],
-             plan_status: str,
-             plan_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             plan_stats: Optional[Mapping[str, Any]] = None,
+             plan_status: Optional[str] = None,
+             plan_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'planStats' in kwargs:
+        if plan_stats is None and 'planStats' in kwargs:
             plan_stats = kwargs['planStats']
-        if 'planStatus' in kwargs:
+        if plan_stats is None:
+            raise TypeError("Missing 'plan_stats' argument")
+        if plan_status is None and 'planStatus' in kwargs:
             plan_status = kwargs['planStatus']
-        if 'planType' in kwargs:
+        if plan_status is None:
+            raise TypeError("Missing 'plan_status' argument")
+        if plan_type is None and 'planType' in kwargs:
             plan_type = kwargs['planType']
+        if plan_type is None:
+            raise TypeError("Missing 'plan_type' argument")
 
         _setter("plan_stats", plan_stats)
         _setter("plan_status", plan_status)
@@ -25956,11 +28274,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -26048,59 +28370,93 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_time_benefit: float,
-             is_alternative_plan_finding_present: bool,
-             is_error_finding_present: bool,
-             is_index_finding_present: bool,
-             is_miscellaneous_finding_present: bool,
-             is_restructure_sql_finding_present: bool,
-             is_sql_profile_finding_implemented: bool,
-             is_sql_profile_finding_present: bool,
-             is_stats_finding_present: bool,
-             is_timeout_finding_present: bool,
-             parsing_schema: str,
-             per_execution_percentage: int,
-             sql_key: str,
-             sql_text: str,
-             sql_tuning_advisor_task_id: str,
-             sql_tuning_advisor_task_object_execution_id: str,
-             sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             db_time_benefit: Optional[float] = None,
+             is_alternative_plan_finding_present: Optional[bool] = None,
+             is_error_finding_present: Optional[bool] = None,
+             is_index_finding_present: Optional[bool] = None,
+             is_miscellaneous_finding_present: Optional[bool] = None,
+             is_restructure_sql_finding_present: Optional[bool] = None,
+             is_sql_profile_finding_implemented: Optional[bool] = None,
+             is_sql_profile_finding_present: Optional[bool] = None,
+             is_stats_finding_present: Optional[bool] = None,
+             is_timeout_finding_present: Optional[bool] = None,
+             parsing_schema: Optional[str] = None,
+             per_execution_percentage: Optional[int] = None,
+             sql_key: Optional[str] = None,
+             sql_text: Optional[str] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_execution_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbTimeBenefit' in kwargs:
+        if db_time_benefit is None and 'dbTimeBenefit' in kwargs:
             db_time_benefit = kwargs['dbTimeBenefit']
-        if 'isAlternativePlanFindingPresent' in kwargs:
+        if db_time_benefit is None:
+            raise TypeError("Missing 'db_time_benefit' argument")
+        if is_alternative_plan_finding_present is None and 'isAlternativePlanFindingPresent' in kwargs:
             is_alternative_plan_finding_present = kwargs['isAlternativePlanFindingPresent']
-        if 'isErrorFindingPresent' in kwargs:
+        if is_alternative_plan_finding_present is None:
+            raise TypeError("Missing 'is_alternative_plan_finding_present' argument")
+        if is_error_finding_present is None and 'isErrorFindingPresent' in kwargs:
             is_error_finding_present = kwargs['isErrorFindingPresent']
-        if 'isIndexFindingPresent' in kwargs:
+        if is_error_finding_present is None:
+            raise TypeError("Missing 'is_error_finding_present' argument")
+        if is_index_finding_present is None and 'isIndexFindingPresent' in kwargs:
             is_index_finding_present = kwargs['isIndexFindingPresent']
-        if 'isMiscellaneousFindingPresent' in kwargs:
+        if is_index_finding_present is None:
+            raise TypeError("Missing 'is_index_finding_present' argument")
+        if is_miscellaneous_finding_present is None and 'isMiscellaneousFindingPresent' in kwargs:
             is_miscellaneous_finding_present = kwargs['isMiscellaneousFindingPresent']
-        if 'isRestructureSqlFindingPresent' in kwargs:
+        if is_miscellaneous_finding_present is None:
+            raise TypeError("Missing 'is_miscellaneous_finding_present' argument")
+        if is_restructure_sql_finding_present is None and 'isRestructureSqlFindingPresent' in kwargs:
             is_restructure_sql_finding_present = kwargs['isRestructureSqlFindingPresent']
-        if 'isSqlProfileFindingImplemented' in kwargs:
+        if is_restructure_sql_finding_present is None:
+            raise TypeError("Missing 'is_restructure_sql_finding_present' argument")
+        if is_sql_profile_finding_implemented is None and 'isSqlProfileFindingImplemented' in kwargs:
             is_sql_profile_finding_implemented = kwargs['isSqlProfileFindingImplemented']
-        if 'isSqlProfileFindingPresent' in kwargs:
+        if is_sql_profile_finding_implemented is None:
+            raise TypeError("Missing 'is_sql_profile_finding_implemented' argument")
+        if is_sql_profile_finding_present is None and 'isSqlProfileFindingPresent' in kwargs:
             is_sql_profile_finding_present = kwargs['isSqlProfileFindingPresent']
-        if 'isStatsFindingPresent' in kwargs:
+        if is_sql_profile_finding_present is None:
+            raise TypeError("Missing 'is_sql_profile_finding_present' argument")
+        if is_stats_finding_present is None and 'isStatsFindingPresent' in kwargs:
             is_stats_finding_present = kwargs['isStatsFindingPresent']
-        if 'isTimeoutFindingPresent' in kwargs:
+        if is_stats_finding_present is None:
+            raise TypeError("Missing 'is_stats_finding_present' argument")
+        if is_timeout_finding_present is None and 'isTimeoutFindingPresent' in kwargs:
             is_timeout_finding_present = kwargs['isTimeoutFindingPresent']
-        if 'parsingSchema' in kwargs:
+        if is_timeout_finding_present is None:
+            raise TypeError("Missing 'is_timeout_finding_present' argument")
+        if parsing_schema is None and 'parsingSchema' in kwargs:
             parsing_schema = kwargs['parsingSchema']
-        if 'perExecutionPercentage' in kwargs:
+        if parsing_schema is None:
+            raise TypeError("Missing 'parsing_schema' argument")
+        if per_execution_percentage is None and 'perExecutionPercentage' in kwargs:
             per_execution_percentage = kwargs['perExecutionPercentage']
-        if 'sqlKey' in kwargs:
+        if per_execution_percentage is None:
+            raise TypeError("Missing 'per_execution_percentage' argument")
+        if sql_key is None and 'sqlKey' in kwargs:
             sql_key = kwargs['sqlKey']
-        if 'sqlText' in kwargs:
+        if sql_key is None:
+            raise TypeError("Missing 'sql_key' argument")
+        if sql_text is None and 'sqlText' in kwargs:
             sql_text = kwargs['sqlText']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if sql_text is None:
+            raise TypeError("Missing 'sql_text' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if sql_tuning_advisor_task_object_execution_id is None and 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
             sql_tuning_advisor_task_object_execution_id = kwargs['sqlTuningAdvisorTaskObjectExecutionId']
-        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+        if sql_tuning_advisor_task_object_execution_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_execution_id' argument")
+        if sql_tuning_advisor_task_object_id is None and 'sqlTuningAdvisorTaskObjectId' in kwargs:
             sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+        if sql_tuning_advisor_task_object_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_id' argument")
 
         _setter("db_time_benefit", db_time_benefit)
         _setter("is_alternative_plan_finding_present", is_alternative_plan_finding_present)
@@ -26272,11 +28628,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -26313,9 +28673,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFinding
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -26390,59 +28752,93 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFinding
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_time_benefit: float,
-             is_alternative_plan_finding_present: bool,
-             is_error_finding_present: bool,
-             is_index_finding_present: bool,
-             is_miscellaneous_finding_present: bool,
-             is_restructure_sql_finding_present: bool,
-             is_sql_profile_finding_implemented: bool,
-             is_sql_profile_finding_present: bool,
-             is_stats_finding_present: bool,
-             is_timeout_finding_present: bool,
-             parsing_schema: str,
-             per_execution_percentage: int,
-             sql_key: str,
-             sql_text: str,
-             sql_tuning_advisor_task_id: str,
-             sql_tuning_advisor_task_object_execution_id: str,
-             sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             db_time_benefit: Optional[float] = None,
+             is_alternative_plan_finding_present: Optional[bool] = None,
+             is_error_finding_present: Optional[bool] = None,
+             is_index_finding_present: Optional[bool] = None,
+             is_miscellaneous_finding_present: Optional[bool] = None,
+             is_restructure_sql_finding_present: Optional[bool] = None,
+             is_sql_profile_finding_implemented: Optional[bool] = None,
+             is_sql_profile_finding_present: Optional[bool] = None,
+             is_stats_finding_present: Optional[bool] = None,
+             is_timeout_finding_present: Optional[bool] = None,
+             parsing_schema: Optional[str] = None,
+             per_execution_percentage: Optional[int] = None,
+             sql_key: Optional[str] = None,
+             sql_text: Optional[str] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_execution_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbTimeBenefit' in kwargs:
+        if db_time_benefit is None and 'dbTimeBenefit' in kwargs:
             db_time_benefit = kwargs['dbTimeBenefit']
-        if 'isAlternativePlanFindingPresent' in kwargs:
+        if db_time_benefit is None:
+            raise TypeError("Missing 'db_time_benefit' argument")
+        if is_alternative_plan_finding_present is None and 'isAlternativePlanFindingPresent' in kwargs:
             is_alternative_plan_finding_present = kwargs['isAlternativePlanFindingPresent']
-        if 'isErrorFindingPresent' in kwargs:
+        if is_alternative_plan_finding_present is None:
+            raise TypeError("Missing 'is_alternative_plan_finding_present' argument")
+        if is_error_finding_present is None and 'isErrorFindingPresent' in kwargs:
             is_error_finding_present = kwargs['isErrorFindingPresent']
-        if 'isIndexFindingPresent' in kwargs:
+        if is_error_finding_present is None:
+            raise TypeError("Missing 'is_error_finding_present' argument")
+        if is_index_finding_present is None and 'isIndexFindingPresent' in kwargs:
             is_index_finding_present = kwargs['isIndexFindingPresent']
-        if 'isMiscellaneousFindingPresent' in kwargs:
+        if is_index_finding_present is None:
+            raise TypeError("Missing 'is_index_finding_present' argument")
+        if is_miscellaneous_finding_present is None and 'isMiscellaneousFindingPresent' in kwargs:
             is_miscellaneous_finding_present = kwargs['isMiscellaneousFindingPresent']
-        if 'isRestructureSqlFindingPresent' in kwargs:
+        if is_miscellaneous_finding_present is None:
+            raise TypeError("Missing 'is_miscellaneous_finding_present' argument")
+        if is_restructure_sql_finding_present is None and 'isRestructureSqlFindingPresent' in kwargs:
             is_restructure_sql_finding_present = kwargs['isRestructureSqlFindingPresent']
-        if 'isSqlProfileFindingImplemented' in kwargs:
+        if is_restructure_sql_finding_present is None:
+            raise TypeError("Missing 'is_restructure_sql_finding_present' argument")
+        if is_sql_profile_finding_implemented is None and 'isSqlProfileFindingImplemented' in kwargs:
             is_sql_profile_finding_implemented = kwargs['isSqlProfileFindingImplemented']
-        if 'isSqlProfileFindingPresent' in kwargs:
+        if is_sql_profile_finding_implemented is None:
+            raise TypeError("Missing 'is_sql_profile_finding_implemented' argument")
+        if is_sql_profile_finding_present is None and 'isSqlProfileFindingPresent' in kwargs:
             is_sql_profile_finding_present = kwargs['isSqlProfileFindingPresent']
-        if 'isStatsFindingPresent' in kwargs:
+        if is_sql_profile_finding_present is None:
+            raise TypeError("Missing 'is_sql_profile_finding_present' argument")
+        if is_stats_finding_present is None and 'isStatsFindingPresent' in kwargs:
             is_stats_finding_present = kwargs['isStatsFindingPresent']
-        if 'isTimeoutFindingPresent' in kwargs:
+        if is_stats_finding_present is None:
+            raise TypeError("Missing 'is_stats_finding_present' argument")
+        if is_timeout_finding_present is None and 'isTimeoutFindingPresent' in kwargs:
             is_timeout_finding_present = kwargs['isTimeoutFindingPresent']
-        if 'parsingSchema' in kwargs:
+        if is_timeout_finding_present is None:
+            raise TypeError("Missing 'is_timeout_finding_present' argument")
+        if parsing_schema is None and 'parsingSchema' in kwargs:
             parsing_schema = kwargs['parsingSchema']
-        if 'perExecutionPercentage' in kwargs:
+        if parsing_schema is None:
+            raise TypeError("Missing 'parsing_schema' argument")
+        if per_execution_percentage is None and 'perExecutionPercentage' in kwargs:
             per_execution_percentage = kwargs['perExecutionPercentage']
-        if 'sqlKey' in kwargs:
+        if per_execution_percentage is None:
+            raise TypeError("Missing 'per_execution_percentage' argument")
+        if sql_key is None and 'sqlKey' in kwargs:
             sql_key = kwargs['sqlKey']
-        if 'sqlText' in kwargs:
+        if sql_key is None:
+            raise TypeError("Missing 'sql_key' argument")
+        if sql_text is None and 'sqlText' in kwargs:
             sql_text = kwargs['sqlText']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if sql_text is None:
+            raise TypeError("Missing 'sql_text' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if sql_tuning_advisor_task_object_execution_id is None and 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
             sql_tuning_advisor_task_object_execution_id = kwargs['sqlTuningAdvisorTaskObjectExecutionId']
-        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+        if sql_tuning_advisor_task_object_execution_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_execution_id' argument")
+        if sql_tuning_advisor_task_object_id is None and 'sqlTuningAdvisorTaskObjectId' in kwargs:
             sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+        if sql_tuning_advisor_task_object_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_id' argument")
 
         _setter("db_time_benefit", db_time_benefit)
         _setter("is_alternative_plan_finding_present", is_alternative_plan_finding_present)
@@ -26640,30 +29036,50 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             benefit: float,
-             finding: str,
-             implement_action_sql: str,
-             is_parallel_execution: bool,
-             rationale: str,
-             recommendation: str,
-             recommendation_key: int,
-             recommendation_type: str,
-             sql_tuning_advisor_task_id: str,
-             sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             benefit: Optional[float] = None,
+             finding: Optional[str] = None,
+             implement_action_sql: Optional[str] = None,
+             is_parallel_execution: Optional[bool] = None,
+             rationale: Optional[str] = None,
+             recommendation: Optional[str] = None,
+             recommendation_key: Optional[int] = None,
+             recommendation_type: Optional[str] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'implementActionSql' in kwargs:
+        if benefit is None:
+            raise TypeError("Missing 'benefit' argument")
+        if finding is None:
+            raise TypeError("Missing 'finding' argument")
+        if implement_action_sql is None and 'implementActionSql' in kwargs:
             implement_action_sql = kwargs['implementActionSql']
-        if 'isParallelExecution' in kwargs:
+        if implement_action_sql is None:
+            raise TypeError("Missing 'implement_action_sql' argument")
+        if is_parallel_execution is None and 'isParallelExecution' in kwargs:
             is_parallel_execution = kwargs['isParallelExecution']
-        if 'recommendationKey' in kwargs:
+        if is_parallel_execution is None:
+            raise TypeError("Missing 'is_parallel_execution' argument")
+        if rationale is None:
+            raise TypeError("Missing 'rationale' argument")
+        if recommendation is None:
+            raise TypeError("Missing 'recommendation' argument")
+        if recommendation_key is None and 'recommendationKey' in kwargs:
             recommendation_key = kwargs['recommendationKey']
-        if 'recommendationType' in kwargs:
+        if recommendation_key is None:
+            raise TypeError("Missing 'recommendation_key' argument")
+        if recommendation_type is None and 'recommendationType' in kwargs:
             recommendation_type = kwargs['recommendationType']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if recommendation_type is None:
+            raise TypeError("Missing 'recommendation_type' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if sql_tuning_advisor_task_object_id is None and 'sqlTuningAdvisorTaskObjectId' in kwargs:
             sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+        if sql_tuning_advisor_task_object_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_id' argument")
 
         _setter("benefit", benefit)
         _setter("finding", finding)
@@ -26772,11 +29188,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -26813,9 +29233,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -26869,30 +29291,50 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             benefit: float,
-             finding: str,
-             implement_action_sql: str,
-             is_parallel_execution: bool,
-             rationale: str,
-             recommendation: str,
-             recommendation_key: int,
-             recommendation_type: str,
-             sql_tuning_advisor_task_id: str,
-             sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             benefit: Optional[float] = None,
+             finding: Optional[str] = None,
+             implement_action_sql: Optional[str] = None,
+             is_parallel_execution: Optional[bool] = None,
+             rationale: Optional[str] = None,
+             recommendation: Optional[str] = None,
+             recommendation_key: Optional[int] = None,
+             recommendation_type: Optional[str] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             sql_tuning_advisor_task_object_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'implementActionSql' in kwargs:
+        if benefit is None:
+            raise TypeError("Missing 'benefit' argument")
+        if finding is None:
+            raise TypeError("Missing 'finding' argument")
+        if implement_action_sql is None and 'implementActionSql' in kwargs:
             implement_action_sql = kwargs['implementActionSql']
-        if 'isParallelExecution' in kwargs:
+        if implement_action_sql is None:
+            raise TypeError("Missing 'implement_action_sql' argument")
+        if is_parallel_execution is None and 'isParallelExecution' in kwargs:
             is_parallel_execution = kwargs['isParallelExecution']
-        if 'recommendationKey' in kwargs:
+        if is_parallel_execution is None:
+            raise TypeError("Missing 'is_parallel_execution' argument")
+        if rationale is None:
+            raise TypeError("Missing 'rationale' argument")
+        if recommendation is None:
+            raise TypeError("Missing 'recommendation' argument")
+        if recommendation_key is None and 'recommendationKey' in kwargs:
             recommendation_key = kwargs['recommendationKey']
-        if 'recommendationType' in kwargs:
+        if recommendation_key is None:
+            raise TypeError("Missing 'recommendation_key' argument")
+        if recommendation_type is None and 'recommendationType' in kwargs:
             recommendation_type = kwargs['recommendationType']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if recommendation_type is None:
+            raise TypeError("Missing 'recommendation_type' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if sql_tuning_advisor_task_object_id is None and 'sqlTuningAdvisorTaskObjectId' in kwargs:
             sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+        if sql_tuning_advisor_task_object_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_object_id' argument")
 
         _setter("benefit", benefit)
         _setter("finding", finding)
@@ -27084,73 +29526,131 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_predicates: str,
-             attribute: str,
-             bytes: str,
-             cardinality: str,
-             cost: float,
-             cpu_cost: float,
-             filter_predicates: str,
-             io_cost: float,
-             number_of_search_column: int,
-             object: str,
-             object_node: str,
-             object_owner: str,
-             object_position: int,
-             object_type: str,
-             operation: str,
-             optimizer_mode: str,
-             options: str,
-             other: str,
-             other_tag: str,
-             parent_step_id: int,
-             partition_id: int,
-             partition_start: str,
-             partition_stop: str,
-             plan_hash_value: str,
-             position: int,
-             remarks: str,
-             step_id: int,
-             temp_space: str,
-             time: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access_predicates: Optional[str] = None,
+             attribute: Optional[str] = None,
+             bytes: Optional[str] = None,
+             cardinality: Optional[str] = None,
+             cost: Optional[float] = None,
+             cpu_cost: Optional[float] = None,
+             filter_predicates: Optional[str] = None,
+             io_cost: Optional[float] = None,
+             number_of_search_column: Optional[int] = None,
+             object: Optional[str] = None,
+             object_node: Optional[str] = None,
+             object_owner: Optional[str] = None,
+             object_position: Optional[int] = None,
+             object_type: Optional[str] = None,
+             operation: Optional[str] = None,
+             optimizer_mode: Optional[str] = None,
+             options: Optional[str] = None,
+             other: Optional[str] = None,
+             other_tag: Optional[str] = None,
+             parent_step_id: Optional[int] = None,
+             partition_id: Optional[int] = None,
+             partition_start: Optional[str] = None,
+             partition_stop: Optional[str] = None,
+             plan_hash_value: Optional[str] = None,
+             position: Optional[int] = None,
+             remarks: Optional[str] = None,
+             step_id: Optional[int] = None,
+             temp_space: Optional[str] = None,
+             time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessPredicates' in kwargs:
+        if access_predicates is None and 'accessPredicates' in kwargs:
             access_predicates = kwargs['accessPredicates']
-        if 'cpuCost' in kwargs:
+        if access_predicates is None:
+            raise TypeError("Missing 'access_predicates' argument")
+        if attribute is None:
+            raise TypeError("Missing 'attribute' argument")
+        if bytes is None:
+            raise TypeError("Missing 'bytes' argument")
+        if cardinality is None:
+            raise TypeError("Missing 'cardinality' argument")
+        if cost is None:
+            raise TypeError("Missing 'cost' argument")
+        if cpu_cost is None and 'cpuCost' in kwargs:
             cpu_cost = kwargs['cpuCost']
-        if 'filterPredicates' in kwargs:
+        if cpu_cost is None:
+            raise TypeError("Missing 'cpu_cost' argument")
+        if filter_predicates is None and 'filterPredicates' in kwargs:
             filter_predicates = kwargs['filterPredicates']
-        if 'ioCost' in kwargs:
+        if filter_predicates is None:
+            raise TypeError("Missing 'filter_predicates' argument")
+        if io_cost is None and 'ioCost' in kwargs:
             io_cost = kwargs['ioCost']
-        if 'numberOfSearchColumn' in kwargs:
+        if io_cost is None:
+            raise TypeError("Missing 'io_cost' argument")
+        if number_of_search_column is None and 'numberOfSearchColumn' in kwargs:
             number_of_search_column = kwargs['numberOfSearchColumn']
-        if 'objectNode' in kwargs:
+        if number_of_search_column is None:
+            raise TypeError("Missing 'number_of_search_column' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if object_node is None and 'objectNode' in kwargs:
             object_node = kwargs['objectNode']
-        if 'objectOwner' in kwargs:
+        if object_node is None:
+            raise TypeError("Missing 'object_node' argument")
+        if object_owner is None and 'objectOwner' in kwargs:
             object_owner = kwargs['objectOwner']
-        if 'objectPosition' in kwargs:
+        if object_owner is None:
+            raise TypeError("Missing 'object_owner' argument")
+        if object_position is None and 'objectPosition' in kwargs:
             object_position = kwargs['objectPosition']
-        if 'objectType' in kwargs:
+        if object_position is None:
+            raise TypeError("Missing 'object_position' argument")
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'optimizerMode' in kwargs:
+        if object_type is None:
+            raise TypeError("Missing 'object_type' argument")
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if optimizer_mode is None and 'optimizerMode' in kwargs:
             optimizer_mode = kwargs['optimizerMode']
-        if 'otherTag' in kwargs:
+        if optimizer_mode is None:
+            raise TypeError("Missing 'optimizer_mode' argument")
+        if options is None:
+            raise TypeError("Missing 'options' argument")
+        if other is None:
+            raise TypeError("Missing 'other' argument")
+        if other_tag is None and 'otherTag' in kwargs:
             other_tag = kwargs['otherTag']
-        if 'parentStepId' in kwargs:
+        if other_tag is None:
+            raise TypeError("Missing 'other_tag' argument")
+        if parent_step_id is None and 'parentStepId' in kwargs:
             parent_step_id = kwargs['parentStepId']
-        if 'partitionId' in kwargs:
+        if parent_step_id is None:
+            raise TypeError("Missing 'parent_step_id' argument")
+        if partition_id is None and 'partitionId' in kwargs:
             partition_id = kwargs['partitionId']
-        if 'partitionStart' in kwargs:
+        if partition_id is None:
+            raise TypeError("Missing 'partition_id' argument")
+        if partition_start is None and 'partitionStart' in kwargs:
             partition_start = kwargs['partitionStart']
-        if 'partitionStop' in kwargs:
+        if partition_start is None:
+            raise TypeError("Missing 'partition_start' argument")
+        if partition_stop is None and 'partitionStop' in kwargs:
             partition_stop = kwargs['partitionStop']
-        if 'planHashValue' in kwargs:
+        if partition_stop is None:
+            raise TypeError("Missing 'partition_stop' argument")
+        if plan_hash_value is None and 'planHashValue' in kwargs:
             plan_hash_value = kwargs['planHashValue']
-        if 'stepId' in kwargs:
+        if plan_hash_value is None:
+            raise TypeError("Missing 'plan_hash_value' argument")
+        if position is None:
+            raise TypeError("Missing 'position' argument")
+        if remarks is None:
+            raise TypeError("Missing 'remarks' argument")
+        if step_id is None and 'stepId' in kwargs:
             step_id = kwargs['stepId']
-        if 'tempSpace' in kwargs:
+        if step_id is None:
+            raise TypeError("Missing 'step_id' argument")
+        if temp_space is None and 'tempSpace' in kwargs:
             temp_space = kwargs['tempSpace']
+        if temp_space is None:
+            raise TypeError("Missing 'temp_space' argument")
+        if time is None:
+            raise TypeError("Missing 'time' argument")
 
         _setter("access_predicates", access_predicates)
         _setter("attribute", attribute)
@@ -27429,9 +29929,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -27491,38 +29993,62 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             days_to_expire: int,
-             description: str,
-             instance_id: int,
-             name: str,
-             owner: str,
-             recommendation_count: int,
-             sql_tuning_advisor_task_id: str,
-             task_status: str,
-             time_created: str,
-             time_execution_ended: str,
-             time_execution_started: str,
-             total_sql_statements: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             days_to_expire: Optional[int] = None,
+             description: Optional[str] = None,
+             instance_id: Optional[int] = None,
+             name: Optional[str] = None,
+             owner: Optional[str] = None,
+             recommendation_count: Optional[int] = None,
+             sql_tuning_advisor_task_id: Optional[str] = None,
+             task_status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_execution_ended: Optional[str] = None,
+             time_execution_started: Optional[str] = None,
+             total_sql_statements: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'daysToExpire' in kwargs:
+        if days_to_expire is None and 'daysToExpire' in kwargs:
             days_to_expire = kwargs['daysToExpire']
-        if 'instanceId' in kwargs:
+        if days_to_expire is None:
+            raise TypeError("Missing 'days_to_expire' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'recommendationCount' in kwargs:
+        if instance_id is None:
+            raise TypeError("Missing 'instance_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if recommendation_count is None and 'recommendationCount' in kwargs:
             recommendation_count = kwargs['recommendationCount']
-        if 'sqlTuningAdvisorTaskId' in kwargs:
+        if recommendation_count is None:
+            raise TypeError("Missing 'recommendation_count' argument")
+        if sql_tuning_advisor_task_id is None and 'sqlTuningAdvisorTaskId' in kwargs:
             sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
-        if 'taskStatus' in kwargs:
+        if sql_tuning_advisor_task_id is None:
+            raise TypeError("Missing 'sql_tuning_advisor_task_id' argument")
+        if task_status is None and 'taskStatus' in kwargs:
             task_status = kwargs['taskStatus']
-        if 'timeCreated' in kwargs:
+        if task_status is None:
+            raise TypeError("Missing 'task_status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExecutionEnded' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_execution_ended is None and 'timeExecutionEnded' in kwargs:
             time_execution_ended = kwargs['timeExecutionEnded']
-        if 'timeExecutionStarted' in kwargs:
+        if time_execution_ended is None:
+            raise TypeError("Missing 'time_execution_ended' argument")
+        if time_execution_started is None and 'timeExecutionStarted' in kwargs:
             time_execution_started = kwargs['timeExecutionStarted']
-        if 'totalSqlStatements' in kwargs:
+        if time_execution_started is None:
+            raise TypeError("Missing 'time_execution_started' argument")
+        if total_sql_statements is None and 'totalSqlStatements' in kwargs:
             total_sql_statements = kwargs['totalSqlStatements']
+        if total_sql_statements is None:
+            raise TypeError("Missing 'total_sql_statements' argument")
 
         _setter("days_to_expire", days_to_expire)
         _setter("description", description)
@@ -27663,24 +30189,36 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             index_columns: Sequence[str],
-             index_hash_value: str,
-             index_name: str,
-             reference_count: int,
-             schema: str,
-             table_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             index_columns: Optional[Sequence[str]] = None,
+             index_hash_value: Optional[str] = None,
+             index_name: Optional[str] = None,
+             reference_count: Optional[int] = None,
+             schema: Optional[str] = None,
+             table_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'indexColumns' in kwargs:
+        if index_columns is None and 'indexColumns' in kwargs:
             index_columns = kwargs['indexColumns']
-        if 'indexHashValue' in kwargs:
+        if index_columns is None:
+            raise TypeError("Missing 'index_columns' argument")
+        if index_hash_value is None and 'indexHashValue' in kwargs:
             index_hash_value = kwargs['indexHashValue']
-        if 'indexName' in kwargs:
+        if index_hash_value is None:
+            raise TypeError("Missing 'index_hash_value' argument")
+        if index_name is None and 'indexName' in kwargs:
             index_name = kwargs['indexName']
-        if 'referenceCount' in kwargs:
+        if index_name is None:
+            raise TypeError("Missing 'index_name' argument")
+        if reference_count is None and 'referenceCount' in kwargs:
             reference_count = kwargs['referenceCount']
-        if 'tableName' in kwargs:
+        if reference_count is None:
+            raise TypeError("Missing 'reference_count' argument")
+        if schema is None:
+            raise TypeError("Missing 'schema' argument")
+        if table_name is None and 'tableName' in kwargs:
             table_name = kwargs['tableName']
+        if table_name is None:
+            raise TypeError("Missing 'table_name' argument")
 
         _setter("index_columns", index_columns)
         _setter("index_hash_value", index_hash_value)
@@ -27767,22 +30305,34 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object: str,
-             object_hash_value: str,
-             object_type: str,
-             problem_type: str,
-             reference_count: int,
-             schema: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             object: Optional[str] = None,
+             object_hash_value: Optional[str] = None,
+             object_type: Optional[str] = None,
+             problem_type: Optional[str] = None,
+             reference_count: Optional[int] = None,
+             schema: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectHashValue' in kwargs:
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if object_hash_value is None and 'objectHashValue' in kwargs:
             object_hash_value = kwargs['objectHashValue']
-        if 'objectType' in kwargs:
+        if object_hash_value is None:
+            raise TypeError("Missing 'object_hash_value' argument")
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'problemType' in kwargs:
+        if object_type is None:
+            raise TypeError("Missing 'object_type' argument")
+        if problem_type is None and 'problemType' in kwargs:
             problem_type = kwargs['problemType']
-        if 'referenceCount' in kwargs:
+        if problem_type is None:
+            raise TypeError("Missing 'problem_type' argument")
+        if reference_count is None and 'referenceCount' in kwargs:
             reference_count = kwargs['referenceCount']
+        if reference_count is None:
+            raise TypeError("Missing 'reference_count' argument")
+        if schema is None:
+            raise TypeError("Missing 'schema' argument")
 
         _setter("object", object)
         _setter("object_hash_value", object_hash_value)
@@ -27860,17 +30410,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             finding_benefits: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitResult'],
-             finding_counts: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountResult'],
-             statement_counts: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             finding_benefits: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitResult']] = None,
+             finding_counts: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountResult']] = None,
+             statement_counts: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'findingBenefits' in kwargs:
+        if finding_benefits is None and 'findingBenefits' in kwargs:
             finding_benefits = kwargs['findingBenefits']
-        if 'findingCounts' in kwargs:
+        if finding_benefits is None:
+            raise TypeError("Missing 'finding_benefits' argument")
+        if finding_counts is None and 'findingCounts' in kwargs:
             finding_counts = kwargs['findingCounts']
-        if 'statementCounts' in kwargs:
+        if finding_counts is None:
+            raise TypeError("Missing 'finding_counts' argument")
+        if statement_counts is None and 'statementCounts' in kwargs:
             statement_counts = kwargs['statementCounts']
+        if statement_counts is None:
+            raise TypeError("Missing 'statement_counts' argument")
 
         _setter("finding_benefits", finding_benefits)
         _setter("finding_counts", finding_counts)
@@ -27924,20 +30480,28 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_time_after_implemented: int,
-             db_time_after_recommended: int,
-             db_time_before_implemented: int,
-             db_time_before_recommended: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             db_time_after_implemented: Optional[int] = None,
+             db_time_after_recommended: Optional[int] = None,
+             db_time_before_implemented: Optional[int] = None,
+             db_time_before_recommended: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbTimeAfterImplemented' in kwargs:
+        if db_time_after_implemented is None and 'dbTimeAfterImplemented' in kwargs:
             db_time_after_implemented = kwargs['dbTimeAfterImplemented']
-        if 'dbTimeAfterRecommended' in kwargs:
+        if db_time_after_implemented is None:
+            raise TypeError("Missing 'db_time_after_implemented' argument")
+        if db_time_after_recommended is None and 'dbTimeAfterRecommended' in kwargs:
             db_time_after_recommended = kwargs['dbTimeAfterRecommended']
-        if 'dbTimeBeforeImplemented' in kwargs:
+        if db_time_after_recommended is None:
+            raise TypeError("Missing 'db_time_after_recommended' argument")
+        if db_time_before_implemented is None and 'dbTimeBeforeImplemented' in kwargs:
             db_time_before_implemented = kwargs['dbTimeBeforeImplemented']
-        if 'dbTimeBeforeRecommended' in kwargs:
+        if db_time_before_implemented is None:
+            raise TypeError("Missing 'db_time_before_implemented' argument")
+        if db_time_before_recommended is None and 'dbTimeBeforeRecommended' in kwargs:
             db_time_before_recommended = kwargs['dbTimeBeforeRecommended']
+        if db_time_before_recommended is None:
+            raise TypeError("Missing 'db_time_before_recommended' argument")
 
         _setter("db_time_after_implemented", db_time_after_implemented)
         _setter("db_time_after_recommended", db_time_after_recommended)
@@ -28006,20 +30570,32 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             alternate_plan: int,
-             implemented_sql_profile: int,
-             index: int,
-             recommended_sql_profile: int,
-             restructure: int,
-             statistics: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             alternate_plan: Optional[int] = None,
+             implemented_sql_profile: Optional[int] = None,
+             index: Optional[int] = None,
+             recommended_sql_profile: Optional[int] = None,
+             restructure: Optional[int] = None,
+             statistics: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'alternatePlan' in kwargs:
+        if alternate_plan is None and 'alternatePlan' in kwargs:
             alternate_plan = kwargs['alternatePlan']
-        if 'implementedSqlProfile' in kwargs:
+        if alternate_plan is None:
+            raise TypeError("Missing 'alternate_plan' argument")
+        if implemented_sql_profile is None and 'implementedSqlProfile' in kwargs:
             implemented_sql_profile = kwargs['implementedSqlProfile']
-        if 'recommendedSqlProfile' in kwargs:
+        if implemented_sql_profile is None:
+            raise TypeError("Missing 'implemented_sql_profile' argument")
+        if index is None:
+            raise TypeError("Missing 'index' argument")
+        if recommended_sql_profile is None and 'recommendedSqlProfile' in kwargs:
             recommended_sql_profile = kwargs['recommendedSqlProfile']
+        if recommended_sql_profile is None:
+            raise TypeError("Missing 'recommended_sql_profile' argument")
+        if restructure is None:
+            raise TypeError("Missing 'restructure' argument")
+        if statistics is None:
+            raise TypeError("Missing 'statistics' argument")
 
         _setter("alternate_plan", alternate_plan)
         _setter("implemented_sql_profile", implemented_sql_profile)
@@ -28100,20 +30676,28 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCoun
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             distinct_sql: int,
-             error_count: int,
-             finding_count: int,
-             total_sql: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             distinct_sql: Optional[int] = None,
+             error_count: Optional[int] = None,
+             finding_count: Optional[int] = None,
+             total_sql: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'distinctSql' in kwargs:
+        if distinct_sql is None and 'distinctSql' in kwargs:
             distinct_sql = kwargs['distinctSql']
-        if 'errorCount' in kwargs:
+        if distinct_sql is None:
+            raise TypeError("Missing 'distinct_sql' argument")
+        if error_count is None and 'errorCount' in kwargs:
             error_count = kwargs['errorCount']
-        if 'findingCount' in kwargs:
+        if error_count is None:
+            raise TypeError("Missing 'error_count' argument")
+        if finding_count is None and 'findingCount' in kwargs:
             finding_count = kwargs['findingCount']
-        if 'totalSql' in kwargs:
+        if finding_count is None:
+            raise TypeError("Missing 'finding_count' argument")
+        if total_sql is None and 'totalSql' in kwargs:
             total_sql = kwargs['totalSql']
+        if total_sql is None:
+            raise TypeError("Missing 'total_sql' argument")
 
         _setter("distinct_sql", distinct_sql)
         _setter("error_count", error_count)
@@ -28188,22 +30772,38 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             id: str,
-             name: str,
-             owner: str,
-             running_time: int,
-             status: str,
-             time_ended: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             owner: Optional[str] = None,
+             running_time: Optional[int] = None,
+             status: Optional[str] = None,
+             time_ended: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'runningTime' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if running_time is None and 'runningTime' in kwargs:
             running_time = kwargs['runningTime']
-        if 'timeEnded' in kwargs:
+        if running_time is None:
+            raise TypeError("Missing 'running_time' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_ended is None:
+            raise TypeError("Missing 'time_ended' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("description", description)
         _setter("id", id)
@@ -28302,14 +30902,22 @@ class GetManagedDatabaseSqlTuningSetItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             name: str,
-             owner: str,
-             statement_counts: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             owner: Optional[str] = None,
+             statement_counts: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'statementCounts' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if statement_counts is None and 'statementCounts' in kwargs:
             statement_counts = kwargs['statementCounts']
+        if statement_counts is None:
+            raise TypeError("Missing 'statement_counts' argument")
 
         _setter("description", description)
         _setter("name", name)
@@ -28367,11 +30975,15 @@ class GetManagedDatabaseSqlTuningSetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -28411,9 +31023,11 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -28467,28 +31081,48 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             error_message: str,
-             id: int,
-             name: str,
-             owner: str,
-             scheduled_job_name: str,
-             statement_counts: int,
-             status: str,
-             time_created: str,
-             time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             error_message: Optional[str] = None,
+             id: Optional[int] = None,
+             name: Optional[str] = None,
+             owner: Optional[str] = None,
+             scheduled_job_name: Optional[str] = None,
+             statement_counts: Optional[int] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_last_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'errorMessage' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'scheduledJobName' in kwargs:
+        if error_message is None:
+            raise TypeError("Missing 'error_message' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if scheduled_job_name is None and 'scheduledJobName' in kwargs:
             scheduled_job_name = kwargs['scheduledJobName']
-        if 'statementCounts' in kwargs:
+        if scheduled_job_name is None:
+            raise TypeError("Missing 'scheduled_job_name' argument")
+        if statement_counts is None and 'statementCounts' in kwargs:
             statement_counts = kwargs['statementCounts']
-        if 'timeCreated' in kwargs:
+        if statement_counts is None:
+            raise TypeError("Missing 'statement_counts' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastModified' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_last_modified is None and 'timeLastModified' in kwargs:
             time_last_modified = kwargs['timeLastModified']
+        if time_last_modified is None:
+            raise TypeError("Missing 'time_last_modified' argument")
 
         _setter("description", description)
         _setter("error_message", error_message)
@@ -28597,11 +31231,15 @@ class GetManagedDatabaseTableStatisticsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -28638,9 +31276,11 @@ class GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -28673,11 +31313,17 @@ class GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             percentage: float,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             percentage: Optional[float] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if percentage is None:
+            raise TypeError("Missing 'percentage' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("count", count)
         _setter("percentage", percentage)
@@ -28728,15 +31374,21 @@ class GetManagedDatabaseUserConsumerGroupPrivilegeItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             grant_option: str,
-             initial_group: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             grant_option: Optional[str] = None,
+             initial_group: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantOption' in kwargs:
+        if grant_option is None and 'grantOption' in kwargs:
             grant_option = kwargs['grantOption']
-        if 'initialGroup' in kwargs:
+        if grant_option is None:
+            raise TypeError("Missing 'grant_option' argument")
+        if initial_group is None and 'initialGroup' in kwargs:
             initial_group = kwargs['initialGroup']
+        if initial_group is None:
+            raise TypeError("Missing 'initial_group' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("grant_option", grant_option)
         _setter("initial_group", initial_group)
@@ -28781,9 +31433,11 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -28816,15 +31470,21 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollect
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             grant_option: str,
-             initial_group: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             grant_option: Optional[str] = None,
+             initial_group: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantOption' in kwargs:
+        if grant_option is None and 'grantOption' in kwargs:
             grant_option = kwargs['grantOption']
-        if 'initialGroup' in kwargs:
+        if grant_option is None:
+            raise TypeError("Missing 'grant_option' argument")
+        if initial_group is None and 'initialGroup' in kwargs:
             initial_group = kwargs['initialGroup']
+        if initial_group is None:
+            raise TypeError("Missing 'initial_group' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("grant_option", grant_option)
         _setter("initial_group", initial_group)
@@ -28873,11 +31533,15 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -28917,9 +31581,11 @@ class GetManagedDatabaseUserDataAccessContainerItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -28946,9 +31612,11 @@ class GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -28975,9 +31643,11 @@ class GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionIte
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -29008,11 +31678,15 @@ class GetManagedDatabaseUserDataAccessContainersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -29076,21 +31750,39 @@ class GetManagedDatabaseUserObjectPrivilegeItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common: str,
-             grant_option: str,
-             grantor: str,
-             hierarchy: str,
-             inherited: str,
-             name: str,
-             object: str,
-             owner: str,
-             schema_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common: Optional[str] = None,
+             grant_option: Optional[str] = None,
+             grantor: Optional[str] = None,
+             hierarchy: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             object: Optional[str] = None,
+             owner: Optional[str] = None,
+             schema_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantOption' in kwargs:
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if grant_option is None and 'grantOption' in kwargs:
             grant_option = kwargs['grantOption']
-        if 'schemaType' in kwargs:
+        if grant_option is None:
+            raise TypeError("Missing 'grant_option' argument")
+        if grantor is None:
+            raise TypeError("Missing 'grantor' argument")
+        if hierarchy is None:
+            raise TypeError("Missing 'hierarchy' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if schema_type is None and 'schemaType' in kwargs:
             schema_type = kwargs['schemaType']
+        if schema_type is None:
+            raise TypeError("Missing 'schema_type' argument")
 
         _setter("common", common)
         _setter("grant_option", grant_option)
@@ -29193,11 +31885,15 @@ class GetManagedDatabaseUserObjectPrivilegesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -29237,9 +31933,11 @@ class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -29290,21 +31988,39 @@ class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common: str,
-             grant_option: str,
-             grantor: str,
-             hierarchy: str,
-             inherited: str,
-             name: str,
-             object: str,
-             owner: str,
-             schema_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common: Optional[str] = None,
+             grant_option: Optional[str] = None,
+             grantor: Optional[str] = None,
+             hierarchy: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             object: Optional[str] = None,
+             owner: Optional[str] = None,
+             schema_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantOption' in kwargs:
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if grant_option is None and 'grantOption' in kwargs:
             grant_option = kwargs['grantOption']
-        if 'schemaType' in kwargs:
+        if grant_option is None:
+            raise TypeError("Missing 'grant_option' argument")
+        if grantor is None:
+            raise TypeError("Missing 'grantor' argument")
+        if hierarchy is None:
+            raise TypeError("Missing 'hierarchy' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if owner is None:
+            raise TypeError("Missing 'owner' argument")
+        if schema_type is None and 'schemaType' in kwargs:
             schema_type = kwargs['schemaType']
+        if schema_type is None:
+            raise TypeError("Missing 'schema_type' argument")
 
         _setter("common", common)
         _setter("grant_option", grant_option)
@@ -29409,11 +32125,17 @@ class GetManagedDatabaseUserProxiedForUserItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication: str,
-             flags: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication: Optional[str] = None,
+             flags: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if authentication is None:
+            raise TypeError("Missing 'authentication' argument")
+        if flags is None:
+            raise TypeError("Missing 'flags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("authentication", authentication)
         _setter("flags", flags)
@@ -29462,11 +32184,15 @@ class GetManagedDatabaseUserProxiedForUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -29506,9 +32232,11 @@ class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -29541,11 +32269,17 @@ class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication: str,
-             flags: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication: Optional[str] = None,
+             flags: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if authentication is None:
+            raise TypeError("Missing 'authentication' argument")
+        if flags is None:
+            raise TypeError("Missing 'flags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("authentication", authentication)
         _setter("flags", flags)
@@ -29605,20 +32339,32 @@ class GetManagedDatabaseUserRoleItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_option: str,
-             common: str,
-             default_role: str,
-             delegate_option: str,
-             inherited: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_option: Optional[str] = None,
+             common: Optional[str] = None,
+             default_role: Optional[str] = None,
+             delegate_option: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminOption' in kwargs:
+        if admin_option is None and 'adminOption' in kwargs:
             admin_option = kwargs['adminOption']
-        if 'defaultRole' in kwargs:
+        if admin_option is None:
+            raise TypeError("Missing 'admin_option' argument")
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if default_role is None and 'defaultRole' in kwargs:
             default_role = kwargs['defaultRole']
-        if 'delegateOption' in kwargs:
+        if default_role is None:
+            raise TypeError("Missing 'default_role' argument")
+        if delegate_option is None and 'delegateOption' in kwargs:
             delegate_option = kwargs['delegateOption']
+        if delegate_option is None:
+            raise TypeError("Missing 'delegate_option' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("admin_option", admin_option)
         _setter("common", common)
@@ -29694,11 +32440,15 @@ class GetManagedDatabaseUserRolesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -29738,9 +32488,11 @@ class GetManagedDatabaseUserRolesRoleCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUserRolesRoleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUserRolesRoleCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -29782,20 +32534,32 @@ class GetManagedDatabaseUserRolesRoleCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_option: str,
-             common: str,
-             default_role: str,
-             delegate_option: str,
-             inherited: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_option: Optional[str] = None,
+             common: Optional[str] = None,
+             default_role: Optional[str] = None,
+             delegate_option: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminOption' in kwargs:
+        if admin_option is None and 'adminOption' in kwargs:
             admin_option = kwargs['adminOption']
-        if 'defaultRole' in kwargs:
+        if admin_option is None:
+            raise TypeError("Missing 'admin_option' argument")
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if default_role is None and 'defaultRole' in kwargs:
             default_role = kwargs['defaultRole']
-        if 'delegateOption' in kwargs:
+        if default_role is None:
+            raise TypeError("Missing 'default_role' argument")
+        if delegate_option is None and 'delegateOption' in kwargs:
             delegate_option = kwargs['delegateOption']
+        if delegate_option is None:
+            raise TypeError("Missing 'delegate_option' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("admin_option", admin_option)
         _setter("common", common)
@@ -29871,11 +32635,15 @@ class GetManagedDatabaseUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -29912,9 +32680,11 @@ class GetManagedDatabaseUsersUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabaseUsersUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabaseUsersUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -30007,66 +32777,114 @@ class GetManagedDatabaseUsersUserCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             all_shared: str,
-             authentication: str,
-             common: str,
-             consumer_group: str,
-             default_collation: str,
-             default_tablespace: str,
-             editions_enabled: str,
-             external_name: str,
-             external_shared: str,
-             implicit: str,
-             inherited: str,
-             local_temp_tablespace: str,
-             name: str,
-             oracle_maintained: str,
-             password_versions: str,
-             profile: str,
-             proxy_connect: str,
-             status: str,
-             temp_tablespace: str,
-             time_created: str,
-             time_expiring: str,
-             time_last_login: str,
-             time_locked: str,
-             time_password_changed: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             all_shared: Optional[str] = None,
+             authentication: Optional[str] = None,
+             common: Optional[str] = None,
+             consumer_group: Optional[str] = None,
+             default_collation: Optional[str] = None,
+             default_tablespace: Optional[str] = None,
+             editions_enabled: Optional[str] = None,
+             external_name: Optional[str] = None,
+             external_shared: Optional[str] = None,
+             implicit: Optional[str] = None,
+             inherited: Optional[str] = None,
+             local_temp_tablespace: Optional[str] = None,
+             name: Optional[str] = None,
+             oracle_maintained: Optional[str] = None,
+             password_versions: Optional[str] = None,
+             profile: Optional[str] = None,
+             proxy_connect: Optional[str] = None,
+             status: Optional[str] = None,
+             temp_tablespace: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_expiring: Optional[str] = None,
+             time_last_login: Optional[str] = None,
+             time_locked: Optional[str] = None,
+             time_password_changed: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allShared' in kwargs:
+        if all_shared is None and 'allShared' in kwargs:
             all_shared = kwargs['allShared']
-        if 'consumerGroup' in kwargs:
+        if all_shared is None:
+            raise TypeError("Missing 'all_shared' argument")
+        if authentication is None:
+            raise TypeError("Missing 'authentication' argument")
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if consumer_group is None and 'consumerGroup' in kwargs:
             consumer_group = kwargs['consumerGroup']
-        if 'defaultCollation' in kwargs:
+        if consumer_group is None:
+            raise TypeError("Missing 'consumer_group' argument")
+        if default_collation is None and 'defaultCollation' in kwargs:
             default_collation = kwargs['defaultCollation']
-        if 'defaultTablespace' in kwargs:
+        if default_collation is None:
+            raise TypeError("Missing 'default_collation' argument")
+        if default_tablespace is None and 'defaultTablespace' in kwargs:
             default_tablespace = kwargs['defaultTablespace']
-        if 'editionsEnabled' in kwargs:
+        if default_tablespace is None:
+            raise TypeError("Missing 'default_tablespace' argument")
+        if editions_enabled is None and 'editionsEnabled' in kwargs:
             editions_enabled = kwargs['editionsEnabled']
-        if 'externalName' in kwargs:
+        if editions_enabled is None:
+            raise TypeError("Missing 'editions_enabled' argument")
+        if external_name is None and 'externalName' in kwargs:
             external_name = kwargs['externalName']
-        if 'externalShared' in kwargs:
+        if external_name is None:
+            raise TypeError("Missing 'external_name' argument")
+        if external_shared is None and 'externalShared' in kwargs:
             external_shared = kwargs['externalShared']
-        if 'localTempTablespace' in kwargs:
+        if external_shared is None:
+            raise TypeError("Missing 'external_shared' argument")
+        if implicit is None:
+            raise TypeError("Missing 'implicit' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if local_temp_tablespace is None and 'localTempTablespace' in kwargs:
             local_temp_tablespace = kwargs['localTempTablespace']
-        if 'oracleMaintained' in kwargs:
+        if local_temp_tablespace is None:
+            raise TypeError("Missing 'local_temp_tablespace' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if oracle_maintained is None and 'oracleMaintained' in kwargs:
             oracle_maintained = kwargs['oracleMaintained']
-        if 'passwordVersions' in kwargs:
+        if oracle_maintained is None:
+            raise TypeError("Missing 'oracle_maintained' argument")
+        if password_versions is None and 'passwordVersions' in kwargs:
             password_versions = kwargs['passwordVersions']
-        if 'proxyConnect' in kwargs:
+        if password_versions is None:
+            raise TypeError("Missing 'password_versions' argument")
+        if profile is None:
+            raise TypeError("Missing 'profile' argument")
+        if proxy_connect is None and 'proxyConnect' in kwargs:
             proxy_connect = kwargs['proxyConnect']
-        if 'tempTablespace' in kwargs:
+        if proxy_connect is None:
+            raise TypeError("Missing 'proxy_connect' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if temp_tablespace is None and 'tempTablespace' in kwargs:
             temp_tablespace = kwargs['tempTablespace']
-        if 'timeCreated' in kwargs:
+        if temp_tablespace is None:
+            raise TypeError("Missing 'temp_tablespace' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpiring' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_expiring is None and 'timeExpiring' in kwargs:
             time_expiring = kwargs['timeExpiring']
-        if 'timeLastLogin' in kwargs:
+        if time_expiring is None:
+            raise TypeError("Missing 'time_expiring' argument")
+        if time_last_login is None and 'timeLastLogin' in kwargs:
             time_last_login = kwargs['timeLastLogin']
-        if 'timeLocked' in kwargs:
+        if time_last_login is None:
+            raise TypeError("Missing 'time_last_login' argument")
+        if time_locked is None and 'timeLocked' in kwargs:
             time_locked = kwargs['timeLocked']
-        if 'timePasswordChanged' in kwargs:
+        if time_locked is None:
+            raise TypeError("Missing 'time_locked' argument")
+        if time_password_changed is None and 'timePasswordChanged' in kwargs:
             time_password_changed = kwargs['timePasswordChanged']
+        if time_password_changed is None:
+            raise TypeError("Missing 'time_password_changed' argument")
 
         _setter("all_shared", all_shared)
         _setter("authentication", authentication)
@@ -30300,9 +33118,11 @@ class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -30329,11 +33149,13 @@ class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             disk_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             disk_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'diskGroup' in kwargs:
+        if disk_group is None and 'diskGroup' in kwargs:
             disk_group = kwargs['diskGroup']
+        if disk_group is None:
+            raise TypeError("Missing 'disk_group' argument")
 
         _setter("disk_group", disk_group)
 
@@ -30364,11 +33186,15 @@ class GetManagedDatabasesAsmPropertiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -30408,11 +33234,13 @@ class GetManagedDatabasesAsmPropertyItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             disk_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             disk_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'diskGroup' in kwargs:
+        if disk_group is None and 'diskGroup' in kwargs:
             disk_group = kwargs['diskGroup']
+        if disk_group is None:
+            raise TypeError("Missing 'disk_group' argument")
 
         _setter("disk_group", disk_group)
 
@@ -30508,59 +33336,105 @@ class GetManagedDatabasesDatabaseParameterItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_values: Sequence['outputs.GetManagedDatabasesDatabaseParameterItemAllowedValueResult'],
-             category: str,
-             constraint: str,
-             container_id: float,
-             description: str,
-             display_value: str,
-             is_adjusted: bool,
-             is_basic: bool,
-             is_default: bool,
-             is_deprecated: bool,
-             is_instance_modifiable: bool,
-             is_modified: str,
-             is_pdb_modifiable: bool,
-             is_session_modifiable: bool,
-             is_specified: bool,
-             is_system_modifiable: str,
-             name: str,
-             number: float,
-             ordinal: float,
-             sid: str,
-             type: str,
-             update_comment: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_values: Optional[Sequence['outputs.GetManagedDatabasesDatabaseParameterItemAllowedValueResult']] = None,
+             category: Optional[str] = None,
+             constraint: Optional[str] = None,
+             container_id: Optional[float] = None,
+             description: Optional[str] = None,
+             display_value: Optional[str] = None,
+             is_adjusted: Optional[bool] = None,
+             is_basic: Optional[bool] = None,
+             is_default: Optional[bool] = None,
+             is_deprecated: Optional[bool] = None,
+             is_instance_modifiable: Optional[bool] = None,
+             is_modified: Optional[str] = None,
+             is_pdb_modifiable: Optional[bool] = None,
+             is_session_modifiable: Optional[bool] = None,
+             is_specified: Optional[bool] = None,
+             is_system_modifiable: Optional[str] = None,
+             name: Optional[str] = None,
+             number: Optional[float] = None,
+             ordinal: Optional[float] = None,
+             sid: Optional[str] = None,
+             type: Optional[str] = None,
+             update_comment: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedValues' in kwargs:
+        if allowed_values is None and 'allowedValues' in kwargs:
             allowed_values = kwargs['allowedValues']
-        if 'containerId' in kwargs:
+        if allowed_values is None:
+            raise TypeError("Missing 'allowed_values' argument")
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if constraint is None:
+            raise TypeError("Missing 'constraint' argument")
+        if container_id is None and 'containerId' in kwargs:
             container_id = kwargs['containerId']
-        if 'displayValue' in kwargs:
+        if container_id is None:
+            raise TypeError("Missing 'container_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_value is None and 'displayValue' in kwargs:
             display_value = kwargs['displayValue']
-        if 'isAdjusted' in kwargs:
+        if display_value is None:
+            raise TypeError("Missing 'display_value' argument")
+        if is_adjusted is None and 'isAdjusted' in kwargs:
             is_adjusted = kwargs['isAdjusted']
-        if 'isBasic' in kwargs:
+        if is_adjusted is None:
+            raise TypeError("Missing 'is_adjusted' argument")
+        if is_basic is None and 'isBasic' in kwargs:
             is_basic = kwargs['isBasic']
-        if 'isDefault' in kwargs:
+        if is_basic is None:
+            raise TypeError("Missing 'is_basic' argument")
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'isDeprecated' in kwargs:
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if is_deprecated is None and 'isDeprecated' in kwargs:
             is_deprecated = kwargs['isDeprecated']
-        if 'isInstanceModifiable' in kwargs:
+        if is_deprecated is None:
+            raise TypeError("Missing 'is_deprecated' argument")
+        if is_instance_modifiable is None and 'isInstanceModifiable' in kwargs:
             is_instance_modifiable = kwargs['isInstanceModifiable']
-        if 'isModified' in kwargs:
+        if is_instance_modifiable is None:
+            raise TypeError("Missing 'is_instance_modifiable' argument")
+        if is_modified is None and 'isModified' in kwargs:
             is_modified = kwargs['isModified']
-        if 'isPdbModifiable' in kwargs:
+        if is_modified is None:
+            raise TypeError("Missing 'is_modified' argument")
+        if is_pdb_modifiable is None and 'isPdbModifiable' in kwargs:
             is_pdb_modifiable = kwargs['isPdbModifiable']
-        if 'isSessionModifiable' in kwargs:
+        if is_pdb_modifiable is None:
+            raise TypeError("Missing 'is_pdb_modifiable' argument")
+        if is_session_modifiable is None and 'isSessionModifiable' in kwargs:
             is_session_modifiable = kwargs['isSessionModifiable']
-        if 'isSpecified' in kwargs:
+        if is_session_modifiable is None:
+            raise TypeError("Missing 'is_session_modifiable' argument")
+        if is_specified is None and 'isSpecified' in kwargs:
             is_specified = kwargs['isSpecified']
-        if 'isSystemModifiable' in kwargs:
+        if is_specified is None:
+            raise TypeError("Missing 'is_specified' argument")
+        if is_system_modifiable is None and 'isSystemModifiable' in kwargs:
             is_system_modifiable = kwargs['isSystemModifiable']
-        if 'updateComment' in kwargs:
+        if is_system_modifiable is None:
+            raise TypeError("Missing 'is_system_modifiable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if number is None:
+            raise TypeError("Missing 'number' argument")
+        if ordinal is None:
+            raise TypeError("Missing 'ordinal' argument")
+        if sid is None:
+            raise TypeError("Missing 'sid' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if update_comment is None and 'updateComment' in kwargs:
             update_comment = kwargs['updateComment']
+        if update_comment is None:
+            raise TypeError("Missing 'update_comment' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("allowed_values", allowed_values)
         _setter("category", category)
@@ -30794,13 +33668,19 @@ class GetManagedDatabasesDatabaseParameterItemAllowedValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_default: bool,
-             ordinal: float,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_default: Optional[bool] = None,
+             ordinal: Optional[float] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if ordinal is None:
+            raise TypeError("Missing 'ordinal' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("is_default", is_default)
         _setter("ordinal", ordinal)
@@ -30857,21 +33737,31 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             database_name: str,
-             database_sub_type: str,
-             database_type: str,
-             database_version: str,
-             items: Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             database_name: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             database_version: Optional[str] = None,
+             items: Optional[Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseName' in kwargs:
+        if database_name is None and 'databaseName' in kwargs:
             database_name = kwargs['databaseName']
-        if 'databaseSubType' in kwargs:
+        if database_name is None:
+            raise TypeError("Missing 'database_name' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'databaseVersion' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if database_version is None and 'databaseVersion' in kwargs:
             database_version = kwargs['databaseVersion']
+        if database_version is None:
+            raise TypeError("Missing 'database_version' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("database_name", database_name)
         _setter("database_sub_type", database_sub_type)
@@ -31003,59 +33893,105 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_values: Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueResult'],
-             category: str,
-             constraint: str,
-             container_id: float,
-             description: str,
-             display_value: str,
-             is_adjusted: bool,
-             is_basic: bool,
-             is_default: bool,
-             is_deprecated: bool,
-             is_instance_modifiable: bool,
-             is_modified: str,
-             is_pdb_modifiable: bool,
-             is_session_modifiable: bool,
-             is_specified: bool,
-             is_system_modifiable: str,
-             name: str,
-             number: float,
-             ordinal: float,
-             sid: str,
-             type: str,
-             update_comment: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             allowed_values: Optional[Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueResult']] = None,
+             category: Optional[str] = None,
+             constraint: Optional[str] = None,
+             container_id: Optional[float] = None,
+             description: Optional[str] = None,
+             display_value: Optional[str] = None,
+             is_adjusted: Optional[bool] = None,
+             is_basic: Optional[bool] = None,
+             is_default: Optional[bool] = None,
+             is_deprecated: Optional[bool] = None,
+             is_instance_modifiable: Optional[bool] = None,
+             is_modified: Optional[str] = None,
+             is_pdb_modifiable: Optional[bool] = None,
+             is_session_modifiable: Optional[bool] = None,
+             is_specified: Optional[bool] = None,
+             is_system_modifiable: Optional[str] = None,
+             name: Optional[str] = None,
+             number: Optional[float] = None,
+             ordinal: Optional[float] = None,
+             sid: Optional[str] = None,
+             type: Optional[str] = None,
+             update_comment: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedValues' in kwargs:
+        if allowed_values is None and 'allowedValues' in kwargs:
             allowed_values = kwargs['allowedValues']
-        if 'containerId' in kwargs:
+        if allowed_values is None:
+            raise TypeError("Missing 'allowed_values' argument")
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if constraint is None:
+            raise TypeError("Missing 'constraint' argument")
+        if container_id is None and 'containerId' in kwargs:
             container_id = kwargs['containerId']
-        if 'displayValue' in kwargs:
+        if container_id is None:
+            raise TypeError("Missing 'container_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_value is None and 'displayValue' in kwargs:
             display_value = kwargs['displayValue']
-        if 'isAdjusted' in kwargs:
+        if display_value is None:
+            raise TypeError("Missing 'display_value' argument")
+        if is_adjusted is None and 'isAdjusted' in kwargs:
             is_adjusted = kwargs['isAdjusted']
-        if 'isBasic' in kwargs:
+        if is_adjusted is None:
+            raise TypeError("Missing 'is_adjusted' argument")
+        if is_basic is None and 'isBasic' in kwargs:
             is_basic = kwargs['isBasic']
-        if 'isDefault' in kwargs:
+        if is_basic is None:
+            raise TypeError("Missing 'is_basic' argument")
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'isDeprecated' in kwargs:
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if is_deprecated is None and 'isDeprecated' in kwargs:
             is_deprecated = kwargs['isDeprecated']
-        if 'isInstanceModifiable' in kwargs:
+        if is_deprecated is None:
+            raise TypeError("Missing 'is_deprecated' argument")
+        if is_instance_modifiable is None and 'isInstanceModifiable' in kwargs:
             is_instance_modifiable = kwargs['isInstanceModifiable']
-        if 'isModified' in kwargs:
+        if is_instance_modifiable is None:
+            raise TypeError("Missing 'is_instance_modifiable' argument")
+        if is_modified is None and 'isModified' in kwargs:
             is_modified = kwargs['isModified']
-        if 'isPdbModifiable' in kwargs:
+        if is_modified is None:
+            raise TypeError("Missing 'is_modified' argument")
+        if is_pdb_modifiable is None and 'isPdbModifiable' in kwargs:
             is_pdb_modifiable = kwargs['isPdbModifiable']
-        if 'isSessionModifiable' in kwargs:
+        if is_pdb_modifiable is None:
+            raise TypeError("Missing 'is_pdb_modifiable' argument")
+        if is_session_modifiable is None and 'isSessionModifiable' in kwargs:
             is_session_modifiable = kwargs['isSessionModifiable']
-        if 'isSpecified' in kwargs:
+        if is_session_modifiable is None:
+            raise TypeError("Missing 'is_session_modifiable' argument")
+        if is_specified is None and 'isSpecified' in kwargs:
             is_specified = kwargs['isSpecified']
-        if 'isSystemModifiable' in kwargs:
+        if is_specified is None:
+            raise TypeError("Missing 'is_specified' argument")
+        if is_system_modifiable is None and 'isSystemModifiable' in kwargs:
             is_system_modifiable = kwargs['isSystemModifiable']
-        if 'updateComment' in kwargs:
+        if is_system_modifiable is None:
+            raise TypeError("Missing 'is_system_modifiable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if number is None:
+            raise TypeError("Missing 'number' argument")
+        if ordinal is None:
+            raise TypeError("Missing 'ordinal' argument")
+        if sid is None:
+            raise TypeError("Missing 'sid' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if update_comment is None and 'updateComment' in kwargs:
             update_comment = kwargs['updateComment']
+        if update_comment is None:
+            raise TypeError("Missing 'update_comment' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("allowed_values", allowed_values)
         _setter("category", category)
@@ -31289,13 +34225,19 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllow
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_default: bool,
-             ordinal: float,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_default: Optional[bool] = None,
+             ordinal: Optional[float] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if ordinal is None:
+            raise TypeError("Missing 'ordinal' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("is_default", is_default)
         _setter("ordinal", ordinal)
@@ -31344,11 +34286,15 @@ class GetManagedDatabasesDatabaseParametersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -31392,11 +34338,15 @@ class GetManagedDatabasesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -31433,9 +34383,11 @@ class GetManagedDatabasesManagedDatabaseCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -31504,52 +34456,84 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_details: Mapping[str, Any],
-             compartment_id: str,
-             database_status: str,
-             database_sub_type: str,
-             database_type: str,
-             db_system_id: str,
-             deployment_type: str,
-             id: str,
-             is_cluster: bool,
-             managed_database_groups: Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult'],
-             management_option: str,
-             name: str,
-             parent_container_id: str,
-             storage_system_id: str,
-             time_created: str,
-             workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_details: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             database_status: Optional[str] = None,
+             database_sub_type: Optional[str] = None,
+             database_type: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             deployment_type: Optional[str] = None,
+             id: Optional[str] = None,
+             is_cluster: Optional[bool] = None,
+             managed_database_groups: Optional[Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult']] = None,
+             management_option: Optional[str] = None,
+             name: Optional[str] = None,
+             parent_container_id: Optional[str] = None,
+             storage_system_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             workload_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalDetails' in kwargs:
+        if additional_details is None and 'additionalDetails' in kwargs:
             additional_details = kwargs['additionalDetails']
-        if 'compartmentId' in kwargs:
+        if additional_details is None:
+            raise TypeError("Missing 'additional_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseStatus' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_status is None and 'databaseStatus' in kwargs:
             database_status = kwargs['databaseStatus']
-        if 'databaseSubType' in kwargs:
+        if database_status is None:
+            raise TypeError("Missing 'database_status' argument")
+        if database_sub_type is None and 'databaseSubType' in kwargs:
             database_sub_type = kwargs['databaseSubType']
-        if 'databaseType' in kwargs:
+        if database_sub_type is None:
+            raise TypeError("Missing 'database_sub_type' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'dbSystemId' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'deploymentType' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'isCluster' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'managedDatabaseGroups' in kwargs:
+        if is_cluster is None:
+            raise TypeError("Missing 'is_cluster' argument")
+        if managed_database_groups is None and 'managedDatabaseGroups' in kwargs:
             managed_database_groups = kwargs['managedDatabaseGroups']
-        if 'managementOption' in kwargs:
+        if managed_database_groups is None:
+            raise TypeError("Missing 'managed_database_groups' argument")
+        if management_option is None and 'managementOption' in kwargs:
             management_option = kwargs['managementOption']
-        if 'parentContainerId' in kwargs:
+        if management_option is None:
+            raise TypeError("Missing 'management_option' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if parent_container_id is None and 'parentContainerId' in kwargs:
             parent_container_id = kwargs['parentContainerId']
-        if 'storageSystemId' in kwargs:
+        if parent_container_id is None:
+            raise TypeError("Missing 'parent_container_id' argument")
+        if storage_system_id is None and 'storageSystemId' in kwargs:
             storage_system_id = kwargs['storageSystemId']
-        if 'timeCreated' in kwargs:
+        if storage_system_id is None:
+            raise TypeError("Missing 'storage_system_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'workloadType' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if workload_type is None and 'workloadType' in kwargs:
             workload_type = kwargs['workloadType']
+        if workload_type is None:
+            raise TypeError("Missing 'workload_type' argument")
 
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
@@ -31717,13 +34701,19 @@ class GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -31774,11 +34764,17 @@ class GetManagedDatabasesUserProxyUserItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication: str,
-             flags: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication: Optional[str] = None,
+             flags: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if authentication is None:
+            raise TypeError("Missing 'authentication' argument")
+        if flags is None:
+            raise TypeError("Missing 'flags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("authentication", authentication)
         _setter("flags", flags)
@@ -31827,11 +34823,15 @@ class GetManagedDatabasesUserProxyUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -31871,9 +34871,11 @@ class GetManagedDatabasesUserProxyUsersProxyUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabasesUserProxyUsersProxyUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabasesUserProxyUsersProxyUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -31906,11 +34908,17 @@ class GetManagedDatabasesUserProxyUsersProxyUserCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication: str,
-             flags: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication: Optional[str] = None,
+             flags: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if authentication is None:
+            raise TypeError("Missing 'authentication' argument")
+        if flags is None:
+            raise TypeError("Missing 'flags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("authentication", authentication)
         _setter("flags", flags)
@@ -31964,14 +34972,22 @@ class GetManagedDatabasesUserSystemPrivilegeItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_option: str,
-             common: str,
-             inherited: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_option: Optional[str] = None,
+             common: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminOption' in kwargs:
+        if admin_option is None and 'adminOption' in kwargs:
             admin_option = kwargs['adminOption']
+        if admin_option is None:
+            raise TypeError("Missing 'admin_option' argument")
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("admin_option", admin_option)
         _setter("common", common)
@@ -32029,11 +35045,15 @@ class GetManagedDatabasesUserSystemPrivilegesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -32073,9 +35093,11 @@ class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -32111,14 +35133,22 @@ class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_option: str,
-             common: str,
-             inherited: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             admin_option: Optional[str] = None,
+             common: Optional[str] = None,
+             inherited: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminOption' in kwargs:
+        if admin_option is None and 'adminOption' in kwargs:
             admin_option = kwargs['adminOption']
+        if admin_option is None:
+            raise TypeError("Missing 'admin_option' argument")
+        if common is None:
+            raise TypeError("Missing 'common' argument")
+        if inherited is None:
+            raise TypeError("Missing 'inherited' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("admin_option", admin_option)
         _setter("common", common)

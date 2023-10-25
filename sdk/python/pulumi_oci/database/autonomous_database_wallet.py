@@ -40,17 +40,21 @@ class AutonomousDatabaseWalletArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomous_database_id: pulumi.Input[str],
-             password: pulumi.Input[str],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
              base64_encode_content: Optional[pulumi.Input[bool]] = None,
              generate_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'base64EncodeContent' in kwargs:
+        if autonomous_database_id is None:
+            raise TypeError("Missing 'autonomous_database_id' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if base64_encode_content is None and 'base64EncodeContent' in kwargs:
             base64_encode_content = kwargs['base64EncodeContent']
-        if 'generateType' in kwargs:
+        if generate_type is None and 'generateType' in kwargs:
             generate_type = kwargs['generateType']
 
         _setter("autonomous_database_id", autonomous_database_id)
@@ -149,13 +153,13 @@ class _AutonomousDatabaseWalletState:
              content: Optional[pulumi.Input[str]] = None,
              generate_type: Optional[pulumi.Input[str]] = None,
              password: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousDatabaseId' in kwargs:
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
             autonomous_database_id = kwargs['autonomousDatabaseId']
-        if 'base64EncodeContent' in kwargs:
+        if base64_encode_content is None and 'base64EncodeContent' in kwargs:
             base64_encode_content = kwargs['base64EncodeContent']
-        if 'generateType' in kwargs:
+        if generate_type is None and 'generateType' in kwargs:
             generate_type = kwargs['generateType']
 
         if autonomous_database_id is not None:

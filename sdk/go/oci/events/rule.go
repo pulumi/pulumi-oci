@@ -48,11 +48,11 @@ import (
 //				Condition:     pulumi.Any(_var.Rule_condition),
 //				DisplayName:   pulumi.Any(_var.Rule_display_name),
 //				IsEnabled:     pulumi.Any(_var.Rule_is_enabled),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Rule_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

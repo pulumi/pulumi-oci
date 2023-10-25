@@ -114,14 +114,14 @@ class AlarmArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             destinations: pulumi.Input[Sequence[pulumi.Input[str]]],
-             display_name: pulumi.Input[str],
-             is_enabled: pulumi.Input[bool],
-             metric_compartment_id: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             query: pulumi.Input[str],
-             severity: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             metric_compartment_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             query: Optional[pulumi.Input[str]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
              body: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -133,31 +133,47 @@ class AlarmArgs:
              resolution: Optional[pulumi.Input[str]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
              suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if destinations is None:
+            raise TypeError("Missing 'destinations' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isEnabled' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'metricCompartmentId' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
             metric_compartment_id = kwargs['metricCompartmentId']
-        if 'definedTags' in kwargs:
+        if metric_compartment_id is None:
+            raise TypeError("Missing 'metric_compartment_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
             is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
-        if 'messageFormat' in kwargs:
+        if message_format is None and 'messageFormat' in kwargs:
             message_format = kwargs['messageFormat']
-        if 'metricCompartmentIdInSubtree' in kwargs:
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
             metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
-        if 'pendingDuration' in kwargs:
+        if pending_duration is None and 'pendingDuration' in kwargs:
             pending_duration = kwargs['pendingDuration']
-        if 'repeatNotificationDuration' in kwargs:
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
             repeat_notification_duration = kwargs['repeatNotificationDuration']
-        if 'resourceGroup' in kwargs:
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
 
         _setter("compartment_id", compartment_id)
@@ -584,35 +600,35 @@ class _AlarmState:
              suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
             is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
-        if 'messageFormat' in kwargs:
+        if message_format is None and 'messageFormat' in kwargs:
             message_format = kwargs['messageFormat']
-        if 'metricCompartmentId' in kwargs:
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
             metric_compartment_id = kwargs['metricCompartmentId']
-        if 'metricCompartmentIdInSubtree' in kwargs:
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
             metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
-        if 'pendingDuration' in kwargs:
+        if pending_duration is None and 'pendingDuration' in kwargs:
             pending_duration = kwargs['pendingDuration']
-        if 'repeatNotificationDuration' in kwargs:
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
             repeat_notification_duration = kwargs['repeatNotificationDuration']
-        if 'resourceGroup' in kwargs:
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if body is not None:
@@ -1231,11 +1247,7 @@ class Alarm(pulumi.CustomResource):
             if severity is None and not opts.urn:
                 raise TypeError("Missing required property 'severity'")
             __props__.__dict__["severity"] = severity
-            if suppression is not None and not isinstance(suppression, AlarmSuppressionArgs):
-                suppression = suppression or {}
-                def _setter(key, value):
-                    suppression[key] = value
-                AlarmSuppressionArgs._configure(_setter, **suppression)
+            suppression = _utilities.configure(suppression, AlarmSuppressionArgs, True)
             __props__.__dict__["suppression"] = suppression
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

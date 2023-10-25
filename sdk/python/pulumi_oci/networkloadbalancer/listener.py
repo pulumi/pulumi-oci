@@ -45,19 +45,27 @@ class ListenerArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_backend_set_name: pulumi.Input[str],
-             network_load_balancer_id: pulumi.Input[str],
-             port: pulumi.Input[int],
-             protocol: pulumi.Input[str],
+             default_backend_set_name: Optional[pulumi.Input[str]] = None,
+             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
              ip_version: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultBackendSetName' in kwargs:
+        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
             default_backend_set_name = kwargs['defaultBackendSetName']
-        if 'networkLoadBalancerId' in kwargs:
+        if default_backend_set_name is None:
+            raise TypeError("Missing 'default_backend_set_name' argument")
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
             network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if 'ipVersion' in kwargs:
+        if network_load_balancer_id is None:
+            raise TypeError("Missing 'network_load_balancer_id' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if ip_version is None and 'ipVersion' in kwargs:
             ip_version = kwargs['ipVersion']
 
         _setter("default_backend_set_name", default_backend_set_name)
@@ -186,13 +194,13 @@ class _ListenerState:
              network_load_balancer_id: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultBackendSetName' in kwargs:
+        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
             default_backend_set_name = kwargs['defaultBackendSetName']
-        if 'ipVersion' in kwargs:
+        if ip_version is None and 'ipVersion' in kwargs:
             ip_version = kwargs['ipVersion']
-        if 'networkLoadBalancerId' in kwargs:
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
             network_load_balancer_id = kwargs['networkLoadBalancerId']
 
         if default_backend_set_name is not None:

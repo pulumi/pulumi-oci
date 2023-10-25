@@ -37,14 +37,16 @@ class VbInstanceAlternateCustomEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: pulumi.Input[str],
+             hostname: Optional[pulumi.Input[str]] = None,
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateSecretId' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
             certificate_secret_id = kwargs['certificateSecretId']
-        if 'certificateSecretVersion' in kwargs:
+        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
             certificate_secret_version = kwargs['certificateSecretVersion']
 
         _setter("hostname", hostname)
@@ -122,17 +124,17 @@ class VbInstanceAttachmentArgs:
              target_instance_url: Optional[pulumi.Input[str]] = None,
              target_role: Optional[pulumi.Input[str]] = None,
              target_service_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isImplicit' in kwargs:
+        if is_implicit is None and 'isImplicit' in kwargs:
             is_implicit = kwargs['isImplicit']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'targetInstanceUrl' in kwargs:
+        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
             target_instance_url = kwargs['targetInstanceUrl']
-        if 'targetRole' in kwargs:
+        if target_role is None and 'targetRole' in kwargs:
             target_role = kwargs['targetRole']
-        if 'targetServiceType' in kwargs:
+        if target_service_type is None and 'targetServiceType' in kwargs:
             target_service_type = kwargs['targetServiceType']
 
         if is_implicit is not None:
@@ -228,14 +230,16 @@ class VbInstanceCustomEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: pulumi.Input[str],
+             hostname: Optional[pulumi.Input[str]] = None,
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateSecretId' in kwargs:
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
             certificate_secret_id = kwargs['certificateSecretId']
-        if 'certificateSecretVersion' in kwargs:
+        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
             certificate_secret_version = kwargs['certificateSecretVersion']
 
         _setter("hostname", hostname)
@@ -312,17 +316,17 @@ class VbInstanceIdcsInfoArgs:
              idcs_app_location_url: Optional[pulumi.Input[str]] = None,
              idcs_app_name: Optional[pulumi.Input[str]] = None,
              instance_primary_audience_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsAppDisplayName' in kwargs:
+        if idcs_app_display_name is None and 'idcsAppDisplayName' in kwargs:
             idcs_app_display_name = kwargs['idcsAppDisplayName']
-        if 'idcsAppId' in kwargs:
+        if idcs_app_id is None and 'idcsAppId' in kwargs:
             idcs_app_id = kwargs['idcsAppId']
-        if 'idcsAppLocationUrl' in kwargs:
+        if idcs_app_location_url is None and 'idcsAppLocationUrl' in kwargs:
             idcs_app_location_url = kwargs['idcsAppLocationUrl']
-        if 'idcsAppName' in kwargs:
+        if idcs_app_name is None and 'idcsAppName' in kwargs:
             idcs_app_name = kwargs['idcsAppName']
-        if 'instancePrimaryAudienceUrl' in kwargs:
+        if instance_primary_audience_url is None and 'instancePrimaryAudienceUrl' in kwargs:
             instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
 
         if idcs_app_display_name is not None:
@@ -412,11 +416,15 @@ class GetVbInstancesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

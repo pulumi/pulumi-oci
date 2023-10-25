@@ -54,28 +54,30 @@ class AppAccelerationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              response_caching_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCachingPolicyArgs']] = None,
              response_compression_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyArgs']] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'responseCachingPolicy' in kwargs:
+        if response_caching_policy is None and 'responseCachingPolicy' in kwargs:
             response_caching_policy = kwargs['responseCachingPolicy']
-        if 'responseCompressionPolicy' in kwargs:
+        if response_compression_policy is None and 'responseCompressionPolicy' in kwargs:
             response_compression_policy = kwargs['responseCompressionPolicy']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("compartment_id", compartment_id)
@@ -249,27 +251,27 @@ class _AppAccelerationPolicyState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'responseCachingPolicy' in kwargs:
+        if response_caching_policy is None and 'responseCachingPolicy' in kwargs:
             response_caching_policy = kwargs['responseCachingPolicy']
-        if 'responseCompressionPolicy' in kwargs:
+        if response_compression_policy is None and 'responseCompressionPolicy' in kwargs:
             response_compression_policy = kwargs['responseCompressionPolicy']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -592,17 +594,9 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if response_caching_policy is not None and not isinstance(response_caching_policy, AppAccelerationPolicyResponseCachingPolicyArgs):
-                response_caching_policy = response_caching_policy or {}
-                def _setter(key, value):
-                    response_caching_policy[key] = value
-                AppAccelerationPolicyResponseCachingPolicyArgs._configure(_setter, **response_caching_policy)
+            response_caching_policy = _utilities.configure(response_caching_policy, AppAccelerationPolicyResponseCachingPolicyArgs, True)
             __props__.__dict__["response_caching_policy"] = response_caching_policy
-            if response_compression_policy is not None and not isinstance(response_compression_policy, AppAccelerationPolicyResponseCompressionPolicyArgs):
-                response_compression_policy = response_compression_policy or {}
-                def _setter(key, value):
-                    response_compression_policy[key] = value
-                AppAccelerationPolicyResponseCompressionPolicyArgs._configure(_setter, **response_compression_policy)
+            response_compression_policy = _utilities.configure(response_compression_policy, AppAccelerationPolicyResponseCompressionPolicyArgs, True)
             __props__.__dict__["response_compression_policy"] = response_compression_policy
             __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["lifecycle_details"] = None

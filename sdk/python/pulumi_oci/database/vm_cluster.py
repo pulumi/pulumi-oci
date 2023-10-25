@@ -87,13 +87,13 @@ class VmClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             cpu_core_count: pulumi.Input[int],
-             display_name: pulumi.Input[str],
-             exadata_infrastructure_id: pulumi.Input[str],
-             gi_version: pulumi.Input[str],
-             ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[str]]],
-             vm_cluster_network_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             gi_version: Optional[pulumi.Input[str]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
              data_collection_options: Optional[pulumi.Input['VmClusterDataCollectionOptionsArgs']] = None,
              data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
              data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
@@ -107,47 +107,61 @@ class VmClusterArgs:
              memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
              ocpu_count: Optional[pulumi.Input[float]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'displayName' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'giVersion' in kwargs:
+        if exadata_infrastructure_id is None:
+            raise TypeError("Missing 'exadata_infrastructure_id' argument")
+        if gi_version is None and 'giVersion' in kwargs:
             gi_version = kwargs['giVersion']
-        if 'sshPublicKeys' in kwargs:
+        if gi_version is None:
+            raise TypeError("Missing 'gi_version' argument")
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'vmClusterNetworkId' in kwargs:
+        if ssh_public_keys is None:
+            raise TypeError("Missing 'ssh_public_keys' argument")
+        if vm_cluster_network_id is None and 'vmClusterNetworkId' in kwargs:
             vm_cluster_network_id = kwargs['vmClusterNetworkId']
-        if 'dataCollectionOptions' in kwargs:
+        if vm_cluster_network_id is None:
+            raise TypeError("Missing 'vm_cluster_network_id' argument")
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isLocalBackupEnabled' in kwargs:
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
             is_local_backup_enabled = kwargs['isLocalBackupEnabled']
-        if 'isSparseDiskgroupEnabled' in kwargs:
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
             is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         _setter("compartment_id", compartment_id)
@@ -552,61 +566,61 @@ class _VmClusterState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
              vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'cpusEnabled' in kwargs:
+        if cpus_enabled is None and 'cpusEnabled' in kwargs:
             cpus_enabled = kwargs['cpusEnabled']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'exadataInfrastructureId' in kwargs:
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
             exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'giVersion' in kwargs:
+        if gi_version is None and 'giVersion' in kwargs:
             gi_version = kwargs['giVersion']
-        if 'isLocalBackupEnabled' in kwargs:
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
             is_local_backup_enabled = kwargs['isLocalBackupEnabled']
-        if 'isSparseDiskgroupEnabled' in kwargs:
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
             is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
-        if 'lastPatchHistoryEntryId' in kwargs:
+        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
             last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpusEnabled' in kwargs:
+        if ocpus_enabled is None and 'ocpusEnabled' in kwargs:
             ocpus_enabled = kwargs['ocpusEnabled']
-        if 'sshPublicKeys' in kwargs:
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'systemVersion' in kwargs:
+        if system_version is None and 'systemVersion' in kwargs:
             system_version = kwargs['systemVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'vmClusterNetworkId' in kwargs:
+        if vm_cluster_network_id is None and 'vmClusterNetworkId' in kwargs:
             vm_cluster_network_id = kwargs['vmClusterNetworkId']
 
         if availability_domain is not None:
@@ -1215,11 +1229,7 @@ class VmCluster(pulumi.CustomResource):
             if cpu_core_count is None and not opts.urn:
                 raise TypeError("Missing required property 'cpu_core_count'")
             __props__.__dict__["cpu_core_count"] = cpu_core_count
-            if data_collection_options is not None and not isinstance(data_collection_options, VmClusterDataCollectionOptionsArgs):
-                data_collection_options = data_collection_options or {}
-                def _setter(key, value):
-                    data_collection_options[key] = value
-                VmClusterDataCollectionOptionsArgs._configure(_setter, **data_collection_options)
+            data_collection_options = _utilities.configure(data_collection_options, VmClusterDataCollectionOptionsArgs, True)
             __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
             __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs

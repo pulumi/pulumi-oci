@@ -55,8 +55,8 @@ class WorkspaceProjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             identifier: pulumi.Input[str],
-             workspace_id: pulumi.Input[str],
+             identifier: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              key: Optional[pulumi.Input[str]] = None,
              model_version: Optional[pulumi.Input[str]] = None,
@@ -64,17 +64,21 @@ class WorkspaceProjectArgs:
              object_status: Optional[pulumi.Input[int]] = None,
              project_key: Optional[pulumi.Input[str]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'workspaceId' in kwargs:
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
-        if 'modelVersion' in kwargs:
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
-        if 'projectKey' in kwargs:
+        if project_key is None and 'projectKey' in kwargs:
             project_key = kwargs['projectKey']
-        if 'registryMetadata' in kwargs:
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
 
         _setter("identifier", identifier)
@@ -275,25 +279,25 @@ class _WorkspaceProjectState:
              project_key: Optional[pulumi.Input[str]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyMap' in kwargs:
+        if key_map is None and 'keyMap' in kwargs:
             key_map = kwargs['keyMap']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
-        if 'parentReves' in kwargs:
+        if parent_reves is None and 'parentReves' in kwargs:
             parent_reves = kwargs['parentReves']
-        if 'projectKey' in kwargs:
+        if project_key is None and 'projectKey' in kwargs:
             project_key = kwargs['projectKey']
-        if 'registryMetadata' in kwargs:
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if description is not None:
@@ -647,11 +651,7 @@ class WorkspaceProject(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
             __props__.__dict__["project_key"] = project_key
-            if registry_metadata is not None and not isinstance(registry_metadata, WorkspaceProjectRegistryMetadataArgs):
-                registry_metadata = registry_metadata or {}
-                def _setter(key, value):
-                    registry_metadata[key] = value
-                WorkspaceProjectRegistryMetadataArgs._configure(_setter, **registry_metadata)
+            registry_metadata = _utilities.configure(registry_metadata, WorkspaceProjectRegistryMetadataArgs, True)
             __props__.__dict__["registry_metadata"] = registry_metadata
             if workspace_id is None and not opts.urn:
                 raise TypeError("Missing required property 'workspace_id'")

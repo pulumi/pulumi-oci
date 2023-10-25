@@ -55,22 +55,30 @@ class BackendArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backendset_name: pulumi.Input[str],
-             ip_address: pulumi.Input[str],
-             load_balancer_id: pulumi.Input[str],
-             port: pulumi.Input[int],
+             backendset_name: Optional[pulumi.Input[str]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
              backup: Optional[pulumi.Input[bool]] = None,
              drain: Optional[pulumi.Input[bool]] = None,
              offline: Optional[pulumi.Input[bool]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendsetName' in kwargs:
+        if backendset_name is None and 'backendsetName' in kwargs:
             backendset_name = kwargs['backendsetName']
-        if 'ipAddress' in kwargs:
+        if backendset_name is None:
+            raise TypeError("Missing 'backendset_name' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'loadBalancerId' in kwargs:
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("backendset_name", backendset_name)
         _setter("ip_address", ip_address)
@@ -249,13 +257,13 @@ class _BackendState:
              port: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendsetName' in kwargs:
+        if backendset_name is None and 'backendsetName' in kwargs:
             backendset_name = kwargs['backendsetName']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if backendset_name is not None:

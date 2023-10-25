@@ -34,12 +34,12 @@ import (
 //			_, err := AiLanguage.NewEndpoint(ctx, "testEndpoint", &AiLanguage.EndpointArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ModelId:       pulumi.Any(oci_ai_language_model.Test_model.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Endpoint_description),
 //				DisplayName: pulumi.Any(_var.Endpoint_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				InferenceUnits: pulumi.Any(_var.Endpoint_inference_units),

@@ -36,11 +36,11 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //				BlockTraffic:  pulumi.Any(_var.Nat_gateway_block_traffic),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Nat_gateway_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PublicIpId:   pulumi.Any(oci_core_public_ip.Test_public_ip.Id),

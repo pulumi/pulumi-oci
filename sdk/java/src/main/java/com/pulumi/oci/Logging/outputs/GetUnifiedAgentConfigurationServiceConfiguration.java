@@ -18,7 +18,7 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
      */
     private String configurationType;
     /**
-     * @return Logging destination object.
+     * @return Unified monitoring agent operational metrics destination object.
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
@@ -37,7 +37,7 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
         return this.configurationType;
     }
     /**
-     * @return Logging destination object.
+     * @return Unified monitoring agent operational metrics destination object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations() {

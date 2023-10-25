@@ -61,14 +61,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
     }
 
     /**
-     * (Updatable) The name key to tag this grok pattern.
+     * (Updatable) The name key to tag this Grok pattern.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     public Optional<Output<String>> name() {
@@ -76,14 +76,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
     }
 
     /**
-     * (Updatable) The grok pattern.
+     * (Updatable) The Grok pattern.
      * 
      */
     @Import(name="pattern")
     private @Nullable Output<String> pattern;
 
     /**
-     * @return (Updatable) The grok pattern.
+     * @return (Updatable) The Grok pattern.
      * 
      */
     public Optional<Output<String>> pattern() {
@@ -182,7 +182,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param name (Updatable) The name key to tag this grok pattern.
+         * @param name (Updatable) The name key to tag this Grok pattern.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param name (Updatable) The name key to tag this grok pattern.
+         * @param name (Updatable) The name key to tag this Grok pattern.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param pattern (Updatable) The grok pattern.
+         * @param pattern (Updatable) The Grok pattern.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param pattern (Updatable) The grok pattern.
+         * @param pattern (Updatable) The Grok pattern.
          * 
          * @return builder
          * 

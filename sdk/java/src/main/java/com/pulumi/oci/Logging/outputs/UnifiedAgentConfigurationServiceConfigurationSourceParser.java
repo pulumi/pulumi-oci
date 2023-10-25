@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
     /**
-     * @return (Updatable) csv delimiter.
+     * @return (Updatable) CSV delimiter.
      * 
      */
     private @Nullable String delimiter;
@@ -44,52 +44,52 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable List<String> formats;
     /**
-     * @return (Updatable) grok failure key.
+     * @return (Updatable) Grok failure key.
      * 
      */
     private @Nullable String grokFailureKey;
     /**
-     * @return (Updatable) grok name key.
+     * @return (Updatable) Grok name key.
      * 
      */
     private @Nullable String grokNameKey;
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     private @Nullable Boolean isEstimateCurrentEvent;
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     private @Nullable Boolean isKeepTimeKey;
     /**
-     * @return (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * @return (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     private @Nullable Boolean isMergeCriFields;
     /**
-     * @return (Updatable) If true, an empty string field is replaced with nil.
+     * @return (Updatable) If true, an empty string field is replaced with a null value.
      * 
      */
     private @Nullable Boolean isNullEmptyString;
     /**
-     * @return (Updatable) Support colonless ident or not.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     private @Nullable Boolean isSupportColonlessIdent;
     /**
-     * @return (Updatable) With priority or not.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     private @Nullable Boolean isWithPriority;
     /**
-     * @return (Updatable) csv keys.
+     * @return (Updatable) CSV keys.
      * 
      */
     private @Nullable List<String> keys;
     /**
-     * @return (Updatable) Message format of syslog.
+     * @return (Updatable) Syslog message format.
      * 
      */
     private @Nullable String messageFormat;
@@ -104,7 +104,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable String multiLineStartRegexp;
     /**
-     * @return (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * @return (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser nestedParser;
@@ -119,12 +119,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private String parserType;
     /**
-     * @return (Updatable) grok pattern object.
+     * @return (Updatable) Grok pattern object.
      * 
      */
     private @Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
     /**
-     * @return (Updatable) rfc5424 time format.
+     * @return (Updatable) RFC 5424 time format.
      * 
      */
     private @Nullable String rfc5424timeFormat;
@@ -139,7 +139,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable String timeFormat;
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     private @Nullable String timeType;
@@ -162,7 +162,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
 
     private UnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     /**
-     * @return (Updatable) csv delimiter.
+     * @return (Updatable) CSV delimiter.
      * 
      */
     public Optional<String> delimiter() {
@@ -197,70 +197,70 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return this.formats == null ? List.of() : this.formats;
     }
     /**
-     * @return (Updatable) grok failure key.
+     * @return (Updatable) Grok failure key.
      * 
      */
     public Optional<String> grokFailureKey() {
         return Optional.ofNullable(this.grokFailureKey);
     }
     /**
-     * @return (Updatable) grok name key.
+     * @return (Updatable) Grok name key.
      * 
      */
     public Optional<String> grokNameKey() {
         return Optional.ofNullable(this.grokNameKey);
     }
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     public Optional<Boolean> isEstimateCurrentEvent() {
         return Optional.ofNullable(this.isEstimateCurrentEvent);
     }
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     public Optional<Boolean> isKeepTimeKey() {
         return Optional.ofNullable(this.isKeepTimeKey);
     }
     /**
-     * @return (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * @return (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     public Optional<Boolean> isMergeCriFields() {
         return Optional.ofNullable(this.isMergeCriFields);
     }
     /**
-     * @return (Updatable) If true, an empty string field is replaced with nil.
+     * @return (Updatable) If true, an empty string field is replaced with a null value.
      * 
      */
     public Optional<Boolean> isNullEmptyString() {
         return Optional.ofNullable(this.isNullEmptyString);
     }
     /**
-     * @return (Updatable) Support colonless ident or not.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     public Optional<Boolean> isSupportColonlessIdent() {
         return Optional.ofNullable(this.isSupportColonlessIdent);
     }
     /**
-     * @return (Updatable) With priority or not.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     public Optional<Boolean> isWithPriority() {
         return Optional.ofNullable(this.isWithPriority);
     }
     /**
-     * @return (Updatable) csv keys.
+     * @return (Updatable) CSV keys.
      * 
      */
     public List<String> keys() {
         return this.keys == null ? List.of() : this.keys;
     }
     /**
-     * @return (Updatable) Message format of syslog.
+     * @return (Updatable) Syslog message format.
      * 
      */
     public Optional<String> messageFormat() {
@@ -281,7 +281,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.multiLineStartRegexp);
     }
     /**
-     * @return (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * @return (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     public Optional<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParser() {
@@ -302,14 +302,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return this.parserType;
     }
     /**
-     * @return (Updatable) grok pattern object.
+     * @return (Updatable) Grok pattern object.
      * 
      */
     public List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns() {
         return this.patterns == null ? List.of() : this.patterns;
     }
     /**
-     * @return (Updatable) rfc5424 time format.
+     * @return (Updatable) RFC 5424 time format.
      * 
      */
     public Optional<String> rfc5424timeFormat() {
@@ -330,7 +330,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.timeFormat);
     }
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     public Optional<String> timeType() {

@@ -87,6 +87,8 @@ type LookupJobResult struct {
 	JobInfrastructureConfigurationDetails []GetJobJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails []GetJobJobLogConfigurationDetail `pulumi:"jobLogConfigurationDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []GetJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -223,6 +225,13 @@ func (o LookupJobResultOutput) JobInfrastructureConfigurationDetails() GetJobJob
 // Logging configuration for resource.
 func (o LookupJobResultOutput) JobLogConfigurationDetails() GetJobJobLogConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobResult) []GetJobJobLogConfigurationDetail { return v.JobLogConfigurationDetails }).(GetJobJobLogConfigurationDetailArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o LookupJobResultOutput) JobStorageMountConfigurationDetailsLists() GetJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupJobResult) []GetJobJobStorageMountConfigurationDetailsList {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(GetJobJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The state of the job.

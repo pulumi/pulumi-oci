@@ -4,8 +4,11 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationDestination {
@@ -14,6 +17,11 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
      * 
      */
     private String logObjectId;
+    /**
+     * @return (Updatable) Unified monitoring agent operational metrics configuration object.
+     * 
+     */
+    private @Nullable UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration operationalMetricsConfiguration;
 
     private UnifiedAgentConfigurationServiceConfigurationDestination() {}
     /**
@@ -22,6 +30,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
      */
     public String logObjectId() {
         return this.logObjectId;
+    }
+    /**
+     * @return (Updatable) Unified monitoring agent operational metrics configuration object.
+     * 
+     */
+    public Optional<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration> operationalMetricsConfiguration() {
+        return Optional.ofNullable(this.operationalMetricsConfiguration);
     }
 
     public static Builder builder() {
@@ -34,10 +49,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
     @CustomType.Builder
     public static final class Builder {
         private String logObjectId;
+        private @Nullable UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration operationalMetricsConfiguration;
         public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logObjectId = defaults.logObjectId;
+    	      this.operationalMetricsConfiguration = defaults.operationalMetricsConfiguration;
         }
 
         @CustomType.Setter
@@ -45,9 +62,15 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
             this.logObjectId = Objects.requireNonNull(logObjectId);
             return this;
         }
+        @CustomType.Setter
+        public Builder operationalMetricsConfiguration(@Nullable UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration operationalMetricsConfiguration) {
+            this.operationalMetricsConfiguration = operationalMetricsConfiguration;
+            return this;
+        }
         public UnifiedAgentConfigurationServiceConfigurationDestination build() {
             final var o = new UnifiedAgentConfigurationServiceConfigurationDestination();
             o.logObjectId = logObjectId;
+            o.operationalMetricsConfiguration = operationalMetricsConfiguration;
             return o;
         }
     }

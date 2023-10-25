@@ -26,6 +26,19 @@ import * as utilities from "../utilities";
  *         configurationType: _var.unified_agent_configuration_service_configuration_configuration_type,
  *         destination: {
  *             logObjectId: oci_objectstorage_object.test_object.id,
+ *             operationalMetricsConfiguration: {
+ *                 destination: {
+ *                     compartmentId: _var.compartment_id,
+ *                 },
+ *                 source: {
+ *                     type: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type,
+ *                     metrics: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics,
+ *                     recordInput: {
+ *                         namespace: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace,
+ *                         resourceGroup: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group,
+ *                     },
+ *                 },
+ *             },
  *         },
  *         sources: [{
  *             sourceType: _var.unified_agent_configuration_service_configuration_sources_source_type,

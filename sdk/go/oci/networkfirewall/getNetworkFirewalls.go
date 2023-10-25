@@ -75,7 +75,7 @@ type GetNetworkFirewallsArgs struct {
 
 // A collection of values returned by getNetworkFirewalls.
 type GetNetworkFirewallsResult struct {
-	// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
+	// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -147,7 +147,7 @@ func (o GetNetworkFirewallsResultOutput) ToOutput(ctx context.Context) pulumix.O
 	}
 }
 
-// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
+// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
 func (o GetNetworkFirewallsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }

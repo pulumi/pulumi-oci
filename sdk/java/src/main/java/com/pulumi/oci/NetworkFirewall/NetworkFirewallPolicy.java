@@ -9,129 +9,14 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyState;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyApplicationList;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyDecryptionProfile;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyDecryptionRule;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyIpAddressList;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyMappedSecret;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicySecurityRule;
-import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyUrlList;
 import com.pulumi.oci.Utilities;
-import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
-import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new Network Firewall Policy.
- * 
- * ## Example Usage
- * 
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicy;
- * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyApplicationListArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionProfileArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyIpAddressListArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyMappedSecretArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleConditionArgs;
- * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyUrlListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy(&#34;testNetworkFirewallPolicy&#34;, NetworkFirewallPolicyArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .applicationLists(NetworkFirewallPolicyApplicationListArgs.builder()
- *                 .applicationListName(var_.network_firewall_policy_application_lists_key())
- *                 .applicationValues(NetworkFirewallPolicyApplicationListApplicationValueArgs.builder()
- *                     .type(var_.network_firewall_policy_application_lists_type())
- *                     .icmpType(var_.network_firewall_policy_application_lists_icmp_type())
- *                     .icmpCode(var_.network_firewall_policy_application_lists_icmp_code())
- *                     .minimumPort(var_.network_firewall_policy_application_lists_minimum_port())
- *                     .maximumPort(var_.network_firewall_policy_application_lists_maximum_port())
- *                     .build())
- *                 .build())
- *             .decryptionProfiles(NetworkFirewallPolicyDecryptionProfileArgs.builder()
- *                 .isOutOfCapacityBlocked(var_.network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked())
- *                 .isUnsupportedCipherBlocked(var_.network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked())
- *                 .isUnsupportedVersionBlocked(var_.network_firewall_policy_decryption_profiles_is_unsupported_version_blocked())
- *                 .type(var_.network_firewall_policy_decryption_profiles_type())
- *                 .areCertificateExtensionsRestricted(var_.network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted())
- *                 .isAutoIncludeAltName(var_.network_firewall_policy_decryption_profiles_is_auto_include_alt_name())
- *                 .isExpiredCertificateBlocked(var_.network_firewall_policy_decryption_profiles_is_expired_certificate_blocked())
- *                 .isRevocationStatusTimeoutBlocked(var_.network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked())
- *                 .isUnknownRevocationStatusBlocked(var_.network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked())
- *                 .isUntrustedIssuerBlocked(var_.network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked())
- *                 .build())
- *             .decryptionRules(NetworkFirewallPolicyDecryptionRuleArgs.builder()
- *                 .action(var_.network_firewall_policy_decryption_rules_action())
- *                 .condition(NetworkFirewallPolicyDecryptionRuleConditionArgs.builder()
- *                     .destinations(var_.network_firewall_policy_decryption_rules_condition_destinations())
- *                     .sources(var_.network_firewall_policy_decryption_rules_condition_sources())
- *                     .build())
- *                 .name(var_.network_firewall_policy_decryption_rules_name())
- *                 .decryptionProfile(var_.network_firewall_policy_decryption_rules_decryption_profile())
- *                 .secret(var_.network_firewall_policy_decryption_rules_secret())
- *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.network_firewall_policy_display_name())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .ipAddressLists(NetworkFirewallPolicyIpAddressListArgs.builder()
- *                 .ipAddressListName(var_.network_firewall_policy_ip_address_lists_name())
- *                 .ipAddressListValues(var_.network_firewall_policy_ip_address_lists_value())
- *                 .build())
- *             .mappedSecrets(NetworkFirewallPolicyMappedSecretArgs.builder()
- *                 .source(var_.network_firewall_policy_mapped_secrets_source())
- *                 .type(var_.network_firewall_policy_mapped_secrets_type())
- *                 .vaultSecretId(oci_vault_secret.test_secret().id())
- *                 .versionNumber(var_.network_firewall_policy_mapped_secrets_version_number())
- *                 .build())
- *             .securityRules(NetworkFirewallPolicySecurityRuleArgs.builder()
- *                 .action(var_.network_firewall_policy_security_rules_action())
- *                 .condition(NetworkFirewallPolicySecurityRuleConditionArgs.builder()
- *                     .applications(var_.network_firewall_policy_security_rules_condition_applications())
- *                     .destinations(var_.network_firewall_policy_security_rules_condition_destinations())
- *                     .sources(var_.network_firewall_policy_security_rules_condition_sources())
- *                     .urls(var_.network_firewall_policy_security_rules_condition_urls())
- *                     .build())
- *                 .name(var_.network_firewall_policy_security_rules_name())
- *                 .inspection(var_.network_firewall_policy_security_rules_inspection())
- *                 .build())
- *             .urlLists(NetworkFirewallPolicyUrlListArgs.builder()
- *                 .urlListName(var_.network_firewall_policy_url_lists_key())
- *                 .urlListValues(NetworkFirewallPolicyUrlListUrlListValueArgs.builder()
- *                     .type(var_.network_firewall_policy_url_lists_type())
- *                     .pattern(var_.network_firewall_policy_url_lists_pattern())
- *                     .build())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * ## Import
  * 
  * NetworkFirewallPolicies can be imported using the `id`, e.g.
@@ -144,18 +29,18 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy")
 public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * Count of number of Network Firewall attached to the Policy.
      * 
      */
-    @Export(name="applicationLists", refs={List.class,NetworkFirewallPolicyApplicationList.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyApplicationList>> applicationLists;
+    @Export(name="attachedNetworkFirewallCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> attachedNetworkFirewallCount;
 
     /**
-     * @return (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * @return Count of number of Network Firewall attached to the Policy.
      * 
      */
-    public Output<List<NetworkFirewallPolicyApplicationList>> applicationLists() {
-        return this.applicationLists;
+    public Output<Integer> attachedNetworkFirewallCount() {
+        return this.attachedNetworkFirewallCount;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
@@ -172,42 +57,14 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-     * 
-     */
-    @Export(name="decryptionProfiles", refs={List.class,NetworkFirewallPolicyDecryptionProfile.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyDecryptionProfile>> decryptionProfiles;
-
-    /**
-     * @return (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicyDecryptionProfile>> decryptionProfiles() {
-        return this.decryptionProfiles;
-    }
-    /**
-     * (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    @Export(name="decryptionRules", refs={List.class,NetworkFirewallPolicyDecryptionRule.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyDecryptionRule>> decryptionRules;
-
-    /**
-     * @return (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicyDecryptionRule>> decryptionRules() {
-        return this.decryptionRules;
-    }
-    /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -228,46 +85,24 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
-    }
-    /**
-     * (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-     * 
-     */
-    @Export(name="ipAddressLists", refs={List.class,NetworkFirewallPolicyIpAddressList.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyIpAddressList>> ipAddressLists;
-
-    /**
-     * @return (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicyIpAddressList>> ipAddressLists() {
-        return this.ipAddressLists;
-    }
-    /**
-     * To determine if any Network Firewall is associated with this Network Firewall Policy.
-     * 
-     */
-    @Export(name="isFirewallAttached", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFirewallAttached;
-
-    /**
-     * @return To determine if any Network Firewall is associated with this Network Firewall Policy.
-     * 
-     */
-    public Output<Boolean> isFirewallAttached() {
-        return this.isFirewallAttached;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -282,34 +117,6 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
-    }
-    /**
-     * (Updatable) Map defining secrets of the policy. The value of an entry is a &#34;mapped secret&#34; consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-     * 
-     */
-    @Export(name="mappedSecrets", refs={List.class,NetworkFirewallPolicyMappedSecret.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyMappedSecret>> mappedSecrets;
-
-    /**
-     * @return (Updatable) Map defining secrets of the policy. The value of an entry is a &#34;mapped secret&#34; consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicyMappedSecret>> mappedSecrets() {
-        return this.mappedSecrets;
-    }
-    /**
-     * (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    @Export(name="securityRules", refs={List.class,NetworkFirewallPolicySecurityRule.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicySecurityRule>> securityRules;
-
-    /**
-     * @return (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicySecurityRule>> securityRules() {
-        return this.securityRules;
     }
     /**
      * The current state of the Network Firewall Policy.
@@ -366,20 +173,6 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
-    }
-    /**
-     * (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-     * 
-     */
-    @Export(name="urlLists", refs={List.class,NetworkFirewallPolicyUrlList.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicyUrlList>> urlLists;
-
-    /**
-     * @return (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-     * 
-     */
-    public Output<List<NetworkFirewallPolicyUrlList>> urlLists() {
-        return this.urlLists;
     }
 
     /**

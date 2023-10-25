@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class GetUnifiedAgentConfigurationsFilterResult
     {
         /// <summary>
-        /// The name key to tag this grok pattern.
+        /// The name key to tag this Grok pattern.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

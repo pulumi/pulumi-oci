@@ -19,17 +19,17 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
      */
     private @Nullable List<String> channels;
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) source parser object.
+     * @return (Updatable) Source parser object.
      * 
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceParser parser;
     /**
-     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
+     * @return (Updatable) Absolute paths for log source files. Wildcards can be used.
      * 
      */
     private @Nullable List<String> paths;
@@ -51,21 +51,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         return this.channels == null ? List.of() : this.channels;
     }
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) source parser object.
+     * @return (Updatable) Source parser object.
      * 
      */
     public Optional<UnifiedAgentConfigurationServiceConfigurationSourceParser> parser() {
         return Optional.ofNullable(this.parser);
     }
     /**
-     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
+     * @return (Updatable) Absolute paths for log source files. Wildcards can be used.
      * 
      */
     public List<String> paths() {

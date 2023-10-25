@@ -12,28 +12,28 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicyDecryptionRuleConditionArgs : global::Pulumi.ResourceArgs
     {
-        [Input("destinations")]
-        private InputList<string>? _destinations;
+        [Input("destinationAddresses")]
+        private InputList<string>? _destinationAddresses;
 
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic destination address.
         /// </summary>
-        public InputList<string> Destinations
+        public InputList<string> DestinationAddresses
         {
-            get => _destinations ?? (_destinations = new InputList<string>());
-            set => _destinations = value;
+            get => _destinationAddresses ?? (_destinationAddresses = new InputList<string>());
+            set => _destinationAddresses = value;
         }
 
-        [Input("sources")]
-        private InputList<string>? _sources;
+        [Input("sourceAddresses")]
+        private InputList<string>? _sourceAddresses;
 
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic source address.
         /// </summary>
-        public InputList<string> Sources
+        public InputList<string> SourceAddresses
         {
-            get => _sources ?? (_sources = new InputList<string>());
-            set => _sources = value;
+            get => _sourceAddresses ?? (_sourceAddresses = new InputList<string>());
+            set => _sourceAddresses = value;
         }
 
         public NetworkFirewallPolicyDecryptionRuleConditionArgs()

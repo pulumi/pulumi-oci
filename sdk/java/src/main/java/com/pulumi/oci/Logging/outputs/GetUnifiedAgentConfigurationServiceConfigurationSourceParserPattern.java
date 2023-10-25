@@ -25,12 +25,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
      */
     private String fieldTimeZone;
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     private String name;
     /**
-     * @return The grok pattern.
+     * @return The Grok pattern.
      * 
      */
     private String pattern;
@@ -58,14 +58,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
         return this.fieldTimeZone;
     }
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The grok pattern.
+     * @return The Grok pattern.
      * 
      */
     public String pattern() {

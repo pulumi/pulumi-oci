@@ -32,14 +32,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     }
 
     /**
-     * (Updatable) If true, keep time field in the record.
+     * (Updatable) If true, keep the time field in the record.
      * 
      */
     @Import(name="isKeepTimeKey")
     private @Nullable Output<Boolean> isKeepTimeKey;
 
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     public Optional<Output<Boolean>> isKeepTimeKey() {
@@ -62,14 +62,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     }
 
     /**
-     * (Updatable) Time type of JSON parser.
+     * (Updatable) JSON parser time type.
      * 
      */
     @Import(name="timeType")
     private @Nullable Output<String> timeType;
 
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     public Optional<Output<String>> timeType() {
@@ -125,7 +125,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep time field in the record.
+         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep time field in the record.
+         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         }
 
         /**
-         * @param timeType (Updatable) Time type of JSON parser.
+         * @param timeType (Updatable) JSON parser time type.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         }
 
         /**
-         * @param timeType (Updatable) Time type of JSON parser.
+         * @param timeType (Updatable) JSON parser time type.
          * 
          * @return builder
          * 

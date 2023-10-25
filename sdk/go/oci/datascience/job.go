@@ -64,6 +64,18 @@ import (
 //					LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
 //					LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
 //				},
+//				JobStorageMountConfigurationDetailsLists: datascience.JobJobStorageMountConfigurationDetailsListArray{
+//					&datascience.JobJobStorageMountConfigurationDetailsListArgs{
+//						DestinationDirectoryName: pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_destination_directory_name),
+//						StorageType:              pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_storage_type),
+//						Bucket:                   pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_bucket),
+//						DestinationPath:          pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_destination_path),
+//						ExportId:                 pulumi.Any(oci_file_storage_export.Test_export.Id),
+//						MountTargetId:            pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
+//						Namespace:                pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_namespace),
+//						Prefix:                   pulumi.Any(_var.Job_job_storage_mount_configuration_details_list_prefix),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -118,6 +130,8 @@ type Job struct {
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsOutput `pulumi:"jobLogConfigurationDetails"`
+	// (Updatable) Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -202,6 +216,8 @@ type jobState struct {
 	JobInfrastructureConfigurationDetails *JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
+	// (Updatable) Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -245,6 +261,8 @@ type JobState struct {
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsPtrInput
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
+	// (Updatable) Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The state of the job.
 	LifecycleDetails pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -287,6 +305,8 @@ type jobArgs struct {
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
+	// (Updatable) Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId string `pulumi:"projectId"`
 }
@@ -320,6 +340,8 @@ type JobArgs struct {
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsInput
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
+	// (Updatable) Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId pulumi.StringInput
 }
@@ -515,6 +537,13 @@ func (o JobOutput) JobInfrastructureConfigurationDetails() JobJobInfrastructureC
 // Logging configuration for resource.
 func (o JobOutput) JobLogConfigurationDetails() JobJobLogConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Job) JobJobLogConfigurationDetailsOutput { return v.JobLogConfigurationDetails }).(JobJobLogConfigurationDetailsOutput)
+}
+
+// (Updatable) Collection of JobStorageMountConfigurationDetails.
+func (o JobOutput) JobStorageMountConfigurationDetailsLists() JobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v *Job) JobJobStorageMountConfigurationDetailsListArrayOutput {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(JobJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The state of the job.

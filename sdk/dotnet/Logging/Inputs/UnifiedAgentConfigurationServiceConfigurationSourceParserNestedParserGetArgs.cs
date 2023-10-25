@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? FieldTimeKey { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, keep time field in the record.
+        /// (Updatable) If true, keep the time field in the record.
         /// </summary>
         [Input("isKeepTimeKey")]
         public Input<bool>? IsKeepTimeKey { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? TimeFormat { get; set; }
 
         /// <summary>
-        /// (Updatable) Time type of JSON parser.
+        /// (Updatable) JSON parser time type.
         /// </summary>
         [Input("timeType")]
         public Input<string>? TimeType { get; set; }

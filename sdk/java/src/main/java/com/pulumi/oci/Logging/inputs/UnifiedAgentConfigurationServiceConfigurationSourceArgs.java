@@ -33,14 +33,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     }
 
     /**
-     * (Updatable) The name key to tag this grok pattern.
+     * (Updatable) The name key to tag this Grok pattern.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     public Optional<Output<String>> name() {
@@ -48,14 +48,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     }
 
     /**
-     * (Updatable) source parser object.
+     * (Updatable) Source parser object.
      * 
      */
     @Import(name="parser")
     private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserArgs> parser;
 
     /**
-     * @return (Updatable) source parser object.
+     * @return (Updatable) Source parser object.
      * 
      */
     public Optional<Output<UnifiedAgentConfigurationServiceConfigurationSourceParserArgs>> parser() {
@@ -63,14 +63,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     }
 
     /**
-     * (Updatable) Absolute paths for log source files. Wildcard can be used.
+     * (Updatable) Absolute paths for log source files. Wildcards can be used.
      * 
      */
     @Import(name="paths")
     private @Nullable Output<List<String>> paths;
 
     /**
-     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
+     * @return (Updatable) Absolute paths for log source files. Wildcards can be used.
      * 
      */
     public Optional<Output<List<String>>> paths() {
@@ -158,7 +158,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param name (Updatable) The name key to tag this grok pattern.
+         * @param name (Updatable) The name key to tag this Grok pattern.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param name (Updatable) The name key to tag this grok pattern.
+         * @param name (Updatable) The name key to tag this Grok pattern.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param parser (Updatable) source parser object.
+         * @param parser (Updatable) Source parser object.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param parser (Updatable) source parser object.
+         * @param parser (Updatable) Source parser object.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
+         * @param paths (Updatable) Absolute paths for log source files. Wildcards can be used.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
+         * @param paths (Updatable) Absolute paths for log source files. Wildcards can be used.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
+         * @param paths (Updatable) Absolute paths for log source files. Wildcards can be used.
          * 
          * @return builder
          * 

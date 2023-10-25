@@ -8,8 +8,6 @@ import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pulumi.resources.ResourceArgs {
@@ -17,71 +15,87 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
     public static final NetworkFirewallPolicySecurityRuleConditionArgs Empty = new NetworkFirewallPolicySecurityRuleConditionArgs();
 
     /**
-     * (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     * (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    @Import(name="applications")
-    private @Nullable Output<List<String>> applications;
+    @Import(name="applications", required=true)
+    private Output<List<String>> applications;
 
     /**
-     * @return (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     * @return (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    public Optional<Output<List<String>>> applications() {
-        return Optional.ofNullable(this.applications);
+    public Output<List<String>> applications() {
+        return this.applications;
     }
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    @Import(name="destinations")
-    private @Nullable Output<List<String>> destinations;
+    @Import(name="destinationAddresses", required=true)
+    private Output<List<String>> destinationAddresses;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    public Optional<Output<List<String>>> destinations() {
-        return Optional.ofNullable(this.destinations);
+    public Output<List<String>> destinationAddresses() {
+        return this.destinationAddresses;
     }
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    @Import(name="sources")
-    private @Nullable Output<List<String>> sources;
+    @Import(name="services", required=true)
+    private Output<List<String>> services;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    public Optional<Output<List<String>>> sources() {
-        return Optional.ofNullable(this.sources);
+    public Output<List<String>> services() {
+        return this.services;
     }
 
     /**
-     * (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+     * (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    @Import(name="urls")
-    private @Nullable Output<List<String>> urls;
+    @Import(name="sourceAddresses", required=true)
+    private Output<List<String>> sourceAddresses;
 
     /**
-     * @return (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    public Optional<Output<List<String>>> urls() {
-        return Optional.ofNullable(this.urls);
+    public Output<List<String>> sourceAddresses() {
+        return this.sourceAddresses;
+    }
+
+    /**
+     * (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+     * 
+     */
+    @Import(name="urls", required=true)
+    private Output<List<String>> urls;
+
+    /**
+     * @return (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+     * 
+     */
+    public Output<List<String>> urls() {
+        return this.urls;
     }
 
     private NetworkFirewallPolicySecurityRuleConditionArgs() {}
 
     private NetworkFirewallPolicySecurityRuleConditionArgs(NetworkFirewallPolicySecurityRuleConditionArgs $) {
         this.applications = $.applications;
-        this.destinations = $.destinations;
-        this.sources = $.sources;
+        this.destinationAddresses = $.destinationAddresses;
+        this.services = $.services;
+        this.sourceAddresses = $.sourceAddresses;
         this.urls = $.urls;
     }
 
@@ -104,18 +118,18 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param applications (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         * @param applications (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
          */
-        public Builder applications(@Nullable Output<List<String>> applications) {
+        public Builder applications(Output<List<String>> applications) {
             $.applications = applications;
             return this;
         }
 
         /**
-         * @param applications (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         * @param applications (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
@@ -125,7 +139,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param applications (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         * @param applications (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
@@ -135,80 +149,111 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(@Nullable Output<List<String>> destinations) {
-            $.destinations = destinations;
+        public Builder destinationAddresses(Output<List<String>> destinationAddresses) {
+            $.destinationAddresses = destinationAddresses;
             return this;
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(List<String> destinations) {
-            return destinations(Output.of(destinations));
+        public Builder destinationAddresses(List<String> destinationAddresses) {
+            return destinationAddresses(Output.of(destinationAddresses));
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(String... destinations) {
-            return destinations(List.of(destinations));
+        public Builder destinationAddresses(String... destinationAddresses) {
+            return destinationAddresses(List.of(destinationAddresses));
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param services (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
          */
-        public Builder sources(@Nullable Output<List<String>> sources) {
-            $.sources = sources;
+        public Builder services(Output<List<String>> services) {
+            $.services = services;
             return this;
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param services (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
          */
-        public Builder sources(List<String> sources) {
-            return sources(Output.of(sources));
+        public Builder services(List<String> services) {
+            return services(Output.of(services));
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param services (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
          * 
          * @return builder
          * 
          */
-        public Builder sources(String... sources) {
-            return sources(List.of(sources));
+        public Builder services(String... services) {
+            return services(List.of(services));
         }
 
         /**
-         * @param urls (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
          */
-        public Builder urls(@Nullable Output<List<String>> urls) {
+        public Builder sourceAddresses(Output<List<String>> sourceAddresses) {
+            $.sourceAddresses = sourceAddresses;
+            return this;
+        }
+
+        /**
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAddresses(List<String> sourceAddresses) {
+            return sourceAddresses(Output.of(sourceAddresses));
+        }
+
+        /**
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAddresses(String... sourceAddresses) {
+            return sourceAddresses(List.of(sourceAddresses));
+        }
+
+        /**
+         * @param urls (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder urls(Output<List<String>> urls) {
             $.urls = urls;
             return this;
         }
 
         /**
-         * @param urls (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         * @param urls (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
          * 
          * @return builder
          * 
@@ -218,7 +263,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param urls (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         * @param urls (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
          * 
          * @return builder
          * 
@@ -228,6 +273,11 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         public NetworkFirewallPolicySecurityRuleConditionArgs build() {
+            $.applications = Objects.requireNonNull($.applications, "expected parameter 'applications' to be non-null");
+            $.destinationAddresses = Objects.requireNonNull($.destinationAddresses, "expected parameter 'destinationAddresses' to be non-null");
+            $.services = Objects.requireNonNull($.services, "expected parameter 'services' to be non-null");
+            $.sourceAddresses = Objects.requireNonNull($.sourceAddresses, "expected parameter 'sourceAddresses' to be non-null");
+            $.urls = Objects.requireNonNull($.urls, "expected parameter 'urls' to be non-null");
             return $;
         }
     }

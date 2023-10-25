@@ -18,14 +18,14 @@ public final class GetUnifiedAgentConfigurationsFilterArgs extends com.pulumi.re
     public static final GetUnifiedAgentConfigurationsFilterArgs Empty = new GetUnifiedAgentConfigurationsFilterArgs();
 
     /**
-     * The name key to tag this grok pattern.
+     * The name key to tag this Grok pattern.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetUnifiedAgentConfigurationsFilterArgs extends com.pulumi.re
         }
 
         /**
-         * @param name The name key to tag this grok pattern.
+         * @param name The name key to tag this Grok pattern.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetUnifiedAgentConfigurationsFilterArgs extends com.pulumi.re
         }
 
         /**
-         * @param name The name key to tag this grok pattern.
+         * @param name The name key to tag this Grok pattern.
          * 
          * @return builder
          * 

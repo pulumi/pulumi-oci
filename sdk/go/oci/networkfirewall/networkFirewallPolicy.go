@@ -13,10 +13,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
-// This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
-//
-// Creates a new Network Firewall Policy.
-//
 // ## Import
 //
 // NetworkFirewallPolicies can be imported using the `id`, e.g.
@@ -29,30 +25,21 @@ import (
 type NetworkFirewallPolicy struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-	ApplicationLists NetworkFirewallPolicyApplicationListArrayOutput `pulumi:"applicationLists"`
+	// Count of number of Network Firewall attached to the Policy.
+	AttachedNetworkFirewallCount pulumi.IntOutput `pulumi:"attachedNetworkFirewallCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-	DecryptionProfiles NetworkFirewallPolicyDecryptionProfileArrayOutput `pulumi:"decryptionProfiles"`
-	// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	DecryptionRules NetworkFirewallPolicyDecryptionRuleArrayOutput `pulumi:"decryptionRules"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-	IpAddressLists NetworkFirewallPolicyIpAddressListArrayOutput `pulumi:"ipAddressLists"`
-	// To determine if any Network Firewall is associated with this Network Firewall Policy.
-	IsFirewallAttached pulumi.BoolOutput `pulumi:"isFirewallAttached"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-	MappedSecrets NetworkFirewallPolicyMappedSecretArrayOutput `pulumi:"mappedSecrets"`
-	// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	SecurityRules NetworkFirewallPolicySecurityRuleArrayOutput `pulumi:"securityRules"`
 	// The current state of the Network Firewall Policy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -61,8 +48,6 @@ type NetworkFirewallPolicy struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-	UrlLists NetworkFirewallPolicyUrlListArrayOutput `pulumi:"urlLists"`
 }
 
 // NewNetworkFirewallPolicy registers a new resource with the given unique name, arguments, and options.
@@ -98,30 +83,21 @@ func GetNetworkFirewallPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicy resources.
 type networkFirewallPolicyState struct {
-	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-	ApplicationLists []NetworkFirewallPolicyApplicationList `pulumi:"applicationLists"`
+	// Count of number of Network Firewall attached to the Policy.
+	AttachedNetworkFirewallCount *int `pulumi:"attachedNetworkFirewallCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-	DecryptionProfiles []NetworkFirewallPolicyDecryptionProfile `pulumi:"decryptionProfiles"`
-	// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	DecryptionRules []NetworkFirewallPolicyDecryptionRule `pulumi:"decryptionRules"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-	IpAddressLists []NetworkFirewallPolicyIpAddressList `pulumi:"ipAddressLists"`
-	// To determine if any Network Firewall is associated with this Network Firewall Policy.
-	IsFirewallAttached *bool `pulumi:"isFirewallAttached"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-	MappedSecrets []NetworkFirewallPolicyMappedSecret `pulumi:"mappedSecrets"`
-	// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	SecurityRules []NetworkFirewallPolicySecurityRule `pulumi:"securityRules"`
 	// The current state of the Network Firewall Policy.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -130,35 +106,24 @@ type networkFirewallPolicyState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-	UrlLists []NetworkFirewallPolicyUrlList `pulumi:"urlLists"`
 }
 
 type NetworkFirewallPolicyState struct {
-	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-	ApplicationLists NetworkFirewallPolicyApplicationListArrayInput
+	// Count of number of Network Firewall attached to the Policy.
+	AttachedNetworkFirewallCount pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-	DecryptionProfiles NetworkFirewallPolicyDecryptionProfileArrayInput
-	// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	DecryptionRules NetworkFirewallPolicyDecryptionRuleArrayInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
-	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-	IpAddressLists NetworkFirewallPolicyIpAddressListArrayInput
-	// To determine if any Network Firewall is associated with this Network Firewall Policy.
-	IsFirewallAttached pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-	MappedSecrets NetworkFirewallPolicyMappedSecretArrayInput
-	// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	SecurityRules NetworkFirewallPolicySecurityRuleArrayInput
 	// The current state of the Network Firewall Policy.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -167,8 +132,6 @@ type NetworkFirewallPolicyState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-	UrlLists NetworkFirewallPolicyUrlListArrayInput
 }
 
 func (NetworkFirewallPolicyState) ElementType() reflect.Type {
@@ -176,54 +139,32 @@ func (NetworkFirewallPolicyState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyArgs struct {
-	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-	ApplicationLists []NetworkFirewallPolicyApplicationList `pulumi:"applicationLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-	DecryptionProfiles []NetworkFirewallPolicyDecryptionProfile `pulumi:"decryptionProfiles"`
-	// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	DecryptionRules []NetworkFirewallPolicyDecryptionRule `pulumi:"decryptionRules"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-	IpAddressLists []NetworkFirewallPolicyIpAddressList `pulumi:"ipAddressLists"`
-	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-	MappedSecrets []NetworkFirewallPolicyMappedSecret `pulumi:"mappedSecrets"`
-	// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	SecurityRules []NetworkFirewallPolicySecurityRule `pulumi:"securityRules"`
-	// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-	UrlLists []NetworkFirewallPolicyUrlList `pulumi:"urlLists"`
 }
 
 // The set of arguments for constructing a NetworkFirewallPolicy resource.
 type NetworkFirewallPolicyArgs struct {
-	// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-	ApplicationLists NetworkFirewallPolicyApplicationListArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-	DecryptionProfiles NetworkFirewallPolicyDecryptionProfileArrayInput
-	// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	DecryptionRules NetworkFirewallPolicyDecryptionRuleArrayInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
-	// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-	IpAddressLists NetworkFirewallPolicyIpAddressListArrayInput
-	// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-	MappedSecrets NetworkFirewallPolicyMappedSecretArrayInput
-	// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-	SecurityRules NetworkFirewallPolicySecurityRuleArrayInput
-	// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-	UrlLists NetworkFirewallPolicyUrlListArrayInput
 }
 
 func (NetworkFirewallPolicyArgs) ElementType() reflect.Type {
@@ -337,11 +278,9 @@ func (o NetworkFirewallPolicyOutput) ToOutput(ctx context.Context) pulumix.Outpu
 	}
 }
 
-// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-func (o NetworkFirewallPolicyOutput) ApplicationLists() NetworkFirewallPolicyApplicationListArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyApplicationListArrayOutput {
-		return v.ApplicationLists
-	}).(NetworkFirewallPolicyApplicationListArrayOutput)
+// Count of number of Network Firewall attached to the Policy.
+func (o NetworkFirewallPolicyOutput) AttachedNetworkFirewallCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.IntOutput { return v.AttachedNetworkFirewallCount }).(pulumi.IntOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
@@ -349,21 +288,7 @@ func (o NetworkFirewallPolicyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-func (o NetworkFirewallPolicyOutput) DecryptionProfiles() NetworkFirewallPolicyDecryptionProfileArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyDecryptionProfileArrayOutput {
-		return v.DecryptionProfiles
-	}).(NetworkFirewallPolicyDecryptionProfileArrayOutput)
-}
-
-// (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-func (o NetworkFirewallPolicyOutput) DecryptionRules() NetworkFirewallPolicyDecryptionRuleArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyDecryptionRuleArrayOutput {
-		return v.DecryptionRules
-	}).(NetworkFirewallPolicyDecryptionRuleArrayOutput)
-}
-
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o NetworkFirewallPolicyOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -373,34 +298,17 @@ func (o NetworkFirewallPolicyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NetworkFirewallPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
-}
-
-// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-func (o NetworkFirewallPolicyOutput) IpAddressLists() NetworkFirewallPolicyIpAddressListArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyIpAddressListArrayOutput { return v.IpAddressLists }).(NetworkFirewallPolicyIpAddressListArrayOutput)
-}
-
-// To determine if any Network Firewall is associated with this Network Firewall Policy.
-func (o NetworkFirewallPolicyOutput) IsFirewallAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.BoolOutput { return v.IsFirewallAttached }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o NetworkFirewallPolicyOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
-}
-
-// (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-func (o NetworkFirewallPolicyOutput) MappedSecrets() NetworkFirewallPolicyMappedSecretArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyMappedSecretArrayOutput { return v.MappedSecrets }).(NetworkFirewallPolicyMappedSecretArrayOutput)
-}
-
-// (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-func (o NetworkFirewallPolicyOutput) SecurityRules() NetworkFirewallPolicySecurityRuleArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicySecurityRuleArrayOutput { return v.SecurityRules }).(NetworkFirewallPolicySecurityRuleArrayOutput)
 }
 
 // The current state of the Network Firewall Policy.
@@ -421,11 +329,6 @@ func (o NetworkFirewallPolicyOutput) TimeCreated() pulumi.StringOutput {
 // The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o NetworkFirewallPolicyOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-// (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-func (o NetworkFirewallPolicyOutput) UrlLists() NetworkFirewallPolicyUrlListArrayOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) NetworkFirewallPolicyUrlListArrayOutput { return v.UrlLists }).(NetworkFirewallPolicyUrlListArrayOutput)
 }
 
 type NetworkFirewallPolicyArrayOutput struct{ *pulumi.OutputState }

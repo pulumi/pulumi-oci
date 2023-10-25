@@ -12,11 +12,11 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicySecurityRuleConditionGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("applications")]
+        [Input("applications", required: true)]
         private InputList<string>? _applications;
 
         /// <summary>
-        /// (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+        /// (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         /// </summary>
         public InputList<string> Applications
         {
@@ -24,35 +24,47 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
             set => _applications = value;
         }
 
-        [Input("destinations")]
-        private InputList<string>? _destinations;
+        [Input("destinationAddresses", required: true)]
+        private InputList<string>? _destinationAddresses;
 
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic destination address.
         /// </summary>
-        public InputList<string> Destinations
+        public InputList<string> DestinationAddresses
         {
-            get => _destinations ?? (_destinations = new InputList<string>());
-            set => _destinations = value;
+            get => _destinationAddresses ?? (_destinationAddresses = new InputList<string>());
+            set => _destinationAddresses = value;
         }
 
-        [Input("sources")]
-        private InputList<string>? _sources;
+        [Input("services", required: true)]
+        private InputList<string>? _services;
 
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        /// (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         /// </summary>
-        public InputList<string> Sources
+        public InputList<string> Services
         {
-            get => _sources ?? (_sources = new InputList<string>());
-            set => _sources = value;
+            get => _services ?? (_services = new InputList<string>());
+            set => _services = value;
         }
 
-        [Input("urls")]
+        [Input("sourceAddresses", required: true)]
+        private InputList<string>? _sourceAddresses;
+
+        /// <summary>
+        /// (Updatable) An array of address list names to be evaluated against the traffic source address.
+        /// </summary>
+        public InputList<string> SourceAddresses
+        {
+            get => _sourceAddresses ?? (_sourceAddresses = new InputList<string>());
+            set => _sourceAddresses = value;
+        }
+
+        [Input("urls", required: true)]
         private InputList<string>? _urls;
 
         /// <summary>
-        /// (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+        /// (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         /// </summary>
         public InputList<string> Urls
         {

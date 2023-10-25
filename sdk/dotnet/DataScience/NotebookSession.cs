@@ -75,6 +75,20 @@ namespace Pulumi.Oci.DataScience
     ///                 },
     ///             },
     ///         },
+    ///         NotebookSessionStorageMountConfigurationDetailsLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs
+    ///             {
+    ///                 DestinationDirectoryName = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+    ///                 StorageType = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+    ///                 Bucket = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+    ///                 DestinationPath = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+    ///                 ExportId = oci_file_storage_export.Test_export.Id,
+    ///                 MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
+    ///                 Namespace = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+    ///                 Prefix = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -144,6 +158,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("notebookSessionRuntimeConfigDetails")]
         public Output<Outputs.NotebookSessionNotebookSessionRuntimeConfigDetails> NotebookSessionRuntimeConfigDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+        /// </summary>
+        [Output("notebookSessionStorageMountConfigurationDetailsLists")]
+        public Output<ImmutableArray<Outputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> NotebookSessionStorageMountConfigurationDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// The URL to interact with the notebook session.
@@ -273,6 +293,18 @@ namespace Pulumi.Oci.DataScience
         [Input("notebookSessionRuntimeConfigDetails")]
         public Input<Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs>? NotebookSessionRuntimeConfigDetails { get; set; }
 
+        [Input("notebookSessionStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs>? _notebookSessionStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs> NotebookSessionStorageMountConfigurationDetailsLists
+        {
+            get => _notebookSessionStorageMountConfigurationDetailsLists ?? (_notebookSessionStorageMountConfigurationDetailsLists = new InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs>());
+            set => _notebookSessionStorageMountConfigurationDetailsLists = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
         /// 
@@ -362,6 +394,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("notebookSessionRuntimeConfigDetails")]
         public Input<Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs>? NotebookSessionRuntimeConfigDetails { get; set; }
+
+        [Input("notebookSessionStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListGetArgs>? _notebookSessionStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListGetArgs> NotebookSessionStorageMountConfigurationDetailsLists
+        {
+            get => _notebookSessionStorageMountConfigurationDetailsLists ?? (_notebookSessionStorageMountConfigurationDetailsLists = new InputList<Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListGetArgs>());
+            set => _notebookSessionStorageMountConfigurationDetailsLists = value;
+        }
 
         /// <summary>
         /// The URL to interact with the notebook session.

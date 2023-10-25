@@ -20,6 +20,106 @@ export const getNetworkFirewallPolicy: typeof import("./getNetworkFirewallPolicy
 export const getNetworkFirewallPolicyOutput: typeof import("./getNetworkFirewallPolicy").getNetworkFirewallPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkFirewallPolicy","getNetworkFirewallPolicyOutput"], () => require("./getNetworkFirewallPolicy"));
 
+export { GetNetworkFirewallPolicyAddressListArgs, GetNetworkFirewallPolicyAddressListResult, GetNetworkFirewallPolicyAddressListOutputArgs } from "./getNetworkFirewallPolicyAddressList";
+export const getNetworkFirewallPolicyAddressList: typeof import("./getNetworkFirewallPolicyAddressList").getNetworkFirewallPolicyAddressList = null as any;
+export const getNetworkFirewallPolicyAddressListOutput: typeof import("./getNetworkFirewallPolicyAddressList").getNetworkFirewallPolicyAddressListOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyAddressList","getNetworkFirewallPolicyAddressListOutput"], () => require("./getNetworkFirewallPolicyAddressList"));
+
+export { GetNetworkFirewallPolicyAddressListsArgs, GetNetworkFirewallPolicyAddressListsResult, GetNetworkFirewallPolicyAddressListsOutputArgs } from "./getNetworkFirewallPolicyAddressLists";
+export const getNetworkFirewallPolicyAddressLists: typeof import("./getNetworkFirewallPolicyAddressLists").getNetworkFirewallPolicyAddressLists = null as any;
+export const getNetworkFirewallPolicyAddressListsOutput: typeof import("./getNetworkFirewallPolicyAddressLists").getNetworkFirewallPolicyAddressListsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyAddressLists","getNetworkFirewallPolicyAddressListsOutput"], () => require("./getNetworkFirewallPolicyAddressLists"));
+
+export { GetNetworkFirewallPolicyApplicationArgs, GetNetworkFirewallPolicyApplicationResult, GetNetworkFirewallPolicyApplicationOutputArgs } from "./getNetworkFirewallPolicyApplication";
+export const getNetworkFirewallPolicyApplication: typeof import("./getNetworkFirewallPolicyApplication").getNetworkFirewallPolicyApplication = null as any;
+export const getNetworkFirewallPolicyApplicationOutput: typeof import("./getNetworkFirewallPolicyApplication").getNetworkFirewallPolicyApplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyApplication","getNetworkFirewallPolicyApplicationOutput"], () => require("./getNetworkFirewallPolicyApplication"));
+
+export { GetNetworkFirewallPolicyApplicationGroupArgs, GetNetworkFirewallPolicyApplicationGroupResult, GetNetworkFirewallPolicyApplicationGroupOutputArgs } from "./getNetworkFirewallPolicyApplicationGroup";
+export const getNetworkFirewallPolicyApplicationGroup: typeof import("./getNetworkFirewallPolicyApplicationGroup").getNetworkFirewallPolicyApplicationGroup = null as any;
+export const getNetworkFirewallPolicyApplicationGroupOutput: typeof import("./getNetworkFirewallPolicyApplicationGroup").getNetworkFirewallPolicyApplicationGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyApplicationGroup","getNetworkFirewallPolicyApplicationGroupOutput"], () => require("./getNetworkFirewallPolicyApplicationGroup"));
+
+export { GetNetworkFirewallPolicyApplicationGroupsArgs, GetNetworkFirewallPolicyApplicationGroupsResult, GetNetworkFirewallPolicyApplicationGroupsOutputArgs } from "./getNetworkFirewallPolicyApplicationGroups";
+export const getNetworkFirewallPolicyApplicationGroups: typeof import("./getNetworkFirewallPolicyApplicationGroups").getNetworkFirewallPolicyApplicationGroups = null as any;
+export const getNetworkFirewallPolicyApplicationGroupsOutput: typeof import("./getNetworkFirewallPolicyApplicationGroups").getNetworkFirewallPolicyApplicationGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyApplicationGroups","getNetworkFirewallPolicyApplicationGroupsOutput"], () => require("./getNetworkFirewallPolicyApplicationGroups"));
+
+export { GetNetworkFirewallPolicyApplicationsArgs, GetNetworkFirewallPolicyApplicationsResult, GetNetworkFirewallPolicyApplicationsOutputArgs } from "./getNetworkFirewallPolicyApplications";
+export const getNetworkFirewallPolicyApplications: typeof import("./getNetworkFirewallPolicyApplications").getNetworkFirewallPolicyApplications = null as any;
+export const getNetworkFirewallPolicyApplicationsOutput: typeof import("./getNetworkFirewallPolicyApplications").getNetworkFirewallPolicyApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyApplications","getNetworkFirewallPolicyApplicationsOutput"], () => require("./getNetworkFirewallPolicyApplications"));
+
+export { GetNetworkFirewallPolicyDecryptionProfileArgs, GetNetworkFirewallPolicyDecryptionProfileResult, GetNetworkFirewallPolicyDecryptionProfileOutputArgs } from "./getNetworkFirewallPolicyDecryptionProfile";
+export const getNetworkFirewallPolicyDecryptionProfile: typeof import("./getNetworkFirewallPolicyDecryptionProfile").getNetworkFirewallPolicyDecryptionProfile = null as any;
+export const getNetworkFirewallPolicyDecryptionProfileOutput: typeof import("./getNetworkFirewallPolicyDecryptionProfile").getNetworkFirewallPolicyDecryptionProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyDecryptionProfile","getNetworkFirewallPolicyDecryptionProfileOutput"], () => require("./getNetworkFirewallPolicyDecryptionProfile"));
+
+export { GetNetworkFirewallPolicyDecryptionProfilesArgs, GetNetworkFirewallPolicyDecryptionProfilesResult, GetNetworkFirewallPolicyDecryptionProfilesOutputArgs } from "./getNetworkFirewallPolicyDecryptionProfiles";
+export const getNetworkFirewallPolicyDecryptionProfiles: typeof import("./getNetworkFirewallPolicyDecryptionProfiles").getNetworkFirewallPolicyDecryptionProfiles = null as any;
+export const getNetworkFirewallPolicyDecryptionProfilesOutput: typeof import("./getNetworkFirewallPolicyDecryptionProfiles").getNetworkFirewallPolicyDecryptionProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyDecryptionProfiles","getNetworkFirewallPolicyDecryptionProfilesOutput"], () => require("./getNetworkFirewallPolicyDecryptionProfiles"));
+
+export { GetNetworkFirewallPolicyDecryptionRuleArgs, GetNetworkFirewallPolicyDecryptionRuleResult, GetNetworkFirewallPolicyDecryptionRuleOutputArgs } from "./getNetworkFirewallPolicyDecryptionRule";
+export const getNetworkFirewallPolicyDecryptionRule: typeof import("./getNetworkFirewallPolicyDecryptionRule").getNetworkFirewallPolicyDecryptionRule = null as any;
+export const getNetworkFirewallPolicyDecryptionRuleOutput: typeof import("./getNetworkFirewallPolicyDecryptionRule").getNetworkFirewallPolicyDecryptionRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyDecryptionRule","getNetworkFirewallPolicyDecryptionRuleOutput"], () => require("./getNetworkFirewallPolicyDecryptionRule"));
+
+export { GetNetworkFirewallPolicyDecryptionRulesArgs, GetNetworkFirewallPolicyDecryptionRulesResult, GetNetworkFirewallPolicyDecryptionRulesOutputArgs } from "./getNetworkFirewallPolicyDecryptionRules";
+export const getNetworkFirewallPolicyDecryptionRules: typeof import("./getNetworkFirewallPolicyDecryptionRules").getNetworkFirewallPolicyDecryptionRules = null as any;
+export const getNetworkFirewallPolicyDecryptionRulesOutput: typeof import("./getNetworkFirewallPolicyDecryptionRules").getNetworkFirewallPolicyDecryptionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyDecryptionRules","getNetworkFirewallPolicyDecryptionRulesOutput"], () => require("./getNetworkFirewallPolicyDecryptionRules"));
+
+export { GetNetworkFirewallPolicyMappedSecretArgs, GetNetworkFirewallPolicyMappedSecretResult, GetNetworkFirewallPolicyMappedSecretOutputArgs } from "./getNetworkFirewallPolicyMappedSecret";
+export const getNetworkFirewallPolicyMappedSecret: typeof import("./getNetworkFirewallPolicyMappedSecret").getNetworkFirewallPolicyMappedSecret = null as any;
+export const getNetworkFirewallPolicyMappedSecretOutput: typeof import("./getNetworkFirewallPolicyMappedSecret").getNetworkFirewallPolicyMappedSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyMappedSecret","getNetworkFirewallPolicyMappedSecretOutput"], () => require("./getNetworkFirewallPolicyMappedSecret"));
+
+export { GetNetworkFirewallPolicyMappedSecretsArgs, GetNetworkFirewallPolicyMappedSecretsResult, GetNetworkFirewallPolicyMappedSecretsOutputArgs } from "./getNetworkFirewallPolicyMappedSecrets";
+export const getNetworkFirewallPolicyMappedSecrets: typeof import("./getNetworkFirewallPolicyMappedSecrets").getNetworkFirewallPolicyMappedSecrets = null as any;
+export const getNetworkFirewallPolicyMappedSecretsOutput: typeof import("./getNetworkFirewallPolicyMappedSecrets").getNetworkFirewallPolicyMappedSecretsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyMappedSecrets","getNetworkFirewallPolicyMappedSecretsOutput"], () => require("./getNetworkFirewallPolicyMappedSecrets"));
+
+export { GetNetworkFirewallPolicySecurityRuleArgs, GetNetworkFirewallPolicySecurityRuleResult, GetNetworkFirewallPolicySecurityRuleOutputArgs } from "./getNetworkFirewallPolicySecurityRule";
+export const getNetworkFirewallPolicySecurityRule: typeof import("./getNetworkFirewallPolicySecurityRule").getNetworkFirewallPolicySecurityRule = null as any;
+export const getNetworkFirewallPolicySecurityRuleOutput: typeof import("./getNetworkFirewallPolicySecurityRule").getNetworkFirewallPolicySecurityRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicySecurityRule","getNetworkFirewallPolicySecurityRuleOutput"], () => require("./getNetworkFirewallPolicySecurityRule"));
+
+export { GetNetworkFirewallPolicySecurityRulesArgs, GetNetworkFirewallPolicySecurityRulesResult, GetNetworkFirewallPolicySecurityRulesOutputArgs } from "./getNetworkFirewallPolicySecurityRules";
+export const getNetworkFirewallPolicySecurityRules: typeof import("./getNetworkFirewallPolicySecurityRules").getNetworkFirewallPolicySecurityRules = null as any;
+export const getNetworkFirewallPolicySecurityRulesOutput: typeof import("./getNetworkFirewallPolicySecurityRules").getNetworkFirewallPolicySecurityRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicySecurityRules","getNetworkFirewallPolicySecurityRulesOutput"], () => require("./getNetworkFirewallPolicySecurityRules"));
+
+export { GetNetworkFirewallPolicyServiceArgs, GetNetworkFirewallPolicyServiceResult, GetNetworkFirewallPolicyServiceOutputArgs } from "./getNetworkFirewallPolicyService";
+export const getNetworkFirewallPolicyService: typeof import("./getNetworkFirewallPolicyService").getNetworkFirewallPolicyService = null as any;
+export const getNetworkFirewallPolicyServiceOutput: typeof import("./getNetworkFirewallPolicyService").getNetworkFirewallPolicyServiceOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyService","getNetworkFirewallPolicyServiceOutput"], () => require("./getNetworkFirewallPolicyService"));
+
+export { GetNetworkFirewallPolicyServiceListArgs, GetNetworkFirewallPolicyServiceListResult, GetNetworkFirewallPolicyServiceListOutputArgs } from "./getNetworkFirewallPolicyServiceList";
+export const getNetworkFirewallPolicyServiceList: typeof import("./getNetworkFirewallPolicyServiceList").getNetworkFirewallPolicyServiceList = null as any;
+export const getNetworkFirewallPolicyServiceListOutput: typeof import("./getNetworkFirewallPolicyServiceList").getNetworkFirewallPolicyServiceListOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyServiceList","getNetworkFirewallPolicyServiceListOutput"], () => require("./getNetworkFirewallPolicyServiceList"));
+
+export { GetNetworkFirewallPolicyServiceListsArgs, GetNetworkFirewallPolicyServiceListsResult, GetNetworkFirewallPolicyServiceListsOutputArgs } from "./getNetworkFirewallPolicyServiceLists";
+export const getNetworkFirewallPolicyServiceLists: typeof import("./getNetworkFirewallPolicyServiceLists").getNetworkFirewallPolicyServiceLists = null as any;
+export const getNetworkFirewallPolicyServiceListsOutput: typeof import("./getNetworkFirewallPolicyServiceLists").getNetworkFirewallPolicyServiceListsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyServiceLists","getNetworkFirewallPolicyServiceListsOutput"], () => require("./getNetworkFirewallPolicyServiceLists"));
+
+export { GetNetworkFirewallPolicyServicesArgs, GetNetworkFirewallPolicyServicesResult, GetNetworkFirewallPolicyServicesOutputArgs } from "./getNetworkFirewallPolicyServices";
+export const getNetworkFirewallPolicyServices: typeof import("./getNetworkFirewallPolicyServices").getNetworkFirewallPolicyServices = null as any;
+export const getNetworkFirewallPolicyServicesOutput: typeof import("./getNetworkFirewallPolicyServices").getNetworkFirewallPolicyServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyServices","getNetworkFirewallPolicyServicesOutput"], () => require("./getNetworkFirewallPolicyServices"));
+
+export { GetNetworkFirewallPolicyUrlListArgs, GetNetworkFirewallPolicyUrlListResult, GetNetworkFirewallPolicyUrlListOutputArgs } from "./getNetworkFirewallPolicyUrlList";
+export const getNetworkFirewallPolicyUrlList: typeof import("./getNetworkFirewallPolicyUrlList").getNetworkFirewallPolicyUrlList = null as any;
+export const getNetworkFirewallPolicyUrlListOutput: typeof import("./getNetworkFirewallPolicyUrlList").getNetworkFirewallPolicyUrlListOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyUrlList","getNetworkFirewallPolicyUrlListOutput"], () => require("./getNetworkFirewallPolicyUrlList"));
+
+export { GetNetworkFirewallPolicyUrlListsArgs, GetNetworkFirewallPolicyUrlListsResult, GetNetworkFirewallPolicyUrlListsOutputArgs } from "./getNetworkFirewallPolicyUrlLists";
+export const getNetworkFirewallPolicyUrlLists: typeof import("./getNetworkFirewallPolicyUrlLists").getNetworkFirewallPolicyUrlLists = null as any;
+export const getNetworkFirewallPolicyUrlListsOutput: typeof import("./getNetworkFirewallPolicyUrlLists").getNetworkFirewallPolicyUrlListsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyUrlLists","getNetworkFirewallPolicyUrlListsOutput"], () => require("./getNetworkFirewallPolicyUrlLists"));
+
 export { GetNetworkFirewallsArgs, GetNetworkFirewallsResult, GetNetworkFirewallsOutputArgs } from "./getNetworkFirewalls";
 export const getNetworkFirewalls: typeof import("./getNetworkFirewalls").getNetworkFirewalls = null as any;
 export const getNetworkFirewallsOutput: typeof import("./getNetworkFirewalls").getNetworkFirewallsOutput = null as any;
@@ -35,6 +135,56 @@ export type NetworkFirewallPolicy = import("./networkFirewallPolicy").NetworkFir
 export const NetworkFirewallPolicy: typeof import("./networkFirewallPolicy").NetworkFirewallPolicy = null as any;
 utilities.lazyLoad(exports, ["NetworkFirewallPolicy"], () => require("./networkFirewallPolicy"));
 
+export { NetworkFirewallPolicyAddressListArgs, NetworkFirewallPolicyAddressListState } from "./networkFirewallPolicyAddressList";
+export type NetworkFirewallPolicyAddressList = import("./networkFirewallPolicyAddressList").NetworkFirewallPolicyAddressList;
+export const NetworkFirewallPolicyAddressList: typeof import("./networkFirewallPolicyAddressList").NetworkFirewallPolicyAddressList = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyAddressList"], () => require("./networkFirewallPolicyAddressList"));
+
+export { NetworkFirewallPolicyApplicationArgs, NetworkFirewallPolicyApplicationState } from "./networkFirewallPolicyApplication";
+export type NetworkFirewallPolicyApplication = import("./networkFirewallPolicyApplication").NetworkFirewallPolicyApplication;
+export const NetworkFirewallPolicyApplication: typeof import("./networkFirewallPolicyApplication").NetworkFirewallPolicyApplication = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyApplication"], () => require("./networkFirewallPolicyApplication"));
+
+export { NetworkFirewallPolicyApplicationGroupArgs, NetworkFirewallPolicyApplicationGroupState } from "./networkFirewallPolicyApplicationGroup";
+export type NetworkFirewallPolicyApplicationGroup = import("./networkFirewallPolicyApplicationGroup").NetworkFirewallPolicyApplicationGroup;
+export const NetworkFirewallPolicyApplicationGroup: typeof import("./networkFirewallPolicyApplicationGroup").NetworkFirewallPolicyApplicationGroup = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyApplicationGroup"], () => require("./networkFirewallPolicyApplicationGroup"));
+
+export { NetworkFirewallPolicyDecryptionProfileArgs, NetworkFirewallPolicyDecryptionProfileState } from "./networkFirewallPolicyDecryptionProfile";
+export type NetworkFirewallPolicyDecryptionProfile = import("./networkFirewallPolicyDecryptionProfile").NetworkFirewallPolicyDecryptionProfile;
+export const NetworkFirewallPolicyDecryptionProfile: typeof import("./networkFirewallPolicyDecryptionProfile").NetworkFirewallPolicyDecryptionProfile = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyDecryptionProfile"], () => require("./networkFirewallPolicyDecryptionProfile"));
+
+export { NetworkFirewallPolicyDecryptionRuleArgs, NetworkFirewallPolicyDecryptionRuleState } from "./networkFirewallPolicyDecryptionRule";
+export type NetworkFirewallPolicyDecryptionRule = import("./networkFirewallPolicyDecryptionRule").NetworkFirewallPolicyDecryptionRule;
+export const NetworkFirewallPolicyDecryptionRule: typeof import("./networkFirewallPolicyDecryptionRule").NetworkFirewallPolicyDecryptionRule = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyDecryptionRule"], () => require("./networkFirewallPolicyDecryptionRule"));
+
+export { NetworkFirewallPolicyMappedSecretArgs, NetworkFirewallPolicyMappedSecretState } from "./networkFirewallPolicyMappedSecret";
+export type NetworkFirewallPolicyMappedSecret = import("./networkFirewallPolicyMappedSecret").NetworkFirewallPolicyMappedSecret;
+export const NetworkFirewallPolicyMappedSecret: typeof import("./networkFirewallPolicyMappedSecret").NetworkFirewallPolicyMappedSecret = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyMappedSecret"], () => require("./networkFirewallPolicyMappedSecret"));
+
+export { NetworkFirewallPolicySecurityRuleArgs, NetworkFirewallPolicySecurityRuleState } from "./networkFirewallPolicySecurityRule";
+export type NetworkFirewallPolicySecurityRule = import("./networkFirewallPolicySecurityRule").NetworkFirewallPolicySecurityRule;
+export const NetworkFirewallPolicySecurityRule: typeof import("./networkFirewallPolicySecurityRule").NetworkFirewallPolicySecurityRule = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicySecurityRule"], () => require("./networkFirewallPolicySecurityRule"));
+
+export { NetworkFirewallPolicyServiceArgs, NetworkFirewallPolicyServiceState } from "./networkFirewallPolicyService";
+export type NetworkFirewallPolicyService = import("./networkFirewallPolicyService").NetworkFirewallPolicyService;
+export const NetworkFirewallPolicyService: typeof import("./networkFirewallPolicyService").NetworkFirewallPolicyService = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyService"], () => require("./networkFirewallPolicyService"));
+
+export { NetworkFirewallPolicyServiceListArgs, NetworkFirewallPolicyServiceListState } from "./networkFirewallPolicyServiceList";
+export type NetworkFirewallPolicyServiceList = import("./networkFirewallPolicyServiceList").NetworkFirewallPolicyServiceList;
+export const NetworkFirewallPolicyServiceList: typeof import("./networkFirewallPolicyServiceList").NetworkFirewallPolicyServiceList = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyServiceList"], () => require("./networkFirewallPolicyServiceList"));
+
+export { NetworkFirewallPolicyUrlListArgs, NetworkFirewallPolicyUrlListState } from "./networkFirewallPolicyUrlList";
+export type NetworkFirewallPolicyUrlList = import("./networkFirewallPolicyUrlList").NetworkFirewallPolicyUrlList;
+export const NetworkFirewallPolicyUrlList: typeof import("./networkFirewallPolicyUrlList").NetworkFirewallPolicyUrlList = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyUrlList"], () => require("./networkFirewallPolicyUrlList"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +194,26 @@ const _module = {
                 return new NetworkFirewall(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy":
                 return new NetworkFirewallPolicy(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList":
+                return new NetworkFirewallPolicyAddressList(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication":
+                return new NetworkFirewallPolicyApplication(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup":
+                return new NetworkFirewallPolicyApplicationGroup(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile":
+                return new NetworkFirewallPolicyDecryptionProfile(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule":
+                return new NetworkFirewallPolicyDecryptionRule(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret":
+                return new NetworkFirewallPolicyMappedSecret(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule":
+                return new NetworkFirewallPolicySecurityRule(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService":
+                return new NetworkFirewallPolicyService(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList":
+                return new NetworkFirewallPolicyServiceList(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList":
+                return new NetworkFirewallPolicyUrlList(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +221,13 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewall", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyAddressList", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyApplication", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyApplicationGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyDecryptionProfile", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyDecryptionRule", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyMappedSecret", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicySecurityRule", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyService", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyServiceList", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyUrlList", _module)

@@ -71,6 +71,18 @@ import (
 //						},
 //					},
 //				},
+//				NotebookSessionStorageMountConfigurationDetailsLists: datascience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{
+//					&datascience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{
+//						DestinationDirectoryName: pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name),
+//						StorageType:              pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type),
+//						Bucket:                   pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_bucket),
+//						DestinationPath:          pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path),
+//						ExportId:                 pulumi.Any(oci_file_storage_export.Test_export.Id),
+//						MountTargetId:            pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
+//						Namespace:                pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_namespace),
+//						Prefix:                   pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_prefix),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -111,6 +123,8 @@ type NotebookSession struct {
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsOutput `pulumi:"notebookSessionConfigurationDetails"`
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsOutput `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringOutput `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -178,6 +192,8 @@ type notebookSessionState struct {
 	NotebookSessionConfigurationDetails *NotebookSessionNotebookSessionConfigurationDetails `pulumi:"notebookSessionConfigurationDetails"`
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetails `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists []NotebookSessionNotebookSessionStorageMountConfigurationDetailsList `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl *string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -210,6 +226,8 @@ type NotebookSessionState struct {
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsPtrInput
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput
+	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -242,6 +260,8 @@ type notebookSessionArgs struct {
 	NotebookSessionConfigurationDetails *NotebookSessionNotebookSessionConfigurationDetails `pulumi:"notebookSessionConfigurationDetails"`
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetails `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists []NotebookSessionNotebookSessionStorageMountConfigurationDetailsList `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
 	//
 	// ** IMPORTANT **
@@ -267,6 +287,8 @@ type NotebookSessionArgs struct {
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsPtrInput
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput
+	// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
 	//
 	// ** IMPORTANT **
@@ -436,6 +458,13 @@ func (o NotebookSessionOutput) NotebookSessionRuntimeConfigDetails() NotebookSes
 	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
 		return v.NotebookSessionRuntimeConfigDetails
 	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput)
+}
+
+// (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+func (o NotebookSessionOutput) NotebookSessionStorageMountConfigurationDetailsLists() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v *NotebookSession) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+		return v.NotebookSessionStorageMountConfigurationDetailsLists
+	}).(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The URL to interact with the notebook session.

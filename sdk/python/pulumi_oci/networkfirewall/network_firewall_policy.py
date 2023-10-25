@@ -8,8 +8,6 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
-from . import outputs
-from ._inputs import *
 
 __all__ = ['NetworkFirewallPolicyArgs', 'NetworkFirewallPolicy']
 
@@ -17,104 +15,51 @@ __all__ = ['NetworkFirewallPolicyArgs', 'NetworkFirewallPolicy']
 class NetworkFirewallPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
-                 decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
-                 decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
-                 mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
-                 security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
-                 url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicy resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         NetworkFirewallPolicyArgs._configure(
             lambda key, value: pulumi.set(__self__, key, value),
             compartment_id=compartment_id,
-            application_lists=application_lists,
-            decryption_profiles=decryption_profiles,
-            decryption_rules=decryption_rules,
             defined_tags=defined_tags,
             display_name=display_name,
             freeform_tags=freeform_tags,
-            ip_address_lists=ip_address_lists,
-            mapped_secrets=mapped_secrets,
-            security_rules=security_rules,
-            url_lists=url_lists,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
-             application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
-             decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
-             decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
-             mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
-             security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
-             url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
              opts: Optional[pulumi.ResourceOptions]=None,
              **kwargs):
         if 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'applicationLists' in kwargs:
-            application_lists = kwargs['applicationLists']
-        if 'decryptionProfiles' in kwargs:
-            decryption_profiles = kwargs['decryptionProfiles']
-        if 'decryptionRules' in kwargs:
-            decryption_rules = kwargs['decryptionRules']
         if 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
         if 'displayName' in kwargs:
             display_name = kwargs['displayName']
         if 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipAddressLists' in kwargs:
-            ip_address_lists = kwargs['ipAddressLists']
-        if 'mappedSecrets' in kwargs:
-            mapped_secrets = kwargs['mappedSecrets']
-        if 'securityRules' in kwargs:
-            security_rules = kwargs['securityRules']
-        if 'urlLists' in kwargs:
-            url_lists = kwargs['urlLists']
 
         _setter("compartment_id", compartment_id)
-        if application_lists is not None:
-            _setter("application_lists", application_lists)
-        if decryption_profiles is not None:
-            _setter("decryption_profiles", decryption_profiles)
-        if decryption_rules is not None:
-            _setter("decryption_rules", decryption_rules)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
             _setter("display_name", display_name)
         if freeform_tags is not None:
             _setter("freeform_tags", freeform_tags)
-        if ip_address_lists is not None:
-            _setter("ip_address_lists", ip_address_lists)
-        if mapped_secrets is not None:
-            _setter("mapped_secrets", mapped_secrets)
-        if security_rules is not None:
-            _setter("security_rules", security_rules)
-        if url_lists is not None:
-            _setter("url_lists", url_lists)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -129,46 +74,10 @@ class NetworkFirewallPolicyArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="applicationLists")
-    def application_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]:
-        """
-        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
-        """
-        return pulumi.get(self, "application_lists")
-
-    @application_lists.setter
-    def application_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]):
-        pulumi.set(self, "application_lists", value)
-
-    @property
-    @pulumi.getter(name="decryptionProfiles")
-    def decryption_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]]:
-        """
-        (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        """
-        return pulumi.get(self, "decryption_profiles")
-
-    @decryption_profiles.setter
-    def decryption_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]]):
-        pulumi.set(self, "decryption_profiles", value)
-
-    @property
-    @pulumi.getter(name="decryptionRules")
-    def decryption_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]]:
-        """
-        (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "decryption_rules")
-
-    @decryption_rules.setter
-    def decryption_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]]):
-        pulumi.set(self, "decryption_rules", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -192,7 +101,10 @@ class NetworkFirewallPolicyArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -200,194 +112,95 @@ class NetworkFirewallPolicyArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
-    @property
-    @pulumi.getter(name="ipAddressLists")
-    def ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]:
-        """
-        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        """
-        return pulumi.get(self, "ip_address_lists")
-
-    @ip_address_lists.setter
-    def ip_address_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]):
-        pulumi.set(self, "ip_address_lists", value)
-
-    @property
-    @pulumi.getter(name="mappedSecrets")
-    def mapped_secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]]:
-        """
-        (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        """
-        return pulumi.get(self, "mapped_secrets")
-
-    @mapped_secrets.setter
-    def mapped_secrets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]]):
-        pulumi.set(self, "mapped_secrets", value)
-
-    @property
-    @pulumi.getter(name="securityRules")
-    def security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]]:
-        """
-        (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "security_rules")
-
-    @security_rules.setter
-    def security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]]):
-        pulumi.set(self, "security_rules", value)
-
-    @property
-    @pulumi.getter(name="urlLists")
-    def url_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]]:
-        """
-        (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-        """
-        return pulumi.get(self, "url_lists")
-
-    @url_lists.setter
-    def url_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]]):
-        pulumi.set(self, "url_lists", value)
-
 
 @pulumi.input_type
 class _NetworkFirewallPolicyState:
     def __init__(__self__, *,
-                 application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
+                 attached_network_firewall_count: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
-                 decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
-                 is_firewall_attached: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
-                 mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
-                 security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None,
-                 url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[int] attached_network_firewall_count: Count of number of Network Firewall attached to the Policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        :param pulumi.Input[bool] is_firewall_attached: To determine if any Network Firewall is associated with this Network Firewall Policy.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[str] state: The current state of the Network Firewall Policy.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
         """
         _NetworkFirewallPolicyState._configure(
             lambda key, value: pulumi.set(__self__, key, value),
-            application_lists=application_lists,
+            attached_network_firewall_count=attached_network_firewall_count,
             compartment_id=compartment_id,
-            decryption_profiles=decryption_profiles,
-            decryption_rules=decryption_rules,
             defined_tags=defined_tags,
             display_name=display_name,
             freeform_tags=freeform_tags,
-            ip_address_lists=ip_address_lists,
-            is_firewall_attached=is_firewall_attached,
             lifecycle_details=lifecycle_details,
-            mapped_secrets=mapped_secrets,
-            security_rules=security_rules,
             state=state,
             system_tags=system_tags,
             time_created=time_created,
             time_updated=time_updated,
-            url_lists=url_lists,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
+             attached_network_firewall_count: Optional[pulumi.Input[int]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
-             decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
-             decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
-             is_firewall_attached: Optional[pulumi.Input[bool]] = None,
              lifecycle_details: Optional[pulumi.Input[str]] = None,
-             mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
-             security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
              opts: Optional[pulumi.ResourceOptions]=None,
              **kwargs):
-        if 'applicationLists' in kwargs:
-            application_lists = kwargs['applicationLists']
+        if 'attachedNetworkFirewallCount' in kwargs:
+            attached_network_firewall_count = kwargs['attachedNetworkFirewallCount']
         if 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'decryptionProfiles' in kwargs:
-            decryption_profiles = kwargs['decryptionProfiles']
-        if 'decryptionRules' in kwargs:
-            decryption_rules = kwargs['decryptionRules']
         if 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
         if 'displayName' in kwargs:
             display_name = kwargs['displayName']
         if 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipAddressLists' in kwargs:
-            ip_address_lists = kwargs['ipAddressLists']
-        if 'isFirewallAttached' in kwargs:
-            is_firewall_attached = kwargs['isFirewallAttached']
         if 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mappedSecrets' in kwargs:
-            mapped_secrets = kwargs['mappedSecrets']
-        if 'securityRules' in kwargs:
-            security_rules = kwargs['securityRules']
         if 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
         if 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
         if 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'urlLists' in kwargs:
-            url_lists = kwargs['urlLists']
 
-        if application_lists is not None:
-            _setter("application_lists", application_lists)
+        if attached_network_firewall_count is not None:
+            _setter("attached_network_firewall_count", attached_network_firewall_count)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
-        if decryption_profiles is not None:
-            _setter("decryption_profiles", decryption_profiles)
-        if decryption_rules is not None:
-            _setter("decryption_rules", decryption_rules)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
             _setter("display_name", display_name)
         if freeform_tags is not None:
             _setter("freeform_tags", freeform_tags)
-        if ip_address_lists is not None:
-            _setter("ip_address_lists", ip_address_lists)
-        if is_firewall_attached is not None:
-            _setter("is_firewall_attached", is_firewall_attached)
         if lifecycle_details is not None:
             _setter("lifecycle_details", lifecycle_details)
-        if mapped_secrets is not None:
-            _setter("mapped_secrets", mapped_secrets)
-        if security_rules is not None:
-            _setter("security_rules", security_rules)
         if state is not None:
             _setter("state", state)
         if system_tags is not None:
@@ -396,20 +209,18 @@ class _NetworkFirewallPolicyState:
             _setter("time_created", time_created)
         if time_updated is not None:
             _setter("time_updated", time_updated)
-        if url_lists is not None:
-            _setter("url_lists", url_lists)
 
     @property
-    @pulumi.getter(name="applicationLists")
-    def application_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]:
+    @pulumi.getter(name="attachedNetworkFirewallCount")
+    def attached_network_firewall_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        Count of number of Network Firewall attached to the Policy.
         """
-        return pulumi.get(self, "application_lists")
+        return pulumi.get(self, "attached_network_firewall_count")
 
-    @application_lists.setter
-    def application_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]):
-        pulumi.set(self, "application_lists", value)
+    @attached_network_firewall_count.setter
+    def attached_network_firewall_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "attached_network_firewall_count", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -424,34 +235,10 @@ class _NetworkFirewallPolicyState:
         pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="decryptionProfiles")
-    def decryption_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]]:
-        """
-        (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        """
-        return pulumi.get(self, "decryption_profiles")
-
-    @decryption_profiles.setter
-    def decryption_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]]):
-        pulumi.set(self, "decryption_profiles", value)
-
-    @property
-    @pulumi.getter(name="decryptionRules")
-    def decryption_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]]:
-        """
-        (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "decryption_rules")
-
-    @decryption_rules.setter
-    def decryption_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]]):
-        pulumi.set(self, "decryption_rules", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -475,37 +262,16 @@ class _NetworkFirewallPolicyState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter(name="ipAddressLists")
-    def ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]:
-        """
-        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        """
-        return pulumi.get(self, "ip_address_lists")
-
-    @ip_address_lists.setter
-    def ip_address_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]):
-        pulumi.set(self, "ip_address_lists", value)
-
-    @property
-    @pulumi.getter(name="isFirewallAttached")
-    def is_firewall_attached(self) -> Optional[pulumi.Input[bool]]:
-        """
-        To determine if any Network Firewall is associated with this Network Firewall Policy.
-        """
-        return pulumi.get(self, "is_firewall_attached")
-
-    @is_firewall_attached.setter
-    def is_firewall_attached(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_firewall_attached", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -518,30 +284,6 @@ class _NetworkFirewallPolicyState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
-
-    @property
-    @pulumi.getter(name="mappedSecrets")
-    def mapped_secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]]:
-        """
-        (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        """
-        return pulumi.get(self, "mapped_secrets")
-
-    @mapped_secrets.setter
-    def mapped_secrets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]]):
-        pulumi.set(self, "mapped_secrets", value)
-
-    @property
-    @pulumi.getter(name="securityRules")
-    def security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]]:
-        """
-        (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "security_rules")
-
-    @security_rules.setter
-    def security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]]):
-        pulumi.set(self, "security_rules", value)
 
     @property
     @pulumi.getter
@@ -591,41 +333,18 @@ class _NetworkFirewallPolicyState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
-    @property
-    @pulumi.getter(name="urlLists")
-    def url_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]]:
-        """
-        (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-        """
-        return pulumi.get(self, "url_lists")
-
-    @url_lists.setter
-    def url_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]]):
-        pulumi.set(self, "url_lists", value)
-
 
 class NetworkFirewallPolicy(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]]] = None,
-                 decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]]] = None,
-                 mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]]] = None,
-                 security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]]] = None,
-                 url_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Network Firewall Policy.
-
         ## Import
 
         NetworkFirewallPolicies can be imported using the `id`, e.g.
@@ -636,17 +355,13 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -655,10 +370,6 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
                  args: NetworkFirewallPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Network Firewall Policy.
-
         ## Import
 
         NetworkFirewallPolicies can be imported using the `id`, e.g.
@@ -686,17 +397,10 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]]] = None,
-                 decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]]] = None,
-                 mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]]] = None,
-                 security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]]] = None,
-                 url_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -706,20 +410,13 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkFirewallPolicyArgs.__new__(NetworkFirewallPolicyArgs)
 
-            __props__.__dict__["application_lists"] = application_lists
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            __props__.__dict__["decryption_profiles"] = decryption_profiles
-            __props__.__dict__["decryption_rules"] = decryption_rules
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            __props__.__dict__["ip_address_lists"] = ip_address_lists
-            __props__.__dict__["mapped_secrets"] = mapped_secrets
-            __props__.__dict__["security_rules"] = security_rules
-            __props__.__dict__["url_lists"] = url_lists
-            __props__.__dict__["is_firewall_attached"] = None
+            __props__.__dict__["attached_network_firewall_count"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -735,23 +432,16 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]]] = None,
+            attached_network_firewall_count: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]]] = None,
-            decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]]] = None,
-            is_firewall_attached: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]]] = None,
-            security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None,
-            url_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]]] = None) -> 'NetworkFirewallPolicy':
+            time_updated: Optional[pulumi.Input[str]] = None) -> 'NetworkFirewallPolicy':
         """
         Get an existing NetworkFirewallPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -759,54 +449,43 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[int] attached_network_firewall_count: Count of number of Network Firewall attached to the Policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        :param pulumi.Input[bool] is_firewall_attached: To determine if any Network Firewall is associated with this Network Firewall Policy.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[str] state: The current state of the Network Firewall Policy.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _NetworkFirewallPolicyState.__new__(_NetworkFirewallPolicyState)
 
-        __props__.__dict__["application_lists"] = application_lists
+        __props__.__dict__["attached_network_firewall_count"] = attached_network_firewall_count
         __props__.__dict__["compartment_id"] = compartment_id
-        __props__.__dict__["decryption_profiles"] = decryption_profiles
-        __props__.__dict__["decryption_rules"] = decryption_rules
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
-        __props__.__dict__["ip_address_lists"] = ip_address_lists
-        __props__.__dict__["is_firewall_attached"] = is_firewall_attached
         __props__.__dict__["lifecycle_details"] = lifecycle_details
-        __props__.__dict__["mapped_secrets"] = mapped_secrets
-        __props__.__dict__["security_rules"] = security_rules
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
-        __props__.__dict__["url_lists"] = url_lists
         return NetworkFirewallPolicy(resource_name, opts=opts, __props__=__props__)
 
     @property
-    @pulumi.getter(name="applicationLists")
-    def application_lists(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyApplicationList']]:
+    @pulumi.getter(name="attachedNetworkFirewallCount")
+    def attached_network_firewall_count(self) -> pulumi.Output[int]:
         """
-        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        Count of number of Network Firewall attached to the Policy.
         """
-        return pulumi.get(self, "application_lists")
+        return pulumi.get(self, "attached_network_firewall_count")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -817,26 +496,10 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
-    @pulumi.getter(name="decryptionProfiles")
-    def decryption_profiles(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyDecryptionProfile']]:
-        """
-        (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        """
-        return pulumi.get(self, "decryption_profiles")
-
-    @property
-    @pulumi.getter(name="decryptionRules")
-    def decryption_rules(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyDecryptionRule']]:
-        """
-        (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "decryption_rules")
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -852,25 +515,12 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
-
-    @property
-    @pulumi.getter(name="ipAddressLists")
-    def ip_address_lists(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyIpAddressList']]:
-        """
-        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        """
-        return pulumi.get(self, "ip_address_lists")
-
-    @property
-    @pulumi.getter(name="isFirewallAttached")
-    def is_firewall_attached(self) -> pulumi.Output[bool]:
-        """
-        To determine if any Network Firewall is associated with this Network Firewall Policy.
-        """
-        return pulumi.get(self, "is_firewall_attached")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -879,22 +529,6 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
-
-    @property
-    @pulumi.getter(name="mappedSecrets")
-    def mapped_secrets(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyMappedSecret']]:
-        """
-        (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        """
-        return pulumi.get(self, "mapped_secrets")
-
-    @property
-    @pulumi.getter(name="securityRules")
-    def security_rules(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicySecurityRule']]:
-        """
-        (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "security_rules")
 
     @property
     @pulumi.getter
@@ -927,12 +561,4 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
-
-    @property
-    @pulumi.getter(name="urlLists")
-    def url_lists(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyUrlList']]:
-        """
-        (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-        """
-        return pulumi.get(self, "url_lists")
 

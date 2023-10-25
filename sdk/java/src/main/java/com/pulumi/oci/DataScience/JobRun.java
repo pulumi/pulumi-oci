@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.inputs.JobRunState;
 import com.pulumi.oci.DataScience.outputs.JobRunJobConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.JobRunJobLogConfigurationOverrideDetails;
+import com.pulumi.oci.DataScience.outputs.JobRunJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.DataScience.outputs.JobRunLogDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -227,6 +228,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails() {
         return this.jobLogConfigurationOverrideDetails;
+    }
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Export(name="jobStorageMountConfigurationDetailsLists", refs={List.class,JobRunJobStorageMountConfigurationDetailsList.class}, tree="[0,1]")
+    private Output<List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Output<List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists() {
+        return this.jobStorageMountConfigurationDetailsLists;
     }
     /**
      * Details of the state of the job run.

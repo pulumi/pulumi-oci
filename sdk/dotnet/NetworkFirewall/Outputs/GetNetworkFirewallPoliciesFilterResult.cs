@@ -13,9 +13,6 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     [OutputType]
     public sealed class GetNetworkFirewallPoliciesFilterResult
     {
-        /// <summary>
-        /// Name for the Security rule, must be unique within the policy.
-        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

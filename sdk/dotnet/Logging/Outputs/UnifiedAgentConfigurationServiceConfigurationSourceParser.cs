@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParser
     {
         /// <summary>
-        /// (Updatable) csv delimiter.
+        /// (Updatable) CSV delimiter.
         /// </summary>
         public readonly string? Delimiter;
         /// <summary>
@@ -34,43 +34,43 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Formats;
         /// <summary>
-        /// (Updatable) grok failure key.
+        /// (Updatable) Grok failure key.
         /// </summary>
         public readonly string? GrokFailureKey;
         /// <summary>
-        /// (Updatable) grok name key.
+        /// (Updatable) Grok name key.
         /// </summary>
         public readonly string? GrokNameKey;
         /// <summary>
-        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         /// </summary>
         public readonly bool? IsEstimateCurrentEvent;
         /// <summary>
-        /// (Updatable) If true, keep time field in the record.
+        /// (Updatable) If true, keep the time field in the record.
         /// </summary>
         public readonly bool? IsKeepTimeKey;
         /// <summary>
-        /// (Updatable) If you don't need stream/logtag fields, set this to false.
+        /// (Updatable) If you don't need stream or logtag fields, set this to false.
         /// </summary>
         public readonly bool? IsMergeCriFields;
         /// <summary>
-        /// (Updatable) If true, an empty string field is replaced with nil.
+        /// (Updatable) If true, an empty string field is replaced with a null value.
         /// </summary>
         public readonly bool? IsNullEmptyString;
         /// <summary>
-        /// (Updatable) Support colonless ident or not.
+        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         /// </summary>
         public readonly bool? IsSupportColonlessIdent;
         /// <summary>
-        /// (Updatable) With priority or not.
+        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         /// </summary>
         public readonly bool? IsWithPriority;
         /// <summary>
-        /// (Updatable) csv keys.
+        /// (Updatable) CSV keys.
         /// </summary>
         public readonly ImmutableArray<string> Keys;
         /// <summary>
-        /// (Updatable) Message format of syslog.
+        /// (Updatable) Syslog message format.
         /// </summary>
         public readonly string? MessageFormat;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? MultiLineStartRegexp;
         /// <summary>
-        /// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser? NestedParser;
         /// <summary>
@@ -94,11 +94,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string ParserType;
         /// <summary>
-        /// (Updatable) grok pattern object.
+        /// (Updatable) Grok pattern object.
         /// </summary>
         public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> Patterns;
         /// <summary>
-        /// (Updatable) rfc5424 time format.
+        /// (Updatable) RFC 5424 time format.
         /// </summary>
         public readonly string? Rfc5424timeFormat;
         /// <summary>
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? TimeFormat;
         /// <summary>
-        /// (Updatable) Time type of JSON parser.
+        /// (Updatable) JSON parser time type.
         /// </summary>
         public readonly string? TimeType;
         /// <summary>

@@ -22,7 +22,7 @@ class GetJobRunResult:
     """
     A collection of values returned by getJobRun.
     """
-    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, lifecycle_details=None, log_details=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
+    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
         if asynchronous and not isinstance(asynchronous, bool):
             raise TypeError("Expected argument 'asynchronous' to be a bool")
         pulumi.set(__self__, "asynchronous", asynchronous)
@@ -59,6 +59,9 @@ class GetJobRunResult:
         if job_run_id and not isinstance(job_run_id, str):
             raise TypeError("Expected argument 'job_run_id' to be a str")
         pulumi.set(__self__, "job_run_id", job_run_id)
+        if job_storage_mount_configuration_details_lists and not isinstance(job_storage_mount_configuration_details_lists, list):
+            raise TypeError("Expected argument 'job_storage_mount_configuration_details_lists' to be a list")
+        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -172,6 +175,14 @@ class GetJobRunResult:
         return pulumi.get(self, "job_run_id")
 
     @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunJobStorageMountConfigurationDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -246,6 +257,7 @@ class AwaitableGetJobRunResult(GetJobRunResult):
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
             job_log_configuration_override_details=self.job_log_configuration_override_details,
             job_run_id=self.job_run_id,
+            job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
             lifecycle_details=self.lifecycle_details,
             log_details=self.log_details,
             project_id=self.project_id,
@@ -292,6 +304,7 @@ def get_job_run(job_run_id: Optional[str] = None,
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
         job_log_configuration_override_details=pulumi.get(__ret__, 'job_log_configuration_override_details'),
         job_run_id=pulumi.get(__ret__, 'job_run_id'),
+        job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
         project_id=pulumi.get(__ret__, 'project_id'),

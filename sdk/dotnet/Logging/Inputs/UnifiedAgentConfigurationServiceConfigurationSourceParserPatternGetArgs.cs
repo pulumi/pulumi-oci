@@ -31,13 +31,13 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? FieldTimeZone { get; set; }
 
         /// <summary>
-        /// (Updatable) The name key to tag this grok pattern.
+        /// (Updatable) The name key to tag this Grok pattern.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The grok pattern.
+        /// (Updatable) The Grok pattern.
         /// </summary>
         [Input("pattern")]
         public Input<string>? Pattern { get; set; }

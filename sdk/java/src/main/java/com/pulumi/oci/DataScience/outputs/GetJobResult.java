@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.GetJobJobConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobJobLogConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobJobStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -74,6 +75,11 @@ public final class GetJobResult {
      * 
      */
     private List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    private List<GetJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
     /**
      * @return The state of the job.
      * 
@@ -191,6 +197,13 @@ public final class GetJobResult {
         return this.jobLogConfigurationDetails;
     }
     /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public List<GetJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists() {
+        return this.jobStorageMountConfigurationDetailsLists;
+    }
+    /**
      * @return The state of the job.
      * 
      */
@@ -246,6 +259,7 @@ public final class GetJobResult {
         private String jobId;
         private List<GetJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+        private List<GetJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private String projectId;
         private String state;
@@ -271,6 +285,7 @@ public final class GetJobResult {
     	      this.jobId = defaults.jobId;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationDetails = defaults.jobLogConfigurationDetails;
+    	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -377,6 +392,14 @@ public final class GetJobResult {
             return jobLogConfigurationDetails(List.of(jobLogConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder jobStorageMountConfigurationDetailsLists(List<GetJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
+            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+            return this;
+        }
+        public Builder jobStorageMountConfigurationDetailsLists(GetJobJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
@@ -416,6 +439,7 @@ public final class GetJobResult {
             o.jobId = jobId;
             o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             o.jobLogConfigurationDetails = jobLogConfigurationDetails;
+            o.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             o.lifecycleDetails = lifecycleDetails;
             o.projectId = projectId;
             o.state = state;

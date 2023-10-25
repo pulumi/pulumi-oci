@@ -121,6 +121,10 @@ export class JobRun extends pulumi.CustomResource {
      */
     public readonly jobLogConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
     /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    public /*out*/ readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
+    /**
      * Details of the state of the job run.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -176,6 +180,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobId"] = state ? state.jobId : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = state ? state.jobLogConfigurationOverrideDetails : undefined;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logDetails"] = state ? state.logDetails : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
@@ -205,6 +210,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["jobInfrastructureConfigurationDetails"] = undefined /*out*/;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["logDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -261,6 +267,10 @@ export interface JobRunState {
      * Logging configuration for resource.
      */
     jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationDetailsList>[]>;
     /**
      * Details of the state of the job run.
      */

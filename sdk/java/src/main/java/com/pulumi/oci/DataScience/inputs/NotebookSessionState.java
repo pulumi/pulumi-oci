@@ -8,8 +8,10 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -156,6 +158,21 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    @Import(name="notebookSessionStorageMountConfigurationDetailsLists")
+    private @Nullable Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs>> notebookSessionStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    public Optional<Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs>>> notebookSessionStorageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.notebookSessionStorageMountConfigurationDetailsLists);
+    }
+
+    /**
      * The URL to interact with the notebook session.
      * 
      */
@@ -233,6 +250,7 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
         this.notebookSessionConfigDetails = $.notebookSessionConfigDetails;
         this.notebookSessionConfigurationDetails = $.notebookSessionConfigurationDetails;
         this.notebookSessionRuntimeConfigDetails = $.notebookSessionRuntimeConfigDetails;
+        this.notebookSessionStorageMountConfigurationDetailsLists = $.notebookSessionStorageMountConfigurationDetailsLists;
         this.notebookSessionUrl = $.notebookSessionUrl;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -444,6 +462,37 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
          */
         public Builder notebookSessionRuntimeConfigDetails(NotebookSessionNotebookSessionRuntimeConfigDetailsArgs notebookSessionRuntimeConfigDetails) {
             return notebookSessionRuntimeConfigDetails(Output.of(notebookSessionRuntimeConfigDetails));
+        }
+
+        /**
+         * @param notebookSessionStorageMountConfigurationDetailsLists (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(@Nullable Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs>> notebookSessionStorageMountConfigurationDetailsLists) {
+            $.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param notebookSessionStorageMountConfigurationDetailsLists (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs> notebookSessionStorageMountConfigurationDetailsLists) {
+            return notebookSessionStorageMountConfigurationDetailsLists(Output.of(notebookSessionStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param notebookSessionStorageMountConfigurationDetailsLists (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs... notebookSessionStorageMountConfigurationDetailsLists) {
+            return notebookSessionStorageMountConfigurationDetailsLists(List.of(notebookSessionStorageMountConfigurationDetailsLists));
         }
 
         /**

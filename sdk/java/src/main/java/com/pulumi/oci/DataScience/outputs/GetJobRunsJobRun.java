@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunLogDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -68,6 +69,11 @@ public final class GetJobRunsJobRun {
      * 
      */
     private List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    private List<GetJobRunsJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
     /**
      * @return Details of the state of the job run.
      * 
@@ -179,6 +185,13 @@ public final class GetJobRunsJobRun {
         return this.jobLogConfigurationOverrideDetails;
     }
     /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public List<GetJobRunsJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists() {
+        return this.jobStorageMountConfigurationDetailsLists;
+    }
+    /**
      * @return Details of the state of the job run.
      * 
      */
@@ -248,6 +261,7 @@ public final class GetJobRunsJobRun {
         private String jobId;
         private List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+        private List<GetJobRunsJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private List<GetJobRunsJobRunLogDetail> logDetails;
         private String projectId;
@@ -269,6 +283,7 @@ public final class GetJobRunsJobRun {
     	      this.jobId = defaults.jobId;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationOverrideDetails = defaults.jobLogConfigurationOverrideDetails;
+    	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logDetails = defaults.logDetails;
     	      this.projectId = defaults.projectId;
@@ -343,6 +358,14 @@ public final class GetJobRunsJobRun {
             return jobLogConfigurationOverrideDetails(List.of(jobLogConfigurationOverrideDetails));
         }
         @CustomType.Setter
+        public Builder jobStorageMountConfigurationDetailsLists(List<GetJobRunsJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
+            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+            return this;
+        }
+        public Builder jobStorageMountConfigurationDetailsLists(GetJobRunsJobRunJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
@@ -393,6 +416,7 @@ public final class GetJobRunsJobRun {
             o.jobId = jobId;
             o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             o.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+            o.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             o.lifecycleDetails = lifecycleDetails;
             o.logDetails = logDetails;
             o.projectId = projectId;

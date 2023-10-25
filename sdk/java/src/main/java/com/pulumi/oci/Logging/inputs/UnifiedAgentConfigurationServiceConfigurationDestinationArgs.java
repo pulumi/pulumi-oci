@@ -5,8 +5,11 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class UnifiedAgentConfigurationServiceConfigurationDestinationArgs extends com.pulumi.resources.ResourceArgs {
@@ -28,10 +31,26 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationArgs 
         return this.logObjectId;
     }
 
+    /**
+     * (Updatable) Unified monitoring agent operational metrics configuration object.
+     * 
+     */
+    @Import(name="operationalMetricsConfiguration")
+    private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs> operationalMetricsConfiguration;
+
+    /**
+     * @return (Updatable) Unified monitoring agent operational metrics configuration object.
+     * 
+     */
+    public Optional<Output<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs>> operationalMetricsConfiguration() {
+        return Optional.ofNullable(this.operationalMetricsConfiguration);
+    }
+
     private UnifiedAgentConfigurationServiceConfigurationDestinationArgs() {}
 
     private UnifiedAgentConfigurationServiceConfigurationDestinationArgs(UnifiedAgentConfigurationServiceConfigurationDestinationArgs $) {
         this.logObjectId = $.logObjectId;
+        this.operationalMetricsConfiguration = $.operationalMetricsConfiguration;
     }
 
     public static Builder builder() {
@@ -71,6 +90,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationArgs 
          */
         public Builder logObjectId(String logObjectId) {
             return logObjectId(Output.of(logObjectId));
+        }
+
+        /**
+         * @param operationalMetricsConfiguration (Updatable) Unified monitoring agent operational metrics configuration object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder operationalMetricsConfiguration(@Nullable Output<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs> operationalMetricsConfiguration) {
+            $.operationalMetricsConfiguration = operationalMetricsConfiguration;
+            return this;
+        }
+
+        /**
+         * @param operationalMetricsConfiguration (Updatable) Unified monitoring agent operational metrics configuration object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder operationalMetricsConfiguration(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs operationalMetricsConfiguration) {
+            return operationalMetricsConfiguration(Output.of(operationalMetricsConfiguration));
         }
 
         public UnifiedAgentConfigurationServiceConfigurationDestinationArgs build() {

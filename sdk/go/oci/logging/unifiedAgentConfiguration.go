@@ -40,6 +40,19 @@ import (
 //					ConfigurationType: pulumi.Any(_var.Unified_agent_configuration_service_configuration_configuration_type),
 //					Destination: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs{
 //						LogObjectId: pulumi.Any(oci_objectstorage_object.Test_object.Id),
+//						OperationalMetricsConfiguration: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs{
+//							Destination: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs{
+//								CompartmentId: pulumi.Any(_var.Compartment_id),
+//							},
+//							Source: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs{
+//								Type:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type),
+//								Metrics: pulumi.Any(_var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics),
+//								RecordInput: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs{
+//									Namespace:     pulumi.Any(_var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace),
+//									ResourceGroup: pulumi.Any(_var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group),
+//								},
+//							},
+//						},
 //					},
 //					Sources: logging.UnifiedAgentConfigurationServiceConfigurationSourceArray{
 //						&logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs{

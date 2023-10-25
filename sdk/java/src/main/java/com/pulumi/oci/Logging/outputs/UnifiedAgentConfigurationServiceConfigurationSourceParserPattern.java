@@ -27,12 +27,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
      */
     private @Nullable String fieldTimeZone;
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) The grok pattern.
+     * @return (Updatable) The Grok pattern.
      * 
      */
     private @Nullable String pattern;
@@ -60,14 +60,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         return Optional.ofNullable(this.fieldTimeZone);
     }
     /**
-     * @return (Updatable) The name key to tag this grok pattern.
+     * @return (Updatable) The name key to tag this Grok pattern.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The grok pattern.
+     * @return (Updatable) The Grok pattern.
      * 
      */
     public Optional<String> pattern() {

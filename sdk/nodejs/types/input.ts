@@ -18782,6 +18782,41 @@ export namespace DataScience {
         logId?: pulumi.Input<string>;
     }
 
+    export interface JobJobStorageMountConfigurationDetailsList {
+        /**
+         * (Updatable) The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * (Updatable) The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of storage.
+         */
+        storageType: pulumi.Input<string>;
+    }
+
     export interface JobRunJobConfigurationOverrideDetails {
         /**
          * The arguments to pass to the job.
@@ -18852,6 +18887,41 @@ export namespace DataScience {
          * The log id the job run will push logs too.
          */
         logId?: pulumi.Input<string>;
+    }
+
+    export interface JobRunJobStorageMountConfigurationDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName?: pulumi.Input<string>;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * The type of storage.
+         */
+        storageType?: pulumi.Input<string>;
     }
 
     export interface JobRunLogDetail {
@@ -19145,6 +19215,41 @@ export namespace DataScience {
          * (Updatable) The repository URL
          */
         url: pulumi.Input<string>;
+    }
+
+    export interface NotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+        /**
+         * (Updatable) The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * (Updatable) The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of storage.
+         */
+        storageType: pulumi.Input<string>;
     }
 
     export interface PipelineConfigurationDetails {
@@ -52505,7 +52610,7 @@ export namespace Logging {
 
     export interface GetUnifiedAgentConfigurationsFilter {
         /**
-         * The name key to tag this grok pattern.
+         * The name key to tag this Grok pattern.
          */
         name: string;
         regex?: boolean;
@@ -52514,7 +52619,7 @@ export namespace Logging {
 
     export interface GetUnifiedAgentConfigurationsFilterArgs {
         /**
-         * The name key to tag this grok pattern.
+         * The name key to tag this Grok pattern.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -52565,7 +52670,7 @@ export namespace Logging {
          */
         configurationType: pulumi.Input<string>;
         /**
-         * (Updatable) Logging destination object.
+         * (Updatable) Unified monitoring agent operational metrics destination object.
          */
         destination: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestination>;
         /**
@@ -52579,6 +52684,54 @@ export namespace Logging {
          * (Updatable) The OCID of the resource.
          */
         logObjectId: pulumi.Input<string>;
+        /**
+         * (Updatable) Unified monitoring agent operational metrics configuration object.
+         */
+        operationalMetricsConfiguration?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration {
+        /**
+         * (Updatable) Unified monitoring agent operational metrics destination object.
+         */
+        destination: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination>;
+        /**
+         * (Updatable) Unified monitoring agent operational metrics source object.
+         */
+        source: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination {
+        /**
+         * (Updatable) The OCID of the compartment that the resource belongs to.
+         */
+        compartmentId: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource {
+        /**
+         * (Updatable) List of unified monitoring agent operational metrics.
+         */
+        metrics?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Record section of OperationalMetricsSource object.
+         */
+        recordInput: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput>;
+        /**
+         * (Updatable) Type of the unified monitoring agent operational metrics source object.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
+        /**
+         * (Updatable) Namespace to emit the operational metrics.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) Resource group to emit the operational metrics.
+         */
+        resourceGroup?: pulumi.Input<string>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationSource {
@@ -52587,15 +52740,15 @@ export namespace Logging {
          */
         channels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The name key to tag this grok pattern.
+         * (Updatable) The name key to tag this Grok pattern.
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) source parser object.
+         * (Updatable) Source parser object.
          */
         parser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParser>;
         /**
-         * (Updatable) Absolute paths for log source files. Wildcard can be used.
+         * (Updatable) Absolute paths for log source files. Wildcards can be used.
          */
         paths?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -52610,7 +52763,7 @@ export namespace Logging {
 
     export interface UnifiedAgentConfigurationServiceConfigurationSourceParser {
         /**
-         * (Updatable) csv delimiter.
+         * (Updatable) CSV delimiter.
          */
         delimiter?: pulumi.Input<string>;
         /**
@@ -52630,43 +52783,43 @@ export namespace Logging {
          */
         formats?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) grok failure key.
+         * (Updatable) Grok failure key.
          */
         grokFailureKey?: pulumi.Input<string>;
         /**
-         * (Updatable) grok name key.
+         * (Updatable) Grok name key.
          */
         grokNameKey?: pulumi.Input<string>;
         /**
-         * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when timeKey is specified.
+         * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
          */
         isEstimateCurrentEvent?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If true, keep time field in the record.
+         * (Updatable) If true, keep the time field in the record.
          */
         isKeepTimeKey?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If you don't need stream/logtag fields, set this to false.
+         * (Updatable) If you don't need stream or logtag fields, set this to false.
          */
         isMergeCriFields?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If true, an empty string field is replaced with nil.
+         * (Updatable) If true, an empty string field is replaced with a null value.
          */
         isNullEmptyString?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Support colonless ident or not.
+         * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
          */
         isSupportColonlessIdent?: pulumi.Input<boolean>;
         /**
-         * (Updatable) With priority or not.
+         * (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
          */
         isWithPriority?: pulumi.Input<boolean>;
         /**
-         * (Updatable) csv keys.
+         * (Updatable) CSV keys.
          */
         keys?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Message format of syslog.
+         * (Updatable) Syslog message format.
          */
         messageFormat?: pulumi.Input<string>;
         /**
@@ -52678,7 +52831,7 @@ export namespace Logging {
          */
         multiLineStartRegexp?: pulumi.Input<string>;
         /**
-         * (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         * (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
          */
         nestedParser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser>;
         /**
@@ -52690,11 +52843,11 @@ export namespace Logging {
          */
         parserType: pulumi.Input<string>;
         /**
-         * (Updatable) grok pattern object.
+         * (Updatable) Grok pattern object.
          */
         patterns?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern>[]>;
         /**
-         * (Updatable) rfc5424 time format.
+         * (Updatable) RFC 5424 time format.
          */
         rfc5424timeFormat?: pulumi.Input<string>;
         /**
@@ -52706,7 +52859,7 @@ export namespace Logging {
          */
         timeFormat?: pulumi.Input<string>;
         /**
-         * (Updatable) Time type of JSON parser.
+         * (Updatable) JSON parser time type.
          */
         timeType?: pulumi.Input<string>;
         /**
@@ -52731,7 +52884,7 @@ export namespace Logging {
          */
         fieldTimeKey?: pulumi.Input<string>;
         /**
-         * (Updatable) If true, keep time field in the record.
+         * (Updatable) If true, keep the time field in the record.
          */
         isKeepTimeKey?: pulumi.Input<boolean>;
         /**
@@ -52739,7 +52892,7 @@ export namespace Logging {
          */
         timeFormat?: pulumi.Input<string>;
         /**
-         * (Updatable) Time type of JSON parser.
+         * (Updatable) JSON parser time type.
          */
         timeType?: pulumi.Input<string>;
     }
@@ -52758,11 +52911,11 @@ export namespace Logging {
          */
         fieldTimeZone?: pulumi.Input<string>;
         /**
-         * (Updatable) The name key to tag this grok pattern.
+         * (Updatable) The name key to tag this Grok pattern.
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) The grok pattern.
+         * (Updatable) The Grok pattern.
          */
         pattern?: pulumi.Input<string>;
     }
@@ -55185,6 +55338,108 @@ export namespace Mysql {
 
 export namespace NetworkFirewall {
     export interface GetNetworkFirewallPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyAddressListsFilter {
+        /**
+         * Unique name to identify the group of addresses to be used in the policy rules.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyAddressListsFilterArgs {
+        /**
+         * Unique name to identify the group of addresses to be used in the policy rules.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyApplicationGroupsFilter {
+        /**
+         * Name of the application Group.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyApplicationGroupsFilterArgs {
+        /**
+         * Name of the application Group.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyApplicationsFilter {
+        /**
+         * Name of the application.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyApplicationsFilterArgs {
+        /**
+         * Name of the application.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionProfilesFilter {
+        /**
+         * Unique Name of the decryption profile.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionProfilesFilterArgs {
+        /**
+         * Unique Name of the decryption profile.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionRulesFilter {
+        /**
+         * Name for the decryption rule, must be unique within the policy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionRulesFilterArgs {
+        /**
+         * Name for the decryption rule, must be unique within the policy.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicySecurityRulesFilter {
         /**
          * Name for the Security rule, must be unique within the policy.
          */
@@ -55193,9 +55448,63 @@ export namespace NetworkFirewall {
         values: string[];
     }
 
-    export interface GetNetworkFirewallPoliciesFilterArgs {
+    export interface GetNetworkFirewallPolicySecurityRulesFilterArgs {
         /**
          * Name for the Security rule, must be unique within the policy.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyServiceListsFilter {
+        /**
+         * Name of the service Group.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyServiceListsFilterArgs {
+        /**
+         * Name of the service Group.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyServicesFilter {
+        /**
+         * Name of the service.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyServicesFilterArgs {
+        /**
+         * Name of the service.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkFirewallPolicyUrlListsFilter {
+        /**
+         * Unique name identifier for the URL list.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyUrlListsFilterArgs {
+        /**
+         * Unique name identifier for the URL list.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -55214,221 +55523,93 @@ export namespace NetworkFirewall {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface NetworkFirewallPolicyApplicationList {
-        /**
-         * (Updatable) The key is the identifier by which the application list is referenced.
-         */
-        applicationListName: pulumi.Input<string>;
-        /**
-         * (Updatable) Details about the application
-         */
-        applicationValues?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyApplicationListApplicationValue>[]>;
-    }
-
-    export interface NetworkFirewallPolicyApplicationListApplicationValue {
-        /**
-         * (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
-         */
-        icmpCode?: pulumi.Input<number>;
-        /**
-         * (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
-         */
-        icmpType?: pulumi.Input<number>;
-        /**
-         * (Updatable) Used when you select TCP or UDP. Enter a port number.
-         */
-        maximumPort?: pulumi.Input<number>;
-        /**
-         * (Updatable) Used when you select TCP or UDP. Enter a port number.
-         */
-        minimumPort?: pulumi.Input<number>;
-        /**
-         * (Updatable) Type of the url lists based on the policy
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface NetworkFirewallPolicyDecryptionProfile {
-        /**
-         * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-         */
-        areCertificateExtensionsRestricted?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-         */
-        isAutoIncludeAltName?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if server's certificate is expired.
-         */
-        isExpiredCertificateBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-         */
-        isOutOfCapacityBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-         */
-        isRevocationStatusTimeoutBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-         */
-        isUnknownRevocationStatusBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-         */
-        isUnsupportedCipherBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if SSL version is not supported.
-         */
-        isUnsupportedVersionBlocked?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-         */
-        isUntrustedIssuerBlocked?: pulumi.Input<boolean>;
-        /**
-         * Source of the secrets, where the secrets are stored.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of the url lists based on the policy
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface NetworkFirewallPolicyDecryptionRule {
-        /**
-         * (Updatable) Types of Action on the Traffic flow.
-         * * ALLOW - Allows the traffic.
-         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-         */
-        action: pulumi.Input<string>;
-        /**
-         * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
-         */
-        condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
-        /**
-         * (Updatable) The name of the decryption profile to use.
-         */
-        decryptionProfile?: pulumi.Input<string>;
-        /**
-         * (Updatable) Name for the Security rule, must be unique within the policy.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-         */
-        secret?: pulumi.Input<string>;
-    }
-
     export interface NetworkFirewallPolicyDecryptionRuleCondition {
         /**
-         * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * (Updatable) An array of address list names to be evaluated against the traffic destination address.
          */
-        destinations?: pulumi.Input<pulumi.Input<string>[]>;
+        destinationAddresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * (Updatable) An array of address list names to be evaluated against the traffic source address.
          */
-        sources?: pulumi.Input<pulumi.Input<string>[]>;
+        sourceAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface NetworkFirewallPolicyIpAddressList {
+    export interface NetworkFirewallPolicyDecryptionRulePosition {
         /**
-         * (Updatable) The identifier by which the IP address list is referenced.
+         * (Updatable) Identifier for rule after which this rule lies.
          */
-        ipAddressListName: pulumi.Input<string>;
+        afterRule?: pulumi.Input<string>;
         /**
-         * (Updatable) List of IP address lists of the policy.
-         */
-        ipAddressListValues?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface NetworkFirewallPolicyMappedSecret {
-        /**
-         * Source of the secrets, where the secrets are stored.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of the url lists based on the policy
-         */
-        type: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Vault Secret to be used.
-         */
-        vaultSecretId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Version number of the secret to be used.
-         */
-        versionNumber?: pulumi.Input<number>;
-    }
-
-    export interface NetworkFirewallPolicySecurityRule {
-        /**
-         * (Updatable) Types of Action on the Traffic flow.
-         * * ALLOW - Allows the traffic.
-         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-         */
-        action: pulumi.Input<string>;
-        /**
-         * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
-         */
-        condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
-        /**
-         * (Updatable) Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-         * * INTRUSION_DETECTION - Intrusion Detection.
-         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
-         */
-        inspection?: pulumi.Input<string>;
-        /**
-         * (Updatable) Name for the Security rule, must be unique within the policy.
-         */
-        name: pulumi.Input<string>;
-    }
-
-    export interface NetworkFirewallPolicySecurityRuleCondition {
-        /**
-         * (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
-         */
-        applications?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
-         */
-        destinations?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
-         */
-        sources?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
-         */
-        urls?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface NetworkFirewallPolicyUrlList {
-        /**
-         * (Updatable) The identifier for the url list
-         */
-        urlListName: pulumi.Input<string>;
-        /**
-         * (Updatable) The list of Url Patterns.
-         */
-        urlListValues?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyUrlListUrlListValue>[]>;
-    }
-
-    export interface NetworkFirewallPolicyUrlListUrlListValue {
-        /**
-         * (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+         * (Updatable) Identifier for rule before which this rule lies.
          *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        pattern?: pulumi.Input<string>;
+        beforeRule?: pulumi.Input<string>;
+    }
+
+    export interface NetworkFirewallPolicySecurityRuleCondition {
         /**
-         * (Updatable) Type of the url lists based on the policy
+         * (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        applications: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of address list names to be evaluated against the traffic destination address.
+         */
+        destinationAddresses: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        services: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of address list names to be evaluated against the traffic source address.
+         */
+        sourceAddresses: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+         */
+        urls: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface NetworkFirewallPolicySecurityRulePosition {
+        /**
+         * (Updatable) Identifier for rule after which this rule lies.
+         */
+        afterRule?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifier for rule before which this rule lies.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        beforeRule?: pulumi.Input<string>;
+    }
+
+    export interface NetworkFirewallPolicyServicePortRange {
+        /**
+         * (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
+         */
+        maximumPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
+         */
+        minimumPort: pulumi.Input<number>;
+    }
+
+    export interface NetworkFirewallPolicyUrlListUrl {
+        /**
+         * (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
+         */
+        pattern: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of pattern.
+         * * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -58424,6 +58605,42 @@ export namespace RecoveryMod {
          * The current state of the Protected Database.
          */
         state?: pulumi.Input<string>;
+    }
+}
+
+export namespace Redis {
+    export interface GetRedisClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRedisClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface RedisClusterNodeCollection {
+        /**
+         * Collection of node objects.
+         */
+        items?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterNodeCollectionItem>[]>;
+    }
+
+    export interface RedisClusterNodeCollectionItem {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+         */
+        privateEndpointFqdn?: pulumi.Input<string>;
+        /**
+         * The private IP address of the API endpoint to access a specific node.
+         */
+        privateEndpointIpAddress?: pulumi.Input<string>;
     }
 }
 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult
     {
         /// <summary>
-        /// csv delimiter.
+        /// CSV delimiter.
         /// </summary>
         public readonly string Delimiter;
         /// <summary>
@@ -34,43 +34,43 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Formats;
         /// <summary>
-        /// grok failure key.
+        /// Grok failure key.
         /// </summary>
         public readonly string GrokFailureKey;
         /// <summary>
-        /// grok name key.
+        /// Grok name key.
         /// </summary>
         public readonly string GrokNameKey;
         /// <summary>
-        /// If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+        /// If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         /// </summary>
         public readonly bool IsEstimateCurrentEvent;
         /// <summary>
-        /// If true, keep time field in the record.
+        /// If true, keep the time field in the record.
         /// </summary>
         public readonly bool IsKeepTimeKey;
         /// <summary>
-        /// If you don't need stream/logtag fields, set this to false for CRI parser.
+        /// If you don't need stream or logtag fields, set this to false.
         /// </summary>
         public readonly bool IsMergeCriFields;
         /// <summary>
-        /// If true, an empty string field is replaced with nil.
+        /// If true, an empty string field is replaced with a null value.
         /// </summary>
         public readonly bool IsNullEmptyString;
         /// <summary>
-        /// Support colonless ident or not.
+        /// Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         /// </summary>
         public readonly bool IsSupportColonlessIdent;
         /// <summary>
-        /// With priority or not.
+        /// Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         /// </summary>
         public readonly bool IsWithPriority;
         /// <summary>
-        /// csv keys.
+        /// CSV keys.
         /// </summary>
         public readonly ImmutableArray<string> Keys;
         /// <summary>
-        /// Message format of syslog.
+        /// Syslog message format.
         /// </summary>
         public readonly string MessageFormat;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string MultiLineStartRegexp;
         /// <summary>
-        /// Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult> NestedParsers;
         /// <summary>
@@ -94,11 +94,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string ParserType;
         /// <summary>
-        /// grok pattern object.
+        /// Grok pattern object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult> Patterns;
         /// <summary>
-        /// rfc5424 time format.
+        /// RFC 5424 time format.
         /// </summary>
         public readonly string Rfc5424timeFormat;
         /// <summary>
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string TimeFormat;
         /// <summary>
-        /// Time type of JSON parser.
+        /// JSON parser time type.
         /// </summary>
         public readonly string TimeType;
         /// <summary>

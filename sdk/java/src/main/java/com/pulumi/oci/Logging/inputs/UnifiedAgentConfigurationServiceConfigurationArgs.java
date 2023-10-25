@@ -32,14 +32,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
     }
 
     /**
-     * (Updatable) Logging destination object.
+     * (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
     @Import(name="destination", required=true)
     private Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination;
 
     /**
-     * @return (Updatable) Logging destination object.
+     * @return (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
     public Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination() {
@@ -109,7 +109,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         /**
-         * @param destination (Updatable) Logging destination object.
+         * @param destination (Updatable) Unified monitoring agent operational metrics destination object.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         /**
-         * @param destination (Updatable) Logging destination object.
+         * @param destination (Updatable) Unified monitoring agent operational metrics destination object.
          * 
          * @return builder
          * 

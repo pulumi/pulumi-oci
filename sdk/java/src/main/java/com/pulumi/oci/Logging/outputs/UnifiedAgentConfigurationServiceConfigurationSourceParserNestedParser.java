@@ -18,7 +18,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
      */
     private @Nullable String fieldTimeKey;
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     private @Nullable Boolean isKeepTimeKey;
@@ -28,7 +28,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
      */
     private @Nullable String timeFormat;
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     private @Nullable String timeType;
@@ -42,7 +42,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         return Optional.ofNullable(this.fieldTimeKey);
     }
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     public Optional<Boolean> isKeepTimeKey() {
@@ -56,7 +56,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         return Optional.ofNullable(this.timeFormat);
     }
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     public Optional<String> timeType() {

@@ -103,6 +103,7 @@ import * as osubsubscription from "./osubsubscription";
 import * as osubusage from "./osubusage";
 import * as queue from "./queue";
 import * as recoverymod from "./recoverymod";
+import * as redis from "./redis";
 import * as resourcemanager from "./resourcemanager";
 import * as sch from "./sch";
 import * as secrets from "./secrets";
@@ -214,6 +215,7 @@ export {
     osubusage,
     queue,
     recoverymod,
+    redis,
     resourcemanager,
     sch,
     secrets,

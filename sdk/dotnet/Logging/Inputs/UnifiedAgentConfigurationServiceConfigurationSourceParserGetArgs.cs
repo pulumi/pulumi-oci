@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) csv delimiter.
+        /// (Updatable) CSV delimiter.
         /// </summary>
         [Input("delimiter")]
         public Input<string>? Delimiter { get; set; }
@@ -49,49 +49,49 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) grok failure key.
+        /// (Updatable) Grok failure key.
         /// </summary>
         [Input("grokFailureKey")]
         public Input<string>? GrokFailureKey { get; set; }
 
         /// <summary>
-        /// (Updatable) grok name key.
+        /// (Updatable) Grok name key.
         /// </summary>
         [Input("grokNameKey")]
         public Input<string>? GrokNameKey { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         /// </summary>
         [Input("isEstimateCurrentEvent")]
         public Input<bool>? IsEstimateCurrentEvent { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, keep time field in the record.
+        /// (Updatable) If true, keep the time field in the record.
         /// </summary>
         [Input("isKeepTimeKey")]
         public Input<bool>? IsKeepTimeKey { get; set; }
 
         /// <summary>
-        /// (Updatable) If you don't need stream/logtag fields, set this to false.
+        /// (Updatable) If you don't need stream or logtag fields, set this to false.
         /// </summary>
         [Input("isMergeCriFields")]
         public Input<bool>? IsMergeCriFields { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, an empty string field is replaced with nil.
+        /// (Updatable) If true, an empty string field is replaced with a null value.
         /// </summary>
         [Input("isNullEmptyString")]
         public Input<bool>? IsNullEmptyString { get; set; }
 
         /// <summary>
-        /// (Updatable) Support colonless ident or not.
+        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         /// </summary>
         [Input("isSupportColonlessIdent")]
         public Input<bool>? IsSupportColonlessIdent { get; set; }
 
         /// <summary>
-        /// (Updatable) With priority or not.
+        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         /// </summary>
         [Input("isWithPriority")]
         public Input<bool>? IsWithPriority { get; set; }
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _keys;
 
         /// <summary>
-        /// (Updatable) csv keys.
+        /// (Updatable) CSV keys.
         /// </summary>
         public InputList<string> Keys
         {
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Message format of syslog.
+        /// (Updatable) Syslog message format.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? MultiLineStartRegexp { get; set; }
 
         /// <summary>
-        /// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         /// </summary>
         [Input("nestedParser")]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserGetArgs>? NestedParser { get; set; }
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternGetArgs>? _patterns;
 
         /// <summary>
-        /// (Updatable) grok pattern object.
+        /// (Updatable) Grok pattern object.
         /// </summary>
         public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternGetArgs> Patterns
         {
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) rfc5424 time format.
+        /// (Updatable) RFC 5424 time format.
         /// </summary>
         [Input("rfc5424timeFormat")]
         public Input<string>? Rfc5424timeFormat { get; set; }
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? TimeFormat { get; set; }
 
         /// <summary>
-        /// (Updatable) Time type of JSON parser.
+        /// (Updatable) JSON parser time type.
         /// </summary>
         [Input("timeType")]
         public Input<string>? TimeType { get; set; }

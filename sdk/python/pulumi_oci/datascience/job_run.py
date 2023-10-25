@@ -226,6 +226,7 @@ class _JobRunState:
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_infrastructure_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailArgs']]]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -245,6 +246,7 @@ class _JobRunState:
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailArgs']]] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: Details of the state of the job run.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]] log_details: Customer logging details for job run.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -269,6 +271,7 @@ class _JobRunState:
             job_id=job_id,
             job_infrastructure_configuration_details=job_infrastructure_configuration_details,
             job_log_configuration_override_details=job_log_configuration_override_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
             lifecycle_details=lifecycle_details,
             log_details=log_details,
             project_id=project_id,
@@ -290,6 +293,7 @@ class _JobRunState:
              job_id: Optional[pulumi.Input[str]] = None,
              job_infrastructure_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailArgs']]]] = None,
              job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
+             job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]] = None,
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              log_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]]] = None,
              project_id: Optional[pulumi.Input[str]] = None,
@@ -317,6 +321,8 @@ class _JobRunState:
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
         if 'jobLogConfigurationOverrideDetails' in kwargs:
             job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
         if 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
         if 'logDetails' in kwargs:
@@ -350,6 +356,8 @@ class _JobRunState:
             _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         if job_log_configuration_override_details is not None:
             _setter("job_log_configuration_override_details", job_log_configuration_override_details)
+        if job_storage_mount_configuration_details_lists is not None:
+            _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         if lifecycle_details is not None:
             _setter("lifecycle_details", lifecycle_details)
         if log_details is not None:
@@ -484,6 +492,18 @@ class _JobRunState:
     @job_log_configuration_override_details.setter
     def job_log_configuration_override_details(self, value: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "job_log_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]]:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @job_storage_mount_configuration_details_lists.setter
+    def job_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]]):
+        pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -765,6 +785,7 @@ class JobRun(pulumi.CustomResource):
             __props__.__dict__["project_id"] = project_id
             __props__.__dict__["created_by"] = None
             __props__.__dict__["job_infrastructure_configuration_details"] = None
+            __props__.__dict__["job_storage_mount_configuration_details_lists"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["log_details"] = None
             __props__.__dict__["state"] = None
@@ -791,6 +812,7 @@ class JobRun(pulumi.CustomResource):
             job_id: Optional[pulumi.Input[str]] = None,
             job_infrastructure_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobInfrastructureConfigurationDetailArgs']]]]] = None,
             job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
+            job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobStorageMountConfigurationDetailsListArgs']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunLogDetailArgs']]]]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
@@ -815,6 +837,7 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobInfrastructureConfigurationDetailArgs']]]] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']] job_log_configuration_override_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: Details of the state of the job run.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunLogDetailArgs']]]] log_details: Customer logging details for job run.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -841,6 +864,7 @@ class JobRun(pulumi.CustomResource):
         __props__.__dict__["job_id"] = job_id
         __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
         __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
+        __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_details"] = log_details
         __props__.__dict__["project_id"] = project_id
@@ -929,6 +953,14 @@ class JobRun(pulumi.CustomResource):
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> pulumi.Output[Sequence['outputs.JobRunJobStorageMountConfigurationDetailsList']]:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

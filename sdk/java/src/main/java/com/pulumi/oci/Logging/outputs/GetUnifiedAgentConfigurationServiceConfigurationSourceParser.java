@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
     /**
-     * @return csv delimiter.
+     * @return CSV delimiter.
      * 
      */
     private String delimiter;
@@ -42,52 +42,52 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private List<String> formats;
     /**
-     * @return grok failure key.
+     * @return Grok failure key.
      * 
      */
     private String grokFailureKey;
     /**
-     * @return grok name key.
+     * @return Grok name key.
      * 
      */
     private String grokNameKey;
     /**
-     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     private Boolean isEstimateCurrentEvent;
     /**
-     * @return If true, keep time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     private Boolean isKeepTimeKey;
     /**
-     * @return If you don&#39;t need stream/logtag fields, set this to false for CRI parser.
+     * @return If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     private Boolean isMergeCriFields;
     /**
-     * @return If true, an empty string field is replaced with nil.
+     * @return If true, an empty string field is replaced with a null value.
      * 
      */
     private Boolean isNullEmptyString;
     /**
-     * @return Support colonless ident or not.
+     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     private Boolean isSupportColonlessIdent;
     /**
-     * @return With priority or not.
+     * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     private Boolean isWithPriority;
     /**
-     * @return csv keys.
+     * @return CSV keys.
      * 
      */
     private List<String> keys;
     /**
-     * @return Message format of syslog.
+     * @return Syslog message format.
      * 
      */
     private String messageFormat;
@@ -102,7 +102,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private String multiLineStartRegexp;
     /**
-     * @return Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * @return Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
@@ -117,12 +117,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private String parserType;
     /**
-     * @return grok pattern object.
+     * @return Grok pattern object.
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
     /**
-     * @return rfc5424 time format.
+     * @return RFC 5424 time format.
      * 
      */
     private String rfc5424timeFormat;
@@ -137,7 +137,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private String timeFormat;
     /**
-     * @return Time type of JSON parser.
+     * @return JSON parser time type.
      * 
      */
     private String timeType;
@@ -154,7 +154,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     /**
-     * @return csv delimiter.
+     * @return CSV delimiter.
      * 
      */
     public String delimiter() {
@@ -189,70 +189,70 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.formats;
     }
     /**
-     * @return grok failure key.
+     * @return Grok failure key.
      * 
      */
     public String grokFailureKey() {
         return this.grokFailureKey;
     }
     /**
-     * @return grok name key.
+     * @return Grok name key.
      * 
      */
     public String grokNameKey() {
         return this.grokNameKey;
     }
     /**
-     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     public Boolean isEstimateCurrentEvent() {
         return this.isEstimateCurrentEvent;
     }
     /**
-     * @return If true, keep time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     public Boolean isKeepTimeKey() {
         return this.isKeepTimeKey;
     }
     /**
-     * @return If you don&#39;t need stream/logtag fields, set this to false for CRI parser.
+     * @return If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     public Boolean isMergeCriFields() {
         return this.isMergeCriFields;
     }
     /**
-     * @return If true, an empty string field is replaced with nil.
+     * @return If true, an empty string field is replaced with a null value.
      * 
      */
     public Boolean isNullEmptyString() {
         return this.isNullEmptyString;
     }
     /**
-     * @return Support colonless ident or not.
+     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     public Boolean isSupportColonlessIdent() {
         return this.isSupportColonlessIdent;
     }
     /**
-     * @return With priority or not.
+     * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     public Boolean isWithPriority() {
         return this.isWithPriority;
     }
     /**
-     * @return csv keys.
+     * @return CSV keys.
      * 
      */
     public List<String> keys() {
         return this.keys;
     }
     /**
-     * @return Message format of syslog.
+     * @return Syslog message format.
      * 
      */
     public String messageFormat() {
@@ -273,7 +273,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.multiLineStartRegexp;
     }
     /**
-     * @return Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * @return Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers() {
@@ -294,14 +294,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.parserType;
     }
     /**
-     * @return grok pattern object.
+     * @return Grok pattern object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns() {
         return this.patterns;
     }
     /**
-     * @return rfc5424 time format.
+     * @return RFC 5424 time format.
      * 
      */
     public String rfc5424timeFormat() {
@@ -322,7 +322,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.timeFormat;
     }
     /**
-     * @return Time type of JSON parser.
+     * @return JSON parser time type.
      * 
      */
     public String timeType() {

@@ -80,6 +80,8 @@ type LookupNotebookSessionResult struct {
 	NotebookSessionId                   string                                                 `pulumi:"notebookSessionId"`
 	// Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails []GetNotebookSessionNotebookSessionRuntimeConfigDetail `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists []GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
@@ -192,6 +194,13 @@ func (o LookupNotebookSessionResultOutput) NotebookSessionRuntimeConfigDetails()
 	return o.ApplyT(func(v LookupNotebookSessionResult) []GetNotebookSessionNotebookSessionRuntimeConfigDetail {
 		return v.NotebookSessionRuntimeConfigDetails
 	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
+// Collection of NotebookSessionStorageMountConfigurationDetails.
+func (o LookupNotebookSessionResultOutput) NotebookSessionStorageMountConfigurationDetailsLists() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) []GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return v.NotebookSessionStorageMountConfigurationDetailsLists
+	}).(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The URL to interact with the notebook session.

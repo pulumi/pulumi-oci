@@ -17,17 +17,17 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
      */
     private List<String> channels;
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     private String name;
     /**
-     * @return source parser object.
+     * @return Source parser object.
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
     /**
-     * @return Absolute paths for log source files. Wildcard can be used.
+     * @return Absolute paths for log source files. Wildcards can be used.
      * 
      */
     private List<String> paths;
@@ -46,21 +46,21 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         return this.channels;
     }
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return source parser object.
+     * @return Source parser object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers() {
         return this.parsers;
     }
     /**
-     * @return Absolute paths for log source files. Wildcard can be used.
+     * @return Absolute paths for log source files. Wildcards can be used.
      * 
      */
     public List<String> paths() {

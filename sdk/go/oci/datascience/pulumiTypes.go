@@ -869,6 +869,190 @@ func (o JobJobLogConfigurationDetailsPtrOutput) LogId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type JobJobStorageMountConfigurationDetailsList struct {
+	// (Updatable) The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// JobJobStorageMountConfigurationDetailsListInput is an input type that accepts JobJobStorageMountConfigurationDetailsListArgs and JobJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `JobJobStorageMountConfigurationDetailsListInput` via:
+//
+//	JobJobStorageMountConfigurationDetailsListArgs{...}
+type JobJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToJobJobStorageMountConfigurationDetailsListOutput() JobJobStorageMountConfigurationDetailsListOutput
+	ToJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) JobJobStorageMountConfigurationDetailsListOutput
+}
+
+type JobJobStorageMountConfigurationDetailsListArgs struct {
+	// (Updatable) The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (JobJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArgs) ToJobJobStorageMountConfigurationDetailsListOutput() JobJobStorageMountConfigurationDetailsListOutput {
+	return i.ToJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArgs) ToJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) JobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[JobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[JobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// JobJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts JobJobStorageMountConfigurationDetailsListArray and JobJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `JobJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	JobJobStorageMountConfigurationDetailsListArray{ JobJobStorageMountConfigurationDetailsListArgs{...} }
+type JobJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToJobJobStorageMountConfigurationDetailsListArrayOutput() JobJobStorageMountConfigurationDetailsListArrayOutput
+	ToJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) JobJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type JobJobStorageMountConfigurationDetailsListArray []JobJobStorageMountConfigurationDetailsListInput
+
+func (JobJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArray) ToJobJobStorageMountConfigurationDetailsListArrayOutput() JobJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArray) ToJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) JobJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i JobJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]JobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]JobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type JobJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (JobJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o JobJobStorageMountConfigurationDetailsListOutput) ToJobJobStorageMountConfigurationDetailsListOutput() JobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o JobJobStorageMountConfigurationDetailsListOutput) ToJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) JobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o JobJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[JobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[JobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The object storage bucket
+func (o JobJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The local directory name to be mounted
+func (o JobJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The local path of the mounted directory, excluding directory name.
+func (o JobJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.DestinationPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the export
+func (o JobJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the mount target
+func (o JobJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The object storage namespace
+func (o JobJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix in the bucket to mount
+func (o JobJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of storage.
+func (o JobJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type JobJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (JobJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o JobJobStorageMountConfigurationDetailsListArrayOutput) ToJobJobStorageMountConfigurationDetailsListArrayOutput() JobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o JobJobStorageMountConfigurationDetailsListArrayOutput) ToJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) JobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o JobJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]JobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o JobJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) JobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobJobStorageMountConfigurationDetailsList {
+		return vs[0].([]JobJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(JobJobStorageMountConfigurationDetailsListOutput)
+}
+
 type JobRunJobConfigurationOverrideDetails struct {
 	// The arguments to pass to the job.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
@@ -1592,6 +1776,190 @@ func (o JobRunJobLogConfigurationOverrideDetailsPtrOutput) LogId() pulumi.String
 		}
 		return v.LogId
 	}).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName *string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType *string `pulumi:"storageType"`
+}
+
+// JobRunJobStorageMountConfigurationDetailsListInput is an input type that accepts JobRunJobStorageMountConfigurationDetailsListArgs and JobRunJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `JobRunJobStorageMountConfigurationDetailsListInput` via:
+//
+//	JobRunJobStorageMountConfigurationDetailsListArgs{...}
+type JobRunJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToJobRunJobStorageMountConfigurationDetailsListOutput() JobRunJobStorageMountConfigurationDetailsListOutput
+	ToJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) JobRunJobStorageMountConfigurationDetailsListOutput
+}
+
+type JobRunJobStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringPtrInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringPtrInput `pulumi:"storageType"`
+}
+
+func (JobRunJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArgs) ToJobRunJobStorageMountConfigurationDetailsListOutput() JobRunJobStorageMountConfigurationDetailsListOutput {
+	return i.ToJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArgs) ToJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[JobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[JobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// JobRunJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts JobRunJobStorageMountConfigurationDetailsListArray and JobRunJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `JobRunJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	JobRunJobStorageMountConfigurationDetailsListArray{ JobRunJobStorageMountConfigurationDetailsListArgs{...} }
+type JobRunJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToJobRunJobStorageMountConfigurationDetailsListArrayOutput() JobRunJobStorageMountConfigurationDetailsListArrayOutput
+	ToJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) JobRunJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type JobRunJobStorageMountConfigurationDetailsListArray []JobRunJobStorageMountConfigurationDetailsListInput
+
+func (JobRunJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArray) ToJobRunJobStorageMountConfigurationDetailsListArrayOutput() JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArray) ToJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i JobRunJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]JobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]JobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type JobRunJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) ToJobRunJobStorageMountConfigurationDetailsListOutput() JobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) ToJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[JobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[JobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// The local directory name to be mounted
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.DestinationDirectoryName }).(pulumi.StringPtrOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.DestinationPath }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the export
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the mount target
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// The object storage namespace
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Prefix in the bucket to mount
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// The type of storage.
+func (o JobRunJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationDetailsList) *string { return v.StorageType }).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) ToJobRunJobStorageMountConfigurationDetailsListArrayOutput() JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) ToJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]JobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) JobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobRunJobStorageMountConfigurationDetailsList {
+		return vs[0].([]JobRunJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(JobRunJobStorageMountConfigurationDetailsListOutput)
 }
 
 type JobRunLogDetail struct {
@@ -5213,6 +5581,198 @@ func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConf
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
 		return vs[0].([]NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
 	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsList struct {
+	// (Updatable) The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// NotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput is an input type that accepts NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs and NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput` via:
+//
+//	NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...}
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+	ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+}
+
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs struct {
+	// (Updatable) The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return i.ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[NotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[NotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput is an input type that accepts NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray and NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{ NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...} }
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+	ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+}
+
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray []NotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput
+
+func (NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[NotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[NotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The object storage bucket
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The local directory name to be mounted
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The local path of the mounted directory, excluding directory name.
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string {
+		return v.DestinationPath
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the export
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the mount target
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string {
+		return v.MountTargetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The object storage namespace
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix in the bucket to mount
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of storage.
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+type NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return vs[0].([]NotebookSessionNotebookSessionStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
 }
 
 type PipelineConfigurationDetails struct {
@@ -9042,6 +9602,190 @@ func (o GetJobJobLogConfigurationDetailArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetJobJobLogConfigurationDetailOutput)
 }
 
+type GetJobJobStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobJobStorageMountConfigurationDetailsListInput is an input type that accepts GetJobJobStorageMountConfigurationDetailsListArgs and GetJobJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetJobJobStorageMountConfigurationDetailsListInput` via:
+//
+//	GetJobJobStorageMountConfigurationDetailsListArgs{...}
+type GetJobJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobJobStorageMountConfigurationDetailsListOutput() GetJobJobStorageMountConfigurationDetailsListOutput
+	ToGetJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetJobJobStorageMountConfigurationDetailsListOutput
+}
+
+type GetJobJobStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArgs) ToGetJobJobStorageMountConfigurationDetailsListOutput() GetJobJobStorageMountConfigurationDetailsListOutput {
+	return i.ToGetJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArgs) ToGetJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetJobJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetJobJobStorageMountConfigurationDetailsListArray and GetJobJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetJobJobStorageMountConfigurationDetailsListArray{ GetJobJobStorageMountConfigurationDetailsListArgs{...} }
+type GetJobJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobJobStorageMountConfigurationDetailsListArrayOutput
+	ToGetJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetJobJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetJobJobStorageMountConfigurationDetailsListArray []GetJobJobStorageMountConfigurationDetailsListInput
+
+func (GetJobJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArray) ToGetJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArray) ToGetJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetJobJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetJobJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) ToGetJobJobStorageMountConfigurationDetailsListOutput() GetJobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) ToGetJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetJobJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobStorageMountConfigurationDetailsList {
+		return vs[0].([]GetJobJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetJobJobStorageMountConfigurationDetailsListOutput)
+}
+
 type GetJobRunJobConfigurationOverrideDetail struct {
 	// The arguments to pass to the job.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
@@ -9629,6 +10373,190 @@ func (o GetJobRunJobLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.In
 	}).(GetJobRunJobLogConfigurationOverrideDetailOutput)
 }
 
+type GetJobRunJobStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobRunJobStorageMountConfigurationDetailsListInput is an input type that accepts GetJobRunJobStorageMountConfigurationDetailsListArgs and GetJobRunJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetJobRunJobStorageMountConfigurationDetailsListInput` via:
+//
+//	GetJobRunJobStorageMountConfigurationDetailsListArgs{...}
+type GetJobRunJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunJobStorageMountConfigurationDetailsListOutput
+	ToGetJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetJobRunJobStorageMountConfigurationDetailsListOutput
+}
+
+type GetJobRunJobStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobRunJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArgs) ToGetJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunJobStorageMountConfigurationDetailsListOutput {
+	return i.ToGetJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArgs) ToGetJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetJobRunJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetJobRunJobStorageMountConfigurationDetailsListArray and GetJobRunJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetJobRunJobStorageMountConfigurationDetailsListArray{ GetJobRunJobStorageMountConfigurationDetailsListArgs{...} }
+type GetJobRunJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationDetailsListArrayOutput
+	ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetJobRunJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetJobRunJobStorageMountConfigurationDetailsListArray []GetJobRunJobStorageMountConfigurationDetailsListInput
+
+func (GetJobRunJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArray) ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArray) ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetJobRunJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetJobRunJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) ToGetJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) ToGetJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobRunJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobRunJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobStorageMountConfigurationDetailsList {
+		return vs[0].([]GetJobRunJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetJobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
 type GetJobRunLogDetail struct {
 	// The log group id for where log objects will be for job runs.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -9911,6 +10839,8 @@ type GetJobRunsJobRun struct {
 	JobInfrastructureConfigurationDetails []GetJobRunsJobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails []GetJobRunsJobRunJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []GetJobRunsJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -9960,6 +10890,8 @@ type GetJobRunsJobRunArgs struct {
 	JobInfrastructureConfigurationDetails GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -10103,6 +11035,13 @@ func (o GetJobRunsJobRunOutput) JobLogConfigurationOverrideDetails() GetJobRunsJ
 	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobLogConfigurationOverrideDetail {
 		return v.JobLogConfigurationOverrideDetails
 	}).(GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o GetJobRunsJobRunOutput) JobStorageMountConfigurationDetailsLists() GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobStorageMountConfigurationDetailsList {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Details of the state of the job run.
@@ -10757,6 +11696,192 @@ func (o GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayOutput) Index(i pu
 	}).(GetJobRunsJobRunJobLogConfigurationOverrideDetailOutput)
 }
 
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput is an input type that accepts GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs and GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput` via:
+//
+//	GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs{...}
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput
+	ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput {
+	return i.ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobRunsJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobRunsJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray and GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray{ GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs{...} }
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput
+	ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray []GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput
+
+func (GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobRunsJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobRunsJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobRunsJobRunJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobStorageMountConfigurationDetailsList {
+		return vs[0].([]GetJobRunsJobRunJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
 type GetJobRunsJobRunLogDetail struct {
 	// The log group id for where log objects will be for job runs.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -11326,6 +12451,8 @@ type GetJobsJob struct {
 	JobInfrastructureConfigurationDetails []GetJobsJobJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails []GetJobsJobJobLogConfigurationDetail `pulumi:"jobLogConfigurationDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []GetJobsJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -11375,6 +12502,8 @@ type GetJobsJobArgs struct {
 	JobInfrastructureConfigurationDetails GetJobsJobJobInfrastructureConfigurationDetailArrayInput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails GetJobsJobJobLogConfigurationDetailArrayInput `pulumi:"jobLogConfigurationDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists GetJobsJobJobStorageMountConfigurationDetailsListArrayInput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -11532,6 +12661,13 @@ func (o GetJobsJobOutput) JobInfrastructureConfigurationDetails() GetJobsJobJobI
 // Logging configuration for resource.
 func (o GetJobsJobOutput) JobLogConfigurationDetails() GetJobsJobJobLogConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetJobsJob) []GetJobsJobJobLogConfigurationDetail { return v.JobLogConfigurationDetails }).(GetJobsJobJobLogConfigurationDetailArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o GetJobsJobOutput) JobStorageMountConfigurationDetailsLists() GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetJobsJob) []GetJobsJobJobStorageMountConfigurationDetailsList {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The state of the job.
@@ -12165,6 +13301,190 @@ func (o GetJobsJobJobLogConfigurationDetailArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobLogConfigurationDetail {
 		return vs[0].([]GetJobsJobJobLogConfigurationDetail)[vs[1].(int)]
 	}).(GetJobsJobJobLogConfigurationDetailOutput)
+}
+
+type GetJobsJobJobStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobsJobJobStorageMountConfigurationDetailsListInput is an input type that accepts GetJobsJobJobStorageMountConfigurationDetailsListArgs and GetJobsJobJobStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetJobsJobJobStorageMountConfigurationDetailsListInput` via:
+//
+//	GetJobsJobJobStorageMountConfigurationDetailsListArgs{...}
+type GetJobsJobJobStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobStorageMountConfigurationDetailsListOutput() GetJobsJobJobStorageMountConfigurationDetailsListOutput
+	ToGetJobsJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetJobsJobJobStorageMountConfigurationDetailsListOutput
+}
+
+type GetJobsJobJobStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobsJobJobStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArgs) ToGetJobsJobJobStorageMountConfigurationDetailsListOutput() GetJobsJobJobStorageMountConfigurationDetailsListOutput {
+	return i.ToGetJobsJobJobStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArgs) ToGetJobsJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobsJobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobsJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobsJobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobsJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetJobsJobJobStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetJobsJobJobStorageMountConfigurationDetailsListArray and GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobJobStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetJobsJobJobStorageMountConfigurationDetailsListArray{ GetJobsJobJobStorageMountConfigurationDetailsListArgs{...} }
+type GetJobsJobJobStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput
+	ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetJobsJobJobStorageMountConfigurationDetailsListArray []GetJobsJobJobStorageMountConfigurationDetailsListInput
+
+func (GetJobsJobJobStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArray) ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArray) ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetJobsJobJobStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobsJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobsJobJobStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetJobsJobJobStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) ToGetJobsJobJobStorageMountConfigurationDetailsListOutput() GetJobsJobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) ToGetJobsJobJobStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetJobsJobJobStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobsJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetJobsJobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobsJobJobStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutput() GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) ToGetJobsJobJobStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobsJobJobStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetJobsJobJobStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobsJobJobStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobStorageMountConfigurationDetailsList {
+		return vs[0].([]GetJobsJobJobStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetJobsJobJobStorageMountConfigurationDetailsListOutput)
 }
 
 type GetModelCustomMetadataList struct {
@@ -17790,6 +19110,202 @@ func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitCo
 	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
 }
 
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput is an input type that accepts GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs and GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput` via:
+//
+//	GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...}
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+	ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+}
+
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return i.ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray and GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{ GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...} }
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+	ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray []GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput
+
+func (GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationPath
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.ExportId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return vs[0].([]GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
 type GetNotebookSessionShapesFilter struct {
 	// The name of the notebook session shape.
 	Name   string   `pulumi:"name"`
@@ -18222,6 +19738,8 @@ type GetNotebookSessionsNotebookSession struct {
 	NotebookSessionConfigurationDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail `pulumi:"notebookSessionConfigurationDetails"`
 	// Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists []GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl string `pulumi:"notebookSessionUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -18264,6 +19782,8 @@ type GetNotebookSessionsNotebookSessionArgs struct {
 	NotebookSessionConfigurationDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput `pulumi:"notebookSessionConfigurationDetails"`
 	// Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput `pulumi:"notebookSessionRuntimeConfigDetails"`
+	// Collection of NotebookSessionStorageMountConfigurationDetails.
+	NotebookSessionStorageMountConfigurationDetailsLists GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringInput `pulumi:"notebookSessionUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -18397,6 +19917,13 @@ func (o GetNotebookSessionsNotebookSessionOutput) NotebookSessionRuntimeConfigDe
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
 		return v.NotebookSessionRuntimeConfigDetails
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
+// Collection of NotebookSessionStorageMountConfigurationDetails.
+func (o GetNotebookSessionsNotebookSessionOutput) NotebookSessionStorageMountConfigurationDetailsLists() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) []GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return v.NotebookSessionStorageMountConfigurationDetailsLists
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The URL to interact with the notebook session.
@@ -19417,6 +20944,206 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNote
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
 		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{ GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray []GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The object storage bucket
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationPath
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.ExportId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Prefix
+	}).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList] {
+	return pulumix.Output[[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
 }
 
 type GetPipelineConfigurationDetail struct {
@@ -25694,6 +27421,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobLogConfigurationDetailsInput)(nil)).Elem(), JobJobLogConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobLogConfigurationDetailsPtrInput)(nil)).Elem(), JobJobLogConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), JobJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobConfigurationOverrideDetailsInput)(nil)).Elem(), JobRunJobConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobConfigurationOverrideDetailsPtrInput)(nil)).Elem(), JobRunJobConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailArgs{})
@@ -25702,6 +27431,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobLogConfigurationOverrideDetailsInput)(nil)).Elem(), JobRunJobLogConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobLogConfigurationOverrideDetailsPtrInput)(nil)).Elem(), JobRunJobLogConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailInput)(nil)).Elem(), JobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailArrayInput)(nil)).Elem(), JobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelCustomMetadataListInput)(nil)).Elem(), ModelCustomMetadataListArgs{})
@@ -25740,6 +27471,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput)(nil)).Elem(), NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineConfigurationDetailsInput)(nil)).Elem(), PipelineConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineConfigurationDetailsPtrInput)(nil)).Elem(), PipelineConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineInfrastructureConfigurationDetailsInput)(nil)).Elem(), PipelineInfrastructureConfigurationDetailsArgs{})
@@ -25783,6 +27516,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobLogConfigurationDetailInput)(nil)).Elem(), GetJobJobLogConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobLogConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobLogConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunJobConfigurationOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunJobConfigurationOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailArgs{})
@@ -25791,6 +27526,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobLogConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunJobLogConfigurationOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunJobLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunLogDetailInput)(nil)).Elem(), GetJobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunLogDetailArrayInput)(nil)).Elem(), GetJobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsFilterInput)(nil)).Elem(), GetJobRunsFilterArgs{})
@@ -25805,6 +27542,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobLogConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunLogDetailInput)(nil)).Elem(), GetJobRunsJobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunLogDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobShapesFilterInput)(nil)).Elem(), GetJobShapesFilterArgs{})
@@ -25823,6 +27562,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobLogConfigurationDetailInput)(nil)).Elem(), GetJobsJobJobLogConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobLogConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobLogConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelCustomMetadataListInput)(nil)).Elem(), GetModelCustomMetadataListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelCustomMetadataListArrayInput)(nil)).Elem(), GetModelCustomMetadataListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDefinedMetadataListInput)(nil)).Elem(), GetModelDefinedMetadataListArgs{})
@@ -25897,6 +27638,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesFilterInput)(nil)).Elem(), GetNotebookSessionShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesFilterArrayInput)(nil)).Elem(), GetNotebookSessionShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesNotebookSessionShapeInput)(nil)).Elem(), GetNotebookSessionShapesNotebookSessionShapeArgs{})
@@ -25919,6 +27662,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailInput)(nil)).Elem(), GetPipelineConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailArgs{})
@@ -26007,6 +27752,8 @@ func init() {
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobLogConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobLogConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(JobJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobConfigurationOverrideDetailsOutput{})
 	pulumi.RegisterOutputType(JobRunJobConfigurationOverrideDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailOutput{})
@@ -26015,6 +27762,8 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobLogConfigurationOverrideDetailsOutput{})
 	pulumi.RegisterOutputType(JobRunJobLogConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(ModelCustomMetadataListOutput{})
@@ -26053,6 +27802,8 @@ func init() {
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(PipelineConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineInfrastructureConfigurationDetailsOutput{})
@@ -26096,6 +27847,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobLogConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobJobLogConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobConfigurationOverrideDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobConfigurationOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailOutput{})
@@ -26104,6 +27857,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobLogConfigurationOverrideDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsFilterOutput{})
@@ -26118,6 +27873,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobLogConfigurationOverrideDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobShapesFilterOutput{})
@@ -26136,6 +27893,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobLogConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobLogConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetModelCustomMetadataListOutput{})
 	pulumi.RegisterOutputType(GetModelCustomMetadataListArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDefinedMetadataListOutput{})
@@ -26210,6 +27969,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesNotebookSessionShapeOutput{})
@@ -26232,6 +27993,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailOutput{})

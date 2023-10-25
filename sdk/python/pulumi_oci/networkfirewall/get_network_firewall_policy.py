@@ -8,7 +8,6 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
-from . import outputs
 
 __all__ = [
     'GetNetworkFirewallPolicyResult',
@@ -22,19 +21,13 @@ class GetNetworkFirewallPolicyResult:
     """
     A collection of values returned by getNetworkFirewallPolicy.
     """
-    def __init__(__self__, application_lists=None, compartment_id=None, decryption_profiles=None, decryption_rules=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address_lists=None, is_firewall_attached=None, lifecycle_details=None, mapped_secrets=None, network_firewall_policy_id=None, security_rules=None, state=None, system_tags=None, time_created=None, time_updated=None, url_lists=None):
-        if application_lists and not isinstance(application_lists, list):
-            raise TypeError("Expected argument 'application_lists' to be a list")
-        pulumi.set(__self__, "application_lists", application_lists)
+    def __init__(__self__, attached_network_firewall_count=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, network_firewall_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if attached_network_firewall_count and not isinstance(attached_network_firewall_count, int):
+            raise TypeError("Expected argument 'attached_network_firewall_count' to be a int")
+        pulumi.set(__self__, "attached_network_firewall_count", attached_network_firewall_count)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
-        if decryption_profiles and not isinstance(decryption_profiles, list):
-            raise TypeError("Expected argument 'decryption_profiles' to be a list")
-        pulumi.set(__self__, "decryption_profiles", decryption_profiles)
-        if decryption_rules and not isinstance(decryption_rules, list):
-            raise TypeError("Expected argument 'decryption_rules' to be a list")
-        pulumi.set(__self__, "decryption_rules", decryption_rules)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -47,24 +40,12 @@ class GetNetworkFirewallPolicyResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if ip_address_lists and not isinstance(ip_address_lists, list):
-            raise TypeError("Expected argument 'ip_address_lists' to be a list")
-        pulumi.set(__self__, "ip_address_lists", ip_address_lists)
-        if is_firewall_attached and not isinstance(is_firewall_attached, bool):
-            raise TypeError("Expected argument 'is_firewall_attached' to be a bool")
-        pulumi.set(__self__, "is_firewall_attached", is_firewall_attached)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        if mapped_secrets and not isinstance(mapped_secrets, list):
-            raise TypeError("Expected argument 'mapped_secrets' to be a list")
-        pulumi.set(__self__, "mapped_secrets", mapped_secrets)
         if network_firewall_policy_id and not isinstance(network_firewall_policy_id, str):
             raise TypeError("Expected argument 'network_firewall_policy_id' to be a str")
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        if security_rules and not isinstance(security_rules, list):
-            raise TypeError("Expected argument 'security_rules' to be a list")
-        pulumi.set(__self__, "security_rules", security_rules)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -77,17 +58,14 @@ class GetNetworkFirewallPolicyResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
-        if url_lists and not isinstance(url_lists, list):
-            raise TypeError("Expected argument 'url_lists' to be a list")
-        pulumi.set(__self__, "url_lists", url_lists)
 
     @property
-    @pulumi.getter(name="applicationLists")
-    def application_lists(self) -> Sequence['outputs.GetNetworkFirewallPolicyApplicationListResult']:
+    @pulumi.getter(name="attachedNetworkFirewallCount")
+    def attached_network_firewall_count(self) -> int:
         """
-        Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        Count of number of Network Firewall attached to the Policy.
         """
-        return pulumi.get(self, "application_lists")
+        return pulumi.get(self, "attached_network_firewall_count")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -98,26 +76,10 @@ class GetNetworkFirewallPolicyResult:
         return pulumi.get(self, "compartment_id")
 
     @property
-    @pulumi.getter(name="decryptionProfiles")
-    def decryption_profiles(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionProfileResult']:
-        """
-        Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-        """
-        return pulumi.get(self, "decryption_profiles")
-
-    @property
-    @pulumi.getter(name="decryptionRules")
-    def decryption_rules(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionRuleResult']:
-        """
-        List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "decryption_rules")
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -133,7 +95,7 @@ class GetNetworkFirewallPolicyResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -146,22 +108,6 @@ class GetNetworkFirewallPolicyResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="ipAddressLists")
-    def ip_address_lists(self) -> Sequence['outputs.GetNetworkFirewallPolicyIpAddressListResult']:
-        """
-        Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-        """
-        return pulumi.get(self, "ip_address_lists")
-
-    @property
-    @pulumi.getter(name="isFirewallAttached")
-    def is_firewall_attached(self) -> bool:
-        """
-        To determine if any Network Firewall is associated with this Network Firewall Policy.
-        """
-        return pulumi.get(self, "is_firewall_attached")
-
-    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -170,25 +116,9 @@ class GetNetworkFirewallPolicyResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
-    @pulumi.getter(name="mappedSecrets")
-    def mapped_secrets(self) -> Sequence['outputs.GetNetworkFirewallPolicyMappedSecretResult']:
-        """
-        Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-        """
-        return pulumi.get(self, "mapped_secrets")
-
-    @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> str:
         return pulumi.get(self, "network_firewall_policy_id")
-
-    @property
-    @pulumi.getter(name="securityRules")
-    def security_rules(self) -> Sequence['outputs.GetNetworkFirewallPolicySecurityRuleResult']:
-        """
-        List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-        """
-        return pulumi.get(self, "security_rules")
 
     @property
     @pulumi.getter
@@ -222,14 +152,6 @@ class GetNetworkFirewallPolicyResult:
         """
         return pulumi.get(self, "time_updated")
 
-    @property
-    @pulumi.getter(name="urlLists")
-    def url_lists(self) -> Sequence['outputs.GetNetworkFirewallPolicyUrlListResult']:
-        """
-        Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-        """
-        return pulumi.get(self, "url_lists")
-
 
 class AwaitableGetNetworkFirewallPolicyResult(GetNetworkFirewallPolicyResult):
     # pylint: disable=using-constant-test
@@ -237,25 +159,18 @@ class AwaitableGetNetworkFirewallPolicyResult(GetNetworkFirewallPolicyResult):
         if False:
             yield self
         return GetNetworkFirewallPolicyResult(
-            application_lists=self.application_lists,
+            attached_network_firewall_count=self.attached_network_firewall_count,
             compartment_id=self.compartment_id,
-            decryption_profiles=self.decryption_profiles,
-            decryption_rules=self.decryption_rules,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
-            ip_address_lists=self.ip_address_lists,
-            is_firewall_attached=self.is_firewall_attached,
             lifecycle_details=self.lifecycle_details,
-            mapped_secrets=self.mapped_secrets,
             network_firewall_policy_id=self.network_firewall_policy_id,
-            security_rules=self.security_rules,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated,
-            url_lists=self.url_lists)
+            time_updated=self.time_updated)
 
 
 def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None,
@@ -283,25 +198,18 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy', __args__, opts=opts, typ=GetNetworkFirewallPolicyResult).value
 
     return AwaitableGetNetworkFirewallPolicyResult(
-        application_lists=pulumi.get(__ret__, 'application_lists'),
+        attached_network_firewall_count=pulumi.get(__ret__, 'attached_network_firewall_count'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
-        decryption_profiles=pulumi.get(__ret__, 'decryption_profiles'),
-        decryption_rules=pulumi.get(__ret__, 'decryption_rules'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
-        ip_address_lists=pulumi.get(__ret__, 'ip_address_lists'),
-        is_firewall_attached=pulumi.get(__ret__, 'is_firewall_attached'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
-        mapped_secrets=pulumi.get(__ret__, 'mapped_secrets'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
-        security_rules=pulumi.get(__ret__, 'security_rules'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'),
-        url_lists=pulumi.get(__ret__, 'url_lists'))
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_network_firewall_policy)

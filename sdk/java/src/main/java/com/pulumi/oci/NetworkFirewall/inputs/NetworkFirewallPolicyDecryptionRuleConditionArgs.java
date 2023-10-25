@@ -17,40 +17,40 @@ public final class NetworkFirewallPolicyDecryptionRuleConditionArgs extends com.
     public static final NetworkFirewallPolicyDecryptionRuleConditionArgs Empty = new NetworkFirewallPolicyDecryptionRuleConditionArgs();
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    @Import(name="destinations")
-    private @Nullable Output<List<String>> destinations;
+    @Import(name="destinationAddresses")
+    private @Nullable Output<List<String>> destinationAddresses;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    public Optional<Output<List<String>>> destinations() {
-        return Optional.ofNullable(this.destinations);
+    public Optional<Output<List<String>>> destinationAddresses() {
+        return Optional.ofNullable(this.destinationAddresses);
     }
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    @Import(name="sources")
-    private @Nullable Output<List<String>> sources;
+    @Import(name="sourceAddresses")
+    private @Nullable Output<List<String>> sourceAddresses;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    public Optional<Output<List<String>>> sources() {
-        return Optional.ofNullable(this.sources);
+    public Optional<Output<List<String>>> sourceAddresses() {
+        return Optional.ofNullable(this.sourceAddresses);
     }
 
     private NetworkFirewallPolicyDecryptionRuleConditionArgs() {}
 
     private NetworkFirewallPolicyDecryptionRuleConditionArgs(NetworkFirewallPolicyDecryptionRuleConditionArgs $) {
-        this.destinations = $.destinations;
-        this.sources = $.sources;
+        this.destinationAddresses = $.destinationAddresses;
+        this.sourceAddresses = $.sourceAddresses;
     }
 
     public static Builder builder() {
@@ -72,65 +72,65 @@ public final class NetworkFirewallPolicyDecryptionRuleConditionArgs extends com.
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(@Nullable Output<List<String>> destinations) {
-            $.destinations = destinations;
+        public Builder destinationAddresses(@Nullable Output<List<String>> destinationAddresses) {
+            $.destinationAddresses = destinationAddresses;
             return this;
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(List<String> destinations) {
-            return destinations(Output.of(destinations));
+        public Builder destinationAddresses(List<String> destinationAddresses) {
+            return destinationAddresses(Output.of(destinationAddresses));
         }
 
         /**
-         * @param destinations (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
          */
-        public Builder destinations(String... destinations) {
-            return destinations(List.of(destinations));
+        public Builder destinationAddresses(String... destinationAddresses) {
+            return destinationAddresses(List.of(destinationAddresses));
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
          */
-        public Builder sources(@Nullable Output<List<String>> sources) {
-            $.sources = sources;
+        public Builder sourceAddresses(@Nullable Output<List<String>> sourceAddresses) {
+            $.sourceAddresses = sourceAddresses;
             return this;
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
          */
-        public Builder sources(List<String> sources) {
-            return sources(Output.of(sources));
+        public Builder sourceAddresses(List<String> sourceAddresses) {
+            return sourceAddresses(Output.of(sourceAddresses));
         }
 
         /**
-         * @param sources (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
          */
-        public Builder sources(String... sources) {
-            return sources(List.of(sources));
+        public Builder sourceAddresses(String... sourceAddresses) {
+            return sourceAddresses(List.of(sourceAddresses));
         }
 
         public NetworkFirewallPolicyDecryptionRuleConditionArgs build() {

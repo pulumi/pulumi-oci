@@ -74,13 +74,13 @@ class AssetSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assets_compartment_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             discovery_credentials: pulumi.Input['AssetSourceDiscoveryCredentialsArgs'],
-             environment_id: pulumi.Input[str],
-             inventory_id: pulumi.Input[str],
-             type: pulumi.Input[str],
-             vcenter_endpoint: pulumi.Input[str],
+             assets_compartment_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             discovery_credentials: Optional[pulumi.Input['AssetSourceDiscoveryCredentialsArgs']] = None,
+             environment_id: Optional[pulumi.Input[str]] = None,
+             inventory_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vcenter_endpoint: Optional[pulumi.Input[str]] = None,
              are_historical_metrics_collected: Optional[pulumi.Input[bool]] = None,
              are_realtime_metrics_collected: Optional[pulumi.Input[bool]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -89,35 +89,49 @@ class AssetSourceArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              replication_credentials: Optional[pulumi.Input['AssetSourceReplicationCredentialsArgs']] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assetsCompartmentId' in kwargs:
+        if assets_compartment_id is None and 'assetsCompartmentId' in kwargs:
             assets_compartment_id = kwargs['assetsCompartmentId']
-        if 'compartmentId' in kwargs:
+        if assets_compartment_id is None:
+            raise TypeError("Missing 'assets_compartment_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'discoveryCredentials' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if discovery_credentials is None and 'discoveryCredentials' in kwargs:
             discovery_credentials = kwargs['discoveryCredentials']
-        if 'environmentId' in kwargs:
+        if discovery_credentials is None:
+            raise TypeError("Missing 'discovery_credentials' argument")
+        if environment_id is None and 'environmentId' in kwargs:
             environment_id = kwargs['environmentId']
-        if 'inventoryId' in kwargs:
+        if environment_id is None:
+            raise TypeError("Missing 'environment_id' argument")
+        if inventory_id is None and 'inventoryId' in kwargs:
             inventory_id = kwargs['inventoryId']
-        if 'vcenterEndpoint' in kwargs:
+        if inventory_id is None:
+            raise TypeError("Missing 'inventory_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if vcenter_endpoint is None and 'vcenterEndpoint' in kwargs:
             vcenter_endpoint = kwargs['vcenterEndpoint']
-        if 'areHistoricalMetricsCollected' in kwargs:
+        if vcenter_endpoint is None:
+            raise TypeError("Missing 'vcenter_endpoint' argument")
+        if are_historical_metrics_collected is None and 'areHistoricalMetricsCollected' in kwargs:
             are_historical_metrics_collected = kwargs['areHistoricalMetricsCollected']
-        if 'areRealtimeMetricsCollected' in kwargs:
+        if are_realtime_metrics_collected is None and 'areRealtimeMetricsCollected' in kwargs:
             are_realtime_metrics_collected = kwargs['areRealtimeMetricsCollected']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryScheduleId' in kwargs:
+        if discovery_schedule_id is None and 'discoveryScheduleId' in kwargs:
             discovery_schedule_id = kwargs['discoveryScheduleId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'replicationCredentials' in kwargs:
+        if replication_credentials is None and 'replicationCredentials' in kwargs:
             replication_credentials = kwargs['replicationCredentials']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
 
         _setter("assets_compartment_id", assets_compartment_id)
@@ -421,41 +435,41 @@ class _AssetSourceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vcenter_endpoint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areHistoricalMetricsCollected' in kwargs:
+        if are_historical_metrics_collected is None and 'areHistoricalMetricsCollected' in kwargs:
             are_historical_metrics_collected = kwargs['areHistoricalMetricsCollected']
-        if 'areRealtimeMetricsCollected' in kwargs:
+        if are_realtime_metrics_collected is None and 'areRealtimeMetricsCollected' in kwargs:
             are_realtime_metrics_collected = kwargs['areRealtimeMetricsCollected']
-        if 'assetsCompartmentId' in kwargs:
+        if assets_compartment_id is None and 'assetsCompartmentId' in kwargs:
             assets_compartment_id = kwargs['assetsCompartmentId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryCredentials' in kwargs:
+        if discovery_credentials is None and 'discoveryCredentials' in kwargs:
             discovery_credentials = kwargs['discoveryCredentials']
-        if 'discoveryScheduleId' in kwargs:
+        if discovery_schedule_id is None and 'discoveryScheduleId' in kwargs:
             discovery_schedule_id = kwargs['discoveryScheduleId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'environmentId' in kwargs:
+        if environment_id is None and 'environmentId' in kwargs:
             environment_id = kwargs['environmentId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inventoryId' in kwargs:
+        if inventory_id is None and 'inventoryId' in kwargs:
             inventory_id = kwargs['inventoryId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'replicationCredentials' in kwargs:
+        if replication_credentials is None and 'replicationCredentials' in kwargs:
             replication_credentials = kwargs['replicationCredentials']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vcenterEndpoint' in kwargs:
+        if vcenter_endpoint is None and 'vcenterEndpoint' in kwargs:
             vcenter_endpoint = kwargs['vcenterEndpoint']
 
         if are_historical_metrics_collected is not None:
@@ -925,11 +939,7 @@ class AssetSource(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
-            if discovery_credentials is not None and not isinstance(discovery_credentials, AssetSourceDiscoveryCredentialsArgs):
-                discovery_credentials = discovery_credentials or {}
-                def _setter(key, value):
-                    discovery_credentials[key] = value
-                AssetSourceDiscoveryCredentialsArgs._configure(_setter, **discovery_credentials)
+            discovery_credentials = _utilities.configure(discovery_credentials, AssetSourceDiscoveryCredentialsArgs, True)
             if discovery_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'discovery_credentials'")
             __props__.__dict__["discovery_credentials"] = discovery_credentials
@@ -942,11 +952,7 @@ class AssetSource(pulumi.CustomResource):
             if inventory_id is None and not opts.urn:
                 raise TypeError("Missing required property 'inventory_id'")
             __props__.__dict__["inventory_id"] = inventory_id
-            if replication_credentials is not None and not isinstance(replication_credentials, AssetSourceReplicationCredentialsArgs):
-                replication_credentials = replication_credentials or {}
-                def _setter(key, value):
-                    replication_credentials[key] = value
-                AssetSourceReplicationCredentialsArgs._configure(_setter, **replication_credentials)
+            replication_credentials = _utilities.configure(replication_credentials, AssetSourceReplicationCredentialsArgs, True)
             __props__.__dict__["replication_credentials"] = replication_credentials
             __props__.__dict__["system_tags"] = system_tags
             if type is None and not opts.urn:

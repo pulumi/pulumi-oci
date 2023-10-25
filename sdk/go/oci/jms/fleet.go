@@ -44,11 +44,11 @@ import (
 //					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
 //					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Fleet_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsAdvancedFeaturesEnabled: pulumi.Any(_var.Fleet_is_advanced_features_enabled),

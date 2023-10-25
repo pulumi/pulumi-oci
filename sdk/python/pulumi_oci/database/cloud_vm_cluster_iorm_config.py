@@ -34,15 +34,19 @@ class CloudVmClusterIormConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloud_vm_cluster_id: pulumi.Input[str],
-             db_plans: pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]],
+             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]] = None,
              objective: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudVmClusterId' in kwargs:
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
             cloud_vm_cluster_id = kwargs['cloudVmClusterId']
-        if 'dbPlans' in kwargs:
+        if cloud_vm_cluster_id is None:
+            raise TypeError("Missing 'cloud_vm_cluster_id' argument")
+        if db_plans is None and 'dbPlans' in kwargs:
             db_plans = kwargs['dbPlans']
+        if db_plans is None:
+            raise TypeError("Missing 'db_plans' argument")
 
         _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         _setter("db_plans", db_plans)
@@ -118,13 +122,13 @@ class _CloudVmClusterIormConfigState:
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              objective: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudVmClusterId' in kwargs:
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
             cloud_vm_cluster_id = kwargs['cloudVmClusterId']
-        if 'dbPlans' in kwargs:
+        if db_plans is None and 'dbPlans' in kwargs:
             db_plans = kwargs['dbPlans']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
 
         if cloud_vm_cluster_id is not None:

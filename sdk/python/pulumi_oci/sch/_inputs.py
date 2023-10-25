@@ -50,18 +50,20 @@ class ConnectorSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              cursor: Optional[pulumi.Input['ConnectorSourceCursorArgs']] = None,
              log_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]] = None,
              monitoring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]] = None,
              stream_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logSources' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
             log_sources = kwargs['logSources']
-        if 'monitoringSources' in kwargs:
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
             monitoring_sources = kwargs['monitoringSources']
-        if 'streamId' in kwargs:
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
 
         _setter("kind", kind)
@@ -150,7 +152,7 @@ class ConnectorSourceCursorArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if kind is not None:
@@ -192,13 +194,13 @@ class ConnectorSourceLogSourceArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              log_group_id: Optional[pulumi.Input[str]] = None,
              log_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
 
         if compartment_id is not None:
@@ -264,11 +266,11 @@ class ConnectorSourceMonitoringSourceArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              namespace_details: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'namespaceDetails' in kwargs:
+        if namespace_details is None and 'namespaceDetails' in kwargs:
             namespace_details = kwargs['namespaceDetails']
 
         if compartment_id is not None:
@@ -318,10 +320,14 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
-             namespaces: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[pulumi.Input[str]] = None,
+             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
 
         _setter("kind", kind)
         _setter("namespaces", namespaces)
@@ -368,10 +374,14 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metrics: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metrics: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs']] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("metrics", metrics)
         _setter("namespace", namespace)
@@ -415,9 +425,11 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -493,7 +505,7 @@ class ConnectorTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              batch_rollover_size_in_mbs: Optional[pulumi.Input[int]] = None,
              batch_rollover_time_in_ms: Optional[pulumi.Input[int]] = None,
              bucket: Optional[pulumi.Input[str]] = None,
@@ -509,29 +521,31 @@ class ConnectorTargetArgs:
              object_name_prefix: Optional[pulumi.Input[str]] = None,
              stream_id: Optional[pulumi.Input[str]] = None,
              topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchRolloverSizeInMbs' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
             batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
-        if 'batchRolloverTimeInMs' in kwargs:
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
             batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enableFormattedMessaging' in kwargs:
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
             enable_formatted_messaging = kwargs['enableFormattedMessaging']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSourceIdentifier' in kwargs:
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
             log_source_identifier = kwargs['logSourceIdentifier']
-        if 'metricNamespace' in kwargs:
+        if metric_namespace is None and 'metricNamespace' in kwargs:
             metric_namespace = kwargs['metricNamespace']
-        if 'objectNamePrefix' in kwargs:
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
             object_name_prefix = kwargs['objectNamePrefix']
-        if 'streamId' in kwargs:
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
 
         _setter("kind", kind)
@@ -778,9 +792,9 @@ class ConnectorTargetDimensionArgs:
              _setter: Callable[[Any, Any], None],
              dimension_value: Optional[pulumi.Input['ConnectorTargetDimensionDimensionValueArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dimensionValue' in kwargs:
+        if dimension_value is None and 'dimensionValue' in kwargs:
             dimension_value = kwargs['dimensionValue']
 
         if dimension_value is not None:
@@ -833,11 +847,13 @@ class ConnectorTargetDimensionDimensionValueArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              path: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
         if path is not None:
@@ -908,18 +924,20 @@ class ConnectorTaskArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: pulumi.Input[str],
+             kind: Optional[pulumi.Input[str]] = None,
              batch_size_in_kbs: Optional[pulumi.Input[int]] = None,
              batch_time_in_sec: Optional[pulumi.Input[int]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchSizeInKbs' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
             batch_size_in_kbs = kwargs['batchSizeInKbs']
-        if 'batchTimeInSec' in kwargs:
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
             batch_time_in_sec = kwargs['batchTimeInSec']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
 
         _setter("kind", kind)
@@ -1011,11 +1029,15 @@ class GetServiceConnectorsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

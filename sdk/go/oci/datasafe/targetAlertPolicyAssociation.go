@@ -36,12 +36,12 @@ import (
 //				IsEnabled:     pulumi.Any(_var.Target_alert_policy_association_is_enabled),
 //				PolicyId:      pulumi.Any(oci_identity_policy.Test_policy.Id),
 //				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Target_alert_policy_association_description),
 //				DisplayName: pulumi.Any(_var.Target_alert_policy_association_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

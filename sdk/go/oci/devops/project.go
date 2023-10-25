@@ -36,11 +36,11 @@ import (
 //				NotificationConfig: &devops.ProjectNotificationConfigArgs{
 //					TopicId: pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Project_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

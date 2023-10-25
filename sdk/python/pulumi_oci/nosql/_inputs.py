@@ -39,16 +39,18 @@ class IndexKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: pulumi.Input[str],
+             column_name: Optional[pulumi.Input[str]] = None,
              json_field_type: Optional[pulumi.Input[str]] = None,
              json_path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'jsonFieldType' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
             json_field_type = kwargs['jsonFieldType']
-        if 'jsonPath' in kwargs:
+        if json_path is None and 'jsonPath' in kwargs:
             json_path = kwargs['jsonPath']
 
         _setter("column_name", column_name)
@@ -125,11 +127,11 @@ class TableSchemaArgs:
              primary_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              shard_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'primaryKeys' in kwargs:
+        if primary_keys is None and 'primaryKeys' in kwargs:
             primary_keys = kwargs['primaryKeys']
-        if 'shardKeys' in kwargs:
+        if shard_keys is None and 'shardKeys' in kwargs:
             shard_keys = kwargs['shardKeys']
 
         if columns is not None:
@@ -239,15 +241,15 @@ class TableSchemaColumnArgs:
              is_nullable: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'isAsUuid' in kwargs:
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
             is_as_uuid = kwargs['isAsUuid']
-        if 'isGenerated' in kwargs:
+        if is_generated is None and 'isGenerated' in kwargs:
             is_generated = kwargs['isGenerated']
-        if 'isNullable' in kwargs:
+        if is_nullable is None and 'isNullable' in kwargs:
             is_nullable = kwargs['isNullable']
 
         if default_value is not None:
@@ -359,13 +361,13 @@ class TableSchemaIdentityArgs:
              column_name: Optional[pulumi.Input[str]] = None,
              is_always: Optional[pulumi.Input[bool]] = None,
              is_null: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'isAlways' in kwargs:
+        if is_always is None and 'isAlways' in kwargs:
             is_always = kwargs['isAlways']
-        if 'isNull' in kwargs:
+        if is_null is None and 'isNull' in kwargs:
             is_null = kwargs['isNull']
 
         if column_name is not None:
@@ -439,19 +441,25 @@ class TableTableLimitsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             max_read_units: pulumi.Input[int],
-             max_storage_in_gbs: pulumi.Input[int],
-             max_write_units: pulumi.Input[int],
+             max_read_units: Optional[pulumi.Input[int]] = None,
+             max_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+             max_write_units: Optional[pulumi.Input[int]] = None,
              capacity_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxReadUnits' in kwargs:
+        if max_read_units is None and 'maxReadUnits' in kwargs:
             max_read_units = kwargs['maxReadUnits']
-        if 'maxStorageInGbs' in kwargs:
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
             max_storage_in_gbs = kwargs['maxStorageInGbs']
-        if 'maxWriteUnits' in kwargs:
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
             max_write_units = kwargs['maxWriteUnits']
-        if 'capacityMode' in kwargs:
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if capacity_mode is None and 'capacityMode' in kwargs:
             capacity_mode = kwargs['capacityMode']
 
         _setter("max_read_units", max_read_units)
@@ -531,11 +539,15 @@ class GetIndexesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -591,11 +603,15 @@ class GetTablesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

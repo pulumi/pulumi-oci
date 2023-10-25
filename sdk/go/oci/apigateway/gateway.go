@@ -43,11 +43,11 @@ import (
 //						CertificateAuthorityId: pulumi.Any(oci_apigateway_certificate_authority.Test_certificate_authority.Id),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Gateway_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NetworkSecurityGroupIds: pulumi.Any(_var.Gateway_network_security_group_ids),

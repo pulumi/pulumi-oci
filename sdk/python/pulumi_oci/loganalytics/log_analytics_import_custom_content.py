@@ -41,15 +41,19 @@ class LogAnalyticsImportCustomContentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             import_custom_content_file: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             import_custom_content_file: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              expect: Optional[pulumi.Input[str]] = None,
              is_overwrite: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importCustomContentFile' in kwargs:
+        if import_custom_content_file is None and 'importCustomContentFile' in kwargs:
             import_custom_content_file = kwargs['importCustomContentFile']
-        if 'isOverwrite' in kwargs:
+        if import_custom_content_file is None:
+            raise TypeError("Missing 'import_custom_content_file' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if is_overwrite is None and 'isOverwrite' in kwargs:
             is_overwrite = kwargs['isOverwrite']
 
         _setter("import_custom_content_file", import_custom_content_file)
@@ -164,21 +168,21 @@ class _LogAnalyticsImportCustomContentState:
              namespace: Optional[pulumi.Input[str]] = None,
              parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'changeLists' in kwargs:
+        if change_lists is None and 'changeLists' in kwargs:
             change_lists = kwargs['changeLists']
-        if 'contentName' in kwargs:
+        if content_name is None and 'contentName' in kwargs:
             content_name = kwargs['contentName']
-        if 'fieldNames' in kwargs:
+        if field_names is None and 'fieldNames' in kwargs:
             field_names = kwargs['fieldNames']
-        if 'importCustomContentFile' in kwargs:
+        if import_custom_content_file is None and 'importCustomContentFile' in kwargs:
             import_custom_content_file = kwargs['importCustomContentFile']
-        if 'isOverwrite' in kwargs:
+        if is_overwrite is None and 'isOverwrite' in kwargs:
             is_overwrite = kwargs['isOverwrite']
-        if 'parserNames' in kwargs:
+        if parser_names is None and 'parserNames' in kwargs:
             parser_names = kwargs['parserNames']
-        if 'sourceNames' in kwargs:
+        if source_names is None and 'sourceNames' in kwargs:
             source_names = kwargs['sourceNames']
 
         if change_lists is not None:

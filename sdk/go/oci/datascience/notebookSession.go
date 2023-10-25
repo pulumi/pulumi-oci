@@ -34,11 +34,11 @@ import (
 //			_, err := DataScience.NewNotebookSession(ctx, "testNotebookSession", &DataScience.NotebookSessionArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Notebook_session_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NotebookSessionConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsArgs{

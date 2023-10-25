@@ -53,17 +53,17 @@ class AtCustomerCccInfrastructureInfrastructureInventoryArgs:
              management_node_count: Optional[pulumi.Input[int]] = None,
              performance_storage_tray_count: Optional[pulumi.Input[int]] = None,
              serial_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityStorageTrayCount' in kwargs:
+        if capacity_storage_tray_count is None and 'capacityStorageTrayCount' in kwargs:
             capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
-        if 'computeNodeCount' in kwargs:
+        if compute_node_count is None and 'computeNodeCount' in kwargs:
             compute_node_count = kwargs['computeNodeCount']
-        if 'managementNodeCount' in kwargs:
+        if management_node_count is None and 'managementNodeCount' in kwargs:
             management_node_count = kwargs['managementNodeCount']
-        if 'performanceStorageTrayCount' in kwargs:
+        if performance_storage_tray_count is None and 'performanceStorageTrayCount' in kwargs:
             performance_storage_tray_count = kwargs['performanceStorageTrayCount']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
 
         if capacity_storage_tray_count is not None:
@@ -209,37 +209,37 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs:
              uplink_port_forward_error_correction: Optional[pulumi.Input[str]] = None,
              uplink_port_speed_in_gbps: Optional[pulumi.Input[int]] = None,
              uplink_vlan_mtu: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dnsIps' in kwargs:
+        if dns_ips is None and 'dnsIps' in kwargs:
             dns_ips = kwargs['dnsIps']
-        if 'infrastructureRoutingDynamics' in kwargs:
+        if infrastructure_routing_dynamics is None and 'infrastructureRoutingDynamics' in kwargs:
             infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
-        if 'infrastructureRoutingStatics' in kwargs:
+        if infrastructure_routing_statics is None and 'infrastructureRoutingStatics' in kwargs:
             infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
-        if 'managementNodes' in kwargs:
+        if management_nodes is None and 'managementNodes' in kwargs:
             management_nodes = kwargs['managementNodes']
-        if 'mgmtVipHostname' in kwargs:
+        if mgmt_vip_hostname is None and 'mgmtVipHostname' in kwargs:
             mgmt_vip_hostname = kwargs['mgmtVipHostname']
-        if 'mgmtVipIp' in kwargs:
+        if mgmt_vip_ip is None and 'mgmtVipIp' in kwargs:
             mgmt_vip_ip = kwargs['mgmtVipIp']
-        if 'spineIps' in kwargs:
+        if spine_ips is None and 'spineIps' in kwargs:
             spine_ips = kwargs['spineIps']
-        if 'spineVip' in kwargs:
+        if spine_vip is None and 'spineVip' in kwargs:
             spine_vip = kwargs['spineVip']
-        if 'uplinkDomain' in kwargs:
+        if uplink_domain is None and 'uplinkDomain' in kwargs:
             uplink_domain = kwargs['uplinkDomain']
-        if 'uplinkGatewayIp' in kwargs:
+        if uplink_gateway_ip is None and 'uplinkGatewayIp' in kwargs:
             uplink_gateway_ip = kwargs['uplinkGatewayIp']
-        if 'uplinkNetmask' in kwargs:
+        if uplink_netmask is None and 'uplinkNetmask' in kwargs:
             uplink_netmask = kwargs['uplinkNetmask']
-        if 'uplinkPortCount' in kwargs:
+        if uplink_port_count is None and 'uplinkPortCount' in kwargs:
             uplink_port_count = kwargs['uplinkPortCount']
-        if 'uplinkPortForwardErrorCorrection' in kwargs:
+        if uplink_port_forward_error_correction is None and 'uplinkPortForwardErrorCorrection' in kwargs:
             uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
-        if 'uplinkPortSpeedInGbps' in kwargs:
+        if uplink_port_speed_in_gbps is None and 'uplinkPortSpeedInGbps' in kwargs:
             uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
-        if 'uplinkVlanMtu' in kwargs:
+        if uplink_vlan_mtu is None and 'uplinkVlanMtu' in kwargs:
             uplink_vlan_mtu = kwargs['uplinkVlanMtu']
 
         if dns_ips is not None:
@@ -477,13 +477,13 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              bgp_topology: Optional[pulumi.Input[str]] = None,
              oracle_asn: Optional[pulumi.Input[int]] = None,
              peer_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bgpTopology' in kwargs:
+        if bgp_topology is None and 'bgpTopology' in kwargs:
             bgp_topology = kwargs['bgpTopology']
-        if 'oracleAsn' in kwargs:
+        if oracle_asn is None and 'oracleAsn' in kwargs:
             oracle_asn = kwargs['oracleAsn']
-        if 'peerInformations' in kwargs:
+        if peer_informations is None and 'peerInformations' in kwargs:
             peer_informations = kwargs['peerInformations']
 
         if bgp_topology is not None:
@@ -549,7 +549,7 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              _setter: Callable[[Any, Any], None],
              asn: Optional[pulumi.Input[int]] = None,
              ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if asn is not None:
@@ -601,11 +601,11 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              _setter: Callable[[Any, Any], None],
              uplink_hsrp_group: Optional[pulumi.Input[int]] = None,
              uplink_vlan: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'uplinkHsrpGroup' in kwargs:
+        if uplink_hsrp_group is None and 'uplinkHsrpGroup' in kwargs:
             uplink_hsrp_group = kwargs['uplinkHsrpGroup']
-        if 'uplinkVlan' in kwargs:
+        if uplink_vlan is None and 'uplinkVlan' in kwargs:
             uplink_vlan = kwargs['uplinkVlan']
 
         if uplink_hsrp_group is not None:
@@ -657,7 +657,7 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
              _setter: Callable[[Any, Any], None],
              hostname: Optional[pulumi.Input[str]] = None,
              ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if hostname is not None:
@@ -717,15 +717,15 @@ class AtCustomerCccInfrastructureUpgradeInformationArgs:
              is_active: Optional[pulumi.Input[bool]] = None,
              scheduled_upgrade_duration: Optional[pulumi.Input[str]] = None,
              time_of_scheduled_upgrade: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currentVersion' in kwargs:
+        if current_version is None and 'currentVersion' in kwargs:
             current_version = kwargs['currentVersion']
-        if 'isActive' in kwargs:
+        if is_active is None and 'isActive' in kwargs:
             is_active = kwargs['isActive']
-        if 'scheduledUpgradeDuration' in kwargs:
+        if scheduled_upgrade_duration is None and 'scheduledUpgradeDuration' in kwargs:
             scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
-        if 'timeOfScheduledUpgrade' in kwargs:
+        if time_of_scheduled_upgrade is None and 'timeOfScheduledUpgrade' in kwargs:
             time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
 
         if current_version is not None:
@@ -812,18 +812,24 @@ class AtCustomerCccUpgradeScheduleEventArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             schedule_event_duration: pulumi.Input[str],
-             time_start: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             schedule_event_duration: Optional[pulumi.Input[str]] = None,
+             time_start: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              schedule_event_recurrences: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scheduleEventDuration' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if schedule_event_duration is None and 'scheduleEventDuration' in kwargs:
             schedule_event_duration = kwargs['scheduleEventDuration']
-        if 'timeStart' in kwargs:
+        if schedule_event_duration is None:
+            raise TypeError("Missing 'schedule_event_duration' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'scheduleEventRecurrences' in kwargs:
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if schedule_event_recurrences is None and 'scheduleEventRecurrences' in kwargs:
             schedule_event_recurrences = kwargs['scheduleEventRecurrences']
 
         _setter("description", description)
@@ -910,11 +916,15 @@ class GetAtCustomerCccInfrastructuresFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -967,11 +977,15 @@ class GetAtCustomerCccUpgradeSchedulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

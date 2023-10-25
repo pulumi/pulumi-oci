@@ -53,29 +53,35 @@ class LogArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             log_group_id: pulumi.Input[str],
-             log_type: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_type: Optional[pulumi.Input[str]] = None,
              configuration: Optional[pulumi.Input['LogConfigurationArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              retention_duration: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'logGroupId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logType' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_type is None and 'logType' in kwargs:
             log_type = kwargs['logType']
-        if 'definedTags' in kwargs:
+        if log_type is None:
+            raise TypeError("Missing 'log_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'retentionDuration' in kwargs:
+        if retention_duration is None and 'retentionDuration' in kwargs:
             retention_duration = kwargs['retentionDuration']
 
         _setter("display_name", display_name)
@@ -261,29 +267,29 @@ class _LogState:
              tenancy_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_modified: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logType' in kwargs:
+        if log_type is None and 'logType' in kwargs:
             log_type = kwargs['logType']
-        if 'retentionDuration' in kwargs:
+        if retention_duration is None and 'retentionDuration' in kwargs:
             retention_duration = kwargs['retentionDuration']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastModified' in kwargs:
+        if time_last_modified is None and 'timeLastModified' in kwargs:
             time_last_modified = kwargs['timeLastModified']
 
         if compartment_id is not None:
@@ -631,11 +637,7 @@ class Log(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = LogArgs.__new__(LogArgs)
 
-            if configuration is not None and not isinstance(configuration, LogConfigurationArgs):
-                configuration = configuration or {}
-                def _setter(key, value):
-                    configuration[key] = value
-                LogConfigurationArgs._configure(_setter, **configuration)
+            configuration = _utilities.configure(configuration, LogConfigurationArgs, True)
             __props__.__dict__["configuration"] = configuration
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:

@@ -160,21 +160,25 @@ class CertificateAuthorityCertificateAuthorityConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
-             subject: 'outputs.CertificateAuthorityCertificateAuthorityConfigSubject',
+             config_type: Optional[str] = None,
+             subject: Optional['outputs.CertificateAuthorityCertificateAuthorityConfigSubject'] = None,
              issuer_certificate_authority_id: Optional[str] = None,
              signing_algorithm: Optional[str] = None,
              validity: Optional['outputs.CertificateAuthorityCertificateAuthorityConfigValidity'] = None,
              version_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if subject is None:
+            raise TypeError("Missing 'subject' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'signingAlgorithm' in kwargs:
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'versionName' in kwargs:
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
 
         _setter("config_type", config_type)
@@ -334,7 +338,7 @@ class CertificateAuthorityCertificateAuthorityConfigSubject(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
+             common_name: Optional[str] = None,
              country: Optional[str] = None,
              distinguished_name_qualifier: Optional[str] = None,
              domain_component: Optional[str] = None,
@@ -351,27 +355,29 @@ class CertificateAuthorityCertificateAuthorityConfigSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         _setter("common_name", common_name)
@@ -581,13 +587,15 @@ class CertificateAuthorityCertificateAuthorityConfigValidity(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
+             time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
@@ -652,16 +660,18 @@ class CertificateAuthorityCertificateAuthorityRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rule_type: str,
+             rule_type: Optional[str] = None,
              certificate_authority_max_validity_duration: Optional[str] = None,
              leaf_certificate_max_validity_duration: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ruleType' in kwargs:
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
-        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
+        if certificate_authority_max_validity_duration is None and 'certificateAuthorityMaxValidityDuration' in kwargs:
             certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
-        if 'leafCertificateMaxValidityDuration' in kwargs:
+        if leaf_certificate_max_validity_duration is None and 'leafCertificateMaxValidityDuration' in kwargs:
             leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
 
         _setter("rule_type", rule_type)
@@ -731,13 +741,15 @@ class CertificateAuthorityCertificateRevocationListDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_config: 'outputs.CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig',
+             object_storage_config: Optional['outputs.CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig'] = None,
              custom_formatted_urls: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageConfig' in kwargs:
+        if object_storage_config is None and 'objectStorageConfig' in kwargs:
             object_storage_config = kwargs['objectStorageConfig']
-        if 'customFormattedUrls' in kwargs:
+        if object_storage_config is None:
+            raise TypeError("Missing 'object_storage_config' argument")
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
 
         _setter("object_storage_config", object_storage_config)
@@ -802,16 +814,20 @@ class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_bucket_name: str,
-             object_storage_object_name_format: str,
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
              object_storage_namespace: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_bucket_name is None:
+            raise TypeError("Missing 'object_storage_bucket_name' argument")
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_object_name_format is None:
+            raise TypeError("Missing 'object_storage_object_name_format' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
 
         _setter("object_storage_bucket_name", object_storage_bucket_name)
@@ -926,23 +942,23 @@ class CertificateAuthorityCurrentVersion(dict):
              validities: Optional[Sequence['outputs.CertificateAuthorityCurrentVersionValidity']] = None,
              version_name: Optional[str] = None,
              version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityId' in kwargs:
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
             certificate_authority_id = kwargs['certificateAuthorityId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
 
         if certificate_authority_id is not None:
@@ -1085,11 +1101,11 @@ class CertificateAuthorityCurrentVersionRevocationStatus(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: Optional[str] = None,
              time_of_revocation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
 
         if revocation_reason is not None:
@@ -1152,11 +1168,11 @@ class CertificateAuthorityCurrentVersionValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
 
         if time_of_validity_not_after is not None:
@@ -1295,27 +1311,27 @@ class CertificateAuthoritySubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if common_name is not None:
@@ -1562,7 +1578,7 @@ class CertificateCertificateConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
+             config_type: Optional[str] = None,
              certificate_profile_type: Optional[str] = None,
              csr_pem: Optional[str] = None,
              issuer_certificate_authority_id: Optional[str] = None,
@@ -1572,23 +1588,25 @@ class CertificateCertificateConfig(dict):
              subject_alternative_names: Optional[Sequence['outputs.CertificateCertificateConfigSubjectAlternativeName']] = None,
              validity: Optional['outputs.CertificateCertificateConfigValidity'] = None,
              version_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'certificateProfileType' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if certificate_profile_type is None and 'certificateProfileType' in kwargs:
             certificate_profile_type = kwargs['certificateProfileType']
-        if 'csrPem' in kwargs:
+        if csr_pem is None and 'csrPem' in kwargs:
             csr_pem = kwargs['csrPem']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'keyAlgorithm' in kwargs:
+        if key_algorithm is None and 'keyAlgorithm' in kwargs:
             key_algorithm = kwargs['keyAlgorithm']
-        if 'signatureAlgorithm' in kwargs:
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'subjectAlternativeNames' in kwargs:
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'versionName' in kwargs:
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
 
         _setter("config_type", config_type)
@@ -1789,7 +1807,7 @@ class CertificateCertificateConfigSubject(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
+             common_name: Optional[str] = None,
              country: Optional[str] = None,
              distinguished_name_qualifier: Optional[str] = None,
              domain_component: Optional[str] = None,
@@ -1806,27 +1824,29 @@ class CertificateCertificateConfigSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         _setter("common_name", common_name)
@@ -2017,10 +2037,14 @@ class CertificateCertificateConfigSubjectAlternativeName(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -2078,13 +2102,15 @@ class CertificateCertificateConfigValidity(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
+             time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
@@ -2146,11 +2172,11 @@ class CertificateCertificateRevocationListDetail(dict):
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Optional[Sequence[str]] = None,
              object_storage_configs: Optional[Sequence['outputs.CertificateCertificateRevocationListDetailObjectStorageConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customFormattedUrls' in kwargs:
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
-        if 'objectStorageConfigs' in kwargs:
+        if object_storage_configs is None and 'objectStorageConfigs' in kwargs:
             object_storage_configs = kwargs['objectStorageConfigs']
 
         if custom_formatted_urls is not None:
@@ -2219,13 +2245,13 @@ class CertificateCertificateRevocationListDetailObjectStorageConfig(dict):
              object_storage_bucket_name: Optional[str] = None,
              object_storage_namespace: Optional[str] = None,
              object_storage_object_name_format: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
 
         if object_storage_bucket_name is not None:
@@ -2301,17 +2327,23 @@ class CertificateCertificateRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             advance_renewal_period: str,
-             renewal_interval: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             advance_renewal_period: Optional[str] = None,
+             renewal_interval: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advanceRenewalPeriod' in kwargs:
+        if advance_renewal_period is None and 'advanceRenewalPeriod' in kwargs:
             advance_renewal_period = kwargs['advanceRenewalPeriod']
-        if 'renewalInterval' in kwargs:
+        if advance_renewal_period is None:
+            raise TypeError("Missing 'advance_renewal_period' argument")
+        if renewal_interval is None and 'renewalInterval' in kwargs:
             renewal_interval = kwargs['renewalInterval']
-        if 'ruleType' in kwargs:
+        if renewal_interval is None:
+            raise TypeError("Missing 'renewal_interval' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
@@ -2430,25 +2462,25 @@ class CertificateCurrentVersion(dict):
              validities: Optional[Sequence['outputs.CertificateCurrentVersionValidity']] = None,
              version_name: Optional[str] = None,
              version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'subjectAlternativeNames' in kwargs:
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
 
         if certificate_id is not None:
@@ -2601,11 +2633,11 @@ class CertificateCurrentVersionRevocationStatus(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: Optional[str] = None,
              time_of_revocation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
 
         if revocation_reason is not None:
@@ -2649,7 +2681,7 @@ class CertificateCurrentVersionSubjectAlternativeName(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if type is not None:
@@ -2712,11 +2744,11 @@ class CertificateCurrentVersionValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
 
         if time_of_validity_not_after is not None:
@@ -2855,27 +2887,27 @@ class CertificateSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
 
         if common_name is not None:
@@ -3061,9 +3093,11 @@ class GetAssociationsAssociationCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAssociationsAssociationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAssociationsAssociationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3108,26 +3142,42 @@ class GetAssociationsAssociationCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             associated_resource_id: str,
-             association_type: str,
-             certificates_resource_id: str,
-             compartment_id: str,
-             id: str,
-             name: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             associated_resource_id: Optional[str] = None,
+             association_type: Optional[str] = None,
+             certificates_resource_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedResourceId' in kwargs:
+        if associated_resource_id is None and 'associatedResourceId' in kwargs:
             associated_resource_id = kwargs['associatedResourceId']
-        if 'associationType' in kwargs:
+        if associated_resource_id is None:
+            raise TypeError("Missing 'associated_resource_id' argument")
+        if association_type is None and 'associationType' in kwargs:
             association_type = kwargs['associationType']
-        if 'certificatesResourceId' in kwargs:
+        if association_type is None:
+            raise TypeError("Missing 'association_type' argument")
+        if certificates_resource_id is None and 'certificatesResourceId' in kwargs:
             certificates_resource_id = kwargs['certificatesResourceId']
-        if 'compartmentId' in kwargs:
+        if certificates_resource_id is None:
+            raise TypeError("Missing 'certificates_resource_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'timeCreated' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("associated_resource_id", associated_resource_id)
         _setter("association_type", association_type)
@@ -3221,11 +3271,15 @@ class GetAssociationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3262,9 +3316,11 @@ class GetCaBundlesCaBundleCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCaBundlesCaBundleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCaBundlesCaBundleCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3314,30 +3370,50 @@ class GetCaBundlesCaBundleCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_bundle_pem: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             name: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ca_bundle_pem: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caBundlePem' in kwargs:
+        if ca_bundle_pem is None and 'caBundlePem' in kwargs:
             ca_bundle_pem = kwargs['caBundlePem']
-        if 'compartmentId' in kwargs:
+        if ca_bundle_pem is None:
+            raise TypeError("Missing 'ca_bundle_pem' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("ca_bundle_pem", ca_bundle_pem)
         _setter("compartment_id", compartment_id)
@@ -3446,11 +3522,15 @@ class GetCaBundlesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3487,9 +3567,11 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3566,55 +3648,93 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_configs: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigResult'],
-             certificate_authority_rules: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleResult'],
-             certificate_revocation_list_details: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailResult'],
-             compartment_id: str,
-             config_type: str,
-             current_versions: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult'],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             issuer_certificate_authority_id: str,
-             kms_key_id: str,
-             lifecycle_details: str,
-             name: str,
-             signing_algorithm: str,
-             state: str,
-             subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult'],
-             time_created: str,
-             time_of_deletion: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_configs: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigResult']] = None,
+             certificate_authority_rules: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleResult']] = None,
+             certificate_revocation_list_details: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailResult']] = None,
+             compartment_id: Optional[str] = None,
+             config_type: Optional[str] = None,
+             current_versions: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             signing_algorithm: Optional[str] = None,
+             state: Optional[str] = None,
+             subjects: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityConfigs' in kwargs:
+        if certificate_authority_configs is None and 'certificateAuthorityConfigs' in kwargs:
             certificate_authority_configs = kwargs['certificateAuthorityConfigs']
-        if 'certificateAuthorityRules' in kwargs:
+        if certificate_authority_configs is None:
+            raise TypeError("Missing 'certificate_authority_configs' argument")
+        if certificate_authority_rules is None and 'certificateAuthorityRules' in kwargs:
             certificate_authority_rules = kwargs['certificateAuthorityRules']
-        if 'certificateRevocationListDetails' in kwargs:
+        if certificate_authority_rules is None:
+            raise TypeError("Missing 'certificate_authority_rules' argument")
+        if certificate_revocation_list_details is None and 'certificateRevocationListDetails' in kwargs:
             certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
-        if 'compartmentId' in kwargs:
+        if certificate_revocation_list_details is None:
+            raise TypeError("Missing 'certificate_revocation_list_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'currentVersions' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if current_versions is None and 'currentVersions' in kwargs:
             current_versions = kwargs['currentVersions']
-        if 'definedTags' in kwargs:
+        if current_versions is None:
+            raise TypeError("Missing 'current_versions' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'kmsKeyId' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'lifecycleDetails' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'signingAlgorithm' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'timeCreated' in kwargs:
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
 
         _setter("certificate_authority_configs", certificate_authority_configs)
         _setter("certificate_authority_rules", certificate_authority_rules)
@@ -3815,22 +3935,34 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
-             issuer_certificate_authority_id: str,
-             signing_algorithm: str,
-             subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult'],
-             validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult'],
-             version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_type: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             signing_algorithm: Optional[str] = None,
+             subjects: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult']] = None,
+             validities: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult']] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'signingAlgorithm' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'versionName' in kwargs:
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
 
         _setter("config_type", config_type)
         _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
@@ -3950,45 +4082,79 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -4162,14 +4328,18 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -4211,17 +4381,23 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_max_validity_duration: str,
-             leaf_certificate_max_validity_duration: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_max_validity_duration: Optional[str] = None,
+             leaf_certificate_max_validity_duration: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+        if certificate_authority_max_validity_duration is None and 'certificateAuthorityMaxValidityDuration' in kwargs:
             certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
-        if 'leafCertificateMaxValidityDuration' in kwargs:
+        if certificate_authority_max_validity_duration is None:
+            raise TypeError("Missing 'certificate_authority_max_validity_duration' argument")
+        if leaf_certificate_max_validity_duration is None and 'leafCertificateMaxValidityDuration' in kwargs:
             leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
-        if 'ruleType' in kwargs:
+        if leaf_certificate_max_validity_duration is None:
+            raise TypeError("Missing 'leaf_certificate_max_validity_duration' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
@@ -4269,14 +4445,18 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_formatted_urls: Sequence[str],
-             object_storage_configs: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             object_storage_configs: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customFormattedUrls' in kwargs:
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
-        if 'objectStorageConfigs' in kwargs:
+        if custom_formatted_urls is None:
+            raise TypeError("Missing 'custom_formatted_urls' argument")
+        if object_storage_configs is None and 'objectStorageConfigs' in kwargs:
             object_storage_configs = kwargs['objectStorageConfigs']
+        if object_storage_configs is None:
+            raise TypeError("Missing 'object_storage_configs' argument")
 
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
@@ -4318,17 +4498,23 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_bucket_name: str,
-             object_storage_namespace: str,
-             object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_bucket_name is None:
+            raise TypeError("Missing 'object_storage_bucket_name' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+        if object_storage_object_name_format is None:
+            raise TypeError("Missing 'object_storage_object_name_format' argument")
 
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
@@ -4400,34 +4586,54 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityId' in kwargs:
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
             certificate_authority_id = kwargs['certificateAuthorityId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_authority_id is None:
+            raise TypeError("Missing 'certificate_authority_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'timeCreated' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -4538,14 +4744,18 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -4584,14 +4794,18 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionV
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -4675,45 +4889,79 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -4888,11 +5136,15 @@ class GetCertificateAuthoritiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4947,22 +5199,34 @@ class GetCertificateAuthorityCertificateAuthorityConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_type: str,
-             issuer_certificate_authority_id: str,
-             signing_algorithm: str,
-             subjects: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigSubjectResult'],
-             validities: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigValidityResult'],
-             version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_type: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             signing_algorithm: Optional[str] = None,
+             subjects: Optional[Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigSubjectResult']] = None,
+             validities: Optional[Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigValidityResult']] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'signingAlgorithm' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'versionName' in kwargs:
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
 
         _setter("config_type", config_type)
         _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
@@ -5082,45 +5346,79 @@ class GetCertificateAuthorityCertificateAuthorityConfigSubjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -5294,14 +5592,18 @@ class GetCertificateAuthorityCertificateAuthorityConfigValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -5343,17 +5645,23 @@ class GetCertificateAuthorityCertificateAuthorityRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_max_validity_duration: str,
-             leaf_certificate_max_validity_duration: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_max_validity_duration: Optional[str] = None,
+             leaf_certificate_max_validity_duration: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+        if certificate_authority_max_validity_duration is None and 'certificateAuthorityMaxValidityDuration' in kwargs:
             certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
-        if 'leafCertificateMaxValidityDuration' in kwargs:
+        if certificate_authority_max_validity_duration is None:
+            raise TypeError("Missing 'certificate_authority_max_validity_duration' argument")
+        if leaf_certificate_max_validity_duration is None and 'leafCertificateMaxValidityDuration' in kwargs:
             leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
-        if 'ruleType' in kwargs:
+        if leaf_certificate_max_validity_duration is None:
+            raise TypeError("Missing 'leaf_certificate_max_validity_duration' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
@@ -5401,14 +5709,18 @@ class GetCertificateAuthorityCertificateRevocationListDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_formatted_urls: Sequence[str],
-             object_storage_configs: Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             object_storage_configs: Optional[Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customFormattedUrls' in kwargs:
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
-        if 'objectStorageConfigs' in kwargs:
+        if custom_formatted_urls is None:
+            raise TypeError("Missing 'custom_formatted_urls' argument")
+        if object_storage_configs is None and 'objectStorageConfigs' in kwargs:
             object_storage_configs = kwargs['objectStorageConfigs']
+        if object_storage_configs is None:
+            raise TypeError("Missing 'object_storage_configs' argument")
 
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
@@ -5450,17 +5762,23 @@ class GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_bucket_name: str,
-             object_storage_namespace: str,
-             object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_bucket_name is None:
+            raise TypeError("Missing 'object_storage_bucket_name' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+        if object_storage_object_name_format is None:
+            raise TypeError("Missing 'object_storage_object_name_format' argument")
 
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
@@ -5532,34 +5850,54 @@ class GetCertificateAuthorityCurrentVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificateAuthorityCurrentVersionRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificateAuthorityCurrentVersionValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificateAuthorityCurrentVersionRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificateAuthorityCurrentVersionValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityId' in kwargs:
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
             certificate_authority_id = kwargs['certificateAuthorityId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_authority_id is None:
+            raise TypeError("Missing 'certificate_authority_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'timeCreated' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -5670,14 +6008,18 @@ class GetCertificateAuthorityCurrentVersionRevocationStatusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -5716,14 +6058,18 @@ class GetCertificateAuthorityCurrentVersionValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -5807,45 +6153,79 @@ class GetCertificateAuthoritySubjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -6019,14 +6399,18 @@ class GetCertificateAuthorityVersionRevocationStatusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -6061,10 +6445,14 @@ class GetCertificateAuthorityVersionSubjectAlternativeNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -6097,14 +6485,18 @@ class GetCertificateAuthorityVersionValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -6140,9 +6532,11 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6196,34 +6590,54 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_authority_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityId' in kwargs:
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
             certificate_authority_id = kwargs['certificateAuthorityId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_authority_id is None:
+            raise TypeError("Missing 'certificate_authority_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'timeCreated' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -6334,14 +6748,18 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -6380,14 +6798,18 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemVa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -6424,11 +6846,15 @@ class GetCertificateAuthorityVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6491,34 +6917,54 @@ class GetCertificateCertificateConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_profile_type: str,
-             config_type: str,
-             csr_pem: str,
-             issuer_certificate_authority_id: str,
-             key_algorithm: str,
-             signature_algorithm: str,
-             subject_alternative_names: Sequence['outputs.GetCertificateCertificateConfigSubjectAlternativeNameResult'],
-             subjects: Sequence['outputs.GetCertificateCertificateConfigSubjectResult'],
-             validities: Sequence['outputs.GetCertificateCertificateConfigValidityResult'],
-             version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_profile_type: Optional[str] = None,
+             config_type: Optional[str] = None,
+             csr_pem: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             key_algorithm: Optional[str] = None,
+             signature_algorithm: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence['outputs.GetCertificateCertificateConfigSubjectAlternativeNameResult']] = None,
+             subjects: Optional[Sequence['outputs.GetCertificateCertificateConfigSubjectResult']] = None,
+             validities: Optional[Sequence['outputs.GetCertificateCertificateConfigValidityResult']] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateProfileType' in kwargs:
+        if certificate_profile_type is None and 'certificateProfileType' in kwargs:
             certificate_profile_type = kwargs['certificateProfileType']
-        if 'configType' in kwargs:
+        if certificate_profile_type is None:
+            raise TypeError("Missing 'certificate_profile_type' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'csrPem' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if csr_pem is None and 'csrPem' in kwargs:
             csr_pem = kwargs['csrPem']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if csr_pem is None:
+            raise TypeError("Missing 'csr_pem' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'keyAlgorithm' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if key_algorithm is None and 'keyAlgorithm' in kwargs:
             key_algorithm = kwargs['keyAlgorithm']
-        if 'signatureAlgorithm' in kwargs:
+        if key_algorithm is None:
+            raise TypeError("Missing 'key_algorithm' argument")
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'subjectAlternativeNames' in kwargs:
+        if signature_algorithm is None:
+            raise TypeError("Missing 'signature_algorithm' argument")
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'versionName' in kwargs:
+        if subject_alternative_names is None:
+            raise TypeError("Missing 'subject_alternative_names' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
 
         _setter("certificate_profile_type", certificate_profile_type)
         _setter("config_type", config_type)
@@ -6671,45 +7117,79 @@ class GetCertificateCertificateConfigSubjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -6883,10 +7363,14 @@ class GetCertificateCertificateConfigSubjectAlternativeNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -6925,14 +7409,18 @@ class GetCertificateCertificateConfigValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -6971,14 +7459,18 @@ class GetCertificateCertificateRevocationListDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_formatted_urls: Sequence[str],
-             object_storage_configs: Sequence['outputs.GetCertificateCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             object_storage_configs: Optional[Sequence['outputs.GetCertificateCertificateRevocationListDetailObjectStorageConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customFormattedUrls' in kwargs:
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
-        if 'objectStorageConfigs' in kwargs:
+        if custom_formatted_urls is None:
+            raise TypeError("Missing 'custom_formatted_urls' argument")
+        if object_storage_configs is None and 'objectStorageConfigs' in kwargs:
             object_storage_configs = kwargs['objectStorageConfigs']
+        if object_storage_configs is None:
+            raise TypeError("Missing 'object_storage_configs' argument")
 
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
@@ -7020,17 +7512,23 @@ class GetCertificateCertificateRevocationListDetailObjectStorageConfigResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_bucket_name: str,
-             object_storage_namespace: str,
-             object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_bucket_name is None:
+            raise TypeError("Missing 'object_storage_bucket_name' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+        if object_storage_object_name_format is None:
+            raise TypeError("Missing 'object_storage_object_name_format' argument")
 
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
@@ -7081,17 +7579,23 @@ class GetCertificateCertificateRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             advance_renewal_period: str,
-             renewal_interval: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             advance_renewal_period: Optional[str] = None,
+             renewal_interval: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advanceRenewalPeriod' in kwargs:
+        if advance_renewal_period is None and 'advanceRenewalPeriod' in kwargs:
             advance_renewal_period = kwargs['advanceRenewalPeriod']
-        if 'renewalInterval' in kwargs:
+        if advance_renewal_period is None:
+            raise TypeError("Missing 'advance_renewal_period' argument")
+        if renewal_interval is None and 'renewalInterval' in kwargs:
             renewal_interval = kwargs['renewalInterval']
-        if 'ruleType' in kwargs:
+        if renewal_interval is None:
+            raise TypeError("Missing 'renewal_interval' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
@@ -7166,37 +7670,59 @@ class GetCertificateCurrentVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificateCurrentVersionRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             subject_alternative_names: Sequence['outputs.GetCertificateCurrentVersionSubjectAlternativeNameResult'],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificateCurrentVersionValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificateCurrentVersionRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             subject_alternative_names: Optional[Sequence['outputs.GetCertificateCurrentVersionSubjectAlternativeNameResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificateCurrentVersionValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'subjectAlternativeNames' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'timeCreated' in kwargs:
+        if subject_alternative_names is None:
+            raise TypeError("Missing 'subject_alternative_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -7316,14 +7842,18 @@ class GetCertificateCurrentVersionRevocationStatusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -7362,10 +7892,14 @@ class GetCertificateCurrentVersionSubjectAlternativeNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -7404,14 +7938,18 @@ class GetCertificateCurrentVersionValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -7495,45 +8033,79 @@ class GetCertificateSubjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -7707,14 +8279,18 @@ class GetCertificateVersionRevocationStatusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -7753,10 +8329,14 @@ class GetCertificateVersionSubjectAlternativeNameResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -7795,14 +8375,18 @@ class GetCertificateVersionValidityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -7838,9 +8422,11 @@ class GetCertificateVersionsCertificateVersionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7897,37 +8483,59 @@ class GetCertificateVersionsCertificateVersionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             subject_alternative_names: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameResult'],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             subject_alternative_names: Optional[Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'subjectAlternativeNames' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'timeCreated' in kwargs:
+        if subject_alternative_names is None:
+            raise TypeError("Missing 'subject_alternative_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -8047,14 +8655,18 @@ class GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -8093,10 +8705,14 @@ class GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -8135,14 +8751,18 @@ class GetCertificateVersionsCertificateVersionCollectionItemValidityResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -8179,11 +8799,15 @@ class GetCertificateVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -8217,9 +8841,11 @@ class GetCertificatesCertificateCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8299,58 +8925,98 @@ class GetCertificatesCertificateCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_configs: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigResult'],
-             certificate_profile_type: str,
-             certificate_revocation_list_details: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailResult'],
-             certificate_rules: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRuleResult'],
-             compartment_id: str,
-             config_type: str,
-             current_versions: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionResult'],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             issuer_certificate_authority_id: str,
-             key_algorithm: str,
-             lifecycle_details: str,
-             name: str,
-             signature_algorithm: str,
-             state: str,
-             subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemSubjectResult'],
-             time_created: str,
-             time_of_deletion: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_configs: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigResult']] = None,
+             certificate_profile_type: Optional[str] = None,
+             certificate_revocation_list_details: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailResult']] = None,
+             certificate_rules: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRuleResult']] = None,
+             compartment_id: Optional[str] = None,
+             config_type: Optional[str] = None,
+             current_versions: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             key_algorithm: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             signature_algorithm: Optional[str] = None,
+             state: Optional[str] = None,
+             subjects: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemSubjectResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateConfigs' in kwargs:
+        if certificate_configs is None and 'certificateConfigs' in kwargs:
             certificate_configs = kwargs['certificateConfigs']
-        if 'certificateProfileType' in kwargs:
+        if certificate_configs is None:
+            raise TypeError("Missing 'certificate_configs' argument")
+        if certificate_profile_type is None and 'certificateProfileType' in kwargs:
             certificate_profile_type = kwargs['certificateProfileType']
-        if 'certificateRevocationListDetails' in kwargs:
+        if certificate_profile_type is None:
+            raise TypeError("Missing 'certificate_profile_type' argument")
+        if certificate_revocation_list_details is None and 'certificateRevocationListDetails' in kwargs:
             certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
-        if 'certificateRules' in kwargs:
+        if certificate_revocation_list_details is None:
+            raise TypeError("Missing 'certificate_revocation_list_details' argument")
+        if certificate_rules is None and 'certificateRules' in kwargs:
             certificate_rules = kwargs['certificateRules']
-        if 'compartmentId' in kwargs:
+        if certificate_rules is None:
+            raise TypeError("Missing 'certificate_rules' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'currentVersions' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if current_versions is None and 'currentVersions' in kwargs:
             current_versions = kwargs['currentVersions']
-        if 'definedTags' in kwargs:
+        if current_versions is None:
+            raise TypeError("Missing 'current_versions' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'keyAlgorithm' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if key_algorithm is None and 'keyAlgorithm' in kwargs:
             key_algorithm = kwargs['keyAlgorithm']
-        if 'lifecycleDetails' in kwargs:
+        if key_algorithm is None:
+            raise TypeError("Missing 'key_algorithm' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'signatureAlgorithm' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'timeCreated' in kwargs:
+        if signature_algorithm is None:
+            raise TypeError("Missing 'signature_algorithm' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
 
         _setter("certificate_configs", certificate_configs)
         _setter("certificate_profile_type", certificate_profile_type)
@@ -8571,34 +9237,54 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_profile_type: str,
-             config_type: str,
-             csr_pem: str,
-             issuer_certificate_authority_id: str,
-             key_algorithm: str,
-             signature_algorithm: str,
-             subject_alternative_names: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult'],
-             subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult'],
-             validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidityResult'],
-             version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_profile_type: Optional[str] = None,
+             config_type: Optional[str] = None,
+             csr_pem: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             key_algorithm: Optional[str] = None,
+             signature_algorithm: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult']] = None,
+             subjects: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult']] = None,
+             validities: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidityResult']] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateProfileType' in kwargs:
+        if certificate_profile_type is None and 'certificateProfileType' in kwargs:
             certificate_profile_type = kwargs['certificateProfileType']
-        if 'configType' in kwargs:
+        if certificate_profile_type is None:
+            raise TypeError("Missing 'certificate_profile_type' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'csrPem' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if csr_pem is None and 'csrPem' in kwargs:
             csr_pem = kwargs['csrPem']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if csr_pem is None:
+            raise TypeError("Missing 'csr_pem' argument")
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'keyAlgorithm' in kwargs:
+        if issuer_certificate_authority_id is None:
+            raise TypeError("Missing 'issuer_certificate_authority_id' argument")
+        if key_algorithm is None and 'keyAlgorithm' in kwargs:
             key_algorithm = kwargs['keyAlgorithm']
-        if 'signatureAlgorithm' in kwargs:
+        if key_algorithm is None:
+            raise TypeError("Missing 'key_algorithm' argument")
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'subjectAlternativeNames' in kwargs:
+        if signature_algorithm is None:
+            raise TypeError("Missing 'signature_algorithm' argument")
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'versionName' in kwargs:
+        if subject_alternative_names is None:
+            raise TypeError("Missing 'subject_alternative_names' argument")
+        if subjects is None:
+            raise TypeError("Missing 'subjects' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
 
         _setter("certificate_profile_type", certificate_profile_type)
         _setter("config_type", config_type)
@@ -8751,45 +9437,79 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -8963,10 +9683,14 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativ
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -9005,14 +9729,18 @@ class GetCertificatesCertificateCollectionItemCertificateConfigValidityResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -9051,14 +9779,18 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_formatted_urls: Sequence[str],
-             object_storage_configs: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             object_storage_configs: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customFormattedUrls' in kwargs:
+        if custom_formatted_urls is None and 'customFormattedUrls' in kwargs:
             custom_formatted_urls = kwargs['customFormattedUrls']
-        if 'objectStorageConfigs' in kwargs:
+        if custom_formatted_urls is None:
+            raise TypeError("Missing 'custom_formatted_urls' argument")
+        if object_storage_configs is None and 'objectStorageConfigs' in kwargs:
             object_storage_configs = kwargs['objectStorageConfigs']
+        if object_storage_configs is None:
+            raise TypeError("Missing 'object_storage_configs' argument")
 
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
@@ -9100,17 +9832,23 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObj
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             object_storage_bucket_name: str,
-             object_storage_namespace: str,
-             object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectStorageBucketName' in kwargs:
+        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
             object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if 'objectStorageNamespace' in kwargs:
+        if object_storage_bucket_name is None:
+            raise TypeError("Missing 'object_storage_bucket_name' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'objectStorageObjectNameFormat' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if object_storage_object_name_format is None and 'objectStorageObjectNameFormat' in kwargs:
             object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+        if object_storage_object_name_format is None:
+            raise TypeError("Missing 'object_storage_object_name_format' argument")
 
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
@@ -9161,17 +9899,23 @@ class GetCertificatesCertificateCollectionItemCertificateRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             advance_renewal_period: str,
-             renewal_interval: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             advance_renewal_period: Optional[str] = None,
+             renewal_interval: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advanceRenewalPeriod' in kwargs:
+        if advance_renewal_period is None and 'advanceRenewalPeriod' in kwargs:
             advance_renewal_period = kwargs['advanceRenewalPeriod']
-        if 'renewalInterval' in kwargs:
+        if advance_renewal_period is None:
+            raise TypeError("Missing 'advance_renewal_period' argument")
+        if renewal_interval is None and 'renewalInterval' in kwargs:
             renewal_interval = kwargs['renewalInterval']
-        if 'ruleType' in kwargs:
+        if renewal_interval is None:
+            raise TypeError("Missing 'renewal_interval' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
@@ -9246,37 +9990,59 @@ class GetCertificatesCertificateCollectionItemCurrentVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_id: str,
-             issuer_ca_version_number: str,
-             revocation_statuses: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResult'],
-             serial_number: str,
-             stages: Sequence[str],
-             subject_alternative_names: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameResult'],
-             time_created: str,
-             time_of_deletion: str,
-             validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionValidityResult'],
-             version_name: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certificate_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResult']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             subject_alternative_names: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionValidityResult']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateId' in kwargs:
+        if certificate_id is None and 'certificateId' in kwargs:
             certificate_id = kwargs['certificateId']
-        if 'issuerCaVersionNumber' in kwargs:
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if issuer_ca_version_number is None and 'issuerCaVersionNumber' in kwargs:
             issuer_ca_version_number = kwargs['issuerCaVersionNumber']
-        if 'revocationStatuses' in kwargs:
+        if issuer_ca_version_number is None:
+            raise TypeError("Missing 'issuer_ca_version_number' argument")
+        if revocation_statuses is None and 'revocationStatuses' in kwargs:
             revocation_statuses = kwargs['revocationStatuses']
-        if 'serialNumber' in kwargs:
+        if revocation_statuses is None:
+            raise TypeError("Missing 'revocation_statuses' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'subjectAlternativeNames' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if subject_alternative_names is None and 'subjectAlternativeNames' in kwargs:
             subject_alternative_names = kwargs['subjectAlternativeNames']
-        if 'timeCreated' in kwargs:
+        if subject_alternative_names is None:
+            raise TypeError("Missing 'subject_alternative_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'versionName' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if validities is None:
+            raise TypeError("Missing 'validities' argument")
+        if version_name is None and 'versionName' in kwargs:
             version_name = kwargs['versionName']
-        if 'versionNumber' in kwargs:
+        if version_name is None:
+            raise TypeError("Missing 'version_name' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
@@ -9396,14 +10162,18 @@ class GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             revocation_reason: str,
-             time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'revocationReason' in kwargs:
+        if revocation_reason is None and 'revocationReason' in kwargs:
             revocation_reason = kwargs['revocationReason']
-        if 'timeOfRevocation' in kwargs:
+        if revocation_reason is None:
+            raise TypeError("Missing 'revocation_reason' argument")
+        if time_of_revocation is None and 'timeOfRevocation' in kwargs:
             time_of_revocation = kwargs['timeOfRevocation']
+        if time_of_revocation is None:
+            raise TypeError("Missing 'time_of_revocation' argument")
 
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
@@ -9442,10 +10212,14 @@ class GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -9484,14 +10258,18 @@ class GetCertificatesCertificateCollectionItemCurrentVersionValidityResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_of_validity_not_after: str,
-             time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeOfValidityNotAfter' in kwargs:
+        if time_of_validity_not_after is None and 'timeOfValidityNotAfter' in kwargs:
             time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
-        if 'timeOfValidityNotBefore' in kwargs:
+        if time_of_validity_not_after is None:
+            raise TypeError("Missing 'time_of_validity_not_after' argument")
+        if time_of_validity_not_before is None and 'timeOfValidityNotBefore' in kwargs:
             time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+        if time_of_validity_not_before is None:
+            raise TypeError("Missing 'time_of_validity_not_before' argument")
 
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -9575,45 +10353,79 @@ class GetCertificatesCertificateCollectionItemSubjectResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             common_name: str,
-             country: str,
-             distinguished_name_qualifier: str,
-             domain_component: str,
-             generation_qualifier: str,
-             given_name: str,
-             initials: str,
-             locality_name: str,
-             organization: str,
-             organizational_unit: str,
-             pseudonym: str,
-             serial_number: str,
-             state_or_province_name: str,
-             street: str,
-             surname: str,
-             title: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'distinguishedNameQualifier' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if distinguished_name_qualifier is None and 'distinguishedNameQualifier' in kwargs:
             distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
-        if 'domainComponent' in kwargs:
+        if distinguished_name_qualifier is None:
+            raise TypeError("Missing 'distinguished_name_qualifier' argument")
+        if domain_component is None and 'domainComponent' in kwargs:
             domain_component = kwargs['domainComponent']
-        if 'generationQualifier' in kwargs:
+        if domain_component is None:
+            raise TypeError("Missing 'domain_component' argument")
+        if generation_qualifier is None and 'generationQualifier' in kwargs:
             generation_qualifier = kwargs['generationQualifier']
-        if 'givenName' in kwargs:
+        if generation_qualifier is None:
+            raise TypeError("Missing 'generation_qualifier' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'localityName' in kwargs:
+        if given_name is None:
+            raise TypeError("Missing 'given_name' argument")
+        if initials is None:
+            raise TypeError("Missing 'initials' argument")
+        if locality_name is None and 'localityName' in kwargs:
             locality_name = kwargs['localityName']
-        if 'organizationalUnit' in kwargs:
+        if locality_name is None:
+            raise TypeError("Missing 'locality_name' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if organizational_unit is None and 'organizationalUnit' in kwargs:
             organizational_unit = kwargs['organizationalUnit']
-        if 'serialNumber' in kwargs:
+        if organizational_unit is None:
+            raise TypeError("Missing 'organizational_unit' argument")
+        if pseudonym is None:
+            raise TypeError("Missing 'pseudonym' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'stateOrProvinceName' in kwargs:
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+        if state_or_province_name is None and 'stateOrProvinceName' in kwargs:
             state_or_province_name = kwargs['stateOrProvinceName']
-        if 'userId' in kwargs:
+        if state_or_province_name is None:
+            raise TypeError("Missing 'state_or_province_name' argument")
+        if street is None:
+            raise TypeError("Missing 'street' argument")
+        if surname is None:
+            raise TypeError("Missing 'surname' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("common_name", common_name)
         _setter("country", country)
@@ -9788,11 +10600,15 @@ class GetCertificatesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

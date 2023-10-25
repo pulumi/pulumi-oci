@@ -372,9 +372,9 @@ class AuthenticationPolicyNetworkPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              network_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkSourceIds' in kwargs:
+        if network_source_ids is None and 'networkSourceIds' in kwargs:
             network_source_ids = kwargs['networkSourceIds']
 
         if network_source_ids is not None:
@@ -432,19 +432,19 @@ class AuthenticationPolicyPasswordPolicyArgs:
              is_uppercase_characters_required: Optional[pulumi.Input[bool]] = None,
              is_username_containment_allowed: Optional[pulumi.Input[bool]] = None,
              minimum_password_length: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isLowercaseCharactersRequired' in kwargs:
+        if is_lowercase_characters_required is None and 'isLowercaseCharactersRequired' in kwargs:
             is_lowercase_characters_required = kwargs['isLowercaseCharactersRequired']
-        if 'isNumericCharactersRequired' in kwargs:
+        if is_numeric_characters_required is None and 'isNumericCharactersRequired' in kwargs:
             is_numeric_characters_required = kwargs['isNumericCharactersRequired']
-        if 'isSpecialCharactersRequired' in kwargs:
+        if is_special_characters_required is None and 'isSpecialCharactersRequired' in kwargs:
             is_special_characters_required = kwargs['isSpecialCharactersRequired']
-        if 'isUppercaseCharactersRequired' in kwargs:
+        if is_uppercase_characters_required is None and 'isUppercaseCharactersRequired' in kwargs:
             is_uppercase_characters_required = kwargs['isUppercaseCharactersRequired']
-        if 'isUsernameContainmentAllowed' in kwargs:
+        if is_username_containment_allowed is None and 'isUsernameContainmentAllowed' in kwargs:
             is_username_containment_allowed = kwargs['isUsernameContainmentAllowed']
-        if 'minimumPasswordLength' in kwargs:
+        if minimum_password_length is None and 'minimumPasswordLength' in kwargs:
             minimum_password_length = kwargs['minimumPasswordLength']
 
         if is_lowercase_characters_required is not None:
@@ -560,7 +560,7 @@ class DomainReplicaRegionArgs:
              region: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if region is not None:
@@ -683,13 +683,15 @@ class DomainsAccountRecoverySettingIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -888,13 +890,15 @@ class DomainsAccountRecoverySettingIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -1098,11 +1102,11 @@ class DomainsAccountRecoverySettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -1264,10 +1268,14 @@ class DomainsAccountRecoverySettingTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -1397,13 +1405,15 @@ class DomainsApiKeyIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -1610,13 +1620,15 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -1824,11 +1836,11 @@ class DomainsApiKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -1994,10 +2006,14 @@ class DomainsApiKeyTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -2077,9 +2093,9 @@ class DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -2194,7 +2210,7 @@ class DomainsApiKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -2408,9 +2424,9 @@ class DomainsAppAccountArgs:
              owner_id: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ownerId' in kwargs:
+        if owner_id is None and 'ownerId' in kwargs:
             owner_id = kwargs['ownerId']
 
         if active is not None:
@@ -2602,12 +2618,14 @@ class DomainsAppAdminRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if description is not None:
@@ -2769,12 +2787,14 @@ class DomainsAppAliasAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if description is not None:
@@ -2924,14 +2944,16 @@ class DomainsAppAllowedScopeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fqs: pulumi.Input[str],
+             fqs: Optional[pulumi.Input[str]] = None,
              id_of_defining_app: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idOfDefiningApp' in kwargs:
+        if fqs is None:
+            raise TypeError("Missing 'fqs' argument")
+        if id_of_defining_app is None and 'idOfDefiningApp' in kwargs:
             id_of_defining_app = kwargs['idOfDefiningApp']
-        if 'readOnly' in kwargs:
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
 
         _setter("fqs", fqs)
@@ -3063,12 +3085,16 @@ class DomainsAppAllowedTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'readOnly' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
 
         _setter("key", key)
@@ -3187,10 +3213,12 @@ class DomainsAppAppSignonPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -3282,10 +3310,12 @@ class DomainsAppAppsNetworkPerimeterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -3377,10 +3407,12 @@ class DomainsAppAsOpcServiceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -3631,7 +3663,7 @@ class DomainsAppAttrRenderingMetadataArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              datatype: Optional[pulumi.Input[str]] = None,
              helptext: Optional[pulumi.Input[str]] = None,
              label: Optional[pulumi.Input[str]] = None,
@@ -3646,17 +3678,19 @@ class DomainsAppAttrRenderingMetadataArgs:
              section: Optional[pulumi.Input[str]] = None,
              visible: Optional[pulumi.Input[bool]] = None,
              widget: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxLength' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if max_length is None and 'maxLength' in kwargs:
             max_length = kwargs['maxLength']
-        if 'maxSize' in kwargs:
+        if max_size is None and 'maxSize' in kwargs:
             max_size = kwargs['maxSize']
-        if 'minLength' in kwargs:
+        if min_length is None and 'minLength' in kwargs:
             min_length = kwargs['minLength']
-        if 'minSize' in kwargs:
+        if min_size is None and 'minSize' in kwargs:
             min_size = kwargs['minSize']
-        if 'readOnly' in kwargs:
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
 
         _setter("name", name)
@@ -4079,15 +4113,17 @@ class DomainsAppBasedOnTemplateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              last_modified: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'wellKnownId' in kwargs:
+        if well_known_id is None and 'wellKnownId' in kwargs:
             well_known_id = kwargs['wellKnownId']
 
         _setter("value", value)
@@ -4267,15 +4303,17 @@ class DomainsAppCertificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cert_alias: pulumi.Input[str],
+             cert_alias: Optional[pulumi.Input[str]] = None,
              kid: Optional[pulumi.Input[str]] = None,
              sha1thumbprint: Optional[pulumi.Input[str]] = None,
              x509base64certificate: Optional[pulumi.Input[str]] = None,
              x5t: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certAlias' in kwargs:
+        if cert_alias is None and 'certAlias' in kwargs:
             cert_alias = kwargs['certAlias']
+        if cert_alias is None:
+            raise TypeError("Missing 'cert_alias' argument")
 
         _setter("cert_alias", cert_alias)
         if kid is not None:
@@ -4439,10 +4477,14 @@ class DomainsAppCloudControlPropertyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             values: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4523,9 +4565,11 @@ class DomainsAppEditableAttributeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -4641,13 +4685,13 @@ class DomainsAppGrantArgs:
              grantee_type: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
-        if 'granteeId' in kwargs:
+        if grantee_id is None and 'granteeId' in kwargs:
             grantee_id = kwargs['granteeId']
-        if 'granteeType' in kwargs:
+        if grantee_type is None and 'granteeType' in kwargs:
             grantee_type = kwargs['granteeType']
 
         if grant_mechanism is not None:
@@ -4907,7 +4951,7 @@ class DomainsAppGrantedAppRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              admin_role: Optional[pulumi.Input[bool]] = None,
              app_id: Optional[pulumi.Input[str]] = None,
              app_name: Optional[pulumi.Input[str]] = None,
@@ -4916,17 +4960,19 @@ class DomainsAppGrantedAppRoleArgs:
              read_only: Optional[pulumi.Input[bool]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminRole' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
-        if 'readOnly' in kwargs:
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
 
         _setter("value", value)
@@ -5228,13 +5274,15 @@ class DomainsAppIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -5441,13 +5489,15 @@ class DomainsAppIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -5625,11 +5675,13 @@ class DomainsAppIdentityProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -5744,10 +5796,12 @@ class DomainsAppIdpPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -5880,11 +5934,11 @@ class DomainsAppMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -6049,11 +6103,13 @@ class DomainsAppProtectableSecondaryAudienceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'readOnly' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
 
         _setter("value", value)
@@ -6148,10 +6204,12 @@ class DomainsAppRadiusPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -6277,14 +6335,16 @@ class DomainsAppRoleAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              service_instance_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'serviceInstanceIdentifier' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if service_instance_identifier is None and 'serviceInstanceIdentifier' in kwargs:
             service_instance_identifier = kwargs['serviceInstanceIdentifier']
 
         _setter("value", value)
@@ -6481,13 +6541,15 @@ class DomainsAppRoleIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -6686,13 +6748,15 @@ class DomainsAppRoleIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -6878,12 +6942,16 @@ class DomainsAppRoleMemberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -7062,11 +7130,11 @@ class DomainsAppRoleMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -7228,10 +7296,14 @@ class DomainsAppRoleTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -7320,10 +7392,12 @@ class DomainsAppSamlServiceProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -7468,19 +7542,21 @@ class DomainsAppScopeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              fqs: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
              requires_consent: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'readOnly' in kwargs:
+        if read_only is None and 'readOnly' in kwargs:
             read_only = kwargs['readOnly']
-        if 'requiresConsent' in kwargs:
+        if requires_consent is None and 'requiresConsent' in kwargs:
             requires_consent = kwargs['requiresConsent']
 
         _setter("value", value)
@@ -7674,10 +7750,12 @@ class DomainsAppServiceParamArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if value is not None:
@@ -7773,10 +7851,12 @@ class DomainsAppSignonPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -7870,10 +7950,14 @@ class DomainsAppTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -7982,11 +8066,13 @@ class DomainsAppTermsOfUseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if name is not None:
@@ -8105,10 +8191,12 @@ class DomainsAppTrustPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -8213,13 +8301,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tagSlug' in kwargs:
+        if tag_slug is None and 'tagSlug' in kwargs:
             tag_slug = kwargs['tagSlug']
 
         if defined_tags is not None:
@@ -8350,11 +8438,17 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("namespace", namespace)
@@ -8473,10 +8567,14 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArg
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -8572,11 +8670,11 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs:
              _setter: Callable[[Any, Any], None],
              domain_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']] = None,
              domain_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainApp' in kwargs:
+        if domain_app is None and 'domainApp' in kwargs:
             domain_app = kwargs['domainApp']
-        if 'domainName' in kwargs:
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
 
         if domain_app is not None:
@@ -8683,11 +8781,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -8852,17 +8952,17 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs:
              app_resources: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]] = None,
              deny_authz_decision_ttl: Optional[pulumi.Input[int]] = None,
              deny_authz_policy: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowAuthzDecisionTtl' in kwargs:
+        if allow_authz_decision_ttl is None and 'allowAuthzDecisionTtl' in kwargs:
             allow_authz_decision_ttl = kwargs['allowAuthzDecisionTtl']
-        if 'allowAuthzPolicy' in kwargs:
+        if allow_authz_policy is None and 'allowAuthzPolicy' in kwargs:
             allow_authz_policy = kwargs['allowAuthzPolicy']
-        if 'appResources' in kwargs:
+        if app_resources is None and 'appResources' in kwargs:
             app_resources = kwargs['appResources']
-        if 'denyAuthzDecisionTtl' in kwargs:
+        if deny_authz_decision_ttl is None and 'denyAuthzDecisionTtl' in kwargs:
             deny_authz_decision_ttl = kwargs['denyAuthzDecisionTtl']
-        if 'denyAuthzPolicy' in kwargs:
+        if deny_authz_policy is None and 'denyAuthzPolicy' in kwargs:
             deny_authz_policy = kwargs['denyAuthzPolicy']
 
         if allow_authz_decision_ttl is not None:
@@ -9034,10 +9134,12 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllow
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -9129,10 +9231,12 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -9224,10 +9328,12 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -9416,23 +9522,23 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs:
              sync_from_template: Optional[pulumi.Input[bool]] = None,
              user_name_form_expression: Optional[pulumi.Input[str]] = None,
              user_name_form_template: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formCredMethod' in kwargs:
+        if form_cred_method is None and 'formCredMethod' in kwargs:
             form_cred_method = kwargs['formCredMethod']
-        if 'formCredentialSharingGroupId' in kwargs:
+        if form_credential_sharing_group_id is None and 'formCredentialSharingGroupId' in kwargs:
             form_credential_sharing_group_id = kwargs['formCredentialSharingGroupId']
-        if 'formFillUrlMatches' in kwargs:
+        if form_fill_url_matches is None and 'formFillUrlMatches' in kwargs:
             form_fill_url_matches = kwargs['formFillUrlMatches']
-        if 'formType' in kwargs:
+        if form_type is None and 'formType' in kwargs:
             form_type = kwargs['formType']
-        if 'revealPasswordOnForm' in kwargs:
+        if reveal_password_on_form is None and 'revealPasswordOnForm' in kwargs:
             reveal_password_on_form = kwargs['revealPasswordOnForm']
-        if 'syncFromTemplate' in kwargs:
+        if sync_from_template is None and 'syncFromTemplate' in kwargs:
             sync_from_template = kwargs['syncFromTemplate']
-        if 'userNameFormExpression' in kwargs:
+        if user_name_form_expression is None and 'userNameFormExpression' in kwargs:
             user_name_form_expression = kwargs['userNameFormExpression']
-        if 'userNameFormTemplate' in kwargs:
+        if user_name_form_template is None and 'userNameFormTemplate' in kwargs:
             user_name_form_template = kwargs['userNameFormTemplate']
 
         if configuration is not None:
@@ -9689,13 +9795,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFil
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             form_url: pulumi.Input[str],
+             form_url: Optional[pulumi.Input[str]] = None,
              form_url_match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formUrl' in kwargs:
+        if form_url is None and 'formUrl' in kwargs:
             form_url = kwargs['formUrl']
-        if 'formUrlMatchType' in kwargs:
+        if form_url is None:
+            raise TypeError("Missing 'form_url' argument")
+        if form_url_match_type is None and 'formUrlMatchType' in kwargs:
             form_url_match_type = kwargs['formUrlMatchType']
 
         _setter("form_url", form_url)
@@ -9883,23 +9991,23 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAp
              sync_from_template: Optional[pulumi.Input[bool]] = None,
              user_name_form_expression: Optional[pulumi.Input[str]] = None,
              user_name_form_template: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formCredMethod' in kwargs:
+        if form_cred_method is None and 'formCredMethod' in kwargs:
             form_cred_method = kwargs['formCredMethod']
-        if 'formCredentialSharingGroupId' in kwargs:
+        if form_credential_sharing_group_id is None and 'formCredentialSharingGroupId' in kwargs:
             form_credential_sharing_group_id = kwargs['formCredentialSharingGroupId']
-        if 'formFillUrlMatches' in kwargs:
+        if form_fill_url_matches is None and 'formFillUrlMatches' in kwargs:
             form_fill_url_matches = kwargs['formFillUrlMatches']
-        if 'formType' in kwargs:
+        if form_type is None and 'formType' in kwargs:
             form_type = kwargs['formType']
-        if 'revealPasswordOnForm' in kwargs:
+        if reveal_password_on_form is None and 'revealPasswordOnForm' in kwargs:
             reveal_password_on_form = kwargs['revealPasswordOnForm']
-        if 'syncFromTemplate' in kwargs:
+        if sync_from_template is None and 'syncFromTemplate' in kwargs:
             sync_from_template = kwargs['syncFromTemplate']
-        if 'userNameFormExpression' in kwargs:
+        if user_name_form_expression is None and 'userNameFormExpression' in kwargs:
             user_name_form_expression = kwargs['userNameFormExpression']
-        if 'userNameFormTemplate' in kwargs:
+        if user_name_form_template is None and 'userNameFormTemplate' in kwargs:
             user_name_form_template = kwargs['userNameFormTemplate']
 
         if configuration is not None:
@@ -10156,13 +10264,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             form_url: pulumi.Input[str],
+             form_url: Optional[pulumi.Input[str]] = None,
              form_url_match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formUrl' in kwargs:
+        if form_url is None and 'formUrl' in kwargs:
             form_url = kwargs['formUrl']
-        if 'formUrlMatchType' in kwargs:
+        if form_url is None:
+            raise TypeError("Missing 'form_url' argument")
+        if form_url_match_type is None and 'formUrlMatchType' in kwargs:
             form_url_match_type = kwargs['formUrlMatchType']
 
         _setter("form_url", form_url)
@@ -10317,21 +10427,21 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs:
              realm_name: Optional[pulumi.Input[str]] = None,
              supported_encryption_salt_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ticket_flags: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultEncryptionSaltType' in kwargs:
+        if default_encryption_salt_type is None and 'defaultEncryptionSaltType' in kwargs:
             default_encryption_salt_type = kwargs['defaultEncryptionSaltType']
-        if 'masterKey' in kwargs:
+        if master_key is None and 'masterKey' in kwargs:
             master_key = kwargs['masterKey']
-        if 'maxRenewableAge' in kwargs:
+        if max_renewable_age is None and 'maxRenewableAge' in kwargs:
             max_renewable_age = kwargs['maxRenewableAge']
-        if 'maxTicketLife' in kwargs:
+        if max_ticket_life is None and 'maxTicketLife' in kwargs:
             max_ticket_life = kwargs['maxTicketLife']
-        if 'realmName' in kwargs:
+        if realm_name is None and 'realmName' in kwargs:
             realm_name = kwargs['realmName']
-        if 'supportedEncryptionSaltTypes' in kwargs:
+        if supported_encryption_salt_types is None and 'supportedEncryptionSaltTypes' in kwargs:
             supported_encryption_salt_types = kwargs['supportedEncryptionSaltTypes']
-        if 'ticketFlags' in kwargs:
+        if ticket_flags is None and 'ticketFlags' in kwargs:
             ticket_flags = kwargs['ticketFlags']
 
         if default_encryption_salt_type is not None:
@@ -10862,53 +10972,53 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs:
              sync_config_last_modified: Optional[pulumi.Input[str]] = None,
              three_legged_oauth_credential: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']] = None,
              three_legged_oauth_provider_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountFormVisible' in kwargs:
+        if account_form_visible is None and 'accountFormVisible' in kwargs:
             account_form_visible = kwargs['accountFormVisible']
-        if 'adminConsentGranted' in kwargs:
+        if admin_consent_granted is None and 'adminConsentGranted' in kwargs:
             admin_consent_granted = kwargs['adminConsentGranted']
-        if 'bundleConfigurationProperties' in kwargs:
+        if bundle_configuration_properties is None and 'bundleConfigurationProperties' in kwargs:
             bundle_configuration_properties = kwargs['bundleConfigurationProperties']
-        if 'bundlePoolConfiguration' in kwargs:
+        if bundle_pool_configuration is None and 'bundlePoolConfiguration' in kwargs:
             bundle_pool_configuration = kwargs['bundlePoolConfiguration']
-        if 'canBeAuthoritative' in kwargs:
+        if can_be_authoritative is None and 'canBeAuthoritative' in kwargs:
             can_be_authoritative = kwargs['canBeAuthoritative']
-        if 'connectorBundles' in kwargs:
+        if connector_bundles is None and 'connectorBundles' in kwargs:
             connector_bundles = kwargs['connectorBundles']
-        if 'enableAuthSyncNewUserNotification' in kwargs:
+        if enable_auth_sync_new_user_notification is None and 'enableAuthSyncNewUserNotification' in kwargs:
             enable_auth_sync_new_user_notification = kwargs['enableAuthSyncNewUserNotification']
-        if 'enableSync' in kwargs:
+        if enable_sync is None and 'enableSync' in kwargs:
             enable_sync = kwargs['enableSync']
-        if 'enableSyncSummaryReportNotification' in kwargs:
+        if enable_sync_summary_report_notification is None and 'enableSyncSummaryReportNotification' in kwargs:
             enable_sync_summary_report_notification = kwargs['enableSyncSummaryReportNotification']
-        if 'flatFileBundleConfigurationProperties' in kwargs:
+        if flat_file_bundle_configuration_properties is None and 'flatFileBundleConfigurationProperties' in kwargs:
             flat_file_bundle_configuration_properties = kwargs['flatFileBundleConfigurationProperties']
-        if 'flatFileConnectorBundle' in kwargs:
+        if flat_file_connector_bundle is None and 'flatFileConnectorBundle' in kwargs:
             flat_file_connector_bundle = kwargs['flatFileConnectorBundle']
-        if 'identityBridges' in kwargs:
+        if identity_bridges is None and 'identityBridges' in kwargs:
             identity_bridges = kwargs['identityBridges']
-        if 'isAuthoritative' in kwargs:
+        if is_authoritative is None and 'isAuthoritative' in kwargs:
             is_authoritative = kwargs['isAuthoritative']
-        if 'isDirectory' in kwargs:
+        if is_directory is None and 'isDirectory' in kwargs:
             is_directory = kwargs['isDirectory']
-        if 'isOnPremiseApp' in kwargs:
+        if is_on_premise_app is None and 'isOnPremiseApp' in kwargs:
             is_on_premise_app = kwargs['isOnPremiseApp']
-        if 'isSchemaCustomizationSupported' in kwargs:
+        if is_schema_customization_supported is None and 'isSchemaCustomizationSupported' in kwargs:
             is_schema_customization_supported = kwargs['isSchemaCustomizationSupported']
-        if 'isSchemaDiscoverySupported' in kwargs:
+        if is_schema_discovery_supported is None and 'isSchemaDiscoverySupported' in kwargs:
             is_schema_discovery_supported = kwargs['isSchemaDiscoverySupported']
-        if 'isThreeLeggedOauthEnabled' in kwargs:
+        if is_three_legged_oauth_enabled is None and 'isThreeLeggedOauthEnabled' in kwargs:
             is_three_legged_oauth_enabled = kwargs['isThreeLeggedOauthEnabled']
-        if 'isTwoLeggedOauthEnabled' in kwargs:
+        if is_two_legged_oauth_enabled is None and 'isTwoLeggedOauthEnabled' in kwargs:
             is_two_legged_oauth_enabled = kwargs['isTwoLeggedOauthEnabled']
-        if 'objectClasses' in kwargs:
+        if object_classes is None and 'objectClasses' in kwargs:
             object_classes = kwargs['objectClasses']
-        if 'syncConfigLastModified' in kwargs:
+        if sync_config_last_modified is None and 'syncConfigLastModified' in kwargs:
             sync_config_last_modified = kwargs['syncConfigLastModified']
-        if 'threeLeggedOauthCredential' in kwargs:
+        if three_legged_oauth_credential is None and 'threeLeggedOauthCredential' in kwargs:
             three_legged_oauth_credential = kwargs['threeLeggedOauthCredential']
-        if 'threeLeggedOauthProviderName' in kwargs:
+        if three_legged_oauth_provider_name is None and 'threeLeggedOauthProviderName' in kwargs:
             three_legged_oauth_provider_name = kwargs['threeLeggedOauthProviderName']
 
         if account_form_visible is not None:
@@ -11625,21 +11735,27 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleCo
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             icf_type: pulumi.Input[str],
-             name: pulumi.Input[str],
-             required: pulumi.Input[bool],
+             icf_type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             required: Optional[pulumi.Input[bool]] = None,
              confidential: Optional[pulumi.Input[bool]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              help_message: Optional[pulumi.Input[str]] = None,
              order: Optional[pulumi.Input[int]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'icfType' in kwargs:
+        if icf_type is None and 'icfType' in kwargs:
             icf_type = kwargs['icfType']
-        if 'displayName' in kwargs:
+        if icf_type is None:
+            raise TypeError("Missing 'icf_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'helpMessage' in kwargs:
+        if help_message is None and 'helpMessage' in kwargs:
             help_message = kwargs['helpMessage']
 
         _setter("icf_type", icf_type)
@@ -11918,17 +12034,17 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePo
              max_wait: Optional[pulumi.Input[int]] = None,
              min_evictable_idle_time_millis: Optional[pulumi.Input[int]] = None,
              min_idle: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxIdle' in kwargs:
+        if max_idle is None and 'maxIdle' in kwargs:
             max_idle = kwargs['maxIdle']
-        if 'maxObjects' in kwargs:
+        if max_objects is None and 'maxObjects' in kwargs:
             max_objects = kwargs['maxObjects']
-        if 'maxWait' in kwargs:
+        if max_wait is None and 'maxWait' in kwargs:
             max_wait = kwargs['maxWait']
-        if 'minEvictableIdleTimeMillis' in kwargs:
+        if min_evictable_idle_time_millis is None and 'minEvictableIdleTimeMillis' in kwargs:
             min_evictable_idle_time_millis = kwargs['minEvictableIdleTimeMillis']
-        if 'minIdle' in kwargs:
+        if min_idle is None and 'minIdle' in kwargs:
             min_idle = kwargs['minIdle']
 
         if max_idle is not None:
@@ -12135,14 +12251,18 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnecto
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'wellKnownId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if well_known_id is None and 'wellKnownId' in kwargs:
             well_known_id = kwargs['wellKnownId']
 
         _setter("type", type)
@@ -12390,21 +12510,27 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFile
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             icf_type: pulumi.Input[str],
-             name: pulumi.Input[str],
-             required: pulumi.Input[bool],
+             icf_type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             required: Optional[pulumi.Input[bool]] = None,
              confidential: Optional[pulumi.Input[bool]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              help_message: Optional[pulumi.Input[str]] = None,
              order: Optional[pulumi.Input[int]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'icfType' in kwargs:
+        if icf_type is None and 'icfType' in kwargs:
             icf_type = kwargs['icfType']
-        if 'displayName' in kwargs:
+        if icf_type is None:
+            raise TypeError("Missing 'icf_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'helpMessage' in kwargs:
+        if help_message is None and 'helpMessage' in kwargs:
             help_message = kwargs['helpMessage']
 
         _setter("icf_type", icf_type)
@@ -12668,13 +12794,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFile
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'wellKnownId' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if well_known_id is None and 'wellKnownId' in kwargs:
             well_known_id = kwargs['wellKnownId']
 
         _setter("value", value)
@@ -12835,7 +12963,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentity
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -13008,17 +13136,21 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectCl
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              is_account_object_class: Optional[pulumi.Input[bool]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isAccountObjectClass' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if is_account_object_class is None and 'isAccountObjectClass' in kwargs:
             is_account_object_class = kwargs['isAccountObjectClass']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         _setter("type", type)
@@ -13222,13 +13354,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeg
              access_token: Optional[pulumi.Input[str]] = None,
              access_token_expiry: Optional[pulumi.Input[str]] = None,
              refresh_token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessToken' in kwargs:
+        if access_token is None and 'accessToken' in kwargs:
             access_token = kwargs['accessToken']
-        if 'accessTokenExpiry' in kwargs:
+        if access_token_expiry is None and 'accessTokenExpiry' in kwargs:
             access_token_expiry = kwargs['accessTokenExpiry']
-        if 'refreshToken' in kwargs:
+        if refresh_token is None and 'refreshToken' in kwargs:
             refresh_token = kwargs['refreshToken']
 
         if access_token is not None:
@@ -13347,13 +13479,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             multicloud_service_type: pulumi.Input[str],
+             multicloud_service_type: Optional[pulumi.Input[str]] = None,
              multicloud_platform_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'multicloudServiceType' in kwargs:
+        if multicloud_service_type is None and 'multicloudServiceType' in kwargs:
             multicloud_service_type = kwargs['multicloudServiceType']
-        if 'multicloudPlatformUrl' in kwargs:
+        if multicloud_service_type is None:
+            raise TypeError("Missing 'multicloud_service_type' argument")
+        if multicloud_platform_url is None and 'multicloudPlatformUrl' in kwargs:
             multicloud_platform_url = kwargs['multicloudPlatformUrl']
 
         _setter("multicloud_service_type", multicloud_service_type)
@@ -13523,19 +13657,19 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs:
              next_synchronization_mode: Optional[pulumi.Input[str]] = None,
              region: Optional[pulumi.Input[str]] = None,
              service_instance_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currentFederationMode' in kwargs:
+        if current_federation_mode is None and 'currentFederationMode' in kwargs:
             current_federation_mode = kwargs['currentFederationMode']
-        if 'currentSynchronizationMode' in kwargs:
+        if current_synchronization_mode is None and 'currentSynchronizationMode' in kwargs:
             current_synchronization_mode = kwargs['currentSynchronizationMode']
-        if 'enablingNextFedSyncModes' in kwargs:
+        if enabling_next_fed_sync_modes is None and 'enablingNextFedSyncModes' in kwargs:
             enabling_next_fed_sync_modes = kwargs['enablingNextFedSyncModes']
-        if 'nextFederationMode' in kwargs:
+        if next_federation_mode is None and 'nextFederationMode' in kwargs:
             next_federation_mode = kwargs['nextFederationMode']
-        if 'nextSynchronizationMode' in kwargs:
+        if next_synchronization_mode is None and 'nextSynchronizationMode' in kwargs:
             next_synchronization_mode = kwargs['nextSynchronizationMode']
-        if 'serviceInstanceIdentifier' in kwargs:
+        if service_instance_identifier is None and 'serviceInstanceIdentifier' in kwargs:
             service_instance_identifier = kwargs['serviceInstanceIdentifier']
 
         if current_federation_mode is not None:
@@ -13934,10 +14068,10 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_ip: pulumi.Input[str],
-             include_group_in_response: pulumi.Input[bool],
-             port: pulumi.Input[str],
-             secret_key: pulumi.Input[str],
+             client_ip: Optional[pulumi.Input[str]] = None,
+             include_group_in_response: Optional[pulumi.Input[bool]] = None,
+             port: Optional[pulumi.Input[str]] = None,
+             secret_key: Optional[pulumi.Input[str]] = None,
              capture_client_ip: Optional[pulumi.Input[bool]] = None,
              country_code_response_attribute_id: Optional[pulumi.Input[str]] = None,
              end_user_ip_attribute: Optional[pulumi.Input[str]] = None,
@@ -13949,35 +14083,43 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs:
              response_format: Optional[pulumi.Input[str]] = None,
              response_format_delimiter: Optional[pulumi.Input[str]] = None,
              type_of_radius_app: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientIp' in kwargs:
+        if client_ip is None and 'clientIp' in kwargs:
             client_ip = kwargs['clientIp']
-        if 'includeGroupInResponse' in kwargs:
+        if client_ip is None:
+            raise TypeError("Missing 'client_ip' argument")
+        if include_group_in_response is None and 'includeGroupInResponse' in kwargs:
             include_group_in_response = kwargs['includeGroupInResponse']
-        if 'secretKey' in kwargs:
+        if include_group_in_response is None:
+            raise TypeError("Missing 'include_group_in_response' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if secret_key is None and 'secretKey' in kwargs:
             secret_key = kwargs['secretKey']
-        if 'captureClientIp' in kwargs:
+        if secret_key is None:
+            raise TypeError("Missing 'secret_key' argument")
+        if capture_client_ip is None and 'captureClientIp' in kwargs:
             capture_client_ip = kwargs['captureClientIp']
-        if 'countryCodeResponseAttributeId' in kwargs:
+        if country_code_response_attribute_id is None and 'countryCodeResponseAttributeId' in kwargs:
             country_code_response_attribute_id = kwargs['countryCodeResponseAttributeId']
-        if 'endUserIpAttribute' in kwargs:
+        if end_user_ip_attribute is None and 'endUserIpAttribute' in kwargs:
             end_user_ip_attribute = kwargs['endUserIpAttribute']
-        if 'groupMembershipRadiusAttribute' in kwargs:
+        if group_membership_radius_attribute is None and 'groupMembershipRadiusAttribute' in kwargs:
             group_membership_radius_attribute = kwargs['groupMembershipRadiusAttribute']
-        if 'groupMembershipToReturns' in kwargs:
+        if group_membership_to_returns is None and 'groupMembershipToReturns' in kwargs:
             group_membership_to_returns = kwargs['groupMembershipToReturns']
-        if 'groupNameFormat' in kwargs:
+        if group_name_format is None and 'groupNameFormat' in kwargs:
             group_name_format = kwargs['groupNameFormat']
-        if 'passwordAndOtpTogether' in kwargs:
+        if password_and_otp_together is None and 'passwordAndOtpTogether' in kwargs:
             password_and_otp_together = kwargs['passwordAndOtpTogether']
-        if 'radiusVendorSpecificId' in kwargs:
+        if radius_vendor_specific_id is None and 'radiusVendorSpecificId' in kwargs:
             radius_vendor_specific_id = kwargs['radiusVendorSpecificId']
-        if 'responseFormat' in kwargs:
+        if response_format is None and 'responseFormat' in kwargs:
             response_format = kwargs['responseFormat']
-        if 'responseFormatDelimiter' in kwargs:
+        if response_format_delimiter is None and 'responseFormatDelimiter' in kwargs:
             response_format_delimiter = kwargs['responseFormatDelimiter']
-        if 'typeOfRadiusApp' in kwargs:
+        if type_of_radius_app is None and 'typeOfRadiusApp' in kwargs:
             type_of_radius_app = kwargs['typeOfRadiusApp']
 
         _setter("client_ip", client_ip)
@@ -14403,11 +14545,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMemb
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -14510,7 +14654,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              requestable: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if requestable is not None:
@@ -14950,59 +15094,59 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
              succinct_id: Optional[pulumi.Input[str]] = None,
              tenant_provider_id: Optional[pulumi.Input[str]] = None,
              user_assertion_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assertionConsumerUrl' in kwargs:
+        if assertion_consumer_url is None and 'assertionConsumerUrl' in kwargs:
             assertion_consumer_url = kwargs['assertionConsumerUrl']
-        if 'encryptAssertion' in kwargs:
+        if encrypt_assertion is None and 'encryptAssertion' in kwargs:
             encrypt_assertion = kwargs['encryptAssertion']
-        if 'encryptionAlgorithm' in kwargs:
+        if encryption_algorithm is None and 'encryptionAlgorithm' in kwargs:
             encryption_algorithm = kwargs['encryptionAlgorithm']
-        if 'encryptionCertificate' in kwargs:
+        if encryption_certificate is None and 'encryptionCertificate' in kwargs:
             encryption_certificate = kwargs['encryptionCertificate']
-        if 'federationProtocol' in kwargs:
+        if federation_protocol is None and 'federationProtocol' in kwargs:
             federation_protocol = kwargs['federationProtocol']
-        if 'groupAssertionAttributes' in kwargs:
+        if group_assertion_attributes is None and 'groupAssertionAttributes' in kwargs:
             group_assertion_attributes = kwargs['groupAssertionAttributes']
-        if 'hokAcsUrl' in kwargs:
+        if hok_acs_url is None and 'hokAcsUrl' in kwargs:
             hok_acs_url = kwargs['hokAcsUrl']
-        if 'hokRequired' in kwargs:
+        if hok_required is None and 'hokRequired' in kwargs:
             hok_required = kwargs['hokRequired']
-        if 'includeSigningCertInSignature' in kwargs:
+        if include_signing_cert_in_signature is None and 'includeSigningCertInSignature' in kwargs:
             include_signing_cert_in_signature = kwargs['includeSigningCertInSignature']
-        if 'keyEncryptionAlgorithm' in kwargs:
+        if key_encryption_algorithm is None and 'keyEncryptionAlgorithm' in kwargs:
             key_encryption_algorithm = kwargs['keyEncryptionAlgorithm']
-        if 'lastNotificationSentTime' in kwargs:
+        if last_notification_sent_time is None and 'lastNotificationSentTime' in kwargs:
             last_notification_sent_time = kwargs['lastNotificationSentTime']
-        if 'logoutBinding' in kwargs:
+        if logout_binding is None and 'logoutBinding' in kwargs:
             logout_binding = kwargs['logoutBinding']
-        if 'logoutEnabled' in kwargs:
+        if logout_enabled is None and 'logoutEnabled' in kwargs:
             logout_enabled = kwargs['logoutEnabled']
-        if 'logoutRequestUrl' in kwargs:
+        if logout_request_url is None and 'logoutRequestUrl' in kwargs:
             logout_request_url = kwargs['logoutRequestUrl']
-        if 'logoutResponseUrl' in kwargs:
+        if logout_response_url is None and 'logoutResponseUrl' in kwargs:
             logout_response_url = kwargs['logoutResponseUrl']
-        if 'nameIdFormat' in kwargs:
+        if name_id_format is None and 'nameIdFormat' in kwargs:
             name_id_format = kwargs['nameIdFormat']
-        if 'nameIdUserstoreAttribute' in kwargs:
+        if name_id_userstore_attribute is None and 'nameIdUserstoreAttribute' in kwargs:
             name_id_userstore_attribute = kwargs['nameIdUserstoreAttribute']
-        if 'outboundAssertionAttributes' in kwargs:
+        if outbound_assertion_attributes is None and 'outboundAssertionAttributes' in kwargs:
             outbound_assertion_attributes = kwargs['outboundAssertionAttributes']
-        if 'partnerProviderId' in kwargs:
+        if partner_provider_id is None and 'partnerProviderId' in kwargs:
             partner_provider_id = kwargs['partnerProviderId']
-        if 'partnerProviderPattern' in kwargs:
+        if partner_provider_pattern is None and 'partnerProviderPattern' in kwargs:
             partner_provider_pattern = kwargs['partnerProviderPattern']
-        if 'signResponseOrAssertion' in kwargs:
+        if sign_response_or_assertion is None and 'signResponseOrAssertion' in kwargs:
             sign_response_or_assertion = kwargs['signResponseOrAssertion']
-        if 'signatureHashAlgorithm' in kwargs:
+        if signature_hash_algorithm is None and 'signatureHashAlgorithm' in kwargs:
             signature_hash_algorithm = kwargs['signatureHashAlgorithm']
-        if 'signingCertificate' in kwargs:
+        if signing_certificate is None and 'signingCertificate' in kwargs:
             signing_certificate = kwargs['signingCertificate']
-        if 'succinctId' in kwargs:
+        if succinct_id is None and 'succinctId' in kwargs:
             succinct_id = kwargs['succinctId']
-        if 'tenantProviderId' in kwargs:
+        if tenant_provider_id is None and 'tenantProviderId' in kwargs:
             tenant_provider_id = kwargs['tenantProviderId']
-        if 'userAssertionAttributes' in kwargs:
+        if user_assertion_attributes is None and 'userAssertionAttributes' in kwargs:
             user_assertion_attributes = kwargs['userAssertionAttributes']
 
         if assertion_consumer_url is not None:
@@ -15750,13 +15894,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              format: Optional[pulumi.Input[str]] = None,
              group_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupName' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if group_name is None and 'groupName' in kwargs:
             group_name = kwargs['groupName']
 
         _setter("name", name)
@@ -15921,11 +16067,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              direction: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if direction is not None:
@@ -16062,13 +16210,17 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             user_store_attribute_name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             user_store_attribute_name: Optional[pulumi.Input[str]] = None,
              format: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userStoreAttributeName' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if user_store_attribute_name is None and 'userStoreAttributeName' in kwargs:
             user_store_attribute_name = kwargs['userStoreAttributeName']
+        if user_store_attribute_name is None:
+            raise TypeError("Missing 'user_store_attribute_name' argument")
 
         _setter("name", name)
         _setter("user_store_attribute_name", user_store_attribute_name)
@@ -16205,13 +16357,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs:
              resource_ref: Optional[pulumi.Input[bool]] = None,
              web_tier_policy_az_control: Optional[pulumi.Input[str]] = None,
              web_tier_policy_json: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceRef' in kwargs:
+        if resource_ref is None and 'resourceRef' in kwargs:
             resource_ref = kwargs['resourceRef']
-        if 'webTierPolicyAzControl' in kwargs:
+        if web_tier_policy_az_control is None and 'webTierPolicyAzControl' in kwargs:
             web_tier_policy_az_control = kwargs['webTierPolicyAzControl']
-        if 'webTierPolicyJson' in kwargs:
+        if web_tier_policy_json is None and 'webTierPolicyJson' in kwargs:
             web_tier_policy_json = kwargs['webTierPolicyJson']
 
         if resource_ref is not None:
@@ -16352,12 +16504,14 @@ class DomainsAppUserRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if description is not None:
@@ -16536,13 +16690,15 @@ class DomainsAuthTokenIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -16749,13 +16905,15 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -16963,11 +17121,11 @@ class DomainsAuthTokenMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -17133,10 +17291,14 @@ class DomainsAuthTokenTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -17216,9 +17378,9 @@ class DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserA
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -17333,7 +17495,7 @@ class DomainsAuthTokenUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -17553,24 +17715,36 @@ class DomainsAuthenticationFactorSettingBypassCodeSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             help_desk_code_expiry_in_mins: pulumi.Input[int],
-             help_desk_generation_enabled: pulumi.Input[bool],
-             help_desk_max_usage: pulumi.Input[int],
-             length: pulumi.Input[int],
-             max_active: pulumi.Input[int],
-             self_service_generation_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             help_desk_code_expiry_in_mins: Optional[pulumi.Input[int]] = None,
+             help_desk_generation_enabled: Optional[pulumi.Input[bool]] = None,
+             help_desk_max_usage: Optional[pulumi.Input[int]] = None,
+             length: Optional[pulumi.Input[int]] = None,
+             max_active: Optional[pulumi.Input[int]] = None,
+             self_service_generation_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'helpDeskCodeExpiryInMins' in kwargs:
+        if help_desk_code_expiry_in_mins is None and 'helpDeskCodeExpiryInMins' in kwargs:
             help_desk_code_expiry_in_mins = kwargs['helpDeskCodeExpiryInMins']
-        if 'helpDeskGenerationEnabled' in kwargs:
+        if help_desk_code_expiry_in_mins is None:
+            raise TypeError("Missing 'help_desk_code_expiry_in_mins' argument")
+        if help_desk_generation_enabled is None and 'helpDeskGenerationEnabled' in kwargs:
             help_desk_generation_enabled = kwargs['helpDeskGenerationEnabled']
-        if 'helpDeskMaxUsage' in kwargs:
+        if help_desk_generation_enabled is None:
+            raise TypeError("Missing 'help_desk_generation_enabled' argument")
+        if help_desk_max_usage is None and 'helpDeskMaxUsage' in kwargs:
             help_desk_max_usage = kwargs['helpDeskMaxUsage']
-        if 'maxActive' in kwargs:
+        if help_desk_max_usage is None:
+            raise TypeError("Missing 'help_desk_max_usage' argument")
+        if length is None:
+            raise TypeError("Missing 'length' argument")
+        if max_active is None and 'maxActive' in kwargs:
             max_active = kwargs['maxActive']
-        if 'selfServiceGenerationEnabled' in kwargs:
+        if max_active is None:
+            raise TypeError("Missing 'max_active' argument")
+        if self_service_generation_enabled is None and 'selfServiceGenerationEnabled' in kwargs:
             self_service_generation_enabled = kwargs['selfServiceGenerationEnabled']
+        if self_service_generation_enabled is None:
+            raise TypeError("Missing 'self_service_generation_enabled' argument")
 
         _setter("help_desk_code_expiry_in_mins", help_desk_code_expiry_in_mins)
         _setter("help_desk_generation_enabled", help_desk_generation_enabled)
@@ -17925,53 +18099,83 @@ class DomainsAuthenticationFactorSettingClientAppSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             device_protection_policy: pulumi.Input[str],
-             initial_lockout_period_in_secs: pulumi.Input[int],
-             key_pair_length: pulumi.Input[int],
-             lockout_escalation_pattern: pulumi.Input[str],
-             max_failures_before_lockout: pulumi.Input[int],
-             max_failures_before_warning: pulumi.Input[int],
-             max_lockout_interval_in_secs: pulumi.Input[int],
-             min_pin_length: pulumi.Input[int],
-             policy_update_freq_in_days: pulumi.Input[int],
-             request_signing_algo: pulumi.Input[str],
-             shared_secret_encoding: pulumi.Input[str],
-             unlock_app_for_each_request_enabled: pulumi.Input[bool],
-             unlock_app_interval_in_secs: pulumi.Input[int],
-             unlock_on_app_foreground_enabled: pulumi.Input[bool],
-             unlock_on_app_start_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             device_protection_policy: Optional[pulumi.Input[str]] = None,
+             initial_lockout_period_in_secs: Optional[pulumi.Input[int]] = None,
+             key_pair_length: Optional[pulumi.Input[int]] = None,
+             lockout_escalation_pattern: Optional[pulumi.Input[str]] = None,
+             max_failures_before_lockout: Optional[pulumi.Input[int]] = None,
+             max_failures_before_warning: Optional[pulumi.Input[int]] = None,
+             max_lockout_interval_in_secs: Optional[pulumi.Input[int]] = None,
+             min_pin_length: Optional[pulumi.Input[int]] = None,
+             policy_update_freq_in_days: Optional[pulumi.Input[int]] = None,
+             request_signing_algo: Optional[pulumi.Input[str]] = None,
+             shared_secret_encoding: Optional[pulumi.Input[str]] = None,
+             unlock_app_for_each_request_enabled: Optional[pulumi.Input[bool]] = None,
+             unlock_app_interval_in_secs: Optional[pulumi.Input[int]] = None,
+             unlock_on_app_foreground_enabled: Optional[pulumi.Input[bool]] = None,
+             unlock_on_app_start_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deviceProtectionPolicy' in kwargs:
+        if device_protection_policy is None and 'deviceProtectionPolicy' in kwargs:
             device_protection_policy = kwargs['deviceProtectionPolicy']
-        if 'initialLockoutPeriodInSecs' in kwargs:
+        if device_protection_policy is None:
+            raise TypeError("Missing 'device_protection_policy' argument")
+        if initial_lockout_period_in_secs is None and 'initialLockoutPeriodInSecs' in kwargs:
             initial_lockout_period_in_secs = kwargs['initialLockoutPeriodInSecs']
-        if 'keyPairLength' in kwargs:
+        if initial_lockout_period_in_secs is None:
+            raise TypeError("Missing 'initial_lockout_period_in_secs' argument")
+        if key_pair_length is None and 'keyPairLength' in kwargs:
             key_pair_length = kwargs['keyPairLength']
-        if 'lockoutEscalationPattern' in kwargs:
+        if key_pair_length is None:
+            raise TypeError("Missing 'key_pair_length' argument")
+        if lockout_escalation_pattern is None and 'lockoutEscalationPattern' in kwargs:
             lockout_escalation_pattern = kwargs['lockoutEscalationPattern']
-        if 'maxFailuresBeforeLockout' in kwargs:
+        if lockout_escalation_pattern is None:
+            raise TypeError("Missing 'lockout_escalation_pattern' argument")
+        if max_failures_before_lockout is None and 'maxFailuresBeforeLockout' in kwargs:
             max_failures_before_lockout = kwargs['maxFailuresBeforeLockout']
-        if 'maxFailuresBeforeWarning' in kwargs:
+        if max_failures_before_lockout is None:
+            raise TypeError("Missing 'max_failures_before_lockout' argument")
+        if max_failures_before_warning is None and 'maxFailuresBeforeWarning' in kwargs:
             max_failures_before_warning = kwargs['maxFailuresBeforeWarning']
-        if 'maxLockoutIntervalInSecs' in kwargs:
+        if max_failures_before_warning is None:
+            raise TypeError("Missing 'max_failures_before_warning' argument")
+        if max_lockout_interval_in_secs is None and 'maxLockoutIntervalInSecs' in kwargs:
             max_lockout_interval_in_secs = kwargs['maxLockoutIntervalInSecs']
-        if 'minPinLength' in kwargs:
+        if max_lockout_interval_in_secs is None:
+            raise TypeError("Missing 'max_lockout_interval_in_secs' argument")
+        if min_pin_length is None and 'minPinLength' in kwargs:
             min_pin_length = kwargs['minPinLength']
-        if 'policyUpdateFreqInDays' in kwargs:
+        if min_pin_length is None:
+            raise TypeError("Missing 'min_pin_length' argument")
+        if policy_update_freq_in_days is None and 'policyUpdateFreqInDays' in kwargs:
             policy_update_freq_in_days = kwargs['policyUpdateFreqInDays']
-        if 'requestSigningAlgo' in kwargs:
+        if policy_update_freq_in_days is None:
+            raise TypeError("Missing 'policy_update_freq_in_days' argument")
+        if request_signing_algo is None and 'requestSigningAlgo' in kwargs:
             request_signing_algo = kwargs['requestSigningAlgo']
-        if 'sharedSecretEncoding' in kwargs:
+        if request_signing_algo is None:
+            raise TypeError("Missing 'request_signing_algo' argument")
+        if shared_secret_encoding is None and 'sharedSecretEncoding' in kwargs:
             shared_secret_encoding = kwargs['sharedSecretEncoding']
-        if 'unlockAppForEachRequestEnabled' in kwargs:
+        if shared_secret_encoding is None:
+            raise TypeError("Missing 'shared_secret_encoding' argument")
+        if unlock_app_for_each_request_enabled is None and 'unlockAppForEachRequestEnabled' in kwargs:
             unlock_app_for_each_request_enabled = kwargs['unlockAppForEachRequestEnabled']
-        if 'unlockAppIntervalInSecs' in kwargs:
+        if unlock_app_for_each_request_enabled is None:
+            raise TypeError("Missing 'unlock_app_for_each_request_enabled' argument")
+        if unlock_app_interval_in_secs is None and 'unlockAppIntervalInSecs' in kwargs:
             unlock_app_interval_in_secs = kwargs['unlockAppIntervalInSecs']
-        if 'unlockOnAppForegroundEnabled' in kwargs:
+        if unlock_app_interval_in_secs is None:
+            raise TypeError("Missing 'unlock_app_interval_in_secs' argument")
+        if unlock_on_app_foreground_enabled is None and 'unlockOnAppForegroundEnabled' in kwargs:
             unlock_on_app_foreground_enabled = kwargs['unlockOnAppForegroundEnabled']
-        if 'unlockOnAppStartEnabled' in kwargs:
+        if unlock_on_app_foreground_enabled is None:
+            raise TypeError("Missing 'unlock_on_app_foreground_enabled' argument")
+        if unlock_on_app_start_enabled is None and 'unlockOnAppStartEnabled' in kwargs:
             unlock_on_app_start_enabled = kwargs['unlockOnAppStartEnabled']
+        if unlock_on_app_start_enabled is None:
+            raise TypeError("Missing 'unlock_on_app_start_enabled' argument")
 
         _setter("device_protection_policy", device_protection_policy)
         _setter("initial_lockout_period_in_secs", initial_lockout_period_in_secs)
@@ -18373,11 +18577,17 @@ class DomainsAuthenticationFactorSettingCompliancePolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: pulumi.Input[str],
-             name: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("action", action)
         _setter("name", name)
@@ -18487,13 +18697,15 @@ class DomainsAuthenticationFactorSettingEmailSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_link_enabled: pulumi.Input[bool],
+             email_link_enabled: Optional[pulumi.Input[bool]] = None,
              email_link_custom_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailLinkEnabled' in kwargs:
+        if email_link_enabled is None and 'emailLinkEnabled' in kwargs:
             email_link_enabled = kwargs['emailLinkEnabled']
-        if 'emailLinkCustomUrl' in kwargs:
+        if email_link_enabled is None:
+            raise TypeError("Missing 'email_link_enabled' argument")
+        if email_link_custom_url is None and 'emailLinkCustomUrl' in kwargs:
             email_link_custom_url = kwargs['emailLinkCustomUrl']
 
         _setter("email_link_enabled", email_link_enabled)
@@ -18626,23 +18838,33 @@ class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             max_endpoint_trust_duration_in_days: pulumi.Input[int],
-             max_enrolled_devices: pulumi.Input[int],
-             max_incorrect_attempts: pulumi.Input[int],
-             max_trusted_endpoints: pulumi.Input[int],
-             trusted_endpoints_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             max_endpoint_trust_duration_in_days: Optional[pulumi.Input[int]] = None,
+             max_enrolled_devices: Optional[pulumi.Input[int]] = None,
+             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
+             max_trusted_endpoints: Optional[pulumi.Input[int]] = None,
+             trusted_endpoints_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxEndpointTrustDurationInDays' in kwargs:
+        if max_endpoint_trust_duration_in_days is None and 'maxEndpointTrustDurationInDays' in kwargs:
             max_endpoint_trust_duration_in_days = kwargs['maxEndpointTrustDurationInDays']
-        if 'maxEnrolledDevices' in kwargs:
+        if max_endpoint_trust_duration_in_days is None:
+            raise TypeError("Missing 'max_endpoint_trust_duration_in_days' argument")
+        if max_enrolled_devices is None and 'maxEnrolledDevices' in kwargs:
             max_enrolled_devices = kwargs['maxEnrolledDevices']
-        if 'maxIncorrectAttempts' in kwargs:
+        if max_enrolled_devices is None:
+            raise TypeError("Missing 'max_enrolled_devices' argument")
+        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
             max_incorrect_attempts = kwargs['maxIncorrectAttempts']
-        if 'maxTrustedEndpoints' in kwargs:
+        if max_incorrect_attempts is None:
+            raise TypeError("Missing 'max_incorrect_attempts' argument")
+        if max_trusted_endpoints is None and 'maxTrustedEndpoints' in kwargs:
             max_trusted_endpoints = kwargs['maxTrustedEndpoints']
-        if 'trustedEndpointsEnabled' in kwargs:
+        if max_trusted_endpoints is None:
+            raise TypeError("Missing 'max_trusted_endpoints' argument")
+        if trusted_endpoints_enabled is None and 'trustedEndpointsEnabled' in kwargs:
             trusted_endpoints_enabled = kwargs['trustedEndpointsEnabled']
+        if trusted_endpoints_enabled is None:
+            raise TypeError("Missing 'trusted_endpoints_enabled' argument")
 
         _setter("max_endpoint_trust_duration_in_days", max_endpoint_trust_duration_in_days)
         _setter("max_enrolled_devices", max_enrolled_devices)
@@ -18840,13 +19062,15 @@ class DomainsAuthenticationFactorSettingIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -19045,13 +19269,15 @@ class DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -19211,11 +19437,11 @@ class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs:
              _setter: Callable[[Any, Any], None],
              mobile_number_enabled: Optional[pulumi.Input[bool]] = None,
              mobile_number_update_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mobileNumberEnabled' in kwargs:
+        if mobile_number_enabled is None and 'mobileNumberEnabled' in kwargs:
             mobile_number_enabled = kwargs['mobileNumberEnabled']
-        if 'mobileNumberUpdateEnabled' in kwargs:
+        if mobile_number_update_enabled is None and 'mobileNumberUpdateEnabled' in kwargs:
             mobile_number_update_enabled = kwargs['mobileNumberUpdateEnabled']
 
         if mobile_number_enabled is not None:
@@ -19347,11 +19573,11 @@ class DomainsAuthenticationFactorSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -19501,11 +19727,13 @@ class DomainsAuthenticationFactorSettingNotificationSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pull_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pull_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pullEnabled' in kwargs:
+        if pull_enabled is None and 'pullEnabled' in kwargs:
             pull_enabled = kwargs['pullEnabled']
+        if pull_enabled is None:
+            raise TypeError("Missing 'pull_enabled' argument")
 
         _setter("pull_enabled", pull_enabled)
 
@@ -19570,10 +19798,14 @@ class DomainsAuthenticationFactorSettingTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -19648,11 +19880,13 @@ class DomainsAuthenticationFactorSettingThirdPartyFactorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             duo_security: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             duo_security: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'duoSecurity' in kwargs:
+        if duo_security is None and 'duoSecurity' in kwargs:
             duo_security = kwargs['duoSecurity']
+        if duo_security is None:
+            raise TypeError("Missing 'duo_security' argument")
 
         _setter("duo_security", duo_security)
 
@@ -19833,38 +20067,58 @@ class DomainsAuthenticationFactorSettingTotpSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_otp_validity_duration_in_mins: pulumi.Input[int],
-             email_passcode_length: pulumi.Input[int],
-             hashing_algorithm: pulumi.Input[str],
-             jwt_validity_duration_in_secs: pulumi.Input[int],
-             key_refresh_interval_in_days: pulumi.Input[int],
-             passcode_length: pulumi.Input[int],
-             sms_otp_validity_duration_in_mins: pulumi.Input[int],
-             sms_passcode_length: pulumi.Input[int],
-             time_step_in_secs: pulumi.Input[int],
-             time_step_tolerance: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_otp_validity_duration_in_mins: Optional[pulumi.Input[int]] = None,
+             email_passcode_length: Optional[pulumi.Input[int]] = None,
+             hashing_algorithm: Optional[pulumi.Input[str]] = None,
+             jwt_validity_duration_in_secs: Optional[pulumi.Input[int]] = None,
+             key_refresh_interval_in_days: Optional[pulumi.Input[int]] = None,
+             passcode_length: Optional[pulumi.Input[int]] = None,
+             sms_otp_validity_duration_in_mins: Optional[pulumi.Input[int]] = None,
+             sms_passcode_length: Optional[pulumi.Input[int]] = None,
+             time_step_in_secs: Optional[pulumi.Input[int]] = None,
+             time_step_tolerance: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailOtpValidityDurationInMins' in kwargs:
+        if email_otp_validity_duration_in_mins is None and 'emailOtpValidityDurationInMins' in kwargs:
             email_otp_validity_duration_in_mins = kwargs['emailOtpValidityDurationInMins']
-        if 'emailPasscodeLength' in kwargs:
+        if email_otp_validity_duration_in_mins is None:
+            raise TypeError("Missing 'email_otp_validity_duration_in_mins' argument")
+        if email_passcode_length is None and 'emailPasscodeLength' in kwargs:
             email_passcode_length = kwargs['emailPasscodeLength']
-        if 'hashingAlgorithm' in kwargs:
+        if email_passcode_length is None:
+            raise TypeError("Missing 'email_passcode_length' argument")
+        if hashing_algorithm is None and 'hashingAlgorithm' in kwargs:
             hashing_algorithm = kwargs['hashingAlgorithm']
-        if 'jwtValidityDurationInSecs' in kwargs:
+        if hashing_algorithm is None:
+            raise TypeError("Missing 'hashing_algorithm' argument")
+        if jwt_validity_duration_in_secs is None and 'jwtValidityDurationInSecs' in kwargs:
             jwt_validity_duration_in_secs = kwargs['jwtValidityDurationInSecs']
-        if 'keyRefreshIntervalInDays' in kwargs:
+        if jwt_validity_duration_in_secs is None:
+            raise TypeError("Missing 'jwt_validity_duration_in_secs' argument")
+        if key_refresh_interval_in_days is None and 'keyRefreshIntervalInDays' in kwargs:
             key_refresh_interval_in_days = kwargs['keyRefreshIntervalInDays']
-        if 'passcodeLength' in kwargs:
+        if key_refresh_interval_in_days is None:
+            raise TypeError("Missing 'key_refresh_interval_in_days' argument")
+        if passcode_length is None and 'passcodeLength' in kwargs:
             passcode_length = kwargs['passcodeLength']
-        if 'smsOtpValidityDurationInMins' in kwargs:
+        if passcode_length is None:
+            raise TypeError("Missing 'passcode_length' argument")
+        if sms_otp_validity_duration_in_mins is None and 'smsOtpValidityDurationInMins' in kwargs:
             sms_otp_validity_duration_in_mins = kwargs['smsOtpValidityDurationInMins']
-        if 'smsPasscodeLength' in kwargs:
+        if sms_otp_validity_duration_in_mins is None:
+            raise TypeError("Missing 'sms_otp_validity_duration_in_mins' argument")
+        if sms_passcode_length is None and 'smsPasscodeLength' in kwargs:
             sms_passcode_length = kwargs['smsPasscodeLength']
-        if 'timeStepInSecs' in kwargs:
+        if sms_passcode_length is None:
+            raise TypeError("Missing 'sms_passcode_length' argument")
+        if time_step_in_secs is None and 'timeStepInSecs' in kwargs:
             time_step_in_secs = kwargs['timeStepInSecs']
-        if 'timeStepTolerance' in kwargs:
+        if time_step_in_secs is None:
+            raise TypeError("Missing 'time_step_in_secs' argument")
+        if time_step_tolerance is None and 'timeStepTolerance' in kwargs:
             time_step_tolerance = kwargs['timeStepTolerance']
+        if time_step_tolerance is None:
+            raise TypeError("Missing 'time_step_tolerance' argument")
 
         _setter("email_otp_validity_duration_in_mins", email_otp_validity_duration_in_mins)
         _setter("email_passcode_length", email_passcode_length)
@@ -20251,30 +20505,46 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attestation: pulumi.Input[str],
-             authenticator_selection_attachment: pulumi.Input[str],
-             authenticator_selection_require_resident_key: pulumi.Input[bool],
-             authenticator_selection_resident_key: pulumi.Input[str],
-             authenticator_selection_user_verification: pulumi.Input[str],
-             exclude_credentials: pulumi.Input[bool],
-             public_key_types: pulumi.Input[Sequence[pulumi.Input[str]]],
-             timeout: pulumi.Input[int],
+             attestation: Optional[pulumi.Input[str]] = None,
+             authenticator_selection_attachment: Optional[pulumi.Input[str]] = None,
+             authenticator_selection_require_resident_key: Optional[pulumi.Input[bool]] = None,
+             authenticator_selection_resident_key: Optional[pulumi.Input[str]] = None,
+             authenticator_selection_user_verification: Optional[pulumi.Input[str]] = None,
+             exclude_credentials: Optional[pulumi.Input[bool]] = None,
+             public_key_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             timeout: Optional[pulumi.Input[int]] = None,
              domain_validation_level: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticatorSelectionAttachment' in kwargs:
+        if attestation is None:
+            raise TypeError("Missing 'attestation' argument")
+        if authenticator_selection_attachment is None and 'authenticatorSelectionAttachment' in kwargs:
             authenticator_selection_attachment = kwargs['authenticatorSelectionAttachment']
-        if 'authenticatorSelectionRequireResidentKey' in kwargs:
+        if authenticator_selection_attachment is None:
+            raise TypeError("Missing 'authenticator_selection_attachment' argument")
+        if authenticator_selection_require_resident_key is None and 'authenticatorSelectionRequireResidentKey' in kwargs:
             authenticator_selection_require_resident_key = kwargs['authenticatorSelectionRequireResidentKey']
-        if 'authenticatorSelectionResidentKey' in kwargs:
+        if authenticator_selection_require_resident_key is None:
+            raise TypeError("Missing 'authenticator_selection_require_resident_key' argument")
+        if authenticator_selection_resident_key is None and 'authenticatorSelectionResidentKey' in kwargs:
             authenticator_selection_resident_key = kwargs['authenticatorSelectionResidentKey']
-        if 'authenticatorSelectionUserVerification' in kwargs:
+        if authenticator_selection_resident_key is None:
+            raise TypeError("Missing 'authenticator_selection_resident_key' argument")
+        if authenticator_selection_user_verification is None and 'authenticatorSelectionUserVerification' in kwargs:
             authenticator_selection_user_verification = kwargs['authenticatorSelectionUserVerification']
-        if 'excludeCredentials' in kwargs:
+        if authenticator_selection_user_verification is None:
+            raise TypeError("Missing 'authenticator_selection_user_verification' argument")
+        if exclude_credentials is None and 'excludeCredentials' in kwargs:
             exclude_credentials = kwargs['excludeCredentials']
-        if 'publicKeyTypes' in kwargs:
+        if exclude_credentials is None:
+            raise TypeError("Missing 'exclude_credentials' argument")
+        if public_key_types is None and 'publicKeyTypes' in kwargs:
             public_key_types = kwargs['publicKeyTypes']
-        if 'domainValidationLevel' in kwargs:
+        if public_key_types is None:
+            raise TypeError("Missing 'public_key_types' argument")
+        if timeout is None:
+            raise TypeError("Missing 'timeout' argument")
+        if domain_validation_level is None and 'domainValidationLevel' in kwargs:
             domain_validation_level = kwargs['domainValidationLevel']
 
         _setter("attestation", attestation)
@@ -20526,9 +20796,9 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
     def _configure(
              _setter: Callable[[Any, Any], None],
              duo_security_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'duoSecuritySettings' in kwargs:
+        if duo_security_settings is None and 'duoSecuritySettings' in kwargs:
             duo_security_settings = kwargs['duoSecuritySettings']
 
         if duo_security_settings is not None:
@@ -20639,22 +20909,30 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             api_hostname: pulumi.Input[str],
-             integration_key: pulumi.Input[str],
-             secret_key: pulumi.Input[str],
-             user_mapping_attribute: pulumi.Input[str],
+             api_hostname: Optional[pulumi.Input[str]] = None,
+             integration_key: Optional[pulumi.Input[str]] = None,
+             secret_key: Optional[pulumi.Input[str]] = None,
+             user_mapping_attribute: Optional[pulumi.Input[str]] = None,
              attestation_key: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apiHostname' in kwargs:
+        if api_hostname is None and 'apiHostname' in kwargs:
             api_hostname = kwargs['apiHostname']
-        if 'integrationKey' in kwargs:
+        if api_hostname is None:
+            raise TypeError("Missing 'api_hostname' argument")
+        if integration_key is None and 'integrationKey' in kwargs:
             integration_key = kwargs['integrationKey']
-        if 'secretKey' in kwargs:
+        if integration_key is None:
+            raise TypeError("Missing 'integration_key' argument")
+        if secret_key is None and 'secretKey' in kwargs:
             secret_key = kwargs['secretKey']
-        if 'userMappingAttribute' in kwargs:
+        if secret_key is None:
+            raise TypeError("Missing 'secret_key' argument")
+        if user_mapping_attribute is None and 'userMappingAttribute' in kwargs:
             user_mapping_attribute = kwargs['userMappingAttribute']
-        if 'attestationKey' in kwargs:
+        if user_mapping_attribute is None:
+            raise TypeError("Missing 'user_mapping_attribute' argument")
+        if attestation_key is None and 'attestationKey' in kwargs:
             attestation_key = kwargs['attestationKey']
 
         _setter("api_hostname", api_hostname)
@@ -20860,13 +21138,15 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -21073,13 +21353,15 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -21287,11 +21569,11 @@ class DomainsCustomerSecretKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -21457,10 +21739,14 @@ class DomainsCustomerSecretKeyTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -21540,9 +21826,9 @@ class DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfCha
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -21657,7 +21943,7 @@ class DomainsCustomerSecretKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -21889,22 +22175,24 @@ class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              admin_role: Optional[pulumi.Input[bool]] = None,
              app_id: Optional[pulumi.Input[str]] = None,
              app_name: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminRole' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
 
         _setter("value", value)
@@ -22150,11 +22438,11 @@ class DomainsDynamicResourceGroupGrantArgs:
              grant_mechanism: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
 
         if app_id is not None:
@@ -22338,13 +22626,15 @@ class DomainsDynamicResourceGroupIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -22545,13 +22835,15 @@ class DomainsDynamicResourceGroupIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -22756,11 +23048,11 @@ class DomainsDynamicResourceGroupMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -22924,10 +23216,14 @@ class DomainsDynamicResourceGroupTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -23035,13 +23331,13 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tagSlug' in kwargs:
+        if tag_slug is None and 'tagSlug' in kwargs:
             tag_slug = kwargs['tagSlug']
 
         if defined_tags is not None:
@@ -23174,11 +23470,17 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("namespace", namespace)
@@ -23293,10 +23595,14 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -23398,11 +23704,13 @@ class DomainsGrantAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -23514,10 +23822,12 @@ class DomainsGrantAppEntitlementCollectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -23606,14 +23916,18 @@ class DomainsGrantEntitlementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attribute_name: pulumi.Input[str],
-             attribute_value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attribute_name: Optional[pulumi.Input[str]] = None,
+             attribute_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeName' in kwargs:
+        if attribute_name is None and 'attributeName' in kwargs:
             attribute_name = kwargs['attributeName']
-        if 'attributeValue' in kwargs:
+        if attribute_name is None:
+            raise TypeError("Missing 'attribute_name' argument")
+        if attribute_value is None and 'attributeValue' in kwargs:
             attribute_value = kwargs['attributeValue']
+        if attribute_value is None:
+            raise TypeError("Missing 'attribute_value' argument")
 
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
@@ -23727,12 +24041,16 @@ class DomainsGrantGranteeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -23897,7 +24215,7 @@ class DomainsGrantGrantorArgs:
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -24074,13 +24392,15 @@ class DomainsGrantIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -24279,13 +24599,15 @@ class DomainsGrantIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -24489,11 +24811,11 @@ class DomainsGrantMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -24655,10 +24977,14 @@ class DomainsGrantTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -24790,13 +25116,15 @@ class DomainsGroupIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -25007,13 +25335,15 @@ class DomainsGroupIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -25266,19 +25596,23 @@ class DomainsGroupMemberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              date_added: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              membership_ocid: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dateAdded' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if date_added is None and 'dateAdded' in kwargs:
             date_added = kwargs['dateAdded']
-        if 'membershipOcid' in kwargs:
+        if membership_ocid is None and 'membershipOcid' in kwargs:
             membership_ocid = kwargs['membershipOcid']
 
         _setter("type", type)
@@ -25563,11 +25897,11 @@ class DomainsGroupMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -25732,10 +26066,14 @@ class DomainsGroupTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -25840,13 +26178,13 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tagSlug' in kwargs:
+        if tag_slug is None and 'tagSlug' in kwargs:
             tag_slug = kwargs['tagSlug']
 
         if defined_tags is not None:
@@ -25976,11 +26314,17 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagAr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("namespace", namespace)
@@ -26097,10 +26441,14 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -26226,15 +26574,15 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs:
              domain_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]] = None,
              instance_level_schema: Optional[pulumi.Input[str]] = None,
              instance_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainLevelSchema' in kwargs:
+        if domain_level_schema is None and 'domainLevelSchema' in kwargs:
             domain_level_schema = kwargs['domainLevelSchema']
-        if 'domainLevelSchemaNames' in kwargs:
+        if domain_level_schema_names is None and 'domainLevelSchemaNames' in kwargs:
             domain_level_schema_names = kwargs['domainLevelSchemaNames']
-        if 'instanceLevelSchema' in kwargs:
+        if instance_level_schema is None and 'instanceLevelSchema' in kwargs:
             instance_level_schema = kwargs['instanceLevelSchema']
-        if 'instanceLevelSchemaNames' in kwargs:
+        if instance_level_schema_names is None and 'instanceLevelSchemaNames' in kwargs:
             instance_level_schema_names = kwargs['instanceLevelSchemaNames']
 
         if domain_level_schema is not None:
@@ -26382,14 +26730,18 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLeve
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain_name: pulumi.Input[str],
-             schema_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain_name: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainName' in kwargs:
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
-        if 'schemaName' in kwargs:
+        if domain_name is None:
+            raise TypeError("Missing 'domain_name' argument")
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
 
         _setter("domain_name", domain_name)
         _setter("schema_name", schema_name)
@@ -26484,14 +26836,18 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             db_instance_id: pulumi.Input[str],
-             schema_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             db_instance_id: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbInstanceId' in kwargs:
+        if db_instance_id is None and 'dbInstanceId' in kwargs:
             db_instance_id = kwargs['dbInstanceId']
-        if 'schemaName' in kwargs:
+        if db_instance_id is None:
+            raise TypeError("Missing 'db_instance_id' argument")
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
 
         _setter("db_instance_id", db_instance_id)
         _setter("schema_name", schema_name)
@@ -26588,11 +26944,11 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs:
              _setter: Callable[[Any, Any], None],
              membership_rule: Optional[pulumi.Input[str]] = None,
              membership_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'membershipRule' in kwargs:
+        if membership_rule is None and 'membershipRule' in kwargs:
             membership_rule = kwargs['membershipRule']
-        if 'membershipType' in kwargs:
+        if membership_type is None and 'membershipType' in kwargs:
             membership_type = kwargs['membershipType']
 
         if membership_rule is not None:
@@ -26767,15 +27123,15 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs:
              owners: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]] = None,
              password_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]] = None,
              synced_from_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appRoles' in kwargs:
+        if app_roles is None and 'appRoles' in kwargs:
             app_roles = kwargs['appRoles']
-        if 'creationMechanism' in kwargs:
+        if creation_mechanism is None and 'creationMechanism' in kwargs:
             creation_mechanism = kwargs['creationMechanism']
-        if 'passwordPolicies' in kwargs:
+        if password_policies is None and 'passwordPolicies' in kwargs:
             password_policies = kwargs['passwordPolicies']
-        if 'syncedFromApps' in kwargs:
+        if synced_from_apps is None and 'syncedFromApps' in kwargs:
             synced_from_apps = kwargs['syncedFromApps']
 
         if app_roles is not None:
@@ -27077,7 +27433,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleAr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              admin_role: Optional[pulumi.Input[bool]] = None,
              app_id: Optional[pulumi.Input[str]] = None,
              app_name: Optional[pulumi.Input[str]] = None,
@@ -27085,15 +27441,17 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleAr
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminRole' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
 
         _setter("value", value)
@@ -27367,11 +27725,11 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs
              grant_mechanism: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
 
         if app_id is not None:
@@ -27547,12 +27905,16 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -27724,12 +28086,14 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordP
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if name is not None:
@@ -27902,12 +28266,16 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFro
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -28035,9 +28403,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              gid_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gidNumber' in kwargs:
+        if gid_number is None and 'gidNumber' in kwargs:
             gid_number = kwargs['gidNumber']
 
         if gid_number is not None:
@@ -28097,7 +28465,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArg
     def _configure(
              _setter: Callable[[Any, Any], None],
              requestable: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if requestable is not None:
@@ -28198,12 +28566,16 @@ class DomainsIdentityProviderCorrelationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -28381,13 +28753,15 @@ class DomainsIdentityProviderIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -28590,13 +28964,15 @@ class DomainsIdentityProviderIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -28771,11 +29147,13 @@ class DomainsIdentityProviderJitUserProvAssignedGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -28886,10 +29264,12 @@ class DomainsIdentityProviderJitUserProvAttributesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -28987,13 +29367,17 @@ class DomainsIdentityProviderJitUserProvGroupMappingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idp_group: pulumi.Input[str],
-             value: pulumi.Input[str],
+             idp_group: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idpGroup' in kwargs:
+        if idp_group is None and 'idpGroup' in kwargs:
             idp_group = kwargs['idpGroup']
+        if idp_group is None:
+            raise TypeError("Missing 'idp_group' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("idp_group", idp_group)
         _setter("value", value)
@@ -29146,11 +29530,11 @@ class DomainsIdentityProviderMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -29312,10 +29696,14 @@ class DomainsIdentityProviderTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -29616,11 +30004,11 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialId
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             account_linking_enabled: pulumi.Input[bool],
-             consumer_key: pulumi.Input[str],
-             consumer_secret: pulumi.Input[str],
-             registration_enabled: pulumi.Input[bool],
-             service_provider_name: pulumi.Input[str],
+             account_linking_enabled: Optional[pulumi.Input[bool]] = None,
+             consumer_key: Optional[pulumi.Input[str]] = None,
+             consumer_secret: Optional[pulumi.Input[str]] = None,
+             registration_enabled: Optional[pulumi.Input[bool]] = None,
+             service_provider_name: Optional[pulumi.Input[str]] = None,
              access_token_url: Optional[pulumi.Input[str]] = None,
              admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              authz_url: Optional[pulumi.Input[str]] = None,
@@ -29632,35 +30020,45 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialId
              redirect_url: Optional[pulumi.Input[str]] = None,
              scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountLinkingEnabled' in kwargs:
+        if account_linking_enabled is None and 'accountLinkingEnabled' in kwargs:
             account_linking_enabled = kwargs['accountLinkingEnabled']
-        if 'consumerKey' in kwargs:
+        if account_linking_enabled is None:
+            raise TypeError("Missing 'account_linking_enabled' argument")
+        if consumer_key is None and 'consumerKey' in kwargs:
             consumer_key = kwargs['consumerKey']
-        if 'consumerSecret' in kwargs:
+        if consumer_key is None:
+            raise TypeError("Missing 'consumer_key' argument")
+        if consumer_secret is None and 'consumerSecret' in kwargs:
             consumer_secret = kwargs['consumerSecret']
-        if 'registrationEnabled' in kwargs:
+        if consumer_secret is None:
+            raise TypeError("Missing 'consumer_secret' argument")
+        if registration_enabled is None and 'registrationEnabled' in kwargs:
             registration_enabled = kwargs['registrationEnabled']
-        if 'serviceProviderName' in kwargs:
+        if registration_enabled is None:
+            raise TypeError("Missing 'registration_enabled' argument")
+        if service_provider_name is None and 'serviceProviderName' in kwargs:
             service_provider_name = kwargs['serviceProviderName']
-        if 'accessTokenUrl' in kwargs:
+        if service_provider_name is None:
+            raise TypeError("Missing 'service_provider_name' argument")
+        if access_token_url is None and 'accessTokenUrl' in kwargs:
             access_token_url = kwargs['accessTokenUrl']
-        if 'adminScopes' in kwargs:
+        if admin_scopes is None and 'adminScopes' in kwargs:
             admin_scopes = kwargs['adminScopes']
-        if 'authzUrl' in kwargs:
+        if authz_url is None and 'authzUrl' in kwargs:
             authz_url = kwargs['authzUrl']
-        if 'clientCredentialInPayload' in kwargs:
+        if client_credential_in_payload is None and 'clientCredentialInPayload' in kwargs:
             client_credential_in_payload = kwargs['clientCredentialInPayload']
-        if 'clockSkewInSeconds' in kwargs:
+        if clock_skew_in_seconds is None and 'clockSkewInSeconds' in kwargs:
             clock_skew_in_seconds = kwargs['clockSkewInSeconds']
-        if 'discoveryUrl' in kwargs:
+        if discovery_url is None and 'discoveryUrl' in kwargs:
             discovery_url = kwargs['discoveryUrl']
-        if 'idAttribute' in kwargs:
+        if id_attribute is None and 'idAttribute' in kwargs:
             id_attribute = kwargs['idAttribute']
-        if 'profileUrl' in kwargs:
+        if profile_url is None and 'profileUrl' in kwargs:
             profile_url = kwargs['profileUrl']
-        if 'redirectUrl' in kwargs:
+        if redirect_url is None and 'redirectUrl' in kwargs:
             redirect_url = kwargs['redirectUrl']
 
         _setter("account_linking_enabled", account_linking_enabled)
@@ -30342,9 +30740,9 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cert_match_attribute: pulumi.Input[str],
-             signing_certificate_chains: pulumi.Input[Sequence[pulumi.Input[str]]],
-             user_match_attribute: pulumi.Input[str],
+             cert_match_attribute: Optional[pulumi.Input[str]] = None,
+             signing_certificate_chains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             user_match_attribute: Optional[pulumi.Input[str]] = None,
              crl_check_on_ocsp_failure_enabled: Optional[pulumi.Input[bool]] = None,
              crl_enabled: Optional[pulumi.Input[bool]] = None,
              crl_location: Optional[pulumi.Input[str]] = None,
@@ -30359,41 +30757,47 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
              ocsp_server_name: Optional[pulumi.Input[str]] = None,
              ocsp_trust_cert_chains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              other_cert_match_attribute: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certMatchAttribute' in kwargs:
+        if cert_match_attribute is None and 'certMatchAttribute' in kwargs:
             cert_match_attribute = kwargs['certMatchAttribute']
-        if 'signingCertificateChains' in kwargs:
+        if cert_match_attribute is None:
+            raise TypeError("Missing 'cert_match_attribute' argument")
+        if signing_certificate_chains is None and 'signingCertificateChains' in kwargs:
             signing_certificate_chains = kwargs['signingCertificateChains']
-        if 'userMatchAttribute' in kwargs:
+        if signing_certificate_chains is None:
+            raise TypeError("Missing 'signing_certificate_chains' argument")
+        if user_match_attribute is None and 'userMatchAttribute' in kwargs:
             user_match_attribute = kwargs['userMatchAttribute']
-        if 'crlCheckOnOcspFailureEnabled' in kwargs:
+        if user_match_attribute is None:
+            raise TypeError("Missing 'user_match_attribute' argument")
+        if crl_check_on_ocsp_failure_enabled is None and 'crlCheckOnOcspFailureEnabled' in kwargs:
             crl_check_on_ocsp_failure_enabled = kwargs['crlCheckOnOcspFailureEnabled']
-        if 'crlEnabled' in kwargs:
+        if crl_enabled is None and 'crlEnabled' in kwargs:
             crl_enabled = kwargs['crlEnabled']
-        if 'crlLocation' in kwargs:
+        if crl_location is None and 'crlLocation' in kwargs:
             crl_location = kwargs['crlLocation']
-        if 'crlReloadDuration' in kwargs:
+        if crl_reload_duration is None and 'crlReloadDuration' in kwargs:
             crl_reload_duration = kwargs['crlReloadDuration']
-        if 'ekuValidationEnabled' in kwargs:
+        if eku_validation_enabled is None and 'ekuValidationEnabled' in kwargs:
             eku_validation_enabled = kwargs['ekuValidationEnabled']
-        if 'ekuValues' in kwargs:
+        if eku_values is None and 'ekuValues' in kwargs:
             eku_values = kwargs['ekuValues']
-        if 'ocspAllowUnknownResponseStatus' in kwargs:
+        if ocsp_allow_unknown_response_status is None and 'ocspAllowUnknownResponseStatus' in kwargs:
             ocsp_allow_unknown_response_status = kwargs['ocspAllowUnknownResponseStatus']
-        if 'ocspEnableSignedResponse' in kwargs:
+        if ocsp_enable_signed_response is None and 'ocspEnableSignedResponse' in kwargs:
             ocsp_enable_signed_response = kwargs['ocspEnableSignedResponse']
-        if 'ocspEnabled' in kwargs:
+        if ocsp_enabled is None and 'ocspEnabled' in kwargs:
             ocsp_enabled = kwargs['ocspEnabled']
-        if 'ocspResponderUrl' in kwargs:
+        if ocsp_responder_url is None and 'ocspResponderUrl' in kwargs:
             ocsp_responder_url = kwargs['ocspResponderUrl']
-        if 'ocspRevalidateTime' in kwargs:
+        if ocsp_revalidate_time is None and 'ocspRevalidateTime' in kwargs:
             ocsp_revalidate_time = kwargs['ocspRevalidateTime']
-        if 'ocspServerName' in kwargs:
+        if ocsp_server_name is None and 'ocspServerName' in kwargs:
             ocsp_server_name = kwargs['ocspServerName']
-        if 'ocspTrustCertChains' in kwargs:
+        if ocsp_trust_cert_chains is None and 'ocspTrustCertChains' in kwargs:
             ocsp_trust_cert_chains = kwargs['ocspTrustCertChains']
-        if 'otherCertMatchAttribute' in kwargs:
+        if other_cert_match_attribute is None and 'otherCertMatchAttribute' in kwargs:
             other_cert_match_attribute = kwargs['otherCertMatchAttribute']
 
         _setter("cert_match_attribute", cert_match_attribute)
@@ -30912,13 +31316,15 @@ class DomainsIdentitySettingIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -31115,13 +31521,15 @@ class DomainsIdentitySettingIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -31324,11 +31732,11 @@ class DomainsIdentitySettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -31524,15 +31932,15 @@ class DomainsIdentitySettingMyProfileArgs:
              allow_end_users_to_link_their_support_account: Optional[pulumi.Input[bool]] = None,
              allow_end_users_to_manage_their_capabilities: Optional[pulumi.Input[bool]] = None,
              allow_end_users_to_update_their_security_settings: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowEndUsersToChangeTheirPassword' in kwargs:
+        if allow_end_users_to_change_their_password is None and 'allowEndUsersToChangeTheirPassword' in kwargs:
             allow_end_users_to_change_their_password = kwargs['allowEndUsersToChangeTheirPassword']
-        if 'allowEndUsersToLinkTheirSupportAccount' in kwargs:
+        if allow_end_users_to_link_their_support_account is None and 'allowEndUsersToLinkTheirSupportAccount' in kwargs:
             allow_end_users_to_link_their_support_account = kwargs['allowEndUsersToLinkTheirSupportAccount']
-        if 'allowEndUsersToManageTheirCapabilities' in kwargs:
+        if allow_end_users_to_manage_their_capabilities is None and 'allowEndUsersToManageTheirCapabilities' in kwargs:
             allow_end_users_to_manage_their_capabilities = kwargs['allowEndUsersToManageTheirCapabilities']
-        if 'allowEndUsersToUpdateTheirSecuritySettings' in kwargs:
+        if allow_end_users_to_update_their_security_settings is None and 'allowEndUsersToUpdateTheirSecuritySettings' in kwargs:
             allow_end_users_to_update_their_security_settings = kwargs['allowEndUsersToUpdateTheirSecuritySettings']
 
         if allow_end_users_to_change_their_password is not None:
@@ -31678,11 +32086,11 @@ class DomainsIdentitySettingPosixGidArgs:
              _setter: Callable[[Any, Any], None],
              manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
              manual_assignment_starts_from: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'manualAssignmentEndsAt' in kwargs:
+        if manual_assignment_ends_at is None and 'manualAssignmentEndsAt' in kwargs:
             manual_assignment_ends_at = kwargs['manualAssignmentEndsAt']
-        if 'manualAssignmentStartsFrom' in kwargs:
+        if manual_assignment_starts_from is None and 'manualAssignmentStartsFrom' in kwargs:
             manual_assignment_starts_from = kwargs['manualAssignmentStartsFrom']
 
         if manual_assignment_ends_at is not None:
@@ -31778,11 +32186,11 @@ class DomainsIdentitySettingPosixUidArgs:
              _setter: Callable[[Any, Any], None],
              manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
              manual_assignment_starts_from: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'manualAssignmentEndsAt' in kwargs:
+        if manual_assignment_ends_at is None and 'manualAssignmentEndsAt' in kwargs:
             manual_assignment_ends_at = kwargs['manualAssignmentEndsAt']
-        if 'manualAssignmentStartsFrom' in kwargs:
+        if manual_assignment_starts_from is None and 'manualAssignmentStartsFrom' in kwargs:
             manual_assignment_starts_from = kwargs['manualAssignmentStartsFrom']
 
         if manual_assignment_ends_at is not None:
@@ -31874,10 +32282,14 @@ class DomainsIdentitySettingTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -31962,11 +32374,13 @@ class DomainsIdentitySettingTokenArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              expires_after: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'expiresAfter' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if expires_after is None and 'expiresAfter' in kwargs:
             expires_after = kwargs['expiresAfter']
 
         _setter("type", type)
@@ -32092,13 +32506,15 @@ class DomainsKmsiSettingIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -32297,13 +32713,15 @@ class DomainsKmsiSettingIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -32507,11 +32925,11 @@ class DomainsKmsiSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -32673,10 +33091,14 @@ class DomainsKmsiSettingTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -32806,13 +33228,15 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -33019,13 +33443,15 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -33233,11 +33659,11 @@ class DomainsMyApiKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -33403,10 +33829,14 @@ class DomainsMyApiKeyTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -33545,7 +33975,7 @@ class DomainsMyApiKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -33754,13 +34184,15 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -33967,13 +34399,15 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -34181,11 +34615,11 @@ class DomainsMyAuthTokenMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -34351,10 +34785,14 @@ class DomainsMyAuthTokenTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -34493,7 +34931,7 @@ class DomainsMyAuthTokenUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -34702,13 +35140,15 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -34915,13 +35355,15 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -35129,11 +35571,11 @@ class DomainsMyCustomerSecretKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -35299,10 +35741,14 @@ class DomainsMyCustomerSecretKeyTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -35441,7 +35887,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -35650,13 +36096,15 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -35863,13 +36311,15 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -36077,11 +36527,11 @@ class DomainsMyOauth2clientCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -36239,10 +36689,14 @@ class DomainsMyOauth2clientCredentialScopeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             audience: pulumi.Input[str],
-             scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             audience: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if audience is None:
+            raise TypeError("Missing 'audience' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
 
         _setter("audience", audience)
         _setter("scope", scope)
@@ -36329,10 +36783,14 @@ class DomainsMyOauth2clientCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -36471,7 +36929,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -36676,13 +37134,15 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -36881,13 +37341,15 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -37091,11 +37553,11 @@ class DomainsMyRequestMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -37283,12 +37745,16 @@ class DomainsMyRequestRequestingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -37434,11 +37900,13 @@ class DomainsMyRequestRequestorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -37548,10 +38016,14 @@ class DomainsMyRequestTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -37677,13 +38149,15 @@ class DomainsMySmtpCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -37882,13 +38356,15 @@ class DomainsMySmtpCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -38092,11 +38568,11 @@ class DomainsMySmtpCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -38258,10 +38734,14 @@ class DomainsMySmtpCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -38392,7 +38872,7 @@ class DomainsMySmtpCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -38593,13 +39073,15 @@ class DomainsMySupportAccountIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -38798,13 +39280,15 @@ class DomainsMySupportAccountIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -39008,11 +39492,11 @@ class DomainsMySupportAccountMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -39174,10 +39658,14 @@ class DomainsMySupportAccountTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -39308,7 +39796,7 @@ class DomainsMySupportAccountUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -39513,13 +40001,15 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -39726,13 +40216,15 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -39940,11 +40432,11 @@ class DomainsMyUserDbCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -40110,10 +40602,14 @@ class DomainsMyUserDbCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -40247,13 +40743,15 @@ class DomainsMyUserDbCredentialUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -40460,13 +40958,15 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -40673,13 +41173,15 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -40887,11 +41389,11 @@ class DomainsOauth2clientCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -41049,10 +41551,14 @@ class DomainsOauth2clientCredentialScopeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             audience: pulumi.Input[str],
-             scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             audience: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if audience is None:
+            raise TypeError("Missing 'audience' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
 
         _setter("audience", audience)
         _setter("scope", scope)
@@ -41139,10 +41645,14 @@ class DomainsOauth2clientCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -41222,9 +41732,9 @@ class DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionse
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -41339,7 +41849,7 @@ class DomainsOauth2clientCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -41505,10 +42015,14 @@ class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -41608,11 +42122,13 @@ class DomainsPasswordPolicyGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -41763,13 +42279,15 @@ class DomainsPasswordPolicyIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -41968,13 +42486,15 @@ class DomainsPasswordPolicyIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -42178,11 +42698,11 @@ class DomainsPasswordPolicyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -42344,10 +42864,14 @@ class DomainsPasswordPolicyTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -42477,13 +43001,15 @@ class DomainsSecurityQuestionIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -42690,13 +43216,15 @@ class DomainsSecurityQuestionIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -42904,11 +43432,11 @@ class DomainsSecurityQuestionMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -43084,11 +43612,15 @@ class DomainsSecurityQuestionQuestionTextArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             locale: pulumi.Input[str],
-             value: pulumi.Input[str],
+             locale: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              default: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if locale is None:
+            raise TypeError("Missing 'locale' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("locale", locale)
         _setter("value", value)
@@ -43239,13 +43771,15 @@ class DomainsSecurityQuestionSettingIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -43444,13 +43978,15 @@ class DomainsSecurityQuestionSettingIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -43654,11 +44190,11 @@ class DomainsSecurityQuestionSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -43820,10 +44356,14 @@ class DomainsSecurityQuestionSettingTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -43910,10 +44450,14 @@ class DomainsSecurityQuestionTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -44039,13 +44583,15 @@ class DomainsSmtpCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -44244,13 +44790,15 @@ class DomainsSmtpCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -44454,11 +45002,11 @@ class DomainsSmtpCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -44620,10 +45168,14 @@ class DomainsSmtpCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -44699,9 +45251,9 @@ class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChange
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -44812,7 +45364,7 @@ class DomainsSmtpCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if display is not None:
@@ -45052,7 +45604,7 @@ class DomainsUserAddressArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              country: Optional[pulumi.Input[str]] = None,
              formatted: Optional[pulumi.Input[str]] = None,
              locality: Optional[pulumi.Input[str]] = None,
@@ -45060,11 +45612,13 @@ class DomainsUserAddressArgs:
              primary: Optional[pulumi.Input[bool]] = None,
              region: Optional[pulumi.Input[str]] = None,
              street_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'postalCode' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if postal_code is None and 'postalCode' in kwargs:
             postal_code = kwargs['postalCode']
-        if 'streetAddress' in kwargs:
+        if street_address is None and 'streetAddress' in kwargs:
             street_address = kwargs['streetAddress']
 
         _setter("type", type)
@@ -45340,13 +45894,15 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -45553,13 +46109,15 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -45767,11 +46325,11 @@ class DomainsUserDbCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -45937,10 +46495,14 @@ class DomainsUserDbCredentialTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -46020,9 +46582,9 @@ class DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChan
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -46132,13 +46694,15 @@ class DomainsUserDbCredentialUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -46358,15 +46922,19 @@ class DomainsUserEmailArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              pending_verification_data: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
              secondary: Optional[pulumi.Input[bool]] = None,
              verified: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'pendingVerificationData' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if pending_verification_data is None and 'pendingVerificationData' in kwargs:
             pending_verification_data = kwargs['pendingVerificationData']
 
         _setter("type", type)
@@ -46580,12 +47148,16 @@ class DomainsUserEntitlementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -46818,7 +47390,7 @@ class DomainsUserGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              date_added: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              external_id: Optional[pulumi.Input[str]] = None,
@@ -46827,15 +47399,17 @@ class DomainsUserGroupArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dateAdded' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if date_added is None and 'dateAdded' in kwargs:
             date_added = kwargs['dateAdded']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'membershipOcid' in kwargs:
+        if membership_ocid is None and 'membershipOcid' in kwargs:
             membership_ocid = kwargs['membershipOcid']
-        if 'nonUniqueDisplay' in kwargs:
+        if non_unique_display is None and 'nonUniqueDisplay' in kwargs:
             non_unique_display = kwargs['nonUniqueDisplay']
 
         _setter("value", value)
@@ -47142,13 +47716,15 @@ class DomainsUserIdcsCreatedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -47355,13 +47931,15 @@ class DomainsUserIdcsLastModifiedByArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -47551,12 +48129,16 @@ class DomainsUserImArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -47735,11 +48317,11 @@ class DomainsUserMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastModified' in kwargs:
+        if last_modified is None and 'lastModified' in kwargs:
             last_modified = kwargs['lastModified']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if created is not None:
@@ -47956,23 +48538,25 @@ class DomainsUserNameArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             family_name: pulumi.Input[str],
+             family_name: Optional[pulumi.Input[str]] = None,
              formatted: Optional[pulumi.Input[str]] = None,
              given_name: Optional[pulumi.Input[str]] = None,
              honorific_prefix: Optional[pulumi.Input[str]] = None,
              honorific_suffix: Optional[pulumi.Input[str]] = None,
              middle_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'familyName' in kwargs:
+        if family_name is None and 'familyName' in kwargs:
             family_name = kwargs['familyName']
-        if 'givenName' in kwargs:
+        if family_name is None:
+            raise TypeError("Missing 'family_name' argument")
+        if given_name is None and 'givenName' in kwargs:
             given_name = kwargs['givenName']
-        if 'honorificPrefix' in kwargs:
+        if honorific_prefix is None and 'honorificPrefix' in kwargs:
             honorific_prefix = kwargs['honorificPrefix']
-        if 'honorificSuffix' in kwargs:
+        if honorific_suffix is None and 'honorificSuffix' in kwargs:
             honorific_suffix = kwargs['honorificSuffix']
-        if 'middleName' in kwargs:
+        if middle_name is None and 'middleName' in kwargs:
             middle_name = kwargs['middleName']
 
         _setter("family_name", family_name)
@@ -48199,13 +48783,17 @@ class DomainsUserPhoneNumberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
              verified: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -48390,12 +48978,16 @@ class DomainsUserPhotoArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -48556,12 +49148,16 @@ class DomainsUserRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -48701,10 +49297,14 @@ class DomainsUserTagArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -48869,11 +49469,11 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs:
              employee_number: Optional[pulumi.Input[str]] = None,
              manager: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']] = None,
              organization: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'costCenter' in kwargs:
+        if cost_center is None and 'costCenter' in kwargs:
             cost_center = kwargs['costCenter']
-        if 'employeeNumber' in kwargs:
+        if employee_number is None and 'employeeNumber' in kwargs:
             employee_number = kwargs['employeeNumber']
 
         if cost_center is not None:
@@ -49093,9 +49693,9 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -49227,13 +49827,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tagSlug' in kwargs:
+        if tag_slug is None and 'tagSlug' in kwargs:
             tag_slug = kwargs['tagSlug']
 
         if defined_tags is not None:
@@ -49365,11 +49965,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArg
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("namespace", namespace)
@@ -49490,10 +50096,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagAr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -49590,11 +50200,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs:
              _setter: Callable[[Any, Any], None],
              risk_level: Optional[pulumi.Input[str]] = None,
              risk_scores: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'riskLevel' in kwargs:
+        if risk_level is None and 'riskLevel' in kwargs:
             risk_level = kwargs['riskLevel']
-        if 'riskScores' in kwargs:
+        if risk_scores is None and 'riskScores' in kwargs:
             risk_scores = kwargs['riskScores']
 
         if risk_level is not None:
@@ -49763,19 +50373,27 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScor
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             last_update_timestamp: pulumi.Input[str],
-             risk_level: pulumi.Input[str],
-             score: pulumi.Input[int],
-             value: pulumi.Input[str],
+             last_update_timestamp: Optional[pulumi.Input[str]] = None,
+             risk_level: Optional[pulumi.Input[str]] = None,
+             score: Optional[pulumi.Input[int]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastUpdateTimestamp' in kwargs:
+        if last_update_timestamp is None and 'lastUpdateTimestamp' in kwargs:
             last_update_timestamp = kwargs['lastUpdateTimestamp']
-        if 'riskLevel' in kwargs:
+        if last_update_timestamp is None:
+            raise TypeError("Missing 'last_update_timestamp' argument")
+        if risk_level is None and 'riskLevel' in kwargs:
             risk_level = kwargs['riskLevel']
+        if risk_level is None:
+            raise TypeError("Missing 'risk_level' argument")
+        if score is None:
+            raise TypeError("Missing 'score' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("last_update_timestamp", last_update_timestamp)
         _setter("risk_level", risk_level)
@@ -50093,23 +50711,23 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
              can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'canUseApiKeys' in kwargs:
+        if can_use_api_keys is None and 'canUseApiKeys' in kwargs:
             can_use_api_keys = kwargs['canUseApiKeys']
-        if 'canUseAuthTokens' in kwargs:
+        if can_use_auth_tokens is None and 'canUseAuthTokens' in kwargs:
             can_use_auth_tokens = kwargs['canUseAuthTokens']
-        if 'canUseConsole' in kwargs:
+        if can_use_console is None and 'canUseConsole' in kwargs:
             can_use_console = kwargs['canUseConsole']
-        if 'canUseConsolePassword' in kwargs:
+        if can_use_console_password is None and 'canUseConsolePassword' in kwargs:
             can_use_console_password = kwargs['canUseConsolePassword']
-        if 'canUseCustomerSecretKeys' in kwargs:
+        if can_use_customer_secret_keys is None and 'canUseCustomerSecretKeys' in kwargs:
             can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
-        if 'canUseDbCredentials' in kwargs:
+        if can_use_db_credentials is None and 'canUseDbCredentials' in kwargs:
             can_use_db_credentials = kwargs['canUseDbCredentials']
-        if 'canUseOauth2clientCredentials' in kwargs:
+        if can_use_oauth2client_credentials is None and 'canUseOauth2clientCredentials' in kwargs:
             can_use_oauth2client_credentials = kwargs['canUseOauth2clientCredentials']
-        if 'canUseSmtpCredentials' in kwargs:
+        if can_use_smtp_credentials is None and 'canUseSmtpCredentials' in kwargs:
             can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
 
         if can_use_api_keys is not None:
@@ -50364,11 +50982,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArg
              _setter: Callable[[Any, Any], None],
              db_login_attempts: Optional[pulumi.Input[int]] = None,
              db_user_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbLoginAttempts' in kwargs:
+        if db_login_attempts is None and 'dbLoginAttempts' in kwargs:
             db_login_attempts = kwargs['dbLoginAttempts']
-        if 'dbUserName' in kwargs:
+        if db_user_name is None and 'dbUserName' in kwargs:
             db_user_name = kwargs['dbUserName']
 
         if db_login_attempts is not None:
@@ -50515,17 +51133,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs:
              instance_level_schema: Optional[pulumi.Input[str]] = None,
              is_db_user: Optional[pulumi.Input[bool]] = None,
              password_verifiers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbGlobalRoles' in kwargs:
+        if db_global_roles is None and 'dbGlobalRoles' in kwargs:
             db_global_roles = kwargs['dbGlobalRoles']
-        if 'domainLevelSchema' in kwargs:
+        if domain_level_schema is None and 'domainLevelSchema' in kwargs:
             domain_level_schema = kwargs['domainLevelSchema']
-        if 'instanceLevelSchema' in kwargs:
+        if instance_level_schema is None and 'instanceLevelSchema' in kwargs:
             instance_level_schema = kwargs['instanceLevelSchema']
-        if 'isDbUser' in kwargs:
+        if is_db_user is None and 'isDbUser' in kwargs:
             is_db_user = kwargs['isDbUser']
-        if 'passwordVerifiers' in kwargs:
+        if password_verifiers is None and 'passwordVerifiers' in kwargs:
             password_verifiers = kwargs['passwordVerifiers']
 
         if db_global_roles is not None:
@@ -50699,10 +51317,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -50778,9 +51400,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs
     def _configure(
              _setter: Callable[[Any, Any], None],
              realm_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'realmUsers' in kwargs:
+        if realm_users is None and 'realmUsers' in kwargs:
             realm_users = kwargs['realmUsers']
 
         if realm_users is not None:
@@ -50874,15 +51496,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              principal_name: Optional[pulumi.Input[str]] = None,
              realm_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'principalName' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if principal_name is None and 'principalName' in kwargs:
             principal_name = kwargs['principalName']
-        if 'realmName' in kwargs:
+        if realm_name is None and 'realmName' in kwargs:
             realm_name = kwargs['realmName']
 
         _setter("value", value)
@@ -51169,27 +51793,27 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
              preferred_device: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']] = None,
              preferred_third_party_vendor: Optional[pulumi.Input[str]] = None,
              trusted_user_agents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bypassCodes' in kwargs:
+        if bypass_codes is None and 'bypassCodes' in kwargs:
             bypass_codes = kwargs['bypassCodes']
-        if 'loginAttempts' in kwargs:
+        if login_attempts is None and 'loginAttempts' in kwargs:
             login_attempts = kwargs['loginAttempts']
-        if 'mfaEnabledOn' in kwargs:
+        if mfa_enabled_on is None and 'mfaEnabledOn' in kwargs:
             mfa_enabled_on = kwargs['mfaEnabledOn']
-        if 'mfaIgnoredApps' in kwargs:
+        if mfa_ignored_apps is None and 'mfaIgnoredApps' in kwargs:
             mfa_ignored_apps = kwargs['mfaIgnoredApps']
-        if 'mfaStatus' in kwargs:
+        if mfa_status is None and 'mfaStatus' in kwargs:
             mfa_status = kwargs['mfaStatus']
-        if 'preferredAuthenticationFactor' in kwargs:
+        if preferred_authentication_factor is None and 'preferredAuthenticationFactor' in kwargs:
             preferred_authentication_factor = kwargs['preferredAuthenticationFactor']
-        if 'preferredAuthenticationMethod' in kwargs:
+        if preferred_authentication_method is None and 'preferredAuthenticationMethod' in kwargs:
             preferred_authentication_method = kwargs['preferredAuthenticationMethod']
-        if 'preferredDevice' in kwargs:
+        if preferred_device is None and 'preferredDevice' in kwargs:
             preferred_device = kwargs['preferredDevice']
-        if 'preferredThirdPartyVendor' in kwargs:
+        if preferred_third_party_vendor is None and 'preferredThirdPartyVendor' in kwargs:
             preferred_third_party_vendor = kwargs['preferredThirdPartyVendor']
-        if 'trustedUserAgents' in kwargs:
+        if trusted_user_agents is None and 'trustedUserAgents' in kwargs:
             trusted_user_agents = kwargs['trustedUserAgents']
 
         if bypass_codes is not None:
@@ -51518,10 +52142,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArg
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -51713,7 +52339,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              authentication_method: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              factor_status: Optional[pulumi.Input[str]] = None,
@@ -51722,17 +52348,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
              ref: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              third_party_vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticationMethod' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if authentication_method is None and 'authenticationMethod' in kwargs:
             authentication_method = kwargs['authenticationMethod']
-        if 'factorStatus' in kwargs:
+        if factor_status is None and 'factorStatus' in kwargs:
             factor_status = kwargs['factorStatus']
-        if 'factorType' in kwargs:
+        if factor_type is None and 'factorType' in kwargs:
             factor_type = kwargs['factorType']
-        if 'lastSyncTime' in kwargs:
+        if last_sync_time is None and 'lastSyncTime' in kwargs:
             last_sync_time = kwargs['lastSyncTime']
-        if 'thirdPartyVendorName' in kwargs:
+        if third_party_vendor_name is None and 'thirdPartyVendorName' in kwargs:
             third_party_vendor_name = kwargs['thirdPartyVendorName']
 
         _setter("value", value)
@@ -52014,11 +52642,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -52149,11 +52779,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAg
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -52357,21 +52989,21 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArg
              last_successful_set_date: Optional[pulumi.Input[str]] = None,
              last_successful_validation_date: Optional[pulumi.Input[str]] = None,
              must_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicablePasswordPolicy' in kwargs:
+        if applicable_password_policy is None and 'applicablePasswordPolicy' in kwargs:
             applicable_password_policy = kwargs['applicablePasswordPolicy']
-        if 'cantChange' in kwargs:
+        if cant_change is None and 'cantChange' in kwargs:
             cant_change = kwargs['cantChange']
-        if 'cantExpire' in kwargs:
+        if cant_expire is None and 'cantExpire' in kwargs:
             cant_expire = kwargs['cantExpire']
-        if 'lastFailedValidationDate' in kwargs:
+        if last_failed_validation_date is None and 'lastFailedValidationDate' in kwargs:
             last_failed_validation_date = kwargs['lastFailedValidationDate']
-        if 'lastSuccessfulSetDate' in kwargs:
+        if last_successful_set_date is None and 'lastSuccessfulSetDate' in kwargs:
             last_successful_set_date = kwargs['lastSuccessfulSetDate']
-        if 'lastSuccessfulValidationDate' in kwargs:
+        if last_successful_validation_date is None and 'lastSuccessfulValidationDate' in kwargs:
             last_successful_validation_date = kwargs['lastSuccessfulValidationDate']
-        if 'mustChange' in kwargs:
+        if must_change is None and 'mustChange' in kwargs:
             must_change = kwargs['mustChange']
 
         if applicable_password_policy is not None:
@@ -52638,12 +53270,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -52805,13 +53439,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs
              factor_identifier: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']] = None,
              factor_method: Optional[pulumi.Input[str]] = None,
              factor_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'factorIdentifier' in kwargs:
+        if factor_identifier is None and 'factorIdentifier' in kwargs:
             factor_identifier = kwargs['factorIdentifier']
-        if 'factorMethod' in kwargs:
+        if factor_method is None and 'factorMethod' in kwargs:
             factor_method = kwargs['factorMethod']
-        if 'factorType' in kwargs:
+        if factor_type is None and 'factorType' in kwargs:
             factor_type = kwargs['factorType']
 
         if factor_identifier is not None:
@@ -52947,11 +53581,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFact
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -53105,15 +53741,15 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs:
              home_directory: Optional[pulumi.Input[str]] = None,
              login_shell: Optional[pulumi.Input[str]] = None,
              uid_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gidNumber' in kwargs:
+        if gid_number is None and 'gidNumber' in kwargs:
             gid_number = kwargs['gidNumber']
-        if 'homeDirectory' in kwargs:
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'loginShell' in kwargs:
+        if login_shell is None and 'loginShell' in kwargs:
             login_shell = kwargs['loginShell']
-        if 'uidNumber' in kwargs:
+        if uid_number is None and 'uidNumber' in kwargs:
             uid_number = kwargs['uidNumber']
 
         if gecos is not None:
@@ -53257,9 +53893,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     def _configure(
              _setter: Callable[[Any, Any], None],
              sec_questions: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secQuestions' in kwargs:
+        if sec_questions is None and 'secQuestions' in kwargs:
             sec_questions = kwargs['secQuestions']
 
         if sec_questions is not None:
@@ -53355,13 +53991,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer: pulumi.Input[str],
-             value: pulumi.Input[str],
+             answer: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              hint_text: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hintText' in kwargs:
+        if answer is None:
+            raise TypeError("Missing 'answer' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if hint_text is None and 'hintText' in kwargs:
             hint_text = kwargs['hintText']
 
         _setter("answer", answer)
@@ -53491,9 +54131,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowSelfChange' in kwargs:
+        if allow_self_change is None and 'allowSelfChange' in kwargs:
             allow_self_change = kwargs['allowSelfChange']
 
         if allow_self_change is not None:
@@ -53573,16 +54213,18 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             self_registration_profile: pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs'],
+             self_registration_profile: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs']] = None,
              consent_granted: Optional[pulumi.Input[bool]] = None,
              user_token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'selfRegistrationProfile' in kwargs:
+        if self_registration_profile is None and 'selfRegistrationProfile' in kwargs:
             self_registration_profile = kwargs['selfRegistrationProfile']
-        if 'consentGranted' in kwargs:
+        if self_registration_profile is None:
+            raise TypeError("Missing 'self_registration_profile' argument")
+        if consent_granted is None and 'consentGranted' in kwargs:
             consent_granted = kwargs['consentGranted']
-        if 'userToken' in kwargs:
+        if user_token is None and 'userToken' in kwargs:
             user_token = kwargs['userToken']
 
         _setter("self_registration_profile", self_registration_profile)
@@ -53711,11 +54353,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -53817,9 +54461,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              sff_auth_keys: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sffAuthKeys' in kwargs:
+        if sff_auth_keys is None and 'sffAuthKeys' in kwargs:
             sff_auth_keys = kwargs['sffAuthKeys']
 
         if sff_auth_keys is not None:
@@ -53873,9 +54517,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArg
     def _configure(
              _setter: Callable[[Any, Any], None],
              social_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'socialAccounts' in kwargs:
+        if social_accounts is None and 'socialAccounts' in kwargs:
             social_accounts = kwargs['socialAccounts']
 
         if social_accounts is not None:
@@ -53958,11 +54602,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSoc
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -54067,9 +54713,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              terms_of_use_consents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'termsOfUseConsents' in kwargs:
+        if terms_of_use_consents is None and 'termsOfUseConsents' in kwargs:
             terms_of_use_consents = kwargs['termsOfUseConsents']
 
         if terms_of_use_consents is not None:
@@ -54141,10 +54787,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsO
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if ref is not None:
@@ -54306,19 +54954,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              db_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]] = None,
              o_auth2client_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]] = None,
              smtp_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apiKeys' in kwargs:
+        if api_keys is None and 'apiKeys' in kwargs:
             api_keys = kwargs['apiKeys']
-        if 'authTokens' in kwargs:
+        if auth_tokens is None and 'authTokens' in kwargs:
             auth_tokens = kwargs['authTokens']
-        if 'customerSecretKeys' in kwargs:
+        if customer_secret_keys is None and 'customerSecretKeys' in kwargs:
             customer_secret_keys = kwargs['customerSecretKeys']
-        if 'dbCredentials' in kwargs:
+        if db_credentials is None and 'dbCredentials' in kwargs:
             db_credentials = kwargs['dbCredentials']
-        if 'oAuth2clientCredentials' in kwargs:
+        if o_auth2client_credentials is None and 'oAuth2clientCredentials' in kwargs:
             o_auth2client_credentials = kwargs['oAuth2clientCredentials']
-        if 'smtpCredentials' in kwargs:
+        if smtp_credentials is None and 'smtpCredentials' in kwargs:
             smtp_credentials = kwargs['smtpCredentials']
 
         if api_keys is not None:
@@ -54554,7 +55202,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -54722,7 +55370,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ocid is not None:
@@ -54864,7 +55512,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserC
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ocid is not None:
@@ -55006,7 +55654,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserD
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ocid is not None:
@@ -55148,7 +55796,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserO
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ocid is not None:
@@ -55290,7 +55938,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserS
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ocid is not None:
@@ -55523,23 +56171,23 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
              recovery_attempts: Optional[pulumi.Input[int]] = None,
              recovery_enroll_attempts: Optional[pulumi.Input[int]] = None,
              recovery_locked: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lastFailedLoginDate' in kwargs:
+        if last_failed_login_date is None and 'lastFailedLoginDate' in kwargs:
             last_failed_login_date = kwargs['lastFailedLoginDate']
-        if 'lastSuccessfulLoginDate' in kwargs:
+        if last_successful_login_date is None and 'lastSuccessfulLoginDate' in kwargs:
             last_successful_login_date = kwargs['lastSuccessfulLoginDate']
-        if 'loginAttempts' in kwargs:
+        if login_attempts is None and 'loginAttempts' in kwargs:
             login_attempts = kwargs['loginAttempts']
-        if 'maxConcurrentSessions' in kwargs:
+        if max_concurrent_sessions is None and 'maxConcurrentSessions' in kwargs:
             max_concurrent_sessions = kwargs['maxConcurrentSessions']
-        if 'previousSuccessfulLoginDate' in kwargs:
+        if previous_successful_login_date is None and 'previousSuccessfulLoginDate' in kwargs:
             previous_successful_login_date = kwargs['previousSuccessfulLoginDate']
-        if 'recoveryAttempts' in kwargs:
+        if recovery_attempts is None and 'recoveryAttempts' in kwargs:
             recovery_attempts = kwargs['recoveryAttempts']
-        if 'recoveryEnrollAttempts' in kwargs:
+        if recovery_enroll_attempts is None and 'recoveryEnrollAttempts' in kwargs:
             recovery_enroll_attempts = kwargs['recoveryEnrollAttempts']
-        if 'recoveryLocked' in kwargs:
+        if recovery_locked is None and 'recoveryLocked' in kwargs:
             recovery_locked = kwargs['recoveryLocked']
 
         if last_failed_login_date is not None:
@@ -55848,9 +56496,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
              lock_date: Optional[pulumi.Input[str]] = None,
              on: Optional[pulumi.Input[bool]] = None,
              reason: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lockDate' in kwargs:
+        if lock_date is None and 'lockDate' in kwargs:
             lock_date = kwargs['lockDate']
 
         if expired is not None:
@@ -56003,9 +56651,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
              _setter: Callable[[Any, Any], None],
              lock_date: Optional[pulumi.Input[str]] = None,
              on: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lockDate' in kwargs:
+        if lock_date is None and 'lockDate' in kwargs:
             lock_date = kwargs['lockDate']
 
         if lock_date is not None:
@@ -56440,49 +57088,49 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
              user_flow_controlled_by_external_client: Optional[pulumi.Input[bool]] = None,
              user_provider: Optional[pulumi.Input[str]] = None,
              user_tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountRecoveryRequired' in kwargs:
+        if account_recovery_required is None and 'accountRecoveryRequired' in kwargs:
             account_recovery_required = kwargs['accountRecoveryRequired']
-        if 'appRoles' in kwargs:
+        if app_roles is None and 'appRoles' in kwargs:
             app_roles = kwargs['appRoles']
-        if 'applicableAuthenticationTargetApps' in kwargs:
+        if applicable_authentication_target_apps is None and 'applicableAuthenticationTargetApps' in kwargs:
             applicable_authentication_target_apps = kwargs['applicableAuthenticationTargetApps']
-        if 'bypassNotification' in kwargs:
+        if bypass_notification is None and 'bypassNotification' in kwargs:
             bypass_notification = kwargs['bypassNotification']
-        if 'creationMechanism' in kwargs:
+        if creation_mechanism is None and 'creationMechanism' in kwargs:
             creation_mechanism = kwargs['creationMechanism']
-        if 'delegatedAuthenticationTargetApp' in kwargs:
+        if delegated_authentication_target_app is None and 'delegatedAuthenticationTargetApp' in kwargs:
             delegated_authentication_target_app = kwargs['delegatedAuthenticationTargetApp']
-        if 'doNotShowGettingStarted' in kwargs:
+        if do_not_show_getting_started is None and 'doNotShowGettingStarted' in kwargs:
             do_not_show_getting_started = kwargs['doNotShowGettingStarted']
-        if 'groupMembershipLastModified' in kwargs:
+        if group_membership_last_modified is None and 'groupMembershipLastModified' in kwargs:
             group_membership_last_modified = kwargs['groupMembershipLastModified']
-        if 'idcsAppRolesLimitedToGroups' in kwargs:
+        if idcs_app_roles_limited_to_groups is None and 'idcsAppRolesLimitedToGroups' in kwargs:
             idcs_app_roles_limited_to_groups = kwargs['idcsAppRolesLimitedToGroups']
-        if 'isAccountRecoveryEnrolled' in kwargs:
+        if is_account_recovery_enrolled is None and 'isAccountRecoveryEnrolled' in kwargs:
             is_account_recovery_enrolled = kwargs['isAccountRecoveryEnrolled']
-        if 'isAuthenticationDelegated' in kwargs:
+        if is_authentication_delegated is None and 'isAuthenticationDelegated' in kwargs:
             is_authentication_delegated = kwargs['isAuthenticationDelegated']
-        if 'isFederatedUser' in kwargs:
+        if is_federated_user is None and 'isFederatedUser' in kwargs:
             is_federated_user = kwargs['isFederatedUser']
-        if 'isGroupMembershipNormalized' in kwargs:
+        if is_group_membership_normalized is None and 'isGroupMembershipNormalized' in kwargs:
             is_group_membership_normalized = kwargs['isGroupMembershipNormalized']
-        if 'isGroupMembershipSyncedToUsersGroups' in kwargs:
+        if is_group_membership_synced_to_users_groups is None and 'isGroupMembershipSyncedToUsersGroups' in kwargs:
             is_group_membership_synced_to_users_groups = kwargs['isGroupMembershipSyncedToUsersGroups']
-        if 'notificationEmailTemplateId' in kwargs:
+        if notification_email_template_id is None and 'notificationEmailTemplateId' in kwargs:
             notification_email_template_id = kwargs['notificationEmailTemplateId']
-        if 'preferredUiLandingPage' in kwargs:
+        if preferred_ui_landing_page is None and 'preferredUiLandingPage' in kwargs:
             preferred_ui_landing_page = kwargs['preferredUiLandingPage']
-        if 'supportAccounts' in kwargs:
+        if support_accounts is None and 'supportAccounts' in kwargs:
             support_accounts = kwargs['supportAccounts']
-        if 'syncedFromApp' in kwargs:
+        if synced_from_app is None and 'syncedFromApp' in kwargs:
             synced_from_app = kwargs['syncedFromApp']
-        if 'userFlowControlledByExternalClient' in kwargs:
+        if user_flow_controlled_by_external_client is None and 'userFlowControlledByExternalClient' in kwargs:
             user_flow_controlled_by_external_client = kwargs['userFlowControlledByExternalClient']
-        if 'userProvider' in kwargs:
+        if user_provider is None and 'userProvider' in kwargs:
             user_provider = kwargs['userProvider']
-        if 'userTokens' in kwargs:
+        if user_tokens is None and 'userTokens' in kwargs:
             user_tokens = kwargs['userTokens']
 
         if account_recovery_required is not None:
@@ -57181,9 +57829,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs:
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
 
         if active is not None:
@@ -57429,7 +58077,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              admin_role: Optional[pulumi.Input[bool]] = None,
              app_id: Optional[pulumi.Input[str]] = None,
              app_name: Optional[pulumi.Input[str]] = None,
@@ -57437,15 +58085,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminRole' in kwargs:
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
 
         _setter("value", value)
@@ -57720,14 +58370,16 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              target_request_timeout: Optional[pulumi.Input[int]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetRequestTimeout' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if target_request_timeout is None and 'targetRequestTimeout' in kwargs:
             target_request_timeout = kwargs['targetRequestTimeout']
 
         _setter("type", type)
@@ -57920,12 +58572,16 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAut
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -58115,13 +58771,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs:
              grantor_id: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appId' in kwargs:
+        if app_id is None and 'appId' in kwargs:
             app_id = kwargs['appId']
-        if 'grantMechanism' in kwargs:
+        if grant_mechanism is None and 'grantMechanism' in kwargs:
             grant_mechanism = kwargs['grantMechanism']
-        if 'grantorId' in kwargs:
+        if grantor_id is None and 'grantorId' in kwargs:
             grantor_id = kwargs['grantorId']
 
         if app_id is not None:
@@ -58338,15 +58994,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_app_role_id: pulumi.Input[str],
-             value: pulumi.Input[str],
+             idcs_app_role_id: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsAppRoleId' in kwargs:
+        if idcs_app_role_id is None and 'idcsAppRoleId' in kwargs:
             idcs_app_role_id = kwargs['idcsAppRoleId']
+        if idcs_app_role_id is None:
+            raise TypeError("Missing 'idcs_app_role_id' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("idcs_app_role_id", idcs_app_role_id)
         _setter("value", value)
@@ -58566,11 +59226,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccou
              user_id: Optional[pulumi.Input[str]] = None,
              user_provider: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'userProvider' in kwargs:
+        if user_provider is None and 'userProvider' in kwargs:
             user_provider = kwargs['userProvider']
 
         if ocid is not None:
@@ -58770,12 +59430,16 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAp
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
-             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("type", type)
         _setter("value", value)
@@ -58918,7 +59582,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArg
              _setter: Callable[[Any, Any], None],
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if ref is not None:
@@ -59038,12 +59702,14 @@ class DomainsUserX509certificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             value: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("value", value)
         if display is not None:
@@ -59155,14 +59821,18 @@ class NetworkSourceVirtualSourceListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ip_ranges: pulumi.Input[Sequence[pulumi.Input[str]]],
-             vcn_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipRanges' in kwargs:
+        if ip_ranges is None and 'ipRanges' in kwargs:
             ip_ranges = kwargs['ipRanges']
-        if 'vcnId' in kwargs:
+        if ip_ranges is None:
+            raise TypeError("Missing 'ip_ranges' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("ip_ranges", ip_ranges)
         _setter("vcn_id", vcn_id)
@@ -59203,12 +59873,16 @@ class TagValidatorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             validator_type: pulumi.Input[str],
-             values: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             validator_type: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'validatorType' in kwargs:
+        if validator_type is None and 'validatorType' in kwargs:
             validator_type = kwargs['validatorType']
+        if validator_type is None:
+            raise TypeError("Missing 'validator_type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("validator_type", validator_type)
         _setter("values", values)
@@ -59277,21 +59951,21 @@ class UserCapabilityArgs:
              can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'canUseApiKeys' in kwargs:
+        if can_use_api_keys is None and 'canUseApiKeys' in kwargs:
             can_use_api_keys = kwargs['canUseApiKeys']
-        if 'canUseAuthTokens' in kwargs:
+        if can_use_auth_tokens is None and 'canUseAuthTokens' in kwargs:
             can_use_auth_tokens = kwargs['canUseAuthTokens']
-        if 'canUseConsolePassword' in kwargs:
+        if can_use_console_password is None and 'canUseConsolePassword' in kwargs:
             can_use_console_password = kwargs['canUseConsolePassword']
-        if 'canUseCustomerSecretKeys' in kwargs:
+        if can_use_customer_secret_keys is None and 'canUseCustomerSecretKeys' in kwargs:
             can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
-        if 'canUseDbCredentials' in kwargs:
+        if can_use_db_credentials is None and 'canUseDbCredentials' in kwargs:
             can_use_db_credentials = kwargs['canUseDbCredentials']
-        if 'canUseOauth2clientCredentials' in kwargs:
+        if can_use_oauth2client_credentials is None and 'canUseOauth2clientCredentials' in kwargs:
             can_use_oauth2client_credentials = kwargs['canUseOauth2clientCredentials']
-        if 'canUseSmtpCredentials' in kwargs:
+        if can_use_smtp_credentials is None and 'canUseSmtpCredentials' in kwargs:
             can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
 
         if can_use_api_keys is not None:
@@ -59412,11 +60086,15 @@ class GetAllowedDomainLicenseTypesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59469,11 +60147,15 @@ class GetApiKeysFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59523,11 +60205,15 @@ class GetAuthTokensFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59580,11 +60266,15 @@ class GetAvailabilityDomainsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59640,11 +60330,15 @@ class GetCompartmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59701,11 +60395,15 @@ class GetCostTrackingTagsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59761,11 +60459,15 @@ class GetCustomerSecretKeysFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59818,11 +60520,15 @@ class GetDbCredentialsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59878,11 +60584,15 @@ class GetDomainsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59938,11 +60648,15 @@ class GetDynamicGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -59998,11 +60712,15 @@ class GetFaultDomainsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60058,11 +60776,15 @@ class GetGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60115,11 +60837,15 @@ class GetIamWorkRequestErrorsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60169,11 +60895,15 @@ class GetIamWorkRequestLogsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60223,11 +60953,15 @@ class GetIamWorkRequestsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60280,11 +61014,15 @@ class GetIdentityProviderGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60340,11 +61078,15 @@ class GetIdentityProvidersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60397,11 +61139,15 @@ class GetIdpGroupMappingsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60454,11 +61200,15 @@ class GetNetworkSourcesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60514,11 +61264,15 @@ class GetPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60571,11 +61325,15 @@ class GetRegionSubscriptionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60628,11 +61386,15 @@ class GetRegionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60685,11 +61447,15 @@ class GetSmtpCredentialsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60739,11 +61505,15 @@ class GetTagDefaultsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60796,11 +61566,15 @@ class GetTagNamespacesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60853,11 +61627,15 @@ class GetTagStandardTagNamespaceTemplatesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60911,11 +61689,15 @@ class GetTagsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -60971,11 +61753,15 @@ class GetUserGroupMembershipsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -61028,11 +61814,15 @@ class GetUsersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

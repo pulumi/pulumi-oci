@@ -35,11 +35,11 @@ import (
 //				CompartmentId:           pulumi.Any(_var.Compartment_id),
 //				DisplayName:             pulumi.Any(_var.Enterprise_manager_bridge_display_name),
 //				ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Enterprise_manager_bridge_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

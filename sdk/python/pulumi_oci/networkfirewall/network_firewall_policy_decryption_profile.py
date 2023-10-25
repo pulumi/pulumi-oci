@@ -63,8 +63,8 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              are_certificate_extensions_restricted: Optional[pulumi.Input[bool]] = None,
              is_auto_include_alt_name: Optional[pulumi.Input[bool]] = None,
              is_expired_certificate_blocked: Optional[pulumi.Input[bool]] = None,
@@ -75,27 +75,31 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
              is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
              is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'areCertificateExtensionsRestricted' in kwargs:
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if are_certificate_extensions_restricted is None and 'areCertificateExtensionsRestricted' in kwargs:
             are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
-        if 'isAutoIncludeAltName' in kwargs:
+        if is_auto_include_alt_name is None and 'isAutoIncludeAltName' in kwargs:
             is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
-        if 'isExpiredCertificateBlocked' in kwargs:
+        if is_expired_certificate_blocked is None and 'isExpiredCertificateBlocked' in kwargs:
             is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
-        if 'isOutOfCapacityBlocked' in kwargs:
+        if is_out_of_capacity_blocked is None and 'isOutOfCapacityBlocked' in kwargs:
             is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
-        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+        if is_revocation_status_timeout_blocked is None and 'isRevocationStatusTimeoutBlocked' in kwargs:
             is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
-        if 'isUnknownRevocationStatusBlocked' in kwargs:
+        if is_unknown_revocation_status_blocked is None and 'isUnknownRevocationStatusBlocked' in kwargs:
             is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
-        if 'isUnsupportedCipherBlocked' in kwargs:
+        if is_unsupported_cipher_blocked is None and 'isUnsupportedCipherBlocked' in kwargs:
             is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
-        if 'isUnsupportedVersionBlocked' in kwargs:
+        if is_unsupported_version_blocked is None and 'isUnsupportedVersionBlocked' in kwargs:
             is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
-        if 'isUntrustedIssuerBlocked' in kwargs:
+        if is_untrusted_issuer_blocked is None and 'isUntrustedIssuerBlocked' in kwargs:
             is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
 
         _setter("network_firewall_policy_id", network_firewall_policy_id)
@@ -338,29 +342,29 @@ class _NetworkFirewallPolicyDecryptionProfileState:
              network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
              parent_resource_id: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areCertificateExtensionsRestricted' in kwargs:
+        if are_certificate_extensions_restricted is None and 'areCertificateExtensionsRestricted' in kwargs:
             are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
-        if 'isAutoIncludeAltName' in kwargs:
+        if is_auto_include_alt_name is None and 'isAutoIncludeAltName' in kwargs:
             is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
-        if 'isExpiredCertificateBlocked' in kwargs:
+        if is_expired_certificate_blocked is None and 'isExpiredCertificateBlocked' in kwargs:
             is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
-        if 'isOutOfCapacityBlocked' in kwargs:
+        if is_out_of_capacity_blocked is None and 'isOutOfCapacityBlocked' in kwargs:
             is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
-        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+        if is_revocation_status_timeout_blocked is None and 'isRevocationStatusTimeoutBlocked' in kwargs:
             is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
-        if 'isUnknownRevocationStatusBlocked' in kwargs:
+        if is_unknown_revocation_status_blocked is None and 'isUnknownRevocationStatusBlocked' in kwargs:
             is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
-        if 'isUnsupportedCipherBlocked' in kwargs:
+        if is_unsupported_cipher_blocked is None and 'isUnsupportedCipherBlocked' in kwargs:
             is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
-        if 'isUnsupportedVersionBlocked' in kwargs:
+        if is_unsupported_version_blocked is None and 'isUnsupportedVersionBlocked' in kwargs:
             is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
-        if 'isUntrustedIssuerBlocked' in kwargs:
+        if is_untrusted_issuer_blocked is None and 'isUntrustedIssuerBlocked' in kwargs:
             is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
 
         if are_certificate_extensions_restricted is not None:

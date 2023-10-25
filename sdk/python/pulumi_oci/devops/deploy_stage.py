@@ -205,9 +205,9 @@ class DeployStageArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_pipeline_id: pulumi.Input[str],
-             deploy_stage_predecessor_collection: pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'],
-             deploy_stage_type: pulumi.Input[str],
+             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
+             deploy_stage_predecessor_collection: Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']] = None,
+             deploy_stage_type: Optional[pulumi.Input[str]] = None,
              approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
              are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
              blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
@@ -265,121 +265,127 @@ class DeployStageArgs:
              traffic_shift_target: Optional[pulumi.Input[str]] = None,
              values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployPipelineId' in kwargs:
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deployStagePredecessorCollection' in kwargs:
+        if deploy_pipeline_id is None:
+            raise TypeError("Missing 'deploy_pipeline_id' argument")
+        if deploy_stage_predecessor_collection is None and 'deployStagePredecessorCollection' in kwargs:
             deploy_stage_predecessor_collection = kwargs['deployStagePredecessorCollection']
-        if 'deployStageType' in kwargs:
+        if deploy_stage_predecessor_collection is None:
+            raise TypeError("Missing 'deploy_stage_predecessor_collection' argument")
+        if deploy_stage_type is None and 'deployStageType' in kwargs:
             deploy_stage_type = kwargs['deployStageType']
-        if 'approvalPolicy' in kwargs:
+        if deploy_stage_type is None:
+            raise TypeError("Missing 'deploy_stage_type' argument")
+        if approval_policy is None and 'approvalPolicy' in kwargs:
             approval_policy = kwargs['approvalPolicy']
-        if 'areHooksEnabled' in kwargs:
+        if are_hooks_enabled is None and 'areHooksEnabled' in kwargs:
             are_hooks_enabled = kwargs['areHooksEnabled']
-        if 'blueBackendIps' in kwargs:
+        if blue_backend_ips is None and 'blueBackendIps' in kwargs:
             blue_backend_ips = kwargs['blueBackendIps']
-        if 'blueGreenStrategy' in kwargs:
+        if blue_green_strategy is None and 'blueGreenStrategy' in kwargs:
             blue_green_strategy = kwargs['blueGreenStrategy']
-        if 'canaryStrategy' in kwargs:
+        if canary_strategy is None and 'canaryStrategy' in kwargs:
             canary_strategy = kwargs['canaryStrategy']
-        if 'commandSpecDeployArtifactId' in kwargs:
+        if command_spec_deploy_artifact_id is None and 'commandSpecDeployArtifactId' in kwargs:
             command_spec_deploy_artifact_id = kwargs['commandSpecDeployArtifactId']
-        if 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
+        if compute_instance_group_blue_green_deployment_deploy_stage_id is None and 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
             compute_instance_group_blue_green_deployment_deploy_stage_id = kwargs['computeInstanceGroupBlueGreenDeploymentDeployStageId']
-        if 'computeInstanceGroupCanaryDeployStageId' in kwargs:
+        if compute_instance_group_canary_deploy_stage_id is None and 'computeInstanceGroupCanaryDeployStageId' in kwargs:
             compute_instance_group_canary_deploy_stage_id = kwargs['computeInstanceGroupCanaryDeployStageId']
-        if 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
+        if compute_instance_group_canary_traffic_shift_deploy_stage_id is None and 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
             compute_instance_group_canary_traffic_shift_deploy_stage_id = kwargs['computeInstanceGroupCanaryTrafficShiftDeployStageId']
-        if 'computeInstanceGroupDeployEnvironmentId' in kwargs:
+        if compute_instance_group_deploy_environment_id is None and 'computeInstanceGroupDeployEnvironmentId' in kwargs:
             compute_instance_group_deploy_environment_id = kwargs['computeInstanceGroupDeployEnvironmentId']
-        if 'containerConfig' in kwargs:
+        if container_config is None and 'containerConfig' in kwargs:
             container_config = kwargs['containerConfig']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployArtifactIds' in kwargs:
+        if deploy_artifact_ids is None and 'deployArtifactIds' in kwargs:
             deploy_artifact_ids = kwargs['deployArtifactIds']
-        if 'deployEnvironmentIdA' in kwargs:
+        if deploy_environment_id_a is None and 'deployEnvironmentIdA' in kwargs:
             deploy_environment_id_a = kwargs['deployEnvironmentIdA']
-        if 'deployEnvironmentIdB' in kwargs:
+        if deploy_environment_id_b is None and 'deployEnvironmentIdB' in kwargs:
             deploy_environment_id_b = kwargs['deployEnvironmentIdB']
-        if 'deploymentSpecDeployArtifactId' in kwargs:
+        if deployment_spec_deploy_artifact_id is None and 'deploymentSpecDeployArtifactId' in kwargs:
             deployment_spec_deploy_artifact_id = kwargs['deploymentSpecDeployArtifactId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dockerImageDeployArtifactId' in kwargs:
+        if docker_image_deploy_artifact_id is None and 'dockerImageDeployArtifactId' in kwargs:
             docker_image_deploy_artifact_id = kwargs['dockerImageDeployArtifactId']
-        if 'failurePolicy' in kwargs:
+        if failure_policy is None and 'failurePolicy' in kwargs:
             failure_policy = kwargs['failurePolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionDeployEnvironmentId' in kwargs:
+        if function_deploy_environment_id is None and 'functionDeployEnvironmentId' in kwargs:
             function_deploy_environment_id = kwargs['functionDeployEnvironmentId']
-        if 'functionTimeoutInSeconds' in kwargs:
+        if function_timeout_in_seconds is None and 'functionTimeoutInSeconds' in kwargs:
             function_timeout_in_seconds = kwargs['functionTimeoutInSeconds']
-        if 'greenBackendIps' in kwargs:
+        if green_backend_ips is None and 'greenBackendIps' in kwargs:
             green_backend_ips = kwargs['greenBackendIps']
-        if 'helmChartDeployArtifactId' in kwargs:
+        if helm_chart_deploy_artifact_id is None and 'helmChartDeployArtifactId' in kwargs:
             helm_chart_deploy_artifact_id = kwargs['helmChartDeployArtifactId']
-        if 'isAsync' in kwargs:
+        if is_async is None and 'isAsync' in kwargs:
             is_async = kwargs['isAsync']
-        if 'isDebugEnabled' in kwargs:
+        if is_debug_enabled is None and 'isDebugEnabled' in kwargs:
             is_debug_enabled = kwargs['isDebugEnabled']
-        if 'isForceEnabled' in kwargs:
+        if is_force_enabled is None and 'isForceEnabled' in kwargs:
             is_force_enabled = kwargs['isForceEnabled']
-        if 'isValidationEnabled' in kwargs:
+        if is_validation_enabled is None and 'isValidationEnabled' in kwargs:
             is_validation_enabled = kwargs['isValidationEnabled']
-        if 'kubernetesManifestDeployArtifactIds' in kwargs:
+        if kubernetes_manifest_deploy_artifact_ids is None and 'kubernetesManifestDeployArtifactIds' in kwargs:
             kubernetes_manifest_deploy_artifact_ids = kwargs['kubernetesManifestDeployArtifactIds']
-        if 'loadBalancerConfig' in kwargs:
+        if load_balancer_config is None and 'loadBalancerConfig' in kwargs:
             load_balancer_config = kwargs['loadBalancerConfig']
-        if 'maxHistory' in kwargs:
+        if max_history is None and 'maxHistory' in kwargs:
             max_history = kwargs['maxHistory']
-        if 'maxMemoryInMbs' in kwargs:
+        if max_memory_in_mbs is None and 'maxMemoryInMbs' in kwargs:
             max_memory_in_mbs = kwargs['maxMemoryInMbs']
-        if 'okeBlueGreenDeployStageId' in kwargs:
+        if oke_blue_green_deploy_stage_id is None and 'okeBlueGreenDeployStageId' in kwargs:
             oke_blue_green_deploy_stage_id = kwargs['okeBlueGreenDeployStageId']
-        if 'okeCanaryDeployStageId' in kwargs:
+        if oke_canary_deploy_stage_id is None and 'okeCanaryDeployStageId' in kwargs:
             oke_canary_deploy_stage_id = kwargs['okeCanaryDeployStageId']
-        if 'okeCanaryTrafficShiftDeployStageId' in kwargs:
+        if oke_canary_traffic_shift_deploy_stage_id is None and 'okeCanaryTrafficShiftDeployStageId' in kwargs:
             oke_canary_traffic_shift_deploy_stage_id = kwargs['okeCanaryTrafficShiftDeployStageId']
-        if 'okeClusterDeployEnvironmentId' in kwargs:
+        if oke_cluster_deploy_environment_id is None and 'okeClusterDeployEnvironmentId' in kwargs:
             oke_cluster_deploy_environment_id = kwargs['okeClusterDeployEnvironmentId']
-        if 'productionLoadBalancerConfig' in kwargs:
+        if production_load_balancer_config is None and 'productionLoadBalancerConfig' in kwargs:
             production_load_balancer_config = kwargs['productionLoadBalancerConfig']
-        if 'releaseName' in kwargs:
+        if release_name is None and 'releaseName' in kwargs:
             release_name = kwargs['releaseName']
-        if 'rollbackPolicy' in kwargs:
+        if rollback_policy is None and 'rollbackPolicy' in kwargs:
             rollback_policy = kwargs['rollbackPolicy']
-        if 'rolloutPolicy' in kwargs:
+        if rollout_policy is None and 'rolloutPolicy' in kwargs:
             rollout_policy = kwargs['rolloutPolicy']
-        if 'setString' in kwargs:
+        if set_string is None and 'setString' in kwargs:
             set_string = kwargs['setString']
-        if 'setValues' in kwargs:
+        if set_values is None and 'setValues' in kwargs:
             set_values = kwargs['setValues']
-        if 'shouldCleanupOnFail' in kwargs:
+        if should_cleanup_on_fail is None and 'shouldCleanupOnFail' in kwargs:
             should_cleanup_on_fail = kwargs['shouldCleanupOnFail']
-        if 'shouldNotWait' in kwargs:
+        if should_not_wait is None and 'shouldNotWait' in kwargs:
             should_not_wait = kwargs['shouldNotWait']
-        if 'shouldResetValues' in kwargs:
+        if should_reset_values is None and 'shouldResetValues' in kwargs:
             should_reset_values = kwargs['shouldResetValues']
-        if 'shouldReuseValues' in kwargs:
+        if should_reuse_values is None and 'shouldReuseValues' in kwargs:
             should_reuse_values = kwargs['shouldReuseValues']
-        if 'shouldSkipCrds' in kwargs:
+        if should_skip_crds is None and 'shouldSkipCrds' in kwargs:
             should_skip_crds = kwargs['shouldSkipCrds']
-        if 'shouldSkipRenderSubchartNotes' in kwargs:
+        if should_skip_render_subchart_notes is None and 'shouldSkipRenderSubchartNotes' in kwargs:
             should_skip_render_subchart_notes = kwargs['shouldSkipRenderSubchartNotes']
-        if 'testLoadBalancerConfig' in kwargs:
+        if test_load_balancer_config is None and 'testLoadBalancerConfig' in kwargs:
             test_load_balancer_config = kwargs['testLoadBalancerConfig']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'trafficShiftTarget' in kwargs:
+        if traffic_shift_target is None and 'trafficShiftTarget' in kwargs:
             traffic_shift_target = kwargs['trafficShiftTarget']
-        if 'valuesArtifactIds' in kwargs:
+        if values_artifact_ids is None and 'valuesArtifactIds' in kwargs:
             values_artifact_ids = kwargs['valuesArtifactIds']
-        if 'waitCriteria' in kwargs:
+        if wait_criteria is None and 'waitCriteria' in kwargs:
             wait_criteria = kwargs['waitCriteria']
 
         _setter("deploy_pipeline_id", deploy_pipeline_id)
@@ -1501,133 +1507,133 @@ class _DeployStageState:
              traffic_shift_target: Optional[pulumi.Input[str]] = None,
              values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalPolicy' in kwargs:
+        if approval_policy is None and 'approvalPolicy' in kwargs:
             approval_policy = kwargs['approvalPolicy']
-        if 'areHooksEnabled' in kwargs:
+        if are_hooks_enabled is None and 'areHooksEnabled' in kwargs:
             are_hooks_enabled = kwargs['areHooksEnabled']
-        if 'blueBackendIps' in kwargs:
+        if blue_backend_ips is None and 'blueBackendIps' in kwargs:
             blue_backend_ips = kwargs['blueBackendIps']
-        if 'blueGreenStrategy' in kwargs:
+        if blue_green_strategy is None and 'blueGreenStrategy' in kwargs:
             blue_green_strategy = kwargs['blueGreenStrategy']
-        if 'canaryStrategy' in kwargs:
+        if canary_strategy is None and 'canaryStrategy' in kwargs:
             canary_strategy = kwargs['canaryStrategy']
-        if 'commandSpecDeployArtifactId' in kwargs:
+        if command_spec_deploy_artifact_id is None and 'commandSpecDeployArtifactId' in kwargs:
             command_spec_deploy_artifact_id = kwargs['commandSpecDeployArtifactId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
+        if compute_instance_group_blue_green_deployment_deploy_stage_id is None and 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
             compute_instance_group_blue_green_deployment_deploy_stage_id = kwargs['computeInstanceGroupBlueGreenDeploymentDeployStageId']
-        if 'computeInstanceGroupCanaryDeployStageId' in kwargs:
+        if compute_instance_group_canary_deploy_stage_id is None and 'computeInstanceGroupCanaryDeployStageId' in kwargs:
             compute_instance_group_canary_deploy_stage_id = kwargs['computeInstanceGroupCanaryDeployStageId']
-        if 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
+        if compute_instance_group_canary_traffic_shift_deploy_stage_id is None and 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
             compute_instance_group_canary_traffic_shift_deploy_stage_id = kwargs['computeInstanceGroupCanaryTrafficShiftDeployStageId']
-        if 'computeInstanceGroupDeployEnvironmentId' in kwargs:
+        if compute_instance_group_deploy_environment_id is None and 'computeInstanceGroupDeployEnvironmentId' in kwargs:
             compute_instance_group_deploy_environment_id = kwargs['computeInstanceGroupDeployEnvironmentId']
-        if 'containerConfig' in kwargs:
+        if container_config is None and 'containerConfig' in kwargs:
             container_config = kwargs['containerConfig']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployArtifactIds' in kwargs:
+        if deploy_artifact_ids is None and 'deployArtifactIds' in kwargs:
             deploy_artifact_ids = kwargs['deployArtifactIds']
-        if 'deployEnvironmentIdA' in kwargs:
+        if deploy_environment_id_a is None and 'deployEnvironmentIdA' in kwargs:
             deploy_environment_id_a = kwargs['deployEnvironmentIdA']
-        if 'deployEnvironmentIdB' in kwargs:
+        if deploy_environment_id_b is None and 'deployEnvironmentIdB' in kwargs:
             deploy_environment_id_b = kwargs['deployEnvironmentIdB']
-        if 'deployPipelineId' in kwargs:
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deployStagePredecessorCollection' in kwargs:
+        if deploy_stage_predecessor_collection is None and 'deployStagePredecessorCollection' in kwargs:
             deploy_stage_predecessor_collection = kwargs['deployStagePredecessorCollection']
-        if 'deployStageType' in kwargs:
+        if deploy_stage_type is None and 'deployStageType' in kwargs:
             deploy_stage_type = kwargs['deployStageType']
-        if 'deploymentSpecDeployArtifactId' in kwargs:
+        if deployment_spec_deploy_artifact_id is None and 'deploymentSpecDeployArtifactId' in kwargs:
             deployment_spec_deploy_artifact_id = kwargs['deploymentSpecDeployArtifactId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dockerImageDeployArtifactId' in kwargs:
+        if docker_image_deploy_artifact_id is None and 'dockerImageDeployArtifactId' in kwargs:
             docker_image_deploy_artifact_id = kwargs['dockerImageDeployArtifactId']
-        if 'failurePolicy' in kwargs:
+        if failure_policy is None and 'failurePolicy' in kwargs:
             failure_policy = kwargs['failurePolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionDeployEnvironmentId' in kwargs:
+        if function_deploy_environment_id is None and 'functionDeployEnvironmentId' in kwargs:
             function_deploy_environment_id = kwargs['functionDeployEnvironmentId']
-        if 'functionTimeoutInSeconds' in kwargs:
+        if function_timeout_in_seconds is None and 'functionTimeoutInSeconds' in kwargs:
             function_timeout_in_seconds = kwargs['functionTimeoutInSeconds']
-        if 'greenBackendIps' in kwargs:
+        if green_backend_ips is None and 'greenBackendIps' in kwargs:
             green_backend_ips = kwargs['greenBackendIps']
-        if 'helmChartDeployArtifactId' in kwargs:
+        if helm_chart_deploy_artifact_id is None and 'helmChartDeployArtifactId' in kwargs:
             helm_chart_deploy_artifact_id = kwargs['helmChartDeployArtifactId']
-        if 'isAsync' in kwargs:
+        if is_async is None and 'isAsync' in kwargs:
             is_async = kwargs['isAsync']
-        if 'isDebugEnabled' in kwargs:
+        if is_debug_enabled is None and 'isDebugEnabled' in kwargs:
             is_debug_enabled = kwargs['isDebugEnabled']
-        if 'isForceEnabled' in kwargs:
+        if is_force_enabled is None and 'isForceEnabled' in kwargs:
             is_force_enabled = kwargs['isForceEnabled']
-        if 'isValidationEnabled' in kwargs:
+        if is_validation_enabled is None and 'isValidationEnabled' in kwargs:
             is_validation_enabled = kwargs['isValidationEnabled']
-        if 'kubernetesManifestDeployArtifactIds' in kwargs:
+        if kubernetes_manifest_deploy_artifact_ids is None and 'kubernetesManifestDeployArtifactIds' in kwargs:
             kubernetes_manifest_deploy_artifact_ids = kwargs['kubernetesManifestDeployArtifactIds']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'loadBalancerConfig' in kwargs:
+        if load_balancer_config is None and 'loadBalancerConfig' in kwargs:
             load_balancer_config = kwargs['loadBalancerConfig']
-        if 'maxHistory' in kwargs:
+        if max_history is None and 'maxHistory' in kwargs:
             max_history = kwargs['maxHistory']
-        if 'maxMemoryInMbs' in kwargs:
+        if max_memory_in_mbs is None and 'maxMemoryInMbs' in kwargs:
             max_memory_in_mbs = kwargs['maxMemoryInMbs']
-        if 'okeBlueGreenDeployStageId' in kwargs:
+        if oke_blue_green_deploy_stage_id is None and 'okeBlueGreenDeployStageId' in kwargs:
             oke_blue_green_deploy_stage_id = kwargs['okeBlueGreenDeployStageId']
-        if 'okeCanaryDeployStageId' in kwargs:
+        if oke_canary_deploy_stage_id is None and 'okeCanaryDeployStageId' in kwargs:
             oke_canary_deploy_stage_id = kwargs['okeCanaryDeployStageId']
-        if 'okeCanaryTrafficShiftDeployStageId' in kwargs:
+        if oke_canary_traffic_shift_deploy_stage_id is None and 'okeCanaryTrafficShiftDeployStageId' in kwargs:
             oke_canary_traffic_shift_deploy_stage_id = kwargs['okeCanaryTrafficShiftDeployStageId']
-        if 'okeClusterDeployEnvironmentId' in kwargs:
+        if oke_cluster_deploy_environment_id is None and 'okeClusterDeployEnvironmentId' in kwargs:
             oke_cluster_deploy_environment_id = kwargs['okeClusterDeployEnvironmentId']
-        if 'productionLoadBalancerConfig' in kwargs:
+        if production_load_balancer_config is None and 'productionLoadBalancerConfig' in kwargs:
             production_load_balancer_config = kwargs['productionLoadBalancerConfig']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'releaseName' in kwargs:
+        if release_name is None and 'releaseName' in kwargs:
             release_name = kwargs['releaseName']
-        if 'rollbackPolicy' in kwargs:
+        if rollback_policy is None and 'rollbackPolicy' in kwargs:
             rollback_policy = kwargs['rollbackPolicy']
-        if 'rolloutPolicy' in kwargs:
+        if rollout_policy is None and 'rolloutPolicy' in kwargs:
             rollout_policy = kwargs['rolloutPolicy']
-        if 'setString' in kwargs:
+        if set_string is None and 'setString' in kwargs:
             set_string = kwargs['setString']
-        if 'setValues' in kwargs:
+        if set_values is None and 'setValues' in kwargs:
             set_values = kwargs['setValues']
-        if 'shouldCleanupOnFail' in kwargs:
+        if should_cleanup_on_fail is None and 'shouldCleanupOnFail' in kwargs:
             should_cleanup_on_fail = kwargs['shouldCleanupOnFail']
-        if 'shouldNotWait' in kwargs:
+        if should_not_wait is None and 'shouldNotWait' in kwargs:
             should_not_wait = kwargs['shouldNotWait']
-        if 'shouldResetValues' in kwargs:
+        if should_reset_values is None and 'shouldResetValues' in kwargs:
             should_reset_values = kwargs['shouldResetValues']
-        if 'shouldReuseValues' in kwargs:
+        if should_reuse_values is None and 'shouldReuseValues' in kwargs:
             should_reuse_values = kwargs['shouldReuseValues']
-        if 'shouldSkipCrds' in kwargs:
+        if should_skip_crds is None and 'shouldSkipCrds' in kwargs:
             should_skip_crds = kwargs['shouldSkipCrds']
-        if 'shouldSkipRenderSubchartNotes' in kwargs:
+        if should_skip_render_subchart_notes is None and 'shouldSkipRenderSubchartNotes' in kwargs:
             should_skip_render_subchart_notes = kwargs['shouldSkipRenderSubchartNotes']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'testLoadBalancerConfig' in kwargs:
+        if test_load_balancer_config is None and 'testLoadBalancerConfig' in kwargs:
             test_load_balancer_config = kwargs['testLoadBalancerConfig']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'trafficShiftTarget' in kwargs:
+        if traffic_shift_target is None and 'trafficShiftTarget' in kwargs:
             traffic_shift_target = kwargs['trafficShiftTarget']
-        if 'valuesArtifactIds' in kwargs:
+        if values_artifact_ids is None and 'valuesArtifactIds' in kwargs:
             values_artifact_ids = kwargs['valuesArtifactIds']
-        if 'waitCriteria' in kwargs:
+        if wait_criteria is None and 'waitCriteria' in kwargs:
             wait_criteria = kwargs['waitCriteria']
 
         if approval_policy is not None:
@@ -2819,30 +2825,14 @@ class DeployStage(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DeployStageArgs.__new__(DeployStageArgs)
 
-            if approval_policy is not None and not isinstance(approval_policy, DeployStageApprovalPolicyArgs):
-                approval_policy = approval_policy or {}
-                def _setter(key, value):
-                    approval_policy[key] = value
-                DeployStageApprovalPolicyArgs._configure(_setter, **approval_policy)
+            approval_policy = _utilities.configure(approval_policy, DeployStageApprovalPolicyArgs, True)
             __props__.__dict__["approval_policy"] = approval_policy
             __props__.__dict__["are_hooks_enabled"] = are_hooks_enabled
-            if blue_backend_ips is not None and not isinstance(blue_backend_ips, DeployStageBlueBackendIpsArgs):
-                blue_backend_ips = blue_backend_ips or {}
-                def _setter(key, value):
-                    blue_backend_ips[key] = value
-                DeployStageBlueBackendIpsArgs._configure(_setter, **blue_backend_ips)
+            blue_backend_ips = _utilities.configure(blue_backend_ips, DeployStageBlueBackendIpsArgs, True)
             __props__.__dict__["blue_backend_ips"] = blue_backend_ips
-            if blue_green_strategy is not None and not isinstance(blue_green_strategy, DeployStageBlueGreenStrategyArgs):
-                blue_green_strategy = blue_green_strategy or {}
-                def _setter(key, value):
-                    blue_green_strategy[key] = value
-                DeployStageBlueGreenStrategyArgs._configure(_setter, **blue_green_strategy)
+            blue_green_strategy = _utilities.configure(blue_green_strategy, DeployStageBlueGreenStrategyArgs, True)
             __props__.__dict__["blue_green_strategy"] = blue_green_strategy
-            if canary_strategy is not None and not isinstance(canary_strategy, DeployStageCanaryStrategyArgs):
-                canary_strategy = canary_strategy or {}
-                def _setter(key, value):
-                    canary_strategy[key] = value
-                DeployStageCanaryStrategyArgs._configure(_setter, **canary_strategy)
+            canary_strategy = _utilities.configure(canary_strategy, DeployStageCanaryStrategyArgs, True)
             __props__.__dict__["canary_strategy"] = canary_strategy
             __props__.__dict__["command_spec_deploy_artifact_id"] = command_spec_deploy_artifact_id
             __props__.__dict__["compute_instance_group_blue_green_deployment_deploy_stage_id"] = compute_instance_group_blue_green_deployment_deploy_stage_id
@@ -2850,11 +2840,7 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["compute_instance_group_canary_traffic_shift_deploy_stage_id"] = compute_instance_group_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["compute_instance_group_deploy_environment_id"] = compute_instance_group_deploy_environment_id
             __props__.__dict__["config"] = config
-            if container_config is not None and not isinstance(container_config, DeployStageContainerConfigArgs):
-                container_config = container_config or {}
-                def _setter(key, value):
-                    container_config[key] = value
-                DeployStageContainerConfigArgs._configure(_setter, **container_config)
+            container_config = _utilities.configure(container_config, DeployStageContainerConfigArgs, True)
             __props__.__dict__["container_config"] = container_config
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deploy_artifact_id"] = deploy_artifact_id
@@ -2864,11 +2850,7 @@ class DeployStage(pulumi.CustomResource):
             if deploy_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_pipeline_id'")
             __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
-            if deploy_stage_predecessor_collection is not None and not isinstance(deploy_stage_predecessor_collection, DeployStageDeployStagePredecessorCollectionArgs):
-                deploy_stage_predecessor_collection = deploy_stage_predecessor_collection or {}
-                def _setter(key, value):
-                    deploy_stage_predecessor_collection[key] = value
-                DeployStageDeployStagePredecessorCollectionArgs._configure(_setter, **deploy_stage_predecessor_collection)
+            deploy_stage_predecessor_collection = _utilities.configure(deploy_stage_predecessor_collection, DeployStageDeployStagePredecessorCollectionArgs, True)
             if deploy_stage_predecessor_collection is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_stage_predecessor_collection'")
             __props__.__dict__["deploy_stage_predecessor_collection"] = deploy_stage_predecessor_collection
@@ -2879,20 +2861,12 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["docker_image_deploy_artifact_id"] = docker_image_deploy_artifact_id
-            if failure_policy is not None and not isinstance(failure_policy, DeployStageFailurePolicyArgs):
-                failure_policy = failure_policy or {}
-                def _setter(key, value):
-                    failure_policy[key] = value
-                DeployStageFailurePolicyArgs._configure(_setter, **failure_policy)
+            failure_policy = _utilities.configure(failure_policy, DeployStageFailurePolicyArgs, True)
             __props__.__dict__["failure_policy"] = failure_policy
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["function_deploy_environment_id"] = function_deploy_environment_id
             __props__.__dict__["function_timeout_in_seconds"] = function_timeout_in_seconds
-            if green_backend_ips is not None and not isinstance(green_backend_ips, DeployStageGreenBackendIpsArgs):
-                green_backend_ips = green_backend_ips or {}
-                def _setter(key, value):
-                    green_backend_ips[key] = value
-                DeployStageGreenBackendIpsArgs._configure(_setter, **green_backend_ips)
+            green_backend_ips = _utilities.configure(green_backend_ips, DeployStageGreenBackendIpsArgs, True)
             __props__.__dict__["green_backend_ips"] = green_backend_ips
             __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
             __props__.__dict__["is_async"] = is_async
@@ -2900,11 +2874,7 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["is_force_enabled"] = is_force_enabled
             __props__.__dict__["is_validation_enabled"] = is_validation_enabled
             __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
-            if load_balancer_config is not None and not isinstance(load_balancer_config, DeployStageLoadBalancerConfigArgs):
-                load_balancer_config = load_balancer_config or {}
-                def _setter(key, value):
-                    load_balancer_config[key] = value
-                DeployStageLoadBalancerConfigArgs._configure(_setter, **load_balancer_config)
+            load_balancer_config = _utilities.configure(load_balancer_config, DeployStageLoadBalancerConfigArgs, True)
             __props__.__dict__["load_balancer_config"] = load_balancer_config
             __props__.__dict__["max_history"] = max_history
             __props__.__dict__["max_memory_in_mbs"] = max_memory_in_mbs
@@ -2913,36 +2883,16 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["oke_canary_deploy_stage_id"] = oke_canary_deploy_stage_id
             __props__.__dict__["oke_canary_traffic_shift_deploy_stage_id"] = oke_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["oke_cluster_deploy_environment_id"] = oke_cluster_deploy_environment_id
-            if production_load_balancer_config is not None and not isinstance(production_load_balancer_config, DeployStageProductionLoadBalancerConfigArgs):
-                production_load_balancer_config = production_load_balancer_config or {}
-                def _setter(key, value):
-                    production_load_balancer_config[key] = value
-                DeployStageProductionLoadBalancerConfigArgs._configure(_setter, **production_load_balancer_config)
+            production_load_balancer_config = _utilities.configure(production_load_balancer_config, DeployStageProductionLoadBalancerConfigArgs, True)
             __props__.__dict__["production_load_balancer_config"] = production_load_balancer_config
             __props__.__dict__["release_name"] = release_name
-            if rollback_policy is not None and not isinstance(rollback_policy, DeployStageRollbackPolicyArgs):
-                rollback_policy = rollback_policy or {}
-                def _setter(key, value):
-                    rollback_policy[key] = value
-                DeployStageRollbackPolicyArgs._configure(_setter, **rollback_policy)
+            rollback_policy = _utilities.configure(rollback_policy, DeployStageRollbackPolicyArgs, True)
             __props__.__dict__["rollback_policy"] = rollback_policy
-            if rollout_policy is not None and not isinstance(rollout_policy, DeployStageRolloutPolicyArgs):
-                rollout_policy = rollout_policy or {}
-                def _setter(key, value):
-                    rollout_policy[key] = value
-                DeployStageRolloutPolicyArgs._configure(_setter, **rollout_policy)
+            rollout_policy = _utilities.configure(rollout_policy, DeployStageRolloutPolicyArgs, True)
             __props__.__dict__["rollout_policy"] = rollout_policy
-            if set_string is not None and not isinstance(set_string, DeployStageSetStringArgs):
-                set_string = set_string or {}
-                def _setter(key, value):
-                    set_string[key] = value
-                DeployStageSetStringArgs._configure(_setter, **set_string)
+            set_string = _utilities.configure(set_string, DeployStageSetStringArgs, True)
             __props__.__dict__["set_string"] = set_string
-            if set_values is not None and not isinstance(set_values, DeployStageSetValuesArgs):
-                set_values = set_values or {}
-                def _setter(key, value):
-                    set_values[key] = value
-                DeployStageSetValuesArgs._configure(_setter, **set_values)
+            set_values = _utilities.configure(set_values, DeployStageSetValuesArgs, True)
             __props__.__dict__["set_values"] = set_values
             __props__.__dict__["should_cleanup_on_fail"] = should_cleanup_on_fail
             __props__.__dict__["should_not_wait"] = should_not_wait
@@ -2950,20 +2900,12 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["should_reuse_values"] = should_reuse_values
             __props__.__dict__["should_skip_crds"] = should_skip_crds
             __props__.__dict__["should_skip_render_subchart_notes"] = should_skip_render_subchart_notes
-            if test_load_balancer_config is not None and not isinstance(test_load_balancer_config, DeployStageTestLoadBalancerConfigArgs):
-                test_load_balancer_config = test_load_balancer_config or {}
-                def _setter(key, value):
-                    test_load_balancer_config[key] = value
-                DeployStageTestLoadBalancerConfigArgs._configure(_setter, **test_load_balancer_config)
+            test_load_balancer_config = _utilities.configure(test_load_balancer_config, DeployStageTestLoadBalancerConfigArgs, True)
             __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
             __props__.__dict__["traffic_shift_target"] = traffic_shift_target
             __props__.__dict__["values_artifact_ids"] = values_artifact_ids
-            if wait_criteria is not None and not isinstance(wait_criteria, DeployStageWaitCriteriaArgs):
-                wait_criteria = wait_criteria or {}
-                def _setter(key, value):
-                    wait_criteria[key] = value
-                DeployStageWaitCriteriaArgs._configure(_setter, **wait_criteria)
+            wait_criteria = _utilities.configure(wait_criteria, DeployStageWaitCriteriaArgs, True)
             __props__.__dict__["wait_criteria"] = wait_criteria
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None

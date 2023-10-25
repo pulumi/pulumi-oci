@@ -37,7 +37,7 @@ import (
 //				DisplayName:   pulumi.Any(_var.Oneoff_patch_display_name),
 //				ReleaseUpdate: pulumi.Any(_var.Oneoff_patch_release_update),
 //				DefinedTags:   pulumi.Any(_var.Oneoff_patch_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				OneOffPatches: pulumi.Any(_var.Oneoff_patch_one_off_patches),

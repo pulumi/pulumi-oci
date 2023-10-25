@@ -123,10 +123,10 @@ class DomainsDynamicResourceGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             idcs_endpoint: pulumi.Input[str],
-             matching_rule: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             matching_rule: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -135,19 +135,27 @@ class DomainsDynamicResourceGroupArgs:
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
              urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'idcsEndpoint' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'matchingRule' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if matching_rule is None and 'matchingRule' in kwargs:
             matching_rule = kwargs['matchingRule']
-        if 'attributeSets' in kwargs:
+        if matching_rule is None:
+            raise TypeError("Missing 'matching_rule' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
 
         _setter("display_name", display_name)
@@ -650,37 +658,37 @@ class _DomainsDynamicResourceGroupState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'dynamicGroupAppRoles' in kwargs:
+        if dynamic_group_app_roles is None and 'dynamicGroupAppRoles' in kwargs:
             dynamic_group_app_roles = kwargs['dynamicGroupAppRoles']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'matchingRule' in kwargs:
+        if matching_rule is None and 'matchingRule' in kwargs:
             matching_rule = kwargs['matchingRule']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
 
         if attribute_sets is not None:
@@ -1361,11 +1369,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'schemas'")
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["tags"] = tags
-            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
-                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
-                DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = _utilities.configure(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

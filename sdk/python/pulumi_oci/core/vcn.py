@@ -76,7 +76,7 @@ class VcnArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
              cidr_block: Optional[pulumi.Input[str]] = None,
              cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -87,29 +87,31 @@ class VcnArgs:
              ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
              is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'byoipv6cidrDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if byoipv6cidr_details is None and 'byoipv6cidrDetails' in kwargs:
             byoipv6cidr_details = kwargs['byoipv6cidrDetails']
-        if 'cidrBlock' in kwargs:
+        if cidr_block is None and 'cidrBlock' in kwargs:
             cidr_block = kwargs['cidrBlock']
-        if 'cidrBlocks' in kwargs:
+        if cidr_blocks is None and 'cidrBlocks' in kwargs:
             cidr_blocks = kwargs['cidrBlocks']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsLabel' in kwargs:
+        if dns_label is None and 'dnsLabel' in kwargs:
             dns_label = kwargs['dnsLabel']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipv6privateCidrBlocks' in kwargs:
+        if ipv6private_cidr_blocks is None and 'ipv6privateCidrBlocks' in kwargs:
             ipv6private_cidr_blocks = kwargs['ipv6privateCidrBlocks']
-        if 'isIpv6enabled' in kwargs:
+        if is_ipv6enabled is None and 'isIpv6enabled' in kwargs:
             is_ipv6enabled = kwargs['isIpv6enabled']
-        if 'isOracleGuaAllocationEnabled' in kwargs:
+        if is_oracle_gua_allocation_enabled is None and 'isOracleGuaAllocationEnabled' in kwargs:
             is_oracle_gua_allocation_enabled = kwargs['isOracleGuaAllocationEnabled']
 
         _setter("compartment_id", compartment_id)
@@ -391,43 +393,43 @@ class _VcnState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_domain_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'byoipv6cidrBlocks' in kwargs:
+        if byoipv6cidr_blocks is None and 'byoipv6cidrBlocks' in kwargs:
             byoipv6cidr_blocks = kwargs['byoipv6cidrBlocks']
-        if 'byoipv6cidrDetails' in kwargs:
+        if byoipv6cidr_details is None and 'byoipv6cidrDetails' in kwargs:
             byoipv6cidr_details = kwargs['byoipv6cidrDetails']
-        if 'cidrBlock' in kwargs:
+        if cidr_block is None and 'cidrBlock' in kwargs:
             cidr_block = kwargs['cidrBlock']
-        if 'cidrBlocks' in kwargs:
+        if cidr_blocks is None and 'cidrBlocks' in kwargs:
             cidr_blocks = kwargs['cidrBlocks']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultDhcpOptionsId' in kwargs:
+        if default_dhcp_options_id is None and 'defaultDhcpOptionsId' in kwargs:
             default_dhcp_options_id = kwargs['defaultDhcpOptionsId']
-        if 'defaultRouteTableId' in kwargs:
+        if default_route_table_id is None and 'defaultRouteTableId' in kwargs:
             default_route_table_id = kwargs['defaultRouteTableId']
-        if 'defaultSecurityListId' in kwargs:
+        if default_security_list_id is None and 'defaultSecurityListId' in kwargs:
             default_security_list_id = kwargs['defaultSecurityListId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsLabel' in kwargs:
+        if dns_label is None and 'dnsLabel' in kwargs:
             dns_label = kwargs['dnsLabel']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ipv6cidrBlocks' in kwargs:
+        if ipv6cidr_blocks is None and 'ipv6cidrBlocks' in kwargs:
             ipv6cidr_blocks = kwargs['ipv6cidrBlocks']
-        if 'ipv6privateCidrBlocks' in kwargs:
+        if ipv6private_cidr_blocks is None and 'ipv6privateCidrBlocks' in kwargs:
             ipv6private_cidr_blocks = kwargs['ipv6privateCidrBlocks']
-        if 'isIpv6enabled' in kwargs:
+        if is_ipv6enabled is None and 'isIpv6enabled' in kwargs:
             is_ipv6enabled = kwargs['isIpv6enabled']
-        if 'isOracleGuaAllocationEnabled' in kwargs:
+        if is_oracle_gua_allocation_enabled is None and 'isOracleGuaAllocationEnabled' in kwargs:
             is_oracle_gua_allocation_enabled = kwargs['isOracleGuaAllocationEnabled']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnDomainName' in kwargs:
+        if vcn_domain_name is None and 'vcnDomainName' in kwargs:
             vcn_domain_name = kwargs['vcnDomainName']
 
         if byoipv6cidr_blocks is not None:

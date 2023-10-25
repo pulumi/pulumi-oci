@@ -59,9 +59,9 @@ class OpaInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             shape_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
              consumption_model: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -69,25 +69,31 @@ class OpaInstanceArgs:
              idcs_at: Optional[pulumi.Input[str]] = None,
              is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
              metering_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'shapeName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'consumptionModel' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAt' in kwargs:
+        if idcs_at is None and 'idcsAt' in kwargs:
             idcs_at = kwargs['idcsAt']
-        if 'isBreakglassEnabled' in kwargs:
+        if is_breakglass_enabled is None and 'isBreakglassEnabled' in kwargs:
             is_breakglass_enabled = kwargs['isBreakglassEnabled']
-        if 'meteringType' in kwargs:
+        if metering_type is None and 'meteringType' in kwargs:
             metering_type = kwargs['meteringType']
 
         _setter("compartment_id", compartment_id)
@@ -329,41 +335,41 @@ class _OpaInstanceState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'consumptionModel' in kwargs:
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAt' in kwargs:
+        if idcs_at is None and 'idcsAt' in kwargs:
             idcs_at = kwargs['idcsAt']
-        if 'identityAppDisplayName' in kwargs:
+        if identity_app_display_name is None and 'identityAppDisplayName' in kwargs:
             identity_app_display_name = kwargs['identityAppDisplayName']
-        if 'identityAppGuid' in kwargs:
+        if identity_app_guid is None and 'identityAppGuid' in kwargs:
             identity_app_guid = kwargs['identityAppGuid']
-        if 'identityAppOpcServiceInstanceGuid' in kwargs:
+        if identity_app_opc_service_instance_guid is None and 'identityAppOpcServiceInstanceGuid' in kwargs:
             identity_app_opc_service_instance_guid = kwargs['identityAppOpcServiceInstanceGuid']
-        if 'identityDomainUrl' in kwargs:
+        if identity_domain_url is None and 'identityDomainUrl' in kwargs:
             identity_domain_url = kwargs['identityDomainUrl']
-        if 'instanceUrl' in kwargs:
+        if instance_url is None and 'instanceUrl' in kwargs:
             instance_url = kwargs['instanceUrl']
-        if 'isBreakglassEnabled' in kwargs:
+        if is_breakglass_enabled is None and 'isBreakglassEnabled' in kwargs:
             is_breakglass_enabled = kwargs['isBreakglassEnabled']
-        if 'meteringType' in kwargs:
+        if metering_type is None and 'meteringType' in kwargs:
             metering_type = kwargs['meteringType']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if attachments is not None:

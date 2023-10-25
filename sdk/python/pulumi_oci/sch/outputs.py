@@ -96,18 +96,20 @@ class ConnectorSource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
+             kind: Optional[str] = None,
              cursor: Optional['outputs.ConnectorSourceCursor'] = None,
              log_sources: Optional[Sequence['outputs.ConnectorSourceLogSource']] = None,
              monitoring_sources: Optional[Sequence['outputs.ConnectorSourceMonitoringSource']] = None,
              stream_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logSources' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
             log_sources = kwargs['logSources']
-        if 'monitoringSources' in kwargs:
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
             monitoring_sources = kwargs['monitoringSources']
-        if 'streamId' in kwargs:
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
 
         _setter("kind", kind)
@@ -176,7 +178,7 @@ class ConnectorSourceCursor(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if kind is not None:
@@ -235,13 +237,13 @@ class ConnectorSourceLogSource(dict):
              compartment_id: Optional[str] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
 
         if compartment_id is not None:
@@ -314,11 +316,11 @@ class ConnectorSourceMonitoringSource(dict):
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[str] = None,
              namespace_details: Optional['outputs.ConnectorSourceMonitoringSourceNamespaceDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'namespaceDetails' in kwargs:
+        if namespace_details is None and 'namespaceDetails' in kwargs:
             namespace_details = kwargs['namespaceDetails']
 
         if compartment_id is not None:
@@ -360,10 +362,14 @@ class ConnectorSourceMonitoringSourceNamespaceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             namespaces: Sequence['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespace'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespace']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
 
         _setter("kind", kind)
         _setter("namespaces", namespaces)
@@ -402,10 +408,14 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metrics: 'outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics',
-             namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metrics: Optional['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics'] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("metrics", metrics)
         _setter("namespace", namespace)
@@ -441,9 +451,11 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -552,7 +564,7 @@ class ConnectorTarget(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
+             kind: Optional[str] = None,
              batch_rollover_size_in_mbs: Optional[int] = None,
              batch_rollover_time_in_ms: Optional[int] = None,
              bucket: Optional[str] = None,
@@ -568,29 +580,31 @@ class ConnectorTarget(dict):
              object_name_prefix: Optional[str] = None,
              stream_id: Optional[str] = None,
              topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchRolloverSizeInMbs' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
             batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
-        if 'batchRolloverTimeInMs' in kwargs:
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
             batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enableFormattedMessaging' in kwargs:
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
             enable_formatted_messaging = kwargs['enableFormattedMessaging']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSourceIdentifier' in kwargs:
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
             log_source_identifier = kwargs['logSourceIdentifier']
-        if 'metricNamespace' in kwargs:
+        if metric_namespace is None and 'metricNamespace' in kwargs:
             metric_namespace = kwargs['metricNamespace']
-        if 'objectNamePrefix' in kwargs:
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
             object_name_prefix = kwargs['objectNamePrefix']
-        if 'streamId' in kwargs:
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
 
         _setter("kind", kind)
@@ -790,9 +804,9 @@ class ConnectorTargetDimension(dict):
              _setter: Callable[[Any, Any], None],
              dimension_value: Optional['outputs.ConnectorTargetDimensionDimensionValue'] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dimensionValue' in kwargs:
+        if dimension_value is None and 'dimensionValue' in kwargs:
             dimension_value = kwargs['dimensionValue']
 
         if dimension_value is not None:
@@ -837,11 +851,13 @@ class ConnectorTargetDimensionDimensionValue(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
+             kind: Optional[str] = None,
              path: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
         if path is not None:
@@ -921,18 +937,20 @@ class ConnectorTask(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
+             kind: Optional[str] = None,
              batch_size_in_kbs: Optional[int] = None,
              batch_time_in_sec: Optional[int] = None,
              condition: Optional[str] = None,
              function_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchSizeInKbs' in kwargs:
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
             batch_size_in_kbs = kwargs['batchSizeInKbs']
-        if 'batchTimeInSec' in kwargs:
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
             batch_time_in_sec = kwargs['batchTimeInSec']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
 
         _setter("kind", kind)
@@ -1012,19 +1030,29 @@ class GetServiceConnectorSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cursors: Sequence['outputs.GetServiceConnectorSourceCursorResult'],
-             kind: str,
-             log_sources: Sequence['outputs.GetServiceConnectorSourceLogSourceResult'],
-             monitoring_sources: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceResult'],
-             stream_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cursors: Optional[Sequence['outputs.GetServiceConnectorSourceCursorResult']] = None,
+             kind: Optional[str] = None,
+             log_sources: Optional[Sequence['outputs.GetServiceConnectorSourceLogSourceResult']] = None,
+             monitoring_sources: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceResult']] = None,
+             stream_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logSources' in kwargs:
+        if cursors is None:
+            raise TypeError("Missing 'cursors' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
             log_sources = kwargs['logSources']
-        if 'monitoringSources' in kwargs:
+        if log_sources is None:
+            raise TypeError("Missing 'log_sources' argument")
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
             monitoring_sources = kwargs['monitoringSources']
-        if 'streamId' in kwargs:
+        if monitoring_sources is None:
+            raise TypeError("Missing 'monitoring_sources' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
 
         _setter("cursors", cursors)
         _setter("kind", kind)
@@ -1087,9 +1115,11 @@ class GetServiceConnectorSourceCursorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -1122,17 +1152,23 @@ class GetServiceConnectorSourceLogSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'logGroupId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("log_group_id", log_group_id)
@@ -1180,14 +1216,18 @@ class GetServiceConnectorSourceMonitoringSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             namespace_details: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             namespace_details: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'namespaceDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if namespace_details is None and 'namespaceDetails' in kwargs:
             namespace_details = kwargs['namespaceDetails']
+        if namespace_details is None:
+            raise TypeError("Missing 'namespace_details' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("namespace_details", namespace_details)
@@ -1226,10 +1266,14 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             namespaces: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
 
         _setter("kind", kind)
         _setter("namespaces", namespaces)
@@ -1268,10 +1312,14 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metrics: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult'],
-             namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metrics: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult']] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("metrics", metrics)
         _setter("namespace", namespace)
@@ -1307,9 +1355,11 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -1381,46 +1431,78 @@ class GetServiceConnectorTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_rollover_size_in_mbs: int,
-             batch_rollover_time_in_ms: int,
-             bucket: str,
-             compartment_id: str,
-             dimensions: Sequence['outputs.GetServiceConnectorTargetDimensionResult'],
-             enable_formatted_messaging: bool,
-             function_id: str,
-             kind: str,
-             log_group_id: str,
-             log_source_identifier: str,
-             metric: str,
-             metric_namespace: str,
-             namespace: str,
-             object_name_prefix: str,
-             stream_id: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_rollover_size_in_mbs: Optional[int] = None,
+             batch_rollover_time_in_ms: Optional[int] = None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.GetServiceConnectorTargetDimensionResult']] = None,
+             enable_formatted_messaging: Optional[bool] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_source_identifier: Optional[str] = None,
+             metric: Optional[str] = None,
+             metric_namespace: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_name_prefix: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchRolloverSizeInMbs' in kwargs:
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
             batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
-        if 'batchRolloverTimeInMs' in kwargs:
+        if batch_rollover_size_in_mbs is None:
+            raise TypeError("Missing 'batch_rollover_size_in_mbs' argument")
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
             batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
-        if 'compartmentId' in kwargs:
+        if batch_rollover_time_in_ms is None:
+            raise TypeError("Missing 'batch_rollover_time_in_ms' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enableFormattedMessaging' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
             enable_formatted_messaging = kwargs['enableFormattedMessaging']
-        if 'functionId' in kwargs:
+        if enable_formatted_messaging is None:
+            raise TypeError("Missing 'enable_formatted_messaging' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'logGroupId' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSourceIdentifier' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
             log_source_identifier = kwargs['logSourceIdentifier']
-        if 'metricNamespace' in kwargs:
+        if log_source_identifier is None:
+            raise TypeError("Missing 'log_source_identifier' argument")
+        if metric is None:
+            raise TypeError("Missing 'metric' argument")
+        if metric_namespace is None and 'metricNamespace' in kwargs:
             metric_namespace = kwargs['metricNamespace']
-        if 'objectNamePrefix' in kwargs:
+        if metric_namespace is None:
+            raise TypeError("Missing 'metric_namespace' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
             object_name_prefix = kwargs['objectNamePrefix']
-        if 'streamId' in kwargs:
+        if object_name_prefix is None:
+            raise TypeError("Missing 'object_name_prefix' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
         _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
@@ -1585,12 +1667,16 @@ class GetServiceConnectorTargetDimensionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dimension_values: Sequence['outputs.GetServiceConnectorTargetDimensionDimensionValueResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             dimension_values: Optional[Sequence['outputs.GetServiceConnectorTargetDimensionDimensionValueResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dimensionValues' in kwargs:
+        if dimension_values is None and 'dimensionValues' in kwargs:
             dimension_values = kwargs['dimensionValues']
+        if dimension_values is None:
+            raise TypeError("Missing 'dimension_values' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("dimension_values", dimension_values)
         _setter("name", name)
@@ -1632,11 +1718,17 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             path: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             path: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("kind", kind)
         _setter("path", path)
@@ -1693,19 +1785,29 @@ class GetServiceConnectorTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_size_in_kbs: int,
-             batch_time_in_sec: int,
-             condition: str,
-             function_id: str,
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_size_in_kbs: Optional[int] = None,
+             batch_time_in_sec: Optional[int] = None,
+             condition: Optional[str] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchSizeInKbs' in kwargs:
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
             batch_size_in_kbs = kwargs['batchSizeInKbs']
-        if 'batchTimeInSec' in kwargs:
+        if batch_size_in_kbs is None:
+            raise TypeError("Missing 'batch_size_in_kbs' argument")
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
             batch_time_in_sec = kwargs['batchTimeInSec']
-        if 'functionId' in kwargs:
+        if batch_time_in_sec is None:
+            raise TypeError("Missing 'batch_time_in_sec' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("batch_size_in_kbs", batch_size_in_kbs)
         _setter("batch_time_in_sec", batch_time_in_sec)
@@ -1772,11 +1874,15 @@ class GetServiceConnectorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1813,9 +1919,11 @@ class GetServiceConnectorsServiceConnectorCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1878,38 +1986,66 @@ class GetServiceConnectorsServiceConnectorCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecyle_details: str,
-             sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             targets: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetResult'],
-             tasks: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecyle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             targets: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetResult']] = None,
+             tasks: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecyleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'systemTags' in kwargs:
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if tasks is None:
+            raise TypeError("Missing 'tasks' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2065,19 +2201,29 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cursors: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult'],
-             kind: str,
-             log_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult'],
-             monitoring_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult'],
-             stream_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cursors: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult']] = None,
+             kind: Optional[str] = None,
+             log_sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult']] = None,
+             monitoring_sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult']] = None,
+             stream_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logSources' in kwargs:
+        if cursors is None:
+            raise TypeError("Missing 'cursors' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
             log_sources = kwargs['logSources']
-        if 'monitoringSources' in kwargs:
+        if log_sources is None:
+            raise TypeError("Missing 'log_sources' argument")
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
             monitoring_sources = kwargs['monitoringSources']
-        if 'streamId' in kwargs:
+        if monitoring_sources is None:
+            raise TypeError("Missing 'monitoring_sources' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
 
         _setter("cursors", cursors)
         _setter("kind", kind)
@@ -2140,9 +2286,11 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -2175,17 +2323,23 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'logGroupId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("log_group_id", log_group_id)
@@ -2233,14 +2387,18 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             namespace_details: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             namespace_details: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'namespaceDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if namespace_details is None and 'namespaceDetails' in kwargs:
             namespace_details = kwargs['namespaceDetails']
+        if namespace_details is None:
+            raise TypeError("Missing 'namespace_details' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("namespace_details", namespace_details)
@@ -2279,10 +2437,14 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             namespaces: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
 
         _setter("kind", kind)
         _setter("namespaces", namespaces)
@@ -2321,10 +2483,14 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             metrics: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult'],
-             namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             metrics: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult']] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("metrics", metrics)
         _setter("namespace", namespace)
@@ -2360,9 +2526,11 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("kind", kind)
 
@@ -2434,46 +2602,78 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_rollover_size_in_mbs: int,
-             batch_rollover_time_in_ms: int,
-             bucket: str,
-             compartment_id: str,
-             dimensions: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult'],
-             enable_formatted_messaging: bool,
-             function_id: str,
-             kind: str,
-             log_group_id: str,
-             log_source_identifier: str,
-             metric: str,
-             metric_namespace: str,
-             namespace: str,
-             object_name_prefix: str,
-             stream_id: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_rollover_size_in_mbs: Optional[int] = None,
+             batch_rollover_time_in_ms: Optional[int] = None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult']] = None,
+             enable_formatted_messaging: Optional[bool] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_source_identifier: Optional[str] = None,
+             metric: Optional[str] = None,
+             metric_namespace: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_name_prefix: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchRolloverSizeInMbs' in kwargs:
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
             batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
-        if 'batchRolloverTimeInMs' in kwargs:
+        if batch_rollover_size_in_mbs is None:
+            raise TypeError("Missing 'batch_rollover_size_in_mbs' argument")
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
             batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
-        if 'compartmentId' in kwargs:
+        if batch_rollover_time_in_ms is None:
+            raise TypeError("Missing 'batch_rollover_time_in_ms' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enableFormattedMessaging' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
             enable_formatted_messaging = kwargs['enableFormattedMessaging']
-        if 'functionId' in kwargs:
+        if enable_formatted_messaging is None:
+            raise TypeError("Missing 'enable_formatted_messaging' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'logGroupId' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSourceIdentifier' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
             log_source_identifier = kwargs['logSourceIdentifier']
-        if 'metricNamespace' in kwargs:
+        if log_source_identifier is None:
+            raise TypeError("Missing 'log_source_identifier' argument")
+        if metric is None:
+            raise TypeError("Missing 'metric' argument")
+        if metric_namespace is None and 'metricNamespace' in kwargs:
             metric_namespace = kwargs['metricNamespace']
-        if 'objectNamePrefix' in kwargs:
+        if metric_namespace is None:
+            raise TypeError("Missing 'metric_namespace' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
             object_name_prefix = kwargs['objectNamePrefix']
-        if 'streamId' in kwargs:
+        if object_name_prefix is None:
+            raise TypeError("Missing 'object_name_prefix' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
         _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
@@ -2638,12 +2838,16 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dimension_values: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult'],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             dimension_values: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dimensionValues' in kwargs:
+        if dimension_values is None and 'dimensionValues' in kwargs:
             dimension_values = kwargs['dimensionValues']
+        if dimension_values is None:
+            raise TypeError("Missing 'dimension_values' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("dimension_values", dimension_values)
         _setter("name", name)
@@ -2685,11 +2889,17 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kind: str,
-             path: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kind: Optional[str] = None,
+             path: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("kind", kind)
         _setter("path", path)
@@ -2746,19 +2956,29 @@ class GetServiceConnectorsServiceConnectorCollectionItemTaskResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_size_in_kbs: int,
-             batch_time_in_sec: int,
-             condition: str,
-             function_id: str,
-             kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_size_in_kbs: Optional[int] = None,
+             batch_time_in_sec: Optional[int] = None,
+             condition: Optional[str] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchSizeInKbs' in kwargs:
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
             batch_size_in_kbs = kwargs['batchSizeInKbs']
-        if 'batchTimeInSec' in kwargs:
+        if batch_size_in_kbs is None:
+            raise TypeError("Missing 'batch_size_in_kbs' argument")
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
             batch_time_in_sec = kwargs['batchTimeInSec']
-        if 'functionId' in kwargs:
+        if batch_time_in_sec is None:
+            raise TypeError("Missing 'batch_time_in_sec' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
 
         _setter("batch_size_in_kbs", batch_size_in_kbs)
         _setter("batch_time_in_sec", batch_time_in_sec)

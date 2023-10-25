@@ -30,11 +30,13 @@ class UnsetUserAssessmentBaselineArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             user_assessment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             user_assessment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userAssessmentId' in kwargs:
+        if user_assessment_id is None and 'userAssessmentId' in kwargs:
             user_assessment_id = kwargs['userAssessmentId']
+        if user_assessment_id is None:
+            raise TypeError("Missing 'user_assessment_id' argument")
 
         _setter("user_assessment_id", user_assessment_id)
 
@@ -75,9 +77,9 @@ class _UnsetUserAssessmentBaselineState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'userAssessmentId' in kwargs:
+        if user_assessment_id is None and 'userAssessmentId' in kwargs:
             user_assessment_id = kwargs['userAssessmentId']
 
         if user_assessment_id is not None:

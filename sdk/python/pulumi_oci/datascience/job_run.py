@@ -56,32 +56,38 @@ class JobRunArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             job_id: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             job_id: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              asynchronous: Optional[pulumi.Input[bool]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              job_configuration_override_details: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']] = None,
              job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'jobId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if job_id is None and 'jobId' in kwargs:
             job_id = kwargs['jobId']
-        if 'projectId' in kwargs:
+        if job_id is None:
+            raise TypeError("Missing 'job_id' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'definedTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jobConfigurationOverrideDetails' in kwargs:
+        if job_configuration_override_details is None and 'jobConfigurationOverrideDetails' in kwargs:
             job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
-        if 'jobLogConfigurationOverrideDetails' in kwargs:
+        if job_log_configuration_override_details is None and 'jobLogConfigurationOverrideDetails' in kwargs:
             job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
 
         _setter("compartment_id", compartment_id)
@@ -301,39 +307,39 @@ class _JobRunState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jobConfigurationOverrideDetails' in kwargs:
+        if job_configuration_override_details is None and 'jobConfigurationOverrideDetails' in kwargs:
             job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
-        if 'jobId' in kwargs:
+        if job_id is None and 'jobId' in kwargs:
             job_id = kwargs['jobId']
-        if 'jobInfrastructureConfigurationDetails' in kwargs:
+        if job_infrastructure_configuration_details is None and 'jobInfrastructureConfigurationDetails' in kwargs:
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
-        if 'jobLogConfigurationOverrideDetails' in kwargs:
+        if job_log_configuration_override_details is None and 'jobLogConfigurationOverrideDetails' in kwargs:
             job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
-        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+        if job_storage_mount_configuration_details_lists is None and 'jobStorageMountConfigurationDetailsLists' in kwargs:
             job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'logDetails' in kwargs:
+        if log_details is None and 'logDetails' in kwargs:
             log_details = kwargs['logDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'timeAccepted' in kwargs:
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if asynchronous is not None:
@@ -765,20 +771,12 @@ class JobRun(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if job_configuration_override_details is not None and not isinstance(job_configuration_override_details, JobRunJobConfigurationOverrideDetailsArgs):
-                job_configuration_override_details = job_configuration_override_details or {}
-                def _setter(key, value):
-                    job_configuration_override_details[key] = value
-                JobRunJobConfigurationOverrideDetailsArgs._configure(_setter, **job_configuration_override_details)
+            job_configuration_override_details = _utilities.configure(job_configuration_override_details, JobRunJobConfigurationOverrideDetailsArgs, True)
             __props__.__dict__["job_configuration_override_details"] = job_configuration_override_details
             if job_id is None and not opts.urn:
                 raise TypeError("Missing required property 'job_id'")
             __props__.__dict__["job_id"] = job_id
-            if job_log_configuration_override_details is not None and not isinstance(job_log_configuration_override_details, JobRunJobLogConfigurationOverrideDetailsArgs):
-                job_log_configuration_override_details = job_log_configuration_override_details or {}
-                def _setter(key, value):
-                    job_log_configuration_override_details[key] = value
-                JobRunJobLogConfigurationOverrideDetailsArgs._configure(_setter, **job_log_configuration_override_details)
+            job_log_configuration_override_details = _utilities.configure(job_log_configuration_override_details, JobRunJobLogConfigurationOverrideDetailsArgs, True)
             __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

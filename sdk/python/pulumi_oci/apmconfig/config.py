@@ -73,9 +73,9 @@ class ConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apm_domain_id: pulumi.Input[str],
-             config_type: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             config_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
@@ -89,25 +89,31 @@ class ConfigArgs:
              opc_dry_run: Optional[pulumi.Input[str]] = None,
              options: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'configType' in kwargs:
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'displayName' in kwargs:
+        if config_type is None:
+            raise TypeError("Missing 'config_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'filterId' in kwargs:
+        if filter_id is None and 'filterId' in kwargs:
             filter_id = kwargs['filterId']
-        if 'filterText' in kwargs:
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inUseBies' in kwargs:
+        if in_use_bies is None and 'inUseBies' in kwargs:
             in_use_bies = kwargs['inUseBies']
-        if 'opcDryRun' in kwargs:
+        if opc_dry_run is None and 'opcDryRun' in kwargs:
             opc_dry_run = kwargs['opcDryRun']
 
         _setter("apm_domain_id", apm_domain_id)
@@ -429,33 +435,33 @@ class _ConfigState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filterId' in kwargs:
+        if filter_id is None and 'filterId' in kwargs:
             filter_id = kwargs['filterId']
-        if 'filterText' in kwargs:
+        if filter_text is None and 'filterText' in kwargs:
             filter_text = kwargs['filterText']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inUseBies' in kwargs:
+        if in_use_bies is None and 'inUseBies' in kwargs:
             in_use_bies = kwargs['inUseBies']
-        if 'opcDryRun' in kwargs:
+        if opc_dry_run is None and 'opcDryRun' in kwargs:
             opc_dry_run = kwargs['opcDryRun']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedBy' in kwargs:
+        if updated_by is None and 'updatedBy' in kwargs:
             updated_by = kwargs['updatedBy']
 
         if apm_domain_id is not None:

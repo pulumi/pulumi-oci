@@ -161,7 +161,7 @@ class AddonAddonError(dict):
              code: Optional[str] = None,
              message: Optional[str] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if code is not None:
@@ -215,7 +215,7 @@ class AddonConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -271,11 +271,13 @@ class ClusterClusterPodNetworkOption(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cni_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
 
         _setter("cni_type", cni_type)
 
@@ -336,13 +338,13 @@ class ClusterEndpoint(dict):
              private_endpoint: Optional[str] = None,
              public_endpoint: Optional[str] = None,
              vcn_hostname_endpoint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'privateEndpoint' in kwargs:
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
             private_endpoint = kwargs['privateEndpoint']
-        if 'publicEndpoint' in kwargs:
+        if public_endpoint is None and 'publicEndpoint' in kwargs:
             public_endpoint = kwargs['publicEndpoint']
-        if 'vcnHostnameEndpoint' in kwargs:
+        if vcn_hostname_endpoint is None and 'vcnHostnameEndpoint' in kwargs:
             vcn_hostname_endpoint = kwargs['vcnHostnameEndpoint']
 
         if kubernetes is not None:
@@ -428,16 +430,18 @@ class ClusterEndpointConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             subnet_id: str,
+             subnet_id: Optional[str] = None,
              is_public_ip_enabled: Optional[bool] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'isPublicIpEnabled' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if is_public_ip_enabled is None and 'isPublicIpEnabled' in kwargs:
             is_public_ip_enabled = kwargs['isPublicIpEnabled']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("subnet_id", subnet_id)
@@ -509,11 +513,11 @@ class ClusterImagePolicyConfig(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: Optional[bool] = None,
              key_details: Optional[Sequence['outputs.ClusterImagePolicyConfigKeyDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPolicyEnabled' in kwargs:
+        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
             is_policy_enabled = kwargs['isPolicyEnabled']
-        if 'keyDetails' in kwargs:
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
 
         if is_policy_enabled is not None:
@@ -570,9 +574,9 @@ class ClusterImagePolicyConfigKeyDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
 
         if kms_key_id is not None:
@@ -673,27 +677,27 @@ class ClusterMetadata(dict):
              time_updated: Optional[str] = None,
              updated_by_user_id: Optional[str] = None,
              updated_by_work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'createdByUserId' in kwargs:
+        if created_by_user_id is None and 'createdByUserId' in kwargs:
             created_by_user_id = kwargs['createdByUserId']
-        if 'createdByWorkRequestId' in kwargs:
+        if created_by_work_request_id is None and 'createdByWorkRequestId' in kwargs:
             created_by_work_request_id = kwargs['createdByWorkRequestId']
-        if 'deletedByUserId' in kwargs:
+        if deleted_by_user_id is None and 'deletedByUserId' in kwargs:
             deleted_by_user_id = kwargs['deletedByUserId']
-        if 'deletedByWorkRequestId' in kwargs:
+        if deleted_by_work_request_id is None and 'deletedByWorkRequestId' in kwargs:
             deleted_by_work_request_id = kwargs['deletedByWorkRequestId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeCredentialExpiration' in kwargs:
+        if time_credential_expiration is None and 'timeCredentialExpiration' in kwargs:
             time_credential_expiration = kwargs['timeCredentialExpiration']
-        if 'timeDeleted' in kwargs:
+        if time_deleted is None and 'timeDeleted' in kwargs:
             time_deleted = kwargs['timeDeleted']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedByUserId' in kwargs:
+        if updated_by_user_id is None and 'updatedByUserId' in kwargs:
             updated_by_user_id = kwargs['updatedByUserId']
-        if 'updatedByWorkRequestId' in kwargs:
+        if updated_by_work_request_id is None and 'updatedByWorkRequestId' in kwargs:
             updated_by_work_request_id = kwargs['updatedByWorkRequestId']
 
         if created_by_user_id is not None:
@@ -860,19 +864,19 @@ class ClusterOptions(dict):
              persistent_volume_config: Optional['outputs.ClusterOptionsPersistentVolumeConfig'] = None,
              service_lb_config: Optional['outputs.ClusterOptionsServiceLbConfig'] = None,
              service_lb_subnet_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addOns' in kwargs:
+        if add_ons is None and 'addOns' in kwargs:
             add_ons = kwargs['addOns']
-        if 'admissionControllerOptions' in kwargs:
+        if admission_controller_options is None and 'admissionControllerOptions' in kwargs:
             admission_controller_options = kwargs['admissionControllerOptions']
-        if 'kubernetesNetworkConfig' in kwargs:
+        if kubernetes_network_config is None and 'kubernetesNetworkConfig' in kwargs:
             kubernetes_network_config = kwargs['kubernetesNetworkConfig']
-        if 'persistentVolumeConfig' in kwargs:
+        if persistent_volume_config is None and 'persistentVolumeConfig' in kwargs:
             persistent_volume_config = kwargs['persistentVolumeConfig']
-        if 'serviceLbConfig' in kwargs:
+        if service_lb_config is None and 'serviceLbConfig' in kwargs:
             service_lb_config = kwargs['serviceLbConfig']
-        if 'serviceLbSubnetIds' in kwargs:
+        if service_lb_subnet_ids is None and 'serviceLbSubnetIds' in kwargs:
             service_lb_subnet_ids = kwargs['serviceLbSubnetIds']
 
         if add_ons is not None:
@@ -975,11 +979,11 @@ class ClusterOptionsAddOns(dict):
              _setter: Callable[[Any, Any], None],
              is_kubernetes_dashboard_enabled: Optional[bool] = None,
              is_tiller_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isKubernetesDashboardEnabled' in kwargs:
+        if is_kubernetes_dashboard_enabled is None and 'isKubernetesDashboardEnabled' in kwargs:
             is_kubernetes_dashboard_enabled = kwargs['isKubernetesDashboardEnabled']
-        if 'isTillerEnabled' in kwargs:
+        if is_tiller_enabled is None and 'isTillerEnabled' in kwargs:
             is_tiller_enabled = kwargs['isTillerEnabled']
 
         if is_kubernetes_dashboard_enabled is not None:
@@ -1036,9 +1040,9 @@ class ClusterOptionsAdmissionControllerOptions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_pod_security_policy_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPodSecurityPolicyEnabled' in kwargs:
+        if is_pod_security_policy_enabled is None and 'isPodSecurityPolicyEnabled' in kwargs:
             is_pod_security_policy_enabled = kwargs['isPodSecurityPolicyEnabled']
 
         if is_pod_security_policy_enabled is not None:
@@ -1091,11 +1095,11 @@ class ClusterOptionsKubernetesNetworkConfig(dict):
              _setter: Callable[[Any, Any], None],
              pods_cidr: Optional[str] = None,
              services_cidr: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'podsCidr' in kwargs:
+        if pods_cidr is None and 'podsCidr' in kwargs:
             pods_cidr = kwargs['podsCidr']
-        if 'servicesCidr' in kwargs:
+        if services_cidr is None and 'servicesCidr' in kwargs:
             services_cidr = kwargs['servicesCidr']
 
         if pods_cidr is not None:
@@ -1158,11 +1162,11 @@ class ClusterOptionsPersistentVolumeConfig(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         if defined_tags is not None:
@@ -1225,11 +1229,11 @@ class ClusterOptionsServiceLbConfig(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         if defined_tags is not None:
@@ -1412,7 +1416,7 @@ class ContainerInstanceContainer(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_url: str,
+             image_url: Optional[str] = None,
              arguments: Optional[Sequence[str]] = None,
              availability_domain: Optional[str] = None,
              commands: Optional[Sequence[str]] = None,
@@ -1437,51 +1441,53 @@ class ContainerInstanceContainer(dict):
              time_updated: Optional[str] = None,
              volume_mounts: Optional[Sequence['outputs.ContainerInstanceContainerVolumeMount']] = None,
              working_directory: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageUrl' in kwargs:
+        if image_url is None and 'imageUrl' in kwargs:
             image_url = kwargs['imageUrl']
-        if 'availabilityDomain' in kwargs:
+        if image_url is None:
+            raise TypeError("Missing 'image_url' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerId' in kwargs:
+        if container_id is None and 'containerId' in kwargs:
             container_id = kwargs['containerId']
-        if 'containerInstanceId' in kwargs:
+        if container_instance_id is None and 'containerInstanceId' in kwargs:
             container_instance_id = kwargs['containerInstanceId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'environmentVariables' in kwargs:
+        if environment_variables is None and 'environmentVariables' in kwargs:
             environment_variables = kwargs['environmentVariables']
-        if 'exitCode' in kwargs:
+        if exit_code is None and 'exitCode' in kwargs:
             exit_code = kwargs['exitCode']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'healthChecks' in kwargs:
+        if health_checks is None and 'healthChecks' in kwargs:
             health_checks = kwargs['healthChecks']
-        if 'isResourcePrincipalDisabled' in kwargs:
+        if is_resource_principal_disabled is None and 'isResourcePrincipalDisabled' in kwargs:
             is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'resourceConfig' in kwargs:
+        if resource_config is None and 'resourceConfig' in kwargs:
             resource_config = kwargs['resourceConfig']
-        if 'securityContext' in kwargs:
+        if security_context is None and 'securityContext' in kwargs:
             security_context = kwargs['securityContext']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeTerminated' in kwargs:
+        if time_terminated is None and 'timeTerminated' in kwargs:
             time_terminated = kwargs['timeTerminated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'volumeMounts' in kwargs:
+        if volume_mounts is None and 'volumeMounts' in kwargs:
             volume_mounts = kwargs['volumeMounts']
-        if 'workingDirectory' in kwargs:
+        if working_directory is None and 'workingDirectory' in kwargs:
             working_directory = kwargs['workingDirectory']
 
         _setter("image_url", image_url)
@@ -1824,7 +1830,7 @@ class ContainerInstanceContainerHealthCheck(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             health_check_type: str,
+             health_check_type: Optional[str] = None,
              commands: Optional[Sequence[str]] = None,
              failure_action: Optional[str] = None,
              failure_threshold: Optional[int] = None,
@@ -1838,23 +1844,25 @@ class ContainerInstanceContainerHealthCheck(dict):
              status_details: Optional[str] = None,
              success_threshold: Optional[int] = None,
              timeout_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'healthCheckType' in kwargs:
+        if health_check_type is None and 'healthCheckType' in kwargs:
             health_check_type = kwargs['healthCheckType']
-        if 'failureAction' in kwargs:
+        if health_check_type is None:
+            raise TypeError("Missing 'health_check_type' argument")
+        if failure_action is None and 'failureAction' in kwargs:
             failure_action = kwargs['failureAction']
-        if 'failureThreshold' in kwargs:
+        if failure_threshold is None and 'failureThreshold' in kwargs:
             failure_threshold = kwargs['failureThreshold']
-        if 'initialDelayInSeconds' in kwargs:
+        if initial_delay_in_seconds is None and 'initialDelayInSeconds' in kwargs:
             initial_delay_in_seconds = kwargs['initialDelayInSeconds']
-        if 'intervalInSeconds' in kwargs:
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
             interval_in_seconds = kwargs['intervalInSeconds']
-        if 'statusDetails' in kwargs:
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
-        if 'successThreshold' in kwargs:
+        if success_threshold is None and 'successThreshold' in kwargs:
             success_threshold = kwargs['successThreshold']
-        if 'timeoutInSeconds' in kwargs:
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
 
         _setter("health_check_type", health_check_type)
@@ -2011,7 +2019,7 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -2082,11 +2090,11 @@ class ContainerInstanceContainerResourceConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_limit_in_gbs: Optional[float] = None,
              vcpus_limit: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryLimitInGbs' in kwargs:
+        if memory_limit_in_gbs is None and 'memoryLimitInGbs' in kwargs:
             memory_limit_in_gbs = kwargs['memoryLimitInGbs']
-        if 'vcpusLimit' in kwargs:
+        if vcpus_limit is None and 'vcpusLimit' in kwargs:
             vcpus_limit = kwargs['vcpusLimit']
 
         if memory_limit_in_gbs is not None:
@@ -2175,17 +2183,17 @@ class ContainerInstanceContainerSecurityContext(dict):
              run_as_group: Optional[int] = None,
              run_as_user: Optional[int] = None,
              security_context_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isNonRootUserCheckEnabled' in kwargs:
+        if is_non_root_user_check_enabled is None and 'isNonRootUserCheckEnabled' in kwargs:
             is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
-        if 'isRootFileSystemReadonly' in kwargs:
+        if is_root_file_system_readonly is None and 'isRootFileSystemReadonly' in kwargs:
             is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
-        if 'runAsGroup' in kwargs:
+        if run_as_group is None and 'runAsGroup' in kwargs:
             run_as_group = kwargs['runAsGroup']
-        if 'runAsUser' in kwargs:
+        if run_as_user is None and 'runAsUser' in kwargs:
             run_as_user = kwargs['runAsUser']
-        if 'securityContextType' in kwargs:
+        if security_context_type is None and 'securityContextType' in kwargs:
             security_context_type = kwargs['securityContextType']
 
         if is_non_root_user_check_enabled is not None:
@@ -2289,20 +2297,24 @@ class ContainerInstanceContainerVolumeMount(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             mount_path: str,
-             volume_name: str,
+             mount_path: Optional[str] = None,
+             volume_name: Optional[str] = None,
              is_read_only: Optional[bool] = None,
              partition: Optional[int] = None,
              sub_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mountPath' in kwargs:
+        if mount_path is None and 'mountPath' in kwargs:
             mount_path = kwargs['mountPath']
-        if 'volumeName' in kwargs:
+        if mount_path is None:
+            raise TypeError("Missing 'mount_path' argument")
+        if volume_name is None and 'volumeName' in kwargs:
             volume_name = kwargs['volumeName']
-        if 'isReadOnly' in kwargs:
+        if volume_name is None:
+            raise TypeError("Missing 'volume_name' argument")
+        if is_read_only is None and 'isReadOnly' in kwargs:
             is_read_only = kwargs['isReadOnly']
-        if 'subPath' in kwargs:
+        if sub_path is None and 'subPath' in kwargs:
             sub_path = kwargs['subPath']
 
         _setter("mount_path", mount_path)
@@ -2378,7 +2390,7 @@ class ContainerInstanceDnsConfig(dict):
              nameservers: Optional[Sequence[str]] = None,
              options: Optional[Sequence[str]] = None,
              searches: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if nameservers is not None:
@@ -2460,18 +2472,22 @@ class ContainerInstanceImagePullSecret(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             registry_endpoint: str,
-             secret_type: str,
+             registry_endpoint: Optional[str] = None,
+             secret_type: Optional[str] = None,
              password: Optional[str] = None,
              secret_id: Optional[str] = None,
              username: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'registryEndpoint' in kwargs:
+        if registry_endpoint is None and 'registryEndpoint' in kwargs:
             registry_endpoint = kwargs['registryEndpoint']
-        if 'secretType' in kwargs:
+        if registry_endpoint is None:
+            raise TypeError("Missing 'registry_endpoint' argument")
+        if secret_type is None and 'secretType' in kwargs:
             secret_type = kwargs['secretType']
-        if 'secretId' in kwargs:
+        if secret_type is None:
+            raise TypeError("Missing 'secret_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
 
         _setter("registry_endpoint", registry_endpoint)
@@ -2568,17 +2584,19 @@ class ContainerInstanceShapeConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ocpus: float,
+             ocpus: Optional[float] = None,
              memory_in_gbs: Optional[float] = None,
              networking_bandwidth_in_gbps: Optional[float] = None,
              processor_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
-        if 'networkingBandwidthInGbps' in kwargs:
+        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
             networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
-        if 'processorDescription' in kwargs:
+        if processor_description is None and 'processorDescription' in kwargs:
             processor_description = kwargs['processorDescription']
 
         _setter("ocpus", ocpus)
@@ -2698,7 +2716,7 @@ class ContainerInstanceVnic(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             subnet_id: str,
+             subnet_id: Optional[str] = None,
              defined_tags: Optional[Mapping[str, Any]] = None,
              display_name: Optional[str] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
@@ -2708,27 +2726,29 @@ class ContainerInstanceVnic(dict):
              private_ip: Optional[str] = None,
              skip_source_dest_check: Optional[bool] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'definedTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'isPublicIpAssigned' in kwargs:
+        if is_public_ip_assigned is None and 'isPublicIpAssigned' in kwargs:
             is_public_ip_assigned = kwargs['isPublicIpAssigned']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'vnicId' in kwargs:
+        if vnic_id is None and 'vnicId' in kwargs:
             vnic_id = kwargs['vnicId']
 
         _setter("subnet_id", subnet_id)
@@ -2874,15 +2894,19 @@ class ContainerInstanceVolume(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             volume_type: str,
+             name: Optional[str] = None,
+             volume_type: Optional[str] = None,
              backing_store: Optional[str] = None,
              configs: Optional[Sequence['outputs.ContainerInstanceVolumeConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'volumeType' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if volume_type is None and 'volumeType' in kwargs:
             volume_type = kwargs['volumeType']
-        if 'backingStore' in kwargs:
+        if volume_type is None:
+            raise TypeError("Missing 'volume_type' argument")
+        if backing_store is None and 'backingStore' in kwargs:
             backing_store = kwargs['backingStore']
 
         _setter("name", name)
@@ -2965,9 +2989,9 @@ class ContainerInstanceVolumeConfig(dict):
              data: Optional[str] = None,
              file_name: Optional[str] = None,
              path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileName' in kwargs:
+        if file_name is None and 'fileName' in kwargs:
             file_name = kwargs['fileName']
 
         if data is not None:
@@ -3021,7 +3045,7 @@ class NodePoolInitialNodeLabel(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -3148,27 +3172,27 @@ class NodePoolNode(dict):
              public_ip: Optional[str] = None,
              state: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kubernetesVersion' in kwargs:
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodePoolId' in kwargs:
+        if node_pool_id is None and 'nodePoolId' in kwargs:
             node_pool_id = kwargs['nodePoolId']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'publicIp' in kwargs:
+        if public_ip is None and 'publicIp' in kwargs:
             public_ip = kwargs['publicIp']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
 
         if availability_domain is not None:
@@ -3379,29 +3403,33 @@ class NodePoolNodeConfigDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             placement_configs: Sequence['outputs.NodePoolNodeConfigDetailsPlacementConfig'],
-             size: int,
+             placement_configs: Optional[Sequence['outputs.NodePoolNodeConfigDetailsPlacementConfig']] = None,
+             size: Optional[int] = None,
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
              is_pv_encryption_in_transit_enabled: Optional[bool] = None,
              kms_key_id: Optional[str] = None,
              node_pool_pod_network_option_details: Optional['outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails'] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'placementConfigs' in kwargs:
+        if placement_configs is None and 'placementConfigs' in kwargs:
             placement_configs = kwargs['placementConfigs']
-        if 'definedTags' in kwargs:
+        if placement_configs is None:
+            raise TypeError("Missing 'placement_configs' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+        if node_pool_pod_network_option_details is None and 'nodePoolPodNetworkOptionDetails' in kwargs:
             node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("placement_configs", placement_configs)
@@ -3532,19 +3560,21 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
+             cni_type: Optional[str] = None,
              max_pods_per_node: Optional[int] = None,
              pod_nsg_ids: Optional[Sequence[str]] = None,
              pod_subnet_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
-        if 'maxPodsPerNode' in kwargs:
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
+        if max_pods_per_node is None and 'maxPodsPerNode' in kwargs:
             max_pods_per_node = kwargs['maxPodsPerNode']
-        if 'podNsgIds' in kwargs:
+        if pod_nsg_ids is None and 'podNsgIds' in kwargs:
             pod_nsg_ids = kwargs['podNsgIds']
-        if 'podSubnetIds' in kwargs:
+        if pod_subnet_ids is None and 'podSubnetIds' in kwargs:
             pod_subnet_ids = kwargs['podSubnetIds']
 
         _setter("cni_type", cni_type)
@@ -3639,22 +3669,26 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             subnet_id: str,
+             availability_domain: Optional[str] = None,
+             subnet_id: Optional[str] = None,
              capacity_reservation_id: Optional[str] = None,
              fault_domains: Optional[Sequence[str]] = None,
              preemptible_node_config: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'subnetId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'capacityReservationId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'faultDomains' in kwargs:
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'preemptibleNodeConfig' in kwargs:
+        if preemptible_node_config is None and 'preemptibleNodeConfig' in kwargs:
             preemptible_node_config = kwargs['preemptibleNodeConfig']
 
         _setter("availability_domain", availability_domain)
@@ -3738,11 +3772,13 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_action: 'outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_action: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionAction' in kwargs:
+        if preemption_action is None and 'preemptionAction' in kwargs:
             preemption_action = kwargs['preemptionAction']
+        if preemption_action is None:
+            raise TypeError("Missing 'preemption_action' argument")
 
         _setter("preemption_action", preemption_action)
 
@@ -3789,11 +3825,13 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
+             type: Optional[str] = None,
              is_preserve_boot_volume: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPreserveBootVolume' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_preserve_boot_volume is None and 'isPreserveBootVolume' in kwargs:
             is_preserve_boot_volume = kwargs['isPreserveBootVolume']
 
         _setter("type", type)
@@ -3840,7 +3878,7 @@ class NodePoolNodeError(dict):
              code: Optional[str] = None,
              message: Optional[str] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if code is not None:
@@ -3913,11 +3951,11 @@ class NodePoolNodeEvictionNodePoolSettings(dict):
              _setter: Callable[[Any, Any], None],
              eviction_grace_duration: Optional[str] = None,
              is_force_delete_after_grace_duration: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'evictionGraceDuration' in kwargs:
+        if eviction_grace_duration is None and 'evictionGraceDuration' in kwargs:
             eviction_grace_duration = kwargs['evictionGraceDuration']
-        if 'isForceDeleteAfterGraceDuration' in kwargs:
+        if is_force_delete_after_grace_duration is None and 'isForceDeleteAfterGraceDuration' in kwargs:
             is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
 
         if eviction_grace_duration is not None:
@@ -3986,13 +4024,13 @@ class NodePoolNodePoolCyclingDetails(dict):
              is_node_cycling_enabled: Optional[bool] = None,
              maximum_surge: Optional[str] = None,
              maximum_unavailable: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isNodeCyclingEnabled' in kwargs:
+        if is_node_cycling_enabled is None and 'isNodeCyclingEnabled' in kwargs:
             is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
-        if 'maximumSurge' in kwargs:
+        if maximum_surge is None and 'maximumSurge' in kwargs:
             maximum_surge = kwargs['maximumSurge']
-        if 'maximumUnavailable' in kwargs:
+        if maximum_unavailable is None and 'maximumUnavailable' in kwargs:
             maximum_unavailable = kwargs['maximumUnavailable']
 
         if is_node_cycling_enabled is not None:
@@ -4063,9 +4101,9 @@ class NodePoolNodeShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if memory_in_gbs is not None:
@@ -4134,13 +4172,13 @@ class NodePoolNodeSource(dict):
              image_id: Optional[str] = None,
              source_name: Optional[str] = None,
              source_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceName' in kwargs:
+        if source_name is None and 'sourceName' in kwargs:
             source_name = kwargs['sourceName']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
 
         if image_id is not None:
@@ -4216,16 +4254,20 @@ class NodePoolNodeSourceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_id: str,
-             source_type: str,
+             image_id: Optional[str] = None,
+             source_type: Optional[str] = None,
              boot_volume_size_in_gbs: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceType' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
 
         _setter("image_id", image_id)
@@ -4277,7 +4319,7 @@ class VirtualNodePoolInitialVirtualNodeLabel(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if key is not None:
@@ -4343,17 +4385,23 @@ class VirtualNodePoolPlacementConfiguration(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             fault_domains: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomains' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'subnetId' in kwargs:
+        if fault_domains is None:
+            raise TypeError("Missing 'fault_domains' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
@@ -4423,14 +4471,18 @@ class VirtualNodePoolPodConfiguration(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             shape: str,
-             subnet_id: str,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'subnetId' in kwargs:
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'nsgIds' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("shape", shape)
@@ -4486,7 +4538,7 @@ class VirtualNodePoolTaint(dict):
              effect: Optional[str] = None,
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if effect is not None:
@@ -4563,11 +4615,11 @@ class VirtualNodePoolVirtualNodeTags(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         if defined_tags is not None:
@@ -4616,11 +4668,17 @@ class GetAddonAddonErrorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             message: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("code", code)
         _setter("message", message)
@@ -4668,10 +4726,14 @@ class GetAddonConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -4737,33 +4799,55 @@ class GetAddonOptionsAddonOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             addon_group: str,
-             addon_schema_version: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             is_essential: bool,
-             name: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             versions: Sequence['outputs.GetAddonOptionsAddonOptionVersionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             addon_group: Optional[str] = None,
+             addon_schema_version: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_essential: Optional[bool] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             versions: Optional[Sequence['outputs.GetAddonOptionsAddonOptionVersionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addonGroup' in kwargs:
+        if addon_group is None and 'addonGroup' in kwargs:
             addon_group = kwargs['addonGroup']
-        if 'addonSchemaVersion' in kwargs:
+        if addon_group is None:
+            raise TypeError("Missing 'addon_group' argument")
+        if addon_schema_version is None and 'addonSchemaVersion' in kwargs:
             addon_schema_version = kwargs['addonSchemaVersion']
-        if 'definedTags' in kwargs:
+        if addon_schema_version is None:
+            raise TypeError("Missing 'addon_schema_version' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEssential' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_essential is None and 'isEssential' in kwargs:
             is_essential = kwargs['isEssential']
-        if 'systemTags' in kwargs:
+        if is_essential is None:
+            raise TypeError("Missing 'is_essential' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if versions is None:
+            raise TypeError("Missing 'versions' argument")
 
         _setter("addon_group", addon_group)
         _setter("addon_schema_version", addon_schema_version)
@@ -4892,17 +4976,27 @@ class GetAddonOptionsAddonOptionVersionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             configurations: Sequence['outputs.GetAddonOptionsAddonOptionVersionConfigurationResult'],
-             description: str,
-             kubernetes_version_filters: Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult'],
-             status: str,
-             version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             configurations: Optional[Sequence['outputs.GetAddonOptionsAddonOptionVersionConfigurationResult']] = None,
+             description: Optional[str] = None,
+             kubernetes_version_filters: Optional[Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult']] = None,
+             status: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kubernetesVersionFilters' in kwargs:
+        if configurations is None:
+            raise TypeError("Missing 'configurations' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if kubernetes_version_filters is None and 'kubernetesVersionFilters' in kwargs:
             kubernetes_version_filters = kwargs['kubernetesVersionFilters']
-        if 'versionNumber' in kwargs:
+        if kubernetes_version_filters is None:
+            raise TypeError("Missing 'kubernetes_version_filters' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if version_number is None and 'versionNumber' in kwargs:
             version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
 
         _setter("configurations", configurations)
         _setter("description", description)
@@ -4977,17 +5071,27 @@ class GetAddonOptionsAddonOptionVersionConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             display_name: str,
-             is_required: bool,
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isRequired' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("description", description)
         _setter("display_name", display_name)
@@ -5056,17 +5160,23 @@ class GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             exact_kubernetes_versions: Sequence[str],
-             maximum_version: str,
-             minimal_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             exact_kubernetes_versions: Optional[Sequence[str]] = None,
+             maximum_version: Optional[str] = None,
+             minimal_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'exactKubernetesVersions' in kwargs:
+        if exact_kubernetes_versions is None and 'exactKubernetesVersions' in kwargs:
             exact_kubernetes_versions = kwargs['exactKubernetesVersions']
-        if 'maximumVersion' in kwargs:
+        if exact_kubernetes_versions is None:
+            raise TypeError("Missing 'exact_kubernetes_versions' argument")
+        if maximum_version is None and 'maximumVersion' in kwargs:
             maximum_version = kwargs['maximumVersion']
-        if 'minimalVersion' in kwargs:
+        if maximum_version is None:
+            raise TypeError("Missing 'maximum_version' argument")
+        if minimal_version is None and 'minimalVersion' in kwargs:
             minimal_version = kwargs['minimalVersion']
+        if minimal_version is None:
+            raise TypeError("Missing 'minimal_version' argument")
 
         _setter("exact_kubernetes_versions", exact_kubernetes_versions)
         _setter("maximum_version", maximum_version)
@@ -5115,11 +5225,15 @@ class GetAddonOptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5182,29 +5296,47 @@ class GetAddonsAddonResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             addon_errors: Sequence['outputs.GetAddonsAddonAddonErrorResult'],
-             addon_name: str,
-             cluster_id: str,
-             configurations: Sequence['outputs.GetAddonsAddonConfigurationResult'],
-             current_installed_version: str,
-             remove_addon_resources_on_delete: bool,
-             state: str,
-             time_created: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             addon_errors: Optional[Sequence['outputs.GetAddonsAddonAddonErrorResult']] = None,
+             addon_name: Optional[str] = None,
+             cluster_id: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.GetAddonsAddonConfigurationResult']] = None,
+             current_installed_version: Optional[str] = None,
+             remove_addon_resources_on_delete: Optional[bool] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addonErrors' in kwargs:
+        if addon_errors is None and 'addonErrors' in kwargs:
             addon_errors = kwargs['addonErrors']
-        if 'addonName' in kwargs:
+        if addon_errors is None:
+            raise TypeError("Missing 'addon_errors' argument")
+        if addon_name is None and 'addonName' in kwargs:
             addon_name = kwargs['addonName']
-        if 'clusterId' in kwargs:
+        if addon_name is None:
+            raise TypeError("Missing 'addon_name' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'currentInstalledVersion' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if configurations is None:
+            raise TypeError("Missing 'configurations' argument")
+        if current_installed_version is None and 'currentInstalledVersion' in kwargs:
             current_installed_version = kwargs['currentInstalledVersion']
-        if 'removeAddonResourcesOnDelete' in kwargs:
+        if current_installed_version is None:
+            raise TypeError("Missing 'current_installed_version' argument")
+        if remove_addon_resources_on_delete is None and 'removeAddonResourcesOnDelete' in kwargs:
             remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
-        if 'timeCreated' in kwargs:
+        if remove_addon_resources_on_delete is None:
+            raise TypeError("Missing 'remove_addon_resources_on_delete' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("addon_errors", addon_errors)
         _setter("addon_name", addon_name)
@@ -5306,11 +5438,17 @@ class GetAddonsAddonAddonErrorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             message: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("code", code)
         _setter("message", message)
@@ -5358,10 +5496,14 @@ class GetAddonsAddonConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -5398,11 +5540,15 @@ class GetAddonsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5439,11 +5585,13 @@ class GetClusterOptionClusterPodNetworkOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cni_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
 
         _setter("cni_type", cni_type)
 
@@ -5471,11 +5619,15 @@ class GetClusterWorkloadMappingsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -5536,29 +5688,47 @@ class GetClusterWorkloadMappingsWorkloadMappingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             mapped_compartment_id: str,
-             mapped_tenancy_id: str,
-             namespace: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             mapped_compartment_id: Optional[str] = None,
+             mapped_tenancy_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'definedTags' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'mappedCompartmentId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if mapped_compartment_id is None and 'mappedCompartmentId' in kwargs:
             mapped_compartment_id = kwargs['mappedCompartmentId']
-        if 'mappedTenancyId' in kwargs:
+        if mapped_compartment_id is None:
+            raise TypeError("Missing 'mapped_compartment_id' argument")
+        if mapped_tenancy_id is None and 'mappedTenancyId' in kwargs:
             mapped_tenancy_id = kwargs['mappedTenancyId']
-        if 'timeCreated' in kwargs:
+        if mapped_tenancy_id is None:
+            raise TypeError("Missing 'mapped_tenancy_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("cluster_id", cluster_id)
         _setter("defined_tags", defined_tags)
@@ -5708,48 +5878,84 @@ class GetClustersClusterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             available_kubernetes_upgrades: Sequence[str],
-             cluster_pod_network_options: Sequence['outputs.GetClustersClusterClusterPodNetworkOptionResult'],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             endpoint_configs: Sequence['outputs.GetClustersClusterEndpointConfigResult'],
-             endpoints: Sequence['outputs.GetClustersClusterEndpointResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image_policy_configs: Sequence['outputs.GetClustersClusterImagePolicyConfigResult'],
-             kms_key_id: str,
-             kubernetes_version: str,
-             lifecycle_details: str,
-             metadatas: Sequence['outputs.GetClustersClusterMetadataResult'],
-             name: str,
-             options: Sequence['outputs.GetClustersClusterOptionResult'],
-             state: str,
-             type: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             available_kubernetes_upgrades: Optional[Sequence[str]] = None,
+             cluster_pod_network_options: Optional[Sequence['outputs.GetClustersClusterClusterPodNetworkOptionResult']] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             endpoint_configs: Optional[Sequence['outputs.GetClustersClusterEndpointConfigResult']] = None,
+             endpoints: Optional[Sequence['outputs.GetClustersClusterEndpointResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image_policy_configs: Optional[Sequence['outputs.GetClustersClusterImagePolicyConfigResult']] = None,
+             kms_key_id: Optional[str] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             metadatas: Optional[Sequence['outputs.GetClustersClusterMetadataResult']] = None,
+             name: Optional[str] = None,
+             options: Optional[Sequence['outputs.GetClustersClusterOptionResult']] = None,
+             state: Optional[str] = None,
+             type: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableKubernetesUpgrades' in kwargs:
+        if available_kubernetes_upgrades is None and 'availableKubernetesUpgrades' in kwargs:
             available_kubernetes_upgrades = kwargs['availableKubernetesUpgrades']
-        if 'clusterPodNetworkOptions' in kwargs:
+        if available_kubernetes_upgrades is None:
+            raise TypeError("Missing 'available_kubernetes_upgrades' argument")
+        if cluster_pod_network_options is None and 'clusterPodNetworkOptions' in kwargs:
             cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
-        if 'compartmentId' in kwargs:
+        if cluster_pod_network_options is None:
+            raise TypeError("Missing 'cluster_pod_network_options' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'endpointConfigs' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if endpoint_configs is None and 'endpointConfigs' in kwargs:
             endpoint_configs = kwargs['endpointConfigs']
-        if 'freeformTags' in kwargs:
+        if endpoint_configs is None:
+            raise TypeError("Missing 'endpoint_configs' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfigs' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_policy_configs is None and 'imagePolicyConfigs' in kwargs:
             image_policy_configs = kwargs['imagePolicyConfigs']
-        if 'kmsKeyId' in kwargs:
+        if image_policy_configs is None:
+            raise TypeError("Missing 'image_policy_configs' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kubernetesVersion' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'vcnId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if metadatas is None:
+            raise TypeError("Missing 'metadatas' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if options is None:
+            raise TypeError("Missing 'options' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("available_kubernetes_upgrades", available_kubernetes_upgrades)
         _setter("cluster_pod_network_options", cluster_pod_network_options)
@@ -5929,11 +6135,13 @@ class GetClustersClusterClusterPodNetworkOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cni_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
 
         _setter("cni_type", cni_type)
 
@@ -5969,18 +6177,26 @@ class GetClustersClusterEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kubernetes: str,
-             private_endpoint: str,
-             public_endpoint: str,
-             vcn_hostname_endpoint: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kubernetes: Optional[str] = None,
+             private_endpoint: Optional[str] = None,
+             public_endpoint: Optional[str] = None,
+             vcn_hostname_endpoint: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'privateEndpoint' in kwargs:
+        if kubernetes is None:
+            raise TypeError("Missing 'kubernetes' argument")
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
             private_endpoint = kwargs['privateEndpoint']
-        if 'publicEndpoint' in kwargs:
+        if private_endpoint is None:
+            raise TypeError("Missing 'private_endpoint' argument")
+        if public_endpoint is None and 'publicEndpoint' in kwargs:
             public_endpoint = kwargs['publicEndpoint']
-        if 'vcnHostnameEndpoint' in kwargs:
+        if public_endpoint is None:
+            raise TypeError("Missing 'public_endpoint' argument")
+        if vcn_hostname_endpoint is None and 'vcnHostnameEndpoint' in kwargs:
             vcn_hostname_endpoint = kwargs['vcnHostnameEndpoint']
+        if vcn_hostname_endpoint is None:
+            raise TypeError("Missing 'vcn_hostname_endpoint' argument")
 
         _setter("kubernetes", kubernetes)
         _setter("private_endpoint", private_endpoint)
@@ -6040,17 +6256,23 @@ class GetClustersClusterEndpointConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_public_ip_enabled: bool,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_public_ip_enabled: Optional[bool] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPublicIpEnabled' in kwargs:
+        if is_public_ip_enabled is None and 'isPublicIpEnabled' in kwargs:
             is_public_ip_enabled = kwargs['isPublicIpEnabled']
-        if 'nsgIds' in kwargs:
+        if is_public_ip_enabled is None:
+            raise TypeError("Missing 'is_public_ip_enabled' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("is_public_ip_enabled", is_public_ip_enabled)
         _setter("nsg_ids", nsg_ids)
@@ -6098,14 +6320,18 @@ class GetClustersClusterImagePolicyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_policy_enabled: bool,
-             key_details: Sequence['outputs.GetClustersClusterImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_policy_enabled: Optional[bool] = None,
+             key_details: Optional[Sequence['outputs.GetClustersClusterImagePolicyConfigKeyDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPolicyEnabled' in kwargs:
+        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
             is_policy_enabled = kwargs['isPolicyEnabled']
-        if 'keyDetails' in kwargs:
+        if is_policy_enabled is None:
+            raise TypeError("Missing 'is_policy_enabled' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
 
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
@@ -6141,11 +6367,13 @@ class GetClustersClusterImagePolicyConfigKeyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("kms_key_id", kms_key_id)
 
@@ -6199,38 +6427,58 @@ class GetClustersClusterMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             created_by_user_id: str,
-             created_by_work_request_id: str,
-             deleted_by_user_id: str,
-             deleted_by_work_request_id: str,
-             time_created: str,
-             time_credential_expiration: str,
-             time_deleted: str,
-             time_updated: str,
-             updated_by_user_id: str,
-             updated_by_work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             created_by_user_id: Optional[str] = None,
+             created_by_work_request_id: Optional[str] = None,
+             deleted_by_user_id: Optional[str] = None,
+             deleted_by_work_request_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_credential_expiration: Optional[str] = None,
+             time_deleted: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by_user_id: Optional[str] = None,
+             updated_by_work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'createdByUserId' in kwargs:
+        if created_by_user_id is None and 'createdByUserId' in kwargs:
             created_by_user_id = kwargs['createdByUserId']
-        if 'createdByWorkRequestId' in kwargs:
+        if created_by_user_id is None:
+            raise TypeError("Missing 'created_by_user_id' argument")
+        if created_by_work_request_id is None and 'createdByWorkRequestId' in kwargs:
             created_by_work_request_id = kwargs['createdByWorkRequestId']
-        if 'deletedByUserId' in kwargs:
+        if created_by_work_request_id is None:
+            raise TypeError("Missing 'created_by_work_request_id' argument")
+        if deleted_by_user_id is None and 'deletedByUserId' in kwargs:
             deleted_by_user_id = kwargs['deletedByUserId']
-        if 'deletedByWorkRequestId' in kwargs:
+        if deleted_by_user_id is None:
+            raise TypeError("Missing 'deleted_by_user_id' argument")
+        if deleted_by_work_request_id is None and 'deletedByWorkRequestId' in kwargs:
             deleted_by_work_request_id = kwargs['deletedByWorkRequestId']
-        if 'timeCreated' in kwargs:
+        if deleted_by_work_request_id is None:
+            raise TypeError("Missing 'deleted_by_work_request_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeCredentialExpiration' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_credential_expiration is None and 'timeCredentialExpiration' in kwargs:
             time_credential_expiration = kwargs['timeCredentialExpiration']
-        if 'timeDeleted' in kwargs:
+        if time_credential_expiration is None:
+            raise TypeError("Missing 'time_credential_expiration' argument")
+        if time_deleted is None and 'timeDeleted' in kwargs:
             time_deleted = kwargs['timeDeleted']
-        if 'timeUpdated' in kwargs:
+        if time_deleted is None:
+            raise TypeError("Missing 'time_deleted' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'updatedByUserId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if updated_by_user_id is None and 'updatedByUserId' in kwargs:
             updated_by_user_id = kwargs['updatedByUserId']
-        if 'updatedByWorkRequestId' in kwargs:
+        if updated_by_user_id is None:
+            raise TypeError("Missing 'updated_by_user_id' argument")
+        if updated_by_work_request_id is None and 'updatedByWorkRequestId' in kwargs:
             updated_by_work_request_id = kwargs['updatedByWorkRequestId']
+        if updated_by_work_request_id is None:
+            raise TypeError("Missing 'updated_by_work_request_id' argument")
 
         _setter("created_by_user_id", created_by_user_id)
         _setter("created_by_work_request_id", created_by_work_request_id)
@@ -6353,26 +6601,38 @@ class GetClustersClusterOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             add_ons: Sequence['outputs.GetClustersClusterOptionAddOnResult'],
-             admission_controller_options: Sequence['outputs.GetClustersClusterOptionAdmissionControllerOptionResult'],
-             kubernetes_network_configs: Sequence['outputs.GetClustersClusterOptionKubernetesNetworkConfigResult'],
-             persistent_volume_configs: Sequence['outputs.GetClustersClusterOptionPersistentVolumeConfigResult'],
-             service_lb_configs: Sequence['outputs.GetClustersClusterOptionServiceLbConfigResult'],
-             service_lb_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             add_ons: Optional[Sequence['outputs.GetClustersClusterOptionAddOnResult']] = None,
+             admission_controller_options: Optional[Sequence['outputs.GetClustersClusterOptionAdmissionControllerOptionResult']] = None,
+             kubernetes_network_configs: Optional[Sequence['outputs.GetClustersClusterOptionKubernetesNetworkConfigResult']] = None,
+             persistent_volume_configs: Optional[Sequence['outputs.GetClustersClusterOptionPersistentVolumeConfigResult']] = None,
+             service_lb_configs: Optional[Sequence['outputs.GetClustersClusterOptionServiceLbConfigResult']] = None,
+             service_lb_subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addOns' in kwargs:
+        if add_ons is None and 'addOns' in kwargs:
             add_ons = kwargs['addOns']
-        if 'admissionControllerOptions' in kwargs:
+        if add_ons is None:
+            raise TypeError("Missing 'add_ons' argument")
+        if admission_controller_options is None and 'admissionControllerOptions' in kwargs:
             admission_controller_options = kwargs['admissionControllerOptions']
-        if 'kubernetesNetworkConfigs' in kwargs:
+        if admission_controller_options is None:
+            raise TypeError("Missing 'admission_controller_options' argument")
+        if kubernetes_network_configs is None and 'kubernetesNetworkConfigs' in kwargs:
             kubernetes_network_configs = kwargs['kubernetesNetworkConfigs']
-        if 'persistentVolumeConfigs' in kwargs:
+        if kubernetes_network_configs is None:
+            raise TypeError("Missing 'kubernetes_network_configs' argument")
+        if persistent_volume_configs is None and 'persistentVolumeConfigs' in kwargs:
             persistent_volume_configs = kwargs['persistentVolumeConfigs']
-        if 'serviceLbConfigs' in kwargs:
+        if persistent_volume_configs is None:
+            raise TypeError("Missing 'persistent_volume_configs' argument")
+        if service_lb_configs is None and 'serviceLbConfigs' in kwargs:
             service_lb_configs = kwargs['serviceLbConfigs']
-        if 'serviceLbSubnetIds' in kwargs:
+        if service_lb_configs is None:
+            raise TypeError("Missing 'service_lb_configs' argument")
+        if service_lb_subnet_ids is None and 'serviceLbSubnetIds' in kwargs:
             service_lb_subnet_ids = kwargs['serviceLbSubnetIds']
+        if service_lb_subnet_ids is None:
+            raise TypeError("Missing 'service_lb_subnet_ids' argument")
 
         _setter("add_ons", add_ons)
         _setter("admission_controller_options", admission_controller_options)
@@ -6447,14 +6707,18 @@ class GetClustersClusterOptionAddOnResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_kubernetes_dashboard_enabled: bool,
-             is_tiller_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_kubernetes_dashboard_enabled: Optional[bool] = None,
+             is_tiller_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isKubernetesDashboardEnabled' in kwargs:
+        if is_kubernetes_dashboard_enabled is None and 'isKubernetesDashboardEnabled' in kwargs:
             is_kubernetes_dashboard_enabled = kwargs['isKubernetesDashboardEnabled']
-        if 'isTillerEnabled' in kwargs:
+        if is_kubernetes_dashboard_enabled is None:
+            raise TypeError("Missing 'is_kubernetes_dashboard_enabled' argument")
+        if is_tiller_enabled is None and 'isTillerEnabled' in kwargs:
             is_tiller_enabled = kwargs['isTillerEnabled']
+        if is_tiller_enabled is None:
+            raise TypeError("Missing 'is_tiller_enabled' argument")
 
         _setter("is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
         _setter("is_tiller_enabled", is_tiller_enabled)
@@ -6490,11 +6754,13 @@ class GetClustersClusterOptionAdmissionControllerOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_pod_security_policy_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_pod_security_policy_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPodSecurityPolicyEnabled' in kwargs:
+        if is_pod_security_policy_enabled is None and 'isPodSecurityPolicyEnabled' in kwargs:
             is_pod_security_policy_enabled = kwargs['isPodSecurityPolicyEnabled']
+        if is_pod_security_policy_enabled is None:
+            raise TypeError("Missing 'is_pod_security_policy_enabled' argument")
 
         _setter("is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
@@ -6524,14 +6790,18 @@ class GetClustersClusterOptionKubernetesNetworkConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             pods_cidr: str,
-             services_cidr: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             pods_cidr: Optional[str] = None,
+             services_cidr: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'podsCidr' in kwargs:
+        if pods_cidr is None and 'podsCidr' in kwargs:
             pods_cidr = kwargs['podsCidr']
-        if 'servicesCidr' in kwargs:
+        if pods_cidr is None:
+            raise TypeError("Missing 'pods_cidr' argument")
+        if services_cidr is None and 'servicesCidr' in kwargs:
             services_cidr = kwargs['servicesCidr']
+        if services_cidr is None:
+            raise TypeError("Missing 'services_cidr' argument")
 
         _setter("pods_cidr", pods_cidr)
         _setter("services_cidr", services_cidr)
@@ -6570,14 +6840,18 @@ class GetClustersClusterOptionPersistentVolumeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -6616,14 +6890,18 @@ class GetClustersClusterOptionServiceLbConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -6663,11 +6941,15 @@ class GetClustersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6710,10 +6992,14 @@ class GetNodePoolInitialNodeLabelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -6788,42 +7074,70 @@ class GetNodePoolNodeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             defined_tags: Mapping[str, Any],
-             errors: Sequence['outputs.GetNodePoolNodeErrorResult'],
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             kubernetes_version: str,
-             lifecycle_details: str,
-             name: str,
-             node_pool_id: str,
-             private_ip: str,
-             public_ip: str,
-             state: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             errors: Optional[Sequence['outputs.GetNodePoolNodeErrorResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             node_pool_id: Optional[str] = None,
+             private_ip: Optional[str] = None,
+             public_ip: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'definedTags' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'faultDomain' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if errors is None:
+            raise TypeError("Missing 'errors' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kubernetesVersion' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodePoolId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if node_pool_id is None and 'nodePoolId' in kwargs:
             node_pool_id = kwargs['nodePoolId']
-        if 'privateIp' in kwargs:
+        if node_pool_id is None:
+            raise TypeError("Missing 'node_pool_id' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'publicIp' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if public_ip is None and 'publicIp' in kwargs:
             public_ip = kwargs['publicIp']
-        if 'subnetId' in kwargs:
+        if public_ip is None:
+            raise TypeError("Missing 'public_ip' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
@@ -6988,30 +7302,46 @@ class GetNodePoolNodeConfigDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_pv_encryption_in_transit_enabled: bool,
-             kms_key_id: str,
-             node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
-             nsg_ids: Sequence[str],
-             placement_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult'],
-             size: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             kms_key_id: Optional[str] = None,
+             node_pool_pod_network_option_details: Optional[Sequence['outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult']] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             placement_configs: Optional[Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult']] = None,
+             size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'kmsKeyId' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if node_pool_pod_network_option_details is None and 'nodePoolPodNetworkOptionDetails' in kwargs:
             node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
-        if 'nsgIds' in kwargs:
+        if node_pool_pod_network_option_details is None:
+            raise TypeError("Missing 'node_pool_pod_network_option_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'placementConfigs' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if placement_configs is None and 'placementConfigs' in kwargs:
             placement_configs = kwargs['placementConfigs']
+        if placement_configs is None:
+            raise TypeError("Missing 'placement_configs' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -7110,20 +7440,28 @@ class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
-             max_pods_per_node: int,
-             pod_nsg_ids: Sequence[str],
-             pod_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cni_type: Optional[str] = None,
+             max_pods_per_node: Optional[int] = None,
+             pod_nsg_ids: Optional[Sequence[str]] = None,
+             pod_subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
-        if 'maxPodsPerNode' in kwargs:
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
+        if max_pods_per_node is None and 'maxPodsPerNode' in kwargs:
             max_pods_per_node = kwargs['maxPodsPerNode']
-        if 'podNsgIds' in kwargs:
+        if max_pods_per_node is None:
+            raise TypeError("Missing 'max_pods_per_node' argument")
+        if pod_nsg_ids is None and 'podNsgIds' in kwargs:
             pod_nsg_ids = kwargs['podNsgIds']
-        if 'podSubnetIds' in kwargs:
+        if pod_nsg_ids is None:
+            raise TypeError("Missing 'pod_nsg_ids' argument")
+        if pod_subnet_ids is None and 'podSubnetIds' in kwargs:
             pod_subnet_ids = kwargs['podSubnetIds']
+        if pod_subnet_ids is None:
+            raise TypeError("Missing 'pod_subnet_ids' argument")
 
         _setter("cni_type", cni_type)
         _setter("max_pods_per_node", max_pods_per_node)
@@ -7189,23 +7527,33 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             fault_domains: Sequence[str],
-             preemptible_node_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             preemptible_node_configs: Optional[Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult']] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'faultDomains' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'preemptibleNodeConfigs' in kwargs:
+        if fault_domains is None:
+            raise TypeError("Missing 'fault_domains' argument")
+        if preemptible_node_configs is None and 'preemptibleNodeConfigs' in kwargs:
             preemptible_node_configs = kwargs['preemptibleNodeConfigs']
-        if 'subnetId' in kwargs:
+        if preemptible_node_configs is None:
+            raise TypeError("Missing 'preemptible_node_configs' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("capacity_reservation_id", capacity_reservation_id)
@@ -7268,11 +7616,13 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -7302,12 +7652,16 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionA
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPreserveBootVolume' in kwargs:
+        if is_preserve_boot_volume is None and 'isPreserveBootVolume' in kwargs:
             is_preserve_boot_volume = kwargs['isPreserveBootVolume']
+        if is_preserve_boot_volume is None:
+            raise TypeError("Missing 'is_preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("is_preserve_boot_volume", is_preserve_boot_volume)
         _setter("type", type)
@@ -7349,11 +7703,17 @@ class GetNodePoolNodeErrorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             message: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("code", code)
         _setter("message", message)
@@ -7401,14 +7761,18 @@ class GetNodePoolNodeEvictionNodePoolSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eviction_grace_duration: str,
-             is_force_delete_after_grace_duration: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eviction_grace_duration: Optional[str] = None,
+             is_force_delete_after_grace_duration: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'evictionGraceDuration' in kwargs:
+        if eviction_grace_duration is None and 'evictionGraceDuration' in kwargs:
             eviction_grace_duration = kwargs['evictionGraceDuration']
-        if 'isForceDeleteAfterGraceDuration' in kwargs:
+        if eviction_grace_duration is None:
+            raise TypeError("Missing 'eviction_grace_duration' argument")
+        if is_force_delete_after_grace_duration is None and 'isForceDeleteAfterGraceDuration' in kwargs:
             is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
+        if is_force_delete_after_grace_duration is None:
+            raise TypeError("Missing 'is_force_delete_after_grace_duration' argument")
 
         _setter("eviction_grace_duration", eviction_grace_duration)
         _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
@@ -7450,17 +7814,23 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_node_cycling_enabled: bool,
-             maximum_surge: str,
-             maximum_unavailable: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_node_cycling_enabled: Optional[bool] = None,
+             maximum_surge: Optional[str] = None,
+             maximum_unavailable: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isNodeCyclingEnabled' in kwargs:
+        if is_node_cycling_enabled is None and 'isNodeCyclingEnabled' in kwargs:
             is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
-        if 'maximumSurge' in kwargs:
+        if is_node_cycling_enabled is None:
+            raise TypeError("Missing 'is_node_cycling_enabled' argument")
+        if maximum_surge is None and 'maximumSurge' in kwargs:
             maximum_surge = kwargs['maximumSurge']
-        if 'maximumUnavailable' in kwargs:
+        if maximum_surge is None:
+            raise TypeError("Missing 'maximum_surge' argument")
+        if maximum_unavailable is None and 'maximumUnavailable' in kwargs:
             maximum_unavailable = kwargs['maximumUnavailable']
+        if maximum_unavailable is None:
+            raise TypeError("Missing 'maximum_unavailable' argument")
 
         _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         _setter("maximum_surge", maximum_surge)
@@ -7508,12 +7878,16 @@ class GetNodePoolNodeShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -7555,17 +7929,23 @@ class GetNodePoolNodeSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_id: str,
-             source_name: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             image_id: Optional[str] = None,
+             source_name: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceName' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_name is None and 'sourceName' in kwargs:
             source_name = kwargs['sourceName']
-        if 'sourceType' in kwargs:
+        if source_name is None:
+            raise TypeError("Missing 'source_name' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("image_id", image_id)
         _setter("source_name", source_name)
@@ -7616,17 +7996,23 @@ class GetNodePoolNodeSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_size_in_gbs: str,
-             image_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             image_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'imageId' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceType' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         _setter("image_id", image_id)
@@ -7677,17 +8063,23 @@ class GetNodePoolOptionSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_id: str,
-             source_name: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             image_id: Optional[str] = None,
+             source_name: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceName' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_name is None and 'sourceName' in kwargs:
             source_name = kwargs['sourceName']
-        if 'sourceType' in kwargs:
+        if source_name is None:
+            raise TypeError("Missing 'source_name' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("image_id", image_id)
         _setter("source_name", source_name)
@@ -7736,11 +8128,15 @@ class GetNodePoolsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7850,75 +8246,125 @@ class GetNodePoolsNodePoolResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             initial_node_labels: Sequence['outputs.GetNodePoolsNodePoolInitialNodeLabelResult'],
-             kubernetes_version: str,
-             lifecycle_details: str,
-             name: str,
-             node_config_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailResult'],
-             node_eviction_node_pool_settings: Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult'],
-             node_image_id: str,
-             node_image_name: str,
-             node_metadata: Mapping[str, Any],
-             node_pool_cycling_details: Sequence['outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult'],
-             node_pool_id: str,
-             node_shape: str,
-             node_shape_configs: Sequence['outputs.GetNodePoolsNodePoolNodeShapeConfigResult'],
-             node_source_details: Sequence['outputs.GetNodePoolsNodePoolNodeSourceDetailResult'],
-             node_sources: Sequence['outputs.GetNodePoolsNodePoolNodeSourceResult'],
-             nodes: Sequence['outputs.GetNodePoolsNodePoolNodeResult'],
-             quantity_per_subnet: int,
-             ssh_public_key: str,
-             state: str,
-             subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             initial_node_labels: Optional[Sequence['outputs.GetNodePoolsNodePoolInitialNodeLabelResult']] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             node_config_details: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailResult']] = None,
+             node_eviction_node_pool_settings: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult']] = None,
+             node_image_id: Optional[str] = None,
+             node_image_name: Optional[str] = None,
+             node_metadata: Optional[Mapping[str, Any]] = None,
+             node_pool_cycling_details: Optional[Sequence['outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult']] = None,
+             node_pool_id: Optional[str] = None,
+             node_shape: Optional[str] = None,
+             node_shape_configs: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeShapeConfigResult']] = None,
+             node_source_details: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeSourceDetailResult']] = None,
+             node_sources: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeSourceResult']] = None,
+             nodes: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeResult']] = None,
+             quantity_per_subnet: Optional[int] = None,
+             ssh_public_key: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialNodeLabels' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if initial_node_labels is None and 'initialNodeLabels' in kwargs:
             initial_node_labels = kwargs['initialNodeLabels']
-        if 'kubernetesVersion' in kwargs:
+        if initial_node_labels is None:
+            raise TypeError("Missing 'initial_node_labels' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeConfigDetails' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if node_config_details is None and 'nodeConfigDetails' in kwargs:
             node_config_details = kwargs['nodeConfigDetails']
-        if 'nodeEvictionNodePoolSettings' in kwargs:
+        if node_config_details is None:
+            raise TypeError("Missing 'node_config_details' argument")
+        if node_eviction_node_pool_settings is None and 'nodeEvictionNodePoolSettings' in kwargs:
             node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
-        if 'nodeImageId' in kwargs:
+        if node_eviction_node_pool_settings is None:
+            raise TypeError("Missing 'node_eviction_node_pool_settings' argument")
+        if node_image_id is None and 'nodeImageId' in kwargs:
             node_image_id = kwargs['nodeImageId']
-        if 'nodeImageName' in kwargs:
+        if node_image_id is None:
+            raise TypeError("Missing 'node_image_id' argument")
+        if node_image_name is None and 'nodeImageName' in kwargs:
             node_image_name = kwargs['nodeImageName']
-        if 'nodeMetadata' in kwargs:
+        if node_image_name is None:
+            raise TypeError("Missing 'node_image_name' argument")
+        if node_metadata is None and 'nodeMetadata' in kwargs:
             node_metadata = kwargs['nodeMetadata']
-        if 'nodePoolCyclingDetails' in kwargs:
+        if node_metadata is None:
+            raise TypeError("Missing 'node_metadata' argument")
+        if node_pool_cycling_details is None and 'nodePoolCyclingDetails' in kwargs:
             node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
-        if 'nodePoolId' in kwargs:
+        if node_pool_cycling_details is None:
+            raise TypeError("Missing 'node_pool_cycling_details' argument")
+        if node_pool_id is None and 'nodePoolId' in kwargs:
             node_pool_id = kwargs['nodePoolId']
-        if 'nodeShape' in kwargs:
+        if node_pool_id is None:
+            raise TypeError("Missing 'node_pool_id' argument")
+        if node_shape is None and 'nodeShape' in kwargs:
             node_shape = kwargs['nodeShape']
-        if 'nodeShapeConfigs' in kwargs:
+        if node_shape is None:
+            raise TypeError("Missing 'node_shape' argument")
+        if node_shape_configs is None and 'nodeShapeConfigs' in kwargs:
             node_shape_configs = kwargs['nodeShapeConfigs']
-        if 'nodeSourceDetails' in kwargs:
+        if node_shape_configs is None:
+            raise TypeError("Missing 'node_shape_configs' argument")
+        if node_source_details is None and 'nodeSourceDetails' in kwargs:
             node_source_details = kwargs['nodeSourceDetails']
-        if 'nodeSources' in kwargs:
+        if node_source_details is None:
+            raise TypeError("Missing 'node_source_details' argument")
+        if node_sources is None and 'nodeSources' in kwargs:
             node_sources = kwargs['nodeSources']
-        if 'quantityPerSubnet' in kwargs:
+        if node_sources is None:
+            raise TypeError("Missing 'node_sources' argument")
+        if nodes is None:
+            raise TypeError("Missing 'nodes' argument")
+        if quantity_per_subnet is None and 'quantityPerSubnet' in kwargs:
             quantity_per_subnet = kwargs['quantityPerSubnet']
-        if 'sshPublicKey' in kwargs:
+        if quantity_per_subnet is None:
+            raise TypeError("Missing 'quantity_per_subnet' argument")
+        if ssh_public_key is None and 'sshPublicKey' in kwargs:
             ssh_public_key = kwargs['sshPublicKey']
-        if 'subnetIds' in kwargs:
+        if ssh_public_key is None:
+            raise TypeError("Missing 'ssh_public_key' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
+        if subnet_ids is None:
+            raise TypeError("Missing 'subnet_ids' argument")
 
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
@@ -8164,10 +8610,14 @@ class GetNodePoolsNodePoolInitialNodeLabelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -8237,42 +8687,70 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             defined_tags: Mapping[str, Any],
-             errors: Sequence['outputs.GetNodePoolsNodePoolNodeErrorResult'],
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             kubernetes_version: str,
-             lifecycle_details: str,
-             name: str,
-             node_pool_id: str,
-             private_ip: str,
-             public_ip: str,
-             state: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             errors: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeErrorResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             node_pool_id: Optional[str] = None,
+             private_ip: Optional[str] = None,
+             public_ip: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'definedTags' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'faultDomain' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if errors is None:
+            raise TypeError("Missing 'errors' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kubernetesVersion' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodePoolId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if node_pool_id is None and 'nodePoolId' in kwargs:
             node_pool_id = kwargs['nodePoolId']
-        if 'privateIp' in kwargs:
+        if node_pool_id is None:
+            raise TypeError("Missing 'node_pool_id' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'publicIp' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if public_ip is None and 'publicIp' in kwargs:
             public_ip = kwargs['publicIp']
-        if 'subnetId' in kwargs:
+        if public_ip is None:
+            raise TypeError("Missing 'public_ip' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
@@ -8422,30 +8900,46 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             is_pv_encryption_in_transit_enabled: bool,
-             kms_key_id: str,
-             node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
-             nsg_ids: Sequence[str],
-             placement_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult'],
-             size: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             kms_key_id: Optional[str] = None,
+             node_pool_pod_network_option_details: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult']] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             placement_configs: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult']] = None,
+             size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'kmsKeyId' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if node_pool_pod_network_option_details is None and 'nodePoolPodNetworkOptionDetails' in kwargs:
             node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
-        if 'nsgIds' in kwargs:
+        if node_pool_pod_network_option_details is None:
+            raise TypeError("Missing 'node_pool_pod_network_option_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'placementConfigs' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if placement_configs is None and 'placementConfigs' in kwargs:
             placement_configs = kwargs['placementConfigs']
+        if placement_configs is None:
+            raise TypeError("Missing 'placement_configs' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -8544,20 +9038,28 @@ class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cni_type: str,
-             max_pods_per_node: int,
-             pod_nsg_ids: Sequence[str],
-             pod_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cni_type: Optional[str] = None,
+             max_pods_per_node: Optional[int] = None,
+             pod_nsg_ids: Optional[Sequence[str]] = None,
+             pod_subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cniType' in kwargs:
+        if cni_type is None and 'cniType' in kwargs:
             cni_type = kwargs['cniType']
-        if 'maxPodsPerNode' in kwargs:
+        if cni_type is None:
+            raise TypeError("Missing 'cni_type' argument")
+        if max_pods_per_node is None and 'maxPodsPerNode' in kwargs:
             max_pods_per_node = kwargs['maxPodsPerNode']
-        if 'podNsgIds' in kwargs:
+        if max_pods_per_node is None:
+            raise TypeError("Missing 'max_pods_per_node' argument")
+        if pod_nsg_ids is None and 'podNsgIds' in kwargs:
             pod_nsg_ids = kwargs['podNsgIds']
-        if 'podSubnetIds' in kwargs:
+        if pod_nsg_ids is None:
+            raise TypeError("Missing 'pod_nsg_ids' argument")
+        if pod_subnet_ids is None and 'podSubnetIds' in kwargs:
             pod_subnet_ids = kwargs['podSubnetIds']
+        if pod_subnet_ids is None:
+            raise TypeError("Missing 'pod_subnet_ids' argument")
 
         _setter("cni_type", cni_type)
         _setter("max_pods_per_node", max_pods_per_node)
@@ -8623,23 +9125,33 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             fault_domains: Sequence[str],
-             preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             preemptible_node_configs: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult']] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'faultDomains' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'preemptibleNodeConfigs' in kwargs:
+        if fault_domains is None:
+            raise TypeError("Missing 'fault_domains' argument")
+        if preemptible_node_configs is None and 'preemptibleNodeConfigs' in kwargs:
             preemptible_node_configs = kwargs['preemptibleNodeConfigs']
-        if 'subnetId' in kwargs:
+        if preemptible_node_configs is None:
+            raise TypeError("Missing 'preemptible_node_configs' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("capacity_reservation_id", capacity_reservation_id)
@@ -8702,11 +9214,13 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -8736,12 +9250,16 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isPreserveBootVolume' in kwargs:
+        if is_preserve_boot_volume is None and 'isPreserveBootVolume' in kwargs:
             is_preserve_boot_volume = kwargs['isPreserveBootVolume']
+        if is_preserve_boot_volume is None:
+            raise TypeError("Missing 'is_preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("is_preserve_boot_volume", is_preserve_boot_volume)
         _setter("type", type)
@@ -8778,11 +9296,17 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             message: str,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("code", code)
         _setter("message", message)
@@ -8821,14 +9345,18 @@ class GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             eviction_grace_duration: str,
-             is_force_delete_after_grace_duration: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             eviction_grace_duration: Optional[str] = None,
+             is_force_delete_after_grace_duration: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'evictionGraceDuration' in kwargs:
+        if eviction_grace_duration is None and 'evictionGraceDuration' in kwargs:
             eviction_grace_duration = kwargs['evictionGraceDuration']
-        if 'isForceDeleteAfterGraceDuration' in kwargs:
+        if eviction_grace_duration is None:
+            raise TypeError("Missing 'eviction_grace_duration' argument")
+        if is_force_delete_after_grace_duration is None and 'isForceDeleteAfterGraceDuration' in kwargs:
             is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
+        if is_force_delete_after_grace_duration is None:
+            raise TypeError("Missing 'is_force_delete_after_grace_duration' argument")
 
         _setter("eviction_grace_duration", eviction_grace_duration)
         _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
@@ -8870,17 +9398,23 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_node_cycling_enabled: bool,
-             maximum_surge: str,
-             maximum_unavailable: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_node_cycling_enabled: Optional[bool] = None,
+             maximum_surge: Optional[str] = None,
+             maximum_unavailable: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isNodeCyclingEnabled' in kwargs:
+        if is_node_cycling_enabled is None and 'isNodeCyclingEnabled' in kwargs:
             is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
-        if 'maximumSurge' in kwargs:
+        if is_node_cycling_enabled is None:
+            raise TypeError("Missing 'is_node_cycling_enabled' argument")
+        if maximum_surge is None and 'maximumSurge' in kwargs:
             maximum_surge = kwargs['maximumSurge']
-        if 'maximumUnavailable' in kwargs:
+        if maximum_surge is None:
+            raise TypeError("Missing 'maximum_surge' argument")
+        if maximum_unavailable is None and 'maximumUnavailable' in kwargs:
             maximum_unavailable = kwargs['maximumUnavailable']
+        if maximum_unavailable is None:
+            raise TypeError("Missing 'maximum_unavailable' argument")
 
         _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         _setter("maximum_surge", maximum_surge)
@@ -8928,12 +9462,16 @@ class GetNodePoolsNodePoolNodeShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -8975,17 +9513,23 @@ class GetNodePoolsNodePoolNodeSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             image_id: str,
-             source_name: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             image_id: Optional[str] = None,
+             source_name: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceName' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_name is None and 'sourceName' in kwargs:
             source_name = kwargs['sourceName']
-        if 'sourceType' in kwargs:
+        if source_name is None:
+            raise TypeError("Missing 'source_name' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("image_id", image_id)
         _setter("source_name", source_name)
@@ -9036,17 +9580,23 @@ class GetNodePoolsNodePoolNodeSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_size_in_gbs: str,
-             image_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             image_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'imageId' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'sourceType' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         _setter("image_id", image_id)
@@ -9095,11 +9645,15 @@ class GetPodShapesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9151,21 +9705,31 @@ class GetPodShapesPodShapeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             memory_options: Sequence['outputs.GetPodShapesPodShapeMemoryOptionResult'],
-             name: str,
-             network_bandwidth_options: Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult'],
-             ocpu_options: Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult'],
-             processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             memory_options: Optional[Sequence['outputs.GetPodShapesPodShapeMemoryOptionResult']] = None,
+             name: Optional[str] = None,
+             network_bandwidth_options: Optional[Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult']] = None,
+             ocpu_options: Optional[Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult']] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryOptions' in kwargs:
+        if memory_options is None and 'memoryOptions' in kwargs:
             memory_options = kwargs['memoryOptions']
-        if 'networkBandwidthOptions' in kwargs:
+        if memory_options is None:
+            raise TypeError("Missing 'memory_options' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if network_bandwidth_options is None and 'networkBandwidthOptions' in kwargs:
             network_bandwidth_options = kwargs['networkBandwidthOptions']
-        if 'ocpuOptions' in kwargs:
+        if network_bandwidth_options is None:
+            raise TypeError("Missing 'network_bandwidth_options' argument")
+        if ocpu_options is None and 'ocpuOptions' in kwargs:
             ocpu_options = kwargs['ocpuOptions']
-        if 'processorDescription' in kwargs:
+        if ocpu_options is None:
+            raise TypeError("Missing 'ocpu_options' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
             processor_description = kwargs['processorDescription']
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
 
         _setter("memory_options", memory_options)
         _setter("name", name)
@@ -9240,23 +9804,33 @@ class GetPodShapesPodShapeMemoryOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_per_ocpu_in_gbs: float,
-             max_in_gbs: float,
-             max_per_ocpu_in_gbs: float,
-             min_in_gbs: float,
-             min_per_ocpu_in_gbs: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_per_ocpu_in_gbs: Optional[float] = None,
+             max_in_gbs: Optional[float] = None,
+             max_per_ocpu_in_gbs: Optional[float] = None,
+             min_in_gbs: Optional[float] = None,
+             min_per_ocpu_in_gbs: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultPerOcpuInGbs' in kwargs:
+        if default_per_ocpu_in_gbs is None and 'defaultPerOcpuInGbs' in kwargs:
             default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
-        if 'maxInGbs' in kwargs:
+        if default_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbs' argument")
+        if max_in_gbs is None and 'maxInGbs' in kwargs:
             max_in_gbs = kwargs['maxInGbs']
-        if 'maxPerOcpuInGbs' in kwargs:
+        if max_in_gbs is None:
+            raise TypeError("Missing 'max_in_gbs' argument")
+        if max_per_ocpu_in_gbs is None and 'maxPerOcpuInGbs' in kwargs:
             max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
-        if 'minInGbs' in kwargs:
+        if max_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'max_per_ocpu_in_gbs' argument")
+        if min_in_gbs is None and 'minInGbs' in kwargs:
             min_in_gbs = kwargs['minInGbs']
-        if 'minPerOcpuInGbs' in kwargs:
+        if min_in_gbs is None:
+            raise TypeError("Missing 'min_in_gbs' argument")
+        if min_per_ocpu_in_gbs is None and 'minPerOcpuInGbs' in kwargs:
             min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+        if min_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'min_per_ocpu_in_gbs' argument")
 
         _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         _setter("max_in_gbs", max_in_gbs)
@@ -9325,17 +9899,23 @@ class GetPodShapesPodShapeNetworkBandwidthOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_per_ocpu_in_gbps: float,
-             max_in_gbps: float,
-             min_in_gbps: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_per_ocpu_in_gbps: Optional[float] = None,
+             max_in_gbps: Optional[float] = None,
+             min_in_gbps: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultPerOcpuInGbps' in kwargs:
+        if default_per_ocpu_in_gbps is None and 'defaultPerOcpuInGbps' in kwargs:
             default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
-        if 'maxInGbps' in kwargs:
+        if default_per_ocpu_in_gbps is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbps' argument")
+        if max_in_gbps is None and 'maxInGbps' in kwargs:
             max_in_gbps = kwargs['maxInGbps']
-        if 'minInGbps' in kwargs:
+        if max_in_gbps is None:
+            raise TypeError("Missing 'max_in_gbps' argument")
+        if min_in_gbps is None and 'minInGbps' in kwargs:
             min_in_gbps = kwargs['minInGbps']
+        if min_in_gbps is None:
+            raise TypeError("Missing 'min_in_gbps' argument")
 
         _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
         _setter("max_in_gbps", max_in_gbps)
@@ -9383,10 +9963,14 @@ class GetPodShapesPodShapeOcpuOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             max: float,
-             min: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             max: Optional[float] = None,
+             min: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
 
         _setter("max", max)
         _setter("min", min)
@@ -9425,10 +10009,14 @@ class GetVirtualNodePoolInitialVirtualNodeLabelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -9470,17 +10058,23 @@ class GetVirtualNodePoolPlacementConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             fault_domains: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomains' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'subnetId' in kwargs:
+        if fault_domains is None:
+            raise TypeError("Missing 'fault_domains' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
@@ -9531,15 +10125,21 @@ class GetVirtualNodePoolPodConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             nsg_ids: Sequence[str],
-             shape: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("nsg_ids", nsg_ids)
         _setter("shape", shape)
@@ -9590,11 +10190,17 @@ class GetVirtualNodePoolTaintResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             effect: str,
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             effect: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if effect is None:
+            raise TypeError("Missing 'effect' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("effect", effect)
         _setter("key", key)
@@ -9642,14 +10248,18 @@ class GetVirtualNodePoolVirtualNodeTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -9689,11 +10299,15 @@ class GetVirtualNodePoolsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9789,60 +10403,100 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             initial_virtual_node_labels: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult'],
-             kubernetes_version: str,
-             lifecycle_details: str,
-             nsg_ids: Sequence[str],
-             placement_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult'],
-             pod_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult'],
-             size: int,
-             state: str,
-             system_tags: Mapping[str, Any],
-             taints: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult'],
-             time_created: str,
-             time_updated: str,
-             virtual_node_pool_id: str,
-             virtual_node_tags: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             initial_virtual_node_labels: Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult']] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             placement_configurations: Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult']] = None,
+             pod_configurations: Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult']] = None,
+             size: Optional[int] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             taints: Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             virtual_node_pool_id: Optional[str] = None,
+             virtual_node_tags: Optional[Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialVirtualNodeLabels' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if initial_virtual_node_labels is None and 'initialVirtualNodeLabels' in kwargs:
             initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
-        if 'kubernetesVersion' in kwargs:
+        if initial_virtual_node_labels is None:
+            raise TypeError("Missing 'initial_virtual_node_labels' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'placementConfigurations' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if placement_configurations is None and 'placementConfigurations' in kwargs:
             placement_configurations = kwargs['placementConfigurations']
-        if 'podConfigurations' in kwargs:
+        if placement_configurations is None:
+            raise TypeError("Missing 'placement_configurations' argument")
+        if pod_configurations is None and 'podConfigurations' in kwargs:
             pod_configurations = kwargs['podConfigurations']
-        if 'systemTags' in kwargs:
+        if pod_configurations is None:
+            raise TypeError("Missing 'pod_configurations' argument")
+        if size is None:
+            raise TypeError("Missing 'size' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if taints is None:
+            raise TypeError("Missing 'taints' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'virtualNodePoolId' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if virtual_node_pool_id is None and 'virtualNodePoolId' in kwargs:
             virtual_node_pool_id = kwargs['virtualNodePoolId']
-        if 'virtualNodeTags' in kwargs:
+        if virtual_node_pool_id is None:
+            raise TypeError("Missing 'virtual_node_pool_id' argument")
+        if virtual_node_tags is None and 'virtualNodeTags' in kwargs:
             virtual_node_tags = kwargs['virtualNodeTags']
+        if virtual_node_tags is None:
+            raise TypeError("Missing 'virtual_node_tags' argument")
 
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
@@ -10040,10 +10694,14 @@ class GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("key", key)
         _setter("value", value)
@@ -10085,17 +10743,23 @@ class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             fault_domains: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'faultDomains' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'subnetId' in kwargs:
+        if fault_domains is None:
+            raise TypeError("Missing 'fault_domains' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
@@ -10146,15 +10810,21 @@ class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             nsg_ids: Sequence[str],
-             shape: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("nsg_ids", nsg_ids)
         _setter("shape", shape)
@@ -10205,11 +10875,17 @@ class GetVirtualNodePoolsVirtualNodePoolTaintResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             effect: str,
-             key: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             effect: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if effect is None:
+            raise TypeError("Missing 'effect' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("effect", effect)
         _setter("key", key)
@@ -10257,14 +10933,18 @@ class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -10301,11 +10981,15 @@ class GetWorkRequestErrorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10348,11 +11032,17 @@ class GetWorkRequestErrorsWorkRequestErrorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: str,
-             message: str,
-             timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             timestamp: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
 
         _setter("code", code)
         _setter("message", message)
@@ -10398,11 +11088,15 @@ class GetWorkRequestLogEntriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10442,10 +11136,14 @@ class GetWorkRequestLogEntriesWorkRequestLogEntryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             timestamp: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
 
         _setter("message", message)
         _setter("timestamp", timestamp)
@@ -10482,11 +11180,15 @@ class GetWorkRequestsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10544,26 +11246,42 @@ class GetWorkRequestsWorkRequestResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             operation_type: str,
-             resources: Sequence['outputs.GetWorkRequestsWorkRequestResourceResult'],
-             status: str,
-             time_accepted: str,
-             time_finished: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             operation_type: Optional[str] = None,
+             resources: Optional[Sequence['outputs.GetWorkRequestsWorkRequestResourceResult']] = None,
+             status: Optional[str] = None,
+             time_accepted: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'operationType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if operation_type is None and 'operationType' in kwargs:
             operation_type = kwargs['operationType']
-        if 'timeAccepted' in kwargs:
+        if operation_type is None:
+            raise TypeError("Missing 'operation_type' argument")
+        if resources is None:
+            raise TypeError("Missing 'resources' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeFinished' in kwargs:
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -10662,18 +11380,26 @@ class GetWorkRequestsWorkRequestResourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             entity_type: str,
-             entity_uri: str,
-             identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action_type: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             entity_uri: Optional[str] = None,
+             identifier: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'entityType' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'entityUri' in kwargs:
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if entity_uri is None and 'entityUri' in kwargs:
             entity_uri = kwargs['entityUri']
+        if entity_uri is None:
+            raise TypeError("Missing 'entity_uri' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
 
         _setter("action_type", action_type)
         _setter("entity_type", entity_type)

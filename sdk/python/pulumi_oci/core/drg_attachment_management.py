@@ -68,9 +68,9 @@ class DrgAttachmentManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attachment_type: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             drg_id: pulumi.Input[str],
+             attachment_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              drg_route_table_id: Optional[pulumi.Input[str]] = None,
@@ -81,33 +81,39 @@ class DrgAttachmentManagementArgs:
              remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[bool]] = None,
              route_table_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentType' in kwargs:
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'compartmentId' in kwargs:
+        if attachment_type is None:
+            raise TypeError("Missing 'attachment_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'drgId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'definedTags' in kwargs:
+        if drg_id is None:
+            raise TypeError("Missing 'drg_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drgRouteTableId' in kwargs:
+        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
             drg_route_table_id = kwargs['drgRouteTableId']
-        if 'exportDrgRouteDistributionId' in kwargs:
+        if export_drg_route_distribution_id is None and 'exportDrgRouteDistributionId' in kwargs:
             export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'networkDetails' in kwargs:
+        if network_details is None and 'networkDetails' in kwargs:
             network_details = kwargs['networkDetails']
-        if 'networkId' in kwargs:
+        if network_id is None and 'networkId' in kwargs:
             network_id = kwargs['networkId']
-        if 'removeExportDrgRouteDistributionTrigger' in kwargs:
+        if remove_export_drg_route_distribution_trigger is None and 'removeExportDrgRouteDistributionTrigger' in kwargs:
             remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
-        if 'routeTableId' in kwargs:
+        if route_table_id is None and 'routeTableId' in kwargs:
             route_table_id = kwargs['routeTableId']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         _setter("attachment_type", attachment_type)
@@ -375,37 +381,37 @@ class _DrgAttachmentManagementState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentType' in kwargs:
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drgId' in kwargs:
+        if drg_id is None and 'drgId' in kwargs:
             drg_id = kwargs['drgId']
-        if 'drgRouteTableId' in kwargs:
+        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
             drg_route_table_id = kwargs['drgRouteTableId']
-        if 'exportDrgRouteDistributionId' in kwargs:
+        if export_drg_route_distribution_id is None and 'exportDrgRouteDistributionId' in kwargs:
             export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCrossTenancy' in kwargs:
+        if is_cross_tenancy is None and 'isCrossTenancy' in kwargs:
             is_cross_tenancy = kwargs['isCrossTenancy']
-        if 'networkDetails' in kwargs:
+        if network_details is None and 'networkDetails' in kwargs:
             network_details = kwargs['networkDetails']
-        if 'networkId' in kwargs:
+        if network_id is None and 'networkId' in kwargs:
             network_id = kwargs['networkId']
-        if 'removeExportDrgRouteDistributionTrigger' in kwargs:
+        if remove_export_drg_route_distribution_trigger is None and 'removeExportDrgRouteDistributionTrigger' in kwargs:
             remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
-        if 'routeTableId' in kwargs:
+        if route_table_id is None and 'routeTableId' in kwargs:
             route_table_id = kwargs['routeTableId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if attachment_type is not None:
@@ -798,11 +804,7 @@ class DrgAttachmentManagement(pulumi.CustomResource):
             __props__.__dict__["drg_route_table_id"] = drg_route_table_id
             __props__.__dict__["export_drg_route_distribution_id"] = export_drg_route_distribution_id
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if network_details is not None and not isinstance(network_details, DrgAttachmentManagementNetworkDetailsArgs):
-                network_details = network_details or {}
-                def _setter(key, value):
-                    network_details[key] = value
-                DrgAttachmentManagementNetworkDetailsArgs._configure(_setter, **network_details)
+            network_details = _utilities.configure(network_details, DrgAttachmentManagementNetworkDetailsArgs, True)
             __props__.__dict__["network_details"] = network_details
             __props__.__dict__["network_id"] = network_id
             __props__.__dict__["remove_export_drg_route_distribution_trigger"] = remove_export_drg_route_distribution_trigger

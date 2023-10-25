@@ -35,10 +35,10 @@ import (
 //				ClusterId:           pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
 //				MappedCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
 //				Namespace:           pulumi.Any(_var.Cluster_workload_mapping_namespace),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

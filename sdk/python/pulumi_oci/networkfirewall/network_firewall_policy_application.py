@@ -42,18 +42,24 @@ class NetworkFirewallPolicyApplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             icmp_type: pulumi.Input[int],
-             network_firewall_policy_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             icmp_type: Optional[pulumi.Input[int]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              icmp_code: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'icmpType' in kwargs:
+        if icmp_type is None and 'icmpType' in kwargs:
             icmp_type = kwargs['icmpType']
-        if 'networkFirewallPolicyId' in kwargs:
+        if icmp_type is None:
+            raise TypeError("Missing 'icmp_type' argument")
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'icmpCode' in kwargs:
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if icmp_code is None and 'icmpCode' in kwargs:
             icmp_code = kwargs['icmpCode']
 
         _setter("icmp_type", icmp_type)
@@ -169,15 +175,15 @@ class _NetworkFirewallPolicyApplicationState:
              network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
              parent_resource_id: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'icmpCode' in kwargs:
+        if icmp_code is None and 'icmpCode' in kwargs:
             icmp_code = kwargs['icmpCode']
-        if 'icmpType' in kwargs:
+        if icmp_type is None and 'icmpType' in kwargs:
             icmp_type = kwargs['icmpType']
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
 
         if icmp_code is not None:

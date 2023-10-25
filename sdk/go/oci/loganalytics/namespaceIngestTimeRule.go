@@ -58,11 +58,11 @@ import (
 //				},
 //				DisplayName: pulumi.Any(_var.Namespace_ingest_time_rule_display_name),
 //				Namespace:   pulumi.Any(_var.Namespace_ingest_time_rule_namespace),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Namespace_ingest_time_rule_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

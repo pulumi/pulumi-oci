@@ -73,10 +73,10 @@ class ConnectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_credentials: pulumi.Input['ConnectionAdminCredentialsArgs'],
-             compartment_id: pulumi.Input[str],
-             database_type: pulumi.Input[str],
-             vault_details: pulumi.Input['ConnectionVaultDetailsArgs'],
+             admin_credentials: Optional[pulumi.Input['ConnectionAdminCredentialsArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             vault_details: Optional[pulumi.Input['ConnectionVaultDetailsArgs']] = None,
              certificate_tdn: Optional[pulumi.Input[str]] = None,
              connect_descriptor: Optional[pulumi.Input['ConnectionConnectDescriptorArgs']] = None,
              database_id: Optional[pulumi.Input[str]] = None,
@@ -89,39 +89,47 @@ class ConnectionArgs:
              ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
              tls_keystore: Optional[pulumi.Input[str]] = None,
              tls_wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminCredentials' in kwargs:
+        if admin_credentials is None and 'adminCredentials' in kwargs:
             admin_credentials = kwargs['adminCredentials']
-        if 'compartmentId' in kwargs:
+        if admin_credentials is None:
+            raise TypeError("Missing 'admin_credentials' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'vaultDetails' in kwargs:
+        if database_type is None:
+            raise TypeError("Missing 'database_type' argument")
+        if vault_details is None and 'vaultDetails' in kwargs:
             vault_details = kwargs['vaultDetails']
-        if 'certificateTdn' in kwargs:
+        if vault_details is None:
+            raise TypeError("Missing 'vault_details' argument")
+        if certificate_tdn is None and 'certificateTdn' in kwargs:
             certificate_tdn = kwargs['certificateTdn']
-        if 'connectDescriptor' in kwargs:
+        if connect_descriptor is None and 'connectDescriptor' in kwargs:
             connect_descriptor = kwargs['connectDescriptor']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpoint' in kwargs:
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
             private_endpoint = kwargs['privateEndpoint']
-        if 'replicationCredentials' in kwargs:
+        if replication_credentials is None and 'replicationCredentials' in kwargs:
             replication_credentials = kwargs['replicationCredentials']
-        if 'sshDetails' in kwargs:
+        if ssh_details is None and 'sshDetails' in kwargs:
             ssh_details = kwargs['sshDetails']
-        if 'tlsKeystore' in kwargs:
+        if tls_keystore is None and 'tlsKeystore' in kwargs:
             tls_keystore = kwargs['tlsKeystore']
-        if 'tlsWallet' in kwargs:
+        if tls_wallet is None and 'tlsWallet' in kwargs:
             tls_wallet = kwargs['tlsWallet']
 
         _setter("admin_credentials", admin_credentials)
@@ -446,49 +454,49 @@ class _ConnectionState:
              tls_keystore: Optional[pulumi.Input[str]] = None,
              tls_wallet: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['ConnectionVaultDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminCredentials' in kwargs:
+        if admin_credentials is None and 'adminCredentials' in kwargs:
             admin_credentials = kwargs['adminCredentials']
-        if 'certificateTdn' in kwargs:
+        if certificate_tdn is None and 'certificateTdn' in kwargs:
             certificate_tdn = kwargs['certificateTdn']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectDescriptor' in kwargs:
+        if connect_descriptor is None and 'connectDescriptor' in kwargs:
             connect_descriptor = kwargs['connectDescriptor']
-        if 'credentialsSecretId' in kwargs:
+        if credentials_secret_id is None and 'credentialsSecretId' in kwargs:
             credentials_secret_id = kwargs['credentialsSecretId']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpoint' in kwargs:
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
             private_endpoint = kwargs['privateEndpoint']
-        if 'replicationCredentials' in kwargs:
+        if replication_credentials is None and 'replicationCredentials' in kwargs:
             replication_credentials = kwargs['replicationCredentials']
-        if 'sshDetails' in kwargs:
+        if ssh_details is None and 'sshDetails' in kwargs:
             ssh_details = kwargs['sshDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'tlsKeystore' in kwargs:
+        if tls_keystore is None and 'tlsKeystore' in kwargs:
             tls_keystore = kwargs['tlsKeystore']
-        if 'tlsWallet' in kwargs:
+        if tls_wallet is None and 'tlsWallet' in kwargs:
             tls_wallet = kwargs['tlsWallet']
-        if 'vaultDetails' in kwargs:
+        if vault_details is None and 'vaultDetails' in kwargs:
             vault_details = kwargs['vaultDetails']
 
         if admin_credentials is not None:
@@ -1026,11 +1034,7 @@ class Connection(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConnectionArgs.__new__(ConnectionArgs)
 
-            if admin_credentials is not None and not isinstance(admin_credentials, ConnectionAdminCredentialsArgs):
-                admin_credentials = admin_credentials or {}
-                def _setter(key, value):
-                    admin_credentials[key] = value
-                ConnectionAdminCredentialsArgs._configure(_setter, **admin_credentials)
+            admin_credentials = _utilities.configure(admin_credentials, ConnectionAdminCredentialsArgs, True)
             if admin_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_credentials'")
             __props__.__dict__["admin_credentials"] = admin_credentials
@@ -1038,11 +1042,7 @@ class Connection(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if connect_descriptor is not None and not isinstance(connect_descriptor, ConnectionConnectDescriptorArgs):
-                connect_descriptor = connect_descriptor or {}
-                def _setter(key, value):
-                    connect_descriptor[key] = value
-                ConnectionConnectDescriptorArgs._configure(_setter, **connect_descriptor)
+            connect_descriptor = _utilities.configure(connect_descriptor, ConnectionConnectDescriptorArgs, True)
             __props__.__dict__["connect_descriptor"] = connect_descriptor
             __props__.__dict__["database_id"] = database_id
             if database_type is None and not opts.urn:
@@ -1052,31 +1052,15 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["nsg_ids"] = nsg_ids
-            if private_endpoint is not None and not isinstance(private_endpoint, ConnectionPrivateEndpointArgs):
-                private_endpoint = private_endpoint or {}
-                def _setter(key, value):
-                    private_endpoint[key] = value
-                ConnectionPrivateEndpointArgs._configure(_setter, **private_endpoint)
+            private_endpoint = _utilities.configure(private_endpoint, ConnectionPrivateEndpointArgs, True)
             __props__.__dict__["private_endpoint"] = private_endpoint
-            if replication_credentials is not None and not isinstance(replication_credentials, ConnectionReplicationCredentialsArgs):
-                replication_credentials = replication_credentials or {}
-                def _setter(key, value):
-                    replication_credentials[key] = value
-                ConnectionReplicationCredentialsArgs._configure(_setter, **replication_credentials)
+            replication_credentials = _utilities.configure(replication_credentials, ConnectionReplicationCredentialsArgs, True)
             __props__.__dict__["replication_credentials"] = replication_credentials
-            if ssh_details is not None and not isinstance(ssh_details, ConnectionSshDetailsArgs):
-                ssh_details = ssh_details or {}
-                def _setter(key, value):
-                    ssh_details[key] = value
-                ConnectionSshDetailsArgs._configure(_setter, **ssh_details)
+            ssh_details = _utilities.configure(ssh_details, ConnectionSshDetailsArgs, True)
             __props__.__dict__["ssh_details"] = ssh_details
             __props__.__dict__["tls_keystore"] = tls_keystore
             __props__.__dict__["tls_wallet"] = tls_wallet
-            if vault_details is not None and not isinstance(vault_details, ConnectionVaultDetailsArgs):
-                vault_details = vault_details or {}
-                def _setter(key, value):
-                    vault_details[key] = value
-                ConnectionVaultDetailsArgs._configure(_setter, **vault_details)
+            vault_details = _utilities.configure(vault_details, ConnectionVaultDetailsArgs, True)
             if vault_details is None and not opts.urn:
                 raise TypeError("Missing required property 'vault_details'")
             __props__.__dict__["vault_details"] = vault_details

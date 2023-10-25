@@ -87,16 +87,18 @@ class SubscriptionRedeemableUserItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_id: str,
+             email_id: Optional[str] = None,
              first_name: Optional[str] = None,
              last_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailId' in kwargs:
+        if email_id is None and 'emailId' in kwargs:
             email_id = kwargs['emailId']
-        if 'firstName' in kwargs:
+        if email_id is None:
+            raise TypeError("Missing 'email_id' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
 
         _setter("email_id", email_id)
@@ -148,11 +150,15 @@ class GetResourceQuotasFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -195,12 +201,16 @@ class GetResourceQuotasResourceQuotumCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_allowed: bool,
-             items: Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_allowed: Optional[bool] = None,
+             items: Optional[Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isAllowed' in kwargs:
+        if is_allowed is None and 'isAllowed' in kwargs:
             is_allowed = kwargs['isAllowed']
+        if is_allowed is None:
+            raise TypeError("Missing 'is_allowed' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("is_allowed", is_allowed)
         _setter("items", items)
@@ -257,26 +267,42 @@ class GetResourceQuotasResourceQuotumCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             affected_resource: str,
-             balance: float,
-             is_allowed: bool,
-             is_dependency: bool,
-             is_overage: bool,
-             name: str,
-             purchased_limit: float,
-             service: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             affected_resource: Optional[str] = None,
+             balance: Optional[float] = None,
+             is_allowed: Optional[bool] = None,
+             is_dependency: Optional[bool] = None,
+             is_overage: Optional[bool] = None,
+             name: Optional[str] = None,
+             purchased_limit: Optional[float] = None,
+             service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'affectedResource' in kwargs:
+        if affected_resource is None and 'affectedResource' in kwargs:
             affected_resource = kwargs['affectedResource']
-        if 'isAllowed' in kwargs:
+        if affected_resource is None:
+            raise TypeError("Missing 'affected_resource' argument")
+        if balance is None:
+            raise TypeError("Missing 'balance' argument")
+        if is_allowed is None and 'isAllowed' in kwargs:
             is_allowed = kwargs['isAllowed']
-        if 'isDependency' in kwargs:
+        if is_allowed is None:
+            raise TypeError("Missing 'is_allowed' argument")
+        if is_dependency is None and 'isDependency' in kwargs:
             is_dependency = kwargs['isDependency']
-        if 'isOverage' in kwargs:
+        if is_dependency is None:
+            raise TypeError("Missing 'is_dependency' argument")
+        if is_overage is None and 'isOverage' in kwargs:
             is_overage = kwargs['isOverage']
-        if 'purchasedLimit' in kwargs:
+        if is_overage is None:
+            raise TypeError("Missing 'is_overage' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if purchased_limit is None and 'purchasedLimit' in kwargs:
             purchased_limit = kwargs['purchasedLimit']
+        if purchased_limit is None:
+            raise TypeError("Missing 'purchased_limit' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
 
         _setter("affected_resource", affected_resource)
         _setter("balance", balance)
@@ -370,11 +396,15 @@ class GetResourcesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -414,9 +444,11 @@ class GetResourcesResourcesCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetResourcesResourcesCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetResourcesResourcesCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -473,33 +505,55 @@ class GetResourcesResourcesCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             child_resources: Sequence[str],
-             daily_unit_display_name: str,
-             description: str,
-             hourly_unit_display_name: str,
-             instance_type: str,
-             is_purchased: bool,
-             name: str,
-             raw_unit_display_name: str,
-             servicename: str,
-             skuses: Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult'],
-             usage_data_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             child_resources: Optional[Sequence[str]] = None,
+             daily_unit_display_name: Optional[str] = None,
+             description: Optional[str] = None,
+             hourly_unit_display_name: Optional[str] = None,
+             instance_type: Optional[str] = None,
+             is_purchased: Optional[bool] = None,
+             name: Optional[str] = None,
+             raw_unit_display_name: Optional[str] = None,
+             servicename: Optional[str] = None,
+             skuses: Optional[Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult']] = None,
+             usage_data_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'childResources' in kwargs:
+        if child_resources is None and 'childResources' in kwargs:
             child_resources = kwargs['childResources']
-        if 'dailyUnitDisplayName' in kwargs:
+        if child_resources is None:
+            raise TypeError("Missing 'child_resources' argument")
+        if daily_unit_display_name is None and 'dailyUnitDisplayName' in kwargs:
             daily_unit_display_name = kwargs['dailyUnitDisplayName']
-        if 'hourlyUnitDisplayName' in kwargs:
+        if daily_unit_display_name is None:
+            raise TypeError("Missing 'daily_unit_display_name' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if hourly_unit_display_name is None and 'hourlyUnitDisplayName' in kwargs:
             hourly_unit_display_name = kwargs['hourlyUnitDisplayName']
-        if 'instanceType' in kwargs:
+        if hourly_unit_display_name is None:
+            raise TypeError("Missing 'hourly_unit_display_name' argument")
+        if instance_type is None and 'instanceType' in kwargs:
             instance_type = kwargs['instanceType']
-        if 'isPurchased' in kwargs:
+        if instance_type is None:
+            raise TypeError("Missing 'instance_type' argument")
+        if is_purchased is None and 'isPurchased' in kwargs:
             is_purchased = kwargs['isPurchased']
-        if 'rawUnitDisplayName' in kwargs:
+        if is_purchased is None:
+            raise TypeError("Missing 'is_purchased' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if raw_unit_display_name is None and 'rawUnitDisplayName' in kwargs:
             raw_unit_display_name = kwargs['rawUnitDisplayName']
-        if 'usageDataType' in kwargs:
+        if raw_unit_display_name is None:
+            raise TypeError("Missing 'raw_unit_display_name' argument")
+        if servicename is None:
+            raise TypeError("Missing 'servicename' argument")
+        if skuses is None:
+            raise TypeError("Missing 'skuses' argument")
+        if usage_data_type is None and 'usageDataType' in kwargs:
             usage_data_type = kwargs['usageDataType']
+        if usage_data_type is None:
+            raise TypeError("Missing 'usage_data_type' argument")
 
         _setter("child_resources", child_resources)
         _setter("daily_unit_display_name", daily_unit_display_name)
@@ -622,17 +676,23 @@ class GetResourcesResourcesCollectionItemSkusResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloud_credit_type: str,
-             sku_id: str,
-             sku_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cloud_credit_type: Optional[str] = None,
+             sku_id: Optional[str] = None,
+             sku_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudCreditType' in kwargs:
+        if cloud_credit_type is None and 'cloudCreditType' in kwargs:
             cloud_credit_type = kwargs['cloudCreditType']
-        if 'skuId' in kwargs:
+        if cloud_credit_type is None:
+            raise TypeError("Missing 'cloud_credit_type' argument")
+        if sku_id is None and 'skuId' in kwargs:
             sku_id = kwargs['skuId']
-        if 'skuType' in kwargs:
+        if sku_id is None:
+            raise TypeError("Missing 'sku_id' argument")
+        if sku_type is None and 'skuType' in kwargs:
             sku_type = kwargs['skuType']
+        if sku_type is None:
+            raise TypeError("Missing 'sku_type' argument")
 
         _setter("cloud_credit_type", cloud_credit_type)
         _setter("sku_id", sku_id)
@@ -689,23 +749,33 @@ class GetSubscriptionProductItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             earned_rewards: float,
-             is_eligible_to_earn_rewards: bool,
-             product_name: str,
-             product_number: str,
-             usage_amount: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             earned_rewards: Optional[float] = None,
+             is_eligible_to_earn_rewards: Optional[bool] = None,
+             product_name: Optional[str] = None,
+             product_number: Optional[str] = None,
+             usage_amount: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'earnedRewards' in kwargs:
+        if earned_rewards is None and 'earnedRewards' in kwargs:
             earned_rewards = kwargs['earnedRewards']
-        if 'isEligibleToEarnRewards' in kwargs:
+        if earned_rewards is None:
+            raise TypeError("Missing 'earned_rewards' argument")
+        if is_eligible_to_earn_rewards is None and 'isEligibleToEarnRewards' in kwargs:
             is_eligible_to_earn_rewards = kwargs['isEligibleToEarnRewards']
-        if 'productName' in kwargs:
+        if is_eligible_to_earn_rewards is None:
+            raise TypeError("Missing 'is_eligible_to_earn_rewards' argument")
+        if product_name is None and 'productName' in kwargs:
             product_name = kwargs['productName']
-        if 'productNumber' in kwargs:
+        if product_name is None:
+            raise TypeError("Missing 'product_name' argument")
+        if product_number is None and 'productNumber' in kwargs:
             product_number = kwargs['productNumber']
-        if 'usageAmount' in kwargs:
+        if product_number is None:
+            raise TypeError("Missing 'product_number' argument")
+        if usage_amount is None and 'usageAmount' in kwargs:
             usage_amount = kwargs['usageAmount']
+        if usage_amount is None:
+            raise TypeError("Missing 'usage_amount' argument")
 
         _setter("earned_rewards", earned_rewards)
         _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
@@ -769,11 +839,15 @@ class GetSubscriptionProductsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -810,9 +884,11 @@ class GetSubscriptionProductsProductCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -839,9 +915,11 @@ class GetSubscriptionProductsProductCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -880,23 +958,33 @@ class GetSubscriptionProductsProductCollectionItemItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             earned_rewards: float,
-             is_eligible_to_earn_rewards: bool,
-             product_name: str,
-             product_number: str,
-             usage_amount: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             earned_rewards: Optional[float] = None,
+             is_eligible_to_earn_rewards: Optional[bool] = None,
+             product_name: Optional[str] = None,
+             product_number: Optional[str] = None,
+             usage_amount: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'earnedRewards' in kwargs:
+        if earned_rewards is None and 'earnedRewards' in kwargs:
             earned_rewards = kwargs['earnedRewards']
-        if 'isEligibleToEarnRewards' in kwargs:
+        if earned_rewards is None:
+            raise TypeError("Missing 'earned_rewards' argument")
+        if is_eligible_to_earn_rewards is None and 'isEligibleToEarnRewards' in kwargs:
             is_eligible_to_earn_rewards = kwargs['isEligibleToEarnRewards']
-        if 'productName' in kwargs:
+        if is_eligible_to_earn_rewards is None:
+            raise TypeError("Missing 'is_eligible_to_earn_rewards' argument")
+        if product_name is None and 'productName' in kwargs:
             product_name = kwargs['productName']
-        if 'productNumber' in kwargs:
+        if product_name is None:
+            raise TypeError("Missing 'product_name' argument")
+        if product_number is None and 'productNumber' in kwargs:
             product_number = kwargs['productNumber']
-        if 'usageAmount' in kwargs:
+        if product_number is None:
+            raise TypeError("Missing 'product_number' argument")
+        if usage_amount is None and 'usageAmount' in kwargs:
             usage_amount = kwargs['usageAmount']
+        if usage_amount is None:
+            raise TypeError("Missing 'usage_amount' argument")
 
         _setter("earned_rewards", earned_rewards)
         _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
@@ -965,17 +1053,23 @@ class GetSubscriptionRedeemableUserItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_id: str,
-             first_name: str,
-             last_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_id: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailId' in kwargs:
+        if email_id is None and 'emailId' in kwargs:
             email_id = kwargs['emailId']
-        if 'firstName' in kwargs:
+        if email_id is None:
+            raise TypeError("Missing 'email_id' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
 
         _setter("email_id", email_id)
         _setter("first_name", first_name)
@@ -1021,11 +1115,15 @@ class GetSubscriptionRedeemableUsersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1062,9 +1160,11 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1099,18 +1199,26 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult'],
-             subscription_id: str,
-             tenancy_id: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult']] = None,
+             subscription_id: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'subscriptionId' in kwargs:
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'tenancyId' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'userId' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("items", items)
         _setter("subscription_id", subscription_id)
@@ -1167,17 +1275,23 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_id: str,
-             first_name: str,
-             last_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             email_id: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailId' in kwargs:
+        if email_id is None and 'emailId' in kwargs:
             email_id = kwargs['emailId']
-        if 'firstName' in kwargs:
+        if email_id is None:
+            raise TypeError("Missing 'email_id' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
 
         _setter("email_id", email_id)
         _setter("first_name", first_name)
@@ -1249,38 +1363,58 @@ class GetSubscriptionRedemptionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_rewards: float,
-             fx_rate: float,
-             invoice_currency: str,
-             invoice_number: str,
-             invoice_total_amount: float,
-             redeemed_rewards: float,
-             redemption_code: str,
-             redemption_email: str,
-             time_invoiced: str,
-             time_redeemed: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_rewards: Optional[float] = None,
+             fx_rate: Optional[float] = None,
+             invoice_currency: Optional[str] = None,
+             invoice_number: Optional[str] = None,
+             invoice_total_amount: Optional[float] = None,
+             redeemed_rewards: Optional[float] = None,
+             redemption_code: Optional[str] = None,
+             redemption_email: Optional[str] = None,
+             time_invoiced: Optional[str] = None,
+             time_redeemed: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRewards' in kwargs:
+        if base_rewards is None and 'baseRewards' in kwargs:
             base_rewards = kwargs['baseRewards']
-        if 'fxRate' in kwargs:
+        if base_rewards is None:
+            raise TypeError("Missing 'base_rewards' argument")
+        if fx_rate is None and 'fxRate' in kwargs:
             fx_rate = kwargs['fxRate']
-        if 'invoiceCurrency' in kwargs:
+        if fx_rate is None:
+            raise TypeError("Missing 'fx_rate' argument")
+        if invoice_currency is None and 'invoiceCurrency' in kwargs:
             invoice_currency = kwargs['invoiceCurrency']
-        if 'invoiceNumber' in kwargs:
+        if invoice_currency is None:
+            raise TypeError("Missing 'invoice_currency' argument")
+        if invoice_number is None and 'invoiceNumber' in kwargs:
             invoice_number = kwargs['invoiceNumber']
-        if 'invoiceTotalAmount' in kwargs:
+        if invoice_number is None:
+            raise TypeError("Missing 'invoice_number' argument")
+        if invoice_total_amount is None and 'invoiceTotalAmount' in kwargs:
             invoice_total_amount = kwargs['invoiceTotalAmount']
-        if 'redeemedRewards' in kwargs:
+        if invoice_total_amount is None:
+            raise TypeError("Missing 'invoice_total_amount' argument")
+        if redeemed_rewards is None and 'redeemedRewards' in kwargs:
             redeemed_rewards = kwargs['redeemedRewards']
-        if 'redemptionCode' in kwargs:
+        if redeemed_rewards is None:
+            raise TypeError("Missing 'redeemed_rewards' argument")
+        if redemption_code is None and 'redemptionCode' in kwargs:
             redemption_code = kwargs['redemptionCode']
-        if 'redemptionEmail' in kwargs:
+        if redemption_code is None:
+            raise TypeError("Missing 'redemption_code' argument")
+        if redemption_email is None and 'redemptionEmail' in kwargs:
             redemption_email = kwargs['redemptionEmail']
-        if 'timeInvoiced' in kwargs:
+        if redemption_email is None:
+            raise TypeError("Missing 'redemption_email' argument")
+        if time_invoiced is None and 'timeInvoiced' in kwargs:
             time_invoiced = kwargs['timeInvoiced']
-        if 'timeRedeemed' in kwargs:
+        if time_invoiced is None:
+            raise TypeError("Missing 'time_invoiced' argument")
+        if time_redeemed is None and 'timeRedeemed' in kwargs:
             time_redeemed = kwargs['timeRedeemed']
+        if time_redeemed is None:
+            raise TypeError("Missing 'time_redeemed' argument")
 
         _setter("base_rewards", base_rewards)
         _setter("fx_rate", fx_rate)
@@ -1389,11 +1523,15 @@ class GetSubscriptionRedemptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1430,9 +1568,11 @@ class GetSubscriptionRedemptionsRedemptionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1459,9 +1599,11 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1515,38 +1657,58 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_rewards: float,
-             fx_rate: float,
-             invoice_currency: str,
-             invoice_number: str,
-             invoice_total_amount: float,
-             redeemed_rewards: float,
-             redemption_code: str,
-             redemption_email: str,
-             time_invoiced: str,
-             time_redeemed: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_rewards: Optional[float] = None,
+             fx_rate: Optional[float] = None,
+             invoice_currency: Optional[str] = None,
+             invoice_number: Optional[str] = None,
+             invoice_total_amount: Optional[float] = None,
+             redeemed_rewards: Optional[float] = None,
+             redemption_code: Optional[str] = None,
+             redemption_email: Optional[str] = None,
+             time_invoiced: Optional[str] = None,
+             time_redeemed: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRewards' in kwargs:
+        if base_rewards is None and 'baseRewards' in kwargs:
             base_rewards = kwargs['baseRewards']
-        if 'fxRate' in kwargs:
+        if base_rewards is None:
+            raise TypeError("Missing 'base_rewards' argument")
+        if fx_rate is None and 'fxRate' in kwargs:
             fx_rate = kwargs['fxRate']
-        if 'invoiceCurrency' in kwargs:
+        if fx_rate is None:
+            raise TypeError("Missing 'fx_rate' argument")
+        if invoice_currency is None and 'invoiceCurrency' in kwargs:
             invoice_currency = kwargs['invoiceCurrency']
-        if 'invoiceNumber' in kwargs:
+        if invoice_currency is None:
+            raise TypeError("Missing 'invoice_currency' argument")
+        if invoice_number is None and 'invoiceNumber' in kwargs:
             invoice_number = kwargs['invoiceNumber']
-        if 'invoiceTotalAmount' in kwargs:
+        if invoice_number is None:
+            raise TypeError("Missing 'invoice_number' argument")
+        if invoice_total_amount is None and 'invoiceTotalAmount' in kwargs:
             invoice_total_amount = kwargs['invoiceTotalAmount']
-        if 'redeemedRewards' in kwargs:
+        if invoice_total_amount is None:
+            raise TypeError("Missing 'invoice_total_amount' argument")
+        if redeemed_rewards is None and 'redeemedRewards' in kwargs:
             redeemed_rewards = kwargs['redeemedRewards']
-        if 'redemptionCode' in kwargs:
+        if redeemed_rewards is None:
+            raise TypeError("Missing 'redeemed_rewards' argument")
+        if redemption_code is None and 'redemptionCode' in kwargs:
             redemption_code = kwargs['redemptionCode']
-        if 'redemptionEmail' in kwargs:
+        if redemption_code is None:
+            raise TypeError("Missing 'redemption_code' argument")
+        if redemption_email is None and 'redemptionEmail' in kwargs:
             redemption_email = kwargs['redemptionEmail']
-        if 'timeInvoiced' in kwargs:
+        if redemption_email is None:
+            raise TypeError("Missing 'redemption_email' argument")
+        if time_invoiced is None and 'timeInvoiced' in kwargs:
             time_invoiced = kwargs['timeInvoiced']
-        if 'timeRedeemed' in kwargs:
+        if time_invoiced is None:
+            raise TypeError("Missing 'time_invoiced' argument")
+        if time_redeemed is None and 'timeRedeemed' in kwargs:
             time_redeemed = kwargs['timeRedeemed']
+        if time_redeemed is None:
+            raise TypeError("Missing 'time_redeemed' argument")
 
         _setter("base_rewards", base_rewards)
         _setter("fx_rate", fx_rate)
@@ -1687,44 +1849,68 @@ class GetSubscriptionRewardItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             available_rewards: float,
-             earned_rewards: float,
-             eligible_usage_amount: float,
-             ineligible_usage_amount: float,
-             is_manual: bool,
-             redeemed_rewards: float,
-             time_rewards_earned: str,
-             time_rewards_expired: str,
-             time_usage_ended: str,
-             time_usage_started: str,
-             usage_amount: float,
-             usage_period_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             available_rewards: Optional[float] = None,
+             earned_rewards: Optional[float] = None,
+             eligible_usage_amount: Optional[float] = None,
+             ineligible_usage_amount: Optional[float] = None,
+             is_manual: Optional[bool] = None,
+             redeemed_rewards: Optional[float] = None,
+             time_rewards_earned: Optional[str] = None,
+             time_rewards_expired: Optional[str] = None,
+             time_usage_ended: Optional[str] = None,
+             time_usage_started: Optional[str] = None,
+             usage_amount: Optional[float] = None,
+             usage_period_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableRewards' in kwargs:
+        if available_rewards is None and 'availableRewards' in kwargs:
             available_rewards = kwargs['availableRewards']
-        if 'earnedRewards' in kwargs:
+        if available_rewards is None:
+            raise TypeError("Missing 'available_rewards' argument")
+        if earned_rewards is None and 'earnedRewards' in kwargs:
             earned_rewards = kwargs['earnedRewards']
-        if 'eligibleUsageAmount' in kwargs:
+        if earned_rewards is None:
+            raise TypeError("Missing 'earned_rewards' argument")
+        if eligible_usage_amount is None and 'eligibleUsageAmount' in kwargs:
             eligible_usage_amount = kwargs['eligibleUsageAmount']
-        if 'ineligibleUsageAmount' in kwargs:
+        if eligible_usage_amount is None:
+            raise TypeError("Missing 'eligible_usage_amount' argument")
+        if ineligible_usage_amount is None and 'ineligibleUsageAmount' in kwargs:
             ineligible_usage_amount = kwargs['ineligibleUsageAmount']
-        if 'isManual' in kwargs:
+        if ineligible_usage_amount is None:
+            raise TypeError("Missing 'ineligible_usage_amount' argument")
+        if is_manual is None and 'isManual' in kwargs:
             is_manual = kwargs['isManual']
-        if 'redeemedRewards' in kwargs:
+        if is_manual is None:
+            raise TypeError("Missing 'is_manual' argument")
+        if redeemed_rewards is None and 'redeemedRewards' in kwargs:
             redeemed_rewards = kwargs['redeemedRewards']
-        if 'timeRewardsEarned' in kwargs:
+        if redeemed_rewards is None:
+            raise TypeError("Missing 'redeemed_rewards' argument")
+        if time_rewards_earned is None and 'timeRewardsEarned' in kwargs:
             time_rewards_earned = kwargs['timeRewardsEarned']
-        if 'timeRewardsExpired' in kwargs:
+        if time_rewards_earned is None:
+            raise TypeError("Missing 'time_rewards_earned' argument")
+        if time_rewards_expired is None and 'timeRewardsExpired' in kwargs:
             time_rewards_expired = kwargs['timeRewardsExpired']
-        if 'timeUsageEnded' in kwargs:
+        if time_rewards_expired is None:
+            raise TypeError("Missing 'time_rewards_expired' argument")
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
             time_usage_ended = kwargs['timeUsageEnded']
-        if 'timeUsageStarted' in kwargs:
+        if time_usage_ended is None:
+            raise TypeError("Missing 'time_usage_ended' argument")
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
             time_usage_started = kwargs['timeUsageStarted']
-        if 'usageAmount' in kwargs:
+        if time_usage_started is None:
+            raise TypeError("Missing 'time_usage_started' argument")
+        if usage_amount is None and 'usageAmount' in kwargs:
             usage_amount = kwargs['usageAmount']
-        if 'usagePeriodKey' in kwargs:
+        if usage_amount is None:
+            raise TypeError("Missing 'usage_amount' argument")
+        if usage_period_key is None and 'usagePeriodKey' in kwargs:
             usage_period_key = kwargs['usagePeriodKey']
+        if usage_period_key is None:
+            raise TypeError("Missing 'usage_period_key' argument")
 
         _setter("available_rewards", available_rewards)
         _setter("earned_rewards", earned_rewards)
@@ -1865,24 +2051,36 @@ class GetSubscriptionRewardSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency: str,
-             redemption_code: str,
-             rewards_rate: float,
-             subscription_id: str,
-             tenancy_id: str,
-             total_rewards_available: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency: Optional[str] = None,
+             redemption_code: Optional[str] = None,
+             rewards_rate: Optional[float] = None,
+             subscription_id: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             total_rewards_available: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'redemptionCode' in kwargs:
+        if currency is None:
+            raise TypeError("Missing 'currency' argument")
+        if redemption_code is None and 'redemptionCode' in kwargs:
             redemption_code = kwargs['redemptionCode']
-        if 'rewardsRate' in kwargs:
+        if redemption_code is None:
+            raise TypeError("Missing 'redemption_code' argument")
+        if rewards_rate is None and 'rewardsRate' in kwargs:
             rewards_rate = kwargs['rewardsRate']
-        if 'subscriptionId' in kwargs:
+        if rewards_rate is None:
+            raise TypeError("Missing 'rewards_rate' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'tenancyId' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'totalRewardsAvailable' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if total_rewards_available is None and 'totalRewardsAvailable' in kwargs:
             total_rewards_available = kwargs['totalRewardsAvailable']
+        if total_rewards_available is None:
+            raise TypeError("Missing 'total_rewards_available' argument")
 
         _setter("currency", currency)
         _setter("redemption_code", redemption_code)
@@ -1955,11 +2153,15 @@ class GetSubscriptionRewardsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1996,9 +2198,11 @@ class GetSubscriptionRewardsRewardCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2028,10 +2232,14 @@ class GetSubscriptionRewardsRewardCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult'],
-             summaries: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult']] = None,
+             summaries: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if summaries is None:
+            raise TypeError("Missing 'summaries' argument")
 
         _setter("items", items)
         _setter("summaries", summaries)
@@ -2100,44 +2308,68 @@ class GetSubscriptionRewardsRewardCollectionItemItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             available_rewards: float,
-             earned_rewards: float,
-             eligible_usage_amount: float,
-             ineligible_usage_amount: float,
-             is_manual: bool,
-             redeemed_rewards: float,
-             time_rewards_earned: str,
-             time_rewards_expired: str,
-             time_usage_ended: str,
-             time_usage_started: str,
-             usage_amount: float,
-             usage_period_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             available_rewards: Optional[float] = None,
+             earned_rewards: Optional[float] = None,
+             eligible_usage_amount: Optional[float] = None,
+             ineligible_usage_amount: Optional[float] = None,
+             is_manual: Optional[bool] = None,
+             redeemed_rewards: Optional[float] = None,
+             time_rewards_earned: Optional[str] = None,
+             time_rewards_expired: Optional[str] = None,
+             time_usage_ended: Optional[str] = None,
+             time_usage_started: Optional[str] = None,
+             usage_amount: Optional[float] = None,
+             usage_period_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableRewards' in kwargs:
+        if available_rewards is None and 'availableRewards' in kwargs:
             available_rewards = kwargs['availableRewards']
-        if 'earnedRewards' in kwargs:
+        if available_rewards is None:
+            raise TypeError("Missing 'available_rewards' argument")
+        if earned_rewards is None and 'earnedRewards' in kwargs:
             earned_rewards = kwargs['earnedRewards']
-        if 'eligibleUsageAmount' in kwargs:
+        if earned_rewards is None:
+            raise TypeError("Missing 'earned_rewards' argument")
+        if eligible_usage_amount is None and 'eligibleUsageAmount' in kwargs:
             eligible_usage_amount = kwargs['eligibleUsageAmount']
-        if 'ineligibleUsageAmount' in kwargs:
+        if eligible_usage_amount is None:
+            raise TypeError("Missing 'eligible_usage_amount' argument")
+        if ineligible_usage_amount is None and 'ineligibleUsageAmount' in kwargs:
             ineligible_usage_amount = kwargs['ineligibleUsageAmount']
-        if 'isManual' in kwargs:
+        if ineligible_usage_amount is None:
+            raise TypeError("Missing 'ineligible_usage_amount' argument")
+        if is_manual is None and 'isManual' in kwargs:
             is_manual = kwargs['isManual']
-        if 'redeemedRewards' in kwargs:
+        if is_manual is None:
+            raise TypeError("Missing 'is_manual' argument")
+        if redeemed_rewards is None and 'redeemedRewards' in kwargs:
             redeemed_rewards = kwargs['redeemedRewards']
-        if 'timeRewardsEarned' in kwargs:
+        if redeemed_rewards is None:
+            raise TypeError("Missing 'redeemed_rewards' argument")
+        if time_rewards_earned is None and 'timeRewardsEarned' in kwargs:
             time_rewards_earned = kwargs['timeRewardsEarned']
-        if 'timeRewardsExpired' in kwargs:
+        if time_rewards_earned is None:
+            raise TypeError("Missing 'time_rewards_earned' argument")
+        if time_rewards_expired is None and 'timeRewardsExpired' in kwargs:
             time_rewards_expired = kwargs['timeRewardsExpired']
-        if 'timeUsageEnded' in kwargs:
+        if time_rewards_expired is None:
+            raise TypeError("Missing 'time_rewards_expired' argument")
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
             time_usage_ended = kwargs['timeUsageEnded']
-        if 'timeUsageStarted' in kwargs:
+        if time_usage_ended is None:
+            raise TypeError("Missing 'time_usage_ended' argument")
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
             time_usage_started = kwargs['timeUsageStarted']
-        if 'usageAmount' in kwargs:
+        if time_usage_started is None:
+            raise TypeError("Missing 'time_usage_started' argument")
+        if usage_amount is None and 'usageAmount' in kwargs:
             usage_amount = kwargs['usageAmount']
-        if 'usagePeriodKey' in kwargs:
+        if usage_amount is None:
+            raise TypeError("Missing 'usage_amount' argument")
+        if usage_period_key is None and 'usagePeriodKey' in kwargs:
             usage_period_key = kwargs['usagePeriodKey']
+        if usage_period_key is None:
+            raise TypeError("Missing 'usage_period_key' argument")
 
         _setter("available_rewards", available_rewards)
         _setter("earned_rewards", earned_rewards)
@@ -2278,24 +2510,36 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             currency: str,
-             redemption_code: str,
-             rewards_rate: float,
-             subscription_id: str,
-             tenancy_id: str,
-             total_rewards_available: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             currency: Optional[str] = None,
+             redemption_code: Optional[str] = None,
+             rewards_rate: Optional[float] = None,
+             subscription_id: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             total_rewards_available: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'redemptionCode' in kwargs:
+        if currency is None:
+            raise TypeError("Missing 'currency' argument")
+        if redemption_code is None and 'redemptionCode' in kwargs:
             redemption_code = kwargs['redemptionCode']
-        if 'rewardsRate' in kwargs:
+        if redemption_code is None:
+            raise TypeError("Missing 'redemption_code' argument")
+        if rewards_rate is None and 'rewardsRate' in kwargs:
             rewards_rate = kwargs['rewardsRate']
-        if 'subscriptionId' in kwargs:
+        if rewards_rate is None:
+            raise TypeError("Missing 'rewards_rate' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'tenancyId' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'totalRewardsAvailable' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if total_rewards_available is None and 'totalRewardsAvailable' in kwargs:
             total_rewards_available = kwargs['totalRewardsAvailable']
+        if total_rewards_available is None:
+            raise TypeError("Missing 'total_rewards_available' argument")
 
         _setter("currency", currency)
         _setter("redemption_code", redemption_code)
@@ -2368,11 +2612,15 @@ class GetUsagelimitsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2409,9 +2657,11 @@ class GetUsagelimitsUsageLimitCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2482,48 +2732,80 @@ class GetUsagelimitsUsageLimitCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             alert_level: float,
-             created_by: str,
-             entitlement_id: str,
-             id: str,
-             limit: str,
-             limit_type: str,
-             max_hard_limit: str,
-             modified_by: str,
-             resource_name: str,
-             service_name: str,
-             sku_part_id: str,
-             state: str,
-             time_created: str,
-             time_modified: str,
-             value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             alert_level: Optional[float] = None,
+             created_by: Optional[str] = None,
+             entitlement_id: Optional[str] = None,
+             id: Optional[str] = None,
+             limit: Optional[str] = None,
+             limit_type: Optional[str] = None,
+             max_hard_limit: Optional[str] = None,
+             modified_by: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             service_name: Optional[str] = None,
+             sku_part_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             value_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'alertLevel' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if alert_level is None and 'alertLevel' in kwargs:
             alert_level = kwargs['alertLevel']
-        if 'createdBy' in kwargs:
+        if alert_level is None:
+            raise TypeError("Missing 'alert_level' argument")
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'entitlementId' in kwargs:
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if entitlement_id is None and 'entitlementId' in kwargs:
             entitlement_id = kwargs['entitlementId']
-        if 'limitType' in kwargs:
+        if entitlement_id is None:
+            raise TypeError("Missing 'entitlement_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if limit is None:
+            raise TypeError("Missing 'limit' argument")
+        if limit_type is None and 'limitType' in kwargs:
             limit_type = kwargs['limitType']
-        if 'maxHardLimit' in kwargs:
+        if limit_type is None:
+            raise TypeError("Missing 'limit_type' argument")
+        if max_hard_limit is None and 'maxHardLimit' in kwargs:
             max_hard_limit = kwargs['maxHardLimit']
-        if 'modifiedBy' in kwargs:
+        if max_hard_limit is None:
+            raise TypeError("Missing 'max_hard_limit' argument")
+        if modified_by is None and 'modifiedBy' in kwargs:
             modified_by = kwargs['modifiedBy']
-        if 'resourceName' in kwargs:
+        if modified_by is None:
+            raise TypeError("Missing 'modified_by' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'serviceName' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'skuPartId' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if sku_part_id is None and 'skuPartId' in kwargs:
             sku_part_id = kwargs['skuPartId']
-        if 'timeCreated' in kwargs:
+        if sku_part_id is None:
+            raise TypeError("Missing 'sku_part_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeModified' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
             time_modified = kwargs['timeModified']
-        if 'valueType' in kwargs:
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if value_type is None and 'valueType' in kwargs:
             value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
 
         _setter("action", action)
         _setter("alert_level", alert_level)

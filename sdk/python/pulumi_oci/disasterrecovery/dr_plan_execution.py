@@ -44,22 +44,26 @@ class DrPlanExecutionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             execution_options: pulumi.Input['DrPlanExecutionExecutionOptionsArgs'],
-             plan_id: pulumi.Input[str],
+             execution_options: Optional[pulumi.Input['DrPlanExecutionExecutionOptionsArgs']] = None,
+             plan_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'executionOptions' in kwargs:
+        if execution_options is None and 'executionOptions' in kwargs:
             execution_options = kwargs['executionOptions']
-        if 'planId' in kwargs:
+        if execution_options is None:
+            raise TypeError("Missing 'execution_options' argument")
+        if plan_id is None and 'planId' in kwargs:
             plan_id = kwargs['planId']
-        if 'definedTags' in kwargs:
+        if plan_id is None:
+            raise TypeError("Missing 'plan_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("execution_options", execution_options)
@@ -232,45 +236,45 @@ class _DrPlanExecutionState:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'drProtectionGroupId' in kwargs:
+        if dr_protection_group_id is None and 'drProtectionGroupId' in kwargs:
             dr_protection_group_id = kwargs['drProtectionGroupId']
-        if 'executionDurationInSec' in kwargs:
+        if execution_duration_in_sec is None and 'executionDurationInSec' in kwargs:
             execution_duration_in_sec = kwargs['executionDurationInSec']
-        if 'executionOptions' in kwargs:
+        if execution_options is None and 'executionOptions' in kwargs:
             execution_options = kwargs['executionOptions']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'groupExecutions' in kwargs:
+        if group_executions is None and 'groupExecutions' in kwargs:
             group_executions = kwargs['groupExecutions']
-        if 'lifeCycleDetails' in kwargs:
+        if life_cycle_details is None and 'lifeCycleDetails' in kwargs:
             life_cycle_details = kwargs['lifeCycleDetails']
-        if 'logLocations' in kwargs:
+        if log_locations is None and 'logLocations' in kwargs:
             log_locations = kwargs['logLocations']
-        if 'peerDrProtectionGroupId' in kwargs:
+        if peer_dr_protection_group_id is None and 'peerDrProtectionGroupId' in kwargs:
             peer_dr_protection_group_id = kwargs['peerDrProtectionGroupId']
-        if 'peerRegion' in kwargs:
+        if peer_region is None and 'peerRegion' in kwargs:
             peer_region = kwargs['peerRegion']
-        if 'planExecutionType' in kwargs:
+        if plan_execution_type is None and 'planExecutionType' in kwargs:
             plan_execution_type = kwargs['planExecutionType']
-        if 'planId' in kwargs:
+        if plan_id is None and 'planId' in kwargs:
             plan_id = kwargs['planId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -693,11 +697,7 @@ class DrPlanExecution(pulumi.CustomResource):
 
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
-            if execution_options is not None and not isinstance(execution_options, DrPlanExecutionExecutionOptionsArgs):
-                execution_options = execution_options or {}
-                def _setter(key, value):
-                    execution_options[key] = value
-                DrPlanExecutionExecutionOptionsArgs._configure(_setter, **execution_options)
+            execution_options = _utilities.configure(execution_options, DrPlanExecutionExecutionOptionsArgs, True)
             if execution_options is None and not opts.urn:
                 raise TypeError("Missing required property 'execution_options'")
             __props__.__dict__["execution_options"] = execution_options

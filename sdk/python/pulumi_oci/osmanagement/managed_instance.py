@@ -38,16 +38,18 @@ class ManagedInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             managed_instance_id: pulumi.Input[str],
+             managed_instance_id: Optional[pulumi.Input[str]] = None,
              is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
              notification_topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedInstanceId' in kwargs:
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'isDataCollectionAuthorized' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if is_data_collection_authorized is None and 'isDataCollectionAuthorized' in kwargs:
             is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
-        if 'notificationTopicId' in kwargs:
+        if notification_topic_id is None and 'notificationTopicId' in kwargs:
             notification_topic_id = kwargs['notificationTopicId']
 
         _setter("managed_instance_id", managed_instance_id)
@@ -217,53 +219,53 @@ class _ManagedInstanceState:
              status: Optional[pulumi.Input[str]] = None,
              updates_available: Optional[pulumi.Input[int]] = None,
              work_request_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bugUpdatesAvailable' in kwargs:
+        if bug_updates_available is None and 'bugUpdatesAvailable' in kwargs:
             bug_updates_available = kwargs['bugUpdatesAvailable']
-        if 'childSoftwareSources' in kwargs:
+        if child_software_sources is None and 'childSoftwareSources' in kwargs:
             child_software_sources = kwargs['childSoftwareSources']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'enhancementUpdatesAvailable' in kwargs:
+        if enhancement_updates_available is None and 'enhancementUpdatesAvailable' in kwargs:
             enhancement_updates_available = kwargs['enhancementUpdatesAvailable']
-        if 'isDataCollectionAuthorized' in kwargs:
+        if is_data_collection_authorized is None and 'isDataCollectionAuthorized' in kwargs:
             is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
-        if 'isRebootRequired' in kwargs:
+        if is_reboot_required is None and 'isRebootRequired' in kwargs:
             is_reboot_required = kwargs['isRebootRequired']
-        if 'kspliceEffectiveKernelVersion' in kwargs:
+        if ksplice_effective_kernel_version is None and 'kspliceEffectiveKernelVersion' in kwargs:
             ksplice_effective_kernel_version = kwargs['kspliceEffectiveKernelVersion']
-        if 'lastBoot' in kwargs:
+        if last_boot is None and 'lastBoot' in kwargs:
             last_boot = kwargs['lastBoot']
-        if 'lastCheckin' in kwargs:
+        if last_checkin is None and 'lastCheckin' in kwargs:
             last_checkin = kwargs['lastCheckin']
-        if 'managedInstanceGroups' in kwargs:
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
             managed_instance_groups = kwargs['managedInstanceGroups']
-        if 'managedInstanceId' in kwargs:
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'notificationTopicId' in kwargs:
+        if notification_topic_id is None and 'notificationTopicId' in kwargs:
             notification_topic_id = kwargs['notificationTopicId']
-        if 'osFamily' in kwargs:
+        if os_family is None and 'osFamily' in kwargs:
             os_family = kwargs['osFamily']
-        if 'osKernelVersion' in kwargs:
+        if os_kernel_version is None and 'osKernelVersion' in kwargs:
             os_kernel_version = kwargs['osKernelVersion']
-        if 'osName' in kwargs:
+        if os_name is None and 'osName' in kwargs:
             os_name = kwargs['osName']
-        if 'osVersion' in kwargs:
+        if os_version is None and 'osVersion' in kwargs:
             os_version = kwargs['osVersion']
-        if 'otherUpdatesAvailable' in kwargs:
+        if other_updates_available is None and 'otherUpdatesAvailable' in kwargs:
             other_updates_available = kwargs['otherUpdatesAvailable']
-        if 'parentSoftwareSources' in kwargs:
+        if parent_software_sources is None and 'parentSoftwareSources' in kwargs:
             parent_software_sources = kwargs['parentSoftwareSources']
-        if 'scheduledJobCount' in kwargs:
+        if scheduled_job_count is None and 'scheduledJobCount' in kwargs:
             scheduled_job_count = kwargs['scheduledJobCount']
-        if 'securityUpdatesAvailable' in kwargs:
+        if security_updates_available is None and 'securityUpdatesAvailable' in kwargs:
             security_updates_available = kwargs['securityUpdatesAvailable']
-        if 'updatesAvailable' in kwargs:
+        if updates_available is None and 'updatesAvailable' in kwargs:
             updates_available = kwargs['updatesAvailable']
-        if 'workRequestCount' in kwargs:
+        if work_request_count is None and 'workRequestCount' in kwargs:
             work_request_count = kwargs['workRequestCount']
 
         if autonomouses is not None:

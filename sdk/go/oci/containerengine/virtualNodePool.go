@@ -42,10 +42,10 @@ import (
 //						SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InitialVirtualNodeLabels: containerengine.VirtualNodePoolInitialVirtualNodeLabelArray{
@@ -69,10 +69,10 @@ import (
 //					},
 //				},
 //				VirtualNodeTags: &containerengine.VirtualNodePoolVirtualNodeTagsArgs{
-//					DefinedTags: pulumi.AnyMap{
+//					DefinedTags: pulumi.Map{
 //						"Operations.CostCenter": pulumi.Any("42"),
 //					},
-//					FreeformTags: pulumi.AnyMap{
+//					FreeformTags: pulumi.Map{
 //						"Department": pulumi.Any("Finance"),
 //					},
 //				},

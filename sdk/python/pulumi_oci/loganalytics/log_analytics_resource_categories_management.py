@@ -39,18 +39,26 @@ class LogAnalyticsResourceCategoriesManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             namespace: pulumi.Input[str],
-             resource_categories: pulumi.Input[Sequence[pulumi.Input[str]]],
-             resource_id: pulumi.Input[str],
-             resource_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             resource_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceCategories' in kwargs:
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if resource_categories is None and 'resourceCategories' in kwargs:
             resource_categories = kwargs['resourceCategories']
-        if 'resourceId' in kwargs:
+        if resource_categories is None:
+            raise TypeError("Missing 'resource_categories' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
 
         _setter("namespace", namespace)
         _setter("resource_categories", resource_categories)
@@ -142,13 +150,13 @@ class _LogAnalyticsResourceCategoriesManagementState:
              resource_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              resource_id: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceCategories' in kwargs:
+        if resource_categories is None and 'resourceCategories' in kwargs:
             resource_categories = kwargs['resourceCategories']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
 
         if namespace is not None:

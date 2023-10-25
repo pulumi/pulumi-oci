@@ -39,19 +39,25 @@ class FusionEnvironmentServiceAttachmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fusion_environment_id: pulumi.Input[str],
-             service_instance_id: pulumi.Input[str],
-             service_instance_type: pulumi.Input[str],
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             service_instance_id: Optional[pulumi.Input[str]] = None,
+             service_instance_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'serviceInstanceId' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if service_instance_id is None and 'serviceInstanceId' in kwargs:
             service_instance_id = kwargs['serviceInstanceId']
-        if 'serviceInstanceType' in kwargs:
+        if service_instance_id is None:
+            raise TypeError("Missing 'service_instance_id' argument")
+        if service_instance_type is None and 'serviceInstanceType' in kwargs:
             service_instance_type = kwargs['serviceInstanceType']
-        if 'definedTags' in kwargs:
+        if service_instance_type is None:
+            raise TypeError("Missing 'service_instance_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
 
         _setter("fusion_environment_id", fusion_environment_id)
@@ -177,29 +183,29 @@ class _FusionEnvironmentServiceAttachmentState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'isSkuBased' in kwargs:
+        if is_sku_based is None and 'isSkuBased' in kwargs:
             is_sku_based = kwargs['isSkuBased']
-        if 'serviceInstanceId' in kwargs:
+        if service_instance_id is None and 'serviceInstanceId' in kwargs:
             service_instance_id = kwargs['serviceInstanceId']
-        if 'serviceInstanceType' in kwargs:
+        if service_instance_type is None and 'serviceInstanceType' in kwargs:
             service_instance_type = kwargs['serviceInstanceType']
-        if 'serviceUrl' in kwargs:
+        if service_url is None and 'serviceUrl' in kwargs:
             service_url = kwargs['serviceUrl']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

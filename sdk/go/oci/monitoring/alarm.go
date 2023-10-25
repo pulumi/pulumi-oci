@@ -48,10 +48,10 @@ import (
 //				Query:               pulumi.Any(_var.Alarm_query),
 //				Severity:            pulumi.Any(_var.Alarm_severity),
 //				Body:                pulumi.Any(_var.Alarm_body),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsNotificationsPerMetricDimensionEnabled: pulumi.Any(_var.Alarm_is_notifications_per_metric_dimension_enabled),

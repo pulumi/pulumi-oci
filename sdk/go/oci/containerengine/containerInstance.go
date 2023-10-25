@@ -107,7 +107,7 @@ import (
 //					},
 //				},
 //				ContainerRestartPolicy: pulumi.Any(_var.Container_instance_container_restart_policy),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Container_instance_display_name),
@@ -117,7 +117,7 @@ import (
 //					Searches:    pulumi.Any(_var.Container_instance_dns_config_searches),
 //				},
 //				FaultDomain: pulumi.Any(_var.Container_instance_fault_domain),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				GracefulShutdownTimeoutInSeconds: pulumi.Any(_var.Container_instance_graceful_shutdown_timeout_in_seconds),

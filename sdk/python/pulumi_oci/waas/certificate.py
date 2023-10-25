@@ -54,28 +54,34 @@ class CertificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_data: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             private_key_data: pulumi.Input[str],
+             certificate_data: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             private_key_data: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_trust_verification_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateData' in kwargs:
+        if certificate_data is None and 'certificateData' in kwargs:
             certificate_data = kwargs['certificateData']
-        if 'compartmentId' in kwargs:
+        if certificate_data is None:
+            raise TypeError("Missing 'certificate_data' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'privateKeyData' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if private_key_data is None and 'privateKeyData' in kwargs:
             private_key_data = kwargs['privateKeyData']
-        if 'definedTags' in kwargs:
+        if private_key_data is None:
+            raise TypeError("Missing 'private_key_data' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isTrustVerificationDisabled' in kwargs:
+        if is_trust_verification_disabled is None and 'isTrustVerificationDisabled' in kwargs:
             is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
 
         _setter("certificate_data", certificate_data)
@@ -278,39 +284,39 @@ class _CertificateState:
              time_not_valid_after: Optional[pulumi.Input[str]] = None,
              time_not_valid_before: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateData' in kwargs:
+        if certificate_data is None and 'certificateData' in kwargs:
             certificate_data = kwargs['certificateData']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isTrustVerificationDisabled' in kwargs:
+        if is_trust_verification_disabled is None and 'isTrustVerificationDisabled' in kwargs:
             is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
-        if 'issuedBy' in kwargs:
+        if issued_by is None and 'issuedBy' in kwargs:
             issued_by = kwargs['issuedBy']
-        if 'issuerNames' in kwargs:
+        if issuer_names is None and 'issuerNames' in kwargs:
             issuer_names = kwargs['issuerNames']
-        if 'privateKeyData' in kwargs:
+        if private_key_data is None and 'privateKeyData' in kwargs:
             private_key_data = kwargs['privateKeyData']
-        if 'publicKeyInfos' in kwargs:
+        if public_key_infos is None and 'publicKeyInfos' in kwargs:
             public_key_infos = kwargs['publicKeyInfos']
-        if 'serialNumber' in kwargs:
+        if serial_number is None and 'serialNumber' in kwargs:
             serial_number = kwargs['serialNumber']
-        if 'signatureAlgorithm' in kwargs:
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'subjectNames' in kwargs:
+        if subject_names is None and 'subjectNames' in kwargs:
             subject_names = kwargs['subjectNames']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeNotValidAfter' in kwargs:
+        if time_not_valid_after is None and 'timeNotValidAfter' in kwargs:
             time_not_valid_after = kwargs['timeNotValidAfter']
-        if 'timeNotValidBefore' in kwargs:
+        if time_not_valid_before is None and 'timeNotValidBefore' in kwargs:
             time_not_valid_before = kwargs['timeNotValidBefore']
 
         if certificate_data is not None:

@@ -47,23 +47,29 @@ class StreamCdnConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config: pulumi.Input['StreamCdnConfigConfigArgs'],
-             display_name: pulumi.Input[str],
-             distribution_channel_id: pulumi.Input[str],
+             config: Optional[pulumi.Input['StreamCdnConfigConfigArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             distribution_channel_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if config is None:
+            raise TypeError("Missing 'config' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'definedTags' in kwargs:
+        if distribution_channel_id is None:
+            raise TypeError("Missing 'distribution_channel_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         _setter("config", config)
@@ -217,27 +223,27 @@ class _StreamCdnConfigState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'distributionChannelId' in kwargs:
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
             distribution_channel_id = kwargs['distributionChannelId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecyleDetails' in kwargs:
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -569,11 +575,7 @@ class StreamCdnConfig(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = StreamCdnConfigArgs.__new__(StreamCdnConfigArgs)
 
-            if config is not None and not isinstance(config, StreamCdnConfigConfigArgs):
-                config = config or {}
-                def _setter(key, value):
-                    config[key] = value
-                StreamCdnConfigConfigArgs._configure(_setter, **config)
+            config = _utilities.configure(config, StreamCdnConfigConfigArgs, True)
             if config is None and not opts.urn:
                 raise TypeError("Missing required property 'config'")
             __props__.__dict__["config"] = config

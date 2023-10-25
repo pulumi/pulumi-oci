@@ -60,23 +60,37 @@ class GetAccessRequestHistoryItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions_lists: Sequence[str],
-             description: str,
-             duration: int,
-             is_auto_approved: bool,
-             state: str,
-             time_of_action: str,
-             user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions_lists: Optional[Sequence[str]] = None,
+             description: Optional[str] = None,
+             duration: Optional[int] = None,
+             is_auto_approved: Optional[bool] = None,
+             state: Optional[str] = None,
+             time_of_action: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionsLists' in kwargs:
+        if actions_lists is None and 'actionsLists' in kwargs:
             actions_lists = kwargs['actionsLists']
-        if 'isAutoApproved' in kwargs:
+        if actions_lists is None:
+            raise TypeError("Missing 'actions_lists' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if duration is None:
+            raise TypeError("Missing 'duration' argument")
+        if is_auto_approved is None and 'isAutoApproved' in kwargs:
             is_auto_approved = kwargs['isAutoApproved']
-        if 'timeOfAction' in kwargs:
+        if is_auto_approved is None:
+            raise TypeError("Missing 'is_auto_approved' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_of_action is None and 'timeOfAction' in kwargs:
             time_of_action = kwargs['timeOfAction']
-        if 'userId' in kwargs:
+        if time_of_action is None:
+            raise TypeError("Missing 'time_of_action' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
 
         _setter("actions_lists", actions_lists)
         _setter("description", description)
@@ -154,9 +168,11 @@ class GetAccessRequestsAccessRequestCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -270,91 +286,153 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_reason_summary: str,
-             action_requests_lists: Sequence[str],
-             approver_comment: str,
-             audit_types: Sequence[str],
-             closure_comment: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             duration: int,
-             extend_duration: int,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_auto_approved: bool,
-             lifecycle_details: str,
-             opctl_additional_message: str,
-             opctl_id: str,
-             opctl_name: str,
-             operator_id: str,
-             reason: str,
-             request_id: str,
-             resource_id: str,
-             resource_name: str,
-             resource_type: str,
-             severity: str,
-             state: str,
-             sub_resource_lists: Sequence[str],
-             system_message: str,
-             time_of_creation: str,
-             time_of_modification: str,
-             time_of_user_creation: str,
-             user_id: str,
-             workflow_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access_reason_summary: Optional[str] = None,
+             action_requests_lists: Optional[Sequence[str]] = None,
+             approver_comment: Optional[str] = None,
+             audit_types: Optional[Sequence[str]] = None,
+             closure_comment: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             duration: Optional[int] = None,
+             extend_duration: Optional[int] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_auto_approved: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             opctl_additional_message: Optional[str] = None,
+             opctl_id: Optional[str] = None,
+             opctl_name: Optional[str] = None,
+             operator_id: Optional[str] = None,
+             reason: Optional[str] = None,
+             request_id: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             severity: Optional[str] = None,
+             state: Optional[str] = None,
+             sub_resource_lists: Optional[Sequence[str]] = None,
+             system_message: Optional[str] = None,
+             time_of_creation: Optional[str] = None,
+             time_of_modification: Optional[str] = None,
+             time_of_user_creation: Optional[str] = None,
+             user_id: Optional[str] = None,
+             workflow_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessReasonSummary' in kwargs:
+        if access_reason_summary is None and 'accessReasonSummary' in kwargs:
             access_reason_summary = kwargs['accessReasonSummary']
-        if 'actionRequestsLists' in kwargs:
+        if access_reason_summary is None:
+            raise TypeError("Missing 'access_reason_summary' argument")
+        if action_requests_lists is None and 'actionRequestsLists' in kwargs:
             action_requests_lists = kwargs['actionRequestsLists']
-        if 'approverComment' in kwargs:
+        if action_requests_lists is None:
+            raise TypeError("Missing 'action_requests_lists' argument")
+        if approver_comment is None and 'approverComment' in kwargs:
             approver_comment = kwargs['approverComment']
-        if 'auditTypes' in kwargs:
+        if approver_comment is None:
+            raise TypeError("Missing 'approver_comment' argument")
+        if audit_types is None and 'auditTypes' in kwargs:
             audit_types = kwargs['auditTypes']
-        if 'closureComment' in kwargs:
+        if audit_types is None:
+            raise TypeError("Missing 'audit_types' argument")
+        if closure_comment is None and 'closureComment' in kwargs:
             closure_comment = kwargs['closureComment']
-        if 'compartmentId' in kwargs:
+        if closure_comment is None:
+            raise TypeError("Missing 'closure_comment' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'extendDuration' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if duration is None:
+            raise TypeError("Missing 'duration' argument")
+        if extend_duration is None and 'extendDuration' in kwargs:
             extend_duration = kwargs['extendDuration']
-        if 'freeformTags' in kwargs:
+        if extend_duration is None:
+            raise TypeError("Missing 'extend_duration' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoApproved' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_auto_approved is None and 'isAutoApproved' in kwargs:
             is_auto_approved = kwargs['isAutoApproved']
-        if 'lifecycleDetails' in kwargs:
+        if is_auto_approved is None:
+            raise TypeError("Missing 'is_auto_approved' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'opctlAdditionalMessage' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if opctl_additional_message is None and 'opctlAdditionalMessage' in kwargs:
             opctl_additional_message = kwargs['opctlAdditionalMessage']
-        if 'opctlId' in kwargs:
+        if opctl_additional_message is None:
+            raise TypeError("Missing 'opctl_additional_message' argument")
+        if opctl_id is None and 'opctlId' in kwargs:
             opctl_id = kwargs['opctlId']
-        if 'opctlName' in kwargs:
+        if opctl_id is None:
+            raise TypeError("Missing 'opctl_id' argument")
+        if opctl_name is None and 'opctlName' in kwargs:
             opctl_name = kwargs['opctlName']
-        if 'operatorId' in kwargs:
+        if opctl_name is None:
+            raise TypeError("Missing 'opctl_name' argument")
+        if operator_id is None and 'operatorId' in kwargs:
             operator_id = kwargs['operatorId']
-        if 'requestId' in kwargs:
+        if operator_id is None:
+            raise TypeError("Missing 'operator_id' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
+        if request_id is None and 'requestId' in kwargs:
             request_id = kwargs['requestId']
-        if 'resourceId' in kwargs:
+        if request_id is None:
+            raise TypeError("Missing 'request_id' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'subResourceLists' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if sub_resource_lists is None and 'subResourceLists' in kwargs:
             sub_resource_lists = kwargs['subResourceLists']
-        if 'systemMessage' in kwargs:
+        if sub_resource_lists is None:
+            raise TypeError("Missing 'sub_resource_lists' argument")
+        if system_message is None and 'systemMessage' in kwargs:
             system_message = kwargs['systemMessage']
-        if 'timeOfCreation' in kwargs:
+        if system_message is None:
+            raise TypeError("Missing 'system_message' argument")
+        if time_of_creation is None and 'timeOfCreation' in kwargs:
             time_of_creation = kwargs['timeOfCreation']
-        if 'timeOfModification' in kwargs:
+        if time_of_creation is None:
+            raise TypeError("Missing 'time_of_creation' argument")
+        if time_of_modification is None and 'timeOfModification' in kwargs:
             time_of_modification = kwargs['timeOfModification']
-        if 'timeOfUserCreation' in kwargs:
+        if time_of_modification is None:
+            raise TypeError("Missing 'time_of_modification' argument")
+        if time_of_user_creation is None and 'timeOfUserCreation' in kwargs:
             time_of_user_creation = kwargs['timeOfUserCreation']
-        if 'userId' in kwargs:
+        if time_of_user_creation is None:
+            raise TypeError("Missing 'time_of_user_creation' argument")
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'workflowIds' in kwargs:
+        if user_id is None:
+            raise TypeError("Missing 'user_id' argument")
+        if workflow_ids is None and 'workflowIds' in kwargs:
             workflow_ids = kwargs['workflowIds']
+        if workflow_ids is None:
+            raise TypeError("Missing 'workflow_ids' argument")
 
         _setter("access_reason_summary", access_reason_summary)
         _setter("action_requests_lists", action_requests_lists)
@@ -652,11 +730,15 @@ class GetAccessRequestsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -696,10 +778,14 @@ class GetActionPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -739,11 +825,15 @@ class GetActionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -780,9 +870,11 @@ class GetActionsOperatorActionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetActionsOperatorActionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -830,22 +922,36 @@ class GetActionsOperatorActionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             component: str,
-             customer_display_name: str,
-             description: str,
-             id: str,
-             name: str,
-             properties: Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult'],
-             resource_type: str,
+             component: Optional[str] = None,
+             customer_display_name: Optional[str] = None,
+             description: Optional[str] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult']] = None,
+             resource_type: Optional[str] = None,
              compartment_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customerDisplayName' in kwargs:
+        if component is None:
+            raise TypeError("Missing 'component' argument")
+        if customer_display_name is None and 'customerDisplayName' in kwargs:
             customer_display_name = kwargs['customerDisplayName']
-        if 'resourceType' in kwargs:
+        if customer_display_name is None:
+            raise TypeError("Missing 'customer_display_name' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'compartmentId' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("component", component)
@@ -950,10 +1056,14 @@ class GetActionsOperatorActionCollectionItemPropertyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -990,11 +1100,15 @@ class GetControlAssignmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1028,9 +1142,11 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1135,86 +1251,142 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assigner_id: str,
-             comment: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             detachment_description: str,
-             error_code: int,
-             error_message: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_auto_approve_during_maintenance: bool,
-             is_default_assignment: bool,
-             is_enforced_always: bool,
-             is_log_forwarded: bool,
-             lifecycle_details: str,
-             operator_control_id: str,
-             remote_syslog_server_address: str,
-             remote_syslog_server_ca_cert: str,
-             remote_syslog_server_port: int,
-             resource_compartment_id: str,
-             resource_id: str,
-             resource_name: str,
-             resource_type: str,
-             state: str,
-             time_assignment_from: str,
-             time_assignment_to: str,
-             time_of_assignment: str,
-             time_of_deletion: str,
-             unassigner_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assigner_id: Optional[str] = None,
+             comment: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             detachment_description: Optional[str] = None,
+             error_code: Optional[int] = None,
+             error_message: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_auto_approve_during_maintenance: Optional[bool] = None,
+             is_default_assignment: Optional[bool] = None,
+             is_enforced_always: Optional[bool] = None,
+             is_log_forwarded: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             operator_control_id: Optional[str] = None,
+             remote_syslog_server_address: Optional[str] = None,
+             remote_syslog_server_ca_cert: Optional[str] = None,
+             remote_syslog_server_port: Optional[int] = None,
+             resource_compartment_id: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_assignment_from: Optional[str] = None,
+             time_assignment_to: Optional[str] = None,
+             time_of_assignment: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             unassigner_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignerId' in kwargs:
+        if assigner_id is None and 'assignerId' in kwargs:
             assigner_id = kwargs['assignerId']
-        if 'compartmentId' in kwargs:
+        if assigner_id is None:
+            raise TypeError("Missing 'assigner_id' argument")
+        if comment is None:
+            raise TypeError("Missing 'comment' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'detachmentDescription' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if detachment_description is None and 'detachmentDescription' in kwargs:
             detachment_description = kwargs['detachmentDescription']
-        if 'errorCode' in kwargs:
+        if detachment_description is None:
+            raise TypeError("Missing 'detachment_description' argument")
+        if error_code is None and 'errorCode' in kwargs:
             error_code = kwargs['errorCode']
-        if 'errorMessage' in kwargs:
+        if error_code is None:
+            raise TypeError("Missing 'error_code' argument")
+        if error_message is None and 'errorMessage' in kwargs:
             error_message = kwargs['errorMessage']
-        if 'freeformTags' in kwargs:
+        if error_message is None:
+            raise TypeError("Missing 'error_message' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoApproveDuringMaintenance' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_auto_approve_during_maintenance is None and 'isAutoApproveDuringMaintenance' in kwargs:
             is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
-        if 'isDefaultAssignment' in kwargs:
+        if is_auto_approve_during_maintenance is None:
+            raise TypeError("Missing 'is_auto_approve_during_maintenance' argument")
+        if is_default_assignment is None and 'isDefaultAssignment' in kwargs:
             is_default_assignment = kwargs['isDefaultAssignment']
-        if 'isEnforcedAlways' in kwargs:
+        if is_default_assignment is None:
+            raise TypeError("Missing 'is_default_assignment' argument")
+        if is_enforced_always is None and 'isEnforcedAlways' in kwargs:
             is_enforced_always = kwargs['isEnforcedAlways']
-        if 'isLogForwarded' in kwargs:
+        if is_enforced_always is None:
+            raise TypeError("Missing 'is_enforced_always' argument")
+        if is_log_forwarded is None and 'isLogForwarded' in kwargs:
             is_log_forwarded = kwargs['isLogForwarded']
-        if 'lifecycleDetails' in kwargs:
+        if is_log_forwarded is None:
+            raise TypeError("Missing 'is_log_forwarded' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'operatorControlId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if operator_control_id is None and 'operatorControlId' in kwargs:
             operator_control_id = kwargs['operatorControlId']
-        if 'remoteSyslogServerAddress' in kwargs:
+        if operator_control_id is None:
+            raise TypeError("Missing 'operator_control_id' argument")
+        if remote_syslog_server_address is None and 'remoteSyslogServerAddress' in kwargs:
             remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
-        if 'remoteSyslogServerCaCert' in kwargs:
+        if remote_syslog_server_address is None:
+            raise TypeError("Missing 'remote_syslog_server_address' argument")
+        if remote_syslog_server_ca_cert is None and 'remoteSyslogServerCaCert' in kwargs:
             remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
-        if 'remoteSyslogServerPort' in kwargs:
+        if remote_syslog_server_ca_cert is None:
+            raise TypeError("Missing 'remote_syslog_server_ca_cert' argument")
+        if remote_syslog_server_port is None and 'remoteSyslogServerPort' in kwargs:
             remote_syslog_server_port = kwargs['remoteSyslogServerPort']
-        if 'resourceCompartmentId' in kwargs:
+        if remote_syslog_server_port is None:
+            raise TypeError("Missing 'remote_syslog_server_port' argument")
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'resourceId' in kwargs:
+        if resource_compartment_id is None:
+            raise TypeError("Missing 'resource_compartment_id' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceType' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'timeAssignmentFrom' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_assignment_from is None and 'timeAssignmentFrom' in kwargs:
             time_assignment_from = kwargs['timeAssignmentFrom']
-        if 'timeAssignmentTo' in kwargs:
+        if time_assignment_from is None:
+            raise TypeError("Missing 'time_assignment_from' argument")
+        if time_assignment_to is None and 'timeAssignmentTo' in kwargs:
             time_assignment_to = kwargs['timeAssignmentTo']
-        if 'timeOfAssignment' in kwargs:
+        if time_assignment_to is None:
+            raise TypeError("Missing 'time_assignment_to' argument")
+        if time_of_assignment is None and 'timeOfAssignment' in kwargs:
             time_of_assignment = kwargs['timeOfAssignment']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_assignment is None:
+            raise TypeError("Missing 'time_of_assignment' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'unassignerId' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if unassigner_id is None and 'unassignerId' in kwargs:
             unassigner_id = kwargs['unassignerId']
+        if unassigner_id is None:
+            raise TypeError("Missing 'unassigner_id' argument")
 
         _setter("assigner_id", assigner_id)
         _setter("comment", comment)
@@ -1485,11 +1657,15 @@ class GetControlsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1523,9 +1699,11 @@ class GetControlsOperatorControlCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetControlsOperatorControlCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetControlsOperatorControlCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1606,62 +1784,102 @@ class GetControlsOperatorControlCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approval_required_op_action_lists: Sequence[str],
-             approver_groups_lists: Sequence[str],
-             approvers_lists: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             email_id_lists: Sequence[str],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_default_operator_control: bool,
-             is_fully_pre_approved: bool,
-             last_modified_info: str,
-             operator_control_name: str,
-             pre_approved_op_action_lists: Sequence[str],
-             resource_type: str,
-             state: str,
-             system_message: str,
-             time_of_creation: str,
-             time_of_deletion: str,
-             time_of_modification: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approval_required_op_action_lists: Optional[Sequence[str]] = None,
+             approver_groups_lists: Optional[Sequence[str]] = None,
+             approvers_lists: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             email_id_lists: Optional[Sequence[str]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_default_operator_control: Optional[bool] = None,
+             is_fully_pre_approved: Optional[bool] = None,
+             last_modified_info: Optional[str] = None,
+             operator_control_name: Optional[str] = None,
+             pre_approved_op_action_lists: Optional[Sequence[str]] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             system_message: Optional[str] = None,
+             time_of_creation: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             time_of_modification: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalRequiredOpActionLists' in kwargs:
+        if approval_required_op_action_lists is None and 'approvalRequiredOpActionLists' in kwargs:
             approval_required_op_action_lists = kwargs['approvalRequiredOpActionLists']
-        if 'approverGroupsLists' in kwargs:
+        if approval_required_op_action_lists is None:
+            raise TypeError("Missing 'approval_required_op_action_lists' argument")
+        if approver_groups_lists is None and 'approverGroupsLists' in kwargs:
             approver_groups_lists = kwargs['approverGroupsLists']
-        if 'approversLists' in kwargs:
+        if approver_groups_lists is None:
+            raise TypeError("Missing 'approver_groups_lists' argument")
+        if approvers_lists is None and 'approversLists' in kwargs:
             approvers_lists = kwargs['approversLists']
-        if 'compartmentId' in kwargs:
+        if approvers_lists is None:
+            raise TypeError("Missing 'approvers_lists' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailIdLists' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if email_id_lists is None and 'emailIdLists' in kwargs:
             email_id_lists = kwargs['emailIdLists']
-        if 'freeformTags' in kwargs:
+        if email_id_lists is None:
+            raise TypeError("Missing 'email_id_lists' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDefaultOperatorControl' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_default_operator_control is None and 'isDefaultOperatorControl' in kwargs:
             is_default_operator_control = kwargs['isDefaultOperatorControl']
-        if 'isFullyPreApproved' in kwargs:
+        if is_default_operator_control is None:
+            raise TypeError("Missing 'is_default_operator_control' argument")
+        if is_fully_pre_approved is None and 'isFullyPreApproved' in kwargs:
             is_fully_pre_approved = kwargs['isFullyPreApproved']
-        if 'lastModifiedInfo' in kwargs:
+        if is_fully_pre_approved is None:
+            raise TypeError("Missing 'is_fully_pre_approved' argument")
+        if last_modified_info is None and 'lastModifiedInfo' in kwargs:
             last_modified_info = kwargs['lastModifiedInfo']
-        if 'operatorControlName' in kwargs:
+        if last_modified_info is None:
+            raise TypeError("Missing 'last_modified_info' argument")
+        if operator_control_name is None and 'operatorControlName' in kwargs:
             operator_control_name = kwargs['operatorControlName']
-        if 'preApprovedOpActionLists' in kwargs:
+        if operator_control_name is None:
+            raise TypeError("Missing 'operator_control_name' argument")
+        if pre_approved_op_action_lists is None and 'preApprovedOpActionLists' in kwargs:
             pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
-        if 'resourceType' in kwargs:
+        if pre_approved_op_action_lists is None:
+            raise TypeError("Missing 'pre_approved_op_action_lists' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'systemMessage' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_message is None and 'systemMessage' in kwargs:
             system_message = kwargs['systemMessage']
-        if 'timeOfCreation' in kwargs:
+        if system_message is None:
+            raise TypeError("Missing 'system_message' argument")
+        if time_of_creation is None and 'timeOfCreation' in kwargs:
             time_of_creation = kwargs['timeOfCreation']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_creation is None:
+            raise TypeError("Missing 'time_of_creation' argument")
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'timeOfModification' in kwargs:
+        if time_of_deletion is None:
+            raise TypeError("Missing 'time_of_deletion' argument")
+        if time_of_modification is None and 'timeOfModification' in kwargs:
             time_of_modification = kwargs['timeOfModification']
+        if time_of_modification is None:
+            raise TypeError("Missing 'time_of_modification' argument")
 
         _setter("approval_required_op_action_lists", approval_required_op_action_lists)
         _setter("approver_groups_lists", approver_groups_lists)

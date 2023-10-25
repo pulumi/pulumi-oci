@@ -35,12 +35,12 @@ import (
 //				CompartmentId:  pulumi.Any(_var.Compartment_id),
 //				IsImmutable:    pulumi.Any(_var.Repository_is_immutable),
 //				RepositoryType: pulumi.Any(_var.Repository_repository_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Repository_description),
 //				DisplayName: pulumi.Any(_var.Repository_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

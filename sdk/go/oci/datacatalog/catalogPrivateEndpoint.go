@@ -35,11 +35,11 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DnsZones:      pulumi.Any(_var.Catalog_private_endpoint_dns_zones),
 //				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Catalog_private_endpoint_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

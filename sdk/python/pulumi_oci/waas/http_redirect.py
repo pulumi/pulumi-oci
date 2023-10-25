@@ -46,24 +46,30 @@ class HttpRedirectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             domain: pulumi.Input[str],
-             target: pulumi.Input['HttpRedirectTargetArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             target: Optional[pulumi.Input['HttpRedirectTargetArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              response_code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'responseCode' in kwargs:
+        if response_code is None and 'responseCode' in kwargs:
             response_code = kwargs['responseCode']
 
         _setter("compartment_id", compartment_id)
@@ -211,19 +217,19 @@ class _HttpRedirectState:
              state: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input['HttpRedirectTargetArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'responseCode' in kwargs:
+        if response_code is None and 'responseCode' in kwargs:
             response_code = kwargs['responseCode']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -506,11 +512,7 @@ class HttpRedirect(pulumi.CustomResource):
             __props__.__dict__["domain"] = domain
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["response_code"] = response_code
-            if target is not None and not isinstance(target, HttpRedirectTargetArgs):
-                target = target or {}
-                def _setter(key, value):
-                    target[key] = value
-                HttpRedirectTargetArgs._configure(_setter, **target)
+            target = _utilities.configure(target, HttpRedirectTargetArgs, True)
             if target is None and not opts.urn:
                 raise TypeError("Missing required property 'target'")
             __props__.__dict__["target"] = target

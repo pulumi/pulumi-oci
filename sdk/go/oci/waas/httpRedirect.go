@@ -41,11 +41,11 @@ import (
 //					Query:    pulumi.Any(_var.Http_redirect_target_query),
 //					Port:     pulumi.Any(_var.Http_redirect_target_port),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Http_redirect_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ResponseCode: pulumi.Any(_var.Http_redirect_response_code),

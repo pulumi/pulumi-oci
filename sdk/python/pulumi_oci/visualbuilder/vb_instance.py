@@ -59,9 +59,9 @@ class VbInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             node_count: pulumi.Input[int],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
              alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]] = None,
              consumption_model: Optional[pulumi.Input[str]] = None,
              custom_endpoint: Optional[pulumi.Input['VbInstanceCustomEndpointArgs']] = None,
@@ -69,27 +69,33 @@ class VbInstanceArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              idcs_open_id: Optional[pulumi.Input[str]] = None,
              is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'nodeCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'alternateCustomEndpoints' in kwargs:
+        if node_count is None:
+            raise TypeError("Missing 'node_count' argument")
+        if alternate_custom_endpoints is None and 'alternateCustomEndpoints' in kwargs:
             alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
-        if 'consumptionModel' in kwargs:
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'customEndpoint' in kwargs:
+        if custom_endpoint is None and 'customEndpoint' in kwargs:
             custom_endpoint = kwargs['customEndpoint']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsOpenId' in kwargs:
+        if idcs_open_id is None and 'idcsOpenId' in kwargs:
             idcs_open_id = kwargs['idcsOpenId']
-        if 'isVisualBuilderEnabled' in kwargs:
+        if is_visual_builder_enabled is None and 'isVisualBuilderEnabled' in kwargs:
             is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
 
         _setter("compartment_id", compartment_id)
@@ -339,47 +345,47 @@ class _VbInstanceState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'alternateCustomEndpoints' in kwargs:
+        if alternate_custom_endpoints is None and 'alternateCustomEndpoints' in kwargs:
             alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'consumptionModel' in kwargs:
+        if consumption_model is None and 'consumptionModel' in kwargs:
             consumption_model = kwargs['consumptionModel']
-        if 'customEndpoint' in kwargs:
+        if custom_endpoint is None and 'customEndpoint' in kwargs:
             custom_endpoint = kwargs['customEndpoint']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsInfos' in kwargs:
+        if idcs_infos is None and 'idcsInfos' in kwargs:
             idcs_infos = kwargs['idcsInfos']
-        if 'idcsOpenId' in kwargs:
+        if idcs_open_id is None and 'idcsOpenId' in kwargs:
             idcs_open_id = kwargs['idcsOpenId']
-        if 'instanceUrl' in kwargs:
+        if instance_url is None and 'instanceUrl' in kwargs:
             instance_url = kwargs['instanceUrl']
-        if 'isVisualBuilderEnabled' in kwargs:
+        if is_visual_builder_enabled is None and 'isVisualBuilderEnabled' in kwargs:
             is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
-        if 'managementNatGatewayIp' in kwargs:
+        if management_nat_gateway_ip is None and 'managementNatGatewayIp' in kwargs:
             management_nat_gateway_ip = kwargs['managementNatGatewayIp']
-        if 'managementVcnId' in kwargs:
+        if management_vcn_id is None and 'managementVcnId' in kwargs:
             management_vcn_id = kwargs['managementVcnId']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'serviceNatGatewayIp' in kwargs:
+        if service_nat_gateway_ip is None and 'serviceNatGatewayIp' in kwargs:
             service_nat_gateway_ip = kwargs['serviceNatGatewayIp']
-        if 'serviceVcnId' in kwargs:
+        if service_vcn_id is None and 'serviceVcnId' in kwargs:
             service_vcn_id = kwargs['serviceVcnId']
-        if 'stateMessage' in kwargs:
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if alternate_custom_endpoints is not None:
@@ -862,11 +868,7 @@ class VbInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["consumption_model"] = consumption_model
-            if custom_endpoint is not None and not isinstance(custom_endpoint, VbInstanceCustomEndpointArgs):
-                custom_endpoint = custom_endpoint or {}
-                def _setter(key, value):
-                    custom_endpoint[key] = value
-                VbInstanceCustomEndpointArgs._configure(_setter, **custom_endpoint)
+            custom_endpoint = _utilities.configure(custom_endpoint, VbInstanceCustomEndpointArgs, True)
             __props__.__dict__["custom_endpoint"] = custom_endpoint
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:

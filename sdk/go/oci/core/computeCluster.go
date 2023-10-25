@@ -46,11 +46,11 @@ import (
 //			_, err := Core.NewComputeCluster(ctx, "testComputeCluster", &Core.ComputeClusterArgs{
 //				AvailabilityDomain: pulumi.Any(_var.Compute_cluster_availability_domain),
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Compute_cluster_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

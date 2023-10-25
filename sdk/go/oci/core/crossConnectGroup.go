@@ -48,11 +48,11 @@ import (
 //			_, err := Core.NewCrossConnectGroup(ctx, "testCrossConnectGroup", &Core.CrossConnectGroupArgs{
 //				CompartmentId:         pulumi.Any(_var.Compartment_id),
 //				CustomerReferenceName: pulumi.Any(_var.Cross_connect_group_customer_reference_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Cross_connect_group_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MacsecProperties: &core.CrossConnectGroupMacsecPropertiesArgs{

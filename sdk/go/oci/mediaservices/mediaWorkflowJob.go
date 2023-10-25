@@ -34,11 +34,11 @@ import (
 //			_, err := MediaServices.NewMediaWorkflowJob(ctx, "testMediaWorkflowJob", &MediaServices.MediaWorkflowJobArgs{
 //				CompartmentId:          pulumi.Any(_var.Compartment_id),
 //				WorkflowIdentifierType: pulumi.Any(_var.Media_workflow_job_workflow_identifier_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Media_workflow_job_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MediaWorkflowConfigurationIds: pulumi.Any(_var.Media_workflow_job_media_workflow_configuration_ids),

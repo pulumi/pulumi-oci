@@ -64,15 +64,15 @@ class ModelEvaluationResultArgs:
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]] = None,
              model_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'classMetrics' in kwargs:
+        if class_metrics is None and 'classMetrics' in kwargs:
             class_metrics = kwargs['classMetrics']
-        if 'confusionMatrix' in kwargs:
+        if confusion_matrix is None and 'confusionMatrix' in kwargs:
             confusion_matrix = kwargs['confusionMatrix']
-        if 'entityMetrics' in kwargs:
+        if entity_metrics is None and 'entityMetrics' in kwargs:
             entity_metrics = kwargs['entityMetrics']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
 
         if class_metrics is not None:
@@ -192,7 +192,7 @@ class ModelEvaluationResultClassMetricArgs:
              precision: Optional[pulumi.Input[float]] = None,
              recall: Optional[pulumi.Input[float]] = None,
              support: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if f1 is not None:
@@ -294,7 +294,7 @@ class ModelEvaluationResultEntityMetricArgs:
              label: Optional[pulumi.Input[str]] = None,
              precision: Optional[pulumi.Input[float]] = None,
              recall: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if f1 is not None:
@@ -406,25 +406,25 @@ class ModelEvaluationResultMetricArgs:
              weighted_f1: Optional[pulumi.Input[float]] = None,
              weighted_precision: Optional[pulumi.Input[float]] = None,
              weighted_recall: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'macroF1' in kwargs:
+        if macro_f1 is None and 'macroF1' in kwargs:
             macro_f1 = kwargs['macroF1']
-        if 'macroPrecision' in kwargs:
+        if macro_precision is None and 'macroPrecision' in kwargs:
             macro_precision = kwargs['macroPrecision']
-        if 'macroRecall' in kwargs:
+        if macro_recall is None and 'macroRecall' in kwargs:
             macro_recall = kwargs['macroRecall']
-        if 'microF1' in kwargs:
+        if micro_f1 is None and 'microF1' in kwargs:
             micro_f1 = kwargs['microF1']
-        if 'microPrecision' in kwargs:
+        if micro_precision is None and 'microPrecision' in kwargs:
             micro_precision = kwargs['microPrecision']
-        if 'microRecall' in kwargs:
+        if micro_recall is None and 'microRecall' in kwargs:
             micro_recall = kwargs['microRecall']
-        if 'weightedF1' in kwargs:
+        if weighted_f1 is None and 'weightedF1' in kwargs:
             weighted_f1 = kwargs['weightedF1']
-        if 'weightedPrecision' in kwargs:
+        if weighted_precision is None and 'weightedPrecision' in kwargs:
             weighted_precision = kwargs['weightedPrecision']
-        if 'weightedRecall' in kwargs:
+        if weighted_recall is None and 'weightedRecall' in kwargs:
             weighted_recall = kwargs['weightedRecall']
 
         if accuracy is not None:
@@ -592,17 +592,19 @@ class ModelModelDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             model_type: pulumi.Input[str],
+             model_type: Optional[pulumi.Input[str]] = None,
              classification_mode: Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']] = None,
              language_code: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'classificationMode' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if classification_mode is None and 'classificationMode' in kwargs:
             classification_mode = kwargs['classificationMode']
-        if 'languageCode' in kwargs:
+        if language_code is None and 'languageCode' in kwargs:
             language_code = kwargs['languageCode']
 
         _setter("model_type", model_type)
@@ -679,12 +681,14 @@ class ModelModelDetailsClassificationModeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             classification_mode: pulumi.Input[str],
+             classification_mode: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'classificationMode' in kwargs:
+        if classification_mode is None and 'classificationMode' in kwargs:
             classification_mode = kwargs['classificationMode']
+        if classification_mode is None:
+            raise TypeError("Missing 'classification_mode' argument")
 
         _setter("classification_mode", classification_mode)
         if version is not None:
@@ -735,16 +739,20 @@ class ModelTestStrategyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             strategy_type: pulumi.Input[str],
-             testing_dataset: pulumi.Input['ModelTestStrategyTestingDatasetArgs'],
+             strategy_type: Optional[pulumi.Input[str]] = None,
+             testing_dataset: Optional[pulumi.Input['ModelTestStrategyTestingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'strategyType' in kwargs:
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
-        if 'testingDataset' in kwargs:
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
+        if testing_dataset is None and 'testingDataset' in kwargs:
             testing_dataset = kwargs['testingDataset']
-        if 'validationDataset' in kwargs:
+        if testing_dataset is None:
+            raise TypeError("Missing 'testing_dataset' argument")
+        if validation_dataset is None and 'validationDataset' in kwargs:
             validation_dataset = kwargs['validationDataset']
 
         _setter("strategy_type", strategy_type)
@@ -809,16 +817,18 @@ class ModelTestStrategyTestingDatasetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: pulumi.Input[str],
+             dataset_type: Optional[pulumi.Input[str]] = None,
              dataset_id: Optional[pulumi.Input[str]] = None,
              location_details: Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'locationDetails' in kwargs:
+        if location_details is None and 'locationDetails' in kwargs:
             location_details = kwargs['locationDetails']
 
         _setter("dataset_type", dataset_type)
@@ -891,16 +901,24 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             location_type: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             object_names: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             location_type: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'locationType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if location_type is None and 'locationType' in kwargs:
             location_type = kwargs['locationType']
-        if 'objectNames' in kwargs:
+        if location_type is None:
+            raise TypeError("Missing 'location_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_names is None and 'objectNames' in kwargs:
             object_names = kwargs['objectNames']
+        if object_names is None:
+            raise TypeError("Missing 'object_names' argument")
 
         _setter("bucket", bucket)
         _setter("location_type", location_type)
@@ -980,16 +998,18 @@ class ModelTestStrategyValidationDatasetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: pulumi.Input[str],
+             dataset_type: Optional[pulumi.Input[str]] = None,
              dataset_id: Optional[pulumi.Input[str]] = None,
              location_details: Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'locationDetails' in kwargs:
+        if location_details is None and 'locationDetails' in kwargs:
             location_details = kwargs['locationDetails']
 
         _setter("dataset_type", dataset_type)
@@ -1062,16 +1082,24 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             location_type: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             object_names: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             location_type: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'locationType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if location_type is None and 'locationType' in kwargs:
             location_type = kwargs['locationType']
-        if 'objectNames' in kwargs:
+        if location_type is None:
+            raise TypeError("Missing 'location_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_names is None and 'objectNames' in kwargs:
             object_names = kwargs['objectNames']
+        if object_names is None:
+            raise TypeError("Missing 'object_names' argument")
 
         _setter("bucket", bucket)
         _setter("location_type", location_type)
@@ -1151,16 +1179,18 @@ class ModelTrainingDatasetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: pulumi.Input[str],
+             dataset_type: Optional[pulumi.Input[str]] = None,
              dataset_id: Optional[pulumi.Input[str]] = None,
              location_details: Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'locationDetails' in kwargs:
+        if location_details is None and 'locationDetails' in kwargs:
             location_details = kwargs['locationDetails']
 
         _setter("dataset_type", dataset_type)
@@ -1233,16 +1263,24 @@ class ModelTrainingDatasetLocationDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             location_type: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             object_names: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             location_type: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'locationType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if location_type is None and 'locationType' in kwargs:
             location_type = kwargs['locationType']
-        if 'objectNames' in kwargs:
+        if location_type is None:
+            raise TypeError("Missing 'location_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_names is None and 'objectNames' in kwargs:
             object_names = kwargs['objectNames']
+        if object_names is None:
+            raise TypeError("Missing 'object_names' argument")
 
         _setter("bucket", bucket)
         _setter("location_type", location_type)
@@ -1317,11 +1355,15 @@ class GetEndpointsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1371,11 +1413,15 @@ class GetModelEvaluationResultsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1425,11 +1471,15 @@ class GetModelsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1479,11 +1529,15 @@ class GetProjectsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

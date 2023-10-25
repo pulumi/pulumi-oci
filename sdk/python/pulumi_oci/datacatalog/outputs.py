@@ -75,40 +75,64 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attached_catalogs: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             dns_zones: Sequence[str],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attached_catalogs: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             dns_zones: Optional[Sequence[str]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachedCatalogs' in kwargs:
+        if attached_catalogs is None and 'attachedCatalogs' in kwargs:
             attached_catalogs = kwargs['attachedCatalogs']
-        if 'compartmentId' in kwargs:
+        if attached_catalogs is None:
+            raise TypeError("Missing 'attached_catalogs' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsZones' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_zones is None and 'dnsZones' in kwargs:
             dns_zones = kwargs['dnsZones']
-        if 'freeformTags' in kwargs:
+        if dns_zones is None:
+            raise TypeError("Missing 'dns_zones' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'subnetId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("attached_catalogs", attached_catalogs)
         _setter("compartment_id", compartment_id)
@@ -235,11 +259,15 @@ class GetCatalogPrivateEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -280,11 +308,15 @@ class GetCatalogTypesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -323,10 +355,14 @@ class GetCatalogTypesTypeCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             items: Sequence['outputs.GetCatalogTypesTypeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             items: Optional[Sequence['outputs.GetCatalogTypesTypeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("count", count)
         _setter("items", items)
@@ -374,19 +410,33 @@ class GetCatalogTypesTypeCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             catalog_id: str,
-             description: str,
-             key: str,
-             name: str,
-             state: str,
-             type_category: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             catalog_id: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             type_category: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'typeCategory' in kwargs:
+        if catalog_id is None:
+            raise TypeError("Missing 'catalog_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if type_category is None and 'typeCategory' in kwargs:
             type_category = kwargs['typeCategory']
+        if type_category is None:
+            raise TypeError("Missing 'type_category' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("catalog_id", catalog_id)
         _setter("description", description)
@@ -503,43 +553,69 @@ class GetCatalogsCatalogResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attached_catalog_private_endpoints: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             number_of_objects: int,
-             service_api_url: str,
-             service_console_url: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attached_catalog_private_endpoints: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             number_of_objects: Optional[int] = None,
+             service_api_url: Optional[str] = None,
+             service_console_url: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachedCatalogPrivateEndpoints' in kwargs:
+        if attached_catalog_private_endpoints is None and 'attachedCatalogPrivateEndpoints' in kwargs:
             attached_catalog_private_endpoints = kwargs['attachedCatalogPrivateEndpoints']
-        if 'compartmentId' in kwargs:
+        if attached_catalog_private_endpoints is None:
+            raise TypeError("Missing 'attached_catalog_private_endpoints' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'numberOfObjects' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if number_of_objects is None and 'numberOfObjects' in kwargs:
             number_of_objects = kwargs['numberOfObjects']
-        if 'serviceApiUrl' in kwargs:
+        if number_of_objects is None:
+            raise TypeError("Missing 'number_of_objects' argument")
+        if service_api_url is None and 'serviceApiUrl' in kwargs:
             service_api_url = kwargs['serviceApiUrl']
-        if 'serviceConsoleUrl' in kwargs:
+        if service_api_url is None:
+            raise TypeError("Missing 'service_api_url' argument")
+        if service_console_url is None and 'serviceConsoleUrl' in kwargs:
             service_console_url = kwargs['serviceConsoleUrl']
-        if 'timeCreated' in kwargs:
+        if service_console_url is None:
+            raise TypeError("Missing 'service_console_url' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("attached_catalog_private_endpoints", attached_catalog_private_endpoints)
         _setter("compartment_id", compartment_id)
@@ -675,11 +751,15 @@ class GetCatalogsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -715,10 +795,14 @@ class GetConnectionsConnectionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             items: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("count", count)
         _setter("items", items)
@@ -795,48 +879,80 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             catalog_id: str,
-             created_by_id: str,
-             data_asset_key: str,
-             description: str,
-             display_name: str,
-             external_key: str,
-             is_default: bool,
-             key: str,
-             properties: Mapping[str, Any],
-             state: str,
-             time_created: str,
-             time_status_updated: str,
-             time_updated: str,
-             type_key: str,
-             updated_by_id: str,
-             uri: str,
+             catalog_id: Optional[str] = None,
+             created_by_id: Optional[str] = None,
+             data_asset_key: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_key: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             key: Optional[str] = None,
+             properties: Optional[Mapping[str, Any]] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_status_updated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type_key: Optional[str] = None,
+             updated_by_id: Optional[str] = None,
+             uri: Optional[str] = None,
              enc_properties: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'createdById' in kwargs:
+        if catalog_id is None:
+            raise TypeError("Missing 'catalog_id' argument")
+        if created_by_id is None and 'createdById' in kwargs:
             created_by_id = kwargs['createdById']
-        if 'dataAssetKey' in kwargs:
+        if created_by_id is None:
+            raise TypeError("Missing 'created_by_id' argument")
+        if data_asset_key is None and 'dataAssetKey' in kwargs:
             data_asset_key = kwargs['dataAssetKey']
-        if 'displayName' in kwargs:
+        if data_asset_key is None:
+            raise TypeError("Missing 'data_asset_key' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKey' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key is None and 'externalKey' in kwargs:
             external_key = kwargs['externalKey']
-        if 'isDefault' in kwargs:
+        if external_key is None:
+            raise TypeError("Missing 'external_key' argument")
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'timeCreated' in kwargs:
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_status_updated is None and 'timeStatusUpdated' in kwargs:
             time_status_updated = kwargs['timeStatusUpdated']
-        if 'timeUpdated' in kwargs:
+        if time_status_updated is None:
+            raise TypeError("Missing 'time_status_updated' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'typeKey' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
-        if 'updatedById' in kwargs:
+        if type_key is None:
+            raise TypeError("Missing 'type_key' argument")
+        if updated_by_id is None and 'updatedById' in kwargs:
             updated_by_id = kwargs['updatedById']
-        if 'encProperties' in kwargs:
+        if updated_by_id is None:
+            raise TypeError("Missing 'updated_by_id' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+        if enc_properties is None and 'encProperties' in kwargs:
             enc_properties = kwargs['encProperties']
 
         _setter("catalog_id", catalog_id)
@@ -1007,11 +1123,15 @@ class GetConnectionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1047,10 +1167,14 @@ class GetDataAssetsDataAssetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             items: Sequence['outputs.GetDataAssetsDataAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             items: Optional[Sequence['outputs.GetDataAssetsDataAssetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("count", count)
         _setter("items", items)
@@ -1122,43 +1246,73 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             catalog_id: str,
-             created_by_id: str,
-             description: str,
-             display_name: str,
-             external_key: str,
-             key: str,
-             lifecycle_details: str,
-             properties: Mapping[str, Any],
-             state: str,
-             time_created: str,
-             time_harvested: str,
-             time_updated: str,
-             type_key: str,
-             updated_by_id: str,
-             uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             catalog_id: Optional[str] = None,
+             created_by_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             external_key: Optional[str] = None,
+             key: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             properties: Optional[Mapping[str, Any]] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_harvested: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type_key: Optional[str] = None,
+             updated_by_id: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'createdById' in kwargs:
+        if catalog_id is None:
+            raise TypeError("Missing 'catalog_id' argument")
+        if created_by_id is None and 'createdById' in kwargs:
             created_by_id = kwargs['createdById']
-        if 'displayName' in kwargs:
+        if created_by_id is None:
+            raise TypeError("Missing 'created_by_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKey' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if external_key is None and 'externalKey' in kwargs:
             external_key = kwargs['externalKey']
-        if 'lifecycleDetails' in kwargs:
+        if external_key is None:
+            raise TypeError("Missing 'external_key' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeHarvested' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_harvested is None and 'timeHarvested' in kwargs:
             time_harvested = kwargs['timeHarvested']
-        if 'timeUpdated' in kwargs:
+        if time_harvested is None:
+            raise TypeError("Missing 'time_harvested' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'typeKey' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
-        if 'updatedById' in kwargs:
+        if type_key is None:
+            raise TypeError("Missing 'type_key' argument")
+        if updated_by_id is None and 'updatedById' in kwargs:
             updated_by_id = kwargs['updatedById']
+        if updated_by_id is None:
+            raise TypeError("Missing 'updated_by_id' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
 
         _setter("catalog_id", catalog_id)
         _setter("created_by_id", created_by_id)
@@ -1312,11 +1466,15 @@ class GetDataAssetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1354,11 +1512,15 @@ class GetMetastoresFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1425,37 +1587,59 @@ class GetMetastoresMetastoreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             default_external_table_location: str,
-             default_managed_table_location: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             default_external_table_location: Optional[str] = None,
+             default_managed_table_location: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultExternalTableLocation' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if default_external_table_location is None and 'defaultExternalTableLocation' in kwargs:
             default_external_table_location = kwargs['defaultExternalTableLocation']
-        if 'defaultManagedTableLocation' in kwargs:
+        if default_external_table_location is None:
+            raise TypeError("Missing 'default_external_table_location' argument")
+        if default_managed_table_location is None and 'defaultManagedTableLocation' in kwargs:
             default_managed_table_location = kwargs['defaultManagedTableLocation']
-        if 'definedTags' in kwargs:
+        if default_managed_table_location is None:
+            raise TypeError("Missing 'default_managed_table_location' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("default_external_table_location", default_external_table_location)

@@ -68,11 +68,11 @@ class AnalyticsInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity: pulumi.Input['AnalyticsInstanceCapacityArgs'],
-             compartment_id: pulumi.Input[str],
-             feature_set: pulumi.Input[str],
-             idcs_access_token: pulumi.Input[str],
-             license_type: pulumi.Input[str],
+             capacity: Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             feature_set: Optional[pulumi.Input[str]] = None,
+             idcs_access_token: Optional[pulumi.Input[str]] = None,
+             license_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              email_notification: Optional[pulumi.Input[str]] = None,
@@ -81,25 +81,35 @@ class AnalyticsInstanceArgs:
              name: Optional[pulumi.Input[str]] = None,
              network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if capacity is None:
+            raise TypeError("Missing 'capacity' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'featureSet' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if feature_set is None and 'featureSet' in kwargs:
             feature_set = kwargs['featureSet']
-        if 'idcsAccessToken' in kwargs:
+        if feature_set is None:
+            raise TypeError("Missing 'feature_set' argument")
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'licenseType' in kwargs:
+        if idcs_access_token is None:
+            raise TypeError("Missing 'idcs_access_token' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'definedTags' in kwargs:
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailNotification' in kwargs:
+        if email_notification is None and 'emailNotification' in kwargs:
             email_notification = kwargs['emailNotification']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'networkEndpointDetails' in kwargs:
+        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
             network_endpoint_details = kwargs['networkEndpointDetails']
 
         _setter("capacity", capacity)
@@ -365,31 +375,31 @@ class _AnalyticsInstanceState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'emailNotification' in kwargs:
+        if email_notification is None and 'emailNotification' in kwargs:
             email_notification = kwargs['emailNotification']
-        if 'featureSet' in kwargs:
+        if feature_set is None and 'featureSet' in kwargs:
             feature_set = kwargs['featureSet']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'licenseType' in kwargs:
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'networkEndpointDetails' in kwargs:
+        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
             network_endpoint_details = kwargs['networkEndpointDetails']
-        if 'serviceUrl' in kwargs:
+        if service_url is None and 'serviceUrl' in kwargs:
             service_url = kwargs['serviceUrl']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if capacity is not None:
@@ -812,11 +822,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AnalyticsInstanceArgs.__new__(AnalyticsInstanceArgs)
 
-            if capacity is not None and not isinstance(capacity, AnalyticsInstanceCapacityArgs):
-                capacity = capacity or {}
-                def _setter(key, value):
-                    capacity[key] = value
-                AnalyticsInstanceCapacityArgs._configure(_setter, **capacity)
+            capacity = _utilities.configure(capacity, AnalyticsInstanceCapacityArgs, True)
             if capacity is None and not opts.urn:
                 raise TypeError("Missing required property 'capacity'")
             __props__.__dict__["capacity"] = capacity
@@ -838,11 +844,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'license_type'")
             __props__.__dict__["license_type"] = license_type
             __props__.__dict__["name"] = name
-            if network_endpoint_details is not None and not isinstance(network_endpoint_details, AnalyticsInstanceNetworkEndpointDetailsArgs):
-                network_endpoint_details = network_endpoint_details or {}
-                def _setter(key, value):
-                    network_endpoint_details[key] = value
-                AnalyticsInstanceNetworkEndpointDetailsArgs._configure(_setter, **network_endpoint_details)
+            network_endpoint_details = _utilities.configure(network_endpoint_details, AnalyticsInstanceNetworkEndpointDetailsArgs, True)
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
             __props__.__dict__["service_url"] = None

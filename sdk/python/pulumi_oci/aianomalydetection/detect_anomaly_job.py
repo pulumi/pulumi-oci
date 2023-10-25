@@ -50,24 +50,32 @@ class DetectAnomalyJobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             input_details: pulumi.Input['DetectAnomalyJobInputDetailsArgs'],
-             model_id: pulumi.Input[str],
-             output_details: pulumi.Input['DetectAnomalyJobOutputDetailsArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             input_details: Optional[pulumi.Input['DetectAnomalyJobInputDetailsArgs']] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             output_details: Optional[pulumi.Input['DetectAnomalyJobOutputDetailsArgs']] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              sensitivity: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'inputDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if input_details is None and 'inputDetails' in kwargs:
             input_details = kwargs['inputDetails']
-        if 'modelId' in kwargs:
+        if input_details is None:
+            raise TypeError("Missing 'input_details' argument")
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'outputDetails' in kwargs:
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if output_details is None and 'outputDetails' in kwargs:
             output_details = kwargs['outputDetails']
-        if 'displayName' in kwargs:
+        if output_details is None:
+            raise TypeError("Missing 'output_details' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         _setter("compartment_id", compartment_id)
@@ -250,33 +258,33 @@ class _DetectAnomalyJobState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inputDetails' in kwargs:
+        if input_details is None and 'inputDetails' in kwargs:
             input_details = kwargs['inputDetails']
-        if 'lifecycleStateDetails' in kwargs:
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'outputDetails' in kwargs:
+        if output_details is None and 'outputDetails' in kwargs:
             output_details = kwargs['outputDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeAccepted' in kwargs:
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if compartment_id is not None:
@@ -608,22 +616,14 @@ class DetectAnomalyJob(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
-            if input_details is not None and not isinstance(input_details, DetectAnomalyJobInputDetailsArgs):
-                input_details = input_details or {}
-                def _setter(key, value):
-                    input_details[key] = value
-                DetectAnomalyJobInputDetailsArgs._configure(_setter, **input_details)
+            input_details = _utilities.configure(input_details, DetectAnomalyJobInputDetailsArgs, True)
             if input_details is None and not opts.urn:
                 raise TypeError("Missing required property 'input_details'")
             __props__.__dict__["input_details"] = input_details
             if model_id is None and not opts.urn:
                 raise TypeError("Missing required property 'model_id'")
             __props__.__dict__["model_id"] = model_id
-            if output_details is not None and not isinstance(output_details, DetectAnomalyJobOutputDetailsArgs):
-                output_details = output_details or {}
-                def _setter(key, value):
-                    output_details[key] = value
-                DetectAnomalyJobOutputDetailsArgs._configure(_setter, **output_details)
+            output_details = _utilities.configure(output_details, DetectAnomalyJobOutputDetailsArgs, True)
             if output_details is None and not opts.urn:
                 raise TypeError("Missing required property 'output_details'")
             __props__.__dict__["output_details"] = output_details

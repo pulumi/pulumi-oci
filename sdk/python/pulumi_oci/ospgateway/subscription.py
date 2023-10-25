@@ -44,19 +44,29 @@ class SubscriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             email: pulumi.Input[str],
-             osp_home_region: pulumi.Input[str],
-             subscription: pulumi.Input['SubscriptionSubscriptionArgs'],
-             subscription_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             email: Optional[pulumi.Input[str]] = None,
+             osp_home_region: Optional[pulumi.Input[str]] = None,
+             subscription: Optional[pulumi.Input['SubscriptionSubscriptionArgs']] = None,
+             subscription_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'ospHomeRegion' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if osp_home_region is None and 'ospHomeRegion' in kwargs:
             osp_home_region = kwargs['ospHomeRegion']
-        if 'subscriptionId' in kwargs:
+        if osp_home_region is None:
+            raise TypeError("Missing 'osp_home_region' argument")
+        if subscription is None:
+            raise TypeError("Missing 'subscription' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("email", email)
@@ -245,53 +255,53 @@ class _SubscriptionState:
              time_start: Optional[pulumi.Input[str]] = None,
              upgrade_state: Optional[pulumi.Input[str]] = None,
              upgrade_state_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountType' in kwargs:
+        if account_type is None and 'accountType' in kwargs:
             account_type = kwargs['accountType']
-        if 'billToCustAccountId' in kwargs:
+        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
             bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if 'billingAddresses' in kwargs:
+        if billing_addresses is None and 'billingAddresses' in kwargs:
             billing_addresses = kwargs['billingAddresses']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'currencyCode' in kwargs:
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'gsiOrgCode' in kwargs:
+        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
             gsi_org_code = kwargs['gsiOrgCode']
-        if 'isIntentToPay' in kwargs:
+        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
             is_intent_to_pay = kwargs['isIntentToPay']
-        if 'languageCode' in kwargs:
+        if language_code is None and 'languageCode' in kwargs:
             language_code = kwargs['languageCode']
-        if 'organizationId' in kwargs:
+        if organization_id is None and 'organizationId' in kwargs:
             organization_id = kwargs['organizationId']
-        if 'ospHomeRegion' in kwargs:
+        if osp_home_region is None and 'ospHomeRegion' in kwargs:
             osp_home_region = kwargs['ospHomeRegion']
-        if 'paymentGateways' in kwargs:
+        if payment_gateways is None and 'paymentGateways' in kwargs:
             payment_gateways = kwargs['paymentGateways']
-        if 'paymentOptions' in kwargs:
+        if payment_options is None and 'paymentOptions' in kwargs:
             payment_options = kwargs['paymentOptions']
-        if 'planType' in kwargs:
+        if plan_type is None and 'planType' in kwargs:
             plan_type = kwargs['planType']
-        if 'shipToCustAcctRoleId' in kwargs:
+        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
             ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if 'shipToCustAcctSiteId' in kwargs:
+        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
             ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if 'subscriptionId' in kwargs:
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'subscriptionPlanNumber' in kwargs:
+        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
             subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if 'taxInfos' in kwargs:
+        if tax_infos is None and 'taxInfos' in kwargs:
             tax_infos = kwargs['taxInfos']
-        if 'timePersonalToCorporateConv' in kwargs:
+        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
             time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if 'timePlanUpgrade' in kwargs:
+        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
             time_plan_upgrade = kwargs['timePlanUpgrade']
-        if 'timeStart' in kwargs:
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
-        if 'upgradeState' in kwargs:
+        if upgrade_state is None and 'upgradeState' in kwargs:
             upgrade_state = kwargs['upgradeState']
-        if 'upgradeStateDetails' in kwargs:
+        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
             upgrade_state_details = kwargs['upgradeStateDetails']
 
         if account_type is not None:
@@ -747,11 +757,7 @@ class Subscription(pulumi.CustomResource):
             if osp_home_region is None and not opts.urn:
                 raise TypeError("Missing required property 'osp_home_region'")
             __props__.__dict__["osp_home_region"] = osp_home_region
-            if subscription is not None and not isinstance(subscription, SubscriptionSubscriptionArgs):
-                subscription = subscription or {}
-                def _setter(key, value):
-                    subscription[key] = value
-                SubscriptionSubscriptionArgs._configure(_setter, **subscription)
+            subscription = _utilities.configure(subscription, SubscriptionSubscriptionArgs, True)
             if subscription is None and not opts.urn:
                 raise TypeError("Missing required property 'subscription'")
             __props__.__dict__["subscription"] = subscription

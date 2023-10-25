@@ -46,17 +46,17 @@ class OpaInstanceAttachmentArgs:
              target_instance_url: Optional[pulumi.Input[str]] = None,
              target_role: Optional[pulumi.Input[str]] = None,
              target_service_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isImplicit' in kwargs:
+        if is_implicit is None and 'isImplicit' in kwargs:
             is_implicit = kwargs['isImplicit']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'targetInstanceUrl' in kwargs:
+        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
             target_instance_url = kwargs['targetInstanceUrl']
-        if 'targetRole' in kwargs:
+        if target_role is None and 'targetRole' in kwargs:
             target_role = kwargs['targetRole']
-        if 'targetServiceType' in kwargs:
+        if target_service_type is None and 'targetServiceType' in kwargs:
             target_service_type = kwargs['targetServiceType']
 
         if is_implicit is not None:
@@ -147,11 +147,15 @@ class GetOpaInstancesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

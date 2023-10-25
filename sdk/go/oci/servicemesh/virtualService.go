@@ -37,11 +37,11 @@ import (
 //				DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
 //					Type: pulumi.Any(_var.Virtual_service_default_routing_policy_type),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Virtual_service_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Hosts: pulumi.Any(_var.Virtual_service_hosts),

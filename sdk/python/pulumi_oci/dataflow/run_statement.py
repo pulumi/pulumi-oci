@@ -35,12 +35,16 @@ class RunStatementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             code: pulumi.Input[str],
-             run_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             code: Optional[pulumi.Input[str]] = None,
+             run_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'runId' in kwargs:
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if run_id is None and 'runId' in kwargs:
             run_id = kwargs['runId']
+        if run_id is None:
+            raise TypeError("Missing 'run_id' argument")
 
         _setter("code", code)
         _setter("run_id", run_id)
@@ -118,13 +122,13 @@ class _RunStatementState:
              state: Optional[pulumi.Input[str]] = None,
              time_completed: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'runId' in kwargs:
+        if run_id is None and 'runId' in kwargs:
             run_id = kwargs['runId']
-        if 'timeCompleted' in kwargs:
+        if time_completed is None and 'timeCompleted' in kwargs:
             time_completed = kwargs['timeCompleted']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if code is not None:

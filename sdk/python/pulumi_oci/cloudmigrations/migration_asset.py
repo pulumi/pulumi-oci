@@ -50,31 +50,41 @@ class MigrationAssetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             inventory_asset_id: pulumi.Input[str],
-             migration_id: pulumi.Input[str],
-             replication_compartment_id: pulumi.Input[str],
-             snap_shot_bucket_name: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             inventory_asset_id: Optional[pulumi.Input[str]] = None,
+             migration_id: Optional[pulumi.Input[str]] = None,
+             replication_compartment_id: Optional[pulumi.Input[str]] = None,
+             snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              replication_schedule_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'inventoryAssetId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if inventory_asset_id is None and 'inventoryAssetId' in kwargs:
             inventory_asset_id = kwargs['inventoryAssetId']
-        if 'migrationId' in kwargs:
+        if inventory_asset_id is None:
+            raise TypeError("Missing 'inventory_asset_id' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'replicationCompartmentId' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'snapShotBucketName' in kwargs:
+        if replication_compartment_id is None:
+            raise TypeError("Missing 'replication_compartment_id' argument")
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'displayName' in kwargs:
+        if snap_shot_bucket_name is None:
+            raise TypeError("Missing 'snap_shot_bucket_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'migrationAssetDependsOns' in kwargs:
+        if migration_asset_depends_ons is None and 'migrationAssetDependsOns' in kwargs:
             migration_asset_depends_ons = kwargs['migrationAssetDependsOns']
-        if 'replicationScheduleId' in kwargs:
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
 
         _setter("availability_domain", availability_domain)
@@ -282,39 +292,39 @@ class _MigrationAssetState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dependedOnBies' in kwargs:
+        if depended_on_bies is None and 'dependedOnBies' in kwargs:
             depended_on_bies = kwargs['dependedOnBies']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'inventoryAssetId' in kwargs:
+        if inventory_asset_id is None and 'inventoryAssetId' in kwargs:
             inventory_asset_id = kwargs['inventoryAssetId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationAssetDependsOns' in kwargs:
+        if migration_asset_depends_ons is None and 'migrationAssetDependsOns' in kwargs:
             migration_asset_depends_ons = kwargs['migrationAssetDependsOns']
-        if 'migrationId' in kwargs:
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'parentSnapshot' in kwargs:
+        if parent_snapshot is None and 'parentSnapshot' in kwargs:
             parent_snapshot = kwargs['parentSnapshot']
-        if 'replicationCompartmentId' in kwargs:
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'replicationScheduleId' in kwargs:
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'snapShotBucketName' in kwargs:
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'sourceAssetId' in kwargs:
+        if source_asset_id is None and 'sourceAssetId' in kwargs:
             source_asset_id = kwargs['sourceAssetId']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if availability_domain is not None:

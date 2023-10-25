@@ -39,17 +39,21 @@ class ExternalDbSystemStackMonitoringsManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_stack_monitoring: pulumi.Input[bool],
-             external_db_system_id: pulumi.Input[str],
+             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              metadata: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableStackMonitoring' in kwargs:
+        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
             enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if 'externalDbSystemId' in kwargs:
+        if enable_stack_monitoring is None:
+            raise TypeError("Missing 'enable_stack_monitoring' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'isEnabled' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         _setter("enable_stack_monitoring", enable_stack_monitoring)
@@ -144,13 +148,13 @@ class _ExternalDbSystemStackMonitoringsManagementState:
              external_db_system_id: Optional[pulumi.Input[str]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              metadata: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableStackMonitoring' in kwargs:
+        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
             enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if enable_stack_monitoring is not None:

@@ -59,8 +59,8 @@ class DeployEnvironmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_environment_type: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             deploy_environment_type: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              cluster_id: Optional[pulumi.Input[str]] = None,
              compute_instance_group_selectors: Optional[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -69,25 +69,29 @@ class DeployEnvironmentArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
              network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentType' in kwargs:
+        if deploy_environment_type is None and 'deployEnvironmentType' in kwargs:
             deploy_environment_type = kwargs['deployEnvironmentType']
-        if 'projectId' in kwargs:
+        if deploy_environment_type is None:
+            raise TypeError("Missing 'deploy_environment_type' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'clusterId' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'computeInstanceGroupSelectors' in kwargs:
+        if compute_instance_group_selectors is None and 'computeInstanceGroupSelectors' in kwargs:
             compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'networkChannel' in kwargs:
+        if network_channel is None and 'networkChannel' in kwargs:
             network_channel = kwargs['networkChannel']
 
         _setter("deploy_environment_type", deploy_environment_type)
@@ -314,35 +318,35 @@ class _DeployEnvironmentState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeInstanceGroupSelectors' in kwargs:
+        if compute_instance_group_selectors is None and 'computeInstanceGroupSelectors' in kwargs:
             compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployEnvironmentType' in kwargs:
+        if deploy_environment_type is None and 'deployEnvironmentType' in kwargs:
             deploy_environment_type = kwargs['deployEnvironmentType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'networkChannel' in kwargs:
+        if network_channel is None and 'networkChannel' in kwargs:
             network_channel = kwargs['networkChannel']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if cluster_id is not None:
@@ -747,11 +751,7 @@ class DeployEnvironment(pulumi.CustomResource):
             __props__ = DeployEnvironmentArgs.__new__(DeployEnvironmentArgs)
 
             __props__.__dict__["cluster_id"] = cluster_id
-            if compute_instance_group_selectors is not None and not isinstance(compute_instance_group_selectors, DeployEnvironmentComputeInstanceGroupSelectorsArgs):
-                compute_instance_group_selectors = compute_instance_group_selectors or {}
-                def _setter(key, value):
-                    compute_instance_group_selectors[key] = value
-                DeployEnvironmentComputeInstanceGroupSelectorsArgs._configure(_setter, **compute_instance_group_selectors)
+            compute_instance_group_selectors = _utilities.configure(compute_instance_group_selectors, DeployEnvironmentComputeInstanceGroupSelectorsArgs, True)
             __props__.__dict__["compute_instance_group_selectors"] = compute_instance_group_selectors
             __props__.__dict__["defined_tags"] = defined_tags
             if deploy_environment_type is None and not opts.urn:
@@ -761,11 +761,7 @@ class DeployEnvironment(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["function_id"] = function_id
-            if network_channel is not None and not isinstance(network_channel, DeployEnvironmentNetworkChannelArgs):
-                network_channel = network_channel or {}
-                def _setter(key, value):
-                    network_channel[key] = value
-                DeployEnvironmentNetworkChannelArgs._configure(_setter, **network_channel)
+            network_channel = _utilities.configure(network_channel, DeployEnvironmentNetworkChannelArgs, True)
             __props__.__dict__["network_channel"] = network_channel
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

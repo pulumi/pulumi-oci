@@ -43,25 +43,31 @@ class SessionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bastion_id: pulumi.Input[str],
-             key_details: pulumi.Input['SessionKeyDetailsArgs'],
-             target_resource_details: pulumi.Input['SessionTargetResourceDetailsArgs'],
+             bastion_id: Optional[pulumi.Input[str]] = None,
+             key_details: Optional[pulumi.Input['SessionKeyDetailsArgs']] = None,
+             target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              key_type: Optional[pulumi.Input[str]] = None,
              session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bastionId' in kwargs:
+        if bastion_id is None and 'bastionId' in kwargs:
             bastion_id = kwargs['bastionId']
-        if 'keyDetails' in kwargs:
+        if bastion_id is None:
+            raise TypeError("Missing 'bastion_id' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
-        if 'targetResourceDetails' in kwargs:
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
+        if target_resource_details is None and 'targetResourceDetails' in kwargs:
             target_resource_details = kwargs['targetResourceDetails']
-        if 'displayName' in kwargs:
+        if target_resource_details is None:
+            raise TypeError("Missing 'target_resource_details' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'keyType' in kwargs:
+        if key_type is None and 'keyType' in kwargs:
             key_type = kwargs['keyType']
-        if 'sessionTtlInSeconds' in kwargs:
+        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
             session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
 
         _setter("bastion_id", bastion_id)
@@ -215,33 +221,33 @@ class _SessionState:
              target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bastionId' in kwargs:
+        if bastion_id is None and 'bastionId' in kwargs:
             bastion_id = kwargs['bastionId']
-        if 'bastionName' in kwargs:
+        if bastion_name is None and 'bastionName' in kwargs:
             bastion_name = kwargs['bastionName']
-        if 'bastionPublicHostKeyInfo' in kwargs:
+        if bastion_public_host_key_info is None and 'bastionPublicHostKeyInfo' in kwargs:
             bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
-        if 'bastionUserName' in kwargs:
+        if bastion_user_name is None and 'bastionUserName' in kwargs:
             bastion_user_name = kwargs['bastionUserName']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'keyDetails' in kwargs:
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
-        if 'keyType' in kwargs:
+        if key_type is None and 'keyType' in kwargs:
             key_type = kwargs['keyType']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'sessionTtlInSeconds' in kwargs:
+        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
             session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
-        if 'sshMetadata' in kwargs:
+        if ssh_metadata is None and 'sshMetadata' in kwargs:
             ssh_metadata = kwargs['sshMetadata']
-        if 'targetResourceDetails' in kwargs:
+        if target_resource_details is None and 'targetResourceDetails' in kwargs:
             target_resource_details = kwargs['targetResourceDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if bastion_id is not None:
@@ -581,21 +587,13 @@ class Session(pulumi.CustomResource):
                 raise TypeError("Missing required property 'bastion_id'")
             __props__.__dict__["bastion_id"] = bastion_id
             __props__.__dict__["display_name"] = display_name
-            if key_details is not None and not isinstance(key_details, SessionKeyDetailsArgs):
-                key_details = key_details or {}
-                def _setter(key, value):
-                    key_details[key] = value
-                SessionKeyDetailsArgs._configure(_setter, **key_details)
+            key_details = _utilities.configure(key_details, SessionKeyDetailsArgs, True)
             if key_details is None and not opts.urn:
                 raise TypeError("Missing required property 'key_details'")
             __props__.__dict__["key_details"] = key_details
             __props__.__dict__["key_type"] = key_type
             __props__.__dict__["session_ttl_in_seconds"] = session_ttl_in_seconds
-            if target_resource_details is not None and not isinstance(target_resource_details, SessionTargetResourceDetailsArgs):
-                target_resource_details = target_resource_details or {}
-                def _setter(key, value):
-                    target_resource_details[key] = value
-                SessionTargetResourceDetailsArgs._configure(_setter, **target_resource_details)
+            target_resource_details = _utilities.configure(target_resource_details, SessionTargetResourceDetailsArgs, True)
             if target_resource_details is None and not opts.urn:
                 raise TypeError("Missing required property 'target_resource_details'")
             __props__.__dict__["target_resource_details"] = target_resource_details

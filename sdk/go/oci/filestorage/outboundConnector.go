@@ -61,11 +61,11 @@ import (
 //						Port:     pulumi.Any(_var.Outbound_connector_endpoints_port),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Outbound_connector_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PasswordSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),

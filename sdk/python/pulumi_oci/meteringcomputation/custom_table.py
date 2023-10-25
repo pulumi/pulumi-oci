@@ -38,17 +38,23 @@ class CustomTableArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             saved_custom_table: pulumi.Input['CustomTableSavedCustomTableArgs'],
-             saved_report_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             saved_custom_table: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']] = None,
+             saved_report_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'savedCustomTable' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if saved_custom_table is None and 'savedCustomTable' in kwargs:
             saved_custom_table = kwargs['savedCustomTable']
-        if 'savedReportId' in kwargs:
+        if saved_custom_table is None:
+            raise TypeError("Missing 'saved_custom_table' argument")
+        if saved_report_id is None and 'savedReportId' in kwargs:
             saved_report_id = kwargs['savedReportId']
+        if saved_report_id is None:
+            raise TypeError("Missing 'saved_report_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("saved_custom_table", saved_custom_table)
@@ -123,13 +129,13 @@ class _CustomTableState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              saved_custom_table: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']] = None,
              saved_report_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'savedCustomTable' in kwargs:
+        if saved_custom_table is None and 'savedCustomTable' in kwargs:
             saved_custom_table = kwargs['savedCustomTable']
-        if 'savedReportId' in kwargs:
+        if saved_report_id is None and 'savedReportId' in kwargs:
             saved_report_id = kwargs['savedReportId']
 
         if compartment_id is not None:
@@ -311,11 +317,7 @@ class CustomTable(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if saved_custom_table is not None and not isinstance(saved_custom_table, CustomTableSavedCustomTableArgs):
-                saved_custom_table = saved_custom_table or {}
-                def _setter(key, value):
-                    saved_custom_table[key] = value
-                CustomTableSavedCustomTableArgs._configure(_setter, **saved_custom_table)
+            saved_custom_table = _utilities.configure(saved_custom_table, CustomTableSavedCustomTableArgs, True)
             if saved_custom_table is None and not opts.urn:
                 raise TypeError("Missing required property 'saved_custom_table'")
             __props__.__dict__["saved_custom_table"] = saved_custom_table

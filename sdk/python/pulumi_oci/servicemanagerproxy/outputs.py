@@ -40,15 +40,21 @@ class GetServiceEnvironmentServiceDefinitionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             short_display_name: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             short_display_name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'shortDisplayName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if short_display_name is None and 'shortDisplayName' in kwargs:
             short_display_name = kwargs['shortDisplayName']
+        if short_display_name is None:
+            raise TypeError("Missing 'short_display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("display_name", display_name)
         _setter("short_display_name", short_display_name)
@@ -99,13 +105,19 @@ class GetServiceEnvironmentServiceEnvironmentEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             environment_type: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             environment_type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'environmentType' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if environment_type is None and 'environmentType' in kwargs:
             environment_type = kwargs['environmentType']
+        if environment_type is None:
+            raise TypeError("Missing 'environment_type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("description", description)
         _setter("environment_type", environment_type)
@@ -151,11 +163,15 @@ class GetServiceEnvironmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -189,9 +205,11 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -237,31 +255,49 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             console_url: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             service_definitions: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult'],
-             service_environment_endpoints: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult'],
-             status: str,
-             subscription_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             console_url: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             service_definitions: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult']] = None,
+             service_environment_endpoints: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult']] = None,
+             status: Optional[str] = None,
+             subscription_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'consoleUrl' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if console_url is None and 'consoleUrl' in kwargs:
             console_url = kwargs['consoleUrl']
-        if 'definedTags' in kwargs:
+        if console_url is None:
+            raise TypeError("Missing 'console_url' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'serviceDefinitions' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_definitions is None and 'serviceDefinitions' in kwargs:
             service_definitions = kwargs['serviceDefinitions']
-        if 'serviceEnvironmentEndpoints' in kwargs:
+        if service_definitions is None:
+            raise TypeError("Missing 'service_definitions' argument")
+        if service_environment_endpoints is None and 'serviceEnvironmentEndpoints' in kwargs:
             service_environment_endpoints = kwargs['serviceEnvironmentEndpoints']
-        if 'subscriptionId' in kwargs:
+        if service_environment_endpoints is None:
+            raise TypeError("Missing 'service_environment_endpoints' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("console_url", console_url)
@@ -360,15 +396,21 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             short_display_name: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             short_display_name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'shortDisplayName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if short_display_name is None and 'shortDisplayName' in kwargs:
             short_display_name = kwargs['shortDisplayName']
+        if short_display_name is None:
+            raise TypeError("Missing 'short_display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("display_name", display_name)
         _setter("short_display_name", short_display_name)
@@ -419,13 +461,19 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEn
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             environment_type: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             environment_type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'environmentType' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if environment_type is None and 'environmentType' in kwargs:
             environment_type = kwargs['environmentType']
+        if environment_type is None:
+            raise TypeError("Missing 'environment_type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("description", description)
         _setter("environment_type", environment_type)

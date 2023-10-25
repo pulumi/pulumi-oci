@@ -226,10 +226,10 @@ class ConnectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             connection_type: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             technology_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             technology_type: Optional[pulumi.Input[str]] = None,
              access_key_id: Optional[pulumi.Input[str]] = None,
              account_key: Optional[pulumi.Input[str]] = None,
              account_name: Optional[pulumi.Input[str]] = None,
@@ -292,121 +292,129 @@ class ConnectionArgs:
              username: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'displayName' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'technologyType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if technology_type is None and 'technologyType' in kwargs:
             technology_type = kwargs['technologyType']
-        if 'accessKeyId' in kwargs:
+        if technology_type is None:
+            raise TypeError("Missing 'technology_type' argument")
+        if access_key_id is None and 'accessKeyId' in kwargs:
             access_key_id = kwargs['accessKeyId']
-        if 'accountKey' in kwargs:
+        if account_key is None and 'accountKey' in kwargs:
             account_key = kwargs['accountKey']
-        if 'accountName' in kwargs:
+        if account_name is None and 'accountName' in kwargs:
             account_name = kwargs['accountName']
-        if 'additionalAttributes' in kwargs:
+        if additional_attributes is None and 'additionalAttributes' in kwargs:
             additional_attributes = kwargs['additionalAttributes']
-        if 'authenticationType' in kwargs:
+        if authentication_type is None and 'authenticationType' in kwargs:
             authentication_type = kwargs['authenticationType']
-        if 'azureTenantId' in kwargs:
+        if azure_tenant_id is None and 'azureTenantId' in kwargs:
             azure_tenant_id = kwargs['azureTenantId']
-        if 'bootstrapServers' in kwargs:
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'clientId' in kwargs:
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecret' in kwargs:
+        if client_secret is None and 'clientSecret' in kwargs:
             client_secret = kwargs['clientSecret']
-        if 'connectionFactory' in kwargs:
+        if connection_factory is None and 'connectionFactory' in kwargs:
             connection_factory = kwargs['connectionFactory']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'connectionUrl' in kwargs:
+        if connection_url is None and 'connectionUrl' in kwargs:
             connection_url = kwargs['connectionUrl']
-        if 'consumerProperties' in kwargs:
+        if consumer_properties is None and 'consumerProperties' in kwargs:
             consumer_properties = kwargs['consumerProperties']
-        if 'coreSiteXml' in kwargs:
+        if core_site_xml is None and 'coreSiteXml' in kwargs:
             core_site_xml = kwargs['coreSiteXml']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseName' in kwargs:
+        if database_name is None and 'databaseName' in kwargs:
             database_name = kwargs['databaseName']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentId' in kwargs:
+        if deployment_id is None and 'deploymentId' in kwargs:
             deployment_id = kwargs['deploymentId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'jndiConnectionFactory' in kwargs:
+        if jndi_connection_factory is None and 'jndiConnectionFactory' in kwargs:
             jndi_connection_factory = kwargs['jndiConnectionFactory']
-        if 'jndiInitialContextFactory' in kwargs:
+        if jndi_initial_context_factory is None and 'jndiInitialContextFactory' in kwargs:
             jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
-        if 'jndiProviderUrl' in kwargs:
+        if jndi_provider_url is None and 'jndiProviderUrl' in kwargs:
             jndi_provider_url = kwargs['jndiProviderUrl']
-        if 'jndiSecurityCredentials' in kwargs:
+        if jndi_security_credentials is None and 'jndiSecurityCredentials' in kwargs:
             jndi_security_credentials = kwargs['jndiSecurityCredentials']
-        if 'jndiSecurityPrincipal' in kwargs:
+        if jndi_security_principal is None and 'jndiSecurityPrincipal' in kwargs:
             jndi_security_principal = kwargs['jndiSecurityPrincipal']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyStore' in kwargs:
+        if key_store is None and 'keyStore' in kwargs:
             key_store = kwargs['keyStore']
-        if 'keyStorePassword' in kwargs:
+        if key_store_password is None and 'keyStorePassword' in kwargs:
             key_store_password = kwargs['keyStorePassword']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'privateKeyFile' in kwargs:
+        if private_key_file is None and 'privateKeyFile' in kwargs:
             private_key_file = kwargs['privateKeyFile']
-        if 'privateKeyPassphrase' in kwargs:
+        if private_key_passphrase is None and 'privateKeyPassphrase' in kwargs:
             private_key_passphrase = kwargs['privateKeyPassphrase']
-        if 'producerProperties' in kwargs:
+        if producer_properties is None and 'producerProperties' in kwargs:
             producer_properties = kwargs['producerProperties']
-        if 'publicKeyFingerprint' in kwargs:
+        if public_key_fingerprint is None and 'publicKeyFingerprint' in kwargs:
             public_key_fingerprint = kwargs['publicKeyFingerprint']
-        if 'sasToken' in kwargs:
+        if sas_token is None and 'sasToken' in kwargs:
             sas_token = kwargs['sasToken']
-        if 'secretAccessKey' in kwargs:
+        if secret_access_key is None and 'secretAccessKey' in kwargs:
             secret_access_key = kwargs['secretAccessKey']
-        if 'securityProtocol' in kwargs:
+        if security_protocol is None and 'securityProtocol' in kwargs:
             security_protocol = kwargs['securityProtocol']
-        if 'sessionMode' in kwargs:
+        if session_mode is None and 'sessionMode' in kwargs:
             session_mode = kwargs['sessionMode']
-        if 'shouldUseJndi' in kwargs:
+        if should_use_jndi is None and 'shouldUseJndi' in kwargs:
             should_use_jndi = kwargs['shouldUseJndi']
-        if 'shouldValidateServerCertificate' in kwargs:
+        if should_validate_server_certificate is None and 'shouldValidateServerCertificate' in kwargs:
             should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
-        if 'sslCa' in kwargs:
+        if ssl_ca is None and 'sslCa' in kwargs:
             ssl_ca = kwargs['sslCa']
-        if 'sslCert' in kwargs:
+        if ssl_cert is None and 'sslCert' in kwargs:
             ssl_cert = kwargs['sslCert']
-        if 'sslCrl' in kwargs:
+        if ssl_crl is None and 'sslCrl' in kwargs:
             ssl_crl = kwargs['sslCrl']
-        if 'sslKey' in kwargs:
+        if ssl_key is None and 'sslKey' in kwargs:
             ssl_key = kwargs['sslKey']
-        if 'sslKeyPassword' in kwargs:
+        if ssl_key_password is None and 'sslKeyPassword' in kwargs:
             ssl_key_password = kwargs['sslKeyPassword']
-        if 'sslMode' in kwargs:
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
-        if 'streamPoolId' in kwargs:
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
             stream_pool_id = kwargs['streamPoolId']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'trustStore' in kwargs:
+        if trust_store is None and 'trustStore' in kwargs:
             trust_store = kwargs['trustStore']
-        if 'trustStorePassword' in kwargs:
+        if trust_store_password is None and 'trustStorePassword' in kwargs:
             trust_store_password = kwargs['trustStorePassword']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         _setter("compartment_id", compartment_id)
@@ -1637,131 +1645,131 @@ class _ConnectionState:
              username: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessKeyId' in kwargs:
+        if access_key_id is None and 'accessKeyId' in kwargs:
             access_key_id = kwargs['accessKeyId']
-        if 'accountKey' in kwargs:
+        if account_key is None and 'accountKey' in kwargs:
             account_key = kwargs['accountKey']
-        if 'accountName' in kwargs:
+        if account_name is None and 'accountName' in kwargs:
             account_name = kwargs['accountName']
-        if 'additionalAttributes' in kwargs:
+        if additional_attributes is None and 'additionalAttributes' in kwargs:
             additional_attributes = kwargs['additionalAttributes']
-        if 'authenticationType' in kwargs:
+        if authentication_type is None and 'authenticationType' in kwargs:
             authentication_type = kwargs['authenticationType']
-        if 'azureTenantId' in kwargs:
+        if azure_tenant_id is None and 'azureTenantId' in kwargs:
             azure_tenant_id = kwargs['azureTenantId']
-        if 'bootstrapServers' in kwargs:
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'clientId' in kwargs:
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecret' in kwargs:
+        if client_secret is None and 'clientSecret' in kwargs:
             client_secret = kwargs['clientSecret']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionFactory' in kwargs:
+        if connection_factory is None and 'connectionFactory' in kwargs:
             connection_factory = kwargs['connectionFactory']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'connectionType' in kwargs:
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'connectionUrl' in kwargs:
+        if connection_url is None and 'connectionUrl' in kwargs:
             connection_url = kwargs['connectionUrl']
-        if 'consumerProperties' in kwargs:
+        if consumer_properties is None and 'consumerProperties' in kwargs:
             consumer_properties = kwargs['consumerProperties']
-        if 'coreSiteXml' in kwargs:
+        if core_site_xml is None and 'coreSiteXml' in kwargs:
             core_site_xml = kwargs['coreSiteXml']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseName' in kwargs:
+        if database_name is None and 'databaseName' in kwargs:
             database_name = kwargs['databaseName']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentId' in kwargs:
+        if deployment_id is None and 'deploymentId' in kwargs:
             deployment_id = kwargs['deploymentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'ingressIps' in kwargs:
+        if ingress_ips is None and 'ingressIps' in kwargs:
             ingress_ips = kwargs['ingressIps']
-        if 'jndiConnectionFactory' in kwargs:
+        if jndi_connection_factory is None and 'jndiConnectionFactory' in kwargs:
             jndi_connection_factory = kwargs['jndiConnectionFactory']
-        if 'jndiInitialContextFactory' in kwargs:
+        if jndi_initial_context_factory is None and 'jndiInitialContextFactory' in kwargs:
             jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
-        if 'jndiProviderUrl' in kwargs:
+        if jndi_provider_url is None and 'jndiProviderUrl' in kwargs:
             jndi_provider_url = kwargs['jndiProviderUrl']
-        if 'jndiSecurityCredentials' in kwargs:
+        if jndi_security_credentials is None and 'jndiSecurityCredentials' in kwargs:
             jndi_security_credentials = kwargs['jndiSecurityCredentials']
-        if 'jndiSecurityPrincipal' in kwargs:
+        if jndi_security_principal is None and 'jndiSecurityPrincipal' in kwargs:
             jndi_security_principal = kwargs['jndiSecurityPrincipal']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyStore' in kwargs:
+        if key_store is None and 'keyStore' in kwargs:
             key_store = kwargs['keyStore']
-        if 'keyStorePassword' in kwargs:
+        if key_store_password is None and 'keyStorePassword' in kwargs:
             key_store_password = kwargs['keyStorePassword']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'privateKeyFile' in kwargs:
+        if private_key_file is None and 'privateKeyFile' in kwargs:
             private_key_file = kwargs['privateKeyFile']
-        if 'privateKeyPassphrase' in kwargs:
+        if private_key_passphrase is None and 'privateKeyPassphrase' in kwargs:
             private_key_passphrase = kwargs['privateKeyPassphrase']
-        if 'producerProperties' in kwargs:
+        if producer_properties is None and 'producerProperties' in kwargs:
             producer_properties = kwargs['producerProperties']
-        if 'publicKeyFingerprint' in kwargs:
+        if public_key_fingerprint is None and 'publicKeyFingerprint' in kwargs:
             public_key_fingerprint = kwargs['publicKeyFingerprint']
-        if 'sasToken' in kwargs:
+        if sas_token is None and 'sasToken' in kwargs:
             sas_token = kwargs['sasToken']
-        if 'secretAccessKey' in kwargs:
+        if secret_access_key is None and 'secretAccessKey' in kwargs:
             secret_access_key = kwargs['secretAccessKey']
-        if 'securityProtocol' in kwargs:
+        if security_protocol is None and 'securityProtocol' in kwargs:
             security_protocol = kwargs['securityProtocol']
-        if 'sessionMode' in kwargs:
+        if session_mode is None and 'sessionMode' in kwargs:
             session_mode = kwargs['sessionMode']
-        if 'shouldUseJndi' in kwargs:
+        if should_use_jndi is None and 'shouldUseJndi' in kwargs:
             should_use_jndi = kwargs['shouldUseJndi']
-        if 'shouldValidateServerCertificate' in kwargs:
+        if should_validate_server_certificate is None and 'shouldValidateServerCertificate' in kwargs:
             should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
-        if 'sslCa' in kwargs:
+        if ssl_ca is None and 'sslCa' in kwargs:
             ssl_ca = kwargs['sslCa']
-        if 'sslCert' in kwargs:
+        if ssl_cert is None and 'sslCert' in kwargs:
             ssl_cert = kwargs['sslCert']
-        if 'sslCrl' in kwargs:
+        if ssl_crl is None and 'sslCrl' in kwargs:
             ssl_crl = kwargs['sslCrl']
-        if 'sslKey' in kwargs:
+        if ssl_key is None and 'sslKey' in kwargs:
             ssl_key = kwargs['sslKey']
-        if 'sslKeyPassword' in kwargs:
+        if ssl_key_password is None and 'sslKeyPassword' in kwargs:
             ssl_key_password = kwargs['sslKeyPassword']
-        if 'sslMode' in kwargs:
+        if ssl_mode is None and 'sslMode' in kwargs:
             ssl_mode = kwargs['sslMode']
-        if 'streamPoolId' in kwargs:
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
             stream_pool_id = kwargs['streamPoolId']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'technologyType' in kwargs:
+        if technology_type is None and 'technologyType' in kwargs:
             technology_type = kwargs['technologyType']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'trustStore' in kwargs:
+        if trust_store is None and 'trustStore' in kwargs:
             trust_store = kwargs['trustStore']
-        if 'trustStorePassword' in kwargs:
+        if trust_store_password is None and 'trustStorePassword' in kwargs:
             trust_store_password = kwargs['trustStorePassword']
-        if 'userId' in kwargs:
+        if user_id is None and 'userId' in kwargs:
             user_id = kwargs['userId']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if access_key_id is not None:

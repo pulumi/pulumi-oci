@@ -57,11 +57,11 @@ import (
 //						DatastoreType:  pulumi.Any(_var.Sddc_datastores_datastore_type),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Sddc_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				HcxAction:                        pulumi.Any(_var.Hcx_action),

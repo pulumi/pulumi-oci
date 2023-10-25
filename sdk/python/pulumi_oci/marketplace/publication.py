@@ -55,35 +55,47 @@ class PublicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             is_agreement_acknowledged: pulumi.Input[bool],
-             listing_type: pulumi.Input[str],
-             package_details: pulumi.Input['PublicationPackageDetailsArgs'],
-             short_description: pulumi.Input[str],
-             support_contacts: pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_agreement_acknowledged: Optional[pulumi.Input[bool]] = None,
+             listing_type: Optional[pulumi.Input[str]] = None,
+             package_details: Optional[pulumi.Input['PublicationPackageDetailsArgs']] = None,
+             short_description: Optional[pulumi.Input[str]] = None,
+             support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              long_description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isAgreementAcknowledged' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_agreement_acknowledged is None and 'isAgreementAcknowledged' in kwargs:
             is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
-        if 'listingType' in kwargs:
+        if is_agreement_acknowledged is None:
+            raise TypeError("Missing 'is_agreement_acknowledged' argument")
+        if listing_type is None and 'listingType' in kwargs:
             listing_type = kwargs['listingType']
-        if 'packageDetails' in kwargs:
+        if listing_type is None:
+            raise TypeError("Missing 'listing_type' argument")
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'shortDescription' in kwargs:
+        if package_details is None:
+            raise TypeError("Missing 'package_details' argument")
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'supportContacts' in kwargs:
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if support_contacts is None and 'supportContacts' in kwargs:
             support_contacts = kwargs['supportContacts']
-        if 'definedTags' in kwargs:
+        if support_contacts is None:
+            raise TypeError("Missing 'support_contacts' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'longDescription' in kwargs:
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
 
         _setter("compartment_id", compartment_id)
@@ -294,31 +306,31 @@ class _PublicationState:
              support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
              supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAgreementAcknowledged' in kwargs:
+        if is_agreement_acknowledged is None and 'isAgreementAcknowledged' in kwargs:
             is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
-        if 'listingType' in kwargs:
+        if listing_type is None and 'listingType' in kwargs:
             listing_type = kwargs['listingType']
-        if 'longDescription' in kwargs:
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
-        if 'packageDetails' in kwargs:
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'packageType' in kwargs:
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'shortDescription' in kwargs:
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'supportContacts' in kwargs:
+        if support_contacts is None and 'supportContacts' in kwargs:
             support_contacts = kwargs['supportContacts']
-        if 'supportedOperatingSystems' in kwargs:
+        if supported_operating_systems is None and 'supportedOperatingSystems' in kwargs:
             supported_operating_systems = kwargs['supportedOperatingSystems']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -721,11 +733,7 @@ class Publication(pulumi.CustomResource):
             __props__.__dict__["listing_type"] = listing_type
             __props__.__dict__["long_description"] = long_description
             __props__.__dict__["name"] = name
-            if package_details is not None and not isinstance(package_details, PublicationPackageDetailsArgs):
-                package_details = package_details or {}
-                def _setter(key, value):
-                    package_details[key] = value
-                PublicationPackageDetailsArgs._configure(_setter, **package_details)
+            package_details = _utilities.configure(package_details, PublicationPackageDetailsArgs, True)
             if package_details is None and not opts.urn:
                 raise TypeError("Missing required property 'package_details'")
             __props__.__dict__["package_details"] = package_details

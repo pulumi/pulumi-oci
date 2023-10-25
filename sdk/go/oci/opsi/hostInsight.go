@@ -35,14 +35,14 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				EntitySource:  pulumi.Any(_var.Host_insight_entity_source),
 //				ComputeId:     pulumi.Any(oci_opsi_compute.Test_compute.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				EnterpriseManagerBridgeId:         pulumi.Any(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
 //				EnterpriseManagerEntityIdentifier: pulumi.Any(_var.Host_insight_enterprise_manager_entity_identifier),
 //				EnterpriseManagerIdentifier:       pulumi.Any(_var.Host_insight_enterprise_manager_identifier),
 //				ExadataInsightId:                  pulumi.Any(oci_opsi_exadata_insight.Test_exadata_insight.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),

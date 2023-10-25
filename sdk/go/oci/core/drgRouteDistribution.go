@@ -37,11 +37,11 @@ import (
 //			_, err := Core.NewDrgRouteDistribution(ctx, "testDrgRouteDistribution", &Core.DrgRouteDistributionArgs{
 //				DistributionType: pulumi.Any(_var.Drg_route_distribution_distribution_type),
 //				DrgId:            pulumi.Any(oci_core_drg.Test_drg.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Drg_route_distribution_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

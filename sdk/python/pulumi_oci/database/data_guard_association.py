@@ -157,12 +157,12 @@ class DataGuardAssociationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             creation_type: pulumi.Input[str],
-             database_admin_password: pulumi.Input[str],
-             database_id: pulumi.Input[str],
-             delete_standby_db_home_on_delete: pulumi.Input[str],
-             protection_mode: pulumi.Input[str],
-             transport_type: pulumi.Input[str],
+             creation_type: Optional[pulumi.Input[str]] = None,
+             database_admin_password: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             transport_type: Optional[pulumi.Input[str]] = None,
              availability_domain: Optional[pulumi.Input[str]] = None,
              backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -190,69 +190,81 @@ class DataGuardAssociationArgs:
              storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'creationType' in kwargs:
+        if creation_type is None and 'creationType' in kwargs:
             creation_type = kwargs['creationType']
-        if 'databaseAdminPassword' in kwargs:
+        if creation_type is None:
+            raise TypeError("Missing 'creation_type' argument")
+        if database_admin_password is None and 'databaseAdminPassword' in kwargs:
             database_admin_password = kwargs['databaseAdminPassword']
-        if 'databaseId' in kwargs:
+        if database_admin_password is None:
+            raise TypeError("Missing 'database_admin_password' argument")
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'deleteStandbyDbHomeOnDelete' in kwargs:
+        if database_id is None:
+            raise TypeError("Missing 'database_id' argument")
+        if delete_standby_db_home_on_delete is None and 'deleteStandbyDbHomeOnDelete' in kwargs:
             delete_standby_db_home_on_delete = kwargs['deleteStandbyDbHomeOnDelete']
-        if 'protectionMode' in kwargs:
+        if delete_standby_db_home_on_delete is None:
+            raise TypeError("Missing 'delete_standby_db_home_on_delete' argument")
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'transportType' in kwargs:
+        if protection_mode is None:
+            raise TypeError("Missing 'protection_mode' argument")
+        if transport_type is None and 'transportType' in kwargs:
             transport_type = kwargs['transportType']
-        if 'availabilityDomain' in kwargs:
+        if transport_type is None:
+            raise TypeError("Missing 'transport_type' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupNetworkNsgIds' in kwargs:
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
             backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'databaseDefinedTags' in kwargs:
+        if database_defined_tags is None and 'databaseDefinedTags' in kwargs:
             database_defined_tags = kwargs['databaseDefinedTags']
-        if 'databaseFreeformTags' in kwargs:
+        if database_freeform_tags is None and 'databaseFreeformTags' in kwargs:
             database_freeform_tags = kwargs['databaseFreeformTags']
-        if 'databaseSoftwareImageId' in kwargs:
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
             database_software_image_id = kwargs['databaseSoftwareImageId']
-        if 'dbSystemDefinedTags' in kwargs:
+        if db_system_defined_tags is None and 'dbSystemDefinedTags' in kwargs:
             db_system_defined_tags = kwargs['dbSystemDefinedTags']
-        if 'dbSystemFreeformTags' in kwargs:
+        if db_system_freeform_tags is None and 'dbSystemFreeformTags' in kwargs:
             db_system_freeform_tags = kwargs['dbSystemFreeformTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomains' in kwargs:
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'isActiveDataGuardEnabled' in kwargs:
+        if is_active_data_guard_enabled is None and 'isActiveDataGuardEnabled' in kwargs:
             is_active_data_guard_enabled = kwargs['isActiveDataGuardEnabled']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'peerDbHomeId' in kwargs:
+        if peer_db_home_id is None and 'peerDbHomeId' in kwargs:
             peer_db_home_id = kwargs['peerDbHomeId']
-        if 'peerDbSystemId' in kwargs:
+        if peer_db_system_id is None and 'peerDbSystemId' in kwargs:
             peer_db_system_id = kwargs['peerDbSystemId']
-        if 'peerDbUniqueName' in kwargs:
+        if peer_db_unique_name is None and 'peerDbUniqueName' in kwargs:
             peer_db_unique_name = kwargs['peerDbUniqueName']
-        if 'peerSidPrefix' in kwargs:
+        if peer_sid_prefix is None and 'peerSidPrefix' in kwargs:
             peer_sid_prefix = kwargs['peerSidPrefix']
-        if 'peerVmClusterId' in kwargs:
+        if peer_vm_cluster_id is None and 'peerVmClusterId' in kwargs:
             peer_vm_cluster_id = kwargs['peerVmClusterId']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'storageVolumePerformanceMode' in kwargs:
+        if storage_volume_performance_mode is None and 'storageVolumePerformanceMode' in kwargs:
             storage_volume_performance_mode = kwargs['storageVolumePerformanceMode']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         _setter("creation_type", creation_type)
@@ -955,83 +967,83 @@ class _DataGuardAssociationState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
              transport_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applyLag' in kwargs:
+        if apply_lag is None and 'applyLag' in kwargs:
             apply_lag = kwargs['applyLag']
-        if 'applyRate' in kwargs:
+        if apply_rate is None and 'applyRate' in kwargs:
             apply_rate = kwargs['applyRate']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupNetworkNsgIds' in kwargs:
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
             backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'creationType' in kwargs:
+        if creation_type is None and 'creationType' in kwargs:
             creation_type = kwargs['creationType']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'databaseAdminPassword' in kwargs:
+        if database_admin_password is None and 'databaseAdminPassword' in kwargs:
             database_admin_password = kwargs['databaseAdminPassword']
-        if 'databaseDefinedTags' in kwargs:
+        if database_defined_tags is None and 'databaseDefinedTags' in kwargs:
             database_defined_tags = kwargs['databaseDefinedTags']
-        if 'databaseFreeformTags' in kwargs:
+        if database_freeform_tags is None and 'databaseFreeformTags' in kwargs:
             database_freeform_tags = kwargs['databaseFreeformTags']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseSoftwareImageId' in kwargs:
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
             database_software_image_id = kwargs['databaseSoftwareImageId']
-        if 'dbSystemDefinedTags' in kwargs:
+        if db_system_defined_tags is None and 'dbSystemDefinedTags' in kwargs:
             db_system_defined_tags = kwargs['dbSystemDefinedTags']
-        if 'dbSystemFreeformTags' in kwargs:
+        if db_system_freeform_tags is None and 'dbSystemFreeformTags' in kwargs:
             db_system_freeform_tags = kwargs['dbSystemFreeformTags']
-        if 'deleteStandbyDbHomeOnDelete' in kwargs:
+        if delete_standby_db_home_on_delete is None and 'deleteStandbyDbHomeOnDelete' in kwargs:
             delete_standby_db_home_on_delete = kwargs['deleteStandbyDbHomeOnDelete']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomains' in kwargs:
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'isActiveDataGuardEnabled' in kwargs:
+        if is_active_data_guard_enabled is None and 'isActiveDataGuardEnabled' in kwargs:
             is_active_data_guard_enabled = kwargs['isActiveDataGuardEnabled']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'peerDataGuardAssociationId' in kwargs:
+        if peer_data_guard_association_id is None and 'peerDataGuardAssociationId' in kwargs:
             peer_data_guard_association_id = kwargs['peerDataGuardAssociationId']
-        if 'peerDatabaseId' in kwargs:
+        if peer_database_id is None and 'peerDatabaseId' in kwargs:
             peer_database_id = kwargs['peerDatabaseId']
-        if 'peerDbHomeId' in kwargs:
+        if peer_db_home_id is None and 'peerDbHomeId' in kwargs:
             peer_db_home_id = kwargs['peerDbHomeId']
-        if 'peerDbSystemId' in kwargs:
+        if peer_db_system_id is None and 'peerDbSystemId' in kwargs:
             peer_db_system_id = kwargs['peerDbSystemId']
-        if 'peerDbUniqueName' in kwargs:
+        if peer_db_unique_name is None and 'peerDbUniqueName' in kwargs:
             peer_db_unique_name = kwargs['peerDbUniqueName']
-        if 'peerRole' in kwargs:
+        if peer_role is None and 'peerRole' in kwargs:
             peer_role = kwargs['peerRole']
-        if 'peerSidPrefix' in kwargs:
+        if peer_sid_prefix is None and 'peerSidPrefix' in kwargs:
             peer_sid_prefix = kwargs['peerSidPrefix']
-        if 'peerVmClusterId' in kwargs:
+        if peer_vm_cluster_id is None and 'peerVmClusterId' in kwargs:
             peer_vm_cluster_id = kwargs['peerVmClusterId']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'storageVolumePerformanceMode' in kwargs:
+        if storage_volume_performance_mode is None and 'storageVolumePerformanceMode' in kwargs:
             storage_volume_performance_mode = kwargs['storageVolumePerformanceMode']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'transportType' in kwargs:
+        if transport_type is None and 'transportType' in kwargs:
             transport_type = kwargs['transportType']
 
         if apply_lag is not None:
@@ -1957,11 +1969,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             if creation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'creation_type'")
             __props__.__dict__["creation_type"] = creation_type
-            if data_collection_options is not None and not isinstance(data_collection_options, DataGuardAssociationDataCollectionOptionsArgs):
-                data_collection_options = data_collection_options or {}
-                def _setter(key, value):
-                    data_collection_options[key] = value
-                DataGuardAssociationDataCollectionOptionsArgs._configure(_setter, **data_collection_options)
+            data_collection_options = _utilities.configure(data_collection_options, DataGuardAssociationDataCollectionOptionsArgs, True)
             __props__.__dict__["data_collection_options"] = data_collection_options
             if database_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'database_admin_password'")

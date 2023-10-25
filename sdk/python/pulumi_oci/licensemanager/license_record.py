@@ -57,37 +57,45 @@ class LicenseRecordArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: pulumi.Input[str],
-             is_perpetual: pulumi.Input[bool],
-             is_unlimited: pulumi.Input[bool],
-             product_license_id: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_perpetual: Optional[pulumi.Input[bool]] = None,
+             is_unlimited: Optional[pulumi.Input[bool]] = None,
+             product_license_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              expiration_date: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              license_count: Optional[pulumi.Input[int]] = None,
              product_id: Optional[pulumi.Input[str]] = None,
              support_end_date: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isPerpetual' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_perpetual is None and 'isPerpetual' in kwargs:
             is_perpetual = kwargs['isPerpetual']
-        if 'isUnlimited' in kwargs:
+        if is_perpetual is None:
+            raise TypeError("Missing 'is_perpetual' argument")
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'productLicenseId' in kwargs:
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if product_license_id is None and 'productLicenseId' in kwargs:
             product_license_id = kwargs['productLicenseId']
-        if 'definedTags' in kwargs:
+        if product_license_id is None:
+            raise TypeError("Missing 'product_license_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'expirationDate' in kwargs:
+        if expiration_date is None and 'expirationDate' in kwargs:
             expiration_date = kwargs['expirationDate']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'licenseCount' in kwargs:
+        if license_count is None and 'licenseCount' in kwargs:
             license_count = kwargs['licenseCount']
-        if 'productId' in kwargs:
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 'supportEndDate' in kwargs:
+        if support_end_date is None and 'supportEndDate' in kwargs:
             support_end_date = kwargs['supportEndDate']
 
         _setter("display_name", display_name)
@@ -316,39 +324,39 @@ class _LicenseRecordState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'expirationDate' in kwargs:
+        if expiration_date is None and 'expirationDate' in kwargs:
             expiration_date = kwargs['expirationDate']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPerpetual' in kwargs:
+        if is_perpetual is None and 'isPerpetual' in kwargs:
             is_perpetual = kwargs['isPerpetual']
-        if 'isUnlimited' in kwargs:
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'licenseCount' in kwargs:
+        if license_count is None and 'licenseCount' in kwargs:
             license_count = kwargs['licenseCount']
-        if 'licenseUnit' in kwargs:
+        if license_unit is None and 'licenseUnit' in kwargs:
             license_unit = kwargs['licenseUnit']
-        if 'productId' in kwargs:
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 'productLicense' in kwargs:
+        if product_license is None and 'productLicense' in kwargs:
             product_license = kwargs['productLicense']
-        if 'productLicenseId' in kwargs:
+        if product_license_id is None and 'productLicenseId' in kwargs:
             product_license_id = kwargs['productLicenseId']
-        if 'supportEndDate' in kwargs:
+        if support_end_date is None and 'supportEndDate' in kwargs:
             support_end_date = kwargs['supportEndDate']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

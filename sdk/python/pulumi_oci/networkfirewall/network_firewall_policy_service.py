@@ -41,16 +41,22 @@ class NetworkFirewallPolicyServiceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: pulumi.Input[str],
-             port_ranges: pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]],
-             type: pulumi.Input[str],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'portRanges' in kwargs:
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if port_ranges is None and 'portRanges' in kwargs:
             port_ranges = kwargs['portRanges']
+        if port_ranges is None:
+            raise TypeError("Missing 'port_ranges' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("network_firewall_policy_id", network_firewall_policy_id)
         _setter("port_ranges", port_ranges)
@@ -147,13 +153,13 @@ class _NetworkFirewallPolicyServiceState:
              parent_resource_id: Optional[pulumi.Input[str]] = None,
              port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkFirewallPolicyId' in kwargs:
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
             network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if 'parentResourceId' in kwargs:
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
             parent_resource_id = kwargs['parentResourceId']
-        if 'portRanges' in kwargs:
+        if port_ranges is None and 'portRanges' in kwargs:
             port_ranges = kwargs['portRanges']
 
         if name is not None:

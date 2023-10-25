@@ -44,11 +44,11 @@ import (
 //				FusionEnvironmentFamilyId: pulumi.Any(oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id),
 //				FusionEnvironmentType:     pulumi.Any(_var.Fusion_environment_fusion_environment_type),
 //				AdditionalLanguagePacks:   pulumi.Any(_var.Fusion_environment_additional_language_packs),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DnsPrefix: pulumi.Any(_var.Fusion_environment_dns_prefix),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),

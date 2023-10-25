@@ -35,10 +35,10 @@ import (
 //				BackupRetentionPeriodInDays: pulumi.Any(_var.Protection_policy_backup_retention_period_in_days),
 //				CompartmentId:               pulumi.Any(_var.Compartment_id),
 //				DisplayName:                 pulumi.Any(_var.Protection_policy_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

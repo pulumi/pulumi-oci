@@ -47,7 +47,7 @@ import (
 //				Arguments:     pulumi.Any(_var.Application_arguments),
 //				ClassName:     pulumi.Any(_var.Application_class_name),
 //				Configuration: pulumi.Any(_var.Application_configuration),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Application_description),
@@ -61,7 +61,7 @@ import (
 //					Ocpus:       pulumi.Any(_var.Application_executor_shape_config_ocpus),
 //				},
 //				FileUri: pulumi.Any(_var.Application_file_uri),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IdleTimeoutInMinutes: pulumi.Any(_var.Application_idle_timeout_in_minutes),

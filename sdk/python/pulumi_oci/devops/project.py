@@ -43,21 +43,25 @@ class ProjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             notification_config: pulumi.Input['ProjectNotificationConfigArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             notification_config: Optional[pulumi.Input['ProjectNotificationConfigArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'notificationConfig' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if notification_config is None and 'notificationConfig' in kwargs:
             notification_config = kwargs['notificationConfig']
-        if 'definedTags' in kwargs:
+        if notification_config is None:
+            raise TypeError("Missing 'notification_config' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -204,23 +208,23 @@ class _ProjectState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'notificationConfig' in kwargs:
+        if notification_config is None and 'notificationConfig' in kwargs:
             notification_config = kwargs['notificationConfig']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -527,11 +531,7 @@ class Project(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
-            if notification_config is not None and not isinstance(notification_config, ProjectNotificationConfigArgs):
-                notification_config = notification_config or {}
-                def _setter(key, value):
-                    notification_config[key] = value
-                ProjectNotificationConfigArgs._configure(_setter, **notification_config)
+            notification_config = _utilities.configure(notification_config, ProjectNotificationConfigArgs, True)
             if notification_config is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_config'")
             __props__.__dict__["notification_config"] = notification_config

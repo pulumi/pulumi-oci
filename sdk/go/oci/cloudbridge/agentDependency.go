@@ -38,12 +38,12 @@ import (
 //				DisplayName:    pulumi.Any(_var.Agent_dependency_display_name),
 //				Namespace:      pulumi.Any(_var.Agent_dependency_namespace),
 //				Object:         pulumi.Any(_var.Agent_dependency_object),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DependencyVersion: pulumi.Any(_var.Agent_dependency_dependency_version),
 //				Description:       pulumi.Any(_var.Agent_dependency_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				SystemTags: pulumi.Any(_var.Agent_dependency_system_tags),

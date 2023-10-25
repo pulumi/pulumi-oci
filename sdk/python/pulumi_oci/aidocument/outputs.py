@@ -88,9 +88,9 @@ class ModelComponentModel(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              model_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
 
         if model_id is not None:
@@ -152,15 +152,15 @@ class ModelMetric(dict):
              label_metrics_reports: Optional[Sequence['outputs.ModelMetricLabelMetricsReport']] = None,
              model_type: Optional[str] = None,
              overall_metrics_reports: Optional[Sequence['outputs.ModelMetricOverallMetricsReport']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetSummaries' in kwargs:
+        if dataset_summaries is None and 'datasetSummaries' in kwargs:
             dataset_summaries = kwargs['datasetSummaries']
-        if 'labelMetricsReports' in kwargs:
+        if label_metrics_reports is None and 'labelMetricsReports' in kwargs:
             label_metrics_reports = kwargs['labelMetricsReports']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'overallMetricsReports' in kwargs:
+        if overall_metrics_reports is None and 'overallMetricsReports' in kwargs:
             overall_metrics_reports = kwargs['overallMetricsReports']
 
         if dataset_summaries is not None:
@@ -249,13 +249,13 @@ class ModelMetricDatasetSummary(dict):
              test_sample_count: Optional[int] = None,
              training_sample_count: Optional[int] = None,
              validation_sample_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'testSampleCount' in kwargs:
+        if test_sample_count is None and 'testSampleCount' in kwargs:
             test_sample_count = kwargs['testSampleCount']
-        if 'trainingSampleCount' in kwargs:
+        if training_sample_count is None and 'trainingSampleCount' in kwargs:
             training_sample_count = kwargs['trainingSampleCount']
-        if 'validationSampleCount' in kwargs:
+        if validation_sample_count is None and 'validationSampleCount' in kwargs:
             validation_sample_count = kwargs['validationSampleCount']
 
         if test_sample_count is not None:
@@ -338,13 +338,13 @@ class ModelMetricLabelMetricsReport(dict):
              document_count: Optional[int] = None,
              label: Optional[str] = None,
              mean_average_precision: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
 
         if confidence_entries is not None:
@@ -420,7 +420,7 @@ class ModelMetricLabelMetricsReportConfidenceEntry(dict):
              precision: Optional[float] = None,
              recall: Optional[float] = None,
              threshold: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if accuracy is not None:
@@ -519,13 +519,13 @@ class ModelMetricOverallMetricsReport(dict):
              confidence_entries: Optional[Sequence['outputs.ModelMetricOverallMetricsReportConfidenceEntry']] = None,
              document_count: Optional[int] = None,
              mean_average_precision: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
 
         if confidence_entries is not None:
@@ -591,7 +591,7 @@ class ModelMetricOverallMetricsReportConfidenceEntry(dict):
              precision: Optional[float] = None,
              recall: Optional[float] = None,
              threshold: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if accuracy is not None:
@@ -695,16 +695,18 @@ class ModelTestingDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
 
         _setter("dataset_type", dataset_type)
@@ -811,16 +813,18 @@ class ModelTrainingDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
 
         _setter("dataset_type", dataset_type)
@@ -927,16 +931,18 @@ class ModelValidationDataset(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_type: str,
+             dataset_type: Optional[str] = None,
              bucket: Optional[str] = None,
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetType' in kwargs:
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
-        if 'datasetId' in kwargs:
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
 
         _setter("dataset_type", dataset_type)
@@ -1033,14 +1039,16 @@ class ProcessorJobInputLocation(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_type: str,
+             source_type: Optional[str] = None,
              data: Optional[str] = None,
              object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'objectLocations' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if object_locations is None and 'objectLocations' in kwargs:
             object_locations = kwargs['objectLocations']
 
         _setter("source_type", source_type)
@@ -1097,7 +1105,7 @@ class ProcessorJobInputLocationObjectLocation(dict):
              bucket: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -1152,11 +1160,17 @@ class ProcessorJobOutputLocation(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1238,18 +1252,22 @@ class ProcessorJobProcessorConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             features: Sequence['outputs.ProcessorJobProcessorConfigFeature'],
-             processor_type: str,
+             features: Optional[Sequence['outputs.ProcessorJobProcessorConfigFeature']] = None,
+             processor_type: Optional[str] = None,
              document_type: Optional[str] = None,
              is_zip_output_enabled: Optional[bool] = None,
              language: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'processorType' in kwargs:
+        if features is None:
+            raise TypeError("Missing 'features' argument")
+        if processor_type is None and 'processorType' in kwargs:
             processor_type = kwargs['processorType']
-        if 'documentType' in kwargs:
+        if processor_type is None:
+            raise TypeError("Missing 'processor_type' argument")
+        if document_type is None and 'documentType' in kwargs:
             document_type = kwargs['documentType']
-        if 'isZipOutputEnabled' in kwargs:
+        if is_zip_output_enabled is None and 'isZipOutputEnabled' in kwargs:
             is_zip_output_enabled = kwargs['isZipOutputEnabled']
 
         _setter("features", features)
@@ -1357,22 +1375,24 @@ class ProcessorJobProcessorConfigFeature(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             feature_type: str,
+             feature_type: Optional[str] = None,
              generate_searchable_pdf: Optional[bool] = None,
              max_results: Optional[int] = None,
              model_id: Optional[str] = None,
              tenancy_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'featureType' in kwargs:
+        if feature_type is None and 'featureType' in kwargs:
             feature_type = kwargs['featureType']
-        if 'generateSearchablePdf' in kwargs:
+        if feature_type is None:
+            raise TypeError("Missing 'feature_type' argument")
+        if generate_searchable_pdf is None and 'generateSearchablePdf' in kwargs:
             generate_searchable_pdf = kwargs['generateSearchablePdf']
-        if 'maxResults' in kwargs:
+        if max_results is None and 'maxResults' in kwargs:
             max_results = kwargs['maxResults']
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
 
         _setter("feature_type", feature_type)
@@ -1440,11 +1460,13 @@ class GetModelComponentModelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             model_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             model_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
 
         _setter("model_id", model_id)
 
@@ -1480,20 +1502,28 @@ class GetModelMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_summaries: Sequence['outputs.GetModelMetricDatasetSummaryResult'],
-             label_metrics_reports: Sequence['outputs.GetModelMetricLabelMetricsReportResult'],
-             model_type: str,
-             overall_metrics_reports: Sequence['outputs.GetModelMetricOverallMetricsReportResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             dataset_summaries: Optional[Sequence['outputs.GetModelMetricDatasetSummaryResult']] = None,
+             label_metrics_reports: Optional[Sequence['outputs.GetModelMetricLabelMetricsReportResult']] = None,
+             model_type: Optional[str] = None,
+             overall_metrics_reports: Optional[Sequence['outputs.GetModelMetricOverallMetricsReportResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetSummaries' in kwargs:
+        if dataset_summaries is None and 'datasetSummaries' in kwargs:
             dataset_summaries = kwargs['datasetSummaries']
-        if 'labelMetricsReports' in kwargs:
+        if dataset_summaries is None:
+            raise TypeError("Missing 'dataset_summaries' argument")
+        if label_metrics_reports is None and 'labelMetricsReports' in kwargs:
             label_metrics_reports = kwargs['labelMetricsReports']
-        if 'modelType' in kwargs:
+        if label_metrics_reports is None:
+            raise TypeError("Missing 'label_metrics_reports' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'overallMetricsReports' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if overall_metrics_reports is None and 'overallMetricsReports' in kwargs:
             overall_metrics_reports = kwargs['overallMetricsReports']
+        if overall_metrics_reports is None:
+            raise TypeError("Missing 'overall_metrics_reports' argument")
 
         _setter("dataset_summaries", dataset_summaries)
         _setter("label_metrics_reports", label_metrics_reports)
@@ -1553,17 +1583,23 @@ class GetModelMetricDatasetSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             test_sample_count: int,
-             training_sample_count: int,
-             validation_sample_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             test_sample_count: Optional[int] = None,
+             training_sample_count: Optional[int] = None,
+             validation_sample_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'testSampleCount' in kwargs:
+        if test_sample_count is None and 'testSampleCount' in kwargs:
             test_sample_count = kwargs['testSampleCount']
-        if 'trainingSampleCount' in kwargs:
+        if test_sample_count is None:
+            raise TypeError("Missing 'test_sample_count' argument")
+        if training_sample_count is None and 'trainingSampleCount' in kwargs:
             training_sample_count = kwargs['trainingSampleCount']
-        if 'validationSampleCount' in kwargs:
+        if training_sample_count is None:
+            raise TypeError("Missing 'training_sample_count' argument")
+        if validation_sample_count is None and 'validationSampleCount' in kwargs:
             validation_sample_count = kwargs['validationSampleCount']
+        if validation_sample_count is None:
+            raise TypeError("Missing 'validation_sample_count' argument")
 
         _setter("test_sample_count", test_sample_count)
         _setter("training_sample_count", training_sample_count)
@@ -1617,18 +1653,26 @@ class GetModelMetricLabelMetricsReportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             confidence_entries: Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult'],
-             document_count: int,
-             label: str,
-             mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             confidence_entries: Optional[Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult']] = None,
+             document_count: Optional[int] = None,
+             label: Optional[str] = None,
+             mean_average_precision: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if confidence_entries is None:
+            raise TypeError("Missing 'confidence_entries' argument")
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if document_count is None:
+            raise TypeError("Missing 'document_count' argument")
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
+        if mean_average_precision is None:
+            raise TypeError("Missing 'mean_average_precision' argument")
 
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
@@ -1694,13 +1738,23 @@ class GetModelMetricLabelMetricsReportConfidenceEntryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             accuracy: float,
-             f1score: float,
-             precision: float,
-             recall: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             accuracy: Optional[float] = None,
+             f1score: Optional[float] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if accuracy is None:
+            raise TypeError("Missing 'accuracy' argument")
+        if f1score is None:
+            raise TypeError("Missing 'f1score' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
@@ -1769,17 +1823,23 @@ class GetModelMetricOverallMetricsReportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             confidence_entries: Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult'],
-             document_count: int,
-             mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             confidence_entries: Optional[Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult']] = None,
+             document_count: Optional[int] = None,
+             mean_average_precision: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if confidence_entries is None:
+            raise TypeError("Missing 'confidence_entries' argument")
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if document_count is None:
+            raise TypeError("Missing 'document_count' argument")
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
+        if mean_average_precision is None:
+            raise TypeError("Missing 'mean_average_precision' argument")
 
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
@@ -1836,13 +1896,23 @@ class GetModelMetricOverallMetricsReportConfidenceEntryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             accuracy: float,
-             f1score: float,
-             precision: float,
-             recall: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             accuracy: Optional[float] = None,
+             f1score: Optional[float] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if accuracy is None:
+            raise TypeError("Missing 'accuracy' argument")
+        if f1score is None:
+            raise TypeError("Missing 'f1score' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
@@ -1917,17 +1987,27 @@ class GetModelTestingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -2002,17 +2082,27 @@ class GetModelTrainingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -2087,17 +2177,27 @@ class GetModelValidationDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -2161,11 +2261,15 @@ class GetModelsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2199,9 +2303,11 @@ class GetModelsModelCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetModelsModelCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2300,76 +2406,128 @@ class GetModelsModelCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             component_models: Sequence['outputs.GetModelsModelCollectionItemComponentModelResult'],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_composed_model: bool,
-             is_quick_mode: bool,
-             labels: Sequence[str],
-             lifecycle_details: str,
-             max_training_time_in_hours: float,
-             metrics: Sequence['outputs.GetModelsModelCollectionItemMetricResult'],
-             model_id: str,
-             model_type: str,
-             model_version: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             tenancy_id: str,
-             testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
-             time_created: str,
-             time_updated: str,
-             trained_time_in_hours: float,
-             training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
-             validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             component_models: Optional[Sequence['outputs.GetModelsModelCollectionItemComponentModelResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_composed_model: Optional[bool] = None,
+             is_quick_mode: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             lifecycle_details: Optional[str] = None,
+             max_training_time_in_hours: Optional[float] = None,
+             metrics: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricResult']] = None,
+             model_id: Optional[str] = None,
+             model_type: Optional[str] = None,
+             model_version: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             tenancy_id: Optional[str] = None,
+             testing_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trained_time_in_hours: Optional[float] = None,
+             training_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']] = None,
+             validation_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentModels' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if component_models is None and 'componentModels' in kwargs:
             component_models = kwargs['componentModels']
-        if 'definedTags' in kwargs:
+        if component_models is None:
+            raise TypeError("Missing 'component_models' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isComposedModel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_composed_model is None and 'isComposedModel' in kwargs:
             is_composed_model = kwargs['isComposedModel']
-        if 'isQuickMode' in kwargs:
+        if is_composed_model is None:
+            raise TypeError("Missing 'is_composed_model' argument")
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
             is_quick_mode = kwargs['isQuickMode']
-        if 'lifecycleDetails' in kwargs:
+        if is_quick_mode is None:
+            raise TypeError("Missing 'is_quick_mode' argument")
+        if labels is None:
+            raise TypeError("Missing 'labels' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maxTrainingTimeInHours' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_training_time_in_hours is None and 'maxTrainingTimeInHours' in kwargs:
             max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
-        if 'modelId' in kwargs:
+        if max_training_time_in_hours is None:
+            raise TypeError("Missing 'max_training_time_in_hours' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'modelType' in kwargs:
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'projectId' in kwargs:
+        if model_version is None:
+            raise TypeError("Missing 'model_version' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenancyId' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'testingDatasets' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if testing_datasets is None and 'testingDatasets' in kwargs:
             testing_datasets = kwargs['testingDatasets']
-        if 'timeCreated' in kwargs:
+        if testing_datasets is None:
+            raise TypeError("Missing 'testing_datasets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'trainedTimeInHours' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trained_time_in_hours is None and 'trainedTimeInHours' in kwargs:
             trained_time_in_hours = kwargs['trainedTimeInHours']
-        if 'trainingDatasets' in kwargs:
+        if trained_time_in_hours is None:
+            raise TypeError("Missing 'trained_time_in_hours' argument")
+        if training_datasets is None and 'trainingDatasets' in kwargs:
             training_datasets = kwargs['trainingDatasets']
-        if 'validationDatasets' in kwargs:
+        if training_datasets is None:
+            raise TypeError("Missing 'training_datasets' argument")
+        if validation_datasets is None and 'validationDatasets' in kwargs:
             validation_datasets = kwargs['validationDatasets']
+        if validation_datasets is None:
+            raise TypeError("Missing 'validation_datasets' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("component_models", component_models)
@@ -2621,11 +2779,13 @@ class GetModelsModelCollectionItemComponentModelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             model_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             model_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modelId' in kwargs:
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
 
         _setter("model_id", model_id)
 
@@ -2661,20 +2821,28 @@ class GetModelsModelCollectionItemMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             dataset_summaries: Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult'],
-             label_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult'],
-             model_type: str,
-             overall_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             dataset_summaries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult']] = None,
+             label_metrics_reports: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult']] = None,
+             model_type: Optional[str] = None,
+             overall_metrics_reports: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetSummaries' in kwargs:
+        if dataset_summaries is None and 'datasetSummaries' in kwargs:
             dataset_summaries = kwargs['datasetSummaries']
-        if 'labelMetricsReports' in kwargs:
+        if dataset_summaries is None:
+            raise TypeError("Missing 'dataset_summaries' argument")
+        if label_metrics_reports is None and 'labelMetricsReports' in kwargs:
             label_metrics_reports = kwargs['labelMetricsReports']
-        if 'modelType' in kwargs:
+        if label_metrics_reports is None:
+            raise TypeError("Missing 'label_metrics_reports' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'overallMetricsReports' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if overall_metrics_reports is None and 'overallMetricsReports' in kwargs:
             overall_metrics_reports = kwargs['overallMetricsReports']
+        if overall_metrics_reports is None:
+            raise TypeError("Missing 'overall_metrics_reports' argument")
 
         _setter("dataset_summaries", dataset_summaries)
         _setter("label_metrics_reports", label_metrics_reports)
@@ -2734,17 +2902,23 @@ class GetModelsModelCollectionItemMetricDatasetSummaryResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             test_sample_count: int,
-             training_sample_count: int,
-             validation_sample_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             test_sample_count: Optional[int] = None,
+             training_sample_count: Optional[int] = None,
+             validation_sample_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'testSampleCount' in kwargs:
+        if test_sample_count is None and 'testSampleCount' in kwargs:
             test_sample_count = kwargs['testSampleCount']
-        if 'trainingSampleCount' in kwargs:
+        if test_sample_count is None:
+            raise TypeError("Missing 'test_sample_count' argument")
+        if training_sample_count is None and 'trainingSampleCount' in kwargs:
             training_sample_count = kwargs['trainingSampleCount']
-        if 'validationSampleCount' in kwargs:
+        if training_sample_count is None:
+            raise TypeError("Missing 'training_sample_count' argument")
+        if validation_sample_count is None and 'validationSampleCount' in kwargs:
             validation_sample_count = kwargs['validationSampleCount']
+        if validation_sample_count is None:
+            raise TypeError("Missing 'validation_sample_count' argument")
 
         _setter("test_sample_count", test_sample_count)
         _setter("training_sample_count", training_sample_count)
@@ -2798,18 +2972,26 @@ class GetModelsModelCollectionItemMetricLabelMetricsReportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             confidence_entries: Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult'],
-             document_count: int,
-             label: str,
-             mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             confidence_entries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult']] = None,
+             document_count: Optional[int] = None,
+             label: Optional[str] = None,
+             mean_average_precision: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if confidence_entries is None:
+            raise TypeError("Missing 'confidence_entries' argument")
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if document_count is None:
+            raise TypeError("Missing 'document_count' argument")
+        if label is None:
+            raise TypeError("Missing 'label' argument")
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
+        if mean_average_precision is None:
+            raise TypeError("Missing 'mean_average_precision' argument")
 
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
@@ -2875,13 +3057,23 @@ class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             accuracy: float,
-             f1score: float,
-             precision: float,
-             recall: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             accuracy: Optional[float] = None,
+             f1score: Optional[float] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if accuracy is None:
+            raise TypeError("Missing 'accuracy' argument")
+        if f1score is None:
+            raise TypeError("Missing 'f1score' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
@@ -2950,17 +3142,23 @@ class GetModelsModelCollectionItemMetricOverallMetricsReportResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             confidence_entries: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult'],
-             document_count: int,
-             mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             confidence_entries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult']] = None,
+             document_count: Optional[int] = None,
+             mean_average_precision: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'confidenceEntries' in kwargs:
+        if confidence_entries is None and 'confidenceEntries' in kwargs:
             confidence_entries = kwargs['confidenceEntries']
-        if 'documentCount' in kwargs:
+        if confidence_entries is None:
+            raise TypeError("Missing 'confidence_entries' argument")
+        if document_count is None and 'documentCount' in kwargs:
             document_count = kwargs['documentCount']
-        if 'meanAveragePrecision' in kwargs:
+        if document_count is None:
+            raise TypeError("Missing 'document_count' argument")
+        if mean_average_precision is None and 'meanAveragePrecision' in kwargs:
             mean_average_precision = kwargs['meanAveragePrecision']
+        if mean_average_precision is None:
+            raise TypeError("Missing 'mean_average_precision' argument")
 
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
@@ -3017,13 +3215,23 @@ class GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             accuracy: float,
-             f1score: float,
-             precision: float,
-             recall: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             accuracy: Optional[float] = None,
+             f1score: Optional[float] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if accuracy is None:
+            raise TypeError("Missing 'accuracy' argument")
+        if f1score is None:
+            raise TypeError("Missing 'f1score' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
@@ -3098,17 +3306,27 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -3183,17 +3401,27 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -3268,17 +3496,27 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             dataset_id: str,
-             dataset_type: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'datasetId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
             dataset_id = kwargs['datasetId']
-        if 'datasetType' in kwargs:
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
             dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
@@ -3347,15 +3585,21 @@ class GetProcessorJobInputLocationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             data: str,
-             object_locations: Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult'],
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             data: Optional[str] = None,
+             object_locations: Optional[Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult']] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'objectLocations' in kwargs:
+        if data is None:
+            raise TypeError("Missing 'data' argument")
+        if object_locations is None and 'objectLocations' in kwargs:
             object_locations = kwargs['objectLocations']
-        if 'sourceType' in kwargs:
+        if object_locations is None:
+            raise TypeError("Missing 'object_locations' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("data", data)
         _setter("object_locations", object_locations)
@@ -3406,11 +3650,17 @@ class GetProcessorJobInputLocationObjectLocationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             object: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -3461,11 +3711,17 @@ class GetProcessorJobOutputLocationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -3522,19 +3778,29 @@ class GetProcessorJobProcessorConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             document_type: str,
-             features: Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult'],
-             is_zip_output_enabled: bool,
-             language: str,
-             processor_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             document_type: Optional[str] = None,
+             features: Optional[Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult']] = None,
+             is_zip_output_enabled: Optional[bool] = None,
+             language: Optional[str] = None,
+             processor_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'documentType' in kwargs:
+        if document_type is None and 'documentType' in kwargs:
             document_type = kwargs['documentType']
-        if 'isZipOutputEnabled' in kwargs:
+        if document_type is None:
+            raise TypeError("Missing 'document_type' argument")
+        if features is None:
+            raise TypeError("Missing 'features' argument")
+        if is_zip_output_enabled is None and 'isZipOutputEnabled' in kwargs:
             is_zip_output_enabled = kwargs['isZipOutputEnabled']
-        if 'processorType' in kwargs:
+        if is_zip_output_enabled is None:
+            raise TypeError("Missing 'is_zip_output_enabled' argument")
+        if language is None:
+            raise TypeError("Missing 'language' argument")
+        if processor_type is None and 'processorType' in kwargs:
             processor_type = kwargs['processorType']
+        if processor_type is None:
+            raise TypeError("Missing 'processor_type' argument")
 
         _setter("document_type", document_type)
         _setter("features", features)
@@ -3609,23 +3875,33 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             feature_type: str,
-             generate_searchable_pdf: bool,
-             max_results: int,
-             model_id: str,
-             tenancy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             feature_type: Optional[str] = None,
+             generate_searchable_pdf: Optional[bool] = None,
+             max_results: Optional[int] = None,
+             model_id: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'featureType' in kwargs:
+        if feature_type is None and 'featureType' in kwargs:
             feature_type = kwargs['featureType']
-        if 'generateSearchablePdf' in kwargs:
+        if feature_type is None:
+            raise TypeError("Missing 'feature_type' argument")
+        if generate_searchable_pdf is None and 'generateSearchablePdf' in kwargs:
             generate_searchable_pdf = kwargs['generateSearchablePdf']
-        if 'maxResults' in kwargs:
+        if generate_searchable_pdf is None:
+            raise TypeError("Missing 'generate_searchable_pdf' argument")
+        if max_results is None and 'maxResults' in kwargs:
             max_results = kwargs['maxResults']
-        if 'modelId' in kwargs:
+        if max_results is None:
+            raise TypeError("Missing 'max_results' argument")
+        if model_id is None and 'modelId' in kwargs:
             model_id = kwargs['modelId']
-        if 'tenancyId' in kwargs:
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
 
         _setter("feature_type", feature_type)
         _setter("generate_searchable_pdf", generate_searchable_pdf)
@@ -3689,11 +3965,15 @@ class GetProjectsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3727,9 +4007,11 @@ class GetProjectsProjectCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3783,35 +4065,57 @@ class GetProjectsProjectCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

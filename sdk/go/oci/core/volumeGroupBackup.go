@@ -34,11 +34,11 @@ import (
 //			_, err := Core.NewVolumeGroupBackup(ctx, "testVolumeGroupBackup", &Core.VolumeGroupBackupArgs{
 //				VolumeGroupId: pulumi.Any(oci_core_volume_group.Test_volume_group.Id),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Volume_group_backup_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Type: pulumi.Any(_var.Volume_group_backup_type),

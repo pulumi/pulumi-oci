@@ -37,11 +37,15 @@ class GetNotificationTopicsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -114,34 +118,58 @@ class GetNotificationTopicsNotificationTopicResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             api_endpoint: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             etag: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             name: str,
-             short_topic_id: str,
-             state: str,
-             time_created: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             api_endpoint: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             etag: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             short_topic_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apiEndpoint' in kwargs:
+        if api_endpoint is None and 'apiEndpoint' in kwargs:
             api_endpoint = kwargs['apiEndpoint']
-        if 'compartmentId' in kwargs:
+        if api_endpoint is None:
+            raise TypeError("Missing 'api_endpoint' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if etag is None:
+            raise TypeError("Missing 'etag' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'shortTopicId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if short_topic_id is None and 'shortTopicId' in kwargs:
             short_topic_id = kwargs['shortTopicId']
-        if 'timeCreated' in kwargs:
+        if short_topic_id is None:
+            raise TypeError("Missing 'short_topic_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'topicId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("api_endpoint", api_endpoint)
         _setter("compartment_id", compartment_id)
@@ -268,11 +296,15 @@ class GetSubscriptionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -338,31 +370,53 @@ class GetSubscriptionsSubscriptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             created_time: str,
-             defined_tags: Mapping[str, Any],
-             delivery_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult'],
-             endpoint: str,
-             etag: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             protocol: str,
-             state: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             created_time: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delivery_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult']] = None,
+             endpoint: Optional[str] = None,
+             etag: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             protocol: Optional[str] = None,
+             state: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdTime' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_time is None and 'createdTime' in kwargs:
             created_time = kwargs['createdTime']
-        if 'definedTags' in kwargs:
+        if created_time is None:
+            raise TypeError("Missing 'created_time' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deliveryPolicies' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delivery_policies is None and 'deliveryPolicies' in kwargs:
             delivery_policies = kwargs['deliveryPolicies']
-        if 'freeformTags' in kwargs:
+        if delivery_policies is None:
+            raise TypeError("Missing 'delivery_policies' argument")
+        if endpoint is None:
+            raise TypeError("Missing 'endpoint' argument")
+        if etag is None:
+            raise TypeError("Missing 'etag' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'topicId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("created_time", created_time)
@@ -473,11 +527,13 @@ class GetSubscriptionsSubscriptionDeliveryPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backoff_retry_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backoffRetryPolicies' in kwargs:
+        if backoff_retry_policies is None and 'backoffRetryPolicies' in kwargs:
             backoff_retry_policies = kwargs['backoffRetryPolicies']
+        if backoff_retry_policies is None:
+            raise TypeError("Missing 'backoff_retry_policies' argument")
 
         _setter("backoff_retry_policies", backoff_retry_policies)
 
@@ -504,14 +560,18 @@ class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             max_retry_duration: int,
-             policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             max_retry_duration: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxRetryDuration' in kwargs:
+        if max_retry_duration is None and 'maxRetryDuration' in kwargs:
             max_retry_duration = kwargs['maxRetryDuration']
-        if 'policyType' in kwargs:
+        if max_retry_duration is None:
+            raise TypeError("Missing 'max_retry_duration' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
 
         _setter("max_retry_duration", max_retry_duration)
         _setter("policy_type", policy_type)

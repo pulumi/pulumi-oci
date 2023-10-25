@@ -32,11 +32,15 @@ class GetOceInstancesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -153,77 +157,131 @@ class GetOceInstancesOceInstanceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             add_on_features: Sequence[str],
-             admin_email: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             dr_region: str,
-             freeform_tags: Mapping[str, Any],
-             guid: str,
-             id: str,
-             idcs_access_token: str,
-             idcs_tenancy: str,
-             instance_access_type: str,
-             instance_license_type: str,
-             instance_usage_type: str,
-             lifecycle_details: str,
-             name: str,
-             object_storage_namespace: str,
-             service: Mapping[str, Any],
-             state: str,
-             state_message: str,
-             system_tags: Mapping[str, Any],
-             tenancy_id: str,
-             tenancy_name: str,
-             time_created: str,
-             time_updated: str,
-             upgrade_schedule: str,
-             waf_primary_domain: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             add_on_features: Optional[Sequence[str]] = None,
+             admin_email: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             dr_region: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             guid: Optional[str] = None,
+             id: Optional[str] = None,
+             idcs_access_token: Optional[str] = None,
+             idcs_tenancy: Optional[str] = None,
+             instance_access_type: Optional[str] = None,
+             instance_license_type: Optional[str] = None,
+             instance_usage_type: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             service: Optional[Mapping[str, Any]] = None,
+             state: Optional[str] = None,
+             state_message: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             tenancy_id: Optional[str] = None,
+             tenancy_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgrade_schedule: Optional[str] = None,
+             waf_primary_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addOnFeatures' in kwargs:
+        if add_on_features is None and 'addOnFeatures' in kwargs:
             add_on_features = kwargs['addOnFeatures']
-        if 'adminEmail' in kwargs:
+        if add_on_features is None:
+            raise TypeError("Missing 'add_on_features' argument")
+        if admin_email is None and 'adminEmail' in kwargs:
             admin_email = kwargs['adminEmail']
-        if 'compartmentId' in kwargs:
+        if admin_email is None:
+            raise TypeError("Missing 'admin_email' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'drRegion' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if dr_region is None and 'drRegion' in kwargs:
             dr_region = kwargs['drRegion']
-        if 'freeformTags' in kwargs:
+        if dr_region is None:
+            raise TypeError("Missing 'dr_region' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if guid is None:
+            raise TypeError("Missing 'guid' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'idcsTenancy' in kwargs:
+        if idcs_access_token is None:
+            raise TypeError("Missing 'idcs_access_token' argument")
+        if idcs_tenancy is None and 'idcsTenancy' in kwargs:
             idcs_tenancy = kwargs['idcsTenancy']
-        if 'instanceAccessType' in kwargs:
+        if idcs_tenancy is None:
+            raise TypeError("Missing 'idcs_tenancy' argument")
+        if instance_access_type is None and 'instanceAccessType' in kwargs:
             instance_access_type = kwargs['instanceAccessType']
-        if 'instanceLicenseType' in kwargs:
+        if instance_access_type is None:
+            raise TypeError("Missing 'instance_access_type' argument")
+        if instance_license_type is None and 'instanceLicenseType' in kwargs:
             instance_license_type = kwargs['instanceLicenseType']
-        if 'instanceUsageType' in kwargs:
+        if instance_license_type is None:
+            raise TypeError("Missing 'instance_license_type' argument")
+        if instance_usage_type is None and 'instanceUsageType' in kwargs:
             instance_usage_type = kwargs['instanceUsageType']
-        if 'lifecycleDetails' in kwargs:
+        if instance_usage_type is None:
+            raise TypeError("Missing 'instance_usage_type' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'objectStorageNamespace' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
             object_storage_namespace = kwargs['objectStorageNamespace']
-        if 'stateMessage' in kwargs:
+        if object_storage_namespace is None:
+            raise TypeError("Missing 'object_storage_namespace' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'systemTags' in kwargs:
+        if state_message is None:
+            raise TypeError("Missing 'state_message' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenancyId' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'tenancyName' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if tenancy_name is None and 'tenancyName' in kwargs:
             tenancy_name = kwargs['tenancyName']
-        if 'timeCreated' in kwargs:
+        if tenancy_name is None:
+            raise TypeError("Missing 'tenancy_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradeSchedule' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
             upgrade_schedule = kwargs['upgradeSchedule']
-        if 'wafPrimaryDomain' in kwargs:
+        if upgrade_schedule is None:
+            raise TypeError("Missing 'upgrade_schedule' argument")
+        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
             waf_primary_domain = kwargs['wafPrimaryDomain']
+        if waf_primary_domain is None:
+            raise TypeError("Missing 'waf_primary_domain' argument")
 
         _setter("add_on_features", add_on_features)
         _setter("admin_email", admin_email)

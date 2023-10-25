@@ -95,13 +95,13 @@ import (
 //					DbUniqueName: pulumi.Any(_var.Monitored_resource_database_connection_details_db_unique_name),
 //					SslSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName:        pulumi.Any(_var.Monitored_resource_display_name),
 //				ExternalResourceId: pulumi.Any(_var.Monitored_resource_external_resource_id),
 //				ExternalId:         pulumi.Any(oci_stack_monitoring_external.Test_external.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				HostName:          pulumi.Any(_var.Monitored_resource_host_name),

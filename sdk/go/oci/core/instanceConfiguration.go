@@ -34,11 +34,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewInstanceConfiguration(ctx, "testInstanceConfiguration", &Core.InstanceConfigurationArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Instance_configuration_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InstanceDetails: &core.InstanceConfigurationInstanceDetailsArgs{
@@ -68,11 +68,11 @@ import (
 //									DisplayName:        pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name),
 //								},
 //								CompartmentId: pulumi.Any(_var.Compartment_id),
-//								DefinedTags: pulumi.AnyMap{
+//								DefinedTags: pulumi.Map{
 //									"Operations.CostCenter": pulumi.Any("42"),
 //								},
 //								DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_display_name),
-//								FreeformTags: pulumi.AnyMap{
+//								FreeformTags: pulumi.Map{
 //									"Department": pulumi.Any("Finance"),
 //								},
 //								IsAutoTuneEnabled: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled),
@@ -110,11 +110,11 @@ import (
 //							AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip),
 //							AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record),
 //							AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip),
-//							DefinedTags: pulumi.AnyMap{
+//							DefinedTags: pulumi.Map{
 //								"Operations.CostCenter": pulumi.Any("42"),
 //							},
 //							DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_display_name),
-//							FreeformTags: pulumi.AnyMap{
+//							FreeformTags: pulumi.Map{
 //								"Department": pulumi.Any("Finance"),
 //							},
 //							HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label),
@@ -130,13 +130,13 @@ import (
 //							SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //						},
 //						DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//						DefinedTags: pulumi.AnyMap{
+//						DefinedTags: pulumi.Map{
 //							"Operations.CostCenter": pulumi.Any("42"),
 //						},
 //						DisplayName:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_display_name),
 //						ExtendedMetadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_extended_metadata),
 //						FaultDomain:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_fault_domain),
-//						FreeformTags: pulumi.AnyMap{
+//						FreeformTags: pulumi.Map{
 //							"Department": pulumi.Any("Finance"),
 //						},
 //						InstanceOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs{
@@ -221,11 +221,11 @@ import (
 //										AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_options_block_volumes_create_details_availability_domain),
 //										BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
 //										CompartmentId:      pulumi.Any(_var.Compartment_id),
-//										DefinedTags: pulumi.AnyMap{
+//										DefinedTags: pulumi.Map{
 //											"Operations.CostCenter": pulumi.Any("42"),
 //										},
 //										DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_options_block_volumes_create_details_display_name),
-//										FreeformTags: pulumi.AnyMap{
+//										FreeformTags: pulumi.Map{
 //											"Department": pulumi.Any("Finance"),
 //										},
 //										KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
@@ -261,11 +261,11 @@ import (
 //									AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip),
 //									AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record),
 //									AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip),
-//									DefinedTags: pulumi.AnyMap{
+//									DefinedTags: pulumi.Map{
 //										"Operations.CostCenter": pulumi.Any("42"),
 //									},
 //									DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name),
-//									FreeformTags: pulumi.AnyMap{
+//									FreeformTags: pulumi.Map{
 //										"Department": pulumi.Any("Finance"),
 //									},
 //									HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label),
@@ -281,13 +281,13 @@ import (
 //									SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //								},
 //								DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//								DefinedTags: pulumi.AnyMap{
+//								DefinedTags: pulumi.Map{
 //									"Operations.CostCenter": pulumi.Any("42"),
 //								},
 //								DisplayName:      pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_display_name),
 //								ExtendedMetadata: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_extended_metadata),
 //								FaultDomain:      pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_fault_domain),
-//								FreeformTags: pulumi.AnyMap{
+//								FreeformTags: pulumi.Map{
 //									"Department": pulumi.Any("Finance"),
 //								},
 //								InstanceOptions: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs{
@@ -353,11 +353,11 @@ import (
 //										AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip),
 //										AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record),
 //										AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip),
-//										DefinedTags: pulumi.AnyMap{
+//										DefinedTags: pulumi.Map{
 //											"Operations.CostCenter": pulumi.Any("42"),
 //										},
 //										DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name),
-//										FreeformTags: pulumi.AnyMap{
+//										FreeformTags: pulumi.Map{
 //											"Department": pulumi.Any("Finance"),
 //										},
 //										HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label),
@@ -383,11 +383,11 @@ import (
 //							CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs{
 //								AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record),
 //								AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip),
-//								DefinedTags: pulumi.AnyMap{
+//								DefinedTags: pulumi.Map{
 //									"Operations.CostCenter": pulumi.Any("42"),
 //								},
 //								DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name),
-//								FreeformTags: pulumi.AnyMap{
+//								FreeformTags: pulumi.Map{
 //									"Department": pulumi.Any("Finance"),
 //								},
 //								HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label),

@@ -42,17 +42,23 @@ class ArtifactByPathArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_path: pulumi.Input[str],
-             repository_id: pulumi.Input[str],
-             version: pulumi.Input[str],
+             artifact_path: Optional[pulumi.Input[str]] = None,
+             repository_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
              content: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactPath' in kwargs:
+        if artifact_path is None and 'artifactPath' in kwargs:
             artifact_path = kwargs['artifactPath']
-        if 'repositoryId' in kwargs:
+        if artifact_path is None:
+            raise TypeError("Missing 'artifact_path' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("artifact_path", artifact_path)
         _setter("repository_id", repository_id)
@@ -198,25 +204,25 @@ class _ArtifactByPathState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactId' in kwargs:
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
-        if 'artifactPath' in kwargs:
+        if artifact_path is None and 'artifactPath' in kwargs:
             artifact_path = kwargs['artifactPath']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'sizeInBytes' in kwargs:
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if artifact_id is not None:

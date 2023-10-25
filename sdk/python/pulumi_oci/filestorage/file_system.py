@@ -55,31 +55,35 @@ class FileSystemArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              kms_key_id: Optional[pulumi.Input[str]] = None,
              source_snapshot_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filesystemSnapshotPolicyId' in kwargs:
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
             filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceSnapshotId' in kwargs:
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
 
         _setter("availability_domain", availability_domain)
@@ -286,39 +290,39 @@ class _FileSystemState:
              source_snapshot_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'filesystemSnapshotPolicyId' in kwargs:
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
             filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCloneParent' in kwargs:
+        if is_clone_parent is None and 'isCloneParent' in kwargs:
             is_clone_parent = kwargs['isCloneParent']
-        if 'isHydrated' in kwargs:
+        if is_hydrated is None and 'isHydrated' in kwargs:
             is_hydrated = kwargs['isHydrated']
-        if 'isTargetable' in kwargs:
+        if is_targetable is None and 'isTargetable' in kwargs:
             is_targetable = kwargs['isTargetable']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'meteredBytes' in kwargs:
+        if metered_bytes is None and 'meteredBytes' in kwargs:
             metered_bytes = kwargs['meteredBytes']
-        if 'replicationTargetId' in kwargs:
+        if replication_target_id is None and 'replicationTargetId' in kwargs:
             replication_target_id = kwargs['replicationTargetId']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'sourceSnapshotId' in kwargs:
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
             source_snapshot_id = kwargs['sourceSnapshotId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if availability_domain is not None:

@@ -53,29 +53,37 @@ class ProductLicenseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             is_vendor_oracle: pulumi.Input[bool],
-             license_unit: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_vendor_oracle: Optional[pulumi.Input[bool]] = None,
+             license_unit: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
              vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isVendorOracle' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_vendor_oracle is None and 'isVendorOracle' in kwargs:
             is_vendor_oracle = kwargs['isVendorOracle']
-        if 'licenseUnit' in kwargs:
+        if is_vendor_oracle is None:
+            raise TypeError("Missing 'is_vendor_oracle' argument")
+        if license_unit is None and 'licenseUnit' in kwargs:
             license_unit = kwargs['licenseUnit']
-        if 'definedTags' in kwargs:
+        if license_unit is None:
+            raise TypeError("Missing 'license_unit' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'vendorName' in kwargs:
+        if vendor_name is None and 'vendorName' in kwargs:
             vendor_name = kwargs['vendorName']
 
         _setter("compartment_id", compartment_id)
@@ -288,41 +296,41 @@ class _ProductLicenseState:
              total_license_record_count: Optional[pulumi.Input[int]] = None,
              total_license_units_consumed: Optional[pulumi.Input[float]] = None,
              vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeLicenseRecordCount' in kwargs:
+        if active_license_record_count is None and 'activeLicenseRecordCount' in kwargs:
             active_license_record_count = kwargs['activeLicenseRecordCount']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isOverSubscribed' in kwargs:
+        if is_over_subscribed is None and 'isOverSubscribed' in kwargs:
             is_over_subscribed = kwargs['isOverSubscribed']
-        if 'isUnlimited' in kwargs:
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'isVendorOracle' in kwargs:
+        if is_vendor_oracle is None and 'isVendorOracle' in kwargs:
             is_vendor_oracle = kwargs['isVendorOracle']
-        if 'licenseUnit' in kwargs:
+        if license_unit is None and 'licenseUnit' in kwargs:
             license_unit = kwargs['licenseUnit']
-        if 'statusDescription' in kwargs:
+        if status_description is None and 'statusDescription' in kwargs:
             status_description = kwargs['statusDescription']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalActiveLicenseUnitCount' in kwargs:
+        if total_active_license_unit_count is None and 'totalActiveLicenseUnitCount' in kwargs:
             total_active_license_unit_count = kwargs['totalActiveLicenseUnitCount']
-        if 'totalLicenseRecordCount' in kwargs:
+        if total_license_record_count is None and 'totalLicenseRecordCount' in kwargs:
             total_license_record_count = kwargs['totalLicenseRecordCount']
-        if 'totalLicenseUnitsConsumed' in kwargs:
+        if total_license_units_consumed is None and 'totalLicenseUnitsConsumed' in kwargs:
             total_license_units_consumed = kwargs['totalLicenseUnitsConsumed']
-        if 'vendorName' in kwargs:
+        if vendor_name is None and 'vendorName' in kwargs:
             vendor_name = kwargs['vendorName']
 
         if active_license_record_count is not None:

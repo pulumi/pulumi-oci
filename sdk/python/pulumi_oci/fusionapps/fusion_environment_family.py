@@ -49,28 +49,34 @@ class FusionEnvironmentFamilyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             subscription_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              family_maintenance_policy: Optional[pulumi.Input['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'subscriptionIds' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if subscription_ids is None and 'subscriptionIds' in kwargs:
             subscription_ids = kwargs['subscriptionIds']
-        if 'definedTags' in kwargs:
+        if subscription_ids is None:
+            raise TypeError("Missing 'subscription_ids' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'familyMaintenancePolicy' in kwargs:
+        if family_maintenance_policy is None and 'familyMaintenancePolicy' in kwargs:
             family_maintenance_policy = kwargs['familyMaintenancePolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         _setter("compartment_id", compartment_id)
@@ -234,29 +240,29 @@ class _FusionEnvironmentFamilyState:
              system_name: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'familyMaintenancePolicy' in kwargs:
+        if family_maintenance_policy is None and 'familyMaintenancePolicy' in kwargs:
             family_maintenance_policy = kwargs['familyMaintenancePolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSubscriptionUpdateNeeded' in kwargs:
+        if is_subscription_update_needed is None and 'isSubscriptionUpdateNeeded' in kwargs:
             is_subscription_update_needed = kwargs['isSubscriptionUpdateNeeded']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'subscriptionIds' in kwargs:
+        if subscription_ids is None and 'subscriptionIds' in kwargs:
             subscription_ids = kwargs['subscriptionIds']
-        if 'systemName' in kwargs:
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -576,11 +582,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if family_maintenance_policy is not None and not isinstance(family_maintenance_policy, FusionEnvironmentFamilyFamilyMaintenancePolicyArgs):
-                family_maintenance_policy = family_maintenance_policy or {}
-                def _setter(key, value):
-                    family_maintenance_policy[key] = value
-                FusionEnvironmentFamilyFamilyMaintenancePolicyArgs._configure(_setter, **family_maintenance_policy)
+            family_maintenance_policy = _utilities.configure(family_maintenance_policy, FusionEnvironmentFamilyFamilyMaintenancePolicyArgs, True)
             __props__.__dict__["family_maintenance_policy"] = family_maintenance_policy
             __props__.__dict__["freeform_tags"] = freeform_tags
             if subscription_ids is None and not opts.urn:

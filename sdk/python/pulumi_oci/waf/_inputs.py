@@ -92,13 +92,17 @@ class AppFirewallPolicyActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              body: Optional[pulumi.Input['AppFirewallPolicyActionBodyArgs']] = None,
              code: Optional[pulumi.Input[int]] = None,
              headers: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("name", name)
         _setter("type", type)
@@ -213,10 +217,14 @@ class AppFirewallPolicyActionBodyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             text: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             text: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if text is None:
+            raise TypeError("Missing 'text' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("text", text)
         _setter("type", type)
@@ -265,7 +273,7 @@ class AppFirewallPolicyActionHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -317,12 +325,14 @@ class AppFirewallPolicyRequestAccessControlArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_action_name: pulumi.Input[str],
+             default_action_name: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultActionName' in kwargs:
+        if default_action_name is None and 'defaultActionName' in kwargs:
             default_action_name = kwargs['defaultActionName']
+        if default_action_name is None:
+            raise TypeError("Missing 'default_action_name' argument")
 
         _setter("default_action_name", default_action_name)
         if rules is not None:
@@ -382,16 +392,22 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_name: pulumi.Input[str],
-             name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             action_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              condition_language: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'conditionLanguage' in kwargs:
+        if action_name is None:
+            raise TypeError("Missing 'action_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if condition_language is None and 'conditionLanguage' in kwargs:
             condition_language = kwargs['conditionLanguage']
 
         _setter("action_name", action_name)
@@ -496,11 +512,11 @@ class AppFirewallPolicyRequestProtectionArgs:
              body_inspection_size_limit_exceeded_action_name: Optional[pulumi.Input[str]] = None,
              body_inspection_size_limit_in_bytes: Optional[pulumi.Input[int]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bodyInspectionSizeLimitExceededActionName' in kwargs:
+        if body_inspection_size_limit_exceeded_action_name is None and 'bodyInspectionSizeLimitExceededActionName' in kwargs:
             body_inspection_size_limit_exceeded_action_name = kwargs['bodyInspectionSizeLimitExceededActionName']
-        if 'bodyInspectionSizeLimitInBytes' in kwargs:
+        if body_inspection_size_limit_in_bytes is None and 'bodyInspectionSizeLimitInBytes' in kwargs:
             body_inspection_size_limit_in_bytes = kwargs['bodyInspectionSizeLimitInBytes']
 
         if body_inspection_size_limit_exceeded_action_name is not None:
@@ -592,25 +608,33 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_name: pulumi.Input[str],
-             name: pulumi.Input[str],
-             protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]],
-             type: pulumi.Input[str],
+             action_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             protection_capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              condition_language: Optional[pulumi.Input[str]] = None,
              is_body_inspection_enabled: Optional[pulumi.Input[bool]] = None,
              protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'protectionCapabilities' in kwargs:
+        if action_name is None:
+            raise TypeError("Missing 'action_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if protection_capabilities is None and 'protectionCapabilities' in kwargs:
             protection_capabilities = kwargs['protectionCapabilities']
-        if 'conditionLanguage' in kwargs:
+        if protection_capabilities is None:
+            raise TypeError("Missing 'protection_capabilities' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if condition_language is None and 'conditionLanguage' in kwargs:
             condition_language = kwargs['conditionLanguage']
-        if 'isBodyInspectionEnabled' in kwargs:
+        if is_body_inspection_enabled is None and 'isBodyInspectionEnabled' in kwargs:
             is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
-        if 'protectionCapabilitySettings' in kwargs:
+        if protection_capability_settings is None and 'protectionCapabilitySettings' in kwargs:
             protection_capability_settings = kwargs['protectionCapabilitySettings']
 
         _setter("action_name", action_name)
@@ -753,19 +777,23 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             version: pulumi.Input[int],
+             key: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              action_name: Optional[pulumi.Input[str]] = None,
              collaborative_action_threshold: Optional[pulumi.Input[int]] = None,
              collaborative_weights: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
              exclusions: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'collaborativeActionThreshold' in kwargs:
+        if collaborative_action_threshold is None and 'collaborativeActionThreshold' in kwargs:
             collaborative_action_threshold = kwargs['collaborativeActionThreshold']
-        if 'collaborativeWeights' in kwargs:
+        if collaborative_weights is None and 'collaborativeWeights' in kwargs:
             collaborative_weights = kwargs['collaborativeWeights']
 
         _setter("key", key)
@@ -869,10 +897,14 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             weight: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             weight: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if weight is None:
+            raise TypeError("Missing 'weight' argument")
 
         _setter("key", key)
         _setter("weight", weight)
@@ -921,9 +953,9 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs:
              _setter: Callable[[Any, Any], None],
              args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              request_cookies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'requestCookies' in kwargs:
+        if request_cookies is None and 'requestCookies' in kwargs:
             request_cookies = kwargs['requestCookies']
 
         if args is not None:
@@ -991,19 +1023,19 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
              max_number_of_arguments: Optional[pulumi.Input[int]] = None,
              max_single_argument_length: Optional[pulumi.Input[int]] = None,
              max_total_argument_length: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedHttpMethods' in kwargs:
+        if allowed_http_methods is None and 'allowedHttpMethods' in kwargs:
             allowed_http_methods = kwargs['allowedHttpMethods']
-        if 'maxHttpRequestHeaderLength' in kwargs:
+        if max_http_request_header_length is None and 'maxHttpRequestHeaderLength' in kwargs:
             max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
-        if 'maxHttpRequestHeaders' in kwargs:
+        if max_http_request_headers is None and 'maxHttpRequestHeaders' in kwargs:
             max_http_request_headers = kwargs['maxHttpRequestHeaders']
-        if 'maxNumberOfArguments' in kwargs:
+        if max_number_of_arguments is None and 'maxNumberOfArguments' in kwargs:
             max_number_of_arguments = kwargs['maxNumberOfArguments']
-        if 'maxSingleArgumentLength' in kwargs:
+        if max_single_argument_length is None and 'maxSingleArgumentLength' in kwargs:
             max_single_argument_length = kwargs['maxSingleArgumentLength']
-        if 'maxTotalArgumentLength' in kwargs:
+        if max_total_argument_length is None and 'maxTotalArgumentLength' in kwargs:
             max_total_argument_length = kwargs['maxTotalArgumentLength']
 
         if allowed_http_methods is not None:
@@ -1107,7 +1139,7 @@ class AppFirewallPolicyRequestRateLimitingArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if rules is not None:
@@ -1156,17 +1188,25 @@ class AppFirewallPolicyRequestRateLimitingRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_name: pulumi.Input[str],
-             configurations: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs']]],
-             name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             action_name: Optional[pulumi.Input[str]] = None,
+             configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              condition_language: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'conditionLanguage' in kwargs:
+        if action_name is None:
+            raise TypeError("Missing 'action_name' argument")
+        if configurations is None:
+            raise TypeError("Missing 'configurations' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if condition_language is None and 'conditionLanguage' in kwargs:
             condition_language = kwargs['conditionLanguage']
 
         _setter("action_name", action_name)
@@ -1272,16 +1312,20 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             period_in_seconds: pulumi.Input[int],
-             requests_limit: pulumi.Input[int],
+             period_in_seconds: Optional[pulumi.Input[int]] = None,
+             requests_limit: Optional[pulumi.Input[int]] = None,
              action_duration_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'periodInSeconds' in kwargs:
+        if period_in_seconds is None and 'periodInSeconds' in kwargs:
             period_in_seconds = kwargs['periodInSeconds']
-        if 'requestsLimit' in kwargs:
+        if period_in_seconds is None:
+            raise TypeError("Missing 'period_in_seconds' argument")
+        if requests_limit is None and 'requestsLimit' in kwargs:
             requests_limit = kwargs['requestsLimit']
-        if 'actionDurationInSeconds' in kwargs:
+        if requests_limit is None:
+            raise TypeError("Missing 'requests_limit' argument")
+        if action_duration_in_seconds is None and 'actionDurationInSeconds' in kwargs:
             action_duration_in_seconds = kwargs['actionDurationInSeconds']
 
         _setter("period_in_seconds", period_in_seconds)
@@ -1341,7 +1385,7 @@ class AppFirewallPolicyResponseAccessControlArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if rules is not None:
@@ -1387,16 +1431,22 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_name: pulumi.Input[str],
-             name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             action_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              condition_language: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'conditionLanguage' in kwargs:
+        if action_name is None:
+            raise TypeError("Missing 'action_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if condition_language is None and 'conditionLanguage' in kwargs:
             condition_language = kwargs['conditionLanguage']
 
         _setter("action_name", action_name)
@@ -1484,7 +1534,7 @@ class AppFirewallPolicyResponseProtectionArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if rules is not None:
@@ -1539,25 +1589,33 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_name: pulumi.Input[str],
-             name: pulumi.Input[str],
-             protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]],
-             type: pulumi.Input[str],
+             action_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             protection_capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              condition_language: Optional[pulumi.Input[str]] = None,
              is_body_inspection_enabled: Optional[pulumi.Input[bool]] = None,
              protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'protectionCapabilities' in kwargs:
+        if action_name is None:
+            raise TypeError("Missing 'action_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if protection_capabilities is None and 'protectionCapabilities' in kwargs:
             protection_capabilities = kwargs['protectionCapabilities']
-        if 'conditionLanguage' in kwargs:
+        if protection_capabilities is None:
+            raise TypeError("Missing 'protection_capabilities' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if condition_language is None and 'conditionLanguage' in kwargs:
             condition_language = kwargs['conditionLanguage']
-        if 'isBodyInspectionEnabled' in kwargs:
+        if is_body_inspection_enabled is None and 'isBodyInspectionEnabled' in kwargs:
             is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
-        if 'protectionCapabilitySettings' in kwargs:
+        if protection_capability_settings is None and 'protectionCapabilitySettings' in kwargs:
             protection_capability_settings = kwargs['protectionCapabilitySettings']
 
         _setter("action_name", action_name)
@@ -1700,19 +1758,23 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             version: pulumi.Input[int],
+             key: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              action_name: Optional[pulumi.Input[str]] = None,
              collaborative_action_threshold: Optional[pulumi.Input[int]] = None,
              collaborative_weights: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
              exclusions: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionName' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if action_name is None and 'actionName' in kwargs:
             action_name = kwargs['actionName']
-        if 'collaborativeActionThreshold' in kwargs:
+        if collaborative_action_threshold is None and 'collaborativeActionThreshold' in kwargs:
             collaborative_action_threshold = kwargs['collaborativeActionThreshold']
-        if 'collaborativeWeights' in kwargs:
+        if collaborative_weights is None and 'collaborativeWeights' in kwargs:
             collaborative_weights = kwargs['collaborativeWeights']
 
         _setter("key", key)
@@ -1816,10 +1878,14 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             weight: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[pulumi.Input[str]] = None,
+             weight: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if weight is None:
+            raise TypeError("Missing 'weight' argument")
 
         _setter("key", key)
         _setter("weight", weight)
@@ -1868,9 +1934,9 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs:
              _setter: Callable[[Any, Any], None],
              args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              request_cookies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'requestCookies' in kwargs:
+        if request_cookies is None and 'requestCookies' in kwargs:
             request_cookies = kwargs['requestCookies']
 
         if args is not None:
@@ -1938,19 +2004,19 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs:
              max_number_of_arguments: Optional[pulumi.Input[int]] = None,
              max_single_argument_length: Optional[pulumi.Input[int]] = None,
              max_total_argument_length: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedHttpMethods' in kwargs:
+        if allowed_http_methods is None and 'allowedHttpMethods' in kwargs:
             allowed_http_methods = kwargs['allowedHttpMethods']
-        if 'maxHttpRequestHeaderLength' in kwargs:
+        if max_http_request_header_length is None and 'maxHttpRequestHeaderLength' in kwargs:
             max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
-        if 'maxHttpRequestHeaders' in kwargs:
+        if max_http_request_headers is None and 'maxHttpRequestHeaders' in kwargs:
             max_http_request_headers = kwargs['maxHttpRequestHeaders']
-        if 'maxNumberOfArguments' in kwargs:
+        if max_number_of_arguments is None and 'maxNumberOfArguments' in kwargs:
             max_number_of_arguments = kwargs['maxNumberOfArguments']
-        if 'maxSingleArgumentLength' in kwargs:
+        if max_single_argument_length is None and 'maxSingleArgumentLength' in kwargs:
             max_single_argument_length = kwargs['maxSingleArgumentLength']
-        if 'maxTotalArgumentLength' in kwargs:
+        if max_total_argument_length is None and 'maxTotalArgumentLength' in kwargs:
             max_total_argument_length = kwargs['maxTotalArgumentLength']
 
         if allowed_http_methods is not None:
@@ -2062,9 +2128,9 @@ class NetworkAddressListVcnAddressArgs:
              _setter: Callable[[Any, Any], None],
              addresses: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if addresses is not None:
@@ -2116,11 +2182,15 @@ class GetFirewallsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2170,11 +2240,15 @@ class GetNetworkAddressListsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2224,11 +2298,15 @@ class GetProtectionCapabilitiesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2281,11 +2359,15 @@ class GetProtectionCapabilityGroupTagsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2341,11 +2423,15 @@ class GetWebAppFirewallPoliciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

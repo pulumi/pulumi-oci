@@ -34,17 +34,23 @@ class ComputeCapacityReportArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             shape_availabilities: pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'shapeAvailabilities' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if shape_availabilities is None and 'shapeAvailabilities' in kwargs:
             shape_availabilities = kwargs['shapeAvailabilities']
+        if shape_availabilities is None:
+            raise TypeError("Missing 'shape_availabilities' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -115,15 +121,15 @@ class _ComputeCapacityReportState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'shapeAvailabilities' in kwargs:
+        if shape_availabilities is None and 'shapeAvailabilities' in kwargs:
             shape_availabilities = kwargs['shapeAvailabilities']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if availability_domain is not None:

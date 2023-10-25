@@ -57,21 +57,21 @@ class BootVolumeBackupArgs:
              kms_key_id: Optional[pulumi.Input[str]] = None,
              source_details: Optional[pulumi.Input['BootVolumeBackupSourceDetailsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
 
         if boot_volume_id is not None:
@@ -272,39 +272,39 @@ class _BootVolumeBackupState:
              time_request_received: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              unique_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'expirationTime' in kwargs:
+        if expiration_time is None and 'expirationTime' in kwargs:
             expiration_time = kwargs['expirationTime']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sizeInGbs' in kwargs:
+        if size_in_gbs is None and 'sizeInGbs' in kwargs:
             size_in_gbs = kwargs['sizeInGbs']
-        if 'sourceBootVolumeBackupId' in kwargs:
+        if source_boot_volume_backup_id is None and 'sourceBootVolumeBackupId' in kwargs:
             source_boot_volume_backup_id = kwargs['sourceBootVolumeBackupId']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeRequestReceived' in kwargs:
+        if time_request_received is None and 'timeRequestReceived' in kwargs:
             time_request_received = kwargs['timeRequestReceived']
-        if 'uniqueSizeInGbs' in kwargs:
+        if unique_size_in_gbs is None and 'uniqueSizeInGbs' in kwargs:
             unique_size_in_gbs = kwargs['uniqueSizeInGbs']
 
         if boot_volume_id is not None:
@@ -708,11 +708,7 @@ class BootVolumeBackup(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kms_key_id"] = kms_key_id
-            if source_details is not None and not isinstance(source_details, BootVolumeBackupSourceDetailsArgs):
-                source_details = source_details or {}
-                def _setter(key, value):
-                    source_details[key] = value
-                BootVolumeBackupSourceDetailsArgs._configure(_setter, **source_details)
+            source_details = _utilities.configure(source_details, BootVolumeBackupSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["expiration_time"] = None

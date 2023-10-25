@@ -45,11 +45,11 @@ import (
 //					},
 //				},
 //				DisplayName: pulumi.Any(_var.Pool_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Pool_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IdleTimeoutInMinutes: pulumi.Any(_var.Pool_idle_timeout_in_minutes),

@@ -80,12 +80,12 @@ import (
 //				},
 //				CidrBlock:  pulumi.Any(_var.Vcn_cidr_block),
 //				CidrBlocks: pulumi.Any(_var.Vcn_cidr_blocks),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Vcn_display_name),
 //				DnsLabel:    pulumi.Any(_var.Vcn_dns_label),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Ipv6privateCidrBlocks:        pulumi.Any(_var.Vcn_ipv6private_cidr_blocks),

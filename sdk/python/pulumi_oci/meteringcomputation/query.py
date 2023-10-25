@@ -31,14 +31,18 @@ class QueryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             query_definition: pulumi.Input['QueryQueryDefinitionArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'queryDefinition' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if query_definition is None and 'queryDefinition' in kwargs:
             query_definition = kwargs['queryDefinition']
+        if query_definition is None:
+            raise TypeError("Missing 'query_definition' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("query_definition", query_definition)
@@ -88,11 +92,11 @@ class _QueryState:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'queryDefinition' in kwargs:
+        if query_definition is None and 'queryDefinition' in kwargs:
             query_definition = kwargs['queryDefinition']
 
         if compartment_id is not None:
@@ -283,11 +287,7 @@ class Query(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if query_definition is not None and not isinstance(query_definition, QueryQueryDefinitionArgs):
-                query_definition = query_definition or {}
-                def _setter(key, value):
-                    query_definition[key] = value
-                QueryQueryDefinitionArgs._configure(_setter, **query_definition)
+            query_definition = _utilities.configure(query_definition, QueryQueryDefinitionArgs, True)
             if query_definition is None and not opts.urn:
                 raise TypeError("Missing required property 'query_definition'")
             __props__.__dict__["query_definition"] = query_definition

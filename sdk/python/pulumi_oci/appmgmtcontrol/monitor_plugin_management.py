@@ -30,11 +30,13 @@ class MonitorPluginManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             monitored_instance_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             monitored_instance_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'monitoredInstanceId' in kwargs:
+        if monitored_instance_id is None and 'monitoredInstanceId' in kwargs:
             monitored_instance_id = kwargs['monitoredInstanceId']
+        if monitored_instance_id is None:
+            raise TypeError("Missing 'monitored_instance_id' argument")
 
         _setter("monitored_instance_id", monitored_instance_id)
 
@@ -90,17 +92,17 @@ class _MonitorPluginManagementState:
              monitored_instance_id: Optional[pulumi.Input[str]] = None,
              monitored_instance_management_agent_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'monitoredInstanceDescription' in kwargs:
+        if monitored_instance_description is None and 'monitoredInstanceDescription' in kwargs:
             monitored_instance_description = kwargs['monitoredInstanceDescription']
-        if 'monitoredInstanceDisplayName' in kwargs:
+        if monitored_instance_display_name is None and 'monitoredInstanceDisplayName' in kwargs:
             monitored_instance_display_name = kwargs['monitoredInstanceDisplayName']
-        if 'monitoredInstanceId' in kwargs:
+        if monitored_instance_id is None and 'monitoredInstanceId' in kwargs:
             monitored_instance_id = kwargs['monitoredInstanceId']
-        if 'monitoredInstanceManagementAgentId' in kwargs:
+        if monitored_instance_management_agent_id is None and 'monitoredInstanceManagementAgentId' in kwargs:
             monitored_instance_management_agent_id = kwargs['monitoredInstanceManagementAgentId']
 
         if compartment_id is not None:

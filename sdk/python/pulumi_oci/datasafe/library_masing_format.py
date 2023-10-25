@@ -50,26 +50,30 @@ class LibraryMasingFormatArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             format_entries: pulumi.Input[Sequence[pulumi.Input['LibraryMasingFormatFormatEntryArgs']]],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             format_entries: Optional[pulumi.Input[Sequence[pulumi.Input['LibraryMasingFormatFormatEntryArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'formatEntries' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if format_entries is None and 'formatEntries' in kwargs:
             format_entries = kwargs['formatEntries']
-        if 'definedTags' in kwargs:
+        if format_entries is None:
+            raise TypeError("Missing 'format_entries' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sensitiveTypeIds' in kwargs:
+        if sensitive_type_ids is None and 'sensitiveTypeIds' in kwargs:
             sensitive_type_ids = kwargs['sensitiveTypeIds']
 
         _setter("compartment_id", compartment_id)
@@ -234,23 +238,23 @@ class _LibraryMasingFormatState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'formatEntries' in kwargs:
+        if format_entries is None and 'formatEntries' in kwargs:
             format_entries = kwargs['formatEntries']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sensitiveTypeIds' in kwargs:
+        if sensitive_type_ids is None and 'sensitiveTypeIds' in kwargs:
             sensitive_type_ids = kwargs['sensitiveTypeIds']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

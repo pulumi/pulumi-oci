@@ -35,13 +35,15 @@ class DataSafeConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: pulumi.Input[bool],
+             is_enabled: Optional[pulumi.Input[bool]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'compartmentId' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("is_enabled", is_enabled)
@@ -129,21 +131,21 @@ class _DataSafeConfigurationState:
              state: Optional[pulumi.Input[str]] = None,
              time_enabled: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataSafeNatGatewayIpAddress' in kwargs:
+        if data_safe_nat_gateway_ip_address is None and 'dataSafeNatGatewayIpAddress' in kwargs:
             data_safe_nat_gateway_ip_address = kwargs['dataSafeNatGatewayIpAddress']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'globalSettings' in kwargs:
+        if global_settings is None and 'globalSettings' in kwargs:
             global_settings = kwargs['globalSettings']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'timeEnabled' in kwargs:
+        if time_enabled is None and 'timeEnabled' in kwargs:
             time_enabled = kwargs['timeEnabled']
 
         if compartment_id is not None:

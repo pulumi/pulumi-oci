@@ -56,30 +56,36 @@ class CertificateAuthorityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certificate_authority_config: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'],
-             compartment_id: pulumi.Input[str],
-             kms_key_id: pulumi.Input[str],
+             certificate_authority_config: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
              certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
              certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityConfig' in kwargs:
+        if certificate_authority_config is None and 'certificateAuthorityConfig' in kwargs:
             certificate_authority_config = kwargs['certificateAuthorityConfig']
-        if 'compartmentId' in kwargs:
+        if certificate_authority_config is None:
+            raise TypeError("Missing 'certificate_authority_config' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'kmsKeyId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'certificateAuthorityRules' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if certificate_authority_rules is None and 'certificateAuthorityRules' in kwargs:
             certificate_authority_rules = kwargs['certificateAuthorityRules']
-        if 'certificateRevocationListDetails' in kwargs:
+        if certificate_revocation_list_details is None and 'certificateRevocationListDetails' in kwargs:
             certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("certificate_authority_config", certificate_authority_config)
@@ -299,35 +305,35 @@ class _CertificateAuthorityState:
              subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'certificateAuthorityConfig' in kwargs:
+        if certificate_authority_config is None and 'certificateAuthorityConfig' in kwargs:
             certificate_authority_config = kwargs['certificateAuthorityConfig']
-        if 'certificateAuthorityRules' in kwargs:
+        if certificate_authority_rules is None and 'certificateAuthorityRules' in kwargs:
             certificate_authority_rules = kwargs['certificateAuthorityRules']
-        if 'certificateRevocationListDetails' in kwargs:
+        if certificate_revocation_list_details is None and 'certificateRevocationListDetails' in kwargs:
             certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configType' in kwargs:
+        if config_type is None and 'configType' in kwargs:
             config_type = kwargs['configType']
-        if 'currentVersions' in kwargs:
+        if current_versions is None and 'currentVersions' in kwargs:
             current_versions = kwargs['currentVersions']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'issuerCertificateAuthorityId' in kwargs:
+        if issuer_certificate_authority_id is None and 'issuerCertificateAuthorityId' in kwargs:
             issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'signingAlgorithm' in kwargs:
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
 
         if certificate_authority_config is not None:
@@ -688,20 +694,12 @@ class CertificateAuthority(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CertificateAuthorityArgs.__new__(CertificateAuthorityArgs)
 
-            if certificate_authority_config is not None and not isinstance(certificate_authority_config, CertificateAuthorityCertificateAuthorityConfigArgs):
-                certificate_authority_config = certificate_authority_config or {}
-                def _setter(key, value):
-                    certificate_authority_config[key] = value
-                CertificateAuthorityCertificateAuthorityConfigArgs._configure(_setter, **certificate_authority_config)
+            certificate_authority_config = _utilities.configure(certificate_authority_config, CertificateAuthorityCertificateAuthorityConfigArgs, True)
             if certificate_authority_config is None and not opts.urn:
                 raise TypeError("Missing required property 'certificate_authority_config'")
             __props__.__dict__["certificate_authority_config"] = certificate_authority_config
             __props__.__dict__["certificate_authority_rules"] = certificate_authority_rules
-            if certificate_revocation_list_details is not None and not isinstance(certificate_revocation_list_details, CertificateAuthorityCertificateRevocationListDetailsArgs):
-                certificate_revocation_list_details = certificate_revocation_list_details or {}
-                def _setter(key, value):
-                    certificate_revocation_list_details[key] = value
-                CertificateAuthorityCertificateRevocationListDetailsArgs._configure(_setter, **certificate_revocation_list_details)
+            certificate_revocation_list_details = _utilities.configure(certificate_revocation_list_details, CertificateAuthorityCertificateRevocationListDetailsArgs, True)
             __props__.__dict__["certificate_revocation_list_details"] = certificate_revocation_list_details
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")

@@ -73,16 +73,18 @@ class IndexKey(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: str,
+             column_name: Optional[str] = None,
              json_field_type: Optional[str] = None,
              json_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'jsonFieldType' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
             json_field_type = kwargs['jsonFieldType']
-        if 'jsonPath' in kwargs:
+        if json_path is None and 'jsonPath' in kwargs:
             json_path = kwargs['jsonPath']
 
         _setter("column_name", column_name)
@@ -166,11 +168,11 @@ class TableSchema(dict):
              primary_keys: Optional[Sequence[str]] = None,
              shard_keys: Optional[Sequence[str]] = None,
              ttl: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'primaryKeys' in kwargs:
+        if primary_keys is None and 'primaryKeys' in kwargs:
             primary_keys = kwargs['primaryKeys']
-        if 'shardKeys' in kwargs:
+        if shard_keys is None and 'shardKeys' in kwargs:
             shard_keys = kwargs['shardKeys']
 
         if columns is not None:
@@ -283,15 +285,15 @@ class TableSchemaColumn(dict):
              is_nullable: Optional[bool] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'isAsUuid' in kwargs:
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
             is_as_uuid = kwargs['isAsUuid']
-        if 'isGenerated' in kwargs:
+        if is_generated is None and 'isGenerated' in kwargs:
             is_generated = kwargs['isGenerated']
-        if 'isNullable' in kwargs:
+        if is_nullable is None and 'isNullable' in kwargs:
             is_nullable = kwargs['isNullable']
 
         if default_value is not None:
@@ -400,13 +402,13 @@ class TableSchemaIdentity(dict):
              column_name: Optional[str] = None,
              is_always: Optional[bool] = None,
              is_null: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'isAlways' in kwargs:
+        if is_always is None and 'isAlways' in kwargs:
             is_always = kwargs['isAlways']
-        if 'isNull' in kwargs:
+        if is_null is None and 'isNull' in kwargs:
             is_null = kwargs['isNull']
 
         if column_name is not None:
@@ -491,19 +493,25 @@ class TableTableLimits(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             max_read_units: int,
-             max_storage_in_gbs: int,
-             max_write_units: int,
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
              capacity_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maxReadUnits' in kwargs:
+        if max_read_units is None and 'maxReadUnits' in kwargs:
             max_read_units = kwargs['maxReadUnits']
-        if 'maxStorageInGbs' in kwargs:
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
             max_storage_in_gbs = kwargs['maxStorageInGbs']
-        if 'maxWriteUnits' in kwargs:
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
             max_write_units = kwargs['maxWriteUnits']
-        if 'capacityMode' in kwargs:
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if capacity_mode is None and 'capacityMode' in kwargs:
             capacity_mode = kwargs['capacityMode']
 
         _setter("max_read_units", max_read_units)
@@ -569,17 +577,23 @@ class GetIndexKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: str,
-             json_field_type: str,
-             json_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_name: Optional[str] = None,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'jsonFieldType' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
             json_field_type = kwargs['jsonFieldType']
-        if 'jsonPath' in kwargs:
+        if json_field_type is None:
+            raise TypeError("Missing 'json_field_type' argument")
+        if json_path is None and 'jsonPath' in kwargs:
             json_path = kwargs['jsonPath']
+        if json_path is None:
+            raise TypeError("Missing 'json_path' argument")
 
         _setter("column_name", column_name)
         _setter("json_field_type", json_field_type)
@@ -628,11 +642,15 @@ class GetIndexesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -697,30 +715,50 @@ class GetIndexesIndexCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             id: str,
-             is_if_not_exists: bool,
-             keys: Sequence['outputs.GetIndexesIndexCollectionKeyResult'],
-             lifecycle_details: str,
-             name: str,
-             state: str,
-             table_id: str,
-             table_name: str,
-             table_name_or_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_if_not_exists: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetIndexesIndexCollectionKeyResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             table_id: Optional[str] = None,
+             table_name: Optional[str] = None,
+             table_name_or_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isIfNotExists' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
             is_if_not_exists = kwargs['isIfNotExists']
-        if 'lifecycleDetails' in kwargs:
+        if is_if_not_exists is None:
+            raise TypeError("Missing 'is_if_not_exists' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'tableId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if table_id is None and 'tableId' in kwargs:
             table_id = kwargs['tableId']
-        if 'tableName' in kwargs:
+        if table_id is None:
+            raise TypeError("Missing 'table_id' argument")
+        if table_name is None and 'tableName' in kwargs:
             table_name = kwargs['tableName']
-        if 'tableNameOrId' in kwargs:
+        if table_name is None:
+            raise TypeError("Missing 'table_name' argument")
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
             table_name_or_id = kwargs['tableNameOrId']
+        if table_name_or_id is None:
+            raise TypeError("Missing 'table_name_or_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("id", id)
@@ -828,17 +866,23 @@ class GetIndexesIndexCollectionKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: str,
-             json_field_type: str,
-             json_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_name: Optional[str] = None,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'jsonFieldType' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
             json_field_type = kwargs['jsonFieldType']
-        if 'jsonPath' in kwargs:
+        if json_field_type is None:
+            raise TypeError("Missing 'json_field_type' argument")
+        if json_path is None and 'jsonPath' in kwargs:
             json_path = kwargs['jsonPath']
+        if json_path is None:
+            raise TypeError("Missing 'json_path' argument")
 
         _setter("column_name", column_name)
         _setter("json_field_type", json_field_type)
@@ -895,17 +939,27 @@ class GetTableSchemaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             columns: Sequence['outputs.GetTableSchemaColumnResult'],
-             identities: Sequence['outputs.GetTableSchemaIdentityResult'],
-             primary_keys: Sequence[str],
-             shard_keys: Sequence[str],
-             ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             columns: Optional[Sequence['outputs.GetTableSchemaColumnResult']] = None,
+             identities: Optional[Sequence['outputs.GetTableSchemaIdentityResult']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'primaryKeys' in kwargs:
+        if columns is None:
+            raise TypeError("Missing 'columns' argument")
+        if identities is None:
+            raise TypeError("Missing 'identities' argument")
+        if primary_keys is None and 'primaryKeys' in kwargs:
             primary_keys = kwargs['primaryKeys']
-        if 'shardKeys' in kwargs:
+        if primary_keys is None:
+            raise TypeError("Missing 'primary_keys' argument")
+        if shard_keys is None and 'shardKeys' in kwargs:
             shard_keys = kwargs['shardKeys']
+        if shard_keys is None:
+            raise TypeError("Missing 'shard_keys' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
 
         _setter("columns", columns)
         _setter("identities", identities)
@@ -983,22 +1037,34 @@ class GetTableSchemaColumnResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             is_as_uuid: bool,
-             is_generated: bool,
-             is_nullable: bool,
-             name: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'isAsUuid' in kwargs:
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
             is_as_uuid = kwargs['isAsUuid']
-        if 'isGenerated' in kwargs:
+        if is_as_uuid is None:
+            raise TypeError("Missing 'is_as_uuid' argument")
+        if is_generated is None and 'isGenerated' in kwargs:
             is_generated = kwargs['isGenerated']
-        if 'isNullable' in kwargs:
+        if is_generated is None:
+            raise TypeError("Missing 'is_generated' argument")
+        if is_nullable is None and 'isNullable' in kwargs:
             is_nullable = kwargs['isNullable']
+        if is_nullable is None:
+            raise TypeError("Missing 'is_nullable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("default_value", default_value)
         _setter("is_as_uuid", is_as_uuid)
@@ -1076,17 +1142,23 @@ class GetTableSchemaIdentityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: str,
-             is_always: bool,
-             is_null: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'isAlways' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if is_always is None and 'isAlways' in kwargs:
             is_always = kwargs['isAlways']
-        if 'isNull' in kwargs:
+        if is_always is None:
+            raise TypeError("Missing 'is_always' argument")
+        if is_null is None and 'isNull' in kwargs:
             is_null = kwargs['isNull']
+        if is_null is None:
+            raise TypeError("Missing 'is_null' argument")
 
         _setter("column_name", column_name)
         _setter("is_always", is_always)
@@ -1140,20 +1212,28 @@ class GetTableTableLimitResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_mode: str,
-             max_read_units: int,
-             max_storage_in_gbs: int,
-             max_write_units: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_mode: Optional[str] = None,
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityMode' in kwargs:
+        if capacity_mode is None and 'capacityMode' in kwargs:
             capacity_mode = kwargs['capacityMode']
-        if 'maxReadUnits' in kwargs:
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if max_read_units is None and 'maxReadUnits' in kwargs:
             max_read_units = kwargs['maxReadUnits']
-        if 'maxStorageInGbs' in kwargs:
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
             max_storage_in_gbs = kwargs['maxStorageInGbs']
-        if 'maxWriteUnits' in kwargs:
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
             max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
 
         _setter("capacity_mode", capacity_mode)
         _setter("max_read_units", max_read_units)
@@ -1211,11 +1291,15 @@ class GetTablesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1295,45 +1379,75 @@ class GetTablesTableCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             ddl_statement: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_auto_reclaimable: bool,
-             lifecycle_details: str,
-             name: str,
-             schemas: Sequence['outputs.GetTablesTableCollectionSchemaResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             table_limits: Sequence['outputs.GetTablesTableCollectionTableLimitResult'],
-             time_created: str,
-             time_of_expiration: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             ddl_statement: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_auto_reclaimable: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             schemas: Optional[Sequence['outputs.GetTablesTableCollectionSchemaResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             table_limits: Optional[Sequence['outputs.GetTablesTableCollectionTableLimitResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_expiration: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'ddlStatement' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if ddl_statement is None and 'ddlStatement' in kwargs:
             ddl_statement = kwargs['ddlStatement']
-        if 'definedTags' in kwargs:
+        if ddl_statement is None:
+            raise TypeError("Missing 'ddl_statement' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoReclaimable' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
             is_auto_reclaimable = kwargs['isAutoReclaimable']
-        if 'lifecycleDetails' in kwargs:
+        if is_auto_reclaimable is None:
+            raise TypeError("Missing 'is_auto_reclaimable' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tableLimits' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if table_limits is None and 'tableLimits' in kwargs:
             table_limits = kwargs['tableLimits']
-        if 'timeCreated' in kwargs:
+        if table_limits is None:
+            raise TypeError("Missing 'table_limits' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfExpiration' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
             time_of_expiration = kwargs['timeOfExpiration']
-        if 'timeUpdated' in kwargs:
+        if time_of_expiration is None:
+            raise TypeError("Missing 'time_of_expiration' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("ddl_statement", ddl_statement)
@@ -1485,17 +1599,27 @@ class GetTablesTableCollectionSchemaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             columns: Sequence['outputs.GetTablesTableCollectionSchemaColumnResult'],
-             identities: Sequence['outputs.GetTablesTableCollectionSchemaIdentityResult'],
-             primary_keys: Sequence[str],
-             shard_keys: Sequence[str],
-             ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             columns: Optional[Sequence['outputs.GetTablesTableCollectionSchemaColumnResult']] = None,
+             identities: Optional[Sequence['outputs.GetTablesTableCollectionSchemaIdentityResult']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'primaryKeys' in kwargs:
+        if columns is None:
+            raise TypeError("Missing 'columns' argument")
+        if identities is None:
+            raise TypeError("Missing 'identities' argument")
+        if primary_keys is None and 'primaryKeys' in kwargs:
             primary_keys = kwargs['primaryKeys']
-        if 'shardKeys' in kwargs:
+        if primary_keys is None:
+            raise TypeError("Missing 'primary_keys' argument")
+        if shard_keys is None and 'shardKeys' in kwargs:
             shard_keys = kwargs['shardKeys']
+        if shard_keys is None:
+            raise TypeError("Missing 'shard_keys' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
 
         _setter("columns", columns)
         _setter("identities", identities)
@@ -1553,22 +1677,34 @@ class GetTablesTableCollectionSchemaColumnResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             is_as_uuid: bool,
-             is_generated: bool,
-             is_nullable: bool,
-             name: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
-        if 'isAsUuid' in kwargs:
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
             is_as_uuid = kwargs['isAsUuid']
-        if 'isGenerated' in kwargs:
+        if is_as_uuid is None:
+            raise TypeError("Missing 'is_as_uuid' argument")
+        if is_generated is None and 'isGenerated' in kwargs:
             is_generated = kwargs['isGenerated']
-        if 'isNullable' in kwargs:
+        if is_generated is None:
+            raise TypeError("Missing 'is_generated' argument")
+        if is_nullable is None and 'isNullable' in kwargs:
             is_nullable = kwargs['isNullable']
+        if is_nullable is None:
+            raise TypeError("Missing 'is_nullable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("default_value", default_value)
         _setter("is_as_uuid", is_as_uuid)
@@ -1626,17 +1762,23 @@ class GetTablesTableCollectionSchemaIdentityResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: str,
-             is_always: bool,
-             is_null: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'isAlways' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if is_always is None and 'isAlways' in kwargs:
             is_always = kwargs['isAlways']
-        if 'isNull' in kwargs:
+        if is_always is None:
+            raise TypeError("Missing 'is_always' argument")
+        if is_null is None and 'isNull' in kwargs:
             is_null = kwargs['isNull']
+        if is_null is None:
+            raise TypeError("Missing 'is_null' argument")
 
         _setter("column_name", column_name)
         _setter("is_always", is_always)
@@ -1681,20 +1823,28 @@ class GetTablesTableCollectionTableLimitResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_mode: str,
-             max_read_units: int,
-             max_storage_in_gbs: int,
-             max_write_units: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_mode: Optional[str] = None,
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityMode' in kwargs:
+        if capacity_mode is None and 'capacityMode' in kwargs:
             capacity_mode = kwargs['capacityMode']
-        if 'maxReadUnits' in kwargs:
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if max_read_units is None and 'maxReadUnits' in kwargs:
             max_read_units = kwargs['maxReadUnits']
-        if 'maxStorageInGbs' in kwargs:
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
             max_storage_in_gbs = kwargs['maxStorageInGbs']
-        if 'maxWriteUnits' in kwargs:
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
             max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
 
         _setter("capacity_mode", capacity_mode)
         _setter("max_read_units", max_read_units)

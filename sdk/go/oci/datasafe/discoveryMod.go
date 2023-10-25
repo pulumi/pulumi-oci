@@ -38,12 +38,12 @@ import (
 //			_, err := DataSafe.NewDiscoveryMod(ctx, "testDiscoveryJob", &DataSafe.DiscoveryModArgs{
 //				CompartmentId:        pulumi.Any(_var.Compartment_id),
 //				SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DiscoveryType: pulumi.Any(_var.Discovery_job_discovery_type),
 //				DisplayName:   pulumi.Any(_var.Discovery_job_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Discovery_job_is_app_defined_relation_discovery_enabled),

@@ -121,10 +121,10 @@ class MysqlDbSystemArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             shape_name: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              admin_password: Optional[pulumi.Input[str]] = None,
              admin_username: Optional[pulumi.Input[str]] = None,
              backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
@@ -147,49 +147,57 @@ class MysqlDbSystemArgs:
              shutdown_type: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'shapeName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'subnetId' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'adminPassword' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'backupPolicy' in kwargs:
+        if backup_policy is None and 'backupPolicy' in kwargs:
             backup_policy = kwargs['backupPolicy']
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHighlyAvailable' in kwargs:
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'mysqlVersion' in kwargs:
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shutdownType' in kwargs:
+        if shutdown_type is None and 'shutdownType' in kwargs:
             shutdown_type = kwargs['shutdownType']
 
         _setter("availability_domain", availability_domain)
@@ -742,63 +750,63 @@ class _MysqlDbSystemState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminPassword' in kwargs:
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicy' in kwargs:
+        if backup_policy is None and 'backupPolicy' in kwargs:
             backup_policy = kwargs['backupPolicy']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'configurationId' in kwargs:
+        if configuration_id is None and 'configurationId' in kwargs:
             configuration_id = kwargs['configurationId']
-        if 'crashRecovery' in kwargs:
+        if crash_recovery is None and 'crashRecovery' in kwargs:
             crash_recovery = kwargs['crashRecovery']
-        if 'currentPlacements' in kwargs:
+        if current_placements is None and 'currentPlacements' in kwargs:
             current_placements = kwargs['currentPlacements']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deletionPolicies' in kwargs:
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
             deletion_policies = kwargs['deletionPolicies']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'heatWaveClusters' in kwargs:
+        if heat_wave_clusters is None and 'heatWaveClusters' in kwargs:
             heat_wave_clusters = kwargs['heatWaveClusters']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'isHeatWaveClusterAttached' in kwargs:
+        if is_heat_wave_cluster_attached is None and 'isHeatWaveClusterAttached' in kwargs:
             is_heat_wave_cluster_attached = kwargs['isHeatWaveClusterAttached']
-        if 'isHighlyAvailable' in kwargs:
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
             is_highly_available = kwargs['isHighlyAvailable']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mysqlVersion' in kwargs:
+        if mysql_version is None and 'mysqlVersion' in kwargs:
             mysql_version = kwargs['mysqlVersion']
-        if 'pointInTimeRecoveryDetails' in kwargs:
+        if point_in_time_recovery_details is None and 'pointInTimeRecoveryDetails' in kwargs:
             point_in_time_recovery_details = kwargs['pointInTimeRecoveryDetails']
-        if 'portX' in kwargs:
+        if port_x is None and 'portX' in kwargs:
             port_x = kwargs['portX']
-        if 'shapeName' in kwargs:
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'shutdownType' in kwargs:
+        if shutdown_type is None and 'shutdownType' in kwargs:
             shutdown_type = kwargs['shutdownType']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if admin_password is not None:
@@ -1597,11 +1605,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
-            if backup_policy is not None and not isinstance(backup_policy, MysqlDbSystemBackupPolicyArgs):
-                backup_policy = backup_policy or {}
-                def _setter(key, value):
-                    backup_policy[key] = value
-                MysqlDbSystemBackupPolicyArgs._configure(_setter, **backup_policy)
+            backup_policy = _utilities.configure(backup_policy, MysqlDbSystemBackupPolicyArgs, True)
             __props__.__dict__["backup_policy"] = backup_policy
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -1618,11 +1622,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
             __props__.__dict__["is_highly_available"] = is_highly_available
-            if maintenance is not None and not isinstance(maintenance, MysqlDbSystemMaintenanceArgs):
-                maintenance = maintenance or {}
-                def _setter(key, value):
-                    maintenance[key] = value
-                MysqlDbSystemMaintenanceArgs._configure(_setter, **maintenance)
+            maintenance = _utilities.configure(maintenance, MysqlDbSystemMaintenanceArgs, True)
             __props__.__dict__["maintenance"] = maintenance
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["port"] = port
@@ -1631,11 +1631,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
             __props__.__dict__["shutdown_type"] = shutdown_type
-            if source is not None and not isinstance(source, MysqlDbSystemSourceArgs):
-                source = source or {}
-                def _setter(key, value):
-                    source[key] = value
-                MysqlDbSystemSourceArgs._configure(_setter, **source)
+            source = _utilities.configure(source, MysqlDbSystemSourceArgs, True)
             __props__.__dict__["source"] = source
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:

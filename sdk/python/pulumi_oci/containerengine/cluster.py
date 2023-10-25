@@ -65,9 +65,9 @@ class ClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             kubernetes_version: pulumi.Input[str],
-             vcn_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             kubernetes_version: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
              cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              endpoint_config: Optional[pulumi.Input['ClusterEndpointConfigArgs']] = None,
@@ -77,25 +77,31 @@ class ClusterArgs:
              name: Optional[pulumi.Input[str]] = None,
              options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'kubernetesVersion' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'vcnId' in kwargs:
+        if kubernetes_version is None:
+            raise TypeError("Missing 'kubernetes_version' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'clusterPodNetworkOptions' in kwargs:
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if cluster_pod_network_options is None and 'clusterPodNetworkOptions' in kwargs:
             cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'endpointConfig' in kwargs:
+        if endpoint_config is None and 'endpointConfig' in kwargs:
             endpoint_config = kwargs['endpointConfig']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfig' in kwargs:
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
             image_policy_config = kwargs['imagePolicyConfig']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
 
         _setter("compartment_id", compartment_id)
@@ -353,29 +359,29 @@ class _ClusterState:
              state: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availableKubernetesUpgrades' in kwargs:
+        if available_kubernetes_upgrades is None and 'availableKubernetesUpgrades' in kwargs:
             available_kubernetes_upgrades = kwargs['availableKubernetesUpgrades']
-        if 'clusterPodNetworkOptions' in kwargs:
+        if cluster_pod_network_options is None and 'clusterPodNetworkOptions' in kwargs:
             cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'endpointConfig' in kwargs:
+        if endpoint_config is None and 'endpointConfig' in kwargs:
             endpoint_config = kwargs['endpointConfig']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imagePolicyConfig' in kwargs:
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
             image_policy_config = kwargs['imagePolicyConfig']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kubernetesVersion' in kwargs:
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if available_kubernetes_upgrades is not None:
@@ -736,29 +742,17 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
-            if endpoint_config is not None and not isinstance(endpoint_config, ClusterEndpointConfigArgs):
-                endpoint_config = endpoint_config or {}
-                def _setter(key, value):
-                    endpoint_config[key] = value
-                ClusterEndpointConfigArgs._configure(_setter, **endpoint_config)
+            endpoint_config = _utilities.configure(endpoint_config, ClusterEndpointConfigArgs, True)
             __props__.__dict__["endpoint_config"] = endpoint_config
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if image_policy_config is not None and not isinstance(image_policy_config, ClusterImagePolicyConfigArgs):
-                image_policy_config = image_policy_config or {}
-                def _setter(key, value):
-                    image_policy_config[key] = value
-                ClusterImagePolicyConfigArgs._configure(_setter, **image_policy_config)
+            image_policy_config = _utilities.configure(image_policy_config, ClusterImagePolicyConfigArgs, True)
             __props__.__dict__["image_policy_config"] = image_policy_config
             __props__.__dict__["kms_key_id"] = kms_key_id
             if kubernetes_version is None and not opts.urn:
                 raise TypeError("Missing required property 'kubernetes_version'")
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
-            if options is not None and not isinstance(options, ClusterOptionsArgs):
-                options = options or {}
-                def _setter(key, value):
-                    options[key] = value
-                ClusterOptionsArgs._configure(_setter, **options)
+            options = _utilities.configure(options, ClusterOptionsArgs, True)
             __props__.__dict__["options"] = options
             __props__.__dict__["type"] = type
             if vcn_id is None and not opts.urn:

@@ -33,14 +33,18 @@ class BackupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             database_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'displayName' in kwargs:
+        if database_id is None:
+            raise TypeError("Missing 'database_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("database_id", database_id)
         _setter("display_name", display_name)
@@ -162,35 +166,35 @@ class _BackupState:
              type: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseEdition' in kwargs:
+        if database_edition is None and 'databaseEdition' in kwargs:
             database_edition = kwargs['databaseEdition']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseSizeInGbs' in kwargs:
+        if database_size_in_gbs is None and 'databaseSizeInGbs' in kwargs:
             database_size_in_gbs = kwargs['databaseSizeInGbs']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'keyStoreId' in kwargs:
+        if key_store_id is None and 'keyStoreId' in kwargs:
             key_store_id = kwargs['keyStoreId']
-        if 'keyStoreWalletName' in kwargs:
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
             key_store_wallet_name = kwargs['keyStoreWalletName']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyVersionId' in kwargs:
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
             kms_key_version_id = kwargs['kmsKeyVersionId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'vaultId' in kwargs:
+        if vault_id is None and 'vaultId' in kwargs:
             vault_id = kwargs['vaultId']
 
         if availability_domain is not None:

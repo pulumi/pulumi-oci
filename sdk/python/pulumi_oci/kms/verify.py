@@ -48,24 +48,36 @@ class VerifyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             crypto_endpoint: pulumi.Input[str],
-             key_id: pulumi.Input[str],
-             key_version_id: pulumi.Input[str],
-             message: pulumi.Input[str],
-             signature: pulumi.Input[str],
-             signing_algorithm: pulumi.Input[str],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_version_id: Optional[pulumi.Input[str]] = None,
+             message: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             signing_algorithm: Optional[pulumi.Input[str]] = None,
              message_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'keyId' in kwargs:
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyVersionId' in kwargs:
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if key_version_id is None and 'keyVersionId' in kwargs:
             key_version_id = kwargs['keyVersionId']
-        if 'signingAlgorithm' in kwargs:
+        if key_version_id is None:
+            raise TypeError("Missing 'key_version_id' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if signature is None:
+            raise TypeError("Missing 'signature' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
-        if 'messageType' in kwargs:
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if message_type is None and 'messageType' in kwargs:
             message_type = kwargs['messageType']
 
         _setter("crypto_endpoint", crypto_endpoint)
@@ -214,19 +226,19 @@ class _VerifyState:
              message_type: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              signing_algorithm: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'isSignatureValid' in kwargs:
+        if is_signature_valid is None and 'isSignatureValid' in kwargs:
             is_signature_valid = kwargs['isSignatureValid']
-        if 'keyId' in kwargs:
+        if key_id is None and 'keyId' in kwargs:
             key_id = kwargs['keyId']
-        if 'keyVersionId' in kwargs:
+        if key_version_id is None and 'keyVersionId' in kwargs:
             key_version_id = kwargs['keyVersionId']
-        if 'messageType' in kwargs:
+        if message_type is None and 'messageType' in kwargs:
             message_type = kwargs['messageType']
-        if 'signingAlgorithm' in kwargs:
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
             signing_algorithm = kwargs['signingAlgorithm']
 
         if crypto_endpoint is not None:

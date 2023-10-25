@@ -39,7 +39,7 @@ import (
 //					KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
 //				},
 //				DefinedTags: pulumi.Any(_var.Stream_pool_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KafkaSettings: &streaming.StreamPoolKafkaSettingsArgs{

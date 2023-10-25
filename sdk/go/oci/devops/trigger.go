@@ -49,12 +49,12 @@ import (
 //				},
 //				ProjectId:     pulumi.Any(oci_devops_project.Test_project.Id),
 //				TriggerSource: pulumi.Any(_var.Trigger_trigger_source),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Trigger_description),
 //				DisplayName: pulumi.Any(_var.Trigger_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),

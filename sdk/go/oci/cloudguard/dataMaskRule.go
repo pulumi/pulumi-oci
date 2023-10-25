@@ -41,11 +41,11 @@ import (
 //					Values: pulumi.Any(_var.Data_mask_rule_target_selected_values),
 //				},
 //				DataMaskRuleStatus: pulumi.Any(_var.Data_mask_rule_data_mask_rule_status),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Data_mask_rule_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				State: pulumi.Any(_var.Data_mask_rule_state),

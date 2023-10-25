@@ -36,15 +36,21 @@ class NamespaceIngestTimeRulesManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_ingest_time_rule: pulumi.Input[bool],
-             ingest_time_rule_id: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_ingest_time_rule: Optional[pulumi.Input[bool]] = None,
+             ingest_time_rule_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableIngestTimeRule' in kwargs:
+        if enable_ingest_time_rule is None and 'enableIngestTimeRule' in kwargs:
             enable_ingest_time_rule = kwargs['enableIngestTimeRule']
-        if 'ingestTimeRuleId' in kwargs:
+        if enable_ingest_time_rule is None:
+            raise TypeError("Missing 'enable_ingest_time_rule' argument")
+        if ingest_time_rule_id is None and 'ingestTimeRuleId' in kwargs:
             ingest_time_rule_id = kwargs['ingestTimeRuleId']
+        if ingest_time_rule_id is None:
+            raise TypeError("Missing 'ingest_time_rule_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("enable_ingest_time_rule", enable_ingest_time_rule)
         _setter("ingest_time_rule_id", ingest_time_rule_id)
@@ -119,11 +125,11 @@ class _NamespaceIngestTimeRulesManagementState:
              enable_ingest_time_rule: Optional[pulumi.Input[bool]] = None,
              ingest_time_rule_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableIngestTimeRule' in kwargs:
+        if enable_ingest_time_rule is None and 'enableIngestTimeRule' in kwargs:
             enable_ingest_time_rule = kwargs['enableIngestTimeRule']
-        if 'ingestTimeRuleId' in kwargs:
+        if ingest_time_rule_id is None and 'ingestTimeRuleId' in kwargs:
             ingest_time_rule_id = kwargs['ingestTimeRuleId']
 
         if enable_ingest_time_rule is not None:

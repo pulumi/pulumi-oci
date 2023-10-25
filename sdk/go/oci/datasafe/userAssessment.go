@@ -36,12 +36,12 @@ import (
 //			_, err := DataSafe.NewUserAssessment(ctx, "testUserAssessment", &DataSafe.UserAssessmentArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.User_assessment_description),
 //				DisplayName: pulumi.Any(_var.User_assessment_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Schedule: pulumi.Any(_var.User_assessment_schedule),

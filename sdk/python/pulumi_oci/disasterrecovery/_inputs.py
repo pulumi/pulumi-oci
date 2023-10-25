@@ -48,16 +48,18 @@ class DrPlanExecutionExecutionOptionsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             plan_execution_type: pulumi.Input[str],
+             plan_execution_type: Optional[pulumi.Input[str]] = None,
              are_prechecks_enabled: Optional[pulumi.Input[bool]] = None,
              are_warnings_ignored: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'planExecutionType' in kwargs:
+        if plan_execution_type is None and 'planExecutionType' in kwargs:
             plan_execution_type = kwargs['planExecutionType']
-        if 'arePrechecksEnabled' in kwargs:
+        if plan_execution_type is None:
+            raise TypeError("Missing 'plan_execution_type' argument")
+        if are_prechecks_enabled is None and 'arePrechecksEnabled' in kwargs:
             are_prechecks_enabled = kwargs['arePrechecksEnabled']
-        if 'areWarningsIgnored' in kwargs:
+        if are_warnings_ignored is None and 'areWarningsIgnored' in kwargs:
             are_warnings_ignored = kwargs['areWarningsIgnored']
 
         _setter("plan_execution_type", plan_execution_type)
@@ -150,21 +152,21 @@ class DrPlanExecutionGroupExecutionArgs:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionDurationInSec' in kwargs:
+        if execution_duration_in_sec is None and 'executionDurationInSec' in kwargs:
             execution_duration_in_sec = kwargs['executionDurationInSec']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'statusDetails' in kwargs:
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
-        if 'stepExecutions' in kwargs:
+        if step_executions is None and 'stepExecutions' in kwargs:
             step_executions = kwargs['stepExecutions']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if display_name is not None:
@@ -346,23 +348,23 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionDurationInSec' in kwargs:
+        if execution_duration_in_sec is None and 'executionDurationInSec' in kwargs:
             execution_duration_in_sec = kwargs['executionDurationInSec']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'logLocations' in kwargs:
+        if log_locations is None and 'logLocations' in kwargs:
             log_locations = kwargs['logLocations']
-        if 'statusDetails' in kwargs:
+        if status_details is None and 'statusDetails' in kwargs:
             status_details = kwargs['statusDetails']
-        if 'stepId' in kwargs:
+        if step_id is None and 'stepId' in kwargs:
             step_id = kwargs['stepId']
-        if 'timeEnded' in kwargs:
+        if time_ended is None and 'timeEnded' in kwargs:
             time_ended = kwargs['timeEnded']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if display_name is not None:
@@ -530,7 +532,7 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -600,7 +602,7 @@ class DrPlanExecutionLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -678,9 +680,9 @@ class DrPlanPlanGroupArgs:
              id: Optional[pulumi.Input[str]] = None,
              steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if display_name is not None:
@@ -796,19 +798,19 @@ class DrPlanPlanGroupStepArgs:
              timeout: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              user_defined_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'errorMode' in kwargs:
+        if error_mode is None and 'errorMode' in kwargs:
             error_mode = kwargs['errorMode']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'memberId' in kwargs:
+        if member_id is None and 'memberId' in kwargs:
             member_id = kwargs['memberId']
-        if 'userDefinedSteps' in kwargs:
+        if user_defined_steps is None and 'userDefinedSteps' in kwargs:
             user_defined_steps = kwargs['userDefinedSteps']
 
         if display_name is not None:
@@ -990,25 +992,25 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
              run_on_instance_region: Optional[pulumi.Input[str]] = None,
              script_command: Optional[pulumi.Input[str]] = None,
              step_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'functionRegion' in kwargs:
+        if function_region is None and 'functionRegion' in kwargs:
             function_region = kwargs['functionRegion']
-        if 'objectStorageScriptLocations' in kwargs:
+        if object_storage_script_locations is None and 'objectStorageScriptLocations' in kwargs:
             object_storage_script_locations = kwargs['objectStorageScriptLocations']
-        if 'requestBody' in kwargs:
+        if request_body is None and 'requestBody' in kwargs:
             request_body = kwargs['requestBody']
-        if 'runAsUser' in kwargs:
+        if run_as_user is None and 'runAsUser' in kwargs:
             run_as_user = kwargs['runAsUser']
-        if 'runOnInstanceId' in kwargs:
+        if run_on_instance_id is None and 'runOnInstanceId' in kwargs:
             run_on_instance_id = kwargs['runOnInstanceId']
-        if 'runOnInstanceRegion' in kwargs:
+        if run_on_instance_region is None and 'runOnInstanceRegion' in kwargs:
             run_on_instance_region = kwargs['runOnInstanceRegion']
-        if 'scriptCommand' in kwargs:
+        if script_command is None and 'scriptCommand' in kwargs:
             script_command = kwargs['scriptCommand']
-        if 'stepType' in kwargs:
+        if step_type is None and 'stepType' in kwargs:
             step_type = kwargs['stepType']
 
         if function_id is not None:
@@ -1162,7 +1164,7 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if bucket is not None:
@@ -1229,14 +1231,16 @@ class DrProtectionGroupAssociationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             role: pulumi.Input[str],
+             role: Optional[pulumi.Input[str]] = None,
              peer_id: Optional[pulumi.Input[str]] = None,
              peer_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'peerId' in kwargs:
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if peer_id is None and 'peerId' in kwargs:
             peer_id = kwargs['peerId']
-        if 'peerRegion' in kwargs:
+        if peer_region is None and 'peerRegion' in kwargs:
             peer_region = kwargs['peerRegion']
 
         _setter("role", role)
@@ -1302,11 +1306,15 @@ class DrProtectionGroupLogLocationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1391,8 +1399,8 @@ class DrProtectionGroupMemberArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             member_id: pulumi.Input[str],
-             member_type: pulumi.Input[str],
+             member_id: Optional[pulumi.Input[str]] = None,
+             member_type: Optional[pulumi.Input[str]] = None,
              destination_capacity_reservation_id: Optional[pulumi.Input[str]] = None,
              destination_compartment_id: Optional[pulumi.Input[str]] = None,
              destination_dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
@@ -1401,27 +1409,31 @@ class DrProtectionGroupMemberArgs:
              password_vault_secret_id: Optional[pulumi.Input[str]] = None,
              vnic_mapping: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
              vnic_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memberId' in kwargs:
+        if member_id is None and 'memberId' in kwargs:
             member_id = kwargs['memberId']
-        if 'memberType' in kwargs:
+        if member_id is None:
+            raise TypeError("Missing 'member_id' argument")
+        if member_type is None and 'memberType' in kwargs:
             member_type = kwargs['memberType']
-        if 'destinationCapacityReservationId' in kwargs:
+        if member_type is None:
+            raise TypeError("Missing 'member_type' argument")
+        if destination_capacity_reservation_id is None and 'destinationCapacityReservationId' in kwargs:
             destination_capacity_reservation_id = kwargs['destinationCapacityReservationId']
-        if 'destinationCompartmentId' in kwargs:
+        if destination_compartment_id is None and 'destinationCompartmentId' in kwargs:
             destination_compartment_id = kwargs['destinationCompartmentId']
-        if 'destinationDedicatedVmHostId' in kwargs:
+        if destination_dedicated_vm_host_id is None and 'destinationDedicatedVmHostId' in kwargs:
             destination_dedicated_vm_host_id = kwargs['destinationDedicatedVmHostId']
-        if 'isMovable' in kwargs:
+        if is_movable is None and 'isMovable' in kwargs:
             is_movable = kwargs['isMovable']
-        if 'isRetainFaultDomain' in kwargs:
+        if is_retain_fault_domain is None and 'isRetainFaultDomain' in kwargs:
             is_retain_fault_domain = kwargs['isRetainFaultDomain']
-        if 'passwordVaultSecretId' in kwargs:
+        if password_vault_secret_id is None and 'passwordVaultSecretId' in kwargs:
             password_vault_secret_id = kwargs['passwordVaultSecretId']
-        if 'vnicMapping' in kwargs:
+        if vnic_mapping is None and 'vnicMapping' in kwargs:
             vnic_mapping = kwargs['vnicMapping']
-        if 'vnicMappings' in kwargs:
+        if vnic_mappings is None and 'vnicMappings' in kwargs:
             vnic_mappings = kwargs['vnicMappings']
 
         _setter("member_id", member_id)
@@ -1595,17 +1607,17 @@ class DrProtectionGroupMemberVnicMappingArgs:
              destination_primary_private_ip_hostname_label: Optional[pulumi.Input[str]] = None,
              destination_subnet_id: Optional[pulumi.Input[str]] = None,
              source_vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationNsgIdLists' in kwargs:
+        if destination_nsg_id_lists is None and 'destinationNsgIdLists' in kwargs:
             destination_nsg_id_lists = kwargs['destinationNsgIdLists']
-        if 'destinationPrimaryPrivateIpAddress' in kwargs:
+        if destination_primary_private_ip_address is None and 'destinationPrimaryPrivateIpAddress' in kwargs:
             destination_primary_private_ip_address = kwargs['destinationPrimaryPrivateIpAddress']
-        if 'destinationPrimaryPrivateIpHostnameLabel' in kwargs:
+        if destination_primary_private_ip_hostname_label is None and 'destinationPrimaryPrivateIpHostnameLabel' in kwargs:
             destination_primary_private_ip_hostname_label = kwargs['destinationPrimaryPrivateIpHostnameLabel']
-        if 'destinationSubnetId' in kwargs:
+        if destination_subnet_id is None and 'destinationSubnetId' in kwargs:
             destination_subnet_id = kwargs['destinationSubnetId']
-        if 'sourceVnicId' in kwargs:
+        if source_vnic_id is None and 'sourceVnicId' in kwargs:
             source_vnic_id = kwargs['sourceVnicId']
 
         if destination_nsg_id_lists is not None:
@@ -1695,11 +1707,15 @@ class GetDrPlanExecutionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1749,11 +1765,15 @@ class GetDrPlansFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1803,11 +1823,15 @@ class GetDrProtectionGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

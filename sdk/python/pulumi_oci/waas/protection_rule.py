@@ -37,14 +37,18 @@ class ProtectionRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: pulumi.Input[str],
-             waas_policy_id: pulumi.Input[str],
+             key: Optional[pulumi.Input[str]] = None,
+             waas_policy_id: Optional[pulumi.Input[str]] = None,
              action: Optional[pulumi.Input[str]] = None,
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waasPolicyId' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
             waas_policy_id = kwargs['waasPolicyId']
+        if waas_policy_id is None:
+            raise TypeError("Missing 'waas_policy_id' argument")
 
         _setter("key", key)
         _setter("waas_policy_id", waas_policy_id)
@@ -146,11 +150,11 @@ class _ProtectionRuleState:
              mod_security_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              waas_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'modSecurityRuleIds' in kwargs:
+        if mod_security_rule_ids is None and 'modSecurityRuleIds' in kwargs:
             mod_security_rule_ids = kwargs['modSecurityRuleIds']
-        if 'waasPolicyId' in kwargs:
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
             waas_policy_id = kwargs['waasPolicyId']
 
         if action is not None:

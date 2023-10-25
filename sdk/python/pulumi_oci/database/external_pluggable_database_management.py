@@ -34,17 +34,23 @@ class ExternalPluggableDatabaseManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_management: pulumi.Input[bool],
-             external_database_connector_id: pulumi.Input[str],
-             external_pluggable_database_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_management: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableManagement' in kwargs:
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if enable_management is None:
+            raise TypeError("Missing 'enable_management' argument")
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalPluggableDatabaseId' in kwargs:
+        if external_database_connector_id is None:
+            raise TypeError("Missing 'external_database_connector_id' argument")
+        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
             external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
+        if external_pluggable_database_id is None:
+            raise TypeError("Missing 'external_pluggable_database_id' argument")
 
         _setter("enable_management", enable_management)
         _setter("external_database_connector_id", external_database_connector_id)
@@ -113,13 +119,13 @@ class _ExternalPluggableDatabaseManagementState:
              enable_management: Optional[pulumi.Input[bool]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableManagement' in kwargs:
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalPluggableDatabaseId' in kwargs:
+        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
             external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
 
         if enable_management is not None:

@@ -35,11 +35,11 @@ import (
 //				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
 //				RepositoryType: pulumi.Any(_var.Repository_repository_type),
 //				DefaultBranch:  pulumi.Any(_var.Repository_default_branch),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Repository_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MirrorRepositoryConfig: &devops.RepositoryMirrorRepositoryConfigArgs{

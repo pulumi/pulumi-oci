@@ -109,11 +109,11 @@ import (
 //					StorageProvisionedInMbs: pulumi.Any(_var.Asset_compute_storage_provisioned_in_mbs),
 //					ThreadsPerCoreCount:     pulumi.Any(_var.Asset_compute_threads_per_core_count),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Asset_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Vm: &cloudbridge.AssetVmArgs{

@@ -55,10 +55,10 @@ import (
 //			_, err := Identity.NewTag(ctx, "testTag", &Identity.TagArgs{
 //				Description:    pulumi.Any(_var.Tag_description),
 //				TagNamespaceId: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsCostTracking: pulumi.Any(_var.Tag_is_cost_tracking),

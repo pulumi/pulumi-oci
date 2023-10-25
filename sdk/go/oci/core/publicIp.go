@@ -54,11 +54,11 @@ import (
 //			_, err := Core.NewPublicIp(ctx, "testPublicIp", &Core.PublicIpArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Lifetime:      pulumi.Any(_var.Public_ip_lifetime),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Public_ip_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PrivateIpId:    pulumi.Any(oci_core_private_ip.Test_private_ip.Id),

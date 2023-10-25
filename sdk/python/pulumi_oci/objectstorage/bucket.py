@@ -68,8 +68,8 @@ class BucketArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              access_type: Optional[pulumi.Input[str]] = None,
              auto_tiering: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -81,25 +81,29 @@ class BucketArgs:
              retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
              storage_tier: Optional[pulumi.Input[str]] = None,
              versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'accessType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if access_type is None and 'accessType' in kwargs:
             access_type = kwargs['accessType']
-        if 'autoTiering' in kwargs:
+        if auto_tiering is None and 'autoTiering' in kwargs:
             auto_tiering = kwargs['autoTiering']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'objectEventsEnabled' in kwargs:
+        if object_events_enabled is None and 'objectEventsEnabled' in kwargs:
             object_events_enabled = kwargs['objectEventsEnabled']
-        if 'retentionRules' in kwargs:
+        if retention_rules is None and 'retentionRules' in kwargs:
             retention_rules = kwargs['retentionRules']
-        if 'storageTier' in kwargs:
+        if storage_tier is None and 'storageTier' in kwargs:
             storage_tier = kwargs['storageTier']
 
         _setter("compartment_id", compartment_id)
@@ -392,41 +396,41 @@ class _BucketState:
              storage_tier: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessType' in kwargs:
+        if access_type is None and 'accessType' in kwargs:
             access_type = kwargs['accessType']
-        if 'approximateCount' in kwargs:
+        if approximate_count is None and 'approximateCount' in kwargs:
             approximate_count = kwargs['approximateCount']
-        if 'approximateSize' in kwargs:
+        if approximate_size is None and 'approximateSize' in kwargs:
             approximate_size = kwargs['approximateSize']
-        if 'autoTiering' in kwargs:
+        if auto_tiering is None and 'autoTiering' in kwargs:
             auto_tiering = kwargs['autoTiering']
-        if 'bucketId' in kwargs:
+        if bucket_id is None and 'bucketId' in kwargs:
             bucket_id = kwargs['bucketId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isReadOnly' in kwargs:
+        if is_read_only is None and 'isReadOnly' in kwargs:
             is_read_only = kwargs['isReadOnly']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'objectEventsEnabled' in kwargs:
+        if object_events_enabled is None and 'objectEventsEnabled' in kwargs:
             object_events_enabled = kwargs['objectEventsEnabled']
-        if 'objectLifecyclePolicyEtag' in kwargs:
+        if object_lifecycle_policy_etag is None and 'objectLifecyclePolicyEtag' in kwargs:
             object_lifecycle_policy_etag = kwargs['objectLifecyclePolicyEtag']
-        if 'replicationEnabled' in kwargs:
+        if replication_enabled is None and 'replicationEnabled' in kwargs:
             replication_enabled = kwargs['replicationEnabled']
-        if 'retentionRules' in kwargs:
+        if retention_rules is None and 'retentionRules' in kwargs:
             retention_rules = kwargs['retentionRules']
-        if 'storageTier' in kwargs:
+        if storage_tier is None and 'storageTier' in kwargs:
             storage_tier = kwargs['storageTier']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if access_type is not None:

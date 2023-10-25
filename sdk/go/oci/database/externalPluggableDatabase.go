@@ -37,7 +37,7 @@ import (
 //				DisplayName:                 pulumi.Any(_var.External_pluggable_database_display_name),
 //				ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
 //				DefinedTags:                 pulumi.Any(_var.External_pluggable_database_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				SourceId: pulumi.Any(oci_database_source.Test_source.Id),

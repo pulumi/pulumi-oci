@@ -83,13 +83,15 @@ class DatasetDatasetFormatDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format_type: str,
+             format_type: Optional[str] = None,
              text_file_type_metadata: Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formatType' in kwargs:
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'textFileTypeMetadata' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if text_file_type_metadata is None and 'textFileTypeMetadata' in kwargs:
             text_file_type_metadata = kwargs['textFileTypeMetadata']
 
         _setter("format_type", format_type)
@@ -169,25 +171,29 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadata(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_index: int,
-             format_type: str,
+             column_index: Optional[int] = None,
+             format_type: Optional[str] = None,
              column_delimiter: Optional[str] = None,
              column_name: Optional[str] = None,
              escape_character: Optional[str] = None,
              line_delimiter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnIndex' in kwargs:
+        if column_index is None and 'columnIndex' in kwargs:
             column_index = kwargs['columnIndex']
-        if 'formatType' in kwargs:
+        if column_index is None:
+            raise TypeError("Missing 'column_index' argument")
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'columnDelimiter' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if column_delimiter is None and 'columnDelimiter' in kwargs:
             column_delimiter = kwargs['columnDelimiter']
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'escapeCharacter' in kwargs:
+        if escape_character is None and 'escapeCharacter' in kwargs:
             escape_character = kwargs['escapeCharacter']
-        if 'lineDelimiter' in kwargs:
+        if line_delimiter is None and 'lineDelimiter' in kwargs:
             line_delimiter = kwargs['lineDelimiter']
 
         _setter("column_index", column_index)
@@ -290,14 +296,20 @@ class DatasetDatasetSourceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             source_type: str,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             source_type: Optional[str] = None,
              prefix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -374,14 +386,18 @@ class DatasetInitialImportDatasetConfiguration(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             import_format: 'outputs.DatasetInitialImportDatasetConfigurationImportFormat',
-             import_metadata_path: 'outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             import_format: Optional['outputs.DatasetInitialImportDatasetConfigurationImportFormat'] = None,
+             import_metadata_path: Optional['outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importFormat' in kwargs:
+        if import_format is None and 'importFormat' in kwargs:
             import_format = kwargs['importFormat']
-        if 'importMetadataPath' in kwargs:
+        if import_format is None:
+            raise TypeError("Missing 'import_format' argument")
+        if import_metadata_path is None and 'importMetadataPath' in kwargs:
             import_metadata_path = kwargs['importMetadataPath']
+        if import_metadata_path is None:
+            raise TypeError("Missing 'import_metadata_path' argument")
 
         _setter("import_format", import_format)
         _setter("import_metadata_path", import_metadata_path)
@@ -420,10 +436,12 @@ class DatasetInitialImportDatasetConfigurationImportFormat(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
+             name: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if version is not None:
@@ -486,14 +504,22 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPath(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             path: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             path: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -540,7 +566,7 @@ class DatasetInitialRecordGenerationConfiguration(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
         pass
 
@@ -560,9 +586,11 @@ class DatasetLabelSet(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.DatasetLabelSetItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.DatasetLabelSetItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -589,9 +617,11 @@ class DatasetLabelSetItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -618,9 +648,11 @@ class GetAnnotationFormatItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -647,9 +679,11 @@ class GetAnnotationFormatsAnnotationFormatCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAnnotationFormatsAnnotationFormatCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAnnotationFormatsAnnotationFormatCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -676,9 +710,11 @@ class GetAnnotationFormatsAnnotationFormatCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -709,11 +745,15 @@ class GetAnnotationFormatsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -756,14 +796,18 @@ class GetDatasetDatasetFormatDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format_type: str,
-             text_file_type_metadatas: Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             format_type: Optional[str] = None,
+             text_file_type_metadatas: Optional[Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formatType' in kwargs:
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'textFileTypeMetadatas' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if text_file_type_metadatas is None and 'textFileTypeMetadatas' in kwargs:
             text_file_type_metadatas = kwargs['textFileTypeMetadatas']
+        if text_file_type_metadatas is None:
+            raise TypeError("Missing 'text_file_type_metadatas' argument")
 
         _setter("format_type", format_type)
         _setter("text_file_type_metadatas", text_file_type_metadatas)
@@ -814,26 +858,38 @@ class GetDatasetDatasetFormatDetailTextFileTypeMetadataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_delimiter: str,
-             column_index: int,
-             column_name: str,
-             escape_character: str,
-             format_type: str,
-             line_delimiter: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_delimiter: Optional[str] = None,
+             column_index: Optional[int] = None,
+             column_name: Optional[str] = None,
+             escape_character: Optional[str] = None,
+             format_type: Optional[str] = None,
+             line_delimiter: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnDelimiter' in kwargs:
+        if column_delimiter is None and 'columnDelimiter' in kwargs:
             column_delimiter = kwargs['columnDelimiter']
-        if 'columnIndex' in kwargs:
+        if column_delimiter is None:
+            raise TypeError("Missing 'column_delimiter' argument")
+        if column_index is None and 'columnIndex' in kwargs:
             column_index = kwargs['columnIndex']
-        if 'columnName' in kwargs:
+        if column_index is None:
+            raise TypeError("Missing 'column_index' argument")
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'escapeCharacter' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if escape_character is None and 'escapeCharacter' in kwargs:
             escape_character = kwargs['escapeCharacter']
-        if 'formatType' in kwargs:
+        if escape_character is None:
+            raise TypeError("Missing 'escape_character' argument")
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'lineDelimiter' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if line_delimiter is None and 'lineDelimiter' in kwargs:
             line_delimiter = kwargs['lineDelimiter']
+        if line_delimiter is None:
+            raise TypeError("Missing 'line_delimiter' argument")
 
         _setter("column_delimiter", column_delimiter)
         _setter("column_index", column_index)
@@ -914,14 +970,22 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             prefix: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -978,14 +1042,18 @@ class GetDatasetInitialImportDatasetConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             import_formats: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult'],
-             import_metadata_paths: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             import_formats: Optional[Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult']] = None,
+             import_metadata_paths: Optional[Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importFormats' in kwargs:
+        if import_formats is None and 'importFormats' in kwargs:
             import_formats = kwargs['importFormats']
-        if 'importMetadataPaths' in kwargs:
+        if import_formats is None:
+            raise TypeError("Missing 'import_formats' argument")
+        if import_metadata_paths is None and 'importMetadataPaths' in kwargs:
             import_metadata_paths = kwargs['importMetadataPaths']
+        if import_metadata_paths is None:
+            raise TypeError("Missing 'import_metadata_paths' argument")
 
         _setter("import_formats", import_formats)
         _setter("import_metadata_paths", import_metadata_paths)
@@ -1024,10 +1092,14 @@ class GetDatasetInitialImportDatasetConfigurationImportFormatResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("name", name)
         _setter("version", version)
@@ -1072,14 +1144,22 @@ class GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             path: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             path: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1126,7 +1206,7 @@ class GetDatasetInitialRecordGenerationConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
         pass
 
@@ -1146,9 +1226,11 @@ class GetDatasetLabelSetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatasetLabelSetItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatasetLabelSetItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1175,9 +1257,11 @@ class GetDatasetLabelSetItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -1204,9 +1288,11 @@ class GetDatasetsDatasetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatasetsDatasetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1287,59 +1373,97 @@ class GetDatasetsDatasetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             additional_properties: Mapping[str, Any],
-             annotation_format: str,
-             compartment_id: str,
-             dataset_format_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult'],
-             dataset_source_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetailResult'],
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             initial_import_dataset_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult'],
-             initial_record_generation_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult'],
-             label_sets: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetResult'],
-             labeling_instructions: str,
-             lifecycle_details: str,
-             lifecycle_substate: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             additional_properties: Optional[Mapping[str, Any]] = None,
+             annotation_format: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dataset_format_details: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult']] = None,
+             dataset_source_details: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetailResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             initial_import_dataset_configurations: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult']] = None,
+             initial_record_generation_configurations: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult']] = None,
+             label_sets: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetResult']] = None,
+             labeling_instructions: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             lifecycle_substate: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalProperties' in kwargs:
+        if additional_properties is None and 'additionalProperties' in kwargs:
             additional_properties = kwargs['additionalProperties']
-        if 'annotationFormat' in kwargs:
+        if additional_properties is None:
+            raise TypeError("Missing 'additional_properties' argument")
+        if annotation_format is None and 'annotationFormat' in kwargs:
             annotation_format = kwargs['annotationFormat']
-        if 'compartmentId' in kwargs:
+        if annotation_format is None:
+            raise TypeError("Missing 'annotation_format' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'datasetFormatDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dataset_format_details is None and 'datasetFormatDetails' in kwargs:
             dataset_format_details = kwargs['datasetFormatDetails']
-        if 'datasetSourceDetails' in kwargs:
+        if dataset_format_details is None:
+            raise TypeError("Missing 'dataset_format_details' argument")
+        if dataset_source_details is None and 'datasetSourceDetails' in kwargs:
             dataset_source_details = kwargs['datasetSourceDetails']
-        if 'definedTags' in kwargs:
+        if dataset_source_details is None:
+            raise TypeError("Missing 'dataset_source_details' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialImportDatasetConfigurations' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if initial_import_dataset_configurations is None and 'initialImportDatasetConfigurations' in kwargs:
             initial_import_dataset_configurations = kwargs['initialImportDatasetConfigurations']
-        if 'initialRecordGenerationConfigurations' in kwargs:
+        if initial_import_dataset_configurations is None:
+            raise TypeError("Missing 'initial_import_dataset_configurations' argument")
+        if initial_record_generation_configurations is None and 'initialRecordGenerationConfigurations' in kwargs:
             initial_record_generation_configurations = kwargs['initialRecordGenerationConfigurations']
-        if 'labelSets' in kwargs:
+        if initial_record_generation_configurations is None:
+            raise TypeError("Missing 'initial_record_generation_configurations' argument")
+        if label_sets is None and 'labelSets' in kwargs:
             label_sets = kwargs['labelSets']
-        if 'labelingInstructions' in kwargs:
+        if label_sets is None:
+            raise TypeError("Missing 'label_sets' argument")
+        if labeling_instructions is None and 'labelingInstructions' in kwargs:
             labeling_instructions = kwargs['labelingInstructions']
-        if 'lifecycleDetails' in kwargs:
+        if labeling_instructions is None:
+            raise TypeError("Missing 'labeling_instructions' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lifecycleSubstate' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if lifecycle_substate is None and 'lifecycleSubstate' in kwargs:
             lifecycle_substate = kwargs['lifecycleSubstate']
-        if 'timeCreated' in kwargs:
+        if lifecycle_substate is None:
+            raise TypeError("Missing 'lifecycle_substate' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("additional_properties", additional_properties)
         _setter("annotation_format", annotation_format)
@@ -1531,14 +1655,18 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format_type: str,
-             text_file_type_metadatas: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             format_type: Optional[str] = None,
+             text_file_type_metadatas: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'formatType' in kwargs:
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'textFileTypeMetadatas' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if text_file_type_metadatas is None and 'textFileTypeMetadatas' in kwargs:
             text_file_type_metadatas = kwargs['textFileTypeMetadatas']
+        if text_file_type_metadatas is None:
+            raise TypeError("Missing 'text_file_type_metadatas' argument")
 
         _setter("format_type", format_type)
         _setter("text_file_type_metadatas", text_file_type_metadatas)
@@ -1589,26 +1717,38 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_delimiter: str,
-             column_index: int,
-             column_name: str,
-             escape_character: str,
-             format_type: str,
-             line_delimiter: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             column_delimiter: Optional[str] = None,
+             column_index: Optional[int] = None,
+             column_name: Optional[str] = None,
+             escape_character: Optional[str] = None,
+             format_type: Optional[str] = None,
+             line_delimiter: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnDelimiter' in kwargs:
+        if column_delimiter is None and 'columnDelimiter' in kwargs:
             column_delimiter = kwargs['columnDelimiter']
-        if 'columnIndex' in kwargs:
+        if column_delimiter is None:
+            raise TypeError("Missing 'column_delimiter' argument")
+        if column_index is None and 'columnIndex' in kwargs:
             column_index = kwargs['columnIndex']
-        if 'columnName' in kwargs:
+        if column_index is None:
+            raise TypeError("Missing 'column_index' argument")
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'escapeCharacter' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if escape_character is None and 'escapeCharacter' in kwargs:
             escape_character = kwargs['escapeCharacter']
-        if 'formatType' in kwargs:
+        if escape_character is None:
+            raise TypeError("Missing 'escape_character' argument")
+        if format_type is None and 'formatType' in kwargs:
             format_type = kwargs['formatType']
-        if 'lineDelimiter' in kwargs:
+        if format_type is None:
+            raise TypeError("Missing 'format_type' argument")
+        if line_delimiter is None and 'lineDelimiter' in kwargs:
             line_delimiter = kwargs['lineDelimiter']
+        if line_delimiter is None:
+            raise TypeError("Missing 'line_delimiter' argument")
 
         _setter("column_delimiter", column_delimiter)
         _setter("column_index", column_index)
@@ -1689,14 +1829,22 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             prefix: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1753,14 +1901,18 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             import_formats: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult'],
-             import_metadata_paths: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             import_formats: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult']] = None,
+             import_metadata_paths: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importFormats' in kwargs:
+        if import_formats is None and 'importFormats' in kwargs:
             import_formats = kwargs['importFormats']
-        if 'importMetadataPaths' in kwargs:
+        if import_formats is None:
+            raise TypeError("Missing 'import_formats' argument")
+        if import_metadata_paths is None and 'importMetadataPaths' in kwargs:
             import_metadata_paths = kwargs['importMetadataPaths']
+        if import_metadata_paths is None:
+            raise TypeError("Missing 'import_metadata_paths' argument")
 
         _setter("import_formats", import_formats)
         _setter("import_metadata_paths", import_metadata_paths)
@@ -1799,10 +1951,14 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFor
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("name", name)
         _setter("version", version)
@@ -1847,14 +2003,22 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMet
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: str,
-             namespace: str,
-             path: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             path: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -1901,7 +2065,7 @@ class GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
         pass
 
@@ -1921,9 +2085,11 @@ class GetDatasetsDatasetCollectionItemLabelSetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1950,9 +2116,11 @@ class GetDatasetsDatasetCollectionItemLabelSetItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -1983,11 +2151,15 @@ class GetDatasetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

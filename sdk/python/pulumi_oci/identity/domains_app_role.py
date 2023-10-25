@@ -193,10 +193,10 @@ class DomainsAppRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             app: pulumi.Input['DomainsAppRoleAppArgs'],
-             display_name: pulumi.Input[str],
-             idcs_endpoint: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             app: Optional[pulumi.Input['DomainsAppRoleAppArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              admin_role: Optional[pulumi.Input[bool]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
@@ -210,25 +210,33 @@ class DomainsAppRoleArgs:
              public: Optional[pulumi.Input[bool]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if app is None:
+            raise TypeError("Missing 'app' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'idcsEndpoint' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'adminRole' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'availableToClients' in kwargs:
+        if available_to_clients is None and 'availableToClients' in kwargs:
             available_to_clients = kwargs['availableToClients']
-        if 'availableToGroups' in kwargs:
+        if available_to_groups is None and 'availableToGroups' in kwargs:
             available_to_groups = kwargs['availableToGroups']
-        if 'availableToUsers' in kwargs:
+        if available_to_users is None and 'availableToUsers' in kwargs:
             available_to_users = kwargs['availableToUsers']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("app", app)
@@ -966,47 +974,47 @@ class _DomainsAppRoleState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              unique_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminRole' in kwargs:
+        if admin_role is None and 'adminRole' in kwargs:
             admin_role = kwargs['adminRole']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'availableToClients' in kwargs:
+        if available_to_clients is None and 'availableToClients' in kwargs:
             available_to_clients = kwargs['availableToClients']
-        if 'availableToGroups' in kwargs:
+        if available_to_groups is None and 'availableToGroups' in kwargs:
             available_to_groups = kwargs['availableToGroups']
-        if 'availableToUsers' in kwargs:
+        if available_to_users is None and 'availableToUsers' in kwargs:
             available_to_users = kwargs['availableToUsers']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'legacyGroupName' in kwargs:
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
             legacy_group_name = kwargs['legacyGroupName']
-        if 'limitedToOneOrMoreGroups' in kwargs:
+        if limited_to_one_or_more_groups is None and 'limitedToOneOrMoreGroups' in kwargs:
             limited_to_one_or_more_groups = kwargs['limitedToOneOrMoreGroups']
-        if 'localizedDisplayName' in kwargs:
+        if localized_display_name is None and 'localizedDisplayName' in kwargs:
             localized_display_name = kwargs['localizedDisplayName']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'uniqueName' in kwargs:
+        if unique_name is None and 'uniqueName' in kwargs:
             unique_name = kwargs['uniqueName']
 
         if admin_role is not None:
@@ -1919,11 +1927,7 @@ class DomainsAppRole(pulumi.CustomResource):
             __props__ = DomainsAppRoleArgs.__new__(DomainsAppRoleArgs)
 
             __props__.__dict__["admin_role"] = admin_role
-            if app is not None and not isinstance(app, DomainsAppRoleAppArgs):
-                app = app or {}
-                def _setter(key, value):
-                    app[key] = value
-                DomainsAppRoleAppArgs._configure(_setter, **app)
+            app = _utilities.configure(app, DomainsAppRoleAppArgs, True)
             if app is None and not opts.urn:
                 raise TypeError("Missing required property 'app'")
             __props__.__dict__["app"] = app

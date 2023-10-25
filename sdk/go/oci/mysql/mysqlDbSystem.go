@@ -39,10 +39,10 @@ import (
 //				AdminPassword:      pulumi.Any(_var.Mysql_db_system_admin_password),
 //				AdminUsername:      pulumi.Any(_var.Mysql_db_system_admin_username),
 //				BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
-//					DefinedTags: pulumi.AnyMap{
+//					DefinedTags: pulumi.Map{
 //						"foo-namespace.bar-key": pulumi.Any("value"),
 //					},
-//					FreeformTags: pulumi.AnyMap{
+//					FreeformTags: pulumi.Map{
 //						"bar-key": pulumi.Any("value"),
 //					},
 //					IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_is_enabled),
@@ -55,7 +55,7 @@ import (
 //				ConfigurationId:     pulumi.Any(oci_audit_configuration.Test_configuration.Id),
 //				CrashRecovery:       pulumi.Any(_var.Mysql_db_system_crash_recovery),
 //				DataStorageSizeInGb: pulumi.Any(_var.Mysql_db_system_data_storage_size_in_gb),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeletionPolicies: mysql.MysqlDbSystemDeletionPolicyArray{
@@ -68,7 +68,7 @@ import (
 //				Description: pulumi.Any(_var.Mysql_db_system_description),
 //				DisplayName: pulumi.Any(_var.Mysql_db_system_display_name),
 //				FaultDomain: pulumi.Any(_var.Mysql_db_system_fault_domain),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				HostnameLabel:     pulumi.Any(_var.Mysql_db_system_hostname_label),

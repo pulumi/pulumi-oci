@@ -42,22 +42,28 @@ class ApplicationVipArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloud_vm_cluster_id: pulumi.Input[str],
-             hostname_label: pulumi.Input[str],
-             subnet_id: pulumi.Input[str],
+             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              db_node_id: Optional[pulumi.Input[str]] = None,
              ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudVmClusterId' in kwargs:
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
             cloud_vm_cluster_id = kwargs['cloudVmClusterId']
-        if 'hostnameLabel' in kwargs:
+        if cloud_vm_cluster_id is None:
+            raise TypeError("Missing 'cloud_vm_cluster_id' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'subnetId' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'dbNodeId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if db_node_id is None and 'dbNodeId' in kwargs:
             db_node_id = kwargs['dbNodeId']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
 
         _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
@@ -193,27 +199,27 @@ class _ApplicationVipState:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_assigned: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudVmClusterId' in kwargs:
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
             cloud_vm_cluster_id = kwargs['cloudVmClusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbNodeId' in kwargs:
+        if db_node_id is None and 'dbNodeId' in kwargs:
             db_node_id = kwargs['dbNodeId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeAssigned' in kwargs:
+        if time_assigned is None and 'timeAssigned' in kwargs:
             time_assigned = kwargs['timeAssigned']
 
         if cloud_vm_cluster_id is not None:

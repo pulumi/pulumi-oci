@@ -77,9 +77,9 @@ class StorageObjectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             object: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
              cache_control: Optional[pulumi.Input[str]] = None,
              content: Optional[pulumi.Input[str]] = None,
              content_disposition: Optional[pulumi.Input[str]] = None,
@@ -93,27 +93,33 @@ class StorageObjectArgs:
              source: Optional[pulumi.Input[str]] = None,
              source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
              storage_tier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheControl' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if cache_control is None and 'cacheControl' in kwargs:
             cache_control = kwargs['cacheControl']
-        if 'contentDisposition' in kwargs:
+        if content_disposition is None and 'contentDisposition' in kwargs:
             content_disposition = kwargs['contentDisposition']
-        if 'contentEncoding' in kwargs:
+        if content_encoding is None and 'contentEncoding' in kwargs:
             content_encoding = kwargs['contentEncoding']
-        if 'contentLanguage' in kwargs:
+        if content_language is None and 'contentLanguage' in kwargs:
             content_language = kwargs['contentLanguage']
-        if 'contentMd5' in kwargs:
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'contentType' in kwargs:
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
-        if 'deleteAllObjectVersions' in kwargs:
+        if delete_all_object_versions is None and 'deleteAllObjectVersions' in kwargs:
             delete_all_object_versions = kwargs['deleteAllObjectVersions']
-        if 'opcSseKmsKeyId' in kwargs:
+        if opc_sse_kms_key_id is None and 'opcSseKmsKeyId' in kwargs:
             opc_sse_kms_key_id = kwargs['opcSseKmsKeyId']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
-        if 'storageTier' in kwargs:
+        if storage_tier is None and 'storageTier' in kwargs:
             storage_tier = kwargs['storageTier']
 
         _setter("bucket", bucket)
@@ -436,33 +442,33 @@ class _StorageObjectState:
              storage_tier: Optional[pulumi.Input[str]] = None,
              version_id: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheControl' in kwargs:
+        if cache_control is None and 'cacheControl' in kwargs:
             cache_control = kwargs['cacheControl']
-        if 'contentDisposition' in kwargs:
+        if content_disposition is None and 'contentDisposition' in kwargs:
             content_disposition = kwargs['contentDisposition']
-        if 'contentEncoding' in kwargs:
+        if content_encoding is None and 'contentEncoding' in kwargs:
             content_encoding = kwargs['contentEncoding']
-        if 'contentLanguage' in kwargs:
+        if content_language is None and 'contentLanguage' in kwargs:
             content_language = kwargs['contentLanguage']
-        if 'contentLength' in kwargs:
+        if content_length is None and 'contentLength' in kwargs:
             content_length = kwargs['contentLength']
-        if 'contentMd5' in kwargs:
+        if content_md5 is None and 'contentMd5' in kwargs:
             content_md5 = kwargs['contentMd5']
-        if 'contentType' in kwargs:
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
-        if 'deleteAllObjectVersions' in kwargs:
+        if delete_all_object_versions is None and 'deleteAllObjectVersions' in kwargs:
             delete_all_object_versions = kwargs['deleteAllObjectVersions']
-        if 'opcSseKmsKeyId' in kwargs:
+        if opc_sse_kms_key_id is None and 'opcSseKmsKeyId' in kwargs:
             opc_sse_kms_key_id = kwargs['opcSseKmsKeyId']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
-        if 'storageTier' in kwargs:
+        if storage_tier is None and 'storageTier' in kwargs:
             storage_tier = kwargs['storageTier']
-        if 'versionId' in kwargs:
+        if version_id is None and 'versionId' in kwargs:
             version_id = kwargs['versionId']
-        if 'workRequestId' in kwargs:
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
 
         if bucket is not None:
@@ -941,11 +947,7 @@ class StorageObject(pulumi.CustomResource):
             __props__.__dict__["object"] = object
             __props__.__dict__["opc_sse_kms_key_id"] = opc_sse_kms_key_id
             __props__.__dict__["source"] = source
-            if source_uri_details is not None and not isinstance(source_uri_details, StorageObjectSourceUriDetailsArgs):
-                source_uri_details = source_uri_details or {}
-                def _setter(key, value):
-                    source_uri_details[key] = value
-                StorageObjectSourceUriDetailsArgs._configure(_setter, **source_uri_details)
+            source_uri_details = _utilities.configure(source_uri_details, StorageObjectSourceUriDetailsArgs, True)
             __props__.__dict__["source_uri_details"] = source_uri_details
             __props__.__dict__["storage_tier"] = storage_tier
             __props__.__dict__["content_length"] = None

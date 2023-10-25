@@ -79,12 +79,12 @@ class ContainerInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             containers: pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]],
-             shape: pulumi.Input[str],
-             shape_config: pulumi.Input['ContainerInstanceShapeConfigArgs'],
-             vnics: pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             containers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_config: Optional[pulumi.Input['ContainerInstanceShapeConfigArgs']] = None,
+             vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
              container_restart_policy: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -95,29 +95,41 @@ class ContainerInstanceArgs:
              image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'shapeConfig' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if containers is None:
+            raise TypeError("Missing 'containers' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'containerRestartPolicy' in kwargs:
+        if shape_config is None:
+            raise TypeError("Missing 'shape_config' argument")
+        if vnics is None:
+            raise TypeError("Missing 'vnics' argument")
+        if container_restart_policy is None and 'containerRestartPolicy' in kwargs:
             container_restart_policy = kwargs['containerRestartPolicy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsConfig' in kwargs:
+        if dns_config is None and 'dnsConfig' in kwargs:
             dns_config = kwargs['dnsConfig']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gracefulShutdownTimeoutInSeconds' in kwargs:
+        if graceful_shutdown_timeout_in_seconds is None and 'gracefulShutdownTimeoutInSeconds' in kwargs:
             graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
-        if 'imagePullSecrets' in kwargs:
+        if image_pull_secrets is None and 'imagePullSecrets' in kwargs:
             image_pull_secrets = kwargs['imagePullSecrets']
 
         _setter("availability_domain", availability_domain)
@@ -452,41 +464,41 @@ class _ContainerInstanceState:
              vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
              volume_count: Optional[pulumi.Input[int]] = None,
              volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerCount' in kwargs:
+        if container_count is None and 'containerCount' in kwargs:
             container_count = kwargs['containerCount']
-        if 'containerRestartPolicy' in kwargs:
+        if container_restart_policy is None and 'containerRestartPolicy' in kwargs:
             container_restart_policy = kwargs['containerRestartPolicy']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsConfig' in kwargs:
+        if dns_config is None and 'dnsConfig' in kwargs:
             dns_config = kwargs['dnsConfig']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gracefulShutdownTimeoutInSeconds' in kwargs:
+        if graceful_shutdown_timeout_in_seconds is None and 'gracefulShutdownTimeoutInSeconds' in kwargs:
             graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
-        if 'imagePullSecrets' in kwargs:
+        if image_pull_secrets is None and 'imagePullSecrets' in kwargs:
             image_pull_secrets = kwargs['imagePullSecrets']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'volumeCount' in kwargs:
+        if volume_count is None and 'volumeCount' in kwargs:
             volume_count = kwargs['volumeCount']
 
         if availability_domain is not None:
@@ -1150,11 +1162,7 @@ class ContainerInstance(pulumi.CustomResource):
             __props__.__dict__["containers"] = containers
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
-            if dns_config is not None and not isinstance(dns_config, ContainerInstanceDnsConfigArgs):
-                dns_config = dns_config or {}
-                def _setter(key, value):
-                    dns_config[key] = value
-                ContainerInstanceDnsConfigArgs._configure(_setter, **dns_config)
+            dns_config = _utilities.configure(dns_config, ContainerInstanceDnsConfigArgs, True)
             __props__.__dict__["dns_config"] = dns_config
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
@@ -1163,11 +1171,7 @@ class ContainerInstance(pulumi.CustomResource):
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
-            if shape_config is not None and not isinstance(shape_config, ContainerInstanceShapeConfigArgs):
-                shape_config = shape_config or {}
-                def _setter(key, value):
-                    shape_config[key] = value
-                ContainerInstanceShapeConfigArgs._configure(_setter, **shape_config)
+            shape_config = _utilities.configure(shape_config, ContainerInstanceShapeConfigArgs, True)
             if shape_config is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_config'")
             __props__.__dict__["shape_config"] = shape_config

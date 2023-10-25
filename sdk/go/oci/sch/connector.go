@@ -110,11 +110,11 @@ import (
 //					StreamId:                 pulumi.Any(oci_streaming_stream.Test_stream.Id),
 //					TopicId:                  pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Service_connector_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Tasks: sch.ConnectorTaskArray{

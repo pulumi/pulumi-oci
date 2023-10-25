@@ -59,35 +59,43 @@ class CloudExadataInfrastructureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             shape: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
              compute_count: Optional[pulumi.Input[int]] = None,
              customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
              storage_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'computeCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'customerContacts' in kwargs:
+        if customer_contacts is None and 'customerContacts' in kwargs:
             customer_contacts = kwargs['customerContacts']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'storageCount' in kwargs:
+        if storage_count is None and 'storageCount' in kwargs:
             storage_count = kwargs['storageCount']
 
         _setter("availability_domain", availability_domain)
@@ -372,65 +380,65 @@ class _CloudExadataInfrastructureState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activatedStorageCount' in kwargs:
+        if activated_storage_count is None and 'activatedStorageCount' in kwargs:
             activated_storage_count = kwargs['activatedStorageCount']
-        if 'additionalStorageCount' in kwargs:
+        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
             additional_storage_count = kwargs['additionalStorageCount']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'availableStorageSizeInGbs' in kwargs:
+        if available_storage_size_in_gbs is None and 'availableStorageSizeInGbs' in kwargs:
             available_storage_size_in_gbs = kwargs['availableStorageSizeInGbs']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'cpuCount' in kwargs:
+        if cpu_count is None and 'cpuCount' in kwargs:
             cpu_count = kwargs['cpuCount']
-        if 'customerContacts' in kwargs:
+        if customer_contacts is None and 'customerContacts' in kwargs:
             customer_contacts = kwargs['customerContacts']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServerVersion' in kwargs:
+        if db_server_version is None and 'dbServerVersion' in kwargs:
             db_server_version = kwargs['dbServerVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastMaintenanceRunId' in kwargs:
+        if last_maintenance_run_id is None and 'lastMaintenanceRunId' in kwargs:
             last_maintenance_run_id = kwargs['lastMaintenanceRunId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'maxCpuCount' in kwargs:
+        if max_cpu_count is None and 'maxCpuCount' in kwargs:
             max_cpu_count = kwargs['maxCpuCount']
-        if 'maxDataStorageInTbs' in kwargs:
+        if max_data_storage_in_tbs is None and 'maxDataStorageInTbs' in kwargs:
             max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
-        if 'maxDbNodeStorageInGbs' in kwargs:
+        if max_db_node_storage_in_gbs is None and 'maxDbNodeStorageInGbs' in kwargs:
             max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
-        if 'maxMemoryInGbs' in kwargs:
+        if max_memory_in_gbs is None and 'maxMemoryInGbs' in kwargs:
             max_memory_in_gbs = kwargs['maxMemoryInGbs']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'monthlyDbServerVersion' in kwargs:
+        if monthly_db_server_version is None and 'monthlyDbServerVersion' in kwargs:
             monthly_db_server_version = kwargs['monthlyDbServerVersion']
-        if 'monthlyStorageServerVersion' in kwargs:
+        if monthly_storage_server_version is None and 'monthlyStorageServerVersion' in kwargs:
             monthly_storage_server_version = kwargs['monthlyStorageServerVersion']
-        if 'nextMaintenanceRunId' in kwargs:
+        if next_maintenance_run_id is None and 'nextMaintenanceRunId' in kwargs:
             next_maintenance_run_id = kwargs['nextMaintenanceRunId']
-        if 'storageCount' in kwargs:
+        if storage_count is None and 'storageCount' in kwargs:
             storage_count = kwargs['storageCount']
-        if 'storageServerVersion' in kwargs:
+        if storage_server_version is None and 'storageServerVersion' in kwargs:
             storage_server_version = kwargs['storageServerVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'totalStorageSizeInGbs' in kwargs:
+        if total_storage_size_in_gbs is None and 'totalStorageSizeInGbs' in kwargs:
             total_storage_size_in_gbs = kwargs['totalStorageSizeInGbs']
 
         if activated_storage_count is not None:
@@ -1065,11 +1073,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if maintenance_window is not None and not isinstance(maintenance_window, CloudExadataInfrastructureMaintenanceWindowArgs):
-                maintenance_window = maintenance_window or {}
-                def _setter(key, value):
-                    maintenance_window[key] = value
-                CloudExadataInfrastructureMaintenanceWindowArgs._configure(_setter, **maintenance_window)
+            maintenance_window = _utilities.configure(maintenance_window, CloudExadataInfrastructureMaintenanceWindowArgs, True)
             __props__.__dict__["maintenance_window"] = maintenance_window
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")

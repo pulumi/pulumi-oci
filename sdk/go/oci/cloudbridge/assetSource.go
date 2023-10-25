@@ -44,12 +44,12 @@ import (
 //				VcenterEndpoint:               pulumi.Any(_var.Asset_source_vcenter_endpoint),
 //				AreHistoricalMetricsCollected: pulumi.Any(_var.Asset_source_are_historical_metrics_collected),
 //				AreRealtimeMetricsCollected:   pulumi.Any(_var.Asset_source_are_realtime_metrics_collected),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DiscoveryScheduleId: pulumi.Any(oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id),
 //				DisplayName:         pulumi.Any(_var.Asset_source_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ReplicationCredentials: &cloudbridge.AssetSourceReplicationCredentialsArgs{

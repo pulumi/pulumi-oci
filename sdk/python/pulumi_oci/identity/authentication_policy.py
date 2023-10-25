@@ -34,16 +34,18 @@ class AuthenticationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
              password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'networkPolicy' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if network_policy is None and 'networkPolicy' in kwargs:
             network_policy = kwargs['networkPolicy']
-        if 'passwordPolicy' in kwargs:
+        if password_policy is None and 'passwordPolicy' in kwargs:
             password_policy = kwargs['passwordPolicy']
 
         _setter("compartment_id", compartment_id)
@@ -113,13 +115,13 @@ class _AuthenticationPolicyState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
              password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'networkPolicy' in kwargs:
+        if network_policy is None and 'networkPolicy' in kwargs:
             network_policy = kwargs['networkPolicy']
-        if 'passwordPolicy' in kwargs:
+        if password_policy is None and 'passwordPolicy' in kwargs:
             password_policy = kwargs['passwordPolicy']
 
         if compartment_id is not None:
@@ -289,17 +291,9 @@ class AuthenticationPolicy(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if network_policy is not None and not isinstance(network_policy, AuthenticationPolicyNetworkPolicyArgs):
-                network_policy = network_policy or {}
-                def _setter(key, value):
-                    network_policy[key] = value
-                AuthenticationPolicyNetworkPolicyArgs._configure(_setter, **network_policy)
+            network_policy = _utilities.configure(network_policy, AuthenticationPolicyNetworkPolicyArgs, True)
             __props__.__dict__["network_policy"] = network_policy
-            if password_policy is not None and not isinstance(password_policy, AuthenticationPolicyPasswordPolicyArgs):
-                password_policy = password_policy or {}
-                def _setter(key, value):
-                    password_policy[key] = value
-                AuthenticationPolicyPasswordPolicyArgs._configure(_setter, **password_policy)
+            password_policy = _utilities.configure(password_policy, AuthenticationPolicyPasswordPolicyArgs, True)
             __props__.__dict__["password_policy"] = password_policy
         super(AuthenticationPolicy, __self__).__init__(
             'oci:Identity/authenticationPolicy:AuthenticationPolicy',

@@ -39,12 +39,12 @@ import (
 //				TenancyId:              pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
 //				TenancyName:            pulumi.Any(oci_identity_tenancy.Test_tenancy.Name),
 //				AddOnFeatures:          pulumi.Any(_var.Oce_instance_add_on_features),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Oce_instance_description),
 //				DrRegion:    pulumi.Any(_var.Oce_instance_dr_region),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				InstanceAccessType:  pulumi.Any(_var.Oce_instance_instance_access_type),

@@ -61,11 +61,11 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				SourceId:      pulumi.Any(oci_file_storage_source.Test_source.Id),
 //				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Replication_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ReplicationInterval: pulumi.Any(_var.Replication_replication_interval),

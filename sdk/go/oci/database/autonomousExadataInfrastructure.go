@@ -36,12 +36,12 @@ import (
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
 //				Shape:              pulumi.Any(_var.Autonomous_exadata_infrastructure_shape),
 //				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Autonomous_exadata_infrastructure_display_name),
 //				Domain:      pulumi.Any(_var.Autonomous_exadata_infrastructure_domain),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				LicenseModel: pulumi.Any(_var.Autonomous_exadata_infrastructure_license_model),

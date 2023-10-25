@@ -36,16 +36,20 @@ class CatalogAssociationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             entity_id: pulumi.Input[str],
-             service_catalog_id: pulumi.Input[str],
+             entity_id: Optional[pulumi.Input[str]] = None,
+             service_catalog_id: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityId' in kwargs:
+        if entity_id is None and 'entityId' in kwargs:
             entity_id = kwargs['entityId']
-        if 'serviceCatalogId' in kwargs:
+        if entity_id is None:
+            raise TypeError("Missing 'entity_id' argument")
+        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
             service_catalog_id = kwargs['serviceCatalogId']
-        if 'entityType' in kwargs:
+        if service_catalog_id is None:
+            raise TypeError("Missing 'service_catalog_id' argument")
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
 
         _setter("entity_id", entity_id)
@@ -126,15 +130,15 @@ class _CatalogAssociationState:
              entity_type: Optional[pulumi.Input[str]] = None,
              service_catalog_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'entityId' in kwargs:
+        if entity_id is None and 'entityId' in kwargs:
             entity_id = kwargs['entityId']
-        if 'entityType' in kwargs:
+        if entity_type is None and 'entityType' in kwargs:
             entity_type = kwargs['entityType']
-        if 'serviceCatalogId' in kwargs:
+        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
             service_catalog_id = kwargs['serviceCatalogId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if entity_id is not None:

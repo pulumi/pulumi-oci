@@ -35,11 +35,11 @@ import (
 //				CompartmentId:                pulumi.Any(_var.Compartment_id),
 //				DefaultExternalTableLocation: pulumi.Any(_var.Metastore_default_external_table_location),
 //				DefaultManagedTableLocation:  pulumi.Any(_var.Metastore_default_managed_table_location),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Metastore_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

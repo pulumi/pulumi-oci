@@ -39,10 +39,10 @@ import (
 //				IntervalInSeconds: pulumi.Any(_var.Http_monitor_interval_in_seconds),
 //				Protocol:          pulumi.Any(_var.Http_monitor_protocol),
 //				Targets:           pulumi.Any(_var.Http_monitor_targets),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Headers:           pulumi.Any(_var.Http_monitor_headers),

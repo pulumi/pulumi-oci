@@ -57,9 +57,9 @@ class VaultArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             vault_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             vault_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              external_key_manager_metadata: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -67,27 +67,33 @@ class VaultArgs:
              restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
              restore_trigger: Optional[pulumi.Input[bool]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'vaultType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if vault_type is None and 'vaultType' in kwargs:
             vault_type = kwargs['vaultType']
-        if 'definedTags' in kwargs:
+        if vault_type is None:
+            raise TypeError("Missing 'vault_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'externalKeyManagerMetadata' in kwargs:
+        if external_key_manager_metadata is None and 'externalKeyManagerMetadata' in kwargs:
             external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'restoreFromFile' in kwargs:
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
             restore_from_file = kwargs['restoreFromFile']
-        if 'restoreFromObjectStore' in kwargs:
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
             restore_from_object_store = kwargs['restoreFromObjectStore']
-        if 'restoreTrigger' in kwargs:
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
 
         _setter("compartment_id", compartment_id)
@@ -315,41 +321,41 @@ class _VaultState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cryptoEndpoint' in kwargs:
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
             crypto_endpoint = kwargs['cryptoEndpoint']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKeyManagerMetadata' in kwargs:
+        if external_key_manager_metadata is None and 'externalKeyManagerMetadata' in kwargs:
             external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
-        if 'externalKeyManagerMetadataSummaries' in kwargs:
+        if external_key_manager_metadata_summaries is None and 'externalKeyManagerMetadataSummaries' in kwargs:
             external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPrimary' in kwargs:
+        if is_primary is None and 'isPrimary' in kwargs:
             is_primary = kwargs['isPrimary']
-        if 'managementEndpoint' in kwargs:
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
             management_endpoint = kwargs['managementEndpoint']
-        if 'replicaDetails' in kwargs:
+        if replica_details is None and 'replicaDetails' in kwargs:
             replica_details = kwargs['replicaDetails']
-        if 'restoreFromFile' in kwargs:
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
             restore_from_file = kwargs['restoreFromFile']
-        if 'restoreFromObjectStore' in kwargs:
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
             restore_from_object_store = kwargs['restoreFromObjectStore']
-        if 'restoreTrigger' in kwargs:
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
             restore_trigger = kwargs['restoreTrigger']
-        if 'restoredFromVaultId' in kwargs:
+        if restored_from_vault_id is None and 'restoredFromVaultId' in kwargs:
             restored_from_vault_id = kwargs['restoredFromVaultId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfDeletion' in kwargs:
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
             time_of_deletion = kwargs['timeOfDeletion']
-        if 'vaultType' in kwargs:
+        if vault_type is None and 'vaultType' in kwargs:
             vault_type = kwargs['vaultType']
 
         if compartment_id is not None:
@@ -784,24 +790,12 @@ class Vault(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if external_key_manager_metadata is not None and not isinstance(external_key_manager_metadata, VaultExternalKeyManagerMetadataArgs):
-                external_key_manager_metadata = external_key_manager_metadata or {}
-                def _setter(key, value):
-                    external_key_manager_metadata[key] = value
-                VaultExternalKeyManagerMetadataArgs._configure(_setter, **external_key_manager_metadata)
+            external_key_manager_metadata = _utilities.configure(external_key_manager_metadata, VaultExternalKeyManagerMetadataArgs, True)
             __props__.__dict__["external_key_manager_metadata"] = external_key_manager_metadata
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if restore_from_file is not None and not isinstance(restore_from_file, VaultRestoreFromFileArgs):
-                restore_from_file = restore_from_file or {}
-                def _setter(key, value):
-                    restore_from_file[key] = value
-                VaultRestoreFromFileArgs._configure(_setter, **restore_from_file)
+            restore_from_file = _utilities.configure(restore_from_file, VaultRestoreFromFileArgs, True)
             __props__.__dict__["restore_from_file"] = restore_from_file
-            if restore_from_object_store is not None and not isinstance(restore_from_object_store, VaultRestoreFromObjectStoreArgs):
-                restore_from_object_store = restore_from_object_store or {}
-                def _setter(key, value):
-                    restore_from_object_store[key] = value
-                VaultRestoreFromObjectStoreArgs._configure(_setter, **restore_from_object_store)
+            restore_from_object_store = _utilities.configure(restore_from_object_store, VaultRestoreFromObjectStoreArgs, True)
             __props__.__dict__["restore_from_object_store"] = restore_from_object_store
             __props__.__dict__["restore_trigger"] = restore_trigger
             __props__.__dict__["time_of_deletion"] = time_of_deletion

@@ -63,9 +63,9 @@ class LogAnalyticsEntityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             entity_type_name: pulumi.Input[str],
-             namespace: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             entity_type_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
              cloud_resource_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -75,23 +75,29 @@ class LogAnalyticsEntityArgs:
              properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              source_id: Optional[pulumi.Input[str]] = None,
              timezone_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'entityTypeName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if entity_type_name is None and 'entityTypeName' in kwargs:
             entity_type_name = kwargs['entityTypeName']
-        if 'cloudResourceId' in kwargs:
+        if entity_type_name is None:
+            raise TypeError("Missing 'entity_type_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if cloud_resource_id is None and 'cloudResourceId' in kwargs:
             cloud_resource_id = kwargs['cloudResourceId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'timezoneRegion' in kwargs:
+        if timezone_region is None and 'timezoneRegion' in kwargs:
             timezone_region = kwargs['timezoneRegion']
 
         _setter("compartment_id", compartment_id)
@@ -361,37 +367,37 @@ class _LogAnalyticsEntityState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              timezone_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLogsCollected' in kwargs:
+        if are_logs_collected is None and 'areLogsCollected' in kwargs:
             are_logs_collected = kwargs['areLogsCollected']
-        if 'cloudResourceId' in kwargs:
+        if cloud_resource_id is None and 'cloudResourceId' in kwargs:
             cloud_resource_id = kwargs['cloudResourceId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'entityTypeInternalName' in kwargs:
+        if entity_type_internal_name is None and 'entityTypeInternalName' in kwargs:
             entity_type_internal_name = kwargs['entityTypeInternalName']
-        if 'entityTypeName' in kwargs:
+        if entity_type_name is None and 'entityTypeName' in kwargs:
             entity_type_name = kwargs['entityTypeName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'managementAgentCompartmentId' in kwargs:
+        if management_agent_compartment_id is None and 'managementAgentCompartmentId' in kwargs:
             management_agent_compartment_id = kwargs['managementAgentCompartmentId']
-        if 'managementAgentDisplayName' in kwargs:
+        if management_agent_display_name is None and 'managementAgentDisplayName' in kwargs:
             management_agent_display_name = kwargs['managementAgentDisplayName']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timezoneRegion' in kwargs:
+        if timezone_region is None and 'timezoneRegion' in kwargs:
             timezone_region = kwargs['timezoneRegion']
 
         if are_logs_collected is not None:

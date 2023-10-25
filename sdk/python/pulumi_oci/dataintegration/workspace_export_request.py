@@ -56,8 +56,8 @@ class WorkspaceExportRequestArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             workspace_id: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
              are_references_included: Optional[pulumi.Input[bool]] = None,
              file_name: Optional[pulumi.Input[str]] = None,
              filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -65,21 +65,25 @@ class WorkspaceExportRequestArgs:
              object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              object_storage_region: Optional[pulumi.Input[str]] = None,
              object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'workspaceId' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
-        if 'areReferencesIncluded' in kwargs:
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if are_references_included is None and 'areReferencesIncluded' in kwargs:
             are_references_included = kwargs['areReferencesIncluded']
-        if 'fileName' in kwargs:
+        if file_name is None and 'fileName' in kwargs:
             file_name = kwargs['fileName']
-        if 'isObjectOverwriteEnabled' in kwargs:
+        if is_object_overwrite_enabled is None and 'isObjectOverwriteEnabled' in kwargs:
             is_object_overwrite_enabled = kwargs['isObjectOverwriteEnabled']
-        if 'objectKeys' in kwargs:
+        if object_keys is None and 'objectKeys' in kwargs:
             object_keys = kwargs['objectKeys']
-        if 'objectStorageRegion' in kwargs:
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
             object_storage_region = kwargs['objectStorageRegion']
-        if 'objectStorageTenancyId' in kwargs:
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
             object_storage_tenancy_id = kwargs['objectStorageTenancyId']
 
         _setter("bucket", bucket)
@@ -304,35 +308,35 @@ class _WorkspaceExportRequestState:
              time_started_in_millis: Optional[pulumi.Input[str]] = None,
              total_exported_object_count: Optional[pulumi.Input[int]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areReferencesIncluded' in kwargs:
+        if are_references_included is None and 'areReferencesIncluded' in kwargs:
             are_references_included = kwargs['areReferencesIncluded']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'errorMessages' in kwargs:
+        if error_messages is None and 'errorMessages' in kwargs:
             error_messages = kwargs['errorMessages']
-        if 'exportedItems' in kwargs:
+        if exported_items is None and 'exportedItems' in kwargs:
             exported_items = kwargs['exportedItems']
-        if 'fileName' in kwargs:
+        if file_name is None and 'fileName' in kwargs:
             file_name = kwargs['fileName']
-        if 'isObjectOverwriteEnabled' in kwargs:
+        if is_object_overwrite_enabled is None and 'isObjectOverwriteEnabled' in kwargs:
             is_object_overwrite_enabled = kwargs['isObjectOverwriteEnabled']
-        if 'objectKeys' in kwargs:
+        if object_keys is None and 'objectKeys' in kwargs:
             object_keys = kwargs['objectKeys']
-        if 'objectStorageRegion' in kwargs:
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
             object_storage_region = kwargs['objectStorageRegion']
-        if 'objectStorageTenancyId' in kwargs:
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
             object_storage_tenancy_id = kwargs['objectStorageTenancyId']
-        if 'referencedItems' in kwargs:
+        if referenced_items is None and 'referencedItems' in kwargs:
             referenced_items = kwargs['referencedItems']
-        if 'timeEndedInMillis' in kwargs:
+        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
             time_ended_in_millis = kwargs['timeEndedInMillis']
-        if 'timeStartedInMillis' in kwargs:
+        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
             time_started_in_millis = kwargs['timeStartedInMillis']
-        if 'totalExportedObjectCount' in kwargs:
+        if total_exported_object_count is None and 'totalExportedObjectCount' in kwargs:
             total_exported_object_count = kwargs['totalExportedObjectCount']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if are_references_included is not None:

@@ -64,13 +64,15 @@ class StreamPoolCustomEncryptionKey(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             kms_key_id: str,
+             kms_key_id: Optional[str] = None,
              key_state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'keyState' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if key_state is None and 'keyState' in kwargs:
             key_state = kwargs['keyState']
 
         _setter("kms_key_id", kms_key_id)
@@ -144,15 +146,15 @@ class StreamPoolKafkaSettings(dict):
              bootstrap_servers: Optional[str] = None,
              log_retention_hours: Optional[int] = None,
              num_partitions: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCreateTopicsEnable' in kwargs:
+        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
             auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if 'bootstrapServers' in kwargs:
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'logRetentionHours' in kwargs:
+        if log_retention_hours is None and 'logRetentionHours' in kwargs:
             log_retention_hours = kwargs['logRetentionHours']
-        if 'numPartitions' in kwargs:
+        if num_partitions is None and 'numPartitions' in kwargs:
             num_partitions = kwargs['numPartitions']
 
         if auto_create_topics_enable is not None:
@@ -245,13 +247,13 @@ class StreamPoolPrivateEndpointSettings(dict):
              nsg_ids: Optional[Sequence[str]] = None,
              private_endpoint_ip: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
 
         if nsg_ids is not None:
@@ -325,26 +327,42 @@ class GetConnectHarnessesConnectHarnessResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_state_details: str,
-             name: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_state_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleStateDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'timeCreated' in kwargs:
+        if lifecycle_state_details is None:
+            raise TypeError("Missing 'lifecycle_state_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -438,11 +456,15 @@ class GetConnectHarnessesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -485,14 +507,18 @@ class GetStreamPoolCustomEncryptionKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_state: str,
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_state: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyState' in kwargs:
+        if key_state is None and 'keyState' in kwargs:
             key_state = kwargs['keyState']
-        if 'kmsKeyId' in kwargs:
+        if key_state is None:
+            raise TypeError("Missing 'key_state' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("key_state", key_state)
         _setter("kms_key_id", kms_key_id)
@@ -537,20 +563,28 @@ class GetStreamPoolKafkaSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: bool,
-             bootstrap_servers: str,
-             log_retention_hours: int,
-             num_partitions: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             auto_create_topics_enable: Optional[bool] = None,
+             bootstrap_servers: Optional[str] = None,
+             log_retention_hours: Optional[int] = None,
+             num_partitions: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCreateTopicsEnable' in kwargs:
+        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
             auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if 'bootstrapServers' in kwargs:
+        if auto_create_topics_enable is None:
+            raise TypeError("Missing 'auto_create_topics_enable' argument")
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'logRetentionHours' in kwargs:
+        if bootstrap_servers is None:
+            raise TypeError("Missing 'bootstrap_servers' argument")
+        if log_retention_hours is None and 'logRetentionHours' in kwargs:
             log_retention_hours = kwargs['logRetentionHours']
-        if 'numPartitions' in kwargs:
+        if log_retention_hours is None:
+            raise TypeError("Missing 'log_retention_hours' argument")
+        if num_partitions is None and 'numPartitions' in kwargs:
             num_partitions = kwargs['numPartitions']
+        if num_partitions is None:
+            raise TypeError("Missing 'num_partitions' argument")
 
         _setter("auto_create_topics_enable", auto_create_topics_enable)
         _setter("bootstrap_servers", bootstrap_servers)
@@ -610,17 +644,23 @@ class GetStreamPoolPrivateEndpointSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             nsg_ids: Sequence[str],
-             private_endpoint_ip: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("nsg_ids", nsg_ids)
         _setter("private_endpoint_ip", private_endpoint_ip)
@@ -669,11 +709,15 @@ class GetStreamPoolsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -749,41 +793,67 @@ class GetStreamPoolsStreamPoolResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             custom_encryption_keys: Sequence['outputs.GetStreamPoolsStreamPoolCustomEncryptionKeyResult'],
-             defined_tags: Mapping[str, Any],
-             endpoint_fqdn: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_private: bool,
-             kafka_settings: Sequence['outputs.GetStreamPoolsStreamPoolKafkaSettingResult'],
-             lifecycle_state_details: str,
-             name: str,
-             private_endpoint_settings: Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult'],
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             custom_encryption_keys: Optional[Sequence['outputs.GetStreamPoolsStreamPoolCustomEncryptionKeyResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             endpoint_fqdn: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_private: Optional[bool] = None,
+             kafka_settings: Optional[Sequence['outputs.GetStreamPoolsStreamPoolKafkaSettingResult']] = None,
+             lifecycle_state_details: Optional[str] = None,
+             name: Optional[str] = None,
+             private_endpoint_settings: Optional[Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'customEncryptionKeys' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if custom_encryption_keys is None and 'customEncryptionKeys' in kwargs:
             custom_encryption_keys = kwargs['customEncryptionKeys']
-        if 'definedTags' in kwargs:
+        if custom_encryption_keys is None:
+            raise TypeError("Missing 'custom_encryption_keys' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'endpointFqdn' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
             endpoint_fqdn = kwargs['endpointFqdn']
-        if 'freeformTags' in kwargs:
+        if endpoint_fqdn is None:
+            raise TypeError("Missing 'endpoint_fqdn' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPrivate' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_private is None and 'isPrivate' in kwargs:
             is_private = kwargs['isPrivate']
-        if 'kafkaSettings' in kwargs:
+        if is_private is None:
+            raise TypeError("Missing 'is_private' argument")
+        if kafka_settings is None and 'kafkaSettings' in kwargs:
             kafka_settings = kwargs['kafkaSettings']
-        if 'lifecycleStateDetails' in kwargs:
+        if kafka_settings is None:
+            raise TypeError("Missing 'kafka_settings' argument")
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'privateEndpointSettings' in kwargs:
+        if lifecycle_state_details is None:
+            raise TypeError("Missing 'lifecycle_state_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if private_endpoint_settings is None and 'privateEndpointSettings' in kwargs:
             private_endpoint_settings = kwargs['privateEndpointSettings']
-        if 'timeCreated' in kwargs:
+        if private_endpoint_settings is None:
+            raise TypeError("Missing 'private_endpoint_settings' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("custom_encryption_keys", custom_encryption_keys)
@@ -921,14 +991,18 @@ class GetStreamPoolsStreamPoolCustomEncryptionKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_state: str,
-             kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_state: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyState' in kwargs:
+        if key_state is None and 'keyState' in kwargs:
             key_state = kwargs['keyState']
-        if 'kmsKeyId' in kwargs:
+        if key_state is None:
+            raise TypeError("Missing 'key_state' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
 
         _setter("key_state", key_state)
         _setter("kms_key_id", kms_key_id)
@@ -973,20 +1047,28 @@ class GetStreamPoolsStreamPoolKafkaSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: bool,
-             bootstrap_servers: str,
-             log_retention_hours: int,
-             num_partitions: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             auto_create_topics_enable: Optional[bool] = None,
+             bootstrap_servers: Optional[str] = None,
+             log_retention_hours: Optional[int] = None,
+             num_partitions: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoCreateTopicsEnable' in kwargs:
+        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
             auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if 'bootstrapServers' in kwargs:
+        if auto_create_topics_enable is None:
+            raise TypeError("Missing 'auto_create_topics_enable' argument")
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
             bootstrap_servers = kwargs['bootstrapServers']
-        if 'logRetentionHours' in kwargs:
+        if bootstrap_servers is None:
+            raise TypeError("Missing 'bootstrap_servers' argument")
+        if log_retention_hours is None and 'logRetentionHours' in kwargs:
             log_retention_hours = kwargs['logRetentionHours']
-        if 'numPartitions' in kwargs:
+        if log_retention_hours is None:
+            raise TypeError("Missing 'log_retention_hours' argument")
+        if num_partitions is None and 'numPartitions' in kwargs:
             num_partitions = kwargs['numPartitions']
+        if num_partitions is None:
+            raise TypeError("Missing 'num_partitions' argument")
 
         _setter("auto_create_topics_enable", auto_create_topics_enable)
         _setter("bootstrap_servers", bootstrap_servers)
@@ -1046,17 +1128,23 @@ class GetStreamPoolsStreamPoolPrivateEndpointSettingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             nsg_ids: Sequence[str],
-             private_endpoint_ip: str,
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateEndpointIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
             private_endpoint_ip = kwargs['privateEndpointIp']
-        if 'subnetId' in kwargs:
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("nsg_ids", nsg_ids)
         _setter("private_endpoint_ip", private_endpoint_ip)
@@ -1105,11 +1193,15 @@ class GetStreamsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1182,36 +1274,60 @@ class GetStreamsStreamResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_state_details: str,
-             messages_endpoint: str,
-             name: str,
-             partitions: int,
-             retention_in_hours: int,
-             state: str,
-             stream_pool_id: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_state_details: Optional[str] = None,
+             messages_endpoint: Optional[str] = None,
+             name: Optional[str] = None,
+             partitions: Optional[int] = None,
+             retention_in_hours: Optional[int] = None,
+             state: Optional[str] = None,
+             stream_pool_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleStateDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'messagesEndpoint' in kwargs:
+        if lifecycle_state_details is None:
+            raise TypeError("Missing 'lifecycle_state_details' argument")
+        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
             messages_endpoint = kwargs['messagesEndpoint']
-        if 'retentionInHours' in kwargs:
+        if messages_endpoint is None:
+            raise TypeError("Missing 'messages_endpoint' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if partitions is None:
+            raise TypeError("Missing 'partitions' argument")
+        if retention_in_hours is None and 'retentionInHours' in kwargs:
             retention_in_hours = kwargs['retentionInHours']
-        if 'streamPoolId' in kwargs:
+        if retention_in_hours is None:
+            raise TypeError("Missing 'retention_in_hours' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
             stream_pool_id = kwargs['streamPoolId']
-        if 'timeCreated' in kwargs:
+        if stream_pool_id is None:
+            raise TypeError("Missing 'stream_pool_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

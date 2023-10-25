@@ -48,23 +48,33 @@ class AnalyticsInstanceVanityUrlArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             analytics_instance_id: pulumi.Input[str],
-             ca_certificate: pulumi.Input[str],
-             hosts: pulumi.Input[Sequence[pulumi.Input[str]]],
-             private_key: pulumi.Input[str],
-             public_certificate: pulumi.Input[str],
+             analytics_instance_id: Optional[pulumi.Input[str]] = None,
+             ca_certificate: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_key: Optional[pulumi.Input[str]] = None,
+             public_certificate: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              passphrase: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'analyticsInstanceId' in kwargs:
+        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
             analytics_instance_id = kwargs['analyticsInstanceId']
-        if 'caCertificate' in kwargs:
+        if analytics_instance_id is None:
+            raise TypeError("Missing 'analytics_instance_id' argument")
+        if ca_certificate is None and 'caCertificate' in kwargs:
             ca_certificate = kwargs['caCertificate']
-        if 'privateKey' in kwargs:
+        if ca_certificate is None:
+            raise TypeError("Missing 'ca_certificate' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if private_key is None and 'privateKey' in kwargs:
             private_key = kwargs['privateKey']
-        if 'publicCertificate' in kwargs:
+        if private_key is None:
+            raise TypeError("Missing 'private_key' argument")
+        if public_certificate is None and 'publicCertificate' in kwargs:
             public_certificate = kwargs['publicCertificate']
+        if public_certificate is None:
+            raise TypeError("Missing 'public_certificate' argument")
 
         _setter("analytics_instance_id", analytics_instance_id)
         _setter("ca_certificate", ca_certificate)
@@ -209,15 +219,15 @@ class _AnalyticsInstanceVanityUrlState:
              passphrase: Optional[pulumi.Input[str]] = None,
              private_key: Optional[pulumi.Input[str]] = None,
              public_certificate: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'analyticsInstanceId' in kwargs:
+        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
             analytics_instance_id = kwargs['analyticsInstanceId']
-        if 'caCertificate' in kwargs:
+        if ca_certificate is None and 'caCertificate' in kwargs:
             ca_certificate = kwargs['caCertificate']
-        if 'privateKey' in kwargs:
+        if private_key is None and 'privateKey' in kwargs:
             private_key = kwargs['privateKey']
-        if 'publicCertificate' in kwargs:
+        if public_certificate is None and 'publicCertificate' in kwargs:
             public_certificate = kwargs['publicCertificate']
 
         if analytics_instance_id is not None:

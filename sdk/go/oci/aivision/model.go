@@ -42,12 +42,12 @@ import (
 //					NamespaceName: pulumi.Any(_var.Model_training_dataset_namespace),
 //					Object:        pulumi.Any(_var.Model_training_dataset_object),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Model_description),
 //				DisplayName: pulumi.Any(_var.Model_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsQuickMode:                pulumi.Any(_var.Model_is_quick_mode),

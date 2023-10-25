@@ -35,11 +35,11 @@ import (
 //				CompartmentId:        pulumi.Any(_var.Compartment_id),
 //				DisplayName:          pulumi.Any(_var.Security_zone_display_name),
 //				SecurityZoneRecipeId: pulumi.Any(oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Security_zone_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

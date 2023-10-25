@@ -44,10 +44,10 @@ import (
 //				},
 //				DatabaseId:   pulumi.Any(oci_database_database.Test_database.Id),
 //				DatabaseSize: pulumi.Any(_var.Protected_database_database_size),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsRedoLogsShipped: pulumi.Any(_var.Protected_database_is_redo_logs_shipped),

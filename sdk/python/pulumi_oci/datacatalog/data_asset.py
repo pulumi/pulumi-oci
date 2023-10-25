@@ -41,19 +41,25 @@ class DataAssetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             catalog_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             type_key: pulumi.Input[str],
+             catalog_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type_key: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'displayName' in kwargs:
+        if catalog_id is None:
+            raise TypeError("Missing 'catalog_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'typeKey' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
+        if type_key is None:
+            raise TypeError("Missing 'type_key' argument")
 
         _setter("catalog_id", catalog_id)
         _setter("display_name", display_name)
@@ -200,27 +206,27 @@ class _DataAssetState:
              type_key: Optional[pulumi.Input[str]] = None,
              updated_by_id: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'createdById' in kwargs:
+        if created_by_id is None and 'createdById' in kwargs:
             created_by_id = kwargs['createdById']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalKey' in kwargs:
+        if external_key is None and 'externalKey' in kwargs:
             external_key = kwargs['externalKey']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeHarvested' in kwargs:
+        if time_harvested is None and 'timeHarvested' in kwargs:
             time_harvested = kwargs['timeHarvested']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'typeKey' in kwargs:
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
-        if 'updatedById' in kwargs:
+        if updated_by_id is None and 'updatedById' in kwargs:
             updated_by_id = kwargs['updatedById']
 
         if catalog_id is not None:

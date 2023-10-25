@@ -65,9 +65,9 @@ class VolumeAttachmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attachment_type: pulumi.Input[str],
-             instance_id: pulumi.Input[str],
-             volume_id: pulumi.Input[str],
+             attachment_type: Optional[pulumi.Input[str]] = None,
+             instance_id: Optional[pulumi.Input[str]] = None,
+             volume_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              device: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -77,29 +77,35 @@ class VolumeAttachmentArgs:
              is_read_only: Optional[pulumi.Input[bool]] = None,
              is_shareable: Optional[pulumi.Input[bool]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentType' in kwargs:
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'instanceId' in kwargs:
+        if attachment_type is None:
+            raise TypeError("Missing 'attachment_type' argument")
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'volumeId' in kwargs:
+        if instance_id is None:
+            raise TypeError("Missing 'instance_id' argument")
+        if volume_id is None and 'volumeId' in kwargs:
             volume_id = kwargs['volumeId']
-        if 'compartmentId' in kwargs:
+        if volume_id is None:
+            raise TypeError("Missing 'volume_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'encryptionInTransitType' in kwargs:
+        if encryption_in_transit_type is None and 'encryptionInTransitType' in kwargs:
             encryption_in_transit_type = kwargs['encryptionInTransitType']
-        if 'isAgentAutoIscsiLoginEnabled' in kwargs:
+        if is_agent_auto_iscsi_login_enabled is None and 'isAgentAutoIscsiLoginEnabled' in kwargs:
             is_agent_auto_iscsi_login_enabled = kwargs['isAgentAutoIscsiLoginEnabled']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'isReadOnly' in kwargs:
+        if is_read_only is None and 'isReadOnly' in kwargs:
             is_read_only = kwargs['isReadOnly']
-        if 'isShareable' in kwargs:
+        if is_shareable is None and 'isShareable' in kwargs:
             is_shareable = kwargs['isShareable']
-        if 'useChap' in kwargs:
+        if use_chap is None and 'useChap' in kwargs:
             use_chap = kwargs['useChap']
 
         _setter("attachment_type", attachment_type)
@@ -387,43 +393,43 @@ class _VolumeAttachmentState:
              time_created: Optional[pulumi.Input[str]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachmentType' in kwargs:
+        if attachment_type is None and 'attachmentType' in kwargs:
             attachment_type = kwargs['attachmentType']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'chapSecret' in kwargs:
+        if chap_secret is None and 'chapSecret' in kwargs:
             chap_secret = kwargs['chapSecret']
-        if 'chapUsername' in kwargs:
+        if chap_username is None and 'chapUsername' in kwargs:
             chap_username = kwargs['chapUsername']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'encryptionInTransitType' in kwargs:
+        if encryption_in_transit_type is None and 'encryptionInTransitType' in kwargs:
             encryption_in_transit_type = kwargs['encryptionInTransitType']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'isAgentAutoIscsiLoginEnabled' in kwargs:
+        if is_agent_auto_iscsi_login_enabled is None and 'isAgentAutoIscsiLoginEnabled' in kwargs:
             is_agent_auto_iscsi_login_enabled = kwargs['isAgentAutoIscsiLoginEnabled']
-        if 'isMultipath' in kwargs:
+        if is_multipath is None and 'isMultipath' in kwargs:
             is_multipath = kwargs['isMultipath']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'isReadOnly' in kwargs:
+        if is_read_only is None and 'isReadOnly' in kwargs:
             is_read_only = kwargs['isReadOnly']
-        if 'isShareable' in kwargs:
+        if is_shareable is None and 'isShareable' in kwargs:
             is_shareable = kwargs['isShareable']
-        if 'iscsiLoginState' in kwargs:
+        if iscsi_login_state is None and 'iscsiLoginState' in kwargs:
             iscsi_login_state = kwargs['iscsiLoginState']
-        if 'multipathDevices' in kwargs:
+        if multipath_devices is None and 'multipathDevices' in kwargs:
             multipath_devices = kwargs['multipathDevices']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'useChap' in kwargs:
+        if use_chap is None and 'useChap' in kwargs:
             use_chap = kwargs['useChap']
-        if 'volumeId' in kwargs:
+        if volume_id is None and 'volumeId' in kwargs:
             volume_id = kwargs['volumeId']
 
         if attachment_type is not None:

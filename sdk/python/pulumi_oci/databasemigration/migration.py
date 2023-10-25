@@ -84,10 +84,10 @@ class MigrationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             source_database_connection_id: pulumi.Input[str],
-             target_database_connection_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             source_database_connection_id: Optional[pulumi.Input[str]] = None,
+             target_database_connection_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
              agent_id: Optional[pulumi.Input[str]] = None,
              csv_text: Optional[pulumi.Input[str]] = None,
@@ -104,45 +104,53 @@ class MigrationArgs:
              include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
              source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'sourceDatabaseConnectionId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if source_database_connection_id is None and 'sourceDatabaseConnectionId' in kwargs:
             source_database_connection_id = kwargs['sourceDatabaseConnectionId']
-        if 'targetDatabaseConnectionId' in kwargs:
+        if source_database_connection_id is None:
+            raise TypeError("Missing 'source_database_connection_id' argument")
+        if target_database_connection_id is None and 'targetDatabaseConnectionId' in kwargs:
             target_database_connection_id = kwargs['targetDatabaseConnectionId']
-        if 'advisorSettings' in kwargs:
+        if target_database_connection_id is None:
+            raise TypeError("Missing 'target_database_connection_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if advisor_settings is None and 'advisorSettings' in kwargs:
             advisor_settings = kwargs['advisorSettings']
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'csvText' in kwargs:
+        if csv_text is None and 'csvText' in kwargs:
             csv_text = kwargs['csvText']
-        if 'dataTransferMediumDetails' in kwargs:
+        if data_transfer_medium_details is None and 'dataTransferMediumDetails' in kwargs:
             data_transfer_medium_details = kwargs['dataTransferMediumDetails']
-        if 'dataTransferMediumDetailsV2' in kwargs:
+        if data_transfer_medium_details_v2 is None and 'dataTransferMediumDetailsV2' in kwargs:
             data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
-        if 'datapumpSettings' in kwargs:
+        if datapump_settings is None and 'datapumpSettings' in kwargs:
             datapump_settings = kwargs['datapumpSettings']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dumpTransferDetails' in kwargs:
+        if dump_transfer_details is None and 'dumpTransferDetails' in kwargs:
             dump_transfer_details = kwargs['dumpTransferDetails']
-        if 'excludeObjects' in kwargs:
+        if exclude_objects is None and 'excludeObjects' in kwargs:
             exclude_objects = kwargs['excludeObjects']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'goldenGateDetails' in kwargs:
+        if golden_gate_details is None and 'goldenGateDetails' in kwargs:
             golden_gate_details = kwargs['goldenGateDetails']
-        if 'goldenGateServiceDetails' in kwargs:
+        if golden_gate_service_details is None and 'goldenGateServiceDetails' in kwargs:
             golden_gate_service_details = kwargs['goldenGateServiceDetails']
-        if 'includeObjects' in kwargs:
+        if include_objects is None and 'includeObjects' in kwargs:
             include_objects = kwargs['includeObjects']
-        if 'sourceContainerDatabaseConnectionId' in kwargs:
+        if source_container_database_connection_id is None and 'sourceContainerDatabaseConnectionId' in kwargs:
             source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
-        if 'vaultDetails' in kwargs:
+        if vault_details is None and 'vaultDetails' in kwargs:
             vault_details = kwargs['vaultDetails']
 
         _setter("compartment_id", compartment_id)
@@ -547,61 +555,61 @@ class _MigrationState:
              type: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
              wait_after: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advisorSettings' in kwargs:
+        if advisor_settings is None and 'advisorSettings' in kwargs:
             advisor_settings = kwargs['advisorSettings']
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'credentialsSecretId' in kwargs:
+        if credentials_secret_id is None and 'credentialsSecretId' in kwargs:
             credentials_secret_id = kwargs['credentialsSecretId']
-        if 'csvText' in kwargs:
+        if csv_text is None and 'csvText' in kwargs:
             csv_text = kwargs['csvText']
-        if 'dataTransferMediumDetails' in kwargs:
+        if data_transfer_medium_details is None and 'dataTransferMediumDetails' in kwargs:
             data_transfer_medium_details = kwargs['dataTransferMediumDetails']
-        if 'dataTransferMediumDetailsV2' in kwargs:
+        if data_transfer_medium_details_v2 is None and 'dataTransferMediumDetailsV2' in kwargs:
             data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
-        if 'datapumpSettings' in kwargs:
+        if datapump_settings is None and 'datapumpSettings' in kwargs:
             datapump_settings = kwargs['datapumpSettings']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dumpTransferDetails' in kwargs:
+        if dump_transfer_details is None and 'dumpTransferDetails' in kwargs:
             dump_transfer_details = kwargs['dumpTransferDetails']
-        if 'excludeObjects' in kwargs:
+        if exclude_objects is None and 'excludeObjects' in kwargs:
             exclude_objects = kwargs['excludeObjects']
-        if 'executingJobId' in kwargs:
+        if executing_job_id is None and 'executingJobId' in kwargs:
             executing_job_id = kwargs['executingJobId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'goldenGateDetails' in kwargs:
+        if golden_gate_details is None and 'goldenGateDetails' in kwargs:
             golden_gate_details = kwargs['goldenGateDetails']
-        if 'goldenGateServiceDetails' in kwargs:
+        if golden_gate_service_details is None and 'goldenGateServiceDetails' in kwargs:
             golden_gate_service_details = kwargs['goldenGateServiceDetails']
-        if 'includeObjects' in kwargs:
+        if include_objects is None and 'includeObjects' in kwargs:
             include_objects = kwargs['includeObjects']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'sourceContainerDatabaseConnectionId' in kwargs:
+        if source_container_database_connection_id is None and 'sourceContainerDatabaseConnectionId' in kwargs:
             source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
-        if 'sourceDatabaseConnectionId' in kwargs:
+        if source_database_connection_id is None and 'sourceDatabaseConnectionId' in kwargs:
             source_database_connection_id = kwargs['sourceDatabaseConnectionId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetDatabaseConnectionId' in kwargs:
+        if target_database_connection_id is None and 'targetDatabaseConnectionId' in kwargs:
             target_database_connection_id = kwargs['targetDatabaseConnectionId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastMigration' in kwargs:
+        if time_last_migration is None and 'timeLastMigration' in kwargs:
             time_last_migration = kwargs['timeLastMigration']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vaultDetails' in kwargs:
+        if vault_details is None and 'vaultDetails' in kwargs:
             vault_details = kwargs['vaultDetails']
-        if 'waitAfter' in kwargs:
+        if wait_after is None and 'waitAfter' in kwargs:
             wait_after = kwargs['waitAfter']
 
         if advisor_settings is not None:
@@ -1451,56 +1459,28 @@ class Migration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MigrationArgs.__new__(MigrationArgs)
 
-            if advisor_settings is not None and not isinstance(advisor_settings, MigrationAdvisorSettingsArgs):
-                advisor_settings = advisor_settings or {}
-                def _setter(key, value):
-                    advisor_settings[key] = value
-                MigrationAdvisorSettingsArgs._configure(_setter, **advisor_settings)
+            advisor_settings = _utilities.configure(advisor_settings, MigrationAdvisorSettingsArgs, True)
             __props__.__dict__["advisor_settings"] = advisor_settings
             __props__.__dict__["agent_id"] = agent_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["csv_text"] = csv_text
-            if data_transfer_medium_details is not None and not isinstance(data_transfer_medium_details, MigrationDataTransferMediumDetailsArgs):
-                data_transfer_medium_details = data_transfer_medium_details or {}
-                def _setter(key, value):
-                    data_transfer_medium_details[key] = value
-                MigrationDataTransferMediumDetailsArgs._configure(_setter, **data_transfer_medium_details)
+            data_transfer_medium_details = _utilities.configure(data_transfer_medium_details, MigrationDataTransferMediumDetailsArgs, True)
             __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
-            if data_transfer_medium_details_v2 is not None and not isinstance(data_transfer_medium_details_v2, MigrationDataTransferMediumDetailsV2Args):
-                data_transfer_medium_details_v2 = data_transfer_medium_details_v2 or {}
-                def _setter(key, value):
-                    data_transfer_medium_details_v2[key] = value
-                MigrationDataTransferMediumDetailsV2Args._configure(_setter, **data_transfer_medium_details_v2)
+            data_transfer_medium_details_v2 = _utilities.configure(data_transfer_medium_details_v2, MigrationDataTransferMediumDetailsV2Args, True)
             __props__.__dict__["data_transfer_medium_details_v2"] = data_transfer_medium_details_v2
-            if datapump_settings is not None and not isinstance(datapump_settings, MigrationDatapumpSettingsArgs):
-                datapump_settings = datapump_settings or {}
-                def _setter(key, value):
-                    datapump_settings[key] = value
-                MigrationDatapumpSettingsArgs._configure(_setter, **datapump_settings)
+            datapump_settings = _utilities.configure(datapump_settings, MigrationDatapumpSettingsArgs, True)
             __props__.__dict__["datapump_settings"] = datapump_settings
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
-            if dump_transfer_details is not None and not isinstance(dump_transfer_details, MigrationDumpTransferDetailsArgs):
-                dump_transfer_details = dump_transfer_details or {}
-                def _setter(key, value):
-                    dump_transfer_details[key] = value
-                MigrationDumpTransferDetailsArgs._configure(_setter, **dump_transfer_details)
+            dump_transfer_details = _utilities.configure(dump_transfer_details, MigrationDumpTransferDetailsArgs, True)
             __props__.__dict__["dump_transfer_details"] = dump_transfer_details
             __props__.__dict__["exclude_objects"] = exclude_objects
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if golden_gate_details is not None and not isinstance(golden_gate_details, MigrationGoldenGateDetailsArgs):
-                golden_gate_details = golden_gate_details or {}
-                def _setter(key, value):
-                    golden_gate_details[key] = value
-                MigrationGoldenGateDetailsArgs._configure(_setter, **golden_gate_details)
+            golden_gate_details = _utilities.configure(golden_gate_details, MigrationGoldenGateDetailsArgs, True)
             __props__.__dict__["golden_gate_details"] = golden_gate_details
-            if golden_gate_service_details is not None and not isinstance(golden_gate_service_details, MigrationGoldenGateServiceDetailsArgs):
-                golden_gate_service_details = golden_gate_service_details or {}
-                def _setter(key, value):
-                    golden_gate_service_details[key] = value
-                MigrationGoldenGateServiceDetailsArgs._configure(_setter, **golden_gate_service_details)
+            golden_gate_service_details = _utilities.configure(golden_gate_service_details, MigrationGoldenGateServiceDetailsArgs, True)
             __props__.__dict__["golden_gate_service_details"] = golden_gate_service_details
             __props__.__dict__["include_objects"] = include_objects
             __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
@@ -1513,11 +1493,7 @@ class Migration(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
-            if vault_details is not None and not isinstance(vault_details, MigrationVaultDetailsArgs):
-                vault_details = vault_details or {}
-                def _setter(key, value):
-                    vault_details[key] = value
-                MigrationVaultDetailsArgs._configure(_setter, **vault_details)
+            vault_details = _utilities.configure(vault_details, MigrationVaultDetailsArgs, True)
             __props__.__dict__["vault_details"] = vault_details
             __props__.__dict__["credentials_secret_id"] = None
             __props__.__dict__["executing_job_id"] = None

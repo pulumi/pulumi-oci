@@ -36,10 +36,10 @@ import (
 //				EntityTypeName:  pulumi.Any(_var.Log_analytics_entity_entity_type_name),
 //				Namespace:       pulumi.Any(_var.Log_analytics_entity_namespace),
 //				CloudResourceId: pulumi.Any(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Hostname:          pulumi.Any(_var.Log_analytics_entity_hostname),

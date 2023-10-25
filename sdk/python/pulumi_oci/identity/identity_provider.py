@@ -57,29 +57,41 @@ class IdentityProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             description: pulumi.Input[str],
-             metadata: pulumi.Input[str],
-             metadata_url: pulumi.Input[str],
-             product_type: pulumi.Input[str],
-             protocol: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[str]] = None,
+             metadata_url: Optional[pulumi.Input[str]] = None,
+             product_type: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_attributes: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'metadataUrl' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if metadata_url is None and 'metadataUrl' in kwargs:
             metadata_url = kwargs['metadataUrl']
-        if 'productType' in kwargs:
+        if metadata_url is None:
+            raise TypeError("Missing 'metadata_url' argument")
+        if product_type is None and 'productType' in kwargs:
             product_type = kwargs['productType']
-        if 'definedTags' in kwargs:
+        if product_type is None:
+            raise TypeError("Missing 'product_type' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformAttributes' in kwargs:
+        if freeform_attributes is None and 'freeformAttributes' in kwargs:
             freeform_attributes = kwargs['freeformAttributes']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -298,27 +310,27 @@ class _IdentityProviderState:
              signing_certificate: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformAttributes' in kwargs:
+        if freeform_attributes is None and 'freeformAttributes' in kwargs:
             freeform_attributes = kwargs['freeformAttributes']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inactiveState' in kwargs:
+        if inactive_state is None and 'inactiveState' in kwargs:
             inactive_state = kwargs['inactiveState']
-        if 'metadataUrl' in kwargs:
+        if metadata_url is None and 'metadataUrl' in kwargs:
             metadata_url = kwargs['metadataUrl']
-        if 'productType' in kwargs:
+        if product_type is None and 'productType' in kwargs:
             product_type = kwargs['productType']
-        if 'redirectUrl' in kwargs:
+        if redirect_url is None and 'redirectUrl' in kwargs:
             redirect_url = kwargs['redirectUrl']
-        if 'signingCertificate' in kwargs:
+        if signing_certificate is None and 'signingCertificate' in kwargs:
             signing_certificate = kwargs['signingCertificate']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

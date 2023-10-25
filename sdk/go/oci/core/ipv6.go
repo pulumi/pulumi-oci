@@ -33,11 +33,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewIpv6(ctx, "testIpv6", &Core.Ipv6Args{
 //				VnicId: pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Ipv6_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IpAddress:      pulumi.Any(_var.Ipv6_ip_address),

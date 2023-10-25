@@ -41,12 +41,12 @@ import (
 //				FeatureSet:      pulumi.Any(_var.Analytics_instance_feature_set),
 //				IdcsAccessToken: pulumi.Any(_var.Analytics_instance_idcs_access_token),
 //				LicenseType:     pulumi.Any(_var.Analytics_instance_license_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description:       pulumi.Any(_var.Analytics_instance_description),
 //				EmailNotification: pulumi.Any(_var.Analytics_instance_email_notification),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),

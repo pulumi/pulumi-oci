@@ -144,7 +144,7 @@ class ApiValidationResultArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              result: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -197,14 +197,16 @@ class DeploymentSpecificationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             routes: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgs']]],
+             routes: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgs']]]] = None,
              logging_policies: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesArgs']] = None,
              request_policies: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loggingPolicies' in kwargs:
+        if routes is None:
+            raise TypeError("Missing 'routes' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
             logging_policies = kwargs['loggingPolicies']
-        if 'requestPolicies' in kwargs:
+        if request_policies is None and 'requestPolicies' in kwargs:
             request_policies = kwargs['requestPolicies']
 
         _setter("routes", routes)
@@ -269,11 +271,11 @@ class DeploymentSpecificationLoggingPoliciesArgs:
              _setter: Callable[[Any, Any], None],
              access_log: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgs']] = None,
              execution_log: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessLog' in kwargs:
+        if access_log is None and 'accessLog' in kwargs:
             access_log = kwargs['accessLog']
-        if 'executionLog' in kwargs:
+        if execution_log is None and 'executionLog' in kwargs:
             execution_log = kwargs['executionLog']
 
         if access_log is not None:
@@ -321,9 +323,9 @@ class DeploymentSpecificationLoggingPoliciesAccessLogArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -361,11 +363,11 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
              log_level: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'logLevel' in kwargs:
+        if log_level is None and 'logLevel' in kwargs:
             log_level = kwargs['logLevel']
 
         if is_enabled is not None:
@@ -433,15 +435,15 @@ class DeploymentSpecificationRequestPoliciesArgs:
              mutual_tls: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs']] = None,
              rate_limiting: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']] = None,
              usage_plans: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dynamicAuthentication' in kwargs:
+        if dynamic_authentication is None and 'dynamicAuthentication' in kwargs:
             dynamic_authentication = kwargs['dynamicAuthentication']
-        if 'mutualTls' in kwargs:
+        if mutual_tls is None and 'mutualTls' in kwargs:
             mutual_tls = kwargs['mutualTls']
-        if 'rateLimiting' in kwargs:
+        if rate_limiting is None and 'rateLimiting' in kwargs:
             rate_limiting = kwargs['rateLimiting']
-        if 'usagePlans' in kwargs:
+        if usage_plans is None and 'usagePlans' in kwargs:
             usage_plans = kwargs['usagePlans']
 
         if authentication is not None:
@@ -590,7 +592,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              cache_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
@@ -605,29 +607,31 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
              validation_failure_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs']] = None,
              validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs']] = None,
              verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheKeys' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
             cache_keys = kwargs['cacheKeys']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isAnonymousAccessAllowed' in kwargs:
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
             is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if 'maxClockSkewInSeconds' in kwargs:
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
             max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
-        if 'publicKeys' in kwargs:
+        if public_keys is None and 'publicKeys' in kwargs:
             public_keys = kwargs['publicKeys']
-        if 'tokenAuthScheme' in kwargs:
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
             token_auth_scheme = kwargs['tokenAuthScheme']
-        if 'tokenHeader' in kwargs:
+        if token_header is None and 'tokenHeader' in kwargs:
             token_header = kwargs['tokenHeader']
-        if 'tokenQueryParam' in kwargs:
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
             token_query_param = kwargs['tokenQueryParam']
-        if 'validationFailurePolicy' in kwargs:
+        if validation_failure_policy is None and 'validationFailurePolicy' in kwargs:
             validation_failure_policy = kwargs['validationFailurePolicy']
-        if 'validationPolicy' in kwargs:
+        if validation_policy is None and 'validationPolicy' in kwargs:
             validation_policy = kwargs['validationPolicy']
-        if 'verifyClaims' in kwargs:
+        if verify_claims is None and 'verifyClaims' in kwargs:
             verify_claims = kwargs['verifyClaims']
 
         _setter("type", type)
@@ -875,16 +879,18 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              is_ssl_verify_disabled: Optional[pulumi.Input[bool]] = None,
              keys: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]]] = None,
              max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isSslVerifyDisabled' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'maxCacheDurationInHours' in kwargs:
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
             max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
 
         _setter("type", type)
@@ -1000,7 +1006,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format: pulumi.Input[str],
+             format: Optional[pulumi.Input[str]] = None,
              alg: Optional[pulumi.Input[str]] = None,
              e: Optional[pulumi.Input[str]] = None,
              key: Optional[pulumi.Input[str]] = None,
@@ -1009,9 +1015,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
              kty: Optional[pulumi.Input[str]] = None,
              n: Optional[pulumi.Input[str]] = None,
              use: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyOps' in kwargs:
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
             key_ops = kwargs['keyOps']
 
         _setter("format", format)
@@ -1198,7 +1206,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs']] = None,
              fallback_redirect_path: Optional[pulumi.Input[str]] = None,
              logout_path: Optional[pulumi.Input[str]] = None,
@@ -1212,31 +1220,33 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              use_cookies_for_intermediate_steps: Optional[pulumi.Input[bool]] = None,
              use_cookies_for_session: Optional[pulumi.Input[bool]] = None,
              use_pkce: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientDetails' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_details is None and 'clientDetails' in kwargs:
             client_details = kwargs['clientDetails']
-        if 'fallbackRedirectPath' in kwargs:
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
             fallback_redirect_path = kwargs['fallbackRedirectPath']
-        if 'logoutPath' in kwargs:
+        if logout_path is None and 'logoutPath' in kwargs:
             logout_path = kwargs['logoutPath']
-        if 'maxExpiryDurationInHours' in kwargs:
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
             max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
-        if 'responseCode' in kwargs:
+        if response_code is None and 'responseCode' in kwargs:
             response_code = kwargs['responseCode']
-        if 'responseHeaderTransformations' in kwargs:
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
             response_header_transformations = kwargs['responseHeaderTransformations']
-        if 'responseMessage' in kwargs:
+        if response_message is None and 'responseMessage' in kwargs:
             response_message = kwargs['responseMessage']
-        if 'responseType' in kwargs:
+        if response_type is None and 'responseType' in kwargs:
             response_type = kwargs['responseType']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
-        if 'useCookiesForIntermediateSteps' in kwargs:
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
             use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
-        if 'useCookiesForSession' in kwargs:
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
             use_cookies_for_session = kwargs['useCookiesForSession']
-        if 'usePkce' in kwargs:
+        if use_pkce is None and 'usePkce' in kwargs:
             use_pkce = kwargs['usePkce']
 
         _setter("type", type)
@@ -1467,17 +1477,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_id: Optional[pulumi.Input[str]] = None,
              client_secret_id: Optional[pulumi.Input[str]] = None,
              client_secret_version_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecretId' in kwargs:
+        if client_secret_id is None and 'clientSecretId' in kwargs:
             client_secret_id = kwargs['clientSecretId']
-        if 'clientSecretVersionNumber' in kwargs:
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
             client_secret_version_number = kwargs['clientSecretVersionNumber']
 
         _setter("type", type)
@@ -1564,13 +1576,13 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              filter_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']] = None,
              rename_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']] = None,
              set_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filterHeaders' in kwargs:
+        if filter_headers is None and 'filterHeaders' in kwargs:
             filter_headers = kwargs['filterHeaders']
-        if 'renameHeaders' in kwargs:
+        if rename_headers is None and 'renameHeaders' in kwargs:
             rename_headers = kwargs['renameHeaders']
-        if 'setHeaders' in kwargs:
+        if set_headers is None and 'setHeaders' in kwargs:
             set_headers = kwargs['setHeaders']
 
         if filter_headers is not None:
@@ -1640,7 +1652,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1692,7 +1704,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -1726,7 +1738,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1764,9 +1776,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              _setter: Callable[[Any, Any], None],
              from_: Optional[pulumi.Input[str]] = None,
              to: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'from' in kwargs:
+        if from_ is None and 'from' in kwargs:
             from_ = kwargs['from']
 
         if from_ is not None:
@@ -1814,7 +1826,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1856,9 +1868,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              if_exists: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ifExists' in kwargs:
+        if if_exists is None and 'ifExists' in kwargs:
             if_exists = kwargs['ifExists']
 
         if if_exists is not None:
@@ -1926,10 +1938,12 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("type", type)
         if uri is not None:
@@ -2003,7 +2017,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              additional_validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs']] = None,
              client_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs']] = None,
              is_ssl_verify_disabled: Optional[pulumi.Input[bool]] = None,
@@ -2011,17 +2025,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
              max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
              source_uri_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs']] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalValidationPolicy' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_validation_policy is None and 'additionalValidationPolicy' in kwargs:
             additional_validation_policy = kwargs['additionalValidationPolicy']
-        if 'clientDetails' in kwargs:
+        if client_details is None and 'clientDetails' in kwargs:
             client_details = kwargs['clientDetails']
-        if 'isSslVerifyDisabled' in kwargs:
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'maxCacheDurationInHours' in kwargs:
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
             max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
 
         _setter("type", type)
@@ -2164,9 +2180,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
              audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'verifyClaims' in kwargs:
+        if verify_claims is None and 'verifyClaims' in kwargs:
             verify_claims = kwargs['verifyClaims']
 
         if audiences is not None:
@@ -2236,9 +2252,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
              is_required: Optional[pulumi.Input[bool]] = None,
              key: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isRequired' in kwargs:
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
 
         if is_required is not None:
@@ -2312,17 +2328,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_id: Optional[pulumi.Input[str]] = None,
              client_secret_id: Optional[pulumi.Input[str]] = None,
              client_secret_version_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecretId' in kwargs:
+        if client_secret_id is None and 'clientSecretId' in kwargs:
             client_secret_id = kwargs['clientSecretId']
-        if 'clientSecretVersionNumber' in kwargs:
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
             client_secret_version_number = kwargs['clientSecretVersionNumber']
 
         _setter("type", type)
@@ -2424,7 +2442,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format: pulumi.Input[str],
+             format: Optional[pulumi.Input[str]] = None,
              alg: Optional[pulumi.Input[str]] = None,
              e: Optional[pulumi.Input[str]] = None,
              key: Optional[pulumi.Input[str]] = None,
@@ -2433,9 +2451,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
              kty: Optional[pulumi.Input[str]] = None,
              n: Optional[pulumi.Input[str]] = None,
              use: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyOps' in kwargs:
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
             key_ops = kwargs['keyOps']
 
         _setter("format", format)
@@ -2586,10 +2606,12 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("type", type)
         if uri is not None:
@@ -2647,9 +2669,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
              is_required: Optional[pulumi.Input[bool]] = None,
              key: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isRequired' in kwargs:
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
 
         if is_required is not None:
@@ -2725,25 +2747,27 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_origins: pulumi.Input[Sequence[pulumi.Input[str]]],
+             allowed_origins: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              allowed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              allowed_methods: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              exposed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              is_allow_credentials_enabled: Optional[pulumi.Input[bool]] = None,
              max_age_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedOrigins' in kwargs:
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
             allowed_origins = kwargs['allowedOrigins']
-        if 'allowedHeaders' in kwargs:
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
             allowed_headers = kwargs['allowedHeaders']
-        if 'allowedMethods' in kwargs:
+        if allowed_methods is None and 'allowedMethods' in kwargs:
             allowed_methods = kwargs['allowedMethods']
-        if 'exposedHeaders' in kwargs:
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
             exposed_headers = kwargs['exposedHeaders']
-        if 'isAllowCredentialsEnabled' in kwargs:
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
             is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
-        if 'maxAgeInSeconds' in kwargs:
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
             max_age_in_seconds = kwargs['maxAgeInSeconds']
 
         _setter("allowed_origins", allowed_origins)
@@ -2848,14 +2872,18 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication_servers: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs']]],
-             selection_source: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication_servers: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs']]]] = None,
+             selection_source: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticationServers' in kwargs:
+        if authentication_servers is None and 'authenticationServers' in kwargs:
             authentication_servers = kwargs['authenticationServers']
-        if 'selectionSource' in kwargs:
+        if authentication_servers is None:
+            raise TypeError("Missing 'authentication_servers' argument")
+        if selection_source is None and 'selectionSource' in kwargs:
             selection_source = kwargs['selectionSource']
+        if selection_source is None:
+            raise TypeError("Missing 'selection_source' argument")
 
         _setter("authentication_servers", authentication_servers)
         _setter("selection_source", selection_source)
@@ -2902,12 +2930,16 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication_server_detail: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'],
-             key: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             authentication_server_detail: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs']] = None,
+             key: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticationServerDetail' in kwargs:
+        if authentication_server_detail is None and 'authenticationServerDetail' in kwargs:
             authentication_server_detail = kwargs['authenticationServerDetail']
+        if authentication_server_detail is None:
+            raise TypeError("Missing 'authentication_server_detail' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
 
         _setter("authentication_server_detail", authentication_server_detail)
         _setter("key", key)
@@ -2997,7 +3029,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              cache_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
@@ -3012,29 +3044,31 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              validation_failure_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs']] = None,
              validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs']] = None,
              verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheKeys' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
             cache_keys = kwargs['cacheKeys']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isAnonymousAccessAllowed' in kwargs:
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
             is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if 'maxClockSkewInSeconds' in kwargs:
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
             max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
-        if 'publicKeys' in kwargs:
+        if public_keys is None and 'publicKeys' in kwargs:
             public_keys = kwargs['publicKeys']
-        if 'tokenAuthScheme' in kwargs:
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
             token_auth_scheme = kwargs['tokenAuthScheme']
-        if 'tokenHeader' in kwargs:
+        if token_header is None and 'tokenHeader' in kwargs:
             token_header = kwargs['tokenHeader']
-        if 'tokenQueryParam' in kwargs:
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
             token_query_param = kwargs['tokenQueryParam']
-        if 'validationFailurePolicy' in kwargs:
+        if validation_failure_policy is None and 'validationFailurePolicy' in kwargs:
             validation_failure_policy = kwargs['validationFailurePolicy']
-        if 'validationPolicy' in kwargs:
+        if validation_policy is None and 'validationPolicy' in kwargs:
             validation_policy = kwargs['validationPolicy']
-        if 'verifyClaims' in kwargs:
+        if verify_claims is None and 'verifyClaims' in kwargs:
             verify_claims = kwargs['verifyClaims']
 
         _setter("type", type)
@@ -3282,16 +3316,18 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              is_ssl_verify_disabled: Optional[pulumi.Input[bool]] = None,
              keys: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]]] = None,
              max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isSslVerifyDisabled' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'maxCacheDurationInHours' in kwargs:
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
             max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
 
         _setter("type", type)
@@ -3407,7 +3443,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format: pulumi.Input[str],
+             format: Optional[pulumi.Input[str]] = None,
              alg: Optional[pulumi.Input[str]] = None,
              e: Optional[pulumi.Input[str]] = None,
              key: Optional[pulumi.Input[str]] = None,
@@ -3416,9 +3452,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              kty: Optional[pulumi.Input[str]] = None,
              n: Optional[pulumi.Input[str]] = None,
              use: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyOps' in kwargs:
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
             key_ops = kwargs['keyOps']
 
         _setter("format", format)
@@ -3605,7 +3643,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs']] = None,
              fallback_redirect_path: Optional[pulumi.Input[str]] = None,
              logout_path: Optional[pulumi.Input[str]] = None,
@@ -3619,31 +3657,33 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              use_cookies_for_intermediate_steps: Optional[pulumi.Input[bool]] = None,
              use_cookies_for_session: Optional[pulumi.Input[bool]] = None,
              use_pkce: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientDetails' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_details is None and 'clientDetails' in kwargs:
             client_details = kwargs['clientDetails']
-        if 'fallbackRedirectPath' in kwargs:
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
             fallback_redirect_path = kwargs['fallbackRedirectPath']
-        if 'logoutPath' in kwargs:
+        if logout_path is None and 'logoutPath' in kwargs:
             logout_path = kwargs['logoutPath']
-        if 'maxExpiryDurationInHours' in kwargs:
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
             max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
-        if 'responseCode' in kwargs:
+        if response_code is None and 'responseCode' in kwargs:
             response_code = kwargs['responseCode']
-        if 'responseHeaderTransformations' in kwargs:
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
             response_header_transformations = kwargs['responseHeaderTransformations']
-        if 'responseMessage' in kwargs:
+        if response_message is None and 'responseMessage' in kwargs:
             response_message = kwargs['responseMessage']
-        if 'responseType' in kwargs:
+        if response_type is None and 'responseType' in kwargs:
             response_type = kwargs['responseType']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
-        if 'useCookiesForIntermediateSteps' in kwargs:
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
             use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
-        if 'useCookiesForSession' in kwargs:
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
             use_cookies_for_session = kwargs['useCookiesForSession']
-        if 'usePkce' in kwargs:
+        if use_pkce is None and 'usePkce' in kwargs:
             use_pkce = kwargs['usePkce']
 
         _setter("type", type)
@@ -3874,17 +3914,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_id: Optional[pulumi.Input[str]] = None,
              client_secret_id: Optional[pulumi.Input[str]] = None,
              client_secret_version_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecretId' in kwargs:
+        if client_secret_id is None and 'clientSecretId' in kwargs:
             client_secret_id = kwargs['clientSecretId']
-        if 'clientSecretVersionNumber' in kwargs:
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
             client_secret_version_number = kwargs['clientSecretVersionNumber']
 
         _setter("type", type)
@@ -3971,13 +4013,13 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              filter_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']] = None,
              rename_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']] = None,
              set_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filterHeaders' in kwargs:
+        if filter_headers is None and 'filterHeaders' in kwargs:
             filter_headers = kwargs['filterHeaders']
-        if 'renameHeaders' in kwargs:
+        if rename_headers is None and 'renameHeaders' in kwargs:
             rename_headers = kwargs['renameHeaders']
-        if 'setHeaders' in kwargs:
+        if set_headers is None and 'setHeaders' in kwargs:
             set_headers = kwargs['setHeaders']
 
         if filter_headers is not None:
@@ -4047,7 +4089,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4099,7 +4141,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -4133,7 +4175,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4171,9 +4213,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              from_: Optional[pulumi.Input[str]] = None,
              to: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'from' in kwargs:
+        if from_ is None and 'from' in kwargs:
             from_ = kwargs['from']
 
         if from_ is not None:
@@ -4221,7 +4263,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4263,9 +4305,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              if_exists: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ifExists' in kwargs:
+        if if_exists is None and 'ifExists' in kwargs:
             if_exists = kwargs['ifExists']
 
         if if_exists is not None:
@@ -4333,10 +4375,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("type", type)
         if uri is not None:
@@ -4410,7 +4454,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              additional_validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs']] = None,
              client_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs']] = None,
              is_ssl_verify_disabled: Optional[pulumi.Input[bool]] = None,
@@ -4418,17 +4462,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
              source_uri_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs']] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalValidationPolicy' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_validation_policy is None and 'additionalValidationPolicy' in kwargs:
             additional_validation_policy = kwargs['additionalValidationPolicy']
-        if 'clientDetails' in kwargs:
+        if client_details is None and 'clientDetails' in kwargs:
             client_details = kwargs['clientDetails']
-        if 'isSslVerifyDisabled' in kwargs:
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'maxCacheDurationInHours' in kwargs:
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
             max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
-        if 'sourceUriDetails' in kwargs:
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
             source_uri_details = kwargs['sourceUriDetails']
 
         _setter("type", type)
@@ -4571,9 +4617,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'verifyClaims' in kwargs:
+        if verify_claims is None and 'verifyClaims' in kwargs:
             verify_claims = kwargs['verifyClaims']
 
         if audiences is not None:
@@ -4643,9 +4689,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              is_required: Optional[pulumi.Input[bool]] = None,
              key: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isRequired' in kwargs:
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
 
         if is_required is not None:
@@ -4719,17 +4765,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              client_id: Optional[pulumi.Input[str]] = None,
              client_secret_id: Optional[pulumi.Input[str]] = None,
              client_secret_version_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
             client_id = kwargs['clientId']
-        if 'clientSecretId' in kwargs:
+        if client_secret_id is None and 'clientSecretId' in kwargs:
             client_secret_id = kwargs['clientSecretId']
-        if 'clientSecretVersionNumber' in kwargs:
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
             client_secret_version_number = kwargs['clientSecretVersionNumber']
 
         _setter("type", type)
@@ -4831,7 +4879,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             format: pulumi.Input[str],
+             format: Optional[pulumi.Input[str]] = None,
              alg: Optional[pulumi.Input[str]] = None,
              e: Optional[pulumi.Input[str]] = None,
              key: Optional[pulumi.Input[str]] = None,
@@ -4840,9 +4888,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              kty: Optional[pulumi.Input[str]] = None,
              n: Optional[pulumi.Input[str]] = None,
              use: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keyOps' in kwargs:
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
             key_ops = kwargs['keyOps']
 
         _setter("format", format)
@@ -4993,10 +5043,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("type", type)
         if uri is not None:
@@ -5054,9 +5106,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              is_required: Optional[pulumi.Input[bool]] = None,
              key: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isRequired' in kwargs:
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
 
         if is_required is not None:
@@ -5133,14 +5185,16 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              expression: Optional[pulumi.Input[str]] = None,
              is_default: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
 
         _setter("name", name)
@@ -5239,10 +5293,14 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             selector: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             selector: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("selector", selector)
         _setter("type", type)
@@ -5295,11 +5353,11 @@ class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
              _setter: Callable[[Any, Any], None],
              allowed_sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              is_verified_certificate_required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedSans' in kwargs:
+        if allowed_sans is None and 'allowedSans' in kwargs:
             allowed_sans = kwargs['allowedSans']
-        if 'isVerifiedCertificateRequired' in kwargs:
+        if is_verified_certificate_required is None and 'isVerifiedCertificateRequired' in kwargs:
             is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
 
         if allowed_sans is not None:
@@ -5349,14 +5407,18 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rate_in_requests_per_second: pulumi.Input[int],
-             rate_key: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             rate_in_requests_per_second: Optional[pulumi.Input[int]] = None,
+             rate_key: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'rateInRequestsPerSecond' in kwargs:
+        if rate_in_requests_per_second is None and 'rateInRequestsPerSecond' in kwargs:
             rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
-        if 'rateKey' in kwargs:
+        if rate_in_requests_per_second is None:
+            raise TypeError("Missing 'rate_in_requests_per_second' argument")
+        if rate_key is None and 'rateKey' in kwargs:
             rate_key = kwargs['rateKey']
+        if rate_key is None:
+            raise TypeError("Missing 'rate_key' argument")
 
         _setter("rate_in_requests_per_second", rate_in_requests_per_second)
         _setter("rate_key", rate_key)
@@ -5404,11 +5466,13 @@ class DeploymentSpecificationRequestPoliciesUsagePlansArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             token_locations: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             token_locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tokenLocations' in kwargs:
+        if token_locations is None and 'tokenLocations' in kwargs:
             token_locations = kwargs['tokenLocations']
+        if token_locations is None:
+            raise TypeError("Missing 'token_locations' argument")
 
         _setter("token_locations", token_locations)
 
@@ -5458,19 +5522,23 @@ class DeploymentSpecificationRouteArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend: pulumi.Input['DeploymentSpecificationRouteBackendArgs'],
-             path: pulumi.Input[str],
+             backend: Optional[pulumi.Input['DeploymentSpecificationRouteBackendArgs']] = None,
+             path: Optional[pulumi.Input[str]] = None,
              logging_policies: Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesArgs']] = None,
              methods: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              request_policies: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgs']] = None,
              response_policies: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loggingPolicies' in kwargs:
+        if backend is None:
+            raise TypeError("Missing 'backend' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
             logging_policies = kwargs['loggingPolicies']
-        if 'requestPolicies' in kwargs:
+        if request_policies is None and 'requestPolicies' in kwargs:
             request_policies = kwargs['requestPolicies']
-        if 'responsePolicies' in kwargs:
+        if response_policies is None and 'responsePolicies' in kwargs:
             response_policies = kwargs['responsePolicies']
 
         _setter("backend", backend)
@@ -5614,7 +5682,7 @@ class DeploymentSpecificationRouteBackendArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              allowed_post_logout_uris: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              body: Optional[pulumi.Input[str]] = None,
              connect_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
@@ -5628,25 +5696,27 @@ class DeploymentSpecificationRouteBackendArgs:
              send_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
              status: Optional[pulumi.Input[int]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedPostLogoutUris' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if allowed_post_logout_uris is None and 'allowedPostLogoutUris' in kwargs:
             allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
-        if 'connectTimeoutInSeconds' in kwargs:
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
             connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isSslVerifyDisabled' in kwargs:
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'postLogoutState' in kwargs:
+        if post_logout_state is None and 'postLogoutState' in kwargs:
             post_logout_state = kwargs['postLogoutState']
-        if 'readTimeoutInSeconds' in kwargs:
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
             read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
-        if 'routingBackends' in kwargs:
+        if routing_backends is None and 'routingBackends' in kwargs:
             routing_backends = kwargs['routingBackends']
-        if 'selectionSource' in kwargs:
+        if selection_source is None and 'selectionSource' in kwargs:
             selection_source = kwargs['selectionSource']
-        if 'sendTimeoutInSeconds' in kwargs:
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
             send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
 
         _setter("type", type)
@@ -5869,7 +5939,7 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -5921,7 +5991,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendArgs:
              _setter: Callable[[Any, Any], None],
              backend: Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgs']] = None,
              key: Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if backend is not None:
@@ -5999,7 +6069,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              body: Optional[pulumi.Input[str]] = None,
              connect_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
@@ -6009,17 +6079,19 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
              send_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
              status: Optional[pulumi.Input[int]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectTimeoutInSeconds' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
             connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isSslVerifyDisabled' in kwargs:
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'readTimeoutInSeconds' in kwargs:
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
             read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
-        if 'sendTimeoutInSeconds' in kwargs:
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
             send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
 
         _setter("type", type)
@@ -6186,7 +6258,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -6249,14 +6321,18 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              expression: Optional[pulumi.Input[str]] = None,
              is_default: Optional[pulumi.Input[bool]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
 
         _setter("name", name)
@@ -6354,10 +6430,14 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             selector: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             selector: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("selector", selector)
         _setter("type", type)
@@ -6410,11 +6490,11 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
              _setter: Callable[[Any, Any], None],
              access_log: Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs']] = None,
              execution_log: Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessLog' in kwargs:
+        if access_log is None and 'accessLog' in kwargs:
             access_log = kwargs['accessLog']
-        if 'executionLog' in kwargs:
+        if execution_log is None and 'executionLog' in kwargs:
             execution_log = kwargs['executionLog']
 
         if access_log is not None:
@@ -6462,9 +6542,9 @@ class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         if is_enabled is not None:
@@ -6502,11 +6582,11 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
              log_level: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'logLevel' in kwargs:
+        if log_level is None and 'logLevel' in kwargs:
             log_level = kwargs['logLevel']
 
         if is_enabled is not None:
@@ -6582,19 +6662,19 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
              query_parameter_transformations: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs']] = None,
              query_parameter_validations: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs']] = None,
              response_cache_lookup: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bodyValidation' in kwargs:
+        if body_validation is None and 'bodyValidation' in kwargs:
             body_validation = kwargs['bodyValidation']
-        if 'headerTransformations' in kwargs:
+        if header_transformations is None and 'headerTransformations' in kwargs:
             header_transformations = kwargs['headerTransformations']
-        if 'headerValidations' in kwargs:
+        if header_validations is None and 'headerValidations' in kwargs:
             header_validations = kwargs['headerValidations']
-        if 'queryParameterTransformations' in kwargs:
+        if query_parameter_transformations is None and 'queryParameterTransformations' in kwargs:
             query_parameter_transformations = kwargs['queryParameterTransformations']
-        if 'queryParameterValidations' in kwargs:
+        if query_parameter_validations is None and 'queryParameterValidations' in kwargs:
             query_parameter_validations = kwargs['queryParameterValidations']
-        if 'responseCacheLookup' in kwargs:
+        if response_cache_lookup is None and 'responseCacheLookup' in kwargs:
             response_cache_lookup = kwargs['responseCacheLookup']
 
         if authorization is not None:
@@ -6734,9 +6814,9 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
              _setter: Callable[[Any, Any], None],
              allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedScopes' in kwargs:
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
             allowed_scopes = kwargs['allowedScopes']
 
         if allowed_scopes is not None:
@@ -6802,9 +6882,9 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
              contents: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]]] = None,
              required: Optional[pulumi.Input[bool]] = None,
              validation_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'validationMode' in kwargs:
+        if validation_mode is None and 'validationMode' in kwargs:
             validation_mode = kwargs['validationMode']
 
         if contents is not None:
@@ -6880,14 +6960,18 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             media_type: pulumi.Input[str],
-             validation_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             media_type: Optional[pulumi.Input[str]] = None,
+             validation_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'mediaType' in kwargs:
+        if media_type is None and 'mediaType' in kwargs:
             media_type = kwargs['mediaType']
-        if 'validationType' in kwargs:
+        if media_type is None:
+            raise TypeError("Missing 'media_type' argument")
+        if validation_type is None and 'validationType' in kwargs:
             validation_type = kwargs['validationType']
+        if validation_type is None:
+            raise TypeError("Missing 'validation_type' argument")
 
         _setter("media_type", media_type)
         _setter("validation_type", validation_type)
@@ -6952,25 +7036,27 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             allowed_origins: pulumi.Input[Sequence[pulumi.Input[str]]],
+             allowed_origins: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              allowed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              allowed_methods: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              exposed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              is_allow_credentials_enabled: Optional[pulumi.Input[bool]] = None,
              max_age_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedOrigins' in kwargs:
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
             allowed_origins = kwargs['allowedOrigins']
-        if 'allowedHeaders' in kwargs:
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
             allowed_headers = kwargs['allowedHeaders']
-        if 'allowedMethods' in kwargs:
+        if allowed_methods is None and 'allowedMethods' in kwargs:
             allowed_methods = kwargs['allowedMethods']
-        if 'exposedHeaders' in kwargs:
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
             exposed_headers = kwargs['exposedHeaders']
-        if 'isAllowCredentialsEnabled' in kwargs:
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
             is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
-        if 'maxAgeInSeconds' in kwargs:
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
             max_age_in_seconds = kwargs['maxAgeInSeconds']
 
         _setter("allowed_origins", allowed_origins)
@@ -7081,13 +7167,13 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
              filter_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs']] = None,
              rename_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs']] = None,
              set_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filterHeaders' in kwargs:
+        if filter_headers is None and 'filterHeaders' in kwargs:
             filter_headers = kwargs['filterHeaders']
-        if 'renameHeaders' in kwargs:
+        if rename_headers is None and 'renameHeaders' in kwargs:
             rename_headers = kwargs['renameHeaders']
-        if 'setHeaders' in kwargs:
+        if set_headers is None and 'setHeaders' in kwargs:
             set_headers = kwargs['setHeaders']
 
         if filter_headers is not None:
@@ -7155,10 +7241,14 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("items", items)
         _setter("type", type)
@@ -7206,9 +7296,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -7239,9 +7331,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7275,12 +7369,16 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             from_: pulumi.Input[str],
-             to: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             from_: Optional[pulumi.Input[str]] = None,
+             to: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'from' in kwargs:
+        if from_ is None and 'from' in kwargs:
             from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
 
         _setter("from_", from_)
         _setter("to", to)
@@ -7324,9 +7422,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7363,12 +7463,16 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             values: pulumi.Input[Sequence[pulumi.Input[str]]],
+             name: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              if_exists: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ifExists' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
             if_exists = kwargs['ifExists']
 
         _setter("name", name)
@@ -7438,9 +7542,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
              _setter: Callable[[Any, Any], None],
              headers: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]] = None,
              validation_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'validationMode' in kwargs:
+        if validation_mode is None and 'validationMode' in kwargs:
             validation_mode = kwargs['validationMode']
 
         if headers is not None:
@@ -7496,10 +7600,12 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if required is not None:
@@ -7553,13 +7659,13 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
              filter_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs']] = None,
              rename_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs']] = None,
              set_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filterQueryParameters' in kwargs:
+        if filter_query_parameters is None and 'filterQueryParameters' in kwargs:
             filter_query_parameters = kwargs['filterQueryParameters']
-        if 'renameQueryParameters' in kwargs:
+        if rename_query_parameters is None and 'renameQueryParameters' in kwargs:
             rename_query_parameters = kwargs['renameQueryParameters']
-        if 'setQueryParameters' in kwargs:
+        if set_query_parameters is None and 'setQueryParameters' in kwargs:
             set_query_parameters = kwargs['setQueryParameters']
 
         if filter_query_parameters is not None:
@@ -7627,10 +7733,14 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("items", items)
         _setter("type", type)
@@ -7678,9 +7788,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -7711,9 +7823,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7747,12 +7861,16 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             from_: pulumi.Input[str],
-             to: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             from_: Optional[pulumi.Input[str]] = None,
+             to: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'from' in kwargs:
+        if from_ is None and 'from' in kwargs:
             from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
 
         _setter("from_", from_)
         _setter("to", to)
@@ -7796,9 +7914,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7835,12 +7955,16 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             values: pulumi.Input[Sequence[pulumi.Input[str]]],
+             name: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              if_exists: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ifExists' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
             if_exists = kwargs['ifExists']
 
         _setter("name", name)
@@ -7910,9 +8034,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
              _setter: Callable[[Any, Any], None],
              parameters: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]] = None,
              validation_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'validationMode' in kwargs:
+        if validation_mode is None and 'validationMode' in kwargs:
             validation_mode = kwargs['validationMode']
 
         if parameters is not None:
@@ -7968,10 +8092,12 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
         if required is not None:
@@ -8033,17 +8159,19 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              cache_key_additions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              is_private_caching_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheKeyAdditions' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_key_additions is None and 'cacheKeyAdditions' in kwargs:
             cache_key_additions = kwargs['cacheKeyAdditions']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'isPrivateCachingEnabled' in kwargs:
+        if is_private_caching_enabled is None and 'isPrivateCachingEnabled' in kwargs:
             is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
 
         _setter("type", type)
@@ -8130,11 +8258,11 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
              _setter: Callable[[Any, Any], None],
              header_transformations: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs']] = None,
              response_cache_store: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'headerTransformations' in kwargs:
+        if header_transformations is None and 'headerTransformations' in kwargs:
             header_transformations = kwargs['headerTransformations']
-        if 'responseCacheStore' in kwargs:
+        if response_cache_store is None and 'responseCacheStore' in kwargs:
             response_cache_store = kwargs['responseCacheStore']
 
         if header_transformations is not None:
@@ -8190,13 +8318,13 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
              filter_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs']] = None,
              rename_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs']] = None,
              set_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filterHeaders' in kwargs:
+        if filter_headers is None and 'filterHeaders' in kwargs:
             filter_headers = kwargs['filterHeaders']
-        if 'renameHeaders' in kwargs:
+        if rename_headers is None and 'renameHeaders' in kwargs:
             rename_headers = kwargs['renameHeaders']
-        if 'setHeaders' in kwargs:
+        if set_headers is None and 'setHeaders' in kwargs:
             set_headers = kwargs['setHeaders']
 
         if filter_headers is not None:
@@ -8264,10 +8392,14 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("items", items)
         _setter("type", type)
@@ -8315,9 +8447,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -8348,9 +8482,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8384,12 +8520,16 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             from_: pulumi.Input[str],
-             to: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             from_: Optional[pulumi.Input[str]] = None,
+             to: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'from' in kwargs:
+        if from_ is None and 'from' in kwargs:
             from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
 
         _setter("from_", from_)
         _setter("to", to)
@@ -8433,9 +8573,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8472,12 +8614,16 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             values: pulumi.Input[Sequence[pulumi.Input[str]]],
+             name: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              if_exists: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ifExists' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
             if_exists = kwargs['ifExists']
 
         _setter("name", name)
@@ -8543,12 +8689,16 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_to_live_in_seconds: pulumi.Input[int],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_to_live_in_seconds: Optional[pulumi.Input[int]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeToLiveInSeconds' in kwargs:
+        if time_to_live_in_seconds is None and 'timeToLiveInSeconds' in kwargs:
             time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+        if time_to_live_in_seconds is None:
+            raise TypeError("Missing 'time_to_live_in_seconds' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("time_to_live_in_seconds", time_to_live_in_seconds)
         _setter("type", type)
@@ -8602,14 +8752,16 @@ class GatewayCaBundleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              ca_bundle_id: Optional[pulumi.Input[str]] = None,
              certificate_authority_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caBundleId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
             ca_bundle_id = kwargs['caBundleId']
-        if 'certificateAuthorityId' in kwargs:
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
             certificate_authority_id = kwargs['certificateAuthorityId']
 
         _setter("type", type)
@@ -8670,9 +8822,9 @@ class GatewayIpAddressArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddress' in kwargs:
+        if ip_address is None and 'ipAddress' in kwargs:
             ip_address = kwargs['ipAddress']
 
         if ip_address is not None:
@@ -8729,7 +8881,7 @@ class GatewayResponseCacheDetailsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              authentication_secret_id: Optional[pulumi.Input[str]] = None,
              authentication_secret_version_number: Optional[pulumi.Input[str]] = None,
              connect_timeout_in_ms: Optional[pulumi.Input[int]] = None,
@@ -8738,21 +8890,23 @@ class GatewayResponseCacheDetailsArgs:
              read_timeout_in_ms: Optional[pulumi.Input[int]] = None,
              send_timeout_in_ms: Optional[pulumi.Input[int]] = None,
              servers: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticationSecretId' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if authentication_secret_id is None and 'authenticationSecretId' in kwargs:
             authentication_secret_id = kwargs['authenticationSecretId']
-        if 'authenticationSecretVersionNumber' in kwargs:
+        if authentication_secret_version_number is None and 'authenticationSecretVersionNumber' in kwargs:
             authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
-        if 'connectTimeoutInMs' in kwargs:
+        if connect_timeout_in_ms is None and 'connectTimeoutInMs' in kwargs:
             connect_timeout_in_ms = kwargs['connectTimeoutInMs']
-        if 'isSslEnabled' in kwargs:
+        if is_ssl_enabled is None and 'isSslEnabled' in kwargs:
             is_ssl_enabled = kwargs['isSslEnabled']
-        if 'isSslVerifyDisabled' in kwargs:
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
             is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
-        if 'readTimeoutInMs' in kwargs:
+        if read_timeout_in_ms is None and 'readTimeoutInMs' in kwargs:
             read_timeout_in_ms = kwargs['readTimeoutInMs']
-        if 'sendTimeoutInMs' in kwargs:
+        if send_timeout_in_ms is None and 'sendTimeoutInMs' in kwargs:
             send_timeout_in_ms = kwargs['sendTimeoutInMs']
 
         _setter("type", type)
@@ -8901,7 +9055,7 @@ class GatewayResponseCacheDetailsServerArgs:
              _setter: Callable[[Any, Any], None],
              host: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if host is not None:
@@ -8951,10 +9105,14 @@ class SubscriberClientArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
-             token: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[pulumi.Input[str]] = None,
+             token: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if token is None:
+            raise TypeError("Missing 'token' argument")
 
         _setter("name", name)
         _setter("token", token)
@@ -9010,14 +9168,16 @@ class UsagePlanEntitlementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              quota: Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']] = None,
              rate_limit: Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']] = None,
              targets: Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'rateLimit' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if rate_limit is None and 'rateLimit' in kwargs:
             rate_limit = kwargs['rateLimit']
 
         _setter("name", name)
@@ -9114,16 +9274,24 @@ class UsagePlanEntitlementQuotaArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation_on_breach: pulumi.Input[str],
-             reset_policy: pulumi.Input[str],
-             unit: pulumi.Input[str],
-             value: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation_on_breach: Optional[pulumi.Input[str]] = None,
+             reset_policy: Optional[pulumi.Input[str]] = None,
+             unit: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'operationOnBreach' in kwargs:
+        if operation_on_breach is None and 'operationOnBreach' in kwargs:
             operation_on_breach = kwargs['operationOnBreach']
-        if 'resetPolicy' in kwargs:
+        if operation_on_breach is None:
+            raise TypeError("Missing 'operation_on_breach' argument")
+        if reset_policy is None and 'resetPolicy' in kwargs:
             reset_policy = kwargs['resetPolicy']
+        if reset_policy is None:
+            raise TypeError("Missing 'reset_policy' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("operation_on_breach", operation_on_breach)
         _setter("reset_policy", reset_policy)
@@ -9196,10 +9364,14 @@ class UsagePlanEntitlementRateLimitArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             unit: pulumi.Input[str],
-             value: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             unit: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("unit", unit)
         _setter("value", value)
@@ -9243,11 +9415,13 @@ class UsagePlanEntitlementTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deployment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deployment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deploymentId' in kwargs:
+        if deployment_id is None and 'deploymentId' in kwargs:
             deployment_id = kwargs['deploymentId']
+        if deployment_id is None:
+            raise TypeError("Missing 'deployment_id' argument")
 
         _setter("deployment_id", deployment_id)
 
@@ -9282,11 +9456,15 @@ class GetApisFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9339,11 +9517,15 @@ class GetCertificatesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9397,11 +9579,15 @@ class GetDeploymentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9457,11 +9643,15 @@ class GetGatewaysFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9514,11 +9704,15 @@ class GetSubscribersFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9574,11 +9768,15 @@ class GetUsagePlansFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

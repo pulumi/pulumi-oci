@@ -52,24 +52,32 @@ class SubscriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             endpoint: pulumi.Input[str],
-             protocol: pulumi.Input[str],
-             topic_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             endpoint: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             topic_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              delivery_policy: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'topicId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if endpoint is None:
+            raise TypeError("Missing 'endpoint' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
-        if 'definedTags' in kwargs:
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deliveryPolicy' in kwargs:
+        if delivery_policy is None and 'deliveryPolicy' in kwargs:
             delivery_policy = kwargs['deliveryPolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -236,19 +244,19 @@ class _SubscriptionState:
              protocol: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdTime' in kwargs:
+        if created_time is None and 'createdTime' in kwargs:
             created_time = kwargs['createdTime']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deliveryPolicy' in kwargs:
+        if delivery_policy is None and 'deliveryPolicy' in kwargs:
             delivery_policy = kwargs['deliveryPolicy']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
 
         if compartment_id is not None:

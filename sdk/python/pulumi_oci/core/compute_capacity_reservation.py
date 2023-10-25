@@ -52,28 +52,34 @@ class ComputeCapacityReservationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             instance_reservation_configs: pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             instance_reservation_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_default_reservation: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'instanceReservationConfigs' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if instance_reservation_configs is None and 'instanceReservationConfigs' in kwargs:
             instance_reservation_configs = kwargs['instanceReservationConfigs']
-        if 'definedTags' in kwargs:
+        if instance_reservation_configs is None:
+            raise TypeError("Missing 'instance_reservation_configs' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isDefaultReservation' in kwargs:
+        if is_default_reservation is None and 'isDefaultReservation' in kwargs:
             is_default_reservation = kwargs['isDefaultReservation']
 
         _setter("availability_domain", availability_domain)
@@ -245,29 +251,29 @@ class _ComputeCapacityReservationState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              used_instance_count: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceReservationConfigs' in kwargs:
+        if instance_reservation_configs is None and 'instanceReservationConfigs' in kwargs:
             instance_reservation_configs = kwargs['instanceReservationConfigs']
-        if 'isDefaultReservation' in kwargs:
+        if is_default_reservation is None and 'isDefaultReservation' in kwargs:
             is_default_reservation = kwargs['isDefaultReservation']
-        if 'reservedInstanceCount' in kwargs:
+        if reserved_instance_count is None and 'reservedInstanceCount' in kwargs:
             reserved_instance_count = kwargs['reservedInstanceCount']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'usedInstanceCount' in kwargs:
+        if used_instance_count is None and 'usedInstanceCount' in kwargs:
             used_instance_count = kwargs['usedInstanceCount']
 
         if availability_domain is not None:

@@ -52,11 +52,11 @@ import (
 //					Port:                pulumi.Any(_var.Connection_connect_descriptor_port),
 //				},
 //				DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Connection_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				NsgIds: pulumi.Any(_var.Connection_nsg_ids),

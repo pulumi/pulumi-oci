@@ -44,22 +44,26 @@ class ExternalDbSystemConnectorArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_type: pulumi.Input[str],
-             external_db_system_id: pulumi.Input[str],
+             connector_type: Optional[pulumi.Input[str]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
              agent_id: Optional[pulumi.Input[str]] = None,
              connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'externalDbSystemId' in kwargs:
+        if connector_type is None:
+            raise TypeError("Missing 'connector_type' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'agentId' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'connectionInfos' in kwargs:
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         _setter("connector_type", connector_type)
@@ -204,31 +208,31 @@ class _ExternalDbSystemConnectorState:
              time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionFailureMessage' in kwargs:
+        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
             connection_failure_message = kwargs['connectionFailureMessage']
-        if 'connectionInfos' in kwargs:
+        if connection_infos is None and 'connectionInfos' in kwargs:
             connection_infos = kwargs['connectionInfos']
-        if 'connectionStatus' in kwargs:
+        if connection_status is None and 'connectionStatus' in kwargs:
             connection_status = kwargs['connectionStatus']
-        if 'connectorType' in kwargs:
+        if connector_type is None and 'connectorType' in kwargs:
             connector_type = kwargs['connectorType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeConnectionStatusLastUpdated' in kwargs:
+        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
             time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if agent_id is not None:

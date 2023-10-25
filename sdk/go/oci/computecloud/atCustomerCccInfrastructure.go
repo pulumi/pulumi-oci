@@ -39,11 +39,11 @@ import (
 //				CccUpgradeScheduleId: pulumi.Any(oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id),
 //				ConnectionDetails:    pulumi.Any(_var.Ccc_infrastructure_connection_details),
 //				ConnectionState:      pulumi.Any(_var.Ccc_infrastructure_connection_state),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Ccc_infrastructure_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

@@ -49,29 +49,35 @@ class FleetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             inventory_log: pulumi.Input['FleetInventoryLogArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             inventory_log: Optional[pulumi.Input['FleetInventoryLogArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
              operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'inventoryLog' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if inventory_log is None and 'inventoryLog' in kwargs:
             inventory_log = kwargs['inventoryLog']
-        if 'definedTags' in kwargs:
+        if inventory_log is None:
+            raise TypeError("Missing 'inventory_log' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAdvancedFeaturesEnabled' in kwargs:
+        if is_advanced_features_enabled is None and 'isAdvancedFeaturesEnabled' in kwargs:
             is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
-        if 'operationLog' in kwargs:
+        if operation_log is None and 'operationLog' in kwargs:
             operation_log = kwargs['operationLog']
 
         _setter("compartment_id", compartment_id)
@@ -261,35 +267,35 @@ class _FleetState:
              state: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateApplicationCount' in kwargs:
+        if approximate_application_count is None and 'approximateApplicationCount' in kwargs:
             approximate_application_count = kwargs['approximateApplicationCount']
-        if 'approximateInstallationCount' in kwargs:
+        if approximate_installation_count is None and 'approximateInstallationCount' in kwargs:
             approximate_installation_count = kwargs['approximateInstallationCount']
-        if 'approximateJavaServerCount' in kwargs:
+        if approximate_java_server_count is None and 'approximateJavaServerCount' in kwargs:
             approximate_java_server_count = kwargs['approximateJavaServerCount']
-        if 'approximateJreCount' in kwargs:
+        if approximate_jre_count is None and 'approximateJreCount' in kwargs:
             approximate_jre_count = kwargs['approximateJreCount']
-        if 'approximateManagedInstanceCount' in kwargs:
+        if approximate_managed_instance_count is None and 'approximateManagedInstanceCount' in kwargs:
             approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inventoryLog' in kwargs:
+        if inventory_log is None and 'inventoryLog' in kwargs:
             inventory_log = kwargs['inventoryLog']
-        if 'isAdvancedFeaturesEnabled' in kwargs:
+        if is_advanced_features_enabled is None and 'isAdvancedFeaturesEnabled' in kwargs:
             is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
-        if 'operationLog' in kwargs:
+        if operation_log is None and 'operationLog' in kwargs:
             operation_log = kwargs['operationLog']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if approximate_application_count is not None:
@@ -686,20 +692,12 @@ class Fleet(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if inventory_log is not None and not isinstance(inventory_log, FleetInventoryLogArgs):
-                inventory_log = inventory_log or {}
-                def _setter(key, value):
-                    inventory_log[key] = value
-                FleetInventoryLogArgs._configure(_setter, **inventory_log)
+            inventory_log = _utilities.configure(inventory_log, FleetInventoryLogArgs, True)
             if inventory_log is None and not opts.urn:
                 raise TypeError("Missing required property 'inventory_log'")
             __props__.__dict__["inventory_log"] = inventory_log
             __props__.__dict__["is_advanced_features_enabled"] = is_advanced_features_enabled
-            if operation_log is not None and not isinstance(operation_log, FleetOperationLogArgs):
-                operation_log = operation_log or {}
-                def _setter(key, value):
-                    operation_log[key] = value
-                FleetOperationLogArgs._configure(_setter, **operation_log)
+            operation_log = _utilities.configure(operation_log, FleetOperationLogArgs, True)
             __props__.__dict__["operation_log"] = operation_log
             __props__.__dict__["approximate_application_count"] = None
             __props__.__dict__["approximate_installation_count"] = None

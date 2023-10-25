@@ -56,12 +56,12 @@ import (
 //			_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				InstanceId:    pulumi.Any(oci_core_instance.Test_instance.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Image_display_name),
 //				LaunchMode:  pulumi.Any(_var.Image_launch_mode),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

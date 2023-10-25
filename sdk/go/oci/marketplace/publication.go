@@ -58,10 +58,10 @@ import (
 //						Subject: pulumi.Any(_var.Publication_support_contacts_subject),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				LongDescription: pulumi.Any(_var.Publication_long_description),

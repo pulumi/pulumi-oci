@@ -39,10 +39,10 @@ import (
 //				Message:          pulumi.Any(_var.Container_image_signature_message),
 //				Signature:        pulumi.Any(_var.Container_image_signature_signature),
 //				SigningAlgorithm: pulumi.Any(_var.Container_image_signature_signing_algorithm),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

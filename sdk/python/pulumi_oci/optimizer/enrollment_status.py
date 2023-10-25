@@ -33,12 +33,16 @@ class EnrollmentStatusArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enrollment_status_id: pulumi.Input[str],
-             status: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enrollment_status_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enrollmentStatusId' in kwargs:
+        if enrollment_status_id is None and 'enrollmentStatusId' in kwargs:
             enrollment_status_id = kwargs['enrollmentStatusId']
+        if enrollment_status_id is None:
+            raise TypeError("Missing 'enrollment_status_id' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("enrollment_status_id", enrollment_status_id)
         _setter("status", status)
@@ -116,17 +120,17 @@ class _EnrollmentStatusState:
              status_reason: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enrollmentStatusId' in kwargs:
+        if enrollment_status_id is None and 'enrollmentStatusId' in kwargs:
             enrollment_status_id = kwargs['enrollmentStatusId']
-        if 'statusReason' in kwargs:
+        if status_reason is None and 'statusReason' in kwargs:
             status_reason = kwargs['statusReason']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

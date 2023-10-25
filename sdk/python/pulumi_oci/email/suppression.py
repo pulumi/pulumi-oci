@@ -33,14 +33,18 @@ class SuppressionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             email_address: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'emailAddress' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
+        if email_address is None:
+            raise TypeError("Missing 'email_address' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("email_address", email_address)
@@ -122,21 +126,21 @@ class _SuppressionState:
              reason: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_suppressed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'errorDetail' in kwargs:
+        if error_detail is None and 'errorDetail' in kwargs:
             error_detail = kwargs['errorDetail']
-        if 'errorSource' in kwargs:
+        if error_source is None and 'errorSource' in kwargs:
             error_source = kwargs['errorSource']
-        if 'messageId' in kwargs:
+        if message_id is None and 'messageId' in kwargs:
             message_id = kwargs['messageId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastSuppressed' in kwargs:
+        if time_last_suppressed is None and 'timeLastSuppressed' in kwargs:
             time_last_suppressed = kwargs['timeLastSuppressed']
 
         if compartment_id is not None:

@@ -47,25 +47,27 @@ class BuildRunArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: pulumi.Input[str],
+             build_pipeline_id: Optional[pulumi.Input[str]] = None,
              build_run_arguments: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']] = None,
              commit_info: Optional[pulumi.Input['BuildRunCommitInfoArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
-        if 'buildRunArguments' in kwargs:
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if build_run_arguments is None and 'buildRunArguments' in kwargs:
             build_run_arguments = kwargs['buildRunArguments']
-        if 'commitInfo' in kwargs:
+        if commit_info is None and 'commitInfo' in kwargs:
             commit_info = kwargs['commitInfo']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("build_pipeline_id", build_pipeline_id)
@@ -237,37 +239,37 @@ class _BuildRunState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildOutputs' in kwargs:
+        if build_outputs is None and 'buildOutputs' in kwargs:
             build_outputs = kwargs['buildOutputs']
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
-        if 'buildRunArguments' in kwargs:
+        if build_run_arguments is None and 'buildRunArguments' in kwargs:
             build_run_arguments = kwargs['buildRunArguments']
-        if 'buildRunProgresses' in kwargs:
+        if build_run_progresses is None and 'buildRunProgresses' in kwargs:
             build_run_progresses = kwargs['buildRunProgresses']
-        if 'buildRunSources' in kwargs:
+        if build_run_sources is None and 'buildRunSources' in kwargs:
             build_run_sources = kwargs['buildRunSources']
-        if 'commitInfo' in kwargs:
+        if commit_info is None and 'commitInfo' in kwargs:
             commit_info = kwargs['commitInfo']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if build_outputs is not None:
@@ -650,17 +652,9 @@ class BuildRun(pulumi.CustomResource):
             if build_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_id'")
             __props__.__dict__["build_pipeline_id"] = build_pipeline_id
-            if build_run_arguments is not None and not isinstance(build_run_arguments, BuildRunBuildRunArgumentsArgs):
-                build_run_arguments = build_run_arguments or {}
-                def _setter(key, value):
-                    build_run_arguments[key] = value
-                BuildRunBuildRunArgumentsArgs._configure(_setter, **build_run_arguments)
+            build_run_arguments = _utilities.configure(build_run_arguments, BuildRunBuildRunArgumentsArgs, True)
             __props__.__dict__["build_run_arguments"] = build_run_arguments
-            if commit_info is not None and not isinstance(commit_info, BuildRunCommitInfoArgs):
-                commit_info = commit_info or {}
-                def _setter(key, value):
-                    commit_info[key] = value
-                BuildRunCommitInfoArgs._configure(_setter, **commit_info)
+            commit_info = _utilities.configure(commit_info, BuildRunCommitInfoArgs, True)
             __props__.__dict__["commit_info"] = commit_info
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name

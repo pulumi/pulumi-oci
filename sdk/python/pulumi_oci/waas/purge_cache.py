@@ -33,12 +33,14 @@ class PurgeCacheArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             waas_policy_id: pulumi.Input[str],
+             waas_policy_id: Optional[pulumi.Input[str]] = None,
              resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waasPolicyId' in kwargs:
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
             waas_policy_id = kwargs['waasPolicyId']
+        if waas_policy_id is None:
+            raise TypeError("Missing 'waas_policy_id' argument")
 
         _setter("waas_policy_id", waas_policy_id)
         if resources is not None:
@@ -97,9 +99,9 @@ class _PurgeCacheState:
              _setter: Callable[[Any, Any], None],
              resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              waas_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waasPolicyId' in kwargs:
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
             waas_policy_id = kwargs['waasPolicyId']
 
         if resources is not None:

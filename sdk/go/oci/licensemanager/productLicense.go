@@ -36,10 +36,10 @@ import (
 //				DisplayName:    pulumi.Any(_var.Product_license_display_name),
 //				IsVendorOracle: pulumi.Any(_var.Product_license_is_vendor_oracle),
 //				LicenseUnit:    pulumi.Any(_var.Product_license_license_unit),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Images: licensemanager.ProductLicenseImageArray{

@@ -43,10 +43,10 @@ import (
 //					},
 //				},
 //				AggregationIntervalInDays: pulumi.Any(_var.Profile_aggregation_interval_in_days),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				TargetCompartments: &optimizer.ProfileTargetCompartmentsArgs{

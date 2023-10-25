@@ -73,18 +73,22 @@ class ProductLicenseImage(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             listing_id: str,
-             package_version: str,
+             listing_id: Optional[str] = None,
+             package_version: Optional[str] = None,
              id: Optional[str] = None,
              listing_name: Optional[str] = None,
              publisher: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'packageVersion' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'listingName' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if listing_name is None and 'listingName' in kwargs:
             listing_name = kwargs['listingName']
 
         _setter("listing_id", listing_id)
@@ -152,11 +156,15 @@ class GetLicenseRecordsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -190,9 +198,11 @@ class GetLicenseRecordsLicenseRecordCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -267,58 +277,94 @@ class GetLicenseRecordsLicenseRecordCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             expiration_date: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_perpetual: bool,
-             is_unlimited: bool,
-             license_count: int,
-             license_unit: str,
-             product_id: str,
-             product_license: str,
-             product_license_id: str,
-             state: str,
-             support_end_date: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             expiration_date: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_perpetual: Optional[bool] = None,
+             is_unlimited: Optional[bool] = None,
+             license_count: Optional[int] = None,
+             license_unit: Optional[str] = None,
+             product_id: Optional[str] = None,
+             product_license: Optional[str] = None,
+             product_license_id: Optional[str] = None,
+             state: Optional[str] = None,
+             support_end_date: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'expirationDate' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if expiration_date is None and 'expirationDate' in kwargs:
             expiration_date = kwargs['expirationDate']
-        if 'freeformTags' in kwargs:
+        if expiration_date is None:
+            raise TypeError("Missing 'expiration_date' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPerpetual' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_perpetual is None and 'isPerpetual' in kwargs:
             is_perpetual = kwargs['isPerpetual']
-        if 'isUnlimited' in kwargs:
+        if is_perpetual is None:
+            raise TypeError("Missing 'is_perpetual' argument")
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'licenseCount' in kwargs:
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if license_count is None and 'licenseCount' in kwargs:
             license_count = kwargs['licenseCount']
-        if 'licenseUnit' in kwargs:
+        if license_count is None:
+            raise TypeError("Missing 'license_count' argument")
+        if license_unit is None and 'licenseUnit' in kwargs:
             license_unit = kwargs['licenseUnit']
-        if 'productId' in kwargs:
+        if license_unit is None:
+            raise TypeError("Missing 'license_unit' argument")
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 'productLicense' in kwargs:
+        if product_id is None:
+            raise TypeError("Missing 'product_id' argument")
+        if product_license is None and 'productLicense' in kwargs:
             product_license = kwargs['productLicense']
-        if 'productLicenseId' in kwargs:
+        if product_license is None:
+            raise TypeError("Missing 'product_license' argument")
+        if product_license_id is None and 'productLicenseId' in kwargs:
             product_license_id = kwargs['productLicenseId']
-        if 'supportEndDate' in kwargs:
+        if product_license_id is None:
+            raise TypeError("Missing 'product_license_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if support_end_date is None and 'supportEndDate' in kwargs:
             support_end_date = kwargs['supportEndDate']
-        if 'systemTags' in kwargs:
+        if support_end_date is None:
+            raise TypeError("Missing 'support_end_date' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -531,44 +577,68 @@ class GetProductLicenseConsumersItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_options_available: bool,
-             is_base_license_available: bool,
-             license_unit_type: str,
-             license_units_consumed: float,
-             missing_products: Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult'],
-             product_name: str,
-             resource_compartment_id: str,
-             resource_compartment_name: str,
-             resource_id: str,
-             resource_name: str,
-             resource_unit_count: float,
-             resource_unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_options_available: Optional[bool] = None,
+             is_base_license_available: Optional[bool] = None,
+             license_unit_type: Optional[str] = None,
+             license_units_consumed: Optional[float] = None,
+             missing_products: Optional[Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult']] = None,
+             product_name: Optional[str] = None,
+             resource_compartment_id: Optional[str] = None,
+             resource_compartment_name: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             resource_unit_count: Optional[float] = None,
+             resource_unit_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllOptionsAvailable' in kwargs:
+        if are_all_options_available is None and 'areAllOptionsAvailable' in kwargs:
             are_all_options_available = kwargs['areAllOptionsAvailable']
-        if 'isBaseLicenseAvailable' in kwargs:
+        if are_all_options_available is None:
+            raise TypeError("Missing 'are_all_options_available' argument")
+        if is_base_license_available is None and 'isBaseLicenseAvailable' in kwargs:
             is_base_license_available = kwargs['isBaseLicenseAvailable']
-        if 'licenseUnitType' in kwargs:
+        if is_base_license_available is None:
+            raise TypeError("Missing 'is_base_license_available' argument")
+        if license_unit_type is None and 'licenseUnitType' in kwargs:
             license_unit_type = kwargs['licenseUnitType']
-        if 'licenseUnitsConsumed' in kwargs:
+        if license_unit_type is None:
+            raise TypeError("Missing 'license_unit_type' argument")
+        if license_units_consumed is None and 'licenseUnitsConsumed' in kwargs:
             license_units_consumed = kwargs['licenseUnitsConsumed']
-        if 'missingProducts' in kwargs:
+        if license_units_consumed is None:
+            raise TypeError("Missing 'license_units_consumed' argument")
+        if missing_products is None and 'missingProducts' in kwargs:
             missing_products = kwargs['missingProducts']
-        if 'productName' in kwargs:
+        if missing_products is None:
+            raise TypeError("Missing 'missing_products' argument")
+        if product_name is None and 'productName' in kwargs:
             product_name = kwargs['productName']
-        if 'resourceCompartmentId' in kwargs:
+        if product_name is None:
+            raise TypeError("Missing 'product_name' argument")
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'resourceCompartmentName' in kwargs:
+        if resource_compartment_id is None:
+            raise TypeError("Missing 'resource_compartment_id' argument")
+        if resource_compartment_name is None and 'resourceCompartmentName' in kwargs:
             resource_compartment_name = kwargs['resourceCompartmentName']
-        if 'resourceId' in kwargs:
+        if resource_compartment_name is None:
+            raise TypeError("Missing 'resource_compartment_name' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'resourceUnitCount' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if resource_unit_count is None and 'resourceUnitCount' in kwargs:
             resource_unit_count = kwargs['resourceUnitCount']
-        if 'resourceUnitType' in kwargs:
+        if resource_unit_count is None:
+            raise TypeError("Missing 'resource_unit_count' argument")
+        if resource_unit_type is None and 'resourceUnitType' in kwargs:
             resource_unit_type = kwargs['resourceUnitType']
+        if resource_unit_type is None:
+            raise TypeError("Missing 'resource_unit_type' argument")
 
         _setter("are_all_options_available", are_all_options_available)
         _setter("is_base_license_available", is_base_license_available)
@@ -700,11 +770,17 @@ class GetProductLicenseConsumersItemMissingProductResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: str,
-             count: float,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[str] = None,
+             count: Optional[float] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("category", category)
         _setter("count", count)
@@ -761,19 +837,29 @@ class GetProductLicenseImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             listing_id: str,
-             listing_name: str,
-             package_version: str,
-             publisher: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             listing_id: Optional[str] = None,
+             listing_name: Optional[str] = None,
+             package_version: Optional[str] = None,
+             publisher: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingName' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if listing_name is None and 'listingName' in kwargs:
             listing_name = kwargs['listingName']
-        if 'packageVersion' in kwargs:
+        if listing_name is None:
+            raise TypeError("Missing 'listing_name' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if publisher is None:
+            raise TypeError("Missing 'publisher' argument")
 
         _setter("id", id)
         _setter("listing_id", listing_id)
@@ -837,11 +923,15 @@ class GetProductLicensesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -875,9 +965,11 @@ class GetProductLicensesProductLicenseCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -961,63 +1053,105 @@ class GetProductLicensesProductLicenseCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             active_license_record_count: int,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             images: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult'],
-             is_over_subscribed: bool,
-             is_unlimited: bool,
-             is_vendor_oracle: bool,
-             license_unit: str,
-             state: str,
-             status: str,
-             status_description: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             total_active_license_unit_count: int,
-             total_license_record_count: int,
-             total_license_units_consumed: float,
-             vendor_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             active_license_record_count: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             images: Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult']] = None,
+             is_over_subscribed: Optional[bool] = None,
+             is_unlimited: Optional[bool] = None,
+             is_vendor_oracle: Optional[bool] = None,
+             license_unit: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             status_description: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_active_license_unit_count: Optional[int] = None,
+             total_license_record_count: Optional[int] = None,
+             total_license_units_consumed: Optional[float] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activeLicenseRecordCount' in kwargs:
+        if active_license_record_count is None and 'activeLicenseRecordCount' in kwargs:
             active_license_record_count = kwargs['activeLicenseRecordCount']
-        if 'compartmentId' in kwargs:
+        if active_license_record_count is None:
+            raise TypeError("Missing 'active_license_record_count' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isOverSubscribed' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if images is None:
+            raise TypeError("Missing 'images' argument")
+        if is_over_subscribed is None and 'isOverSubscribed' in kwargs:
             is_over_subscribed = kwargs['isOverSubscribed']
-        if 'isUnlimited' in kwargs:
+        if is_over_subscribed is None:
+            raise TypeError("Missing 'is_over_subscribed' argument")
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'isVendorOracle' in kwargs:
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if is_vendor_oracle is None and 'isVendorOracle' in kwargs:
             is_vendor_oracle = kwargs['isVendorOracle']
-        if 'licenseUnit' in kwargs:
+        if is_vendor_oracle is None:
+            raise TypeError("Missing 'is_vendor_oracle' argument")
+        if license_unit is None and 'licenseUnit' in kwargs:
             license_unit = kwargs['licenseUnit']
-        if 'statusDescription' in kwargs:
+        if license_unit is None:
+            raise TypeError("Missing 'license_unit' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_description is None and 'statusDescription' in kwargs:
             status_description = kwargs['statusDescription']
-        if 'systemTags' in kwargs:
+        if status_description is None:
+            raise TypeError("Missing 'status_description' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalActiveLicenseUnitCount' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_active_license_unit_count is None and 'totalActiveLicenseUnitCount' in kwargs:
             total_active_license_unit_count = kwargs['totalActiveLicenseUnitCount']
-        if 'totalLicenseRecordCount' in kwargs:
+        if total_active_license_unit_count is None:
+            raise TypeError("Missing 'total_active_license_unit_count' argument")
+        if total_license_record_count is None and 'totalLicenseRecordCount' in kwargs:
             total_license_record_count = kwargs['totalLicenseRecordCount']
-        if 'totalLicenseUnitsConsumed' in kwargs:
+        if total_license_record_count is None:
+            raise TypeError("Missing 'total_license_record_count' argument")
+        if total_license_units_consumed is None and 'totalLicenseUnitsConsumed' in kwargs:
             total_license_units_consumed = kwargs['totalLicenseUnitsConsumed']
-        if 'vendorName' in kwargs:
+        if total_license_units_consumed is None:
+            raise TypeError("Missing 'total_license_units_consumed' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
             vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
 
         _setter("active_license_record_count", active_license_record_count)
         _setter("compartment_id", compartment_id)
@@ -1236,19 +1370,29 @@ class GetProductLicensesProductLicenseCollectionItemImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             listing_id: str,
-             listing_name: str,
-             package_version: str,
-             publisher: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             listing_id: Optional[str] = None,
+             listing_name: Optional[str] = None,
+             package_version: Optional[str] = None,
+             publisher: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listingId' in kwargs:
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'listingName' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if listing_name is None and 'listingName' in kwargs:
             listing_name = kwargs['listingName']
-        if 'packageVersion' in kwargs:
+        if listing_name is None:
+            raise TypeError("Missing 'listing_name' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if publisher is None:
+            raise TypeError("Missing 'publisher' argument")
 
         _setter("id", id)
         _setter("listing_id", listing_id)
@@ -1329,27 +1473,41 @@ class GetTopUtilizedProductLicensesItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_unlimited: bool,
-             product_license_id: str,
-             product_type: str,
-             status: str,
-             total_license_unit_count: int,
-             total_units_consumed: float,
-             unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_unlimited: Optional[bool] = None,
+             product_license_id: Optional[str] = None,
+             product_type: Optional[str] = None,
+             status: Optional[str] = None,
+             total_license_unit_count: Optional[int] = None,
+             total_units_consumed: Optional[float] = None,
+             unit_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isUnlimited' in kwargs:
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'productLicenseId' in kwargs:
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if product_license_id is None and 'productLicenseId' in kwargs:
             product_license_id = kwargs['productLicenseId']
-        if 'productType' in kwargs:
+        if product_license_id is None:
+            raise TypeError("Missing 'product_license_id' argument")
+        if product_type is None and 'productType' in kwargs:
             product_type = kwargs['productType']
-        if 'totalLicenseUnitCount' in kwargs:
+        if product_type is None:
+            raise TypeError("Missing 'product_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if total_license_unit_count is None and 'totalLicenseUnitCount' in kwargs:
             total_license_unit_count = kwargs['totalLicenseUnitCount']
-        if 'totalUnitsConsumed' in kwargs:
+        if total_license_unit_count is None:
+            raise TypeError("Missing 'total_license_unit_count' argument")
+        if total_units_consumed is None and 'totalUnitsConsumed' in kwargs:
             total_units_consumed = kwargs['totalUnitsConsumed']
-        if 'unitType' in kwargs:
+        if total_units_consumed is None:
+            raise TypeError("Missing 'total_units_consumed' argument")
+        if unit_type is None and 'unitType' in kwargs:
             unit_type = kwargs['unitType']
+        if unit_type is None:
+            raise TypeError("Missing 'unit_type' argument")
 
         _setter("is_unlimited", is_unlimited)
         _setter("product_license_id", product_license_id)
@@ -1445,26 +1603,38 @@ class GetTopUtilizedResourcesItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             resource_compartment_id: str,
-             resource_compartment_name: str,
-             resource_id: str,
-             resource_name: str,
-             total_units: float,
-             unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             resource_compartment_id: Optional[str] = None,
+             resource_compartment_name: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             total_units: Optional[float] = None,
+             unit_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceCompartmentId' in kwargs:
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'resourceCompartmentName' in kwargs:
+        if resource_compartment_id is None:
+            raise TypeError("Missing 'resource_compartment_id' argument")
+        if resource_compartment_name is None and 'resourceCompartmentName' in kwargs:
             resource_compartment_name = kwargs['resourceCompartmentName']
-        if 'resourceId' in kwargs:
+        if resource_compartment_name is None:
+            raise TypeError("Missing 'resource_compartment_name' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceName' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_name is None and 'resourceName' in kwargs:
             resource_name = kwargs['resourceName']
-        if 'totalUnits' in kwargs:
+        if resource_name is None:
+            raise TypeError("Missing 'resource_name' argument")
+        if total_units is None and 'totalUnits' in kwargs:
             total_units = kwargs['totalUnits']
-        if 'unitType' in kwargs:
+        if total_units is None:
+            raise TypeError("Missing 'total_units' argument")
+        if unit_type is None and 'unitType' in kwargs:
             unit_type = kwargs['unitType']
+        if unit_type is None:
+            raise TypeError("Missing 'unit_type' argument")
 
         _setter("resource_compartment_id", resource_compartment_id)
         _setter("resource_compartment_name", resource_compartment_name)

@@ -56,11 +56,11 @@ import (
 //						RequestTimeoutInMs:   pulumi.Any(_var.Ingress_gateway_route_table_route_rules_request_timeout_in_ms),
 //					},
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Ingress_gateway_route_table_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Priority: pulumi.Any(_var.Ingress_gateway_route_table_priority),

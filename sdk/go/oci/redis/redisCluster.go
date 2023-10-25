@@ -38,10 +38,10 @@ import (
 //				NodeMemoryInGbs: pulumi.Any(_var.Redis_cluster_node_memory_in_gbs),
 //				SoftwareVersion: pulumi.Any(_var.Redis_cluster_software_version),
 //				SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

@@ -42,22 +42,26 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             autonomous_container_database_dataguard_association_id: pulumi.Input[str],
-             autonomous_container_database_id: pulumi.Input[str],
+             autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
              fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
              is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
              protection_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None and 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
             autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None:
+            raise TypeError("Missing 'autonomous_container_database_dataguard_association_id' argument")
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+        if autonomous_container_database_id is None:
+            raise TypeError("Missing 'autonomous_container_database_id' argument")
+        if fast_start_fail_over_lag_limit_in_seconds is None and 'fastStartFailOverLagLimitInSeconds' in kwargs:
             fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
-        if 'isAutomaticFailoverEnabled' in kwargs:
+        if is_automatic_failover_enabled is None and 'isAutomaticFailoverEnabled' in kwargs:
             is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
 
         _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
@@ -222,39 +226,39 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
              time_last_role_changed: Optional[pulumi.Input[str]] = None,
              time_last_synced: Optional[pulumi.Input[str]] = None,
              transport_lag: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applyLag' in kwargs:
+        if apply_lag is None and 'applyLag' in kwargs:
             apply_lag = kwargs['applyLag']
-        if 'applyRate' in kwargs:
+        if apply_rate is None and 'applyRate' in kwargs:
             apply_rate = kwargs['applyRate']
-        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+        if autonomous_container_database_dataguard_association_id is None and 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
             autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
-        if 'autonomousContainerDatabaseId' in kwargs:
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
             autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
-        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+        if fast_start_fail_over_lag_limit_in_seconds is None and 'fastStartFailOverLagLimitInSeconds' in kwargs:
             fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
-        if 'isAutomaticFailoverEnabled' in kwargs:
+        if is_automatic_failover_enabled is None and 'isAutomaticFailoverEnabled' in kwargs:
             is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'peerAutonomousContainerDatabaseDataguardAssociationId' in kwargs:
+        if peer_autonomous_container_database_dataguard_association_id is None and 'peerAutonomousContainerDatabaseDataguardAssociationId' in kwargs:
             peer_autonomous_container_database_dataguard_association_id = kwargs['peerAutonomousContainerDatabaseDataguardAssociationId']
-        if 'peerAutonomousContainerDatabaseId' in kwargs:
+        if peer_autonomous_container_database_id is None and 'peerAutonomousContainerDatabaseId' in kwargs:
             peer_autonomous_container_database_id = kwargs['peerAutonomousContainerDatabaseId']
-        if 'peerLifecycleState' in kwargs:
+        if peer_lifecycle_state is None and 'peerLifecycleState' in kwargs:
             peer_lifecycle_state = kwargs['peerLifecycleState']
-        if 'peerRole' in kwargs:
+        if peer_role is None and 'peerRole' in kwargs:
             peer_role = kwargs['peerRole']
-        if 'protectionMode' in kwargs:
+        if protection_mode is None and 'protectionMode' in kwargs:
             protection_mode = kwargs['protectionMode']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastRoleChanged' in kwargs:
+        if time_last_role_changed is None and 'timeLastRoleChanged' in kwargs:
             time_last_role_changed = kwargs['timeLastRoleChanged']
-        if 'timeLastSynced' in kwargs:
+        if time_last_synced is None and 'timeLastSynced' in kwargs:
             time_last_synced = kwargs['timeLastSynced']
-        if 'transportLag' in kwargs:
+        if transport_lag is None and 'transportLag' in kwargs:
             transport_lag = kwargs['transportLag']
 
         if apply_lag is not None:

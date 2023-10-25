@@ -66,8 +66,8 @@ class SensitiveDataModelArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             target_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
              app_suite_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -79,31 +79,35 @@ class SensitiveDataModelArgs:
              is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
              schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'targetId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'appSuiteName' in kwargs:
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if app_suite_name is None and 'appSuiteName' in kwargs:
             app_suite_name = kwargs['appSuiteName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
             is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if 'isIncludeAllSchemas' in kwargs:
+        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
             is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if 'isIncludeAllSensitiveTypes' in kwargs:
+        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
             is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if 'isSampleDataCollectionEnabled' in kwargs:
+        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
             is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if 'schemasForDiscoveries' in kwargs:
+        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
             schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
             sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
 
         _setter("compartment_id", compartment_id)
@@ -376,37 +380,37 @@ class _SensitiveDataModelState:
              target_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appSuiteName' in kwargs:
+        if app_suite_name is None and 'appSuiteName' in kwargs:
             app_suite_name = kwargs['appSuiteName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
             is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if 'isIncludeAllSchemas' in kwargs:
+        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
             is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if 'isIncludeAllSensitiveTypes' in kwargs:
+        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
             is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if 'isSampleDataCollectionEnabled' in kwargs:
+        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
             is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if 'schemasForDiscoveries' in kwargs:
+        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
             schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
             sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if app_suite_name is not None:

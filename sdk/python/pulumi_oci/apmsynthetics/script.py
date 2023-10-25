@@ -49,27 +49,35 @@ class ScriptArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             apm_domain_id: pulumi.Input[str],
-             content: pulumi.Input[str],
-             content_type: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              content_file_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'contentType' in kwargs:
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
-        if 'displayName' in kwargs:
+        if content_type is None:
+            raise TypeError("Missing 'content_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'contentFileName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if content_file_name is None and 'contentFileName' in kwargs:
             content_file_name = kwargs['contentFileName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("apm_domain_id", apm_domain_id)
@@ -246,29 +254,29 @@ class _ScriptState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              time_uploaded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apmDomainId' in kwargs:
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
             apm_domain_id = kwargs['apmDomainId']
-        if 'contentFileName' in kwargs:
+        if content_file_name is None and 'contentFileName' in kwargs:
             content_file_name = kwargs['contentFileName']
-        if 'contentSizeInBytes' in kwargs:
+        if content_size_in_bytes is None and 'contentSizeInBytes' in kwargs:
             content_size_in_bytes = kwargs['contentSizeInBytes']
-        if 'contentType' in kwargs:
+        if content_type is None and 'contentType' in kwargs:
             content_type = kwargs['contentType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'monitorStatusCountMaps' in kwargs:
+        if monitor_status_count_maps is None and 'monitorStatusCountMaps' in kwargs:
             monitor_status_count_maps = kwargs['monitorStatusCountMaps']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeUploaded' in kwargs:
+        if time_uploaded is None and 'timeUploaded' in kwargs:
             time_uploaded = kwargs['timeUploaded']
 
         if apm_domain_id is not None:

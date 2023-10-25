@@ -53,31 +53,39 @@ class PrivateApplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             package_details: pulumi.Input['PrivateApplicationPackageDetailsArgs'],
-             short_description: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             package_details: Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']] = None,
+             short_description: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
              long_description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'packageDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'shortDescription' in kwargs:
+        if package_details is None:
+            raise TypeError("Missing 'package_details' argument")
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'definedTags' in kwargs:
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'logoFileBase64encoded' in kwargs:
+        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
             logo_file_base64encoded = kwargs['logoFileBase64encoded']
-        if 'longDescription' in kwargs:
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
 
         _setter("compartment_id", compartment_id)
@@ -262,29 +270,29 @@ class _PrivateApplicationState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'logoFileBase64encoded' in kwargs:
+        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
             logo_file_base64encoded = kwargs['logoFileBase64encoded']
-        if 'longDescription' in kwargs:
+        if long_description is None and 'longDescription' in kwargs:
             long_description = kwargs['longDescription']
-        if 'packageDetails' in kwargs:
+        if package_details is None and 'packageDetails' in kwargs:
             package_details = kwargs['packageDetails']
-        if 'packageType' in kwargs:
+        if package_type is None and 'packageType' in kwargs:
             package_type = kwargs['packageType']
-        if 'shortDescription' in kwargs:
+        if short_description is None and 'shortDescription' in kwargs:
             short_description = kwargs['shortDescription']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -632,11 +640,7 @@ class PrivateApplication(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["logo_file_base64encoded"] = logo_file_base64encoded
             __props__.__dict__["long_description"] = long_description
-            if package_details is not None and not isinstance(package_details, PrivateApplicationPackageDetailsArgs):
-                package_details = package_details or {}
-                def _setter(key, value):
-                    package_details[key] = value
-                PrivateApplicationPackageDetailsArgs._configure(_setter, **package_details)
+            package_details = _utilities.configure(package_details, PrivateApplicationPackageDetailsArgs, True)
             if package_details is None and not opts.urn:
                 raise TypeError("Missing required property 'package_details'")
             __props__.__dict__["package_details"] = package_details

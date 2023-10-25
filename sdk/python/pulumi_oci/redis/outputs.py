@@ -37,7 +37,7 @@ class RedisClusterNodeCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.RedisClusterNodeCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -96,13 +96,13 @@ class RedisClusterNodeCollectionItem(dict):
              display_name: Optional[str] = None,
              private_endpoint_fqdn: Optional[str] = None,
              private_endpoint_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'privateEndpointFqdn' in kwargs:
+        if private_endpoint_fqdn is None and 'privateEndpointFqdn' in kwargs:
             private_endpoint_fqdn = kwargs['privateEndpointFqdn']
-        if 'privateEndpointIpAddress' in kwargs:
+        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
             private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
 
         if display_name is not None:
@@ -151,9 +151,11 @@ class GetRedisClusterNodeCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRedisClusterNodeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRedisClusterNodeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -186,17 +188,23 @@ class GetRedisClusterNodeCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             private_endpoint_fqdn: str,
-             private_endpoint_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             private_endpoint_fqdn: Optional[str] = None,
+             private_endpoint_ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'privateEndpointFqdn' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if private_endpoint_fqdn is None and 'privateEndpointFqdn' in kwargs:
             private_endpoint_fqdn = kwargs['privateEndpointFqdn']
-        if 'privateEndpointIpAddress' in kwargs:
+        if private_endpoint_fqdn is None:
+            raise TypeError("Missing 'private_endpoint_fqdn' argument")
+        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
             private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
+        if private_endpoint_ip_address is None:
+            raise TypeError("Missing 'private_endpoint_ip_address' argument")
 
         _setter("display_name", display_name)
         _setter("private_endpoint_fqdn", private_endpoint_fqdn)
@@ -242,11 +250,15 @@ class GetRedisClustersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -283,9 +295,11 @@ class GetRedisClustersRedisClusterCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -366,61 +380,99 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             node_collections: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult'],
-             node_count: int,
-             node_memory_in_gbs: float,
-             primary_endpoint_ip_address: str,
-             primary_fqdn: str,
-             replicas_endpoint_ip_address: str,
-             replicas_fqdn: str,
-             software_version: str,
-             state: str,
-             subnet_id: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             node_collections: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult']] = None,
+             node_count: Optional[int] = None,
+             node_memory_in_gbs: Optional[float] = None,
+             primary_endpoint_ip_address: Optional[str] = None,
+             primary_fqdn: Optional[str] = None,
+             replicas_endpoint_ip_address: Optional[str] = None,
+             replicas_fqdn: Optional[str] = None,
+             software_version: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeCollections' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if node_collections is None and 'nodeCollections' in kwargs:
             node_collections = kwargs['nodeCollections']
-        if 'nodeCount' in kwargs:
+        if node_collections is None:
+            raise TypeError("Missing 'node_collections' argument")
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nodeMemoryInGbs' in kwargs:
+        if node_count is None:
+            raise TypeError("Missing 'node_count' argument")
+        if node_memory_in_gbs is None and 'nodeMemoryInGbs' in kwargs:
             node_memory_in_gbs = kwargs['nodeMemoryInGbs']
-        if 'primaryEndpointIpAddress' in kwargs:
+        if node_memory_in_gbs is None:
+            raise TypeError("Missing 'node_memory_in_gbs' argument")
+        if primary_endpoint_ip_address is None and 'primaryEndpointIpAddress' in kwargs:
             primary_endpoint_ip_address = kwargs['primaryEndpointIpAddress']
-        if 'primaryFqdn' in kwargs:
+        if primary_endpoint_ip_address is None:
+            raise TypeError("Missing 'primary_endpoint_ip_address' argument")
+        if primary_fqdn is None and 'primaryFqdn' in kwargs:
             primary_fqdn = kwargs['primaryFqdn']
-        if 'replicasEndpointIpAddress' in kwargs:
+        if primary_fqdn is None:
+            raise TypeError("Missing 'primary_fqdn' argument")
+        if replicas_endpoint_ip_address is None and 'replicasEndpointIpAddress' in kwargs:
             replicas_endpoint_ip_address = kwargs['replicasEndpointIpAddress']
-        if 'replicasFqdn' in kwargs:
+        if replicas_endpoint_ip_address is None:
+            raise TypeError("Missing 'replicas_endpoint_ip_address' argument")
+        if replicas_fqdn is None and 'replicasFqdn' in kwargs:
             replicas_fqdn = kwargs['replicasFqdn']
-        if 'softwareVersion' in kwargs:
+        if replicas_fqdn is None:
+            raise TypeError("Missing 'replicas_fqdn' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetId' in kwargs:
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -609,9 +661,11 @@ class GetRedisClustersRedisClusterCollectionItemNodeCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -644,17 +698,23 @@ class GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             private_endpoint_fqdn: str,
-             private_endpoint_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             private_endpoint_fqdn: Optional[str] = None,
+             private_endpoint_ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'privateEndpointFqdn' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if private_endpoint_fqdn is None and 'privateEndpointFqdn' in kwargs:
             private_endpoint_fqdn = kwargs['privateEndpointFqdn']
-        if 'privateEndpointIpAddress' in kwargs:
+        if private_endpoint_fqdn is None:
+            raise TypeError("Missing 'private_endpoint_fqdn' argument")
+        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
             private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
+        if private_endpoint_ip_address is None:
+            raise TypeError("Missing 'private_endpoint_ip_address' argument")
 
         _setter("display_name", display_name)
         _setter("private_endpoint_fqdn", private_endpoint_fqdn)

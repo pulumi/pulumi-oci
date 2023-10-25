@@ -32,10 +32,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Application_display_name),
 //				SubnetIds:     pulumi.Any(_var.Application_subnet_ids),
 //				Config:        pulumi.Any(_var.Application_config),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NetworkSecurityGroupIds: pulumi.Any(_var.Application_network_security_group_ids),

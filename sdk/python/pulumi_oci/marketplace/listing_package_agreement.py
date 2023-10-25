@@ -35,19 +35,25 @@ class ListingPackageAgreementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agreement_id: pulumi.Input[str],
-             listing_id: pulumi.Input[str],
-             package_version: pulumi.Input[str],
+             agreement_id: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             package_version: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agreementId' in kwargs:
+        if agreement_id is None and 'agreementId' in kwargs:
             agreement_id = kwargs['agreementId']
-        if 'listingId' in kwargs:
+        if agreement_id is None:
+            raise TypeError("Missing 'agreement_id' argument")
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'packageVersion' in kwargs:
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
-        if 'compartmentId' in kwargs:
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("agreement_id", agreement_id)
@@ -149,17 +155,17 @@ class _ListingPackageAgreementState:
              package_version: Optional[pulumi.Input[str]] = None,
              prompt: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agreementId' in kwargs:
+        if agreement_id is None and 'agreementId' in kwargs:
             agreement_id = kwargs['agreementId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'contentUrl' in kwargs:
+        if content_url is None and 'contentUrl' in kwargs:
             content_url = kwargs['contentUrl']
-        if 'listingId' in kwargs:
+        if listing_id is None and 'listingId' in kwargs:
             listing_id = kwargs['listingId']
-        if 'packageVersion' in kwargs:
+        if package_version is None and 'packageVersion' in kwargs:
             package_version = kwargs['packageVersion']
 
         if agreement_id is not None:

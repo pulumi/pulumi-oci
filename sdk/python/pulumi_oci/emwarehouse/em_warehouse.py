@@ -45,25 +45,31 @@ class EmWarehouseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             em_bridge_id: pulumi.Input[str],
-             operations_insights_warehouse_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             em_bridge_id: Optional[pulumi.Input[str]] = None,
+             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'emBridgeId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if em_bridge_id is None and 'emBridgeId' in kwargs:
             em_bridge_id = kwargs['emBridgeId']
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if em_bridge_id is None:
+            raise TypeError("Missing 'em_bridge_id' argument")
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if 'definedTags' in kwargs:
+        if operations_insights_warehouse_id is None:
+            raise TypeError("Missing 'operations_insights_warehouse_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -229,35 +235,35 @@ class _EmWarehouseState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'emBridgeId' in kwargs:
+        if em_bridge_id is None and 'emBridgeId' in kwargs:
             em_bridge_id = kwargs['emBridgeId']
-        if 'emWarehouseType' in kwargs:
+        if em_warehouse_type is None and 'emWarehouseType' in kwargs:
             em_warehouse_type = kwargs['emWarehouseType']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'latestEtlRunMessage' in kwargs:
+        if latest_etl_run_message is None and 'latestEtlRunMessage' in kwargs:
             latest_etl_run_message = kwargs['latestEtlRunMessage']
-        if 'latestEtlRunStatus' in kwargs:
+        if latest_etl_run_status is None and 'latestEtlRunStatus' in kwargs:
             latest_etl_run_status = kwargs['latestEtlRunStatus']
-        if 'latestEtlRunTime' in kwargs:
+        if latest_etl_run_time is None and 'latestEtlRunTime' in kwargs:
             latest_etl_run_time = kwargs['latestEtlRunTime']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'operationsInsightsWarehouseId' in kwargs:
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
             operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

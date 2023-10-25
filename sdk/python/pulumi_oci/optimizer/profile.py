@@ -52,30 +52,36 @@ class ProfileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             description: pulumi.Input[str],
-             levels_configuration: pulumi.Input['ProfileLevelsConfigurationArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             levels_configuration: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']] = None,
              aggregation_interval_in_days: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
              target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'levelsConfiguration' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if levels_configuration is None and 'levelsConfiguration' in kwargs:
             levels_configuration = kwargs['levelsConfiguration']
-        if 'aggregationIntervalInDays' in kwargs:
+        if levels_configuration is None:
+            raise TypeError("Missing 'levels_configuration' argument")
+        if aggregation_interval_in_days is None and 'aggregationIntervalInDays' in kwargs:
             aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'targetCompartments' in kwargs:
+        if target_compartments is None and 'targetCompartments' in kwargs:
             target_compartments = kwargs['targetCompartments']
-        if 'targetTags' in kwargs:
+        if target_tags is None and 'targetTags' in kwargs:
             target_tags = kwargs['targetTags']
 
         _setter("compartment_id", compartment_id)
@@ -263,25 +269,25 @@ class _ProfileState:
              target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregationIntervalInDays' in kwargs:
+        if aggregation_interval_in_days is None and 'aggregationIntervalInDays' in kwargs:
             aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'levelsConfiguration' in kwargs:
+        if levels_configuration is None and 'levelsConfiguration' in kwargs:
             levels_configuration = kwargs['levelsConfiguration']
-        if 'targetCompartments' in kwargs:
+        if target_compartments is None and 'targetCompartments' in kwargs:
             target_compartments = kwargs['targetCompartments']
-        if 'targetTags' in kwargs:
+        if target_tags is None and 'targetTags' in kwargs:
             target_tags = kwargs['targetTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if aggregation_interval_in_days is not None:
@@ -629,26 +635,14 @@ class Profile(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if levels_configuration is not None and not isinstance(levels_configuration, ProfileLevelsConfigurationArgs):
-                levels_configuration = levels_configuration or {}
-                def _setter(key, value):
-                    levels_configuration[key] = value
-                ProfileLevelsConfigurationArgs._configure(_setter, **levels_configuration)
+            levels_configuration = _utilities.configure(levels_configuration, ProfileLevelsConfigurationArgs, True)
             if levels_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'levels_configuration'")
             __props__.__dict__["levels_configuration"] = levels_configuration
             __props__.__dict__["name"] = name
-            if target_compartments is not None and not isinstance(target_compartments, ProfileTargetCompartmentsArgs):
-                target_compartments = target_compartments or {}
-                def _setter(key, value):
-                    target_compartments[key] = value
-                ProfileTargetCompartmentsArgs._configure(_setter, **target_compartments)
+            target_compartments = _utilities.configure(target_compartments, ProfileTargetCompartmentsArgs, True)
             __props__.__dict__["target_compartments"] = target_compartments
-            if target_tags is not None and not isinstance(target_tags, ProfileTargetTagsArgs):
-                target_tags = target_tags or {}
-                def _setter(key, value):
-                    target_tags[key] = value
-                ProfileTargetTagsArgs._configure(_setter, **target_tags)
+            target_tags = _utilities.configure(target_tags, ProfileTargetTagsArgs, True)
             __props__.__dict__["target_tags"] = target_tags
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

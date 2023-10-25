@@ -202,13 +202,13 @@ class MigrationPlanMigrationPlanStat(dict):
              time_updated: Optional[str] = None,
              total_estimated_costs: Optional[Sequence['outputs.MigrationPlanMigrationPlanStatTotalEstimatedCost']] = None,
              vm_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalEstimatedCosts' in kwargs:
+        if total_estimated_costs is None and 'totalEstimatedCosts' in kwargs:
             total_estimated_costs = kwargs['totalEstimatedCosts']
-        if 'vmCount' in kwargs:
+        if vm_count is None and 'vmCount' in kwargs:
             vm_count = kwargs['vmCount']
 
         if time_updated is not None:
@@ -307,17 +307,17 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCost(dict):
              subscription_id: Optional[str] = None,
              total_estimation_per_month: Optional[float] = None,
              total_estimation_per_month_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
 
         if computes is not None:
@@ -484,29 +484,29 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostCompute(dict):
              ocpu_per_hour_by_subscription: Optional[float] = None,
              total_per_hour: Optional[float] = None,
              total_per_hour_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
 
         if gpu_count is not None:
@@ -659,11 +659,11 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage(dict):
              _setter: Callable[[Any, Any], None],
              total_per_hour: Optional[float] = None,
              total_per_hour_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
 
         if total_per_hour is not None:
@@ -730,11 +730,11 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorage(dict):
              total_gb_per_month: Optional[float] = None,
              total_gb_per_month_by_subscription: Optional[float] = None,
              volumes: Optional[Sequence['outputs.MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
 
         if total_gb_per_month is not None:
@@ -817,13 +817,13 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume(dict):
              description: Optional[str] = None,
              total_gb_per_month: Optional[float] = None,
              total_gb_per_month_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
 
         if capacity_gb is not None:
@@ -922,23 +922,27 @@ class MigrationPlanStrategy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             resource_type: str,
-             strategy_type: str,
+             resource_type: Optional[str] = None,
+             strategy_type: Optional[str] = None,
              adjustment_multiplier: Optional[float] = None,
              metric_time_window: Optional[str] = None,
              metric_type: Optional[str] = None,
              percentile: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceType' in kwargs:
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'strategyType' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
-        if 'adjustmentMultiplier' in kwargs:
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
+        if adjustment_multiplier is None and 'adjustmentMultiplier' in kwargs:
             adjustment_multiplier = kwargs['adjustmentMultiplier']
-        if 'metricTimeWindow' in kwargs:
+        if metric_time_window is None and 'metricTimeWindow' in kwargs:
             metric_time_window = kwargs['metricTimeWindow']
-        if 'metricType' in kwargs:
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
 
         _setter("resource_type", resource_type)
@@ -1072,30 +1076,36 @@ class MigrationPlanTargetEnvironment(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             subnet: str,
-             target_environment_type: str,
-             vcn: str,
+             subnet: Optional[str] = None,
+             target_environment_type: Optional[str] = None,
+             vcn: Optional[str] = None,
              availability_domain: Optional[str] = None,
              dedicated_vm_host: Optional[str] = None,
              fault_domain: Optional[str] = None,
              ms_license: Optional[str] = None,
              preferred_shape_type: Optional[str] = None,
              target_compartment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'targetEnvironmentType' in kwargs:
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
+        if target_environment_type is None and 'targetEnvironmentType' in kwargs:
             target_environment_type = kwargs['targetEnvironmentType']
-        if 'availabilityDomain' in kwargs:
+        if target_environment_type is None:
+            raise TypeError("Missing 'target_environment_type' argument")
+        if vcn is None:
+            raise TypeError("Missing 'vcn' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'dedicatedVmHost' in kwargs:
+        if dedicated_vm_host is None and 'dedicatedVmHost' in kwargs:
             dedicated_vm_host = kwargs['dedicatedVmHost']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'msLicense' in kwargs:
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
-        if 'preferredShapeType' in kwargs:
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'targetCompartmentId' in kwargs:
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
             target_compartment_id = kwargs['targetCompartmentId']
 
         _setter("subnet", subnet)
@@ -1214,7 +1224,7 @@ class TargetAssetCompatibilityMessage(dict):
              message: Optional[str] = None,
              name: Optional[str] = None,
              severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if message is not None:
@@ -1313,17 +1323,17 @@ class TargetAssetEstimatedCost(dict):
              subscription_id: Optional[str] = None,
              total_estimation_per_month: Optional[float] = None,
              total_estimation_per_month_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
 
         if computes is not None:
@@ -1490,29 +1500,29 @@ class TargetAssetEstimatedCostCompute(dict):
              ocpu_per_hour_by_subscription: Optional[float] = None,
              total_per_hour: Optional[float] = None,
              total_per_hour_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
 
         if gpu_count is not None:
@@ -1665,11 +1675,11 @@ class TargetAssetEstimatedCostOsImage(dict):
              _setter: Callable[[Any, Any], None],
              total_per_hour: Optional[float] = None,
              total_per_hour_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
 
         if total_per_hour is not None:
@@ -1736,11 +1746,11 @@ class TargetAssetEstimatedCostStorage(dict):
              total_gb_per_month: Optional[float] = None,
              total_gb_per_month_by_subscription: Optional[float] = None,
              volumes: Optional[Sequence['outputs.TargetAssetEstimatedCostStorageVolume']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
 
         if total_gb_per_month is not None:
@@ -1823,13 +1833,13 @@ class TargetAssetEstimatedCostStorageVolume(dict):
              description: Optional[str] = None,
              total_gb_per_month: Optional[float] = None,
              total_gb_per_month_by_subscription: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
 
         if capacity_gb is not None:
@@ -2016,39 +2026,39 @@ class TargetAssetMigrationAsset(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dependedOnBies' in kwargs:
+        if depended_on_bies is None and 'dependedOnBies' in kwargs:
             depended_on_bies = kwargs['dependedOnBies']
-        if 'dependsOns' in kwargs:
+        if depends_ons is None and 'dependsOns' in kwargs:
             depends_ons = kwargs['dependsOns']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'parentSnapshot' in kwargs:
+        if parent_snapshot is None and 'parentSnapshot' in kwargs:
             parent_snapshot = kwargs['parentSnapshot']
-        if 'replicationCompartmentId' in kwargs:
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'replicationScheduleId' in kwargs:
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'snapShotBucketName' in kwargs:
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'sourceAssetData' in kwargs:
+        if source_asset_data is None and 'sourceAssetData' in kwargs:
             source_asset_data = kwargs['sourceAssetData']
-        if 'sourceAssetId' in kwargs:
+        if source_asset_id is None and 'sourceAssetId' in kwargs:
             source_asset_id = kwargs['sourceAssetId']
-        if 'tenancyId' in kwargs:
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if availability_domain is not None:
@@ -2419,41 +2429,41 @@ class TargetAssetRecommendedSpec(dict):
              shape: Optional[str] = None,
              shape_configs: Optional[Sequence['outputs.TargetAssetRecommendedSpecShapeConfig']] = None,
              source_details: Optional[Sequence['outputs.TargetAssetRecommendedSpecSourceDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
 
         if agent_configs is not None:
@@ -2726,15 +2736,15 @@ class TargetAssetRecommendedSpecAgentConfig(dict):
              is_management_disabled: Optional[bool] = None,
              is_monitoring_disabled: Optional[bool] = None,
              plugins_configs: Optional[Sequence['outputs.TargetAssetRecommendedSpecAgentConfigPluginsConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
 
         if are_all_plugins_disabled is not None:
@@ -2831,9 +2841,9 @@ class TargetAssetRecommendedSpecAgentConfigPluginsConfig(dict):
              _setter: Callable[[Any, Any], None],
              desired_state: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
 
         if desired_state is not None:
@@ -2976,29 +2986,29 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
              skip_source_dest_check: Optional[bool] = None,
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
 
         if assign_private_dns_record is not None:
@@ -3169,9 +3179,9 @@ class TargetAssetRecommendedSpecInstanceOption(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
 
         if are_legacy_imds_endpoints_disabled is not None:
@@ -3218,9 +3228,9 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_actions: Optional[Sequence['outputs.TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
 
         if preemption_actions is not None:
@@ -3271,9 +3281,9 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction(dict):
              _setter: Callable[[Any, Any], None],
              preserve_boot_volume: Optional[bool] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
 
         if preserve_boot_volume is not None:
@@ -3342,11 +3352,11 @@ class TargetAssetRecommendedSpecShapeConfig(dict):
              baseline_ocpu_utilization: Optional[str] = None,
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if baseline_ocpu_utilization is not None:
@@ -3451,19 +3461,19 @@ class TargetAssetRecommendedSpecSourceDetail(dict):
              image_id: Optional[str] = None,
              kms_key_id: Optional[str] = None,
              source_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
 
         if boot_volume_id is not None:
@@ -3690,41 +3700,41 @@ class TargetAssetTestSpec(dict):
              shape: Optional[str] = None,
              shape_configs: Optional[Sequence['outputs.TargetAssetTestSpecShapeConfig']] = None,
              source_details: Optional[Sequence['outputs.TargetAssetTestSpecSourceDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
 
         if agent_configs is not None:
@@ -3997,15 +4007,15 @@ class TargetAssetTestSpecAgentConfig(dict):
              is_management_disabled: Optional[bool] = None,
              is_monitoring_disabled: Optional[bool] = None,
              plugins_configs: Optional[Sequence['outputs.TargetAssetTestSpecAgentConfigPluginsConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
 
         if are_all_plugins_disabled is not None:
@@ -4102,9 +4112,9 @@ class TargetAssetTestSpecAgentConfigPluginsConfig(dict):
              _setter: Callable[[Any, Any], None],
              desired_state: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
 
         if desired_state is not None:
@@ -4247,29 +4257,29 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
              skip_source_dest_check: Optional[bool] = None,
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
 
         if assign_private_dns_record is not None:
@@ -4440,9 +4450,9 @@ class TargetAssetTestSpecInstanceOption(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
 
         if are_legacy_imds_endpoints_disabled is not None:
@@ -4489,9 +4499,9 @@ class TargetAssetTestSpecPreemptibleInstanceConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_actions: Optional[Sequence['outputs.TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
 
         if preemption_actions is not None:
@@ -4542,9 +4552,9 @@ class TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction(dict):
              _setter: Callable[[Any, Any], None],
              preserve_boot_volume: Optional[bool] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
 
         if preserve_boot_volume is not None:
@@ -4613,11 +4623,11 @@ class TargetAssetTestSpecShapeConfig(dict):
              baseline_ocpu_utilization: Optional[str] = None,
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if baseline_ocpu_utilization is not None:
@@ -4722,19 +4732,19 @@ class TargetAssetTestSpecSourceDetail(dict):
              image_id: Optional[str] = None,
              kms_key_id: Optional[str] = None,
              source_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
 
         if boot_volume_id is not None:
@@ -4961,41 +4971,41 @@ class TargetAssetUserSpec(dict):
              shape: Optional[str] = None,
              shape_config: Optional['outputs.TargetAssetUserSpecShapeConfig'] = None,
              source_details: Optional['outputs.TargetAssetUserSpecSourceDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfig' in kwargs:
+        if agent_config is None and 'agentConfig' in kwargs:
             agent_config = kwargs['agentConfig']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfig' in kwargs:
+        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
             preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
 
         if agent_config is not None:
@@ -5268,15 +5278,15 @@ class TargetAssetUserSpecAgentConfig(dict):
              is_management_disabled: Optional[bool] = None,
              is_monitoring_disabled: Optional[bool] = None,
              plugins_configs: Optional[Sequence['outputs.TargetAssetUserSpecAgentConfigPluginsConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
 
         if are_all_plugins_disabled is not None:
@@ -5371,12 +5381,16 @@ class TargetAssetUserSpecAgentConfigPluginsConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -5516,29 +5530,29 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
              skip_source_dest_check: Optional[bool] = None,
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
 
         if assign_private_dns_record is not None:
@@ -5709,9 +5723,9 @@ class TargetAssetUserSpecInstanceOptions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
 
         if are_legacy_imds_endpoints_disabled is not None:
@@ -5757,11 +5771,13 @@ class TargetAssetUserSpecPreemptibleInstanceConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_action: 'outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_action: Optional['outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionAction' in kwargs:
+        if preemption_action is None and 'preemptionAction' in kwargs:
             preemption_action = kwargs['preemptionAction']
+        if preemption_action is None:
+            raise TypeError("Missing 'preemption_action' argument")
 
         _setter("preemption_action", preemption_action)
 
@@ -5808,11 +5824,13 @@ class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: str,
+             type: Optional[str] = None,
              preserve_boot_volume: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
 
         _setter("type", type)
@@ -5880,11 +5898,11 @@ class TargetAssetUserSpecShapeConfig(dict):
              baseline_ocpu_utilization: Optional[str] = None,
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         if baseline_ocpu_utilization is not None:
@@ -5983,25 +6001,27 @@ class TargetAssetUserSpecSourceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_type: str,
+             source_type: Optional[str] = None,
              boot_volume_id: Optional[str] = None,
              boot_volume_size_in_gbs: Optional[str] = None,
              boot_volume_vpus_per_gb: Optional[str] = None,
              image_id: Optional[str] = None,
              kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'bootVolumeId' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
 
         _setter("source_type", source_type)
@@ -6086,11 +6106,15 @@ class GetMigrationAssetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -6124,9 +6148,11 @@ class GetMigrationAssetsMigrationAssetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6208,61 +6234,103 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             depended_on_bies: Sequence[str],
-             display_name: str,
-             id: str,
-             inventory_asset_id: str,
-             lifecycle_details: str,
-             migration_asset_depends_ons: Sequence[str],
-             migration_id: str,
-             notifications: Sequence[str],
-             parent_snapshot: str,
-             replication_compartment_id: str,
-             replication_schedule_id: str,
-             snap_shot_bucket_name: str,
-             snapshots: Mapping[str, Any],
-             source_asset_id: str,
-             state: str,
-             tenancy_id: str,
-             time_created: str,
-             time_updated: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             depended_on_bies: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             inventory_asset_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             migration_asset_depends_ons: Optional[Sequence[str]] = None,
+             migration_id: Optional[str] = None,
+             notifications: Optional[Sequence[str]] = None,
+             parent_snapshot: Optional[str] = None,
+             replication_compartment_id: Optional[str] = None,
+             replication_schedule_id: Optional[str] = None,
+             snap_shot_bucket_name: Optional[str] = None,
+             snapshots: Optional[Mapping[str, Any]] = None,
+             source_asset_id: Optional[str] = None,
+             state: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dependedOnBies' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if depended_on_bies is None and 'dependedOnBies' in kwargs:
             depended_on_bies = kwargs['dependedOnBies']
-        if 'displayName' in kwargs:
+        if depended_on_bies is None:
+            raise TypeError("Missing 'depended_on_bies' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'inventoryAssetId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if inventory_asset_id is None and 'inventoryAssetId' in kwargs:
             inventory_asset_id = kwargs['inventoryAssetId']
-        if 'lifecycleDetails' in kwargs:
+        if inventory_asset_id is None:
+            raise TypeError("Missing 'inventory_asset_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationAssetDependsOns' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if migration_asset_depends_ons is None and 'migrationAssetDependsOns' in kwargs:
             migration_asset_depends_ons = kwargs['migrationAssetDependsOns']
-        if 'migrationId' in kwargs:
+        if migration_asset_depends_ons is None:
+            raise TypeError("Missing 'migration_asset_depends_ons' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'parentSnapshot' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if notifications is None:
+            raise TypeError("Missing 'notifications' argument")
+        if parent_snapshot is None and 'parentSnapshot' in kwargs:
             parent_snapshot = kwargs['parentSnapshot']
-        if 'replicationCompartmentId' in kwargs:
+        if parent_snapshot is None:
+            raise TypeError("Missing 'parent_snapshot' argument")
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'replicationScheduleId' in kwargs:
+        if replication_compartment_id is None:
+            raise TypeError("Missing 'replication_compartment_id' argument")
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'snapShotBucketName' in kwargs:
+        if replication_schedule_id is None:
+            raise TypeError("Missing 'replication_schedule_id' argument")
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'sourceAssetId' in kwargs:
+        if snap_shot_bucket_name is None:
+            raise TypeError("Missing 'snap_shot_bucket_name' argument")
+        if snapshots is None:
+            raise TypeError("Missing 'snapshots' argument")
+        if source_asset_id is None and 'sourceAssetId' in kwargs:
             source_asset_id = kwargs['sourceAssetId']
-        if 'tenancyId' in kwargs:
+        if source_asset_id is None:
+            raise TypeError("Missing 'source_asset_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -6511,53 +6579,87 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             gpu_description: str,
-             gpus: int,
-             local_disk_description: str,
-             local_disks: int,
-             local_disks_total_size_in_gbs: float,
-             max_vnic_attachments: int,
-             memory_in_gbs: float,
-             min_total_baseline_ocpus_required: float,
-             networking_bandwidth_in_gbps: float,
-             ocpus: float,
-             pagination_token: str,
-             processor_description: str,
-             shape: str,
-             system_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gpu_description: Optional[str] = None,
+             gpus: Optional[int] = None,
+             local_disk_description: Optional[str] = None,
+             local_disks: Optional[int] = None,
+             local_disks_total_size_in_gbs: Optional[float] = None,
+             max_vnic_attachments: Optional[int] = None,
+             memory_in_gbs: Optional[float] = None,
+             min_total_baseline_ocpus_required: Optional[float] = None,
+             networking_bandwidth_in_gbps: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             pagination_token: Optional[str] = None,
+             processor_description: Optional[str] = None,
+             shape: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'definedTags' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gpuDescription' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gpu_description is None and 'gpuDescription' in kwargs:
             gpu_description = kwargs['gpuDescription']
-        if 'localDiskDescription' in kwargs:
+        if gpu_description is None:
+            raise TypeError("Missing 'gpu_description' argument")
+        if gpus is None:
+            raise TypeError("Missing 'gpus' argument")
+        if local_disk_description is None and 'localDiskDescription' in kwargs:
             local_disk_description = kwargs['localDiskDescription']
-        if 'localDisks' in kwargs:
+        if local_disk_description is None:
+            raise TypeError("Missing 'local_disk_description' argument")
+        if local_disks is None and 'localDisks' in kwargs:
             local_disks = kwargs['localDisks']
-        if 'localDisksTotalSizeInGbs' in kwargs:
+        if local_disks is None:
+            raise TypeError("Missing 'local_disks' argument")
+        if local_disks_total_size_in_gbs is None and 'localDisksTotalSizeInGbs' in kwargs:
             local_disks_total_size_in_gbs = kwargs['localDisksTotalSizeInGbs']
-        if 'maxVnicAttachments' in kwargs:
+        if local_disks_total_size_in_gbs is None:
+            raise TypeError("Missing 'local_disks_total_size_in_gbs' argument")
+        if max_vnic_attachments is None and 'maxVnicAttachments' in kwargs:
             max_vnic_attachments = kwargs['maxVnicAttachments']
-        if 'memoryInGbs' in kwargs:
+        if max_vnic_attachments is None:
+            raise TypeError("Missing 'max_vnic_attachments' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
-        if 'minTotalBaselineOcpusRequired' in kwargs:
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if min_total_baseline_ocpus_required is None and 'minTotalBaselineOcpusRequired' in kwargs:
             min_total_baseline_ocpus_required = kwargs['minTotalBaselineOcpusRequired']
-        if 'networkingBandwidthInGbps' in kwargs:
+        if min_total_baseline_ocpus_required is None:
+            raise TypeError("Missing 'min_total_baseline_ocpus_required' argument")
+        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
             networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
-        if 'paginationToken' in kwargs:
+        if networking_bandwidth_in_gbps is None:
+            raise TypeError("Missing 'networking_bandwidth_in_gbps' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if pagination_token is None and 'paginationToken' in kwargs:
             pagination_token = kwargs['paginationToken']
-        if 'processorDescription' in kwargs:
+        if pagination_token is None:
+            raise TypeError("Missing 'pagination_token' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
             processor_description = kwargs['processorDescription']
-        if 'systemTags' in kwargs:
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
@@ -6728,9 +6830,11 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6805,53 +6909,87 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             gpu_description: str,
-             gpus: int,
-             local_disk_description: str,
-             local_disks: int,
-             local_disks_total_size_in_gbs: float,
-             max_vnic_attachments: int,
-             memory_in_gbs: float,
-             min_total_baseline_ocpus_required: float,
-             networking_bandwidth_in_gbps: float,
-             ocpus: float,
-             pagination_token: str,
-             processor_description: str,
-             shape: str,
-             system_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gpu_description: Optional[str] = None,
+             gpus: Optional[int] = None,
+             local_disk_description: Optional[str] = None,
+             local_disks: Optional[int] = None,
+             local_disks_total_size_in_gbs: Optional[float] = None,
+             max_vnic_attachments: Optional[int] = None,
+             memory_in_gbs: Optional[float] = None,
+             min_total_baseline_ocpus_required: Optional[float] = None,
+             networking_bandwidth_in_gbps: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             pagination_token: Optional[str] = None,
+             processor_description: Optional[str] = None,
+             shape: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'definedTags' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'gpuDescription' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gpu_description is None and 'gpuDescription' in kwargs:
             gpu_description = kwargs['gpuDescription']
-        if 'localDiskDescription' in kwargs:
+        if gpu_description is None:
+            raise TypeError("Missing 'gpu_description' argument")
+        if gpus is None:
+            raise TypeError("Missing 'gpus' argument")
+        if local_disk_description is None and 'localDiskDescription' in kwargs:
             local_disk_description = kwargs['localDiskDescription']
-        if 'localDisks' in kwargs:
+        if local_disk_description is None:
+            raise TypeError("Missing 'local_disk_description' argument")
+        if local_disks is None and 'localDisks' in kwargs:
             local_disks = kwargs['localDisks']
-        if 'localDisksTotalSizeInGbs' in kwargs:
+        if local_disks is None:
+            raise TypeError("Missing 'local_disks' argument")
+        if local_disks_total_size_in_gbs is None and 'localDisksTotalSizeInGbs' in kwargs:
             local_disks_total_size_in_gbs = kwargs['localDisksTotalSizeInGbs']
-        if 'maxVnicAttachments' in kwargs:
+        if local_disks_total_size_in_gbs is None:
+            raise TypeError("Missing 'local_disks_total_size_in_gbs' argument")
+        if max_vnic_attachments is None and 'maxVnicAttachments' in kwargs:
             max_vnic_attachments = kwargs['maxVnicAttachments']
-        if 'memoryInGbs' in kwargs:
+        if max_vnic_attachments is None:
+            raise TypeError("Missing 'max_vnic_attachments' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
-        if 'minTotalBaselineOcpusRequired' in kwargs:
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if min_total_baseline_ocpus_required is None and 'minTotalBaselineOcpusRequired' in kwargs:
             min_total_baseline_ocpus_required = kwargs['minTotalBaselineOcpusRequired']
-        if 'networkingBandwidthInGbps' in kwargs:
+        if min_total_baseline_ocpus_required is None:
+            raise TypeError("Missing 'min_total_baseline_ocpus_required' argument")
+        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
             networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
-        if 'paginationToken' in kwargs:
+        if networking_bandwidth_in_gbps is None:
+            raise TypeError("Missing 'networking_bandwidth_in_gbps' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if pagination_token is None and 'paginationToken' in kwargs:
             pagination_token = kwargs['paginationToken']
-        if 'processorDescription' in kwargs:
+        if pagination_token is None:
+            raise TypeError("Missing 'pagination_token' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
             processor_description = kwargs['processorDescription']
-        if 'systemTags' in kwargs:
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
@@ -7023,11 +7161,15 @@ class GetMigrationPlanAvailableShapesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7070,17 +7212,23 @@ class GetMigrationPlanMigrationPlanStatResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_updated: str,
-             total_estimated_costs: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult'],
-             vm_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_updated: Optional[str] = None,
+             total_estimated_costs: Optional[Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult']] = None,
+             vm_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalEstimatedCosts' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_estimated_costs is None and 'totalEstimatedCosts' in kwargs:
             total_estimated_costs = kwargs['totalEstimatedCosts']
-        if 'vmCount' in kwargs:
+        if total_estimated_costs is None:
+            raise TypeError("Missing 'total_estimated_costs' argument")
+        if vm_count is None and 'vmCount' in kwargs:
             vm_count = kwargs['vmCount']
+        if vm_count is None:
+            raise TypeError("Missing 'vm_count' argument")
 
         _setter("time_updated", time_updated)
         _setter("total_estimated_costs", total_estimated_costs)
@@ -7143,25 +7291,39 @@ class GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             computes: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeResult'],
-             currency_code: str,
-             os_images: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageResult'],
-             storages: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageResult'],
-             subscription_id: str,
-             total_estimation_per_month: float,
-             total_estimation_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             computes: Optional[Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeResult']] = None,
+             currency_code: Optional[str] = None,
+             os_images: Optional[Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageResult']] = None,
+             storages: Optional[Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageResult']] = None,
+             subscription_id: Optional[str] = None,
+             total_estimation_per_month: Optional[float] = None,
+             total_estimation_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if computes is None:
+            raise TypeError("Missing 'computes' argument")
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if os_images is None:
+            raise TypeError("Missing 'os_images' argument")
+        if storages is None:
+            raise TypeError("Missing 'storages' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month is None:
+            raise TypeError("Missing 'total_estimation_per_month' argument")
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
+        if total_estimation_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_estimation_per_month_by_subscription' argument")
 
         _setter("computes", computes)
         _setter("currency_code", currency_code)
@@ -7272,41 +7434,63 @@ class GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gpu_count: float,
-             gpu_per_hour: float,
-             gpu_per_hour_by_subscription: float,
-             memory_amount_gb: float,
-             memory_gb_per_hour: float,
-             memory_gb_per_hour_by_subscription: float,
-             ocpu_count: float,
-             ocpu_per_hour: float,
-             ocpu_per_hour_by_subscription: float,
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gpu_count: Optional[float] = None,
+             gpu_per_hour: Optional[float] = None,
+             gpu_per_hour_by_subscription: Optional[float] = None,
+             memory_amount_gb: Optional[float] = None,
+             memory_gb_per_hour: Optional[float] = None,
+             memory_gb_per_hour_by_subscription: Optional[float] = None,
+             ocpu_count: Optional[float] = None,
+             ocpu_per_hour: Optional[float] = None,
+             ocpu_per_hour_by_subscription: Optional[float] = None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_count is None:
+            raise TypeError("Missing 'gpu_count' argument")
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour is None:
+            raise TypeError("Missing 'gpu_per_hour' argument")
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if gpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'gpu_per_hour_by_subscription' argument")
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_amount_gb is None:
+            raise TypeError("Missing 'memory_amount_gb' argument")
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour is None:
+            raise TypeError("Missing 'memory_gb_per_hour' argument")
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if memory_gb_per_hour_by_subscription is None:
+            raise TypeError("Missing 'memory_gb_per_hour_by_subscription' argument")
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_count is None:
+            raise TypeError("Missing 'ocpu_count' argument")
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour is None:
+            raise TypeError("Missing 'ocpu_per_hour' argument")
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if ocpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'ocpu_per_hour_by_subscription' argument")
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("gpu_count", gpu_count)
         _setter("gpu_per_hour", gpu_per_hour)
@@ -7426,14 +7610,18 @@ class GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("total_per_hour", total_per_hour)
         _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
@@ -7475,15 +7663,21 @@ class GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             volumes: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             volumes: Optional[Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
+        if volumes is None:
+            raise TypeError("Missing 'volumes' argument")
 
         _setter("total_gb_per_month", total_gb_per_month)
         _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
@@ -7537,18 +7731,26 @@ class GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_gb: float,
-             description: str,
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_gb: Optional[float] = None,
+             description: Optional[str] = None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if capacity_gb is None:
+            raise TypeError("Missing 'capacity_gb' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
 
         _setter("capacity_gb", capacity_gb)
         _setter("description", description)
@@ -7617,24 +7819,36 @@ class GetMigrationPlanStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adjustment_multiplier: float,
-             metric_time_window: str,
-             metric_type: str,
-             percentile: str,
-             resource_type: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adjustment_multiplier: Optional[float] = None,
+             metric_time_window: Optional[str] = None,
+             metric_type: Optional[str] = None,
+             percentile: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adjustmentMultiplier' in kwargs:
+        if adjustment_multiplier is None and 'adjustmentMultiplier' in kwargs:
             adjustment_multiplier = kwargs['adjustmentMultiplier']
-        if 'metricTimeWindow' in kwargs:
+        if adjustment_multiplier is None:
+            raise TypeError("Missing 'adjustment_multiplier' argument")
+        if metric_time_window is None and 'metricTimeWindow' in kwargs:
             metric_time_window = kwargs['metricTimeWindow']
-        if 'metricType' in kwargs:
+        if metric_time_window is None:
+            raise TypeError("Missing 'metric_time_window' argument")
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
-        if 'resourceType' in kwargs:
+        if metric_type is None:
+            raise TypeError("Missing 'metric_type' argument")
+        if percentile is None:
+            raise TypeError("Missing 'percentile' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'strategyType' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("adjustment_multiplier", adjustment_multiplier)
         _setter("metric_time_window", metric_time_window)
@@ -7730,31 +7944,49 @@ class GetMigrationPlanTargetEnvironmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             dedicated_vm_host: str,
-             fault_domain: str,
-             ms_license: str,
-             preferred_shape_type: str,
-             subnet: str,
-             target_compartment_id: str,
-             target_environment_type: str,
-             vcn: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             dedicated_vm_host: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             ms_license: Optional[str] = None,
+             preferred_shape_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             target_compartment_id: Optional[str] = None,
+             target_environment_type: Optional[str] = None,
+             vcn: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'dedicatedVmHost' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if dedicated_vm_host is None and 'dedicatedVmHost' in kwargs:
             dedicated_vm_host = kwargs['dedicatedVmHost']
-        if 'faultDomain' in kwargs:
+        if dedicated_vm_host is None:
+            raise TypeError("Missing 'dedicated_vm_host' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'msLicense' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
-        if 'preferredShapeType' in kwargs:
+        if ms_license is None:
+            raise TypeError("Missing 'ms_license' argument")
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'targetCompartmentId' in kwargs:
+        if preferred_shape_type is None:
+            raise TypeError("Missing 'preferred_shape_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
             target_compartment_id = kwargs['targetCompartmentId']
-        if 'targetEnvironmentType' in kwargs:
+        if target_compartment_id is None:
+            raise TypeError("Missing 'target_compartment_id' argument")
+        if target_environment_type is None and 'targetEnvironmentType' in kwargs:
             target_environment_type = kwargs['targetEnvironmentType']
+        if target_environment_type is None:
+            raise TypeError("Missing 'target_environment_type' argument")
+        if vcn is None:
+            raise TypeError("Missing 'vcn' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("dedicated_vm_host", dedicated_vm_host)
@@ -7854,11 +8086,15 @@ class GetMigrationPlansFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7892,9 +8128,11 @@ class GetMigrationPlansMigrationPlanCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7966,53 +8204,87 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             calculated_limits: Mapping[str, Any],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             migration_id: str,
-             migration_plan_stats: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult'],
-             reference_to_rms_stack: str,
-             source_migration_plan_id: str,
-             state: str,
-             strategies: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemStrategyResult'],
-             system_tags: Mapping[str, Any],
-             target_environments: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             calculated_limits: Optional[Mapping[str, Any]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             migration_id: Optional[str] = None,
+             migration_plan_stats: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult']] = None,
+             reference_to_rms_stack: Optional[str] = None,
+             source_migration_plan_id: Optional[str] = None,
+             state: Optional[str] = None,
+             strategies: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemStrategyResult']] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             target_environments: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'calculatedLimits' in kwargs:
+        if calculated_limits is None and 'calculatedLimits' in kwargs:
             calculated_limits = kwargs['calculatedLimits']
-        if 'compartmentId' in kwargs:
+        if calculated_limits is None:
+            raise TypeError("Missing 'calculated_limits' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'migrationPlanStats' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if migration_plan_stats is None and 'migrationPlanStats' in kwargs:
             migration_plan_stats = kwargs['migrationPlanStats']
-        if 'referenceToRmsStack' in kwargs:
+        if migration_plan_stats is None:
+            raise TypeError("Missing 'migration_plan_stats' argument")
+        if reference_to_rms_stack is None and 'referenceToRmsStack' in kwargs:
             reference_to_rms_stack = kwargs['referenceToRmsStack']
-        if 'sourceMigrationPlanId' in kwargs:
+        if reference_to_rms_stack is None:
+            raise TypeError("Missing 'reference_to_rms_stack' argument")
+        if source_migration_plan_id is None and 'sourceMigrationPlanId' in kwargs:
             source_migration_plan_id = kwargs['sourceMigrationPlanId']
-        if 'systemTags' in kwargs:
+        if source_migration_plan_id is None:
+            raise TypeError("Missing 'source_migration_plan_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if strategies is None:
+            raise TypeError("Missing 'strategies' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetEnvironments' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if target_environments is None and 'targetEnvironments' in kwargs:
             target_environments = kwargs['targetEnvironments']
-        if 'timeCreated' in kwargs:
+        if target_environments is None:
+            raise TypeError("Missing 'target_environments' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("calculated_limits", calculated_limits)
         _setter("compartment_id", compartment_id)
@@ -8189,17 +8461,23 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_updated: str,
-             total_estimated_costs: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostResult'],
-             vm_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_updated: Optional[str] = None,
+             total_estimated_costs: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostResult']] = None,
+             vm_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalEstimatedCosts' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_estimated_costs is None and 'totalEstimatedCosts' in kwargs:
             total_estimated_costs = kwargs['totalEstimatedCosts']
-        if 'vmCount' in kwargs:
+        if total_estimated_costs is None:
+            raise TypeError("Missing 'total_estimated_costs' argument")
+        if vm_count is None and 'vmCount' in kwargs:
             vm_count = kwargs['vmCount']
+        if vm_count is None:
+            raise TypeError("Missing 'vm_count' argument")
 
         _setter("time_updated", time_updated)
         _setter("total_estimated_costs", total_estimated_costs)
@@ -8262,25 +8540,39 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimate
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             computes: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeResult'],
-             currency_code: str,
-             os_images: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageResult'],
-             storages: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageResult'],
-             subscription_id: str,
-             total_estimation_per_month: float,
-             total_estimation_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             computes: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeResult']] = None,
+             currency_code: Optional[str] = None,
+             os_images: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageResult']] = None,
+             storages: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageResult']] = None,
+             subscription_id: Optional[str] = None,
+             total_estimation_per_month: Optional[float] = None,
+             total_estimation_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if computes is None:
+            raise TypeError("Missing 'computes' argument")
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if os_images is None:
+            raise TypeError("Missing 'os_images' argument")
+        if storages is None:
+            raise TypeError("Missing 'storages' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month is None:
+            raise TypeError("Missing 'total_estimation_per_month' argument")
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
+        if total_estimation_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_estimation_per_month_by_subscription' argument")
 
         _setter("computes", computes)
         _setter("currency_code", currency_code)
@@ -8391,41 +8683,63 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimate
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gpu_count: float,
-             gpu_per_hour: float,
-             gpu_per_hour_by_subscription: float,
-             memory_amount_gb: float,
-             memory_gb_per_hour: float,
-             memory_gb_per_hour_by_subscription: float,
-             ocpu_count: float,
-             ocpu_per_hour: float,
-             ocpu_per_hour_by_subscription: float,
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gpu_count: Optional[float] = None,
+             gpu_per_hour: Optional[float] = None,
+             gpu_per_hour_by_subscription: Optional[float] = None,
+             memory_amount_gb: Optional[float] = None,
+             memory_gb_per_hour: Optional[float] = None,
+             memory_gb_per_hour_by_subscription: Optional[float] = None,
+             ocpu_count: Optional[float] = None,
+             ocpu_per_hour: Optional[float] = None,
+             ocpu_per_hour_by_subscription: Optional[float] = None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_count is None:
+            raise TypeError("Missing 'gpu_count' argument")
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour is None:
+            raise TypeError("Missing 'gpu_per_hour' argument")
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if gpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'gpu_per_hour_by_subscription' argument")
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_amount_gb is None:
+            raise TypeError("Missing 'memory_amount_gb' argument")
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour is None:
+            raise TypeError("Missing 'memory_gb_per_hour' argument")
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if memory_gb_per_hour_by_subscription is None:
+            raise TypeError("Missing 'memory_gb_per_hour_by_subscription' argument")
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_count is None:
+            raise TypeError("Missing 'ocpu_count' argument")
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour is None:
+            raise TypeError("Missing 'ocpu_per_hour' argument")
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if ocpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'ocpu_per_hour_by_subscription' argument")
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("gpu_count", gpu_count)
         _setter("gpu_per_hour", gpu_per_hour)
@@ -8545,14 +8859,18 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimate
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("total_per_hour", total_per_hour)
         _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
@@ -8594,15 +8912,21 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimate
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             volumes: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             volumes: Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
+        if volumes is None:
+            raise TypeError("Missing 'volumes' argument")
 
         _setter("total_gb_per_month", total_gb_per_month)
         _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
@@ -8656,18 +8980,26 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimate
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_gb: float,
-             description: str,
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_gb: Optional[float] = None,
+             description: Optional[str] = None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if capacity_gb is None:
+            raise TypeError("Missing 'capacity_gb' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
 
         _setter("capacity_gb", capacity_gb)
         _setter("description", description)
@@ -8736,24 +9068,36 @@ class GetMigrationPlansMigrationPlanCollectionItemStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             adjustment_multiplier: float,
-             metric_time_window: str,
-             metric_type: str,
-             percentile: str,
-             resource_type: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             adjustment_multiplier: Optional[float] = None,
+             metric_time_window: Optional[str] = None,
+             metric_type: Optional[str] = None,
+             percentile: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adjustmentMultiplier' in kwargs:
+        if adjustment_multiplier is None and 'adjustmentMultiplier' in kwargs:
             adjustment_multiplier = kwargs['adjustmentMultiplier']
-        if 'metricTimeWindow' in kwargs:
+        if adjustment_multiplier is None:
+            raise TypeError("Missing 'adjustment_multiplier' argument")
+        if metric_time_window is None and 'metricTimeWindow' in kwargs:
             metric_time_window = kwargs['metricTimeWindow']
-        if 'metricType' in kwargs:
+        if metric_time_window is None:
+            raise TypeError("Missing 'metric_time_window' argument")
+        if metric_type is None and 'metricType' in kwargs:
             metric_type = kwargs['metricType']
-        if 'resourceType' in kwargs:
+        if metric_type is None:
+            raise TypeError("Missing 'metric_type' argument")
+        if percentile is None:
+            raise TypeError("Missing 'percentile' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'strategyType' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("adjustment_multiplier", adjustment_multiplier)
         _setter("metric_time_window", metric_time_window)
@@ -8849,31 +9193,49 @@ class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             dedicated_vm_host: str,
-             fault_domain: str,
-             ms_license: str,
-             preferred_shape_type: str,
-             subnet: str,
-             target_compartment_id: str,
-             target_environment_type: str,
-             vcn: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             dedicated_vm_host: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             ms_license: Optional[str] = None,
+             preferred_shape_type: Optional[str] = None,
+             subnet: Optional[str] = None,
+             target_compartment_id: Optional[str] = None,
+             target_environment_type: Optional[str] = None,
+             vcn: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'dedicatedVmHost' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if dedicated_vm_host is None and 'dedicatedVmHost' in kwargs:
             dedicated_vm_host = kwargs['dedicatedVmHost']
-        if 'faultDomain' in kwargs:
+        if dedicated_vm_host is None:
+            raise TypeError("Missing 'dedicated_vm_host' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'msLicense' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
-        if 'preferredShapeType' in kwargs:
+        if ms_license is None:
+            raise TypeError("Missing 'ms_license' argument")
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'targetCompartmentId' in kwargs:
+        if preferred_shape_type is None:
+            raise TypeError("Missing 'preferred_shape_type' argument")
+        if subnet is None:
+            raise TypeError("Missing 'subnet' argument")
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
             target_compartment_id = kwargs['targetCompartmentId']
-        if 'targetEnvironmentType' in kwargs:
+        if target_compartment_id is None:
+            raise TypeError("Missing 'target_compartment_id' argument")
+        if target_environment_type is None and 'targetEnvironmentType' in kwargs:
             target_environment_type = kwargs['targetEnvironmentType']
+        if target_environment_type is None:
+            raise TypeError("Missing 'target_environment_type' argument")
+        if vcn is None:
+            raise TypeError("Missing 'vcn' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("dedicated_vm_host", dedicated_vm_host)
@@ -8973,11 +9335,15 @@ class GetMigrationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9011,9 +9377,11 @@ class GetMigrationsMigrationCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetMigrationsMigrationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetMigrationsMigrationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9070,40 +9438,64 @@ class GetMigrationsMigrationCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_completed: bool,
-             lifecycle_details: str,
-             replication_schedule_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_completed: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             replication_schedule_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCompleted' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_completed is None and 'isCompleted' in kwargs:
             is_completed = kwargs['isCompleted']
-        if 'lifecycleDetails' in kwargs:
+        if is_completed is None:
+            raise TypeError("Missing 'is_completed' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'replicationScheduleId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'systemTags' in kwargs:
+        if replication_schedule_id is None:
+            raise TypeError("Missing 'replication_schedule_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -9230,11 +9622,15 @@ class GetReplicationSchedulesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -9268,9 +9664,11 @@ class GetReplicationSchedulesReplicationScheduleCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetReplicationSchedulesReplicationScheduleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetReplicationSchedulesReplicationScheduleCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9324,37 +9722,59 @@ class GetReplicationSchedulesReplicationScheduleCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             execution_recurrences: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             execution_recurrences: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'executionRecurrences' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if execution_recurrences is None and 'executionRecurrences' in kwargs:
             execution_recurrences = kwargs['executionRecurrences']
-        if 'freeformTags' in kwargs:
+        if execution_recurrences is None:
+            raise TypeError("Missing 'execution_recurrences' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -9477,11 +9897,17 @@ class GetTargetAssetCompatibilityMessageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             name: str,
-             severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             name: Optional[str] = None,
+             severity: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
 
         _setter("message", message)
         _setter("name", name)
@@ -9544,25 +9970,39 @@ class GetTargetAssetEstimatedCostResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             computes: Sequence['outputs.GetTargetAssetEstimatedCostComputeResult'],
-             currency_code: str,
-             os_images: Sequence['outputs.GetTargetAssetEstimatedCostOsImageResult'],
-             storages: Sequence['outputs.GetTargetAssetEstimatedCostStorageResult'],
-             subscription_id: str,
-             total_estimation_per_month: float,
-             total_estimation_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             computes: Optional[Sequence['outputs.GetTargetAssetEstimatedCostComputeResult']] = None,
+             currency_code: Optional[str] = None,
+             os_images: Optional[Sequence['outputs.GetTargetAssetEstimatedCostOsImageResult']] = None,
+             storages: Optional[Sequence['outputs.GetTargetAssetEstimatedCostStorageResult']] = None,
+             subscription_id: Optional[str] = None,
+             total_estimation_per_month: Optional[float] = None,
+             total_estimation_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if computes is None:
+            raise TypeError("Missing 'computes' argument")
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if os_images is None:
+            raise TypeError("Missing 'os_images' argument")
+        if storages is None:
+            raise TypeError("Missing 'storages' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month is None:
+            raise TypeError("Missing 'total_estimation_per_month' argument")
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
+        if total_estimation_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_estimation_per_month_by_subscription' argument")
 
         _setter("computes", computes)
         _setter("currency_code", currency_code)
@@ -9673,41 +10113,63 @@ class GetTargetAssetEstimatedCostComputeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gpu_count: float,
-             gpu_per_hour: float,
-             gpu_per_hour_by_subscription: float,
-             memory_amount_gb: float,
-             memory_gb_per_hour: float,
-             memory_gb_per_hour_by_subscription: float,
-             ocpu_count: float,
-             ocpu_per_hour: float,
-             ocpu_per_hour_by_subscription: float,
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gpu_count: Optional[float] = None,
+             gpu_per_hour: Optional[float] = None,
+             gpu_per_hour_by_subscription: Optional[float] = None,
+             memory_amount_gb: Optional[float] = None,
+             memory_gb_per_hour: Optional[float] = None,
+             memory_gb_per_hour_by_subscription: Optional[float] = None,
+             ocpu_count: Optional[float] = None,
+             ocpu_per_hour: Optional[float] = None,
+             ocpu_per_hour_by_subscription: Optional[float] = None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_count is None:
+            raise TypeError("Missing 'gpu_count' argument")
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour is None:
+            raise TypeError("Missing 'gpu_per_hour' argument")
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if gpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'gpu_per_hour_by_subscription' argument")
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_amount_gb is None:
+            raise TypeError("Missing 'memory_amount_gb' argument")
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour is None:
+            raise TypeError("Missing 'memory_gb_per_hour' argument")
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if memory_gb_per_hour_by_subscription is None:
+            raise TypeError("Missing 'memory_gb_per_hour_by_subscription' argument")
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_count is None:
+            raise TypeError("Missing 'ocpu_count' argument")
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour is None:
+            raise TypeError("Missing 'ocpu_per_hour' argument")
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if ocpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'ocpu_per_hour_by_subscription' argument")
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("gpu_count", gpu_count)
         _setter("gpu_per_hour", gpu_per_hour)
@@ -9827,14 +10289,18 @@ class GetTargetAssetEstimatedCostOsImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("total_per_hour", total_per_hour)
         _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
@@ -9876,15 +10342,21 @@ class GetTargetAssetEstimatedCostStorageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             volumes: Sequence['outputs.GetTargetAssetEstimatedCostStorageVolumeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             volumes: Optional[Sequence['outputs.GetTargetAssetEstimatedCostStorageVolumeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
+        if volumes is None:
+            raise TypeError("Missing 'volumes' argument")
 
         _setter("total_gb_per_month", total_gb_per_month)
         _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
@@ -9938,18 +10410,26 @@ class GetTargetAssetEstimatedCostStorageVolumeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_gb: float,
-             description: str,
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_gb: Optional[float] = None,
+             description: Optional[str] = None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if capacity_gb is None:
+            raise TypeError("Missing 'capacity_gb' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
 
         _setter("capacity_gb", capacity_gb)
         _setter("description", description)
@@ -10063,61 +10543,103 @@ class GetTargetAssetMigrationAssetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             depended_on_bies: Sequence[str],
-             depends_ons: Sequence[str],
-             display_name: str,
-             id: str,
-             lifecycle_details: str,
-             migration_id: str,
-             notifications: Sequence[str],
-             parent_snapshot: str,
-             replication_compartment_id: str,
-             replication_schedule_id: str,
-             snap_shot_bucket_name: str,
-             snapshots: Mapping[str, Any],
-             source_asset_data: Mapping[str, Any],
-             source_asset_id: str,
-             state: str,
-             tenancy_id: str,
-             time_created: str,
-             time_updated: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             depended_on_bies: Optional[Sequence[str]] = None,
+             depends_ons: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             migration_id: Optional[str] = None,
+             notifications: Optional[Sequence[str]] = None,
+             parent_snapshot: Optional[str] = None,
+             replication_compartment_id: Optional[str] = None,
+             replication_schedule_id: Optional[str] = None,
+             snap_shot_bucket_name: Optional[str] = None,
+             snapshots: Optional[Mapping[str, Any]] = None,
+             source_asset_data: Optional[Mapping[str, Any]] = None,
+             source_asset_id: Optional[str] = None,
+             state: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dependedOnBies' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if depended_on_bies is None and 'dependedOnBies' in kwargs:
             depended_on_bies = kwargs['dependedOnBies']
-        if 'dependsOns' in kwargs:
+        if depended_on_bies is None:
+            raise TypeError("Missing 'depended_on_bies' argument")
+        if depends_ons is None and 'dependsOns' in kwargs:
             depends_ons = kwargs['dependsOns']
-        if 'displayName' in kwargs:
+        if depends_ons is None:
+            raise TypeError("Missing 'depends_ons' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'lifecycleDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'parentSnapshot' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if notifications is None:
+            raise TypeError("Missing 'notifications' argument")
+        if parent_snapshot is None and 'parentSnapshot' in kwargs:
             parent_snapshot = kwargs['parentSnapshot']
-        if 'replicationCompartmentId' in kwargs:
+        if parent_snapshot is None:
+            raise TypeError("Missing 'parent_snapshot' argument")
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'replicationScheduleId' in kwargs:
+        if replication_compartment_id is None:
+            raise TypeError("Missing 'replication_compartment_id' argument")
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'snapShotBucketName' in kwargs:
+        if replication_schedule_id is None:
+            raise TypeError("Missing 'replication_schedule_id' argument")
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'sourceAssetData' in kwargs:
+        if snap_shot_bucket_name is None:
+            raise TypeError("Missing 'snap_shot_bucket_name' argument")
+        if snapshots is None:
+            raise TypeError("Missing 'snapshots' argument")
+        if source_asset_data is None and 'sourceAssetData' in kwargs:
             source_asset_data = kwargs['sourceAssetData']
-        if 'sourceAssetId' in kwargs:
+        if source_asset_data is None:
+            raise TypeError("Missing 'source_asset_data' argument")
+        if source_asset_id is None and 'sourceAssetId' in kwargs:
             source_asset_id = kwargs['sourceAssetId']
-        if 'tenancyId' in kwargs:
+        if source_asset_id is None:
+            raise TypeError("Missing 'source_asset_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -10374,60 +10896,96 @@ class GetTargetAssetRecommendedSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetRecommendedSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetRecommendedSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetRecommendedSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetRecommendedSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetRecommendedSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetRecommendedSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -10613,20 +11171,28 @@ class GetTargetAssetRecommendedSpecAgentConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetRecommendedSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -10683,12 +11249,16 @@ class GetTargetAssetRecommendedSpecAgentConfigPluginsConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -10754,41 +11324,63 @@ class GetTargetAssetRecommendedSpecCreateVnicDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -10905,11 +11497,13 @@ class GetTargetAssetRecommendedSpecInstanceOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -10936,11 +11530,13 @@ class GetTargetAssetRecommendedSpecPreemptibleInstanceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -10970,12 +11566,16 @@ class GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -11017,15 +11617,21 @@ class GetTargetAssetRecommendedSpecShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -11085,26 +11691,38 @@ class GetTargetAssetRecommendedSpecSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -11226,60 +11844,96 @@ class GetTargetAssetTestSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetTestSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetTestSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetTestSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetTestSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetTestSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetTestSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetTestSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetTestSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetTestSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetTestSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetTestSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetTestSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -11465,20 +12119,28 @@ class GetTargetAssetTestSpecAgentConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetTestSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetTestSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -11535,12 +12197,16 @@ class GetTargetAssetTestSpecAgentConfigPluginsConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -11606,41 +12272,63 @@ class GetTargetAssetTestSpecCreateVnicDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -11757,11 +12445,13 @@ class GetTargetAssetTestSpecInstanceOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -11788,11 +12478,13 @@ class GetTargetAssetTestSpecPreemptibleInstanceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -11822,12 +12514,16 @@ class GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -11869,15 +12565,21 @@ class GetTargetAssetTestSpecShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -11937,26 +12639,38 @@ class GetTargetAssetTestSpecSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -12078,60 +12792,96 @@ class GetTargetAssetUserSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetUserSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetUserSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetUserSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetUserSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetUserSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetUserSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetUserSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetUserSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetUserSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetUserSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetUserSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetUserSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -12317,20 +13067,28 @@ class GetTargetAssetUserSpecAgentConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetUserSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetUserSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -12387,12 +13145,16 @@ class GetTargetAssetUserSpecAgentConfigPluginsConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -12458,41 +13220,63 @@ class GetTargetAssetUserSpecCreateVnicDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -12609,11 +13393,13 @@ class GetTargetAssetUserSpecInstanceOptionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -12640,11 +13426,13 @@ class GetTargetAssetUserSpecPreemptibleInstanceConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -12674,12 +13462,16 @@ class GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -12721,15 +13513,21 @@ class GetTargetAssetUserSpecShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -12789,26 +13587,38 @@ class GetTargetAssetUserSpecSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -12884,11 +13694,15 @@ class GetTargetAssetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -12925,9 +13739,11 @@ class GetTargetAssetsTargetAssetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13011,65 +13827,107 @@ class GetTargetAssetsTargetAssetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             block_volumes_performance: int,
-             compartment_id: str,
-             compatibility_messages: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageResult'],
-             created_resource_id: str,
-             display_name: str,
-             estimated_costs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostResult'],
-             id: str,
-             is_excluded_from_execution: bool,
-             lifecycle_details: str,
-             migration_assets: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult'],
-             migration_plan_id: str,
-             ms_license: str,
-             preferred_shape_type: str,
-             recommended_specs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult'],
-             state: str,
-             test_specs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecResult'],
-             time_assessed: str,
-             time_created: str,
-             time_updated: str,
-             type: str,
-             user_specs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             block_volumes_performance: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             compatibility_messages: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageResult']] = None,
+             created_resource_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             estimated_costs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostResult']] = None,
+             id: Optional[str] = None,
+             is_excluded_from_execution: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             migration_assets: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult']] = None,
+             migration_plan_id: Optional[str] = None,
+             ms_license: Optional[str] = None,
+             preferred_shape_type: Optional[str] = None,
+             recommended_specs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult']] = None,
+             state: Optional[str] = None,
+             test_specs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecResult']] = None,
+             time_assessed: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             user_specs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockVolumesPerformance' in kwargs:
+        if block_volumes_performance is None and 'blockVolumesPerformance' in kwargs:
             block_volumes_performance = kwargs['blockVolumesPerformance']
-        if 'compartmentId' in kwargs:
+        if block_volumes_performance is None:
+            raise TypeError("Missing 'block_volumes_performance' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compatibilityMessages' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compatibility_messages is None and 'compatibilityMessages' in kwargs:
             compatibility_messages = kwargs['compatibilityMessages']
-        if 'createdResourceId' in kwargs:
+        if compatibility_messages is None:
+            raise TypeError("Missing 'compatibility_messages' argument")
+        if created_resource_id is None and 'createdResourceId' in kwargs:
             created_resource_id = kwargs['createdResourceId']
-        if 'displayName' in kwargs:
+        if created_resource_id is None:
+            raise TypeError("Missing 'created_resource_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'estimatedCosts' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if estimated_costs is None and 'estimatedCosts' in kwargs:
             estimated_costs = kwargs['estimatedCosts']
-        if 'isExcludedFromExecution' in kwargs:
+        if estimated_costs is None:
+            raise TypeError("Missing 'estimated_costs' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_excluded_from_execution is None and 'isExcludedFromExecution' in kwargs:
             is_excluded_from_execution = kwargs['isExcludedFromExecution']
-        if 'lifecycleDetails' in kwargs:
+        if is_excluded_from_execution is None:
+            raise TypeError("Missing 'is_excluded_from_execution' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationAssets' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if migration_assets is None and 'migrationAssets' in kwargs:
             migration_assets = kwargs['migrationAssets']
-        if 'migrationPlanId' in kwargs:
+        if migration_assets is None:
+            raise TypeError("Missing 'migration_assets' argument")
+        if migration_plan_id is None and 'migrationPlanId' in kwargs:
             migration_plan_id = kwargs['migrationPlanId']
-        if 'msLicense' in kwargs:
+        if migration_plan_id is None:
+            raise TypeError("Missing 'migration_plan_id' argument")
+        if ms_license is None and 'msLicense' in kwargs:
             ms_license = kwargs['msLicense']
-        if 'preferredShapeType' in kwargs:
+        if ms_license is None:
+            raise TypeError("Missing 'ms_license' argument")
+        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
             preferred_shape_type = kwargs['preferredShapeType']
-        if 'recommendedSpecs' in kwargs:
+        if preferred_shape_type is None:
+            raise TypeError("Missing 'preferred_shape_type' argument")
+        if recommended_specs is None and 'recommendedSpecs' in kwargs:
             recommended_specs = kwargs['recommendedSpecs']
-        if 'testSpecs' in kwargs:
+        if recommended_specs is None:
+            raise TypeError("Missing 'recommended_specs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if test_specs is None and 'testSpecs' in kwargs:
             test_specs = kwargs['testSpecs']
-        if 'timeAssessed' in kwargs:
+        if test_specs is None:
+            raise TypeError("Missing 'test_specs' argument")
+        if time_assessed is None and 'timeAssessed' in kwargs:
             time_assessed = kwargs['timeAssessed']
-        if 'timeCreated' in kwargs:
+        if time_assessed is None:
+            raise TypeError("Missing 'time_assessed' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userSpecs' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if user_specs is None and 'userSpecs' in kwargs:
             user_specs = kwargs['userSpecs']
+        if user_specs is None:
+            raise TypeError("Missing 'user_specs' argument")
 
         _setter("block_volumes_performance", block_volumes_performance)
         _setter("compartment_id", compartment_id)
@@ -13282,11 +14140,17 @@ class GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             name: str,
-             severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             name: Optional[str] = None,
+             severity: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
 
         _setter("message", message)
         _setter("name", name)
@@ -13349,25 +14213,39 @@ class GetTargetAssetsTargetAssetCollectionItemEstimatedCostResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             computes: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeResult'],
-             currency_code: str,
-             os_images: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageResult'],
-             storages: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageResult'],
-             subscription_id: str,
-             total_estimation_per_month: float,
-             total_estimation_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             computes: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeResult']] = None,
+             currency_code: Optional[str] = None,
+             os_images: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageResult']] = None,
+             storages: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageResult']] = None,
+             subscription_id: Optional[str] = None,
+             total_estimation_per_month: Optional[float] = None,
+             total_estimation_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currencyCode' in kwargs:
+        if computes is None:
+            raise TypeError("Missing 'computes' argument")
+        if currency_code is None and 'currencyCode' in kwargs:
             currency_code = kwargs['currencyCode']
-        if 'osImages' in kwargs:
+        if currency_code is None:
+            raise TypeError("Missing 'currency_code' argument")
+        if os_images is None and 'osImages' in kwargs:
             os_images = kwargs['osImages']
-        if 'subscriptionId' in kwargs:
+        if os_images is None:
+            raise TypeError("Missing 'os_images' argument")
+        if storages is None:
+            raise TypeError("Missing 'storages' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
             subscription_id = kwargs['subscriptionId']
-        if 'totalEstimationPerMonth' in kwargs:
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+        if total_estimation_per_month is None and 'totalEstimationPerMonth' in kwargs:
             total_estimation_per_month = kwargs['totalEstimationPerMonth']
-        if 'totalEstimationPerMonthBySubscription' in kwargs:
+        if total_estimation_per_month is None:
+            raise TypeError("Missing 'total_estimation_per_month' argument")
+        if total_estimation_per_month_by_subscription is None and 'totalEstimationPerMonthBySubscription' in kwargs:
             total_estimation_per_month_by_subscription = kwargs['totalEstimationPerMonthBySubscription']
+        if total_estimation_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_estimation_per_month_by_subscription' argument")
 
         _setter("computes", computes)
         _setter("currency_code", currency_code)
@@ -13478,41 +14356,63 @@ class GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             gpu_count: float,
-             gpu_per_hour: float,
-             gpu_per_hour_by_subscription: float,
-             memory_amount_gb: float,
-             memory_gb_per_hour: float,
-             memory_gb_per_hour_by_subscription: float,
-             ocpu_count: float,
-             ocpu_per_hour: float,
-             ocpu_per_hour_by_subscription: float,
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             gpu_count: Optional[float] = None,
+             gpu_per_hour: Optional[float] = None,
+             gpu_per_hour_by_subscription: Optional[float] = None,
+             memory_amount_gb: Optional[float] = None,
+             memory_gb_per_hour: Optional[float] = None,
+             memory_gb_per_hour_by_subscription: Optional[float] = None,
+             ocpu_count: Optional[float] = None,
+             ocpu_per_hour: Optional[float] = None,
+             ocpu_per_hour_by_subscription: Optional[float] = None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'gpuCount' in kwargs:
+        if gpu_count is None and 'gpuCount' in kwargs:
             gpu_count = kwargs['gpuCount']
-        if 'gpuPerHour' in kwargs:
+        if gpu_count is None:
+            raise TypeError("Missing 'gpu_count' argument")
+        if gpu_per_hour is None and 'gpuPerHour' in kwargs:
             gpu_per_hour = kwargs['gpuPerHour']
-        if 'gpuPerHourBySubscription' in kwargs:
+        if gpu_per_hour is None:
+            raise TypeError("Missing 'gpu_per_hour' argument")
+        if gpu_per_hour_by_subscription is None and 'gpuPerHourBySubscription' in kwargs:
             gpu_per_hour_by_subscription = kwargs['gpuPerHourBySubscription']
-        if 'memoryAmountGb' in kwargs:
+        if gpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'gpu_per_hour_by_subscription' argument")
+        if memory_amount_gb is None and 'memoryAmountGb' in kwargs:
             memory_amount_gb = kwargs['memoryAmountGb']
-        if 'memoryGbPerHour' in kwargs:
+        if memory_amount_gb is None:
+            raise TypeError("Missing 'memory_amount_gb' argument")
+        if memory_gb_per_hour is None and 'memoryGbPerHour' in kwargs:
             memory_gb_per_hour = kwargs['memoryGbPerHour']
-        if 'memoryGbPerHourBySubscription' in kwargs:
+        if memory_gb_per_hour is None:
+            raise TypeError("Missing 'memory_gb_per_hour' argument")
+        if memory_gb_per_hour_by_subscription is None and 'memoryGbPerHourBySubscription' in kwargs:
             memory_gb_per_hour_by_subscription = kwargs['memoryGbPerHourBySubscription']
-        if 'ocpuCount' in kwargs:
+        if memory_gb_per_hour_by_subscription is None:
+            raise TypeError("Missing 'memory_gb_per_hour_by_subscription' argument")
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'ocpuPerHour' in kwargs:
+        if ocpu_count is None:
+            raise TypeError("Missing 'ocpu_count' argument")
+        if ocpu_per_hour is None and 'ocpuPerHour' in kwargs:
             ocpu_per_hour = kwargs['ocpuPerHour']
-        if 'ocpuPerHourBySubscription' in kwargs:
+        if ocpu_per_hour is None:
+            raise TypeError("Missing 'ocpu_per_hour' argument")
+        if ocpu_per_hour_by_subscription is None and 'ocpuPerHourBySubscription' in kwargs:
             ocpu_per_hour_by_subscription = kwargs['ocpuPerHourBySubscription']
-        if 'totalPerHour' in kwargs:
+        if ocpu_per_hour_by_subscription is None:
+            raise TypeError("Missing 'ocpu_per_hour_by_subscription' argument")
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("gpu_count", gpu_count)
         _setter("gpu_per_hour", gpu_per_hour)
@@ -13632,14 +14532,18 @@ class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_per_hour: float,
-             total_per_hour_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_per_hour: Optional[float] = None,
+             total_per_hour_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalPerHour' in kwargs:
+        if total_per_hour is None and 'totalPerHour' in kwargs:
             total_per_hour = kwargs['totalPerHour']
-        if 'totalPerHourBySubscription' in kwargs:
+        if total_per_hour is None:
+            raise TypeError("Missing 'total_per_hour' argument")
+        if total_per_hour_by_subscription is None and 'totalPerHourBySubscription' in kwargs:
             total_per_hour_by_subscription = kwargs['totalPerHourBySubscription']
+        if total_per_hour_by_subscription is None:
+            raise TypeError("Missing 'total_per_hour_by_subscription' argument")
 
         _setter("total_per_hour", total_per_hour)
         _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
@@ -13681,15 +14585,21 @@ class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             volumes: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             volumes: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'totalGbPerMonth' in kwargs:
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
+        if volumes is None:
+            raise TypeError("Missing 'volumes' argument")
 
         _setter("total_gb_per_month", total_gb_per_month)
         _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
@@ -13743,18 +14653,26 @@ class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capacity_gb: float,
-             description: str,
-             total_gb_per_month: float,
-             total_gb_per_month_by_subscription: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             capacity_gb: Optional[float] = None,
+             description: Optional[str] = None,
+             total_gb_per_month: Optional[float] = None,
+             total_gb_per_month_by_subscription: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityGb' in kwargs:
+        if capacity_gb is None and 'capacityGb' in kwargs:
             capacity_gb = kwargs['capacityGb']
-        if 'totalGbPerMonth' in kwargs:
+        if capacity_gb is None:
+            raise TypeError("Missing 'capacity_gb' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if total_gb_per_month is None and 'totalGbPerMonth' in kwargs:
             total_gb_per_month = kwargs['totalGbPerMonth']
-        if 'totalGbPerMonthBySubscription' in kwargs:
+        if total_gb_per_month is None:
+            raise TypeError("Missing 'total_gb_per_month' argument")
+        if total_gb_per_month_by_subscription is None and 'totalGbPerMonthBySubscription' in kwargs:
             total_gb_per_month_by_subscription = kwargs['totalGbPerMonthBySubscription']
+        if total_gb_per_month_by_subscription is None:
+            raise TypeError("Missing 'total_gb_per_month_by_subscription' argument")
 
         _setter("capacity_gb", capacity_gb)
         _setter("description", description)
@@ -13868,61 +14786,103 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             depended_on_bies: Sequence[str],
-             depends_ons: Sequence[str],
-             display_name: str,
-             id: str,
-             lifecycle_details: str,
-             migration_id: str,
-             notifications: Sequence[str],
-             parent_snapshot: str,
-             replication_compartment_id: str,
-             replication_schedule_id: str,
-             snap_shot_bucket_name: str,
-             snapshots: Mapping[str, Any],
-             source_asset_data: Mapping[str, Any],
-             source_asset_id: str,
-             state: str,
-             tenancy_id: str,
-             time_created: str,
-             time_updated: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             depended_on_bies: Optional[Sequence[str]] = None,
+             depends_ons: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             migration_id: Optional[str] = None,
+             notifications: Optional[Sequence[str]] = None,
+             parent_snapshot: Optional[str] = None,
+             replication_compartment_id: Optional[str] = None,
+             replication_schedule_id: Optional[str] = None,
+             snap_shot_bucket_name: Optional[str] = None,
+             snapshots: Optional[Mapping[str, Any]] = None,
+             source_asset_data: Optional[Mapping[str, Any]] = None,
+             source_asset_id: Optional[str] = None,
+             state: Optional[str] = None,
+             tenancy_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dependedOnBies' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if depended_on_bies is None and 'dependedOnBies' in kwargs:
             depended_on_bies = kwargs['dependedOnBies']
-        if 'dependsOns' in kwargs:
+        if depended_on_bies is None:
+            raise TypeError("Missing 'depended_on_bies' argument")
+        if depends_ons is None and 'dependsOns' in kwargs:
             depends_ons = kwargs['dependsOns']
-        if 'displayName' in kwargs:
+        if depends_ons is None:
+            raise TypeError("Missing 'depends_ons' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'lifecycleDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'migrationId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if migration_id is None and 'migrationId' in kwargs:
             migration_id = kwargs['migrationId']
-        if 'parentSnapshot' in kwargs:
+        if migration_id is None:
+            raise TypeError("Missing 'migration_id' argument")
+        if notifications is None:
+            raise TypeError("Missing 'notifications' argument")
+        if parent_snapshot is None and 'parentSnapshot' in kwargs:
             parent_snapshot = kwargs['parentSnapshot']
-        if 'replicationCompartmentId' in kwargs:
+        if parent_snapshot is None:
+            raise TypeError("Missing 'parent_snapshot' argument")
+        if replication_compartment_id is None and 'replicationCompartmentId' in kwargs:
             replication_compartment_id = kwargs['replicationCompartmentId']
-        if 'replicationScheduleId' in kwargs:
+        if replication_compartment_id is None:
+            raise TypeError("Missing 'replication_compartment_id' argument")
+        if replication_schedule_id is None and 'replicationScheduleId' in kwargs:
             replication_schedule_id = kwargs['replicationScheduleId']
-        if 'snapShotBucketName' in kwargs:
+        if replication_schedule_id is None:
+            raise TypeError("Missing 'replication_schedule_id' argument")
+        if snap_shot_bucket_name is None and 'snapShotBucketName' in kwargs:
             snap_shot_bucket_name = kwargs['snapShotBucketName']
-        if 'sourceAssetData' in kwargs:
+        if snap_shot_bucket_name is None:
+            raise TypeError("Missing 'snap_shot_bucket_name' argument")
+        if snapshots is None:
+            raise TypeError("Missing 'snapshots' argument")
+        if source_asset_data is None and 'sourceAssetData' in kwargs:
             source_asset_data = kwargs['sourceAssetData']
-        if 'sourceAssetId' in kwargs:
+        if source_asset_data is None:
+            raise TypeError("Missing 'source_asset_data' argument")
+        if source_asset_id is None and 'sourceAssetId' in kwargs:
             source_asset_id = kwargs['sourceAssetId']
-        if 'tenancyId' in kwargs:
+        if source_asset_id is None:
+            raise TypeError("Missing 'source_asset_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if tenancy_id is None and 'tenancyId' in kwargs:
             tenancy_id = kwargs['tenancyId']
-        if 'timeCreated' in kwargs:
+        if tenancy_id is None:
+            raise TypeError("Missing 'tenancy_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -14179,60 +15139,96 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -14418,20 +15414,28 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -14488,12 +15492,16 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsC
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -14559,41 +15567,63 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -14710,11 +15740,13 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -14741,11 +15773,13 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstance
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -14775,12 +15809,16 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstance
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -14822,15 +15860,21 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -14890,26 +15934,38 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -15031,60 +16087,96 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -15270,20 +16362,28 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -15340,12 +16440,16 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -15411,41 +16515,63 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -15562,11 +16688,13 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -15593,11 +16721,13 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -15627,12 +16757,16 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigP
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -15674,15 +16808,21 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -15742,26 +16882,38 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -15883,60 +17035,96 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigResult'],
-             availability_domain: str,
-             capacity_reservation_id: str,
-             compartment_id: str,
-             create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult'],
-             dedicated_vm_host_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fault_domain: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionResult'],
-             ipxe_script: str,
-             is_pv_encryption_in_transit_enabled: bool,
-             preemptible_instance_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigResult'],
-             shape: str,
-             shape_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigResult'],
-             source_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             agent_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigResult']] = None,
+             availability_domain: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             create_vnic_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult']] = None,
+             dedicated_vm_host_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             instance_options: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionResult']] = None,
+             ipxe_script: Optional[str] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             preemptible_instance_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigResult']] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigResult']] = None,
+             source_details: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfigs' in kwargs:
+        if agent_configs is None and 'agentConfigs' in kwargs:
             agent_configs = kwargs['agentConfigs']
-        if 'availabilityDomain' in kwargs:
+        if agent_configs is None:
+            raise TypeError("Missing 'agent_configs' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'capacityReservationId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createVnicDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if create_vnic_details is None:
+            raise TypeError("Missing 'create_vnic_details' argument")
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_id is None:
+            raise TypeError("Missing 'dedicated_vm_host_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceOptions' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if instance_options is None:
+            raise TypeError("Missing 'instance_options' argument")
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if ipxe_script is None:
+            raise TypeError("Missing 'ipxe_script' argument")
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'preemptibleInstanceConfigs' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None:
+            raise TypeError("Missing 'is_pv_encryption_in_transit_enabled' argument")
+        if preemptible_instance_configs is None and 'preemptibleInstanceConfigs' in kwargs:
             preemptible_instance_configs = kwargs['preemptibleInstanceConfigs']
-        if 'shapeConfigs' in kwargs:
+        if preemptible_instance_configs is None:
+            raise TypeError("Missing 'preemptible_instance_configs' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'sourceDetails' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
 
         _setter("agent_configs", agent_configs)
         _setter("availability_domain", availability_domain)
@@ -16122,20 +17310,28 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: bool,
-             is_management_disabled: bool,
-             is_monitoring_disabled: bool,
-             plugins_configs: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_all_plugins_disabled: Optional[bool] = None,
+             is_management_disabled: Optional[bool] = None,
+             is_monitoring_disabled: Optional[bool] = None,
+             plugins_configs: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areAllPluginsDisabled' in kwargs:
+        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
             are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if 'isManagementDisabled' in kwargs:
+        if are_all_plugins_disabled is None:
+            raise TypeError("Missing 'are_all_plugins_disabled' argument")
+        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
             is_management_disabled = kwargs['isManagementDisabled']
-        if 'isMonitoringDisabled' in kwargs:
+        if is_management_disabled is None:
+            raise TypeError("Missing 'is_management_disabled' argument")
+        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
             is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if 'pluginsConfigs' in kwargs:
+        if is_monitoring_disabled is None:
+            raise TypeError("Missing 'is_monitoring_disabled' argument")
+        if plugins_configs is None and 'pluginsConfigs' in kwargs:
             plugins_configs = kwargs['pluginsConfigs']
+        if plugins_configs is None:
+            raise TypeError("Missing 'plugins_configs' argument")
 
         _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         _setter("is_management_disabled", is_management_disabled)
@@ -16192,12 +17388,16 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             desired_state: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             desired_state: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'desiredState' in kwargs:
+        if desired_state is None and 'desiredState' in kwargs:
             desired_state = kwargs['desiredState']
+        if desired_state is None:
+            raise TypeError("Missing 'desired_state' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("desired_state", desired_state)
         _setter("name", name)
@@ -16263,41 +17463,63 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             assign_private_dns_record: bool,
-             assign_public_ip: bool,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             hostname_label: str,
-             nsg_ids: Sequence[str],
-             private_ip: str,
-             skip_source_dest_check: bool,
-             subnet_id: str,
-             vlan_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             assign_private_dns_record: Optional[bool] = None,
+             assign_public_ip: Optional[bool] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'assignPrivateDnsRecord' in kwargs:
+        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
             assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if 'assignPublicIp' in kwargs:
+        if assign_private_dns_record is None:
+            raise TypeError("Missing 'assign_private_dns_record' argument")
+        if assign_public_ip is None and 'assignPublicIp' in kwargs:
             assign_public_ip = kwargs['assignPublicIp']
-        if 'definedTags' in kwargs:
+        if assign_public_ip is None:
+            raise TypeError("Missing 'assign_public_ip' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'nsgIds' in kwargs:
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'privateIp' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'skipSourceDestCheck' in kwargs:
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
             skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if 'subnetId' in kwargs:
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vlanId' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
             vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
 
         _setter("assign_private_dns_record", assign_private_dns_record)
         _setter("assign_public_ip", assign_public_ip)
@@ -16414,11 +17636,13 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_legacy_imds_endpoints_disabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
             are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+        if are_legacy_imds_endpoints_disabled is None:
+            raise TypeError("Missing 'are_legacy_imds_endpoints_disabled' argument")
 
         _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -16445,11 +17669,13 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preemption_actions: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preemption_actions: Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preemptionActions' in kwargs:
+        if preemption_actions is None and 'preemptionActions' in kwargs:
             preemption_actions = kwargs['preemptionActions']
+        if preemption_actions is None:
+            raise TypeError("Missing 'preemption_actions' argument")
 
         _setter("preemption_actions", preemption_actions)
 
@@ -16479,12 +17705,16 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigP
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             preserve_boot_volume: bool,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             preserve_boot_volume: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
+        if preserve_boot_volume is None:
+            raise TypeError("Missing 'preserve_boot_volume' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("preserve_boot_volume", preserve_boot_volume)
         _setter("type", type)
@@ -16526,15 +17756,21 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: str,
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             baseline_ocpu_utilization: Optional[str] = None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baselineOcpuUtilization' in kwargs:
+        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
             baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if 'memoryInGbs' in kwargs:
+        if baseline_ocpu_utilization is None:
+            raise TypeError("Missing 'baseline_ocpu_utilization' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -16594,26 +17830,38 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             boot_volume_id: str,
-             boot_volume_size_in_gbs: str,
-             boot_volume_vpus_per_gb: str,
-             image_id: str,
-             kms_key_id: str,
-             source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             boot_volume_id: Optional[str] = None,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             boot_volume_vpus_per_gb: Optional[str] = None,
+             image_id: Optional[str] = None,
+             kms_key_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'bootVolumeSizeInGbs' in kwargs:
+        if boot_volume_id is None:
+            raise TypeError("Missing 'boot_volume_id' argument")
+        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
             boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if 'bootVolumeVpusPerGb' in kwargs:
+        if boot_volume_size_in_gbs is None:
+            raise TypeError("Missing 'boot_volume_size_in_gbs' argument")
+        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
             boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if 'imageId' in kwargs:
+        if boot_volume_vpus_per_gb is None:
+            raise TypeError("Missing 'boot_volume_vpus_per_gb' argument")
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'kmsKeyId' in kwargs:
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sourceType' in kwargs:
+        if kms_key_id is None:
+            raise TypeError("Missing 'kms_key_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("boot_volume_id", boot_volume_id)
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)

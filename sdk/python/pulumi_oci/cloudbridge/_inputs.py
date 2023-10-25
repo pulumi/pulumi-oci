@@ -81,21 +81,21 @@ class AgentPluginListArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'pluginVersion' in kwargs:
+        if plugin_version is None and 'pluginVersion' in kwargs:
             plugin_version = kwargs['pluginVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if agent_id is not None:
@@ -353,55 +353,55 @@ class AssetComputeArgs:
              scsi_controller: Optional[pulumi.Input['AssetComputeScsiControllerArgs']] = None,
              storage_provisioned_in_mbs: Optional[pulumi.Input[str]] = None,
              threads_per_core_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectedNetworks' in kwargs:
+        if connected_networks is None and 'connectedNetworks' in kwargs:
             connected_networks = kwargs['connectedNetworks']
-        if 'coresCount' in kwargs:
+        if cores_count is None and 'coresCount' in kwargs:
             cores_count = kwargs['coresCount']
-        if 'cpuModel' in kwargs:
+        if cpu_model is None and 'cpuModel' in kwargs:
             cpu_model = kwargs['cpuModel']
-        if 'disksCount' in kwargs:
+        if disks_count is None and 'disksCount' in kwargs:
             disks_count = kwargs['disksCount']
-        if 'dnsName' in kwargs:
+        if dns_name is None and 'dnsName' in kwargs:
             dns_name = kwargs['dnsName']
-        if 'gpuDevices' in kwargs:
+        if gpu_devices is None and 'gpuDevices' in kwargs:
             gpu_devices = kwargs['gpuDevices']
-        if 'gpuDevicesCount' in kwargs:
+        if gpu_devices_count is None and 'gpuDevicesCount' in kwargs:
             gpu_devices_count = kwargs['gpuDevicesCount']
-        if 'guestState' in kwargs:
+        if guest_state is None and 'guestState' in kwargs:
             guest_state = kwargs['guestState']
-        if 'hardwareVersion' in kwargs:
+        if hardware_version is None and 'hardwareVersion' in kwargs:
             hardware_version = kwargs['hardwareVersion']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'isPmemEnabled' in kwargs:
+        if is_pmem_enabled is None and 'isPmemEnabled' in kwargs:
             is_pmem_enabled = kwargs['isPmemEnabled']
-        if 'isTpmEnabled' in kwargs:
+        if is_tpm_enabled is None and 'isTpmEnabled' in kwargs:
             is_tpm_enabled = kwargs['isTpmEnabled']
-        if 'latencySensitivity' in kwargs:
+        if latency_sensitivity is None and 'latencySensitivity' in kwargs:
             latency_sensitivity = kwargs['latencySensitivity']
-        if 'memoryInMbs' in kwargs:
+        if memory_in_mbs is None and 'memoryInMbs' in kwargs:
             memory_in_mbs = kwargs['memoryInMbs']
-        if 'nicsCount' in kwargs:
+        if nics_count is None and 'nicsCount' in kwargs:
             nics_count = kwargs['nicsCount']
-        if 'nvdimmController' in kwargs:
+        if nvdimm_controller is None and 'nvdimmController' in kwargs:
             nvdimm_controller = kwargs['nvdimmController']
-        if 'operatingSystem' in kwargs:
+        if operating_system is None and 'operatingSystem' in kwargs:
             operating_system = kwargs['operatingSystem']
-        if 'operatingSystemVersion' in kwargs:
+        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
             operating_system_version = kwargs['operatingSystemVersion']
-        if 'pmemInMbs' in kwargs:
+        if pmem_in_mbs is None and 'pmemInMbs' in kwargs:
             pmem_in_mbs = kwargs['pmemInMbs']
-        if 'powerState' in kwargs:
+        if power_state is None and 'powerState' in kwargs:
             power_state = kwargs['powerState']
-        if 'primaryIp' in kwargs:
+        if primary_ip is None and 'primaryIp' in kwargs:
             primary_ip = kwargs['primaryIp']
-        if 'scsiController' in kwargs:
+        if scsi_controller is None and 'scsiController' in kwargs:
             scsi_controller = kwargs['scsiController']
-        if 'storageProvisionedInMbs' in kwargs:
+        if storage_provisioned_in_mbs is None and 'storageProvisionedInMbs' in kwargs:
             storage_provisioned_in_mbs = kwargs['storageProvisionedInMbs']
-        if 'threadsPerCoreCount' in kwargs:
+        if threads_per_core_count is None and 'threadsPerCoreCount' in kwargs:
             threads_per_core_count = kwargs['threadsPerCoreCount']
 
         if connected_networks is not None:
@@ -851,15 +851,15 @@ class AssetComputeDiskArgs:
              size_in_mbs: Optional[pulumi.Input[str]] = None,
              uuid: Optional[pulumi.Input[str]] = None,
              uuid_lun: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bootOrder' in kwargs:
+        if boot_order is None and 'bootOrder' in kwargs:
             boot_order = kwargs['bootOrder']
-        if 'persistentMode' in kwargs:
+        if persistent_mode is None and 'persistentMode' in kwargs:
             persistent_mode = kwargs['persistentMode']
-        if 'sizeInMbs' in kwargs:
+        if size_in_mbs is None and 'sizeInMbs' in kwargs:
             size_in_mbs = kwargs['sizeInMbs']
-        if 'uuidLun' in kwargs:
+        if uuid_lun is None and 'uuidLun' in kwargs:
             uuid_lun = kwargs['uuidLun']
 
         if boot_order is not None:
@@ -993,11 +993,11 @@ class AssetComputeGpuDeviceArgs:
              manufacturer: Optional[pulumi.Input[str]] = None,
              memory_in_mbs: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'coresCount' in kwargs:
+        if cores_count is None and 'coresCount' in kwargs:
             cores_count = kwargs['coresCount']
-        if 'memoryInMbs' in kwargs:
+        if memory_in_mbs is None and 'memoryInMbs' in kwargs:
             memory_in_mbs = kwargs['memoryInMbs']
 
         if cores_count is not None:
@@ -1107,17 +1107,17 @@ class AssetComputeNicArgs:
              mac_address_type: Optional[pulumi.Input[str]] = None,
              network_name: Optional[pulumi.Input[str]] = None,
              switch_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ipAddresses' in kwargs:
+        if ip_addresses is None and 'ipAddresses' in kwargs:
             ip_addresses = kwargs['ipAddresses']
-        if 'macAddress' in kwargs:
+        if mac_address is None and 'macAddress' in kwargs:
             mac_address = kwargs['macAddress']
-        if 'macAddressType' in kwargs:
+        if mac_address_type is None and 'macAddressType' in kwargs:
             mac_address_type = kwargs['macAddressType']
-        if 'networkName' in kwargs:
+        if network_name is None and 'networkName' in kwargs:
             network_name = kwargs['networkName']
-        if 'switchName' in kwargs:
+        if switch_name is None and 'switchName' in kwargs:
             switch_name = kwargs['switchName']
 
         if ip_addresses is not None:
@@ -1229,11 +1229,11 @@ class AssetComputeNvdimmArgs:
              controller_key: Optional[pulumi.Input[int]] = None,
              label: Optional[pulumi.Input[str]] = None,
              unit_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'controllerKey' in kwargs:
+        if controller_key is None and 'controllerKey' in kwargs:
             controller_key = kwargs['controllerKey']
-        if 'unitNumber' in kwargs:
+        if unit_number is None and 'unitNumber' in kwargs:
             unit_number = kwargs['unitNumber']
 
         if controller_key is not None:
@@ -1299,9 +1299,9 @@ class AssetComputeNvdimmControllerArgs:
              _setter: Callable[[Any, Any], None],
              bus_number: Optional[pulumi.Input[int]] = None,
              label: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'busNumber' in kwargs:
+        if bus_number is None and 'busNumber' in kwargs:
             bus_number = kwargs['busNumber']
 
         if bus_number is not None:
@@ -1357,11 +1357,11 @@ class AssetComputeScsiControllerArgs:
              label: Optional[pulumi.Input[str]] = None,
              shared_bus: Optional[pulumi.Input[str]] = None,
              unit_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sharedBus' in kwargs:
+        if shared_bus is None and 'sharedBus' in kwargs:
             shared_bus = kwargs['sharedBus']
-        if 'unitNumber' in kwargs:
+        if unit_number is None and 'unitNumber' in kwargs:
             unit_number = kwargs['unitNumber']
 
         if label is not None:
@@ -1425,12 +1425,16 @@ class AssetSourceDiscoveryCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("secret_id", secret_id)
         _setter("type", type)
@@ -1477,12 +1481,16 @@ class AssetSourceReplicationCredentialsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             secret_id: pulumi.Input[str],
-             type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'secretId' in kwargs:
+        if secret_id is None and 'secretId' in kwargs:
             secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("secret_id", secret_id)
         _setter("type", type)
@@ -1535,13 +1543,13 @@ class AssetVmArgs:
              hypervisor_host: Optional[pulumi.Input[str]] = None,
              hypervisor_vendor: Optional[pulumi.Input[str]] = None,
              hypervisor_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'hypervisorHost' in kwargs:
+        if hypervisor_host is None and 'hypervisorHost' in kwargs:
             hypervisor_host = kwargs['hypervisorHost']
-        if 'hypervisorVendor' in kwargs:
+        if hypervisor_vendor is None and 'hypervisorVendor' in kwargs:
             hypervisor_vendor = kwargs['hypervisorVendor']
-        if 'hypervisorVersion' in kwargs:
+        if hypervisor_version is None and 'hypervisorVersion' in kwargs:
             hypervisor_version = kwargs['hypervisorVersion']
 
         if hypervisor_host is not None:
@@ -1611,13 +1619,13 @@ class AssetVmwareVcenterArgs:
              data_center: Optional[pulumi.Input[str]] = None,
              vcenter_key: Optional[pulumi.Input[str]] = None,
              vcenter_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dataCenter' in kwargs:
+        if data_center is None and 'dataCenter' in kwargs:
             data_center = kwargs['dataCenter']
-        if 'vcenterKey' in kwargs:
+        if vcenter_key is None and 'vcenterKey' in kwargs:
             vcenter_key = kwargs['vcenterKey']
-        if 'vcenterVersion' in kwargs:
+        if vcenter_version is None and 'vcenterVersion' in kwargs:
             vcenter_version = kwargs['vcenterVersion']
 
         if data_center is not None:
@@ -1723,25 +1731,25 @@ class AssetVmwareVmArgs:
              is_disks_uuid_enabled: Optional[pulumi.Input[bool]] = None,
              path: Optional[pulumi.Input[str]] = None,
              vmware_tools_status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customerFields' in kwargs:
+        if customer_fields is None and 'customerFields' in kwargs:
             customer_fields = kwargs['customerFields']
-        if 'customerTags' in kwargs:
+        if customer_tags is None and 'customerTags' in kwargs:
             customer_tags = kwargs['customerTags']
-        if 'faultToleranceBandwidth' in kwargs:
+        if fault_tolerance_bandwidth is None and 'faultToleranceBandwidth' in kwargs:
             fault_tolerance_bandwidth = kwargs['faultToleranceBandwidth']
-        if 'faultToleranceSecondaryLatency' in kwargs:
+        if fault_tolerance_secondary_latency is None and 'faultToleranceSecondaryLatency' in kwargs:
             fault_tolerance_secondary_latency = kwargs['faultToleranceSecondaryLatency']
-        if 'faultToleranceState' in kwargs:
+        if fault_tolerance_state is None and 'faultToleranceState' in kwargs:
             fault_tolerance_state = kwargs['faultToleranceState']
-        if 'instanceUuid' in kwargs:
+        if instance_uuid is None and 'instanceUuid' in kwargs:
             instance_uuid = kwargs['instanceUuid']
-        if 'isDisksCbtEnabled' in kwargs:
+        if is_disks_cbt_enabled is None and 'isDisksCbtEnabled' in kwargs:
             is_disks_cbt_enabled = kwargs['isDisksCbtEnabled']
-        if 'isDisksUuidEnabled' in kwargs:
+        if is_disks_uuid_enabled is None and 'isDisksUuidEnabled' in kwargs:
             is_disks_uuid_enabled = kwargs['isDisksUuidEnabled']
-        if 'vmwareToolsStatus' in kwargs:
+        if vmware_tools_status is None and 'vmwareToolsStatus' in kwargs:
             vmware_tools_status = kwargs['vmwareToolsStatus']
 
         if cluster is not None:
@@ -1923,7 +1931,7 @@ class AssetVmwareVmCustomerTagArgs:
              _setter: Callable[[Any, Any], None],
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -1971,11 +1979,15 @@ class GetAgentDependenciesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2028,11 +2040,15 @@ class GetAgentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2085,11 +2101,15 @@ class GetApplianceImagesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2139,11 +2159,15 @@ class GetAssetSourcesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2196,11 +2220,15 @@ class GetAssetsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2253,11 +2281,15 @@ class GetDiscoverySchedulesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2307,11 +2339,15 @@ class GetEnvironmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2361,11 +2397,15 @@ class GetInventoriesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

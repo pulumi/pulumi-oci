@@ -33,13 +33,15 @@ class DomainReplicationToRegionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain_id: pulumi.Input[str],
+             domain_id: Optional[pulumi.Input[str]] = None,
              replica_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'replicaRegion' in kwargs:
+        if domain_id is None:
+            raise TypeError("Missing 'domain_id' argument")
+        if replica_region is None and 'replicaRegion' in kwargs:
             replica_region = kwargs['replicaRegion']
 
         _setter("domain_id", domain_id)
@@ -99,11 +101,11 @@ class _DomainReplicationToRegionState:
              _setter: Callable[[Any, Any], None],
              domain_id: Optional[pulumi.Input[str]] = None,
              replica_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'replicaRegion' in kwargs:
+        if replica_region is None and 'replicaRegion' in kwargs:
             replica_region = kwargs['replicaRegion']
 
         if domain_id is not None:

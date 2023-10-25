@@ -43,22 +43,24 @@ class ManagementAgentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             managed_agent_id: pulumi.Input[str],
+             managed_agent_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedAgentId' in kwargs:
+        if managed_agent_id is None and 'managedAgentId' in kwargs:
             managed_agent_id = kwargs['managedAgentId']
-        if 'definedTags' in kwargs:
+        if managed_agent_id is None:
+            raise TypeError("Missing 'managed_agent_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPluginsIds' in kwargs:
+        if deploy_plugins_ids is None and 'deployPluginsIds' in kwargs:
             deploy_plugins_ids = kwargs['deployPluginsIds']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("managed_agent_id", managed_agent_id)
@@ -254,53 +256,53 @@ class _ManagementAgentState:
              time_last_heartbeat: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityStatus' in kwargs:
+        if availability_status is None and 'availabilityStatus' in kwargs:
             availability_status = kwargs['availabilityStatus']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPluginsIds' in kwargs:
+        if deploy_plugins_ids is None and 'deployPluginsIds' in kwargs:
             deploy_plugins_ids = kwargs['deployPluginsIds']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostId' in kwargs:
+        if host_id is None and 'hostId' in kwargs:
             host_id = kwargs['hostId']
-        if 'installKeyId' in kwargs:
+        if install_key_id is None and 'installKeyId' in kwargs:
             install_key_id = kwargs['installKeyId']
-        if 'installPath' in kwargs:
+        if install_path is None and 'installPath' in kwargs:
             install_path = kwargs['installPath']
-        if 'installType' in kwargs:
+        if install_type is None and 'installType' in kwargs:
             install_type = kwargs['installType']
-        if 'isAgentAutoUpgradable' in kwargs:
+        if is_agent_auto_upgradable is None and 'isAgentAutoUpgradable' in kwargs:
             is_agent_auto_upgradable = kwargs['isAgentAutoUpgradable']
-        if 'isCustomerDeployed' in kwargs:
+        if is_customer_deployed is None and 'isCustomerDeployed' in kwargs:
             is_customer_deployed = kwargs['isCustomerDeployed']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'managedAgentId' in kwargs:
+        if managed_agent_id is None and 'managedAgentId' in kwargs:
             managed_agent_id = kwargs['managedAgentId']
-        if 'managementAgentProperties' in kwargs:
+        if management_agent_properties is None and 'managementAgentProperties' in kwargs:
             management_agent_properties = kwargs['managementAgentProperties']
-        if 'platformName' in kwargs:
+        if platform_name is None and 'platformName' in kwargs:
             platform_name = kwargs['platformName']
-        if 'platformType' in kwargs:
+        if platform_type is None and 'platformType' in kwargs:
             platform_type = kwargs['platformType']
-        if 'platformVersion' in kwargs:
+        if platform_version is None and 'platformVersion' in kwargs:
             platform_version = kwargs['platformVersion']
-        if 'pluginLists' in kwargs:
+        if plugin_lists is None and 'pluginLists' in kwargs:
             plugin_lists = kwargs['pluginLists']
-        if 'resourceArtifactVersion' in kwargs:
+        if resource_artifact_version is None and 'resourceArtifactVersion' in kwargs:
             resource_artifact_version = kwargs['resourceArtifactVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeLastHeartbeat' in kwargs:
+        if time_last_heartbeat is None and 'timeLastHeartbeat' in kwargs:
             time_last_heartbeat = kwargs['timeLastHeartbeat']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if availability_status is not None:

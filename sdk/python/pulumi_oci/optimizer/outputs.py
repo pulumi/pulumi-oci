@@ -92,7 +92,7 @@ class ProfileLevelsConfiguration(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.ProfileLevelsConfigurationItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -143,9 +143,9 @@ class ProfileLevelsConfigurationItem(dict):
              _setter: Callable[[Any, Any], None],
              level: Optional[str] = None,
              recommendation_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recommendationId' in kwargs:
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
 
         if level is not None:
@@ -184,9 +184,11 @@ class ProfileTargetCompartments(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -213,9 +215,11 @@ class ProfileTargetTags(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.ProfileTargetTagsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.ProfileTargetTagsItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -282,19 +286,25 @@ class ProfileTargetTagsItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             tag_definition_name: str,
-             tag_namespace_name: str,
-             tag_value_type: str,
+             tag_definition_name: Optional[str] = None,
+             tag_namespace_name: Optional[str] = None,
+             tag_value_type: Optional[str] = None,
              tag_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tagDefinitionName' in kwargs:
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
             tag_definition_name = kwargs['tagDefinitionName']
-        if 'tagNamespaceName' in kwargs:
+        if tag_definition_name is None:
+            raise TypeError("Missing 'tag_definition_name' argument")
+        if tag_namespace_name is None and 'tagNamespaceName' in kwargs:
             tag_namespace_name = kwargs['tagNamespaceName']
-        if 'tagValueType' in kwargs:
+        if tag_namespace_name is None:
+            raise TypeError("Missing 'tag_namespace_name' argument")
+        if tag_value_type is None and 'tagValueType' in kwargs:
             tag_value_type = kwargs['tagValueType']
-        if 'tagValues' in kwargs:
+        if tag_value_type is None:
+            raise TypeError("Missing 'tag_value_type' argument")
+        if tag_values is None and 'tagValues' in kwargs:
             tag_values = kwargs['tagValues']
 
         _setter("tag_definition_name", tag_definition_name)
@@ -363,7 +373,7 @@ class RecommendationResourceCount(dict):
              _setter: Callable[[Any, Any], None],
              count: Optional[int] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if count is not None:
@@ -403,7 +413,7 @@ class RecommendationSupportedLevel(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.RecommendationSupportedLevelItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -433,7 +443,7 @@ class RecommendationSupportedLevelItem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -471,7 +481,7 @@ class ResourceActionAction(dict):
              description: Optional[str] = None,
              type: Optional[str] = None,
              url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if description is not None:
@@ -517,9 +527,11 @@ class GetCategoriesCategoryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetCategoriesCategoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -576,36 +588,60 @@ class GetCategoriesCategoryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             compartment_name: str,
-             description: str,
-             estimated_cost_saving: float,
-             extended_metadata: Mapping[str, Any],
-             id: str,
-             name: str,
-             recommendation_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult'],
-             resource_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult'],
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             compartment_name: Optional[str] = None,
+             description: Optional[str] = None,
+             estimated_cost_saving: Optional[float] = None,
+             extended_metadata: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             recommendation_counts: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult']] = None,
+             resource_counts: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_name is None and 'compartmentName' in kwargs:
             compartment_name = kwargs['compartmentName']
-        if 'estimatedCostSaving' in kwargs:
+        if compartment_name is None:
+            raise TypeError("Missing 'compartment_name' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
             estimated_cost_saving = kwargs['estimatedCostSaving']
-        if 'extendedMetadata' in kwargs:
+        if estimated_cost_saving is None:
+            raise TypeError("Missing 'estimated_cost_saving' argument")
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'recommendationCounts' in kwargs:
+        if extended_metadata is None:
+            raise TypeError("Missing 'extended_metadata' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_counts is None and 'recommendationCounts' in kwargs:
             recommendation_counts = kwargs['recommendationCounts']
-        if 'resourceCounts' in kwargs:
+        if recommendation_counts is None:
+            raise TypeError("Missing 'recommendation_counts' argument")
+        if resource_counts is None and 'resourceCounts' in kwargs:
             resource_counts = kwargs['resourceCounts']
-        if 'timeCreated' in kwargs:
+        if resource_counts is None:
+            raise TypeError("Missing 'resource_counts' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("compartment_name", compartment_name)
@@ -734,10 +770,14 @@ class GetCategoriesCategoryCollectionItemRecommendationCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             importance: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             importance: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if importance is None:
+            raise TypeError("Missing 'importance' argument")
 
         _setter("count", count)
         _setter("importance", importance)
@@ -776,10 +816,14 @@ class GetCategoriesCategoryCollectionItemResourceCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -819,11 +863,15 @@ class GetCategoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -866,10 +914,14 @@ class GetCategoryRecommendationCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             importance: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             importance: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if importance is None:
+            raise TypeError("Missing 'importance' argument")
 
         _setter("count", count)
         _setter("importance", importance)
@@ -908,10 +960,14 @@ class GetCategoryResourceCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -944,9 +1000,11 @@ class GetEnrollmentStatusesEnrollmentStatusCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -990,26 +1048,42 @@ class GetEnrollmentStatusesEnrollmentStatusCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             enrollment_status_id: str,
-             id: str,
-             state: str,
-             status: str,
-             status_reason: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             enrollment_status_id: Optional[str] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             status_reason: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'enrollmentStatusId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if enrollment_status_id is None and 'enrollmentStatusId' in kwargs:
             enrollment_status_id = kwargs['enrollmentStatusId']
-        if 'statusReason' in kwargs:
+        if enrollment_status_id is None:
+            raise TypeError("Missing 'enrollment_status_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_reason is None and 'statusReason' in kwargs:
             status_reason = kwargs['statusReason']
-        if 'timeCreated' in kwargs:
+        if status_reason is None:
+            raise TypeError("Missing 'status_reason' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("enrollment_status_id", enrollment_status_id)
@@ -1097,11 +1171,15 @@ class GetEnrollmentStatusesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1142,11 +1220,15 @@ class GetHistoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1186,9 +1268,11 @@ class GetHistoriesHistoryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetHistoriesHistoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1263,47 +1347,81 @@ class GetHistoriesHistoryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult'],
-             category_id: str,
-             compartment_id: str,
-             compartment_name: str,
-             estimated_cost_saving: float,
-             extended_metadata: Mapping[str, Any],
-             id: str,
-             metadata: Mapping[str, Any],
-             name: str,
-             recommendation_id: str,
-             recommendation_name: str,
-             resource_action_id: str,
-             resource_id: str,
-             resource_type: str,
-             state: str,
-             status: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult']] = None,
+             category_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compartment_name: Optional[str] = None,
+             estimated_cost_saving: Optional[float] = None,
+             extended_metadata: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             metadata: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             recommendation_name: Optional[str] = None,
+             resource_action_id: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryId' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'compartmentId' in kwargs:
+        if category_id is None:
+            raise TypeError("Missing 'category_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_name is None and 'compartmentName' in kwargs:
             compartment_name = kwargs['compartmentName']
-        if 'estimatedCostSaving' in kwargs:
+        if compartment_name is None:
+            raise TypeError("Missing 'compartment_name' argument")
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
             estimated_cost_saving = kwargs['estimatedCostSaving']
-        if 'extendedMetadata' in kwargs:
+        if estimated_cost_saving is None:
+            raise TypeError("Missing 'estimated_cost_saving' argument")
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'recommendationId' in kwargs:
+        if extended_metadata is None:
+            raise TypeError("Missing 'extended_metadata' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
-        if 'recommendationName' in kwargs:
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
+        if recommendation_name is None and 'recommendationName' in kwargs:
             recommendation_name = kwargs['recommendationName']
-        if 'resourceActionId' in kwargs:
+        if recommendation_name is None:
+            raise TypeError("Missing 'recommendation_name' argument")
+        if resource_action_id is None and 'resourceActionId' in kwargs:
             resource_action_id = kwargs['resourceActionId']
-        if 'resourceId' in kwargs:
+        if resource_action_id is None:
+            raise TypeError("Missing 'resource_action_id' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'timeCreated' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("actions", actions)
         _setter("category_id", category_id)
@@ -1480,11 +1598,17 @@ class GetHistoriesHistoryCollectionItemActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             type: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("description", description)
         _setter("type", type)
@@ -1547,25 +1671,39 @@ class GetProfileLevelItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_interval: int,
-             metrics: Sequence['outputs.GetProfileLevelItemMetricResult'],
-             name: str,
-             recommendation_name: str,
-             time_created: str,
-             time_updated: str,
-             valid_intervals: Sequence[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_interval: Optional[int] = None,
+             metrics: Optional[Sequence['outputs.GetProfileLevelItemMetricResult']] = None,
+             name: Optional[str] = None,
+             recommendation_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             valid_intervals: Optional[Sequence[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultInterval' in kwargs:
+        if default_interval is None and 'defaultInterval' in kwargs:
             default_interval = kwargs['defaultInterval']
-        if 'recommendationName' in kwargs:
+        if default_interval is None:
+            raise TypeError("Missing 'default_interval' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_name is None and 'recommendationName' in kwargs:
             recommendation_name = kwargs['recommendationName']
-        if 'timeCreated' in kwargs:
+        if recommendation_name is None:
+            raise TypeError("Missing 'recommendation_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'validIntervals' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if valid_intervals is None and 'validIntervals' in kwargs:
             valid_intervals = kwargs['validIntervals']
+        if valid_intervals is None:
+            raise TypeError("Missing 'valid_intervals' argument")
 
         _setter("default_interval", default_interval)
         _setter("metrics", metrics)
@@ -1655,12 +1793,20 @@ class GetProfileLevelItemMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             statistic: str,
-             target: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             statistic: Optional[str] = None,
+             target: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if statistic is None:
+            raise TypeError("Missing 'statistic' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("name", name)
         _setter("statistic", statistic)
@@ -1714,9 +1860,11 @@ class GetProfileLevelsConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfileLevelsConfigurationItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfileLevelsConfigurationItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1746,12 +1894,16 @@ class GetProfileLevelsConfigurationItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             level: str,
-             recommendation_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             level: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recommendationId' in kwargs:
+        if level is None:
+            raise TypeError("Missing 'level' argument")
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
 
         _setter("level", level)
         _setter("recommendation_id", recommendation_id)
@@ -1791,11 +1943,15 @@ class GetProfileLevelsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1835,9 +1991,11 @@ class GetProfileLevelsProfileLevelCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1882,25 +2040,39 @@ class GetProfileLevelsProfileLevelCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_interval: int,
-             metrics: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult'],
-             name: str,
-             recommendation_name: str,
-             time_created: str,
-             time_updated: str,
-             valid_intervals: Sequence[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_interval: Optional[int] = None,
+             metrics: Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult']] = None,
+             name: Optional[str] = None,
+             recommendation_name: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             valid_intervals: Optional[Sequence[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultInterval' in kwargs:
+        if default_interval is None and 'defaultInterval' in kwargs:
             default_interval = kwargs['defaultInterval']
-        if 'recommendationName' in kwargs:
+        if default_interval is None:
+            raise TypeError("Missing 'default_interval' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_name is None and 'recommendationName' in kwargs:
             recommendation_name = kwargs['recommendationName']
-        if 'timeCreated' in kwargs:
+        if recommendation_name is None:
+            raise TypeError("Missing 'recommendation_name' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'validIntervals' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if valid_intervals is None and 'validIntervals' in kwargs:
             valid_intervals = kwargs['validIntervals']
+        if valid_intervals is None:
+            raise TypeError("Missing 'valid_intervals' argument")
 
         _setter("default_interval", default_interval)
         _setter("metrics", metrics)
@@ -1990,12 +2162,20 @@ class GetProfileLevelsProfileLevelCollectionItemMetricResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             statistic: str,
-             target: float,
-             threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             statistic: Optional[str] = None,
+             target: Optional[float] = None,
+             threshold: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if statistic is None:
+            raise TypeError("Missing 'statistic' argument")
+        if target is None:
+            raise TypeError("Missing 'target' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
 
         _setter("name", name)
         _setter("statistic", statistic)
@@ -2049,9 +2229,11 @@ class GetProfileTargetCompartmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2078,9 +2260,11 @@ class GetProfileTargetTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfileTargetTagItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfileTargetTagItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2116,20 +2300,28 @@ class GetProfileTargetTagItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             tag_definition_name: str,
-             tag_namespace_name: str,
-             tag_value_type: str,
-             tag_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             tag_definition_name: Optional[str] = None,
+             tag_namespace_name: Optional[str] = None,
+             tag_value_type: Optional[str] = None,
+             tag_values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tagDefinitionName' in kwargs:
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
             tag_definition_name = kwargs['tagDefinitionName']
-        if 'tagNamespaceName' in kwargs:
+        if tag_definition_name is None:
+            raise TypeError("Missing 'tag_definition_name' argument")
+        if tag_namespace_name is None and 'tagNamespaceName' in kwargs:
             tag_namespace_name = kwargs['tagNamespaceName']
-        if 'tagValueType' in kwargs:
+        if tag_namespace_name is None:
+            raise TypeError("Missing 'tag_namespace_name' argument")
+        if tag_value_type is None and 'tagValueType' in kwargs:
             tag_value_type = kwargs['tagValueType']
-        if 'tagValues' in kwargs:
+        if tag_value_type is None:
+            raise TypeError("Missing 'tag_value_type' argument")
+        if tag_values is None and 'tagValues' in kwargs:
             tag_values = kwargs['tagValues']
+        if tag_values is None:
+            raise TypeError("Missing 'tag_values' argument")
 
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
@@ -2187,11 +2379,15 @@ class GetProfilesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2231,9 +2427,11 @@ class GetProfilesProfileCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfilesProfileCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2296,39 +2494,65 @@ class GetProfilesProfileCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             aggregation_interval_in_days: int,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             levels_configurations: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult'],
-             name: str,
-             state: str,
-             target_compartments: Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult'],
-             target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             aggregation_interval_in_days: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             levels_configurations: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult']] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             target_compartments: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult']] = None,
+             target_tags: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregationIntervalInDays' in kwargs:
+        if aggregation_interval_in_days is None and 'aggregationIntervalInDays' in kwargs:
             aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
-        if 'compartmentId' in kwargs:
+        if aggregation_interval_in_days is None:
+            raise TypeError("Missing 'aggregation_interval_in_days' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'levelsConfigurations' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if levels_configurations is None and 'levelsConfigurations' in kwargs:
             levels_configurations = kwargs['levelsConfigurations']
-        if 'targetCompartments' in kwargs:
+        if levels_configurations is None:
+            raise TypeError("Missing 'levels_configurations' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if target_compartments is None and 'targetCompartments' in kwargs:
             target_compartments = kwargs['targetCompartments']
-        if 'targetTags' in kwargs:
+        if target_compartments is None:
+            raise TypeError("Missing 'target_compartments' argument")
+        if target_tags is None and 'targetTags' in kwargs:
             target_tags = kwargs['targetTags']
-        if 'timeCreated' in kwargs:
+        if target_tags is None:
+            raise TypeError("Missing 'target_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("aggregation_interval_in_days", aggregation_interval_in_days)
         _setter("compartment_id", compartment_id)
@@ -2463,9 +2687,11 @@ class GetProfilesProfileCollectionItemLevelsConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2495,12 +2721,16 @@ class GetProfilesProfileCollectionItemLevelsConfigurationItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             level: str,
-             recommendation_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             level: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recommendationId' in kwargs:
+        if level is None:
+            raise TypeError("Missing 'level' argument")
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
 
         _setter("level", level)
         _setter("recommendation_id", recommendation_id)
@@ -2536,9 +2766,11 @@ class GetProfilesProfileCollectionItemTargetCompartmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2565,9 +2797,11 @@ class GetProfilesProfileCollectionItemTargetTagResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2603,20 +2837,28 @@ class GetProfilesProfileCollectionItemTargetTagItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             tag_definition_name: str,
-             tag_namespace_name: str,
-             tag_value_type: str,
-             tag_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             tag_definition_name: Optional[str] = None,
+             tag_namespace_name: Optional[str] = None,
+             tag_value_type: Optional[str] = None,
+             tag_values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tagDefinitionName' in kwargs:
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
             tag_definition_name = kwargs['tagDefinitionName']
-        if 'tagNamespaceName' in kwargs:
+        if tag_definition_name is None:
+            raise TypeError("Missing 'tag_definition_name' argument")
+        if tag_namespace_name is None and 'tagNamespaceName' in kwargs:
             tag_namespace_name = kwargs['tagNamespaceName']
-        if 'tagValueType' in kwargs:
+        if tag_namespace_name is None:
+            raise TypeError("Missing 'tag_namespace_name' argument")
+        if tag_value_type is None and 'tagValueType' in kwargs:
             tag_value_type = kwargs['tagValueType']
-        if 'tagValues' in kwargs:
+        if tag_value_type is None:
+            raise TypeError("Missing 'tag_value_type' argument")
+        if tag_values is None and 'tagValues' in kwargs:
             tag_values = kwargs['tagValues']
+        if tag_values is None:
+            raise TypeError("Missing 'tag_values' argument")
 
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
@@ -2673,10 +2915,14 @@ class GetRecommendationResourceCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -2716,11 +2962,15 @@ class GetRecommendationStrategiesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2760,9 +3010,11 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2792,10 +3044,14 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             strategies: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             strategies: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if strategies is None:
+            raise TypeError("Missing 'strategies' argument")
 
         _setter("name", name)
         _setter("strategies", strategies)
@@ -2837,17 +3093,23 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_default: bool,
-             parameters_definitions: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult'],
-             strategy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_default: Optional[bool] = None,
+             parameters_definitions: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult']] = None,
+             strategy_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'parametersDefinitions' in kwargs:
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if parameters_definitions is None and 'parametersDefinitions' in kwargs:
             parameters_definitions = kwargs['parametersDefinitions']
-        if 'strategyName' in kwargs:
+        if parameters_definitions is None:
+            raise TypeError("Missing 'parameters_definitions' argument")
+        if strategy_name is None and 'strategyName' in kwargs:
             strategy_name = kwargs['strategyName']
+        if strategy_name is None:
+            raise TypeError("Missing 'strategy_name' argument")
 
         _setter("is_default", is_default)
         _setter("parameters_definitions", parameters_definitions)
@@ -2907,20 +3169,32 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPar
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_values: Sequence[Any],
-             description: str,
-             is_required: bool,
-             name: str,
-             possible_values: Sequence[Any],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_values: Optional[Sequence[Any]] = None,
+             description: Optional[str] = None,
+             is_required: Optional[bool] = None,
+             name: Optional[str] = None,
+             possible_values: Optional[Sequence[Any]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValues' in kwargs:
+        if default_values is None and 'defaultValues' in kwargs:
             default_values = kwargs['defaultValues']
-        if 'isRequired' in kwargs:
+        if default_values is None:
+            raise TypeError("Missing 'default_values' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
-        if 'possibleValues' in kwargs:
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if possible_values is None and 'possibleValues' in kwargs:
             possible_values = kwargs['possibleValues']
+        if possible_values is None:
+            raise TypeError("Missing 'possible_values' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("default_values", default_values)
         _setter("description", description)
@@ -2995,10 +3269,14 @@ class GetRecommendationStrategyItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             strategies: Sequence['outputs.GetRecommendationStrategyItemStrategyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             strategies: Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if strategies is None:
+            raise TypeError("Missing 'strategies' argument")
 
         _setter("name", name)
         _setter("strategies", strategies)
@@ -3040,17 +3318,23 @@ class GetRecommendationStrategyItemStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_default: bool,
-             parameters_definitions: Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult'],
-             strategy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_default: Optional[bool] = None,
+             parameters_definitions: Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult']] = None,
+             strategy_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'parametersDefinitions' in kwargs:
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if parameters_definitions is None and 'parametersDefinitions' in kwargs:
             parameters_definitions = kwargs['parametersDefinitions']
-        if 'strategyName' in kwargs:
+        if parameters_definitions is None:
+            raise TypeError("Missing 'parameters_definitions' argument")
+        if strategy_name is None and 'strategyName' in kwargs:
             strategy_name = kwargs['strategyName']
+        if strategy_name is None:
+            raise TypeError("Missing 'strategy_name' argument")
 
         _setter("is_default", is_default)
         _setter("parameters_definitions", parameters_definitions)
@@ -3110,20 +3394,32 @@ class GetRecommendationStrategyItemStrategyParametersDefinitionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_values: Sequence[Any],
-             description: str,
-             is_required: bool,
-             name: str,
-             possible_values: Sequence[Any],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_values: Optional[Sequence[Any]] = None,
+             description: Optional[str] = None,
+             is_required: Optional[bool] = None,
+             name: Optional[str] = None,
+             possible_values: Optional[Sequence[Any]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValues' in kwargs:
+        if default_values is None and 'defaultValues' in kwargs:
             default_values = kwargs['defaultValues']
-        if 'isRequired' in kwargs:
+        if default_values is None:
+            raise TypeError("Missing 'default_values' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_required is None and 'isRequired' in kwargs:
             is_required = kwargs['isRequired']
-        if 'possibleValues' in kwargs:
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if possible_values is None and 'possibleValues' in kwargs:
             possible_values = kwargs['possibleValues']
+        if possible_values is None:
+            raise TypeError("Missing 'possible_values' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("default_values", default_values)
         _setter("description", description)
@@ -3195,9 +3491,11 @@ class GetRecommendationSupportedLevelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRecommendationSupportedLevelItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRecommendationSupportedLevelItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3224,9 +3522,11 @@ class GetRecommendationSupportedLevelItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -3257,11 +3557,15 @@ class GetRecommendationsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3301,9 +3605,11 @@ class GetRecommendationsRecommendationCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3377,47 +3683,81 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category_id: str,
-             compartment_id: str,
-             description: str,
-             estimated_cost_saving: float,
-             extended_metadata: Mapping[str, Any],
-             id: str,
-             importance: str,
-             name: str,
-             recommendation_id: str,
-             resource_counts: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult'],
-             state: str,
-             status: str,
-             supported_levels: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult'],
-             time_created: str,
-             time_status_begin: str,
-             time_status_end: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             estimated_cost_saving: Optional[float] = None,
+             extended_metadata: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             importance: Optional[str] = None,
+             name: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             resource_counts: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult']] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             supported_levels: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult']] = None,
+             time_created: Optional[str] = None,
+             time_status_begin: Optional[str] = None,
+             time_status_end: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryId' in kwargs:
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'compartmentId' in kwargs:
+        if category_id is None:
+            raise TypeError("Missing 'category_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'estimatedCostSaving' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
             estimated_cost_saving = kwargs['estimatedCostSaving']
-        if 'extendedMetadata' in kwargs:
+        if estimated_cost_saving is None:
+            raise TypeError("Missing 'estimated_cost_saving' argument")
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'recommendationId' in kwargs:
+        if extended_metadata is None:
+            raise TypeError("Missing 'extended_metadata' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if importance is None:
+            raise TypeError("Missing 'importance' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
-        if 'resourceCounts' in kwargs:
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
+        if resource_counts is None and 'resourceCounts' in kwargs:
             resource_counts = kwargs['resourceCounts']
-        if 'supportedLevels' in kwargs:
+        if resource_counts is None:
+            raise TypeError("Missing 'resource_counts' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if supported_levels is None and 'supportedLevels' in kwargs:
             supported_levels = kwargs['supportedLevels']
-        if 'timeCreated' in kwargs:
+        if supported_levels is None:
+            raise TypeError("Missing 'supported_levels' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusBegin' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_status_begin is None and 'timeStatusBegin' in kwargs:
             time_status_begin = kwargs['timeStatusBegin']
-        if 'timeStatusEnd' in kwargs:
+        if time_status_begin is None:
+            raise TypeError("Missing 'time_status_begin' argument")
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
             time_status_end = kwargs['timeStatusEnd']
-        if 'timeUpdated' in kwargs:
+        if time_status_end is None:
+            raise TypeError("Missing 'time_status_end' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("category_id", category_id)
         _setter("compartment_id", compartment_id)
@@ -3588,10 +3928,14 @@ class GetRecommendationsRecommendationCollectionItemResourceCountResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             count: int,
-             status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if count is None:
+            raise TypeError("Missing 'count' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
 
         _setter("count", count)
         _setter("status", status)
@@ -3627,9 +3971,11 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3656,9 +4002,11 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("name", name)
 
@@ -3691,11 +4039,17 @@ class GetResourceActionActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             type: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("description", description)
         _setter("type", type)
@@ -3744,11 +4098,15 @@ class GetResourceActionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3785,9 +4143,11 @@ class GetResourceActionsResourceActionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3864,53 +4224,91 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult'],
-             category_id: str,
-             compartment_id: str,
-             compartment_name: str,
-             estimated_cost_saving: float,
-             extended_metadata: Mapping[str, Any],
-             id: str,
-             metadata: Mapping[str, Any],
-             name: str,
-             recommendation_id: str,
-             resource_action_id: str,
-             resource_id: str,
-             resource_type: str,
-             state: str,
-             status: str,
-             time_created: str,
-             time_status_begin: str,
-             time_status_end: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult']] = None,
+             category_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compartment_name: Optional[str] = None,
+             estimated_cost_saving: Optional[float] = None,
+             extended_metadata: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             metadata: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             resource_action_id: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_status_begin: Optional[str] = None,
+             time_status_end: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryId' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'compartmentId' in kwargs:
+        if category_id is None:
+            raise TypeError("Missing 'category_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'compartmentName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_name is None and 'compartmentName' in kwargs:
             compartment_name = kwargs['compartmentName']
-        if 'estimatedCostSaving' in kwargs:
+        if compartment_name is None:
+            raise TypeError("Missing 'compartment_name' argument")
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
             estimated_cost_saving = kwargs['estimatedCostSaving']
-        if 'extendedMetadata' in kwargs:
+        if estimated_cost_saving is None:
+            raise TypeError("Missing 'estimated_cost_saving' argument")
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'recommendationId' in kwargs:
+        if extended_metadata is None:
+            raise TypeError("Missing 'extended_metadata' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
-        if 'resourceActionId' in kwargs:
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
+        if resource_action_id is None and 'resourceActionId' in kwargs:
             resource_action_id = kwargs['resourceActionId']
-        if 'resourceId' in kwargs:
+        if resource_action_id is None:
+            raise TypeError("Missing 'resource_action_id' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceType' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
-        if 'timeCreated' in kwargs:
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusBegin' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_status_begin is None and 'timeStatusBegin' in kwargs:
             time_status_begin = kwargs['timeStatusBegin']
-        if 'timeStatusEnd' in kwargs:
+        if time_status_begin is None:
+            raise TypeError("Missing 'time_status_begin' argument")
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
             time_status_end = kwargs['timeStatusEnd']
-        if 'timeUpdated' in kwargs:
+        if time_status_end is None:
+            raise TypeError("Missing 'time_status_end' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("actions", actions)
         _setter("category_id", category_id)
@@ -4102,11 +4500,17 @@ class GetResourceActionsResourceActionCollectionItemActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: str,
-             type: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             description: Optional[str] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("description", description)
         _setter("type", type)

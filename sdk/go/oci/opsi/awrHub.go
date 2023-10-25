@@ -37,10 +37,10 @@ import (
 //				DisplayName:                   pulumi.Any(_var.Awr_hub_display_name),
 //				ObjectStorageBucketName:       pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
 //				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

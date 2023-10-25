@@ -78,24 +78,30 @@ class BackendSetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
-             load_balancer_id: pulumi.Input[str],
-             policy: pulumi.Input[str],
+             health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input[str]] = None,
              lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
              ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'healthChecker' in kwargs:
+        if health_checker is None and 'healthChecker' in kwargs:
             health_checker = kwargs['healthChecker']
-        if 'loadBalancerId' in kwargs:
+        if health_checker is None:
+            raise TypeError("Missing 'health_checker' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'lbCookieSessionPersistenceConfiguration' in kwargs:
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if lb_cookie_session_persistence_configuration is None and 'lbCookieSessionPersistenceConfiguration' in kwargs:
             lb_cookie_session_persistence_configuration = kwargs['lbCookieSessionPersistenceConfiguration']
-        if 'sessionPersistenceConfiguration' in kwargs:
+        if session_persistence_configuration is None and 'sessionPersistenceConfiguration' in kwargs:
             session_persistence_configuration = kwargs['sessionPersistenceConfiguration']
-        if 'sslConfiguration' in kwargs:
+        if ssl_configuration is None and 'sslConfiguration' in kwargs:
             ssl_configuration = kwargs['sslConfiguration']
 
         _setter("health_checker", health_checker)
@@ -305,17 +311,17 @@ class _BackendSetState:
              session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
              ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'healthChecker' in kwargs:
+        if health_checker is None and 'healthChecker' in kwargs:
             health_checker = kwargs['healthChecker']
-        if 'lbCookieSessionPersistenceConfiguration' in kwargs:
+        if lb_cookie_session_persistence_configuration is None and 'lbCookieSessionPersistenceConfiguration' in kwargs:
             lb_cookie_session_persistence_configuration = kwargs['lbCookieSessionPersistenceConfiguration']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'sessionPersistenceConfiguration' in kwargs:
+        if session_persistence_configuration is None and 'sessionPersistenceConfiguration' in kwargs:
             session_persistence_configuration = kwargs['sessionPersistenceConfiguration']
-        if 'sslConfiguration' in kwargs:
+        if ssl_configuration is None and 'sslConfiguration' in kwargs:
             ssl_configuration = kwargs['sslConfiguration']
 
         if backends is not None:
@@ -700,19 +706,11 @@ class BackendSet(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = BackendSetArgs.__new__(BackendSetArgs)
 
-            if health_checker is not None and not isinstance(health_checker, BackendSetHealthCheckerArgs):
-                health_checker = health_checker or {}
-                def _setter(key, value):
-                    health_checker[key] = value
-                BackendSetHealthCheckerArgs._configure(_setter, **health_checker)
+            health_checker = _utilities.configure(health_checker, BackendSetHealthCheckerArgs, True)
             if health_checker is None and not opts.urn:
                 raise TypeError("Missing required property 'health_checker'")
             __props__.__dict__["health_checker"] = health_checker
-            if lb_cookie_session_persistence_configuration is not None and not isinstance(lb_cookie_session_persistence_configuration, BackendSetLbCookieSessionPersistenceConfigurationArgs):
-                lb_cookie_session_persistence_configuration = lb_cookie_session_persistence_configuration or {}
-                def _setter(key, value):
-                    lb_cookie_session_persistence_configuration[key] = value
-                BackendSetLbCookieSessionPersistenceConfigurationArgs._configure(_setter, **lb_cookie_session_persistence_configuration)
+            lb_cookie_session_persistence_configuration = _utilities.configure(lb_cookie_session_persistence_configuration, BackendSetLbCookieSessionPersistenceConfigurationArgs, True)
             __props__.__dict__["lb_cookie_session_persistence_configuration"] = lb_cookie_session_persistence_configuration
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
@@ -721,17 +719,9 @@ class BackendSet(pulumi.CustomResource):
             if policy is None and not opts.urn:
                 raise TypeError("Missing required property 'policy'")
             __props__.__dict__["policy"] = policy
-            if session_persistence_configuration is not None and not isinstance(session_persistence_configuration, BackendSetSessionPersistenceConfigurationArgs):
-                session_persistence_configuration = session_persistence_configuration or {}
-                def _setter(key, value):
-                    session_persistence_configuration[key] = value
-                BackendSetSessionPersistenceConfigurationArgs._configure(_setter, **session_persistence_configuration)
+            session_persistence_configuration = _utilities.configure(session_persistence_configuration, BackendSetSessionPersistenceConfigurationArgs, True)
             __props__.__dict__["session_persistence_configuration"] = session_persistence_configuration
-            if ssl_configuration is not None and not isinstance(ssl_configuration, BackendSetSslConfigurationArgs):
-                ssl_configuration = ssl_configuration or {}
-                def _setter(key, value):
-                    ssl_configuration[key] = value
-                BackendSetSslConfigurationArgs._configure(_setter, **ssl_configuration)
+            ssl_configuration = _utilities.configure(ssl_configuration, BackendSetSslConfigurationArgs, True)
             __props__.__dict__["ssl_configuration"] = ssl_configuration
             __props__.__dict__["backends"] = None
             __props__.__dict__["state"] = None

@@ -48,28 +48,34 @@ class ReplicationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             source_id: pulumi.Input[str],
-             target_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              replication_interval: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'sourceId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'targetId' in kwargs:
+        if source_id is None:
+            raise TypeError("Missing 'source_id' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'definedTags' in kwargs:
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'replicationInterval' in kwargs:
+        if replication_interval is None and 'replicationInterval' in kwargs:
             replication_interval = kwargs['replicationInterval']
 
         _setter("compartment_id", compartment_id)
@@ -253,37 +259,37 @@ class _ReplicationState:
              state: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deltaProgress' in kwargs:
+        if delta_progress is None and 'deltaProgress' in kwargs:
             delta_progress = kwargs['deltaProgress']
-        if 'deltaStatus' in kwargs:
+        if delta_status is None and 'deltaStatus' in kwargs:
             delta_status = kwargs['deltaStatus']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastSnapshotId' in kwargs:
+        if last_snapshot_id is None and 'lastSnapshotId' in kwargs:
             last_snapshot_id = kwargs['lastSnapshotId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'recoveryPointTime' in kwargs:
+        if recovery_point_time is None and 'recoveryPointTime' in kwargs:
             recovery_point_time = kwargs['recoveryPointTime']
-        if 'replicationInterval' in kwargs:
+        if replication_interval is None and 'replicationInterval' in kwargs:
             replication_interval = kwargs['replicationInterval']
-        if 'replicationTargetId' in kwargs:
+        if replication_target_id is None and 'replicationTargetId' in kwargs:
             replication_target_id = kwargs['replicationTargetId']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if availability_domain is not None:

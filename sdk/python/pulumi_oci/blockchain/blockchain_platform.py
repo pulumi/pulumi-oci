@@ -77,11 +77,11 @@ class BlockchainPlatformArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             compute_shape: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             idcs_access_token: pulumi.Input[str],
-             platform_role: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_shape: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_access_token: Optional[pulumi.Input[str]] = None,
+             platform_role: Optional[pulumi.Input[str]] = None,
              ca_cert_archive_text: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -93,35 +93,45 @@ class BlockchainPlatformArgs:
              replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
              storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
              total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeShape' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_shape is None and 'computeShape' in kwargs:
             compute_shape = kwargs['computeShape']
-        if 'displayName' in kwargs:
+        if compute_shape is None:
+            raise TypeError("Missing 'compute_shape' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'idcsAccessToken' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'platformRole' in kwargs:
+        if idcs_access_token is None:
+            raise TypeError("Missing 'idcs_access_token' argument")
+        if platform_role is None and 'platformRole' in kwargs:
             platform_role = kwargs['platformRole']
-        if 'caCertArchiveText' in kwargs:
+        if platform_role is None:
+            raise TypeError("Missing 'platform_role' argument")
+        if ca_cert_archive_text is None and 'caCertArchiveText' in kwargs:
             ca_cert_archive_text = kwargs['caCertArchiveText']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'federatedUserId' in kwargs:
+        if federated_user_id is None and 'federatedUserId' in kwargs:
             federated_user_id = kwargs['federatedUserId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isByol' in kwargs:
+        if is_byol is None and 'isByol' in kwargs:
             is_byol = kwargs['isByol']
-        if 'loadBalancerShape' in kwargs:
+        if load_balancer_shape is None and 'loadBalancerShape' in kwargs:
             load_balancer_shape = kwargs['loadBalancerShape']
-        if 'platformVersion' in kwargs:
+        if platform_version is None and 'platformVersion' in kwargs:
             platform_version = kwargs['platformVersion']
-        if 'storageSizeInTbs' in kwargs:
+        if storage_size_in_tbs is None and 'storageSizeInTbs' in kwargs:
             storage_size_in_tbs = kwargs['storageSizeInTbs']
-        if 'totalOcpuCapacity' in kwargs:
+        if total_ocpu_capacity is None and 'totalOcpuCapacity' in kwargs:
             total_ocpu_capacity = kwargs['totalOcpuCapacity']
 
         _setter("compartment_id", compartment_id)
@@ -473,55 +483,55 @@ class _BlockchainPlatformState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caCertArchiveText' in kwargs:
+        if ca_cert_archive_text is None and 'caCertArchiveText' in kwargs:
             ca_cert_archive_text = kwargs['caCertArchiveText']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'componentDetails' in kwargs:
+        if component_details is None and 'componentDetails' in kwargs:
             component_details = kwargs['componentDetails']
-        if 'computeShape' in kwargs:
+        if compute_shape is None and 'computeShape' in kwargs:
             compute_shape = kwargs['computeShape']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'federatedUserId' in kwargs:
+        if federated_user_id is None and 'federatedUserId' in kwargs:
             federated_user_id = kwargs['federatedUserId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostOcpuUtilizationInfos' in kwargs:
+        if host_ocpu_utilization_infos is None and 'hostOcpuUtilizationInfos' in kwargs:
             host_ocpu_utilization_infos = kwargs['hostOcpuUtilizationInfos']
-        if 'idcsAccessToken' in kwargs:
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'isByol' in kwargs:
+        if is_byol is None and 'isByol' in kwargs:
             is_byol = kwargs['isByol']
-        if 'isMultiAd' in kwargs:
+        if is_multi_ad is None and 'isMultiAd' in kwargs:
             is_multi_ad = kwargs['isMultiAd']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'loadBalancerShape' in kwargs:
+        if load_balancer_shape is None and 'loadBalancerShape' in kwargs:
             load_balancer_shape = kwargs['loadBalancerShape']
-        if 'platformRole' in kwargs:
+        if platform_role is None and 'platformRole' in kwargs:
             platform_role = kwargs['platformRole']
-        if 'platformShapeType' in kwargs:
+        if platform_shape_type is None and 'platformShapeType' in kwargs:
             platform_shape_type = kwargs['platformShapeType']
-        if 'platformVersion' in kwargs:
+        if platform_version is None and 'platformVersion' in kwargs:
             platform_version = kwargs['platformVersion']
-        if 'serviceEndpoint' in kwargs:
+        if service_endpoint is None and 'serviceEndpoint' in kwargs:
             service_endpoint = kwargs['serviceEndpoint']
-        if 'serviceVersion' in kwargs:
+        if service_version is None and 'serviceVersion' in kwargs:
             service_version = kwargs['serviceVersion']
-        if 'storageSizeInTbs' in kwargs:
+        if storage_size_in_tbs is None and 'storageSizeInTbs' in kwargs:
             storage_size_in_tbs = kwargs['storageSizeInTbs']
-        if 'storageUsedInTbs' in kwargs:
+        if storage_used_in_tbs is None and 'storageUsedInTbs' in kwargs:
             storage_used_in_tbs = kwargs['storageUsedInTbs']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalOcpuCapacity' in kwargs:
+        if total_ocpu_capacity is None and 'totalOcpuCapacity' in kwargs:
             total_ocpu_capacity = kwargs['totalOcpuCapacity']
 
         if ca_cert_archive_text is not None:
@@ -1102,11 +1112,7 @@ class BlockchainPlatform(pulumi.CustomResource):
                 raise TypeError("Missing required property 'platform_role'")
             __props__.__dict__["platform_role"] = platform_role
             __props__.__dict__["platform_version"] = platform_version
-            if replicas is not None and not isinstance(replicas, BlockchainPlatformReplicasArgs):
-                replicas = replicas or {}
-                def _setter(key, value):
-                    replicas[key] = value
-                BlockchainPlatformReplicasArgs._configure(_setter, **replicas)
+            replicas = _utilities.configure(replicas, BlockchainPlatformReplicasArgs, True)
             __props__.__dict__["replicas"] = replicas
             __props__.__dict__["storage_size_in_tbs"] = storage_size_in_tbs
             __props__.__dict__["total_ocpu_capacity"] = total_ocpu_capacity

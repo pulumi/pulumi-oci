@@ -36,10 +36,10 @@ import (
 //				DisplayName:   pulumi.Any(_var.Function_display_name),
 //				MemoryInMbs:   pulumi.Any(_var.Function_memory_in_mbs),
 //				Config:        pulumi.Any(_var.Function_config),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Image:       pulumi.Any(_var.Function_image),

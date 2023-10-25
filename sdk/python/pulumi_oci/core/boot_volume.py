@@ -67,9 +67,9 @@ class BootVolumeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             source_details: pulumi.Input['BootVolumeSourceDetailsArgs'],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input['BootVolumeSourceDetailsArgs']] = None,
              autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]] = None,
              backup_policy_id: Optional[pulumi.Input[str]] = None,
              boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]]] = None,
@@ -81,35 +81,41 @@ class BootVolumeArgs:
              kms_key_id: Optional[pulumi.Input[str]] = None,
              size_in_gbs: Optional[pulumi.Input[str]] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'sourceDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'autotunePolicies' in kwargs:
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
+        if autotune_policies is None and 'autotunePolicies' in kwargs:
             autotune_policies = kwargs['autotunePolicies']
-        if 'backupPolicyId' in kwargs:
+        if backup_policy_id is None and 'backupPolicyId' in kwargs:
             backup_policy_id = kwargs['backupPolicyId']
-        if 'bootVolumeReplicas' in kwargs:
+        if boot_volume_replicas is None and 'bootVolumeReplicas' in kwargs:
             boot_volume_replicas = kwargs['bootVolumeReplicas']
-        if 'bootVolumeReplicasDeletion' in kwargs:
+        if boot_volume_replicas_deletion is None and 'bootVolumeReplicasDeletion' in kwargs:
             boot_volume_replicas_deletion = kwargs['bootVolumeReplicasDeletion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAutoTuneEnabled' in kwargs:
+        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
             is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sizeInGbs' in kwargs:
+        if size_in_gbs is None and 'sizeInGbs' in kwargs:
             size_in_gbs = kwargs['sizeInGbs']
-        if 'vpusPerGb' in kwargs:
+        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
             vpus_per_gb = kwargs['vpusPerGb']
 
         _setter("availability_domain", availability_domain)
@@ -409,49 +415,49 @@ class _BootVolumeState:
              time_created: Optional[pulumi.Input[str]] = None,
              volume_group_id: Optional[pulumi.Input[str]] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoTunedVpusPerGb' in kwargs:
+        if auto_tuned_vpus_per_gb is None and 'autoTunedVpusPerGb' in kwargs:
             auto_tuned_vpus_per_gb = kwargs['autoTunedVpusPerGb']
-        if 'autotunePolicies' in kwargs:
+        if autotune_policies is None and 'autotunePolicies' in kwargs:
             autotune_policies = kwargs['autotunePolicies']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupPolicyId' in kwargs:
+        if backup_policy_id is None and 'backupPolicyId' in kwargs:
             backup_policy_id = kwargs['backupPolicyId']
-        if 'bootVolumeReplicas' in kwargs:
+        if boot_volume_replicas is None and 'bootVolumeReplicas' in kwargs:
             boot_volume_replicas = kwargs['bootVolumeReplicas']
-        if 'bootVolumeReplicasDeletion' in kwargs:
+        if boot_volume_replicas_deletion is None and 'bootVolumeReplicasDeletion' in kwargs:
             boot_volume_replicas_deletion = kwargs['bootVolumeReplicasDeletion']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageId' in kwargs:
+        if image_id is None and 'imageId' in kwargs:
             image_id = kwargs['imageId']
-        if 'isAutoTuneEnabled' in kwargs:
+        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
             is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if 'isHydrated' in kwargs:
+        if is_hydrated is None and 'isHydrated' in kwargs:
             is_hydrated = kwargs['isHydrated']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'sizeInGbs' in kwargs:
+        if size_in_gbs is None and 'sizeInGbs' in kwargs:
             size_in_gbs = kwargs['sizeInGbs']
-        if 'sizeInMbs' in kwargs:
+        if size_in_mbs is None and 'sizeInMbs' in kwargs:
             size_in_mbs = kwargs['sizeInMbs']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'volumeGroupId' in kwargs:
+        if volume_group_id is None and 'volumeGroupId' in kwargs:
             volume_group_id = kwargs['volumeGroupId']
-        if 'vpusPerGb' in kwargs:
+        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
             vpus_per_gb = kwargs['vpusPerGb']
 
         if auto_tuned_vpus_per_gb is not None:
@@ -971,11 +977,7 @@ class BootVolume(pulumi.CustomResource):
             __props__.__dict__["is_auto_tune_enabled"] = is_auto_tune_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["size_in_gbs"] = size_in_gbs
-            if source_details is not None and not isinstance(source_details, BootVolumeSourceDetailsArgs):
-                source_details = source_details or {}
-                def _setter(key, value):
-                    source_details[key] = value
-                BootVolumeSourceDetailsArgs._configure(_setter, **source_details)
+            source_details = _utilities.configure(source_details, BootVolumeSourceDetailsArgs, True)
             if source_details is None and not opts.urn:
                 raise TypeError("Missing required property 'source_details'")
             __props__.__dict__["source_details"] = source_details

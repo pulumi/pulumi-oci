@@ -38,12 +38,12 @@ import (
 //				IdcsAccessToken:   pulumi.Any(_var.Blockchain_platform_idcs_access_token),
 //				PlatformRole:      pulumi.Any(_var.Blockchain_platform_platform_role),
 //				CaCertArchiveText: pulumi.Any(_var.Blockchain_platform_ca_cert_archive_text),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description:     pulumi.Any(_var.Blockchain_platform_description),
 //				FederatedUserId: pulumi.Any(oci_identity_user.Test_user.Id),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsByol:          pulumi.Any(_var.Blockchain_platform_is_byol),

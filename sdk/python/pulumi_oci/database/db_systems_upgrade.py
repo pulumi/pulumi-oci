@@ -44,20 +44,24 @@ class DbSystemsUpgradeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: pulumi.Input[str],
-             db_system_id: pulumi.Input[str],
+             action: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
              is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
              new_gi_version: Optional[pulumi.Input[str]] = None,
              snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'dbSystemId' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'isSnapshotRetentionDaysForceUpdated' in kwargs:
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if is_snapshot_retention_days_force_updated is None and 'isSnapshotRetentionDaysForceUpdated' in kwargs:
             is_snapshot_retention_days_force_updated = kwargs['isSnapshotRetentionDaysForceUpdated']
-        if 'newGiVersion' in kwargs:
+        if new_gi_version is None and 'newGiVersion' in kwargs:
             new_gi_version = kwargs['newGiVersion']
-        if 'snapshotRetentionPeriodInDays' in kwargs:
+        if snapshot_retention_period_in_days is None and 'snapshotRetentionPeriodInDays' in kwargs:
             snapshot_retention_period_in_days = kwargs['snapshotRetentionPeriodInDays']
 
         _setter("action", action)
@@ -349,93 +353,93 @@ class _DbSystemsUpgradeState:
              version: Optional[pulumi.Input[str]] = None,
              vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupNetworkNsgIds' in kwargs:
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
             backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
-        if 'backupSubnetId' in kwargs:
+        if backup_subnet_id is None and 'backupSubnetId' in kwargs:
             backup_subnet_id = kwargs['backupSubnetId']
-        if 'clusterName' in kwargs:
+        if cluster_name is None and 'clusterName' in kwargs:
             cluster_name = kwargs['clusterName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'dataStoragePercentage' in kwargs:
+        if data_storage_percentage is None and 'dataStoragePercentage' in kwargs:
             data_storage_percentage = kwargs['dataStoragePercentage']
-        if 'dataStorageSizeInGb' in kwargs:
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
             data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if 'databaseEdition' in kwargs:
+        if database_edition is None and 'databaseEdition' in kwargs:
             database_edition = kwargs['databaseEdition']
-        if 'dbSystemId' in kwargs:
+        if db_system_id is None and 'dbSystemId' in kwargs:
             db_system_id = kwargs['dbSystemId']
-        if 'dbSystemOptions' in kwargs:
+        if db_system_options is None and 'dbSystemOptions' in kwargs:
             db_system_options = kwargs['dbSystemOptions']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'diskRedundancy' in kwargs:
+        if disk_redundancy is None and 'diskRedundancy' in kwargs:
             disk_redundancy = kwargs['diskRedundancy']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomains' in kwargs:
+        if fault_domains is None and 'faultDomains' in kwargs:
             fault_domains = kwargs['faultDomains']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'iormConfigCaches' in kwargs:
+        if iorm_config_caches is None and 'iormConfigCaches' in kwargs:
             iorm_config_caches = kwargs['iormConfigCaches']
-        if 'isSnapshotRetentionDaysForceUpdated' in kwargs:
+        if is_snapshot_retention_days_force_updated is None and 'isSnapshotRetentionDaysForceUpdated' in kwargs:
             is_snapshot_retention_days_force_updated = kwargs['isSnapshotRetentionDaysForceUpdated']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'lastMaintenanceRunId' in kwargs:
+        if last_maintenance_run_id is None and 'lastMaintenanceRunId' in kwargs:
             last_maintenance_run_id = kwargs['lastMaintenanceRunId']
-        if 'lastPatchHistoryEntryId' in kwargs:
+        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
             last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'listenerPort' in kwargs:
+        if listener_port is None and 'listenerPort' in kwargs:
             listener_port = kwargs['listenerPort']
-        if 'maintenanceWindows' in kwargs:
+        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
             maintenance_windows = kwargs['maintenanceWindows']
-        if 'newGiVersion' in kwargs:
+        if new_gi_version is None and 'newGiVersion' in kwargs:
             new_gi_version = kwargs['newGiVersion']
-        if 'nextMaintenanceRunId' in kwargs:
+        if next_maintenance_run_id is None and 'nextMaintenanceRunId' in kwargs:
             next_maintenance_run_id = kwargs['nextMaintenanceRunId']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'pointInTimeDataDiskCloneTimestamp' in kwargs:
+        if point_in_time_data_disk_clone_timestamp is None and 'pointInTimeDataDiskCloneTimestamp' in kwargs:
             point_in_time_data_disk_clone_timestamp = kwargs['pointInTimeDataDiskCloneTimestamp']
-        if 'recoStorageSizeInGb' in kwargs:
+        if reco_storage_size_in_gb is None and 'recoStorageSizeInGb' in kwargs:
             reco_storage_size_in_gb = kwargs['recoStorageSizeInGb']
-        if 'scanDnsName' in kwargs:
+        if scan_dns_name is None and 'scanDnsName' in kwargs:
             scan_dns_name = kwargs['scanDnsName']
-        if 'scanDnsRecordId' in kwargs:
+        if scan_dns_record_id is None and 'scanDnsRecordId' in kwargs:
             scan_dns_record_id = kwargs['scanDnsRecordId']
-        if 'scanIpIds' in kwargs:
+        if scan_ip_ids is None and 'scanIpIds' in kwargs:
             scan_ip_ids = kwargs['scanIpIds']
-        if 'snapshotRetentionPeriodInDays' in kwargs:
+        if snapshot_retention_period_in_days is None and 'snapshotRetentionPeriodInDays' in kwargs:
             snapshot_retention_period_in_days = kwargs['snapshotRetentionPeriodInDays']
-        if 'sourceDbSystemId' in kwargs:
+        if source_db_system_id is None and 'sourceDbSystemId' in kwargs:
             source_db_system_id = kwargs['sourceDbSystemId']
-        if 'sparseDiskgroup' in kwargs:
+        if sparse_diskgroup is None and 'sparseDiskgroup' in kwargs:
             sparse_diskgroup = kwargs['sparseDiskgroup']
-        if 'sshPublicKeys' in kwargs:
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'vipIds' in kwargs:
+        if vip_ids is None and 'vipIds' in kwargs:
             vip_ids = kwargs['vipIds']
-        if 'zoneId' in kwargs:
+        if zone_id is None and 'zoneId' in kwargs:
             zone_id = kwargs['zoneId']
 
         if action is not None:

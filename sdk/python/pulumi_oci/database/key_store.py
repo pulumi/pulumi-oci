@@ -40,22 +40,28 @@ class KeyStoreArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             type_details: pulumi.Input['KeyStoreTypeDetailsArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'typeDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type_details is None and 'typeDetails' in kwargs:
             type_details = kwargs['typeDetails']
-        if 'definedTags' in kwargs:
+        if type_details is None:
+            raise TypeError("Missing 'type_details' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -175,23 +181,23 @@ class _KeyStoreState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedDatabases' in kwargs:
+        if associated_databases is None and 'associatedDatabases' in kwargs:
             associated_databases = kwargs['associatedDatabases']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'typeDetails' in kwargs:
+        if type_details is None and 'typeDetails' in kwargs:
             type_details = kwargs['typeDetails']
 
         if associated_databases is not None:
@@ -458,11 +464,7 @@ class KeyStore(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if type_details is not None and not isinstance(type_details, KeyStoreTypeDetailsArgs):
-                type_details = type_details or {}
-                def _setter(key, value):
-                    type_details[key] = value
-                KeyStoreTypeDetailsArgs._configure(_setter, **type_details)
+            type_details = _utilities.configure(type_details, KeyStoreTypeDetailsArgs, True)
             if type_details is None and not opts.urn:
                 raise TypeError("Missing required property 'type_details'")
             __props__.__dict__["type_details"] = type_details

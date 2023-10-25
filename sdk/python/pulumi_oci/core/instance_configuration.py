@@ -53,26 +53,28 @@ class InstanceConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              instance_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']] = None,
              instance_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceDetails' in kwargs:
+        if instance_details is None and 'instanceDetails' in kwargs:
             instance_details = kwargs['instanceDetails']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
 
         _setter("compartment_id", compartment_id)
@@ -234,23 +236,23 @@ class _InstanceConfigurationState:
              instance_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'deferredFields' in kwargs:
+        if deferred_fields is None and 'deferredFields' in kwargs:
             deferred_fields = kwargs['deferredFields']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'instanceDetails' in kwargs:
+        if instance_details is None and 'instanceDetails' in kwargs:
             instance_details = kwargs['instanceDetails']
-        if 'instanceId' in kwargs:
+        if instance_id is None and 'instanceId' in kwargs:
             instance_id = kwargs['instanceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -1201,11 +1203,7 @@ class InstanceConfiguration(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if instance_details is not None and not isinstance(instance_details, InstanceConfigurationInstanceDetailsArgs):
-                instance_details = instance_details or {}
-                def _setter(key, value):
-                    instance_details[key] = value
-                InstanceConfigurationInstanceDetailsArgs._configure(_setter, **instance_details)
+            instance_details = _utilities.configure(instance_details, InstanceConfigurationInstanceDetailsArgs, True)
             __props__.__dict__["instance_details"] = instance_details
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["source"] = source

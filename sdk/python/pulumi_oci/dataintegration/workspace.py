@@ -79,8 +79,8 @@ class WorkspaceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              dns_server_ip: Optional[pulumi.Input[str]] = None,
@@ -97,41 +97,45 @@ class WorkspaceArgs:
              registry_name: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsServerIp' in kwargs:
+        if dns_server_ip is None and 'dnsServerIp' in kwargs:
             dns_server_ip = kwargs['dnsServerIp']
-        if 'dnsServerZone' in kwargs:
+        if dns_server_zone is None and 'dnsServerZone' in kwargs:
             dns_server_zone = kwargs['dnsServerZone']
-        if 'endpointCompartmentId' in kwargs:
+        if endpoint_compartment_id is None and 'endpointCompartmentId' in kwargs:
             endpoint_compartment_id = kwargs['endpointCompartmentId']
-        if 'endpointId' in kwargs:
+        if endpoint_id is None and 'endpointId' in kwargs:
             endpoint_id = kwargs['endpointId']
-        if 'endpointName' in kwargs:
+        if endpoint_name is None and 'endpointName' in kwargs:
             endpoint_name = kwargs['endpointName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isForceOperation' in kwargs:
+        if is_force_operation is None and 'isForceOperation' in kwargs:
             is_force_operation = kwargs['isForceOperation']
-        if 'isPrivateNetworkEnabled' in kwargs:
+        if is_private_network_enabled is None and 'isPrivateNetworkEnabled' in kwargs:
             is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
-        if 'quiesceTimeout' in kwargs:
+        if quiesce_timeout is None and 'quiesceTimeout' in kwargs:
             quiesce_timeout = kwargs['quiesceTimeout']
-        if 'registryCompartmentId' in kwargs:
+        if registry_compartment_id is None and 'registryCompartmentId' in kwargs:
             registry_compartment_id = kwargs['registryCompartmentId']
-        if 'registryId' in kwargs:
+        if registry_id is None and 'registryId' in kwargs:
             registry_id = kwargs['registryId']
-        if 'registryName' in kwargs:
+        if registry_name is None and 'registryName' in kwargs:
             registry_name = kwargs['registryName']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         _setter("compartment_id", compartment_id)
@@ -486,47 +490,47 @@ class _WorkspaceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsServerIp' in kwargs:
+        if dns_server_ip is None and 'dnsServerIp' in kwargs:
             dns_server_ip = kwargs['dnsServerIp']
-        if 'dnsServerZone' in kwargs:
+        if dns_server_zone is None and 'dnsServerZone' in kwargs:
             dns_server_zone = kwargs['dnsServerZone']
-        if 'endpointCompartmentId' in kwargs:
+        if endpoint_compartment_id is None and 'endpointCompartmentId' in kwargs:
             endpoint_compartment_id = kwargs['endpointCompartmentId']
-        if 'endpointId' in kwargs:
+        if endpoint_id is None and 'endpointId' in kwargs:
             endpoint_id = kwargs['endpointId']
-        if 'endpointName' in kwargs:
+        if endpoint_name is None and 'endpointName' in kwargs:
             endpoint_name = kwargs['endpointName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isForceOperation' in kwargs:
+        if is_force_operation is None and 'isForceOperation' in kwargs:
             is_force_operation = kwargs['isForceOperation']
-        if 'isPrivateNetworkEnabled' in kwargs:
+        if is_private_network_enabled is None and 'isPrivateNetworkEnabled' in kwargs:
             is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
-        if 'quiesceTimeout' in kwargs:
+        if quiesce_timeout is None and 'quiesceTimeout' in kwargs:
             quiesce_timeout = kwargs['quiesceTimeout']
-        if 'registryCompartmentId' in kwargs:
+        if registry_compartment_id is None and 'registryCompartmentId' in kwargs:
             registry_compartment_id = kwargs['registryCompartmentId']
-        if 'registryId' in kwargs:
+        if registry_id is None and 'registryId' in kwargs:
             registry_id = kwargs['registryId']
-        if 'registryName' in kwargs:
+        if registry_name is None and 'registryName' in kwargs:
             registry_name = kwargs['registryName']
-        if 'stateMessage' in kwargs:
+        if state_message is None and 'stateMessage' in kwargs:
             state_message = kwargs['stateMessage']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
 
         if compartment_id is not None:

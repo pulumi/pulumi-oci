@@ -52,20 +52,26 @@ class RrsetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: pulumi.Input[str],
-             rtype: pulumi.Input[str],
-             zone_name_or_id: pulumi.Input[str],
+             domain: Optional[pulumi.Input[str]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             zone_name_or_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'zoneNameOrId' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if zone_name_or_id is None and 'zoneNameOrId' in kwargs:
             zone_name_or_id = kwargs['zoneNameOrId']
-        if 'compartmentId' in kwargs:
+        if zone_name_or_id is None:
+            raise TypeError("Missing 'zone_name_or_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
 
         _setter("domain", domain)
@@ -217,13 +223,13 @@ class _RrsetState:
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
              zone_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
-        if 'zoneNameOrId' in kwargs:
+        if zone_name_or_id is None and 'zoneNameOrId' in kwargs:
             zone_name_or_id = kwargs['zoneNameOrId']
 
         if compartment_id is not None:

@@ -1092,10 +1092,10 @@ class DomainsAppArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             based_on_template: pulumi.Input['DomainsAppBasedOnTemplateArgs'],
-             display_name: pulumi.Input[str],
-             idcs_endpoint: pulumi.Input[str],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             based_on_template: Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              access_token_expiry: Optional[pulumi.Input[int]] = None,
              active: Optional[pulumi.Input[bool]] = None,
              alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
@@ -1187,173 +1187,181 @@ class DomainsAppArgs:
              urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'basedOnTemplate' in kwargs:
+        if based_on_template is None and 'basedOnTemplate' in kwargs:
             based_on_template = kwargs['basedOnTemplate']
-        if 'displayName' in kwargs:
+        if based_on_template is None:
+            raise TypeError("Missing 'based_on_template' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'idcsEndpoint' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'accessTokenExpiry' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if access_token_expiry is None and 'accessTokenExpiry' in kwargs:
             access_token_expiry = kwargs['accessTokenExpiry']
-        if 'aliasApps' in kwargs:
+        if alias_apps is None and 'aliasApps' in kwargs:
             alias_apps = kwargs['aliasApps']
-        if 'allUrlSchemesAllowed' in kwargs:
+        if all_url_schemes_allowed is None and 'allUrlSchemesAllowed' in kwargs:
             all_url_schemes_allowed = kwargs['allUrlSchemesAllowed']
-        if 'allowAccessControl' in kwargs:
+        if allow_access_control is None and 'allowAccessControl' in kwargs:
             allow_access_control = kwargs['allowAccessControl']
-        if 'allowOffline' in kwargs:
+        if allow_offline is None and 'allowOffline' in kwargs:
             allow_offline = kwargs['allowOffline']
-        if 'allowedGrants' in kwargs:
+        if allowed_grants is None and 'allowedGrants' in kwargs:
             allowed_grants = kwargs['allowedGrants']
-        if 'allowedOperations' in kwargs:
+        if allowed_operations is None and 'allowedOperations' in kwargs:
             allowed_operations = kwargs['allowedOperations']
-        if 'allowedScopes' in kwargs:
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
             allowed_scopes = kwargs['allowedScopes']
-        if 'allowedTags' in kwargs:
+        if allowed_tags is None and 'allowedTags' in kwargs:
             allowed_tags = kwargs['allowedTags']
-        if 'appIcon' in kwargs:
+        if app_icon is None and 'appIcon' in kwargs:
             app_icon = kwargs['appIcon']
-        if 'appSignonPolicy' in kwargs:
+        if app_signon_policy is None and 'appSignonPolicy' in kwargs:
             app_signon_policy = kwargs['appSignonPolicy']
-        if 'appThumbnail' in kwargs:
+        if app_thumbnail is None and 'appThumbnail' in kwargs:
             app_thumbnail = kwargs['appThumbnail']
-        if 'appsNetworkPerimeters' in kwargs:
+        if apps_network_perimeters is None and 'appsNetworkPerimeters' in kwargs:
             apps_network_perimeters = kwargs['appsNetworkPerimeters']
-        if 'asOpcService' in kwargs:
+        if as_opc_service is None and 'asOpcService' in kwargs:
             as_opc_service = kwargs['asOpcService']
-        if 'attrRenderingMetadatas' in kwargs:
+        if attr_rendering_metadatas is None and 'attrRenderingMetadatas' in kwargs:
             attr_rendering_metadatas = kwargs['attrRenderingMetadatas']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'bypassConsent' in kwargs:
+        if bypass_consent is None and 'bypassConsent' in kwargs:
             bypass_consent = kwargs['bypassConsent']
-        if 'clientIpChecking' in kwargs:
+        if client_ip_checking is None and 'clientIpChecking' in kwargs:
             client_ip_checking = kwargs['clientIpChecking']
-        if 'clientType' in kwargs:
+        if client_type is None and 'clientType' in kwargs:
             client_type = kwargs['clientType']
-        if 'contactEmailAddress' in kwargs:
+        if contact_email_address is None and 'contactEmailAddress' in kwargs:
             contact_email_address = kwargs['contactEmailAddress']
-        if 'delegatedServiceNames' in kwargs:
+        if delegated_service_names is None and 'delegatedServiceNames' in kwargs:
             delegated_service_names = kwargs['delegatedServiceNames']
-        if 'disableKmsiTokenAuthentication' in kwargs:
+        if disable_kmsi_token_authentication is None and 'disableKmsiTokenAuthentication' in kwargs:
             disable_kmsi_token_authentication = kwargs['disableKmsiTokenAuthentication']
-        if 'errorPageUrl' in kwargs:
+        if error_page_url is None and 'errorPageUrl' in kwargs:
             error_page_url = kwargs['errorPageUrl']
-        if 'homePageUrl' in kwargs:
+        if home_page_url is None and 'homePageUrl' in kwargs:
             home_page_url = kwargs['homePageUrl']
-        if 'idTokenEncAlgo' in kwargs:
+        if id_token_enc_algo is None and 'idTokenEncAlgo' in kwargs:
             id_token_enc_algo = kwargs['idTokenEncAlgo']
-        if 'identityProviders' in kwargs:
+        if identity_providers is None and 'identityProviders' in kwargs:
             identity_providers = kwargs['identityProviders']
-        if 'idpPolicy' in kwargs:
+        if idp_policy is None and 'idpPolicy' in kwargs:
             idp_policy = kwargs['idpPolicy']
-        if 'isAliasApp' in kwargs:
+        if is_alias_app is None and 'isAliasApp' in kwargs:
             is_alias_app = kwargs['isAliasApp']
-        if 'isEnterpriseApp' in kwargs:
+        if is_enterprise_app is None and 'isEnterpriseApp' in kwargs:
             is_enterprise_app = kwargs['isEnterpriseApp']
-        if 'isFormFill' in kwargs:
+        if is_form_fill is None and 'isFormFill' in kwargs:
             is_form_fill = kwargs['isFormFill']
-        if 'isKerberosRealm' in kwargs:
+        if is_kerberos_realm is None and 'isKerberosRealm' in kwargs:
             is_kerberos_realm = kwargs['isKerberosRealm']
-        if 'isLoginTarget' in kwargs:
+        if is_login_target is None and 'isLoginTarget' in kwargs:
             is_login_target = kwargs['isLoginTarget']
-        if 'isMobileTarget' in kwargs:
+        if is_mobile_target is None and 'isMobileTarget' in kwargs:
             is_mobile_target = kwargs['isMobileTarget']
-        if 'isMulticloudServiceApp' in kwargs:
+        if is_multicloud_service_app is None and 'isMulticloudServiceApp' in kwargs:
             is_multicloud_service_app = kwargs['isMulticloudServiceApp']
-        if 'isOauthClient' in kwargs:
+        if is_oauth_client is None and 'isOauthClient' in kwargs:
             is_oauth_client = kwargs['isOauthClient']
-        if 'isOauthResource' in kwargs:
+        if is_oauth_resource is None and 'isOauthResource' in kwargs:
             is_oauth_resource = kwargs['isOauthResource']
-        if 'isObligationCapable' in kwargs:
+        if is_obligation_capable is None and 'isObligationCapable' in kwargs:
             is_obligation_capable = kwargs['isObligationCapable']
-        if 'isRadiusApp' in kwargs:
+        if is_radius_app is None and 'isRadiusApp' in kwargs:
             is_radius_app = kwargs['isRadiusApp']
-        if 'isSamlServiceProvider' in kwargs:
+        if is_saml_service_provider is None and 'isSamlServiceProvider' in kwargs:
             is_saml_service_provider = kwargs['isSamlServiceProvider']
-        if 'isUnmanagedApp' in kwargs:
+        if is_unmanaged_app is None and 'isUnmanagedApp' in kwargs:
             is_unmanaged_app = kwargs['isUnmanagedApp']
-        if 'isWebTierPolicy' in kwargs:
+        if is_web_tier_policy is None and 'isWebTierPolicy' in kwargs:
             is_web_tier_policy = kwargs['isWebTierPolicy']
-        if 'landingPageUrl' in kwargs:
+        if landing_page_url is None and 'landingPageUrl' in kwargs:
             landing_page_url = kwargs['landingPageUrl']
-        if 'linkingCallbackUrl' in kwargs:
+        if linking_callback_url is None and 'linkingCallbackUrl' in kwargs:
             linking_callback_url = kwargs['linkingCallbackUrl']
-        if 'loginMechanism' in kwargs:
+        if login_mechanism is None and 'loginMechanism' in kwargs:
             login_mechanism = kwargs['loginMechanism']
-        if 'loginPageUrl' in kwargs:
+        if login_page_url is None and 'loginPageUrl' in kwargs:
             login_page_url = kwargs['loginPageUrl']
-        if 'logoutPageUrl' in kwargs:
+        if logout_page_url is None and 'logoutPageUrl' in kwargs:
             logout_page_url = kwargs['logoutPageUrl']
-        if 'logoutUri' in kwargs:
+        if logout_uri is None and 'logoutUri' in kwargs:
             logout_uri = kwargs['logoutUri']
-        if 'postLogoutRedirectUris' in kwargs:
+        if post_logout_redirect_uris is None and 'postLogoutRedirectUris' in kwargs:
             post_logout_redirect_uris = kwargs['postLogoutRedirectUris']
-        if 'privacyPolicyUrl' in kwargs:
+        if privacy_policy_url is None and 'privacyPolicyUrl' in kwargs:
             privacy_policy_url = kwargs['privacyPolicyUrl']
-        if 'productLogoUrl' in kwargs:
+        if product_logo_url is None and 'productLogoUrl' in kwargs:
             product_logo_url = kwargs['productLogoUrl']
-        if 'productName' in kwargs:
+        if product_name is None and 'productName' in kwargs:
             product_name = kwargs['productName']
-        if 'protectableSecondaryAudiences' in kwargs:
+        if protectable_secondary_audiences is None and 'protectableSecondaryAudiences' in kwargs:
             protectable_secondary_audiences = kwargs['protectableSecondaryAudiences']
-        if 'radiusPolicy' in kwargs:
+        if radius_policy is None and 'radiusPolicy' in kwargs:
             radius_policy = kwargs['radiusPolicy']
-        if 'redirectUris' in kwargs:
+        if redirect_uris is None and 'redirectUris' in kwargs:
             redirect_uris = kwargs['redirectUris']
-        if 'refreshTokenExpiry' in kwargs:
+        if refresh_token_expiry is None and 'refreshTokenExpiry' in kwargs:
             refresh_token_expiry = kwargs['refreshTokenExpiry']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'samlServiceProvider' in kwargs:
+        if saml_service_provider is None and 'samlServiceProvider' in kwargs:
             saml_service_provider = kwargs['samlServiceProvider']
-        if 'secondaryAudiences' in kwargs:
+        if secondary_audiences is None and 'secondaryAudiences' in kwargs:
             secondary_audiences = kwargs['secondaryAudiences']
-        if 'serviceParams' in kwargs:
+        if service_params is None and 'serviceParams' in kwargs:
             service_params = kwargs['serviceParams']
-        if 'serviceTypeUrn' in kwargs:
+        if service_type_urn is None and 'serviceTypeUrn' in kwargs:
             service_type_urn = kwargs['serviceTypeUrn']
-        if 'serviceTypeVersion' in kwargs:
+        if service_type_version is None and 'serviceTypeVersion' in kwargs:
             service_type_version = kwargs['serviceTypeVersion']
-        if 'showInMyApps' in kwargs:
+        if show_in_my_apps is None and 'showInMyApps' in kwargs:
             show_in_my_apps = kwargs['showInMyApps']
-        if 'signonPolicy' in kwargs:
+        if signon_policy is None and 'signonPolicy' in kwargs:
             signon_policy = kwargs['signonPolicy']
-        if 'termsOfServiceUrl' in kwargs:
+        if terms_of_service_url is None and 'termsOfServiceUrl' in kwargs:
             terms_of_service_url = kwargs['termsOfServiceUrl']
-        if 'termsOfUse' in kwargs:
+        if terms_of_use is None and 'termsOfUse' in kwargs:
             terms_of_use = kwargs['termsOfUse']
-        if 'trustPolicies' in kwargs:
+        if trust_policies is None and 'trustPolicies' in kwargs:
             trust_policies = kwargs['trustPolicies']
-        if 'trustScope' in kwargs:
+        if trust_scope is None and 'trustScope' in kwargs:
             trust_scope = kwargs['trustScope']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondbcs_app is None and 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondbcs_app = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is None and 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']
-        if 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is None and 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmanagedappApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionopc_service_app is None and 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionopc_service_app = kwargs['urnietfparamsscimschemasoracleidcsextensionopcServiceApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionradius_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionradius_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionradiusAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionrequestable_app is None and 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionrequestable_app = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is None and 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = kwargs['urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is None and 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = kwargs['urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']
 
         _setter("based_on_template", based_on_template)
@@ -5001,215 +5009,215 @@ class _DomainsAppState:
              urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
              user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessTokenExpiry' in kwargs:
+        if access_token_expiry is None and 'accessTokenExpiry' in kwargs:
             access_token_expiry = kwargs['accessTokenExpiry']
-        if 'adminRoles' in kwargs:
+        if admin_roles is None and 'adminRoles' in kwargs:
             admin_roles = kwargs['adminRoles']
-        if 'aliasApps' in kwargs:
+        if alias_apps is None and 'aliasApps' in kwargs:
             alias_apps = kwargs['aliasApps']
-        if 'allUrlSchemesAllowed' in kwargs:
+        if all_url_schemes_allowed is None and 'allUrlSchemesAllowed' in kwargs:
             all_url_schemes_allowed = kwargs['allUrlSchemesAllowed']
-        if 'allowAccessControl' in kwargs:
+        if allow_access_control is None and 'allowAccessControl' in kwargs:
             allow_access_control = kwargs['allowAccessControl']
-        if 'allowOffline' in kwargs:
+        if allow_offline is None and 'allowOffline' in kwargs:
             allow_offline = kwargs['allowOffline']
-        if 'allowedGrants' in kwargs:
+        if allowed_grants is None and 'allowedGrants' in kwargs:
             allowed_grants = kwargs['allowedGrants']
-        if 'allowedOperations' in kwargs:
+        if allowed_operations is None and 'allowedOperations' in kwargs:
             allowed_operations = kwargs['allowedOperations']
-        if 'allowedScopes' in kwargs:
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
             allowed_scopes = kwargs['allowedScopes']
-        if 'allowedTags' in kwargs:
+        if allowed_tags is None and 'allowedTags' in kwargs:
             allowed_tags = kwargs['allowedTags']
-        if 'appIcon' in kwargs:
+        if app_icon is None and 'appIcon' in kwargs:
             app_icon = kwargs['appIcon']
-        if 'appSignonPolicy' in kwargs:
+        if app_signon_policy is None and 'appSignonPolicy' in kwargs:
             app_signon_policy = kwargs['appSignonPolicy']
-        if 'appThumbnail' in kwargs:
+        if app_thumbnail is None and 'appThumbnail' in kwargs:
             app_thumbnail = kwargs['appThumbnail']
-        if 'appsNetworkPerimeters' in kwargs:
+        if apps_network_perimeters is None and 'appsNetworkPerimeters' in kwargs:
             apps_network_perimeters = kwargs['appsNetworkPerimeters']
-        if 'asOpcService' in kwargs:
+        if as_opc_service is None and 'asOpcService' in kwargs:
             as_opc_service = kwargs['asOpcService']
-        if 'attrRenderingMetadatas' in kwargs:
+        if attr_rendering_metadatas is None and 'attrRenderingMetadatas' in kwargs:
             attr_rendering_metadatas = kwargs['attrRenderingMetadatas']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'basedOnTemplate' in kwargs:
+        if based_on_template is None and 'basedOnTemplate' in kwargs:
             based_on_template = kwargs['basedOnTemplate']
-        if 'bypassConsent' in kwargs:
+        if bypass_consent is None and 'bypassConsent' in kwargs:
             bypass_consent = kwargs['bypassConsent']
-        if 'callbackServiceUrl' in kwargs:
+        if callback_service_url is None and 'callbackServiceUrl' in kwargs:
             callback_service_url = kwargs['callbackServiceUrl']
-        if 'clientIpChecking' in kwargs:
+        if client_ip_checking is None and 'clientIpChecking' in kwargs:
             client_ip_checking = kwargs['clientIpChecking']
-        if 'clientSecret' in kwargs:
+        if client_secret is None and 'clientSecret' in kwargs:
             client_secret = kwargs['clientSecret']
-        if 'clientType' in kwargs:
+        if client_type is None and 'clientType' in kwargs:
             client_type = kwargs['clientType']
-        if 'cloudControlProperties' in kwargs:
+        if cloud_control_properties is None and 'cloudControlProperties' in kwargs:
             cloud_control_properties = kwargs['cloudControlProperties']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'contactEmailAddress' in kwargs:
+        if contact_email_address is None and 'contactEmailAddress' in kwargs:
             contact_email_address = kwargs['contactEmailAddress']
-        if 'delegatedServiceNames' in kwargs:
+        if delegated_service_names is None and 'delegatedServiceNames' in kwargs:
             delegated_service_names = kwargs['delegatedServiceNames']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'disableKmsiTokenAuthentication' in kwargs:
+        if disable_kmsi_token_authentication is None and 'disableKmsiTokenAuthentication' in kwargs:
             disable_kmsi_token_authentication = kwargs['disableKmsiTokenAuthentication']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'editableAttributes' in kwargs:
+        if editable_attributes is None and 'editableAttributes' in kwargs:
             editable_attributes = kwargs['editableAttributes']
-        if 'errorPageUrl' in kwargs:
+        if error_page_url is None and 'errorPageUrl' in kwargs:
             error_page_url = kwargs['errorPageUrl']
-        if 'grantedAppRoles' in kwargs:
+        if granted_app_roles is None and 'grantedAppRoles' in kwargs:
             granted_app_roles = kwargs['grantedAppRoles']
-        if 'hashedClientSecret' in kwargs:
+        if hashed_client_secret is None and 'hashedClientSecret' in kwargs:
             hashed_client_secret = kwargs['hashedClientSecret']
-        if 'homePageUrl' in kwargs:
+        if home_page_url is None and 'homePageUrl' in kwargs:
             home_page_url = kwargs['homePageUrl']
-        if 'idTokenEncAlgo' in kwargs:
+        if id_token_enc_algo is None and 'idTokenEncAlgo' in kwargs:
             id_token_enc_algo = kwargs['idTokenEncAlgo']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'identityProviders' in kwargs:
+        if identity_providers is None and 'identityProviders' in kwargs:
             identity_providers = kwargs['identityProviders']
-        if 'idpPolicy' in kwargs:
+        if idp_policy is None and 'idpPolicy' in kwargs:
             idp_policy = kwargs['idpPolicy']
-        if 'isAliasApp' in kwargs:
+        if is_alias_app is None and 'isAliasApp' in kwargs:
             is_alias_app = kwargs['isAliasApp']
-        if 'isDatabaseService' in kwargs:
+        if is_database_service is None and 'isDatabaseService' in kwargs:
             is_database_service = kwargs['isDatabaseService']
-        if 'isEnterpriseApp' in kwargs:
+        if is_enterprise_app is None and 'isEnterpriseApp' in kwargs:
             is_enterprise_app = kwargs['isEnterpriseApp']
-        if 'isFormFill' in kwargs:
+        if is_form_fill is None and 'isFormFill' in kwargs:
             is_form_fill = kwargs['isFormFill']
-        if 'isKerberosRealm' in kwargs:
+        if is_kerberos_realm is None and 'isKerberosRealm' in kwargs:
             is_kerberos_realm = kwargs['isKerberosRealm']
-        if 'isLoginTarget' in kwargs:
+        if is_login_target is None and 'isLoginTarget' in kwargs:
             is_login_target = kwargs['isLoginTarget']
-        if 'isManagedApp' in kwargs:
+        if is_managed_app is None and 'isManagedApp' in kwargs:
             is_managed_app = kwargs['isManagedApp']
-        if 'isMobileTarget' in kwargs:
+        if is_mobile_target is None and 'isMobileTarget' in kwargs:
             is_mobile_target = kwargs['isMobileTarget']
-        if 'isMulticloudServiceApp' in kwargs:
+        if is_multicloud_service_app is None and 'isMulticloudServiceApp' in kwargs:
             is_multicloud_service_app = kwargs['isMulticloudServiceApp']
-        if 'isOauthClient' in kwargs:
+        if is_oauth_client is None and 'isOauthClient' in kwargs:
             is_oauth_client = kwargs['isOauthClient']
-        if 'isOauthResource' in kwargs:
+        if is_oauth_resource is None and 'isOauthResource' in kwargs:
             is_oauth_resource = kwargs['isOauthResource']
-        if 'isObligationCapable' in kwargs:
+        if is_obligation_capable is None and 'isObligationCapable' in kwargs:
             is_obligation_capable = kwargs['isObligationCapable']
-        if 'isOpcService' in kwargs:
+        if is_opc_service is None and 'isOpcService' in kwargs:
             is_opc_service = kwargs['isOpcService']
-        if 'isRadiusApp' in kwargs:
+        if is_radius_app is None and 'isRadiusApp' in kwargs:
             is_radius_app = kwargs['isRadiusApp']
-        if 'isSamlServiceProvider' in kwargs:
+        if is_saml_service_provider is None and 'isSamlServiceProvider' in kwargs:
             is_saml_service_provider = kwargs['isSamlServiceProvider']
-        if 'isUnmanagedApp' in kwargs:
+        if is_unmanaged_app is None and 'isUnmanagedApp' in kwargs:
             is_unmanaged_app = kwargs['isUnmanagedApp']
-        if 'isWebTierPolicy' in kwargs:
+        if is_web_tier_policy is None and 'isWebTierPolicy' in kwargs:
             is_web_tier_policy = kwargs['isWebTierPolicy']
-        if 'landingPageUrl' in kwargs:
+        if landing_page_url is None and 'landingPageUrl' in kwargs:
             landing_page_url = kwargs['landingPageUrl']
-        if 'linkingCallbackUrl' in kwargs:
+        if linking_callback_url is None and 'linkingCallbackUrl' in kwargs:
             linking_callback_url = kwargs['linkingCallbackUrl']
-        if 'loginMechanism' in kwargs:
+        if login_mechanism is None and 'loginMechanism' in kwargs:
             login_mechanism = kwargs['loginMechanism']
-        if 'loginPageUrl' in kwargs:
+        if login_page_url is None and 'loginPageUrl' in kwargs:
             login_page_url = kwargs['loginPageUrl']
-        if 'logoutPageUrl' in kwargs:
+        if logout_page_url is None and 'logoutPageUrl' in kwargs:
             logout_page_url = kwargs['logoutPageUrl']
-        if 'logoutUri' in kwargs:
+        if logout_uri is None and 'logoutUri' in kwargs:
             logout_uri = kwargs['logoutUri']
-        if 'meterAsOpcService' in kwargs:
+        if meter_as_opc_service is None and 'meterAsOpcService' in kwargs:
             meter_as_opc_service = kwargs['meterAsOpcService']
-        if 'postLogoutRedirectUris' in kwargs:
+        if post_logout_redirect_uris is None and 'postLogoutRedirectUris' in kwargs:
             post_logout_redirect_uris = kwargs['postLogoutRedirectUris']
-        if 'privacyPolicyUrl' in kwargs:
+        if privacy_policy_url is None and 'privacyPolicyUrl' in kwargs:
             privacy_policy_url = kwargs['privacyPolicyUrl']
-        if 'productLogoUrl' in kwargs:
+        if product_logo_url is None and 'productLogoUrl' in kwargs:
             product_logo_url = kwargs['productLogoUrl']
-        if 'productName' in kwargs:
+        if product_name is None and 'productName' in kwargs:
             product_name = kwargs['productName']
-        if 'protectableSecondaryAudiences' in kwargs:
+        if protectable_secondary_audiences is None and 'protectableSecondaryAudiences' in kwargs:
             protectable_secondary_audiences = kwargs['protectableSecondaryAudiences']
-        if 'radiusPolicy' in kwargs:
+        if radius_policy is None and 'radiusPolicy' in kwargs:
             radius_policy = kwargs['radiusPolicy']
-        if 'readyToUpgrade' in kwargs:
+        if ready_to_upgrade is None and 'readyToUpgrade' in kwargs:
             ready_to_upgrade = kwargs['readyToUpgrade']
-        if 'redirectUris' in kwargs:
+        if redirect_uris is None and 'redirectUris' in kwargs:
             redirect_uris = kwargs['redirectUris']
-        if 'refreshTokenExpiry' in kwargs:
+        if refresh_token_expiry is None and 'refreshTokenExpiry' in kwargs:
             refresh_token_expiry = kwargs['refreshTokenExpiry']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'samlServiceProvider' in kwargs:
+        if saml_service_provider is None and 'samlServiceProvider' in kwargs:
             saml_service_provider = kwargs['samlServiceProvider']
-        if 'secondaryAudiences' in kwargs:
+        if secondary_audiences is None and 'secondaryAudiences' in kwargs:
             secondary_audiences = kwargs['secondaryAudiences']
-        if 'serviceParams' in kwargs:
+        if service_params is None and 'serviceParams' in kwargs:
             service_params = kwargs['serviceParams']
-        if 'serviceTypeUrn' in kwargs:
+        if service_type_urn is None and 'serviceTypeUrn' in kwargs:
             service_type_urn = kwargs['serviceTypeUrn']
-        if 'serviceTypeVersion' in kwargs:
+        if service_type_version is None and 'serviceTypeVersion' in kwargs:
             service_type_version = kwargs['serviceTypeVersion']
-        if 'showInMyApps' in kwargs:
+        if show_in_my_apps is None and 'showInMyApps' in kwargs:
             show_in_my_apps = kwargs['showInMyApps']
-        if 'signonPolicy' in kwargs:
+        if signon_policy is None and 'signonPolicy' in kwargs:
             signon_policy = kwargs['signonPolicy']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'termsOfServiceUrl' in kwargs:
+        if terms_of_service_url is None and 'termsOfServiceUrl' in kwargs:
             terms_of_service_url = kwargs['termsOfServiceUrl']
-        if 'termsOfUse' in kwargs:
+        if terms_of_use is None and 'termsOfUse' in kwargs:
             terms_of_use = kwargs['termsOfUse']
-        if 'trustPolicies' in kwargs:
+        if trust_policies is None and 'trustPolicies' in kwargs:
             trust_policies = kwargs['trustPolicies']
-        if 'trustScope' in kwargs:
+        if trust_scope is None and 'trustScope' in kwargs:
             trust_scope = kwargs['trustScope']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondbcs_app is None and 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondbcs_app = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is None and 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']
-        if 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is None and 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmanagedappApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionopc_service_app is None and 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionopc_service_app = kwargs['urnietfparamsscimschemasoracleidcsextensionopcServiceApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionradius_app_app is None and 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionradius_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionradiusAppApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionrequestable_app is None and 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionrequestable_app = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is None and 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = kwargs['urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']
-        if 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is None and 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = kwargs['urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']
-        if 'userRoles' in kwargs:
+        if user_roles is None and 'userRoles' in kwargs:
             user_roles = kwargs['userRoles']
 
         if access_token_expiry is not None:
@@ -9094,30 +9102,18 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["allowed_scopes"] = allowed_scopes
             __props__.__dict__["allowed_tags"] = allowed_tags
             __props__.__dict__["app_icon"] = app_icon
-            if app_signon_policy is not None and not isinstance(app_signon_policy, DomainsAppAppSignonPolicyArgs):
-                app_signon_policy = app_signon_policy or {}
-                def _setter(key, value):
-                    app_signon_policy[key] = value
-                DomainsAppAppSignonPolicyArgs._configure(_setter, **app_signon_policy)
+            app_signon_policy = _utilities.configure(app_signon_policy, DomainsAppAppSignonPolicyArgs, True)
             __props__.__dict__["app_signon_policy"] = app_signon_policy
             __props__.__dict__["app_thumbnail"] = app_thumbnail
             __props__.__dict__["apps_network_perimeters"] = apps_network_perimeters
-            if as_opc_service is not None and not isinstance(as_opc_service, DomainsAppAsOpcServiceArgs):
-                as_opc_service = as_opc_service or {}
-                def _setter(key, value):
-                    as_opc_service[key] = value
-                DomainsAppAsOpcServiceArgs._configure(_setter, **as_opc_service)
+            as_opc_service = _utilities.configure(as_opc_service, DomainsAppAsOpcServiceArgs, True)
             __props__.__dict__["as_opc_service"] = as_opc_service
             __props__.__dict__["attr_rendering_metadatas"] = attr_rendering_metadatas
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["audience"] = audience
             __props__.__dict__["authorization"] = authorization
-            if based_on_template is not None and not isinstance(based_on_template, DomainsAppBasedOnTemplateArgs):
-                based_on_template = based_on_template or {}
-                def _setter(key, value):
-                    based_on_template[key] = value
-                DomainsAppBasedOnTemplateArgs._configure(_setter, **based_on_template)
+            based_on_template = _utilities.configure(based_on_template, DomainsAppBasedOnTemplateArgs, True)
             if based_on_template is None and not opts.urn:
                 raise TypeError("Missing required property 'based_on_template'")
             __props__.__dict__["based_on_template"] = based_on_template
@@ -9140,11 +9136,7 @@ class DomainsApp(pulumi.CustomResource):
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["identity_providers"] = identity_providers
-            if idp_policy is not None and not isinstance(idp_policy, DomainsAppIdpPolicyArgs):
-                idp_policy = idp_policy or {}
-                def _setter(key, value):
-                    idp_policy[key] = value
-                DomainsAppIdpPolicyArgs._configure(_setter, **idp_policy)
+            idp_policy = _utilities.configure(idp_policy, DomainsAppIdpPolicyArgs, True)
             __props__.__dict__["idp_policy"] = idp_policy
             __props__.__dict__["is_alias_app"] = is_alias_app
             __props__.__dict__["is_enterprise_app"] = is_enterprise_app
@@ -9173,20 +9165,12 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["product_logo_url"] = product_logo_url
             __props__.__dict__["product_name"] = product_name
             __props__.__dict__["protectable_secondary_audiences"] = protectable_secondary_audiences
-            if radius_policy is not None and not isinstance(radius_policy, DomainsAppRadiusPolicyArgs):
-                radius_policy = radius_policy or {}
-                def _setter(key, value):
-                    radius_policy[key] = value
-                DomainsAppRadiusPolicyArgs._configure(_setter, **radius_policy)
+            radius_policy = _utilities.configure(radius_policy, DomainsAppRadiusPolicyArgs, True)
             __props__.__dict__["radius_policy"] = radius_policy
             __props__.__dict__["redirect_uris"] = redirect_uris
             __props__.__dict__["refresh_token_expiry"] = refresh_token_expiry
             __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
-            if saml_service_provider is not None and not isinstance(saml_service_provider, DomainsAppSamlServiceProviderArgs):
-                saml_service_provider = saml_service_provider or {}
-                def _setter(key, value):
-                    saml_service_provider[key] = value
-                DomainsAppSamlServiceProviderArgs._configure(_setter, **saml_service_provider)
+            saml_service_provider = _utilities.configure(saml_service_provider, DomainsAppSamlServiceProviderArgs, True)
             __props__.__dict__["saml_service_provider"] = saml_service_provider
             if schemas is None and not opts.urn:
                 raise TypeError("Missing required property 'schemas'")
@@ -9197,99 +9181,39 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["service_type_urn"] = service_type_urn
             __props__.__dict__["service_type_version"] = service_type_version
             __props__.__dict__["show_in_my_apps"] = show_in_my_apps
-            if signon_policy is not None and not isinstance(signon_policy, DomainsAppSignonPolicyArgs):
-                signon_policy = signon_policy or {}
-                def _setter(key, value):
-                    signon_policy[key] = value
-                DomainsAppSignonPolicyArgs._configure(_setter, **signon_policy)
+            signon_policy = _utilities.configure(signon_policy, DomainsAppSignonPolicyArgs, True)
             __props__.__dict__["signon_policy"] = signon_policy
             __props__.__dict__["tags"] = tags
             __props__.__dict__["terms_of_service_url"] = terms_of_service_url
-            if terms_of_use is not None and not isinstance(terms_of_use, DomainsAppTermsOfUseArgs):
-                terms_of_use = terms_of_use or {}
-                def _setter(key, value):
-                    terms_of_use[key] = value
-                DomainsAppTermsOfUseArgs._configure(_setter, **terms_of_use)
+            terms_of_use = _utilities.configure(terms_of_use, DomainsAppTermsOfUseArgs, True)
             __props__.__dict__["terms_of_use"] = terms_of_use
             __props__.__dict__["trust_policies"] = trust_policies
             __props__.__dict__["trust_scope"] = trust_scope
-            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
-                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = _utilities.configure(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
-            if urnietfparamsscimschemasoracleidcsextensiondbcs_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondbcs_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs):
-                urnietfparamsscimschemasoracleidcsextensiondbcs_app = urnietfparamsscimschemasoracleidcsextensiondbcs_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensiondbcs_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondbcs_app)
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensiondbcs_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondbcs_app"] = urnietfparamsscimschemasoracleidcsextensiondbcs_app
-            if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionenterprise_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = urnietfparamsscimschemasoracleidcsextensionenterprise_app_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionenterprise_app_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionenterprise_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionenterprise_app_app"] = urnietfparamsscimschemasoracleidcsextensionenterprise_app_app
-            if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionform_fill_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = urnietfparamsscimschemasoracleidcsextensionform_fill_app_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionform_fill_app_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionform_fill_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionform_fill_app_app"] = urnietfparamsscimschemasoracleidcsextensionform_fill_app_app
-            if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs):
-                urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template"] = urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template
-            if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app"] = urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app
-            if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmanagedapp_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = urnietfparamsscimschemasoracleidcsextensionmanagedapp_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionmanagedapp_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionmanagedapp_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmanagedapp_app"] = urnietfparamsscimschemasoracleidcsextensionmanagedapp_app
-            if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app"] = urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app
-            if urnietfparamsscimschemasoracleidcsextensionopc_service_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionopc_service_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionopc_service_app = urnietfparamsscimschemasoracleidcsextensionopc_service_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionopc_service_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionopc_service_app)
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionopc_service_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionopc_service_app"] = urnietfparamsscimschemasoracleidcsextensionopc_service_app
-            if urnietfparamsscimschemasoracleidcsextensionradius_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionradius_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionradius_app_app = urnietfparamsscimschemasoracleidcsextensionradius_app_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionradius_app_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionradius_app_app)
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionradius_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionradius_app_app"] = urnietfparamsscimschemasoracleidcsextensionradius_app_app
-            if urnietfparamsscimschemasoracleidcsextensionrequestable_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionrequestable_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionrequestable_app = urnietfparamsscimschemasoracleidcsextensionrequestable_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionrequestable_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionrequestable_app)
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionrequestable_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionrequestable_app"] = urnietfparamsscimschemasoracleidcsextensionrequestable_app
-            if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app"] = urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app
-            if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs):
-                urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app[key] = value
-                DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app"] = urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app
             __props__.__dict__["accounts"] = None
             __props__.__dict__["admin_roles"] = None

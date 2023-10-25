@@ -34,15 +34,19 @@ class PathRouteSetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             load_balancer_id: pulumi.Input[str],
-             path_routes: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]],
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'pathRoutes' in kwargs:
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if path_routes is None and 'pathRoutes' in kwargs:
             path_routes = kwargs['pathRoutes']
+        if path_routes is None:
+            raise TypeError("Missing 'path_routes' argument")
 
         _setter("load_balancer_id", load_balancer_id)
         _setter("path_routes", path_routes)
@@ -113,11 +117,11 @@ class _PathRouteSetState:
              name: Optional[pulumi.Input[str]] = None,
              path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
-        if 'pathRoutes' in kwargs:
+        if path_routes is None and 'pathRoutes' in kwargs:
             path_routes = kwargs['pathRoutes']
 
         if load_balancer_id is not None:

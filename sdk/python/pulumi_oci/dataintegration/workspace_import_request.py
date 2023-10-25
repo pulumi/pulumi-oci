@@ -50,26 +50,32 @@ class WorkspaceImportRequestArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bucket: pulumi.Input[str],
-             file_name: pulumi.Input[str],
-             workspace_id: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
              import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
              object_key_for_import: Optional[pulumi.Input[str]] = None,
              object_storage_region: Optional[pulumi.Input[str]] = None,
              object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileName' in kwargs:
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if file_name is None and 'fileName' in kwargs:
             file_name = kwargs['fileName']
-        if 'workspaceId' in kwargs:
+        if file_name is None:
+            raise TypeError("Missing 'file_name' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
-        if 'importConflictResolution' in kwargs:
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if import_conflict_resolution is None and 'importConflictResolution' in kwargs:
             import_conflict_resolution = kwargs['importConflictResolution']
-        if 'objectKeyForImport' in kwargs:
+        if object_key_for_import is None and 'objectKeyForImport' in kwargs:
             object_key_for_import = kwargs['objectKeyForImport']
-        if 'objectStorageRegion' in kwargs:
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
             object_storage_region = kwargs['objectStorageRegion']
-        if 'objectStorageTenancyId' in kwargs:
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
             object_storage_tenancy_id = kwargs['objectStorageTenancyId']
 
         _setter("bucket", bucket)
@@ -253,31 +259,31 @@ class _WorkspaceImportRequestState:
              time_started_in_millis: Optional[pulumi.Input[str]] = None,
              total_imported_object_count: Optional[pulumi.Input[int]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'errorMessages' in kwargs:
+        if error_messages is None and 'errorMessages' in kwargs:
             error_messages = kwargs['errorMessages']
-        if 'fileName' in kwargs:
+        if file_name is None and 'fileName' in kwargs:
             file_name = kwargs['fileName']
-        if 'importConflictResolution' in kwargs:
+        if import_conflict_resolution is None and 'importConflictResolution' in kwargs:
             import_conflict_resolution = kwargs['importConflictResolution']
-        if 'importedObjects' in kwargs:
+        if imported_objects is None and 'importedObjects' in kwargs:
             imported_objects = kwargs['importedObjects']
-        if 'objectKeyForImport' in kwargs:
+        if object_key_for_import is None and 'objectKeyForImport' in kwargs:
             object_key_for_import = kwargs['objectKeyForImport']
-        if 'objectStorageRegion' in kwargs:
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
             object_storage_region = kwargs['objectStorageRegion']
-        if 'objectStorageTenancyId' in kwargs:
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
             object_storage_tenancy_id = kwargs['objectStorageTenancyId']
-        if 'timeEndedInMillis' in kwargs:
+        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
             time_ended_in_millis = kwargs['timeEndedInMillis']
-        if 'timeStartedInMillis' in kwargs:
+        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
             time_started_in_millis = kwargs['timeStartedInMillis']
-        if 'totalImportedObjectCount' in kwargs:
+        if total_imported_object_count is None and 'totalImportedObjectCount' in kwargs:
             total_imported_object_count = kwargs['totalImportedObjectCount']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if bucket is not None:
@@ -650,11 +656,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             if file_name is None and not opts.urn:
                 raise TypeError("Missing required property 'file_name'")
             __props__.__dict__["file_name"] = file_name
-            if import_conflict_resolution is not None and not isinstance(import_conflict_resolution, WorkspaceImportRequestImportConflictResolutionArgs):
-                import_conflict_resolution = import_conflict_resolution or {}
-                def _setter(key, value):
-                    import_conflict_resolution[key] = value
-                WorkspaceImportRequestImportConflictResolutionArgs._configure(_setter, **import_conflict_resolution)
+            import_conflict_resolution = _utilities.configure(import_conflict_resolution, WorkspaceImportRequestImportConflictResolutionArgs, True)
             __props__.__dict__["import_conflict_resolution"] = import_conflict_resolution
             __props__.__dict__["object_key_for_import"] = object_key_for_import
             __props__.__dict__["object_storage_region"] = object_storage_region

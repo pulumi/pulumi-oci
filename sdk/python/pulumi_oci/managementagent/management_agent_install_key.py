@@ -42,22 +42,26 @@ class ManagementAgentInstallKeyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              allowed_key_install_count: Optional[pulumi.Input[int]] = None,
              is_unlimited: Optional[pulumi.Input[bool]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'allowedKeyInstallCount' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if allowed_key_install_count is None and 'allowedKeyInstallCount' in kwargs:
             allowed_key_install_count = kwargs['allowedKeyInstallCount']
-        if 'isUnlimited' in kwargs:
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'timeExpires' in kwargs:
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
 
         _setter("compartment_id", compartment_id)
@@ -198,27 +202,27 @@ class _ManagementAgentInstallKeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allowedKeyInstallCount' in kwargs:
+        if allowed_key_install_count is None and 'allowedKeyInstallCount' in kwargs:
             allowed_key_install_count = kwargs['allowedKeyInstallCount']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdByPrincipalId' in kwargs:
+        if created_by_principal_id is None and 'createdByPrincipalId' in kwargs:
             created_by_principal_id = kwargs['createdByPrincipalId']
-        if 'currentKeyInstallCount' in kwargs:
+        if current_key_install_count is None and 'currentKeyInstallCount' in kwargs:
             current_key_install_count = kwargs['currentKeyInstallCount']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'isUnlimited' in kwargs:
+        if is_unlimited is None and 'isUnlimited' in kwargs:
             is_unlimited = kwargs['isUnlimited']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeExpires' in kwargs:
+        if time_expires is None and 'timeExpires' in kwargs:
             time_expires = kwargs['timeExpires']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if allowed_key_install_count is not None:

@@ -63,8 +63,8 @@ class DiscoveryModArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             sensitive_data_model_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              discovery_type: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -75,31 +75,35 @@ class DiscoveryModArgs:
              is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
              schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'sensitiveDataModelId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if 'definedTags' in kwargs:
+        if sensitive_data_model_id is None:
+            raise TypeError("Missing 'sensitive_data_model_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryType' in kwargs:
+        if discovery_type is None and 'discoveryType' in kwargs:
             discovery_type = kwargs['discoveryType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
             is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if 'isIncludeAllSchemas' in kwargs:
+        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
             is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if 'isIncludeAllSensitiveTypes' in kwargs:
+        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
             is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if 'isSampleDataCollectionEnabled' in kwargs:
+        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
             is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if 'schemasForDiscoveries' in kwargs:
+        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
             schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
             sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
 
         _setter("compartment_id", compartment_id)
@@ -382,51 +386,51 @@ class _DiscoveryModState:
              total_new_sensitive_columns: Optional[pulumi.Input[str]] = None,
              total_objects_scanned: Optional[pulumi.Input[str]] = None,
              total_schemas_scanned: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'discoveryType' in kwargs:
+        if discovery_type is None and 'discoveryType' in kwargs:
             discovery_type = kwargs['discoveryType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
             is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if 'isIncludeAllSchemas' in kwargs:
+        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
             is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if 'isIncludeAllSensitiveTypes' in kwargs:
+        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
             is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if 'isSampleDataCollectionEnabled' in kwargs:
+        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
             is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if 'schemasForDiscoveries' in kwargs:
+        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
             schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if 'sensitiveDataModelId' in kwargs:
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
             sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'totalColumnsScanned' in kwargs:
+        if total_columns_scanned is None and 'totalColumnsScanned' in kwargs:
             total_columns_scanned = kwargs['totalColumnsScanned']
-        if 'totalDeletedSensitiveColumns' in kwargs:
+        if total_deleted_sensitive_columns is None and 'totalDeletedSensitiveColumns' in kwargs:
             total_deleted_sensitive_columns = kwargs['totalDeletedSensitiveColumns']
-        if 'totalModifiedSensitiveColumns' in kwargs:
+        if total_modified_sensitive_columns is None and 'totalModifiedSensitiveColumns' in kwargs:
             total_modified_sensitive_columns = kwargs['totalModifiedSensitiveColumns']
-        if 'totalNewSensitiveColumns' in kwargs:
+        if total_new_sensitive_columns is None and 'totalNewSensitiveColumns' in kwargs:
             total_new_sensitive_columns = kwargs['totalNewSensitiveColumns']
-        if 'totalObjectsScanned' in kwargs:
+        if total_objects_scanned is None and 'totalObjectsScanned' in kwargs:
             total_objects_scanned = kwargs['totalObjectsScanned']
-        if 'totalSchemasScanned' in kwargs:
+        if total_schemas_scanned is None and 'totalSchemasScanned' in kwargs:
             total_schemas_scanned = kwargs['totalSchemasScanned']
 
         if compartment_id is not None:

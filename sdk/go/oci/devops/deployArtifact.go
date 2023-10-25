@@ -51,12 +51,12 @@ import (
 //				},
 //				DeployArtifactType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_type),
 //				ProjectId:          pulumi.Any(oci_devops_project.Test_project.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Deploy_artifact_description),
 //				DisplayName: pulumi.Any(_var.Deploy_artifact_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

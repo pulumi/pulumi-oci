@@ -55,33 +55,47 @@ class ReportDefinitionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_filters: pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]],
-             column_infos: pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]],
-             column_sortings: pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             parent_id: pulumi.Input[str],
-             summaries: pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]],
+             column_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]] = None,
+             column_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
+             column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnFilters' in kwargs:
+        if column_filters is None and 'columnFilters' in kwargs:
             column_filters = kwargs['columnFilters']
-        if 'columnInfos' in kwargs:
+        if column_filters is None:
+            raise TypeError("Missing 'column_filters' argument")
+        if column_infos is None and 'columnInfos' in kwargs:
             column_infos = kwargs['columnInfos']
-        if 'columnSortings' in kwargs:
+        if column_infos is None:
+            raise TypeError("Missing 'column_infos' argument")
+        if column_sortings is None and 'columnSortings' in kwargs:
             column_sortings = kwargs['columnSortings']
-        if 'compartmentId' in kwargs:
+        if column_sortings is None:
+            raise TypeError("Missing 'column_sortings' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'parentId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if parent_id is None and 'parentId' in kwargs:
             parent_id = kwargs['parentId']
-        if 'definedTags' in kwargs:
+        if parent_id is None:
+            raise TypeError("Missing 'parent_id' argument")
+        if summaries is None:
+            raise TypeError("Missing 'summaries' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("column_filters", column_filters)
@@ -339,49 +353,49 @@ class _ReportDefinitionState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnFilters' in kwargs:
+        if column_filters is None and 'columnFilters' in kwargs:
             column_filters = kwargs['columnFilters']
-        if 'columnInfos' in kwargs:
+        if column_infos is None and 'columnInfos' in kwargs:
             column_infos = kwargs['columnInfos']
-        if 'columnSortings' in kwargs:
+        if column_sortings is None and 'columnSortings' in kwargs:
             column_sortings = kwargs['columnSortings']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'complianceStandards' in kwargs:
+        if compliance_standards is None and 'complianceStandards' in kwargs:
             compliance_standards = kwargs['complianceStandards']
-        if 'dataSource' in kwargs:
+        if data_source is None and 'dataSource' in kwargs:
             data_source = kwargs['dataSource']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'displayOrder' in kwargs:
+        if display_order is None and 'displayOrder' in kwargs:
             display_order = kwargs['displayOrder']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isSeeded' in kwargs:
+        if is_seeded is None and 'isSeeded' in kwargs:
             is_seeded = kwargs['isSeeded']
-        if 'parentId' in kwargs:
+        if parent_id is None and 'parentId' in kwargs:
             parent_id = kwargs['parentId']
-        if 'recordTimeSpan' in kwargs:
+        if record_time_span is None and 'recordTimeSpan' in kwargs:
             record_time_span = kwargs['recordTimeSpan']
-        if 'scheduledReportCompartmentId' in kwargs:
+        if scheduled_report_compartment_id is None and 'scheduledReportCompartmentId' in kwargs:
             scheduled_report_compartment_id = kwargs['scheduledReportCompartmentId']
-        if 'scheduledReportMimeType' in kwargs:
+        if scheduled_report_mime_type is None and 'scheduledReportMimeType' in kwargs:
             scheduled_report_mime_type = kwargs['scheduledReportMimeType']
-        if 'scheduledReportName' in kwargs:
+        if scheduled_report_name is None and 'scheduledReportName' in kwargs:
             scheduled_report_name = kwargs['scheduledReportName']
-        if 'scheduledReportRowLimit' in kwargs:
+        if scheduled_report_row_limit is None and 'scheduledReportRowLimit' in kwargs:
             scheduled_report_row_limit = kwargs['scheduledReportRowLimit']
-        if 'scimFilter' in kwargs:
+        if scim_filter is None and 'scimFilter' in kwargs:
             scim_filter = kwargs['scimFilter']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if category is not None:

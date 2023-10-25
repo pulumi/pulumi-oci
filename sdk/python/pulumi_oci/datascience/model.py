@@ -70,10 +70,10 @@ class ModelArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_content_length: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             model_artifact: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             artifact_content_length: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             model_artifact: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              artifact_content_disposition: Optional[pulumi.Input[str]] = None,
              custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
              defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
@@ -84,31 +84,39 @@ class ModelArgs:
              input_schema: Optional[pulumi.Input[str]] = None,
              output_schema: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactContentLength' in kwargs:
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
             artifact_content_length = kwargs['artifactContentLength']
-        if 'compartmentId' in kwargs:
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'modelArtifact' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if model_artifact is None and 'modelArtifact' in kwargs:
             model_artifact = kwargs['modelArtifact']
-        if 'projectId' in kwargs:
+        if model_artifact is None:
+            raise TypeError("Missing 'model_artifact' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'artifactContentDisposition' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
             artifact_content_disposition = kwargs['artifactContentDisposition']
-        if 'customMetadataLists' in kwargs:
+        if custom_metadata_lists is None and 'customMetadataLists' in kwargs:
             custom_metadata_lists = kwargs['customMetadataLists']
-        if 'definedMetadataLists' in kwargs:
+        if defined_metadata_lists is None and 'definedMetadataLists' in kwargs:
             defined_metadata_lists = kwargs['definedMetadataLists']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inputSchema' in kwargs:
+        if input_schema is None and 'inputSchema' in kwargs:
             input_schema = kwargs['inputSchema']
-        if 'outputSchema' in kwargs:
+        if output_schema is None and 'outputSchema' in kwargs:
             output_schema = kwargs['outputSchema']
 
         _setter("artifact_content_length", artifact_content_length)
@@ -396,41 +404,41 @@ class _ModelState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactContentDisposition' in kwargs:
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
             artifact_content_disposition = kwargs['artifactContentDisposition']
-        if 'artifactContentLength' in kwargs:
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
             artifact_content_length = kwargs['artifactContentLength']
-        if 'artifactContentMd5' in kwargs:
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
             artifact_content_md5 = kwargs['artifactContentMd5']
-        if 'artifactLastModified' in kwargs:
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
             artifact_last_modified = kwargs['artifactLastModified']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'customMetadataLists' in kwargs:
+        if custom_metadata_lists is None and 'customMetadataLists' in kwargs:
             custom_metadata_lists = kwargs['customMetadataLists']
-        if 'definedMetadataLists' in kwargs:
+        if defined_metadata_lists is None and 'definedMetadataLists' in kwargs:
             defined_metadata_lists = kwargs['definedMetadataLists']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'emptyModel' in kwargs:
+        if empty_model is None and 'emptyModel' in kwargs:
             empty_model = kwargs['emptyModel']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inputSchema' in kwargs:
+        if input_schema is None and 'inputSchema' in kwargs:
             input_schema = kwargs['inputSchema']
-        if 'modelArtifact' in kwargs:
+        if model_artifact is None and 'modelArtifact' in kwargs:
             model_artifact = kwargs['modelArtifact']
-        if 'outputSchema' in kwargs:
+        if output_schema is None and 'outputSchema' in kwargs:
             output_schema = kwargs['outputSchema']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if artifact_content_disposition is not None:

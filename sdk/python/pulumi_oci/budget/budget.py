@@ -69,9 +69,9 @@ class BudgetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             amount: pulumi.Input[int],
-             compartment_id: pulumi.Input[str],
-             reset_period: pulumi.Input[str],
+             amount: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             reset_period: Optional[pulumi.Input[str]] = None,
              budget_processing_period_start_offset: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -83,29 +83,35 @@ class BudgetArgs:
              target_compartment_id: Optional[pulumi.Input[str]] = None,
              target_type: Optional[pulumi.Input[str]] = None,
              targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if amount is None:
+            raise TypeError("Missing 'amount' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'resetPeriod' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if reset_period is None and 'resetPeriod' in kwargs:
             reset_period = kwargs['resetPeriod']
-        if 'budgetProcessingPeriodStartOffset' in kwargs:
+        if reset_period is None:
+            raise TypeError("Missing 'reset_period' argument")
+        if budget_processing_period_start_offset is None and 'budgetProcessingPeriodStartOffset' in kwargs:
             budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'endDate' in kwargs:
+        if end_date is None and 'endDate' in kwargs:
             end_date = kwargs['endDate']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'processingPeriodType' in kwargs:
+        if processing_period_type is None and 'processingPeriodType' in kwargs:
             processing_period_type = kwargs['processingPeriodType']
-        if 'startDate' in kwargs:
+        if start_date is None and 'startDate' in kwargs:
             start_date = kwargs['startDate']
-        if 'targetCompartmentId' in kwargs:
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
             target_compartment_id = kwargs['targetCompartmentId']
-        if 'targetType' in kwargs:
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
 
         _setter("amount", amount)
@@ -417,41 +423,41 @@ class _BudgetState:
              time_spend_computed: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actualSpend' in kwargs:
+        if actual_spend is None and 'actualSpend' in kwargs:
             actual_spend = kwargs['actualSpend']
-        if 'alertRuleCount' in kwargs:
+        if alert_rule_count is None and 'alertRuleCount' in kwargs:
             alert_rule_count = kwargs['alertRuleCount']
-        if 'budgetProcessingPeriodStartOffset' in kwargs:
+        if budget_processing_period_start_offset is None and 'budgetProcessingPeriodStartOffset' in kwargs:
             budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'endDate' in kwargs:
+        if end_date is None and 'endDate' in kwargs:
             end_date = kwargs['endDate']
-        if 'forecastedSpend' in kwargs:
+        if forecasted_spend is None and 'forecastedSpend' in kwargs:
             forecasted_spend = kwargs['forecastedSpend']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'processingPeriodType' in kwargs:
+        if processing_period_type is None and 'processingPeriodType' in kwargs:
             processing_period_type = kwargs['processingPeriodType']
-        if 'resetPeriod' in kwargs:
+        if reset_period is None and 'resetPeriod' in kwargs:
             reset_period = kwargs['resetPeriod']
-        if 'startDate' in kwargs:
+        if start_date is None and 'startDate' in kwargs:
             start_date = kwargs['startDate']
-        if 'targetCompartmentId' in kwargs:
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
             target_compartment_id = kwargs['targetCompartmentId']
-        if 'targetType' in kwargs:
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeSpendComputed' in kwargs:
+        if time_spend_computed is None and 'timeSpendComputed' in kwargs:
             time_spend_computed = kwargs['timeSpendComputed']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if actual_spend is not None:

@@ -66,10 +66,10 @@ class SensitiveDataModelsSensitiveColumnArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: pulumi.Input[str],
-             object: pulumi.Input[str],
-             schema_name: pulumi.Input[str],
-             sensitive_data_model_id: pulumi.Input[str],
+             column_name: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
              app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              app_name: Optional[pulumi.Input[str]] = None,
              data_type: Optional[pulumi.Input[str]] = None,
@@ -79,29 +79,37 @@ class SensitiveDataModelsSensitiveColumnArgs:
              relation_type: Optional[pulumi.Input[str]] = None,
              sensitive_type_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'schemaName' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'sensitiveDataModelId' in kwargs:
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if 'appDefinedChildColumnKeys' in kwargs:
+        if sensitive_data_model_id is None:
+            raise TypeError("Missing 'sensitive_data_model_id' argument")
+        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
             app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'dbDefinedChildColumnKeys' in kwargs:
+        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
             db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'parentColumnKeys' in kwargs:
+        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
             parent_column_keys = kwargs['parentColumnKeys']
-        if 'relationType' in kwargs:
+        if relation_type is None and 'relationType' in kwargs:
             relation_type = kwargs['relationType']
-        if 'sensitiveTypeId' in kwargs:
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
             sensitive_type_id = kwargs['sensitiveTypeId']
 
         _setter("column_name", column_name)
@@ -392,41 +400,41 @@ class _SensitiveDataModelsSensitiveColumnState:
              status: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'appDefinedChildColumnKeys' in kwargs:
+        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
             app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if 'appName' in kwargs:
+        if app_name is None and 'appName' in kwargs:
             app_name = kwargs['appName']
-        if 'columnGroups' in kwargs:
+        if column_groups is None and 'columnGroups' in kwargs:
             column_groups = kwargs['columnGroups']
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'dbDefinedChildColumnKeys' in kwargs:
+        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
             db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if 'estimatedDataValueCount' in kwargs:
+        if estimated_data_value_count is None and 'estimatedDataValueCount' in kwargs:
             estimated_data_value_count = kwargs['estimatedDataValueCount']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'parentColumnKeys' in kwargs:
+        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
             parent_column_keys = kwargs['parentColumnKeys']
-        if 'relationType' in kwargs:
+        if relation_type is None and 'relationType' in kwargs:
             relation_type = kwargs['relationType']
-        if 'sampleDataValues' in kwargs:
+        if sample_data_values is None and 'sampleDataValues' in kwargs:
             sample_data_values = kwargs['sampleDataValues']
-        if 'schemaName' in kwargs:
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'sensitiveDataModelId' in kwargs:
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
             sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if 'sensitiveTypeId' in kwargs:
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
             sensitive_type_id = kwargs['sensitiveTypeId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if app_defined_child_column_keys is not None:

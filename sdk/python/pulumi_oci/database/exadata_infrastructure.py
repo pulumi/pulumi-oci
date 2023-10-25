@@ -105,18 +105,18 @@ class ExadataInfrastructureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_network_cidr: pulumi.Input[str],
-             cloud_control_plane_server1: pulumi.Input[str],
-             cloud_control_plane_server2: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             dns_servers: pulumi.Input[Sequence[pulumi.Input[str]]],
-             gateway: pulumi.Input[str],
-             infini_band_network_cidr: pulumi.Input[str],
-             netmask: pulumi.Input[str],
-             ntp_servers: pulumi.Input[Sequence[pulumi.Input[str]]],
-             shape: pulumi.Input[str],
-             time_zone: pulumi.Input[str],
+             admin_network_cidr: Optional[pulumi.Input[str]] = None,
+             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
+             cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             gateway: Optional[pulumi.Input[str]] = None,
+             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+             netmask: Optional[pulumi.Input[str]] = None,
+             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
              activation_file: Optional[pulumi.Input[str]] = None,
              additional_storage_count: Optional[pulumi.Input[int]] = None,
              compute_count: Optional[pulumi.Input[int]] = None,
@@ -131,51 +131,75 @@ class ExadataInfrastructureArgs:
              multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
              network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
              storage_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminNetworkCidr' in kwargs:
+        if admin_network_cidr is None and 'adminNetworkCidr' in kwargs:
             admin_network_cidr = kwargs['adminNetworkCidr']
-        if 'cloudControlPlaneServer1' in kwargs:
+        if admin_network_cidr is None:
+            raise TypeError("Missing 'admin_network_cidr' argument")
+        if cloud_control_plane_server1 is None and 'cloudControlPlaneServer1' in kwargs:
             cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
-        if 'cloudControlPlaneServer2' in kwargs:
+        if cloud_control_plane_server1 is None:
+            raise TypeError("Missing 'cloud_control_plane_server1' argument")
+        if cloud_control_plane_server2 is None and 'cloudControlPlaneServer2' in kwargs:
             cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
-        if 'compartmentId' in kwargs:
+        if cloud_control_plane_server2 is None:
+            raise TypeError("Missing 'cloud_control_plane_server2' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsServers' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_servers is None and 'dnsServers' in kwargs:
             dns_servers = kwargs['dnsServers']
-        if 'infiniBandNetworkCidr' in kwargs:
+        if dns_servers is None:
+            raise TypeError("Missing 'dns_servers' argument")
+        if gateway is None:
+            raise TypeError("Missing 'gateway' argument")
+        if infini_band_network_cidr is None and 'infiniBandNetworkCidr' in kwargs:
             infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
-        if 'ntpServers' in kwargs:
+        if infini_band_network_cidr is None:
+            raise TypeError("Missing 'infini_band_network_cidr' argument")
+        if netmask is None:
+            raise TypeError("Missing 'netmask' argument")
+        if ntp_servers is None and 'ntpServers' in kwargs:
             ntp_servers = kwargs['ntpServers']
-        if 'timeZone' in kwargs:
+        if ntp_servers is None:
+            raise TypeError("Missing 'ntp_servers' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'activationFile' in kwargs:
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if activation_file is None and 'activationFile' in kwargs:
             activation_file = kwargs['activationFile']
-        if 'additionalStorageCount' in kwargs:
+        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
             additional_storage_count = kwargs['additionalStorageCount']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'corporateProxy' in kwargs:
+        if corporate_proxy is None and 'corporateProxy' in kwargs:
             corporate_proxy = kwargs['corporateProxy']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isCpsOfflineReportEnabled' in kwargs:
+        if is_cps_offline_report_enabled is None and 'isCpsOfflineReportEnabled' in kwargs:
             is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
-        if 'isMultiRackDeployment' in kwargs:
+        if is_multi_rack_deployment is None and 'isMultiRackDeployment' in kwargs:
             is_multi_rack_deployment = kwargs['isMultiRackDeployment']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'multiRackConfigurationFile' in kwargs:
+        if multi_rack_configuration_file is None and 'multiRackConfigurationFile' in kwargs:
             multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
-        if 'networkBondingModeDetails' in kwargs:
+        if network_bonding_mode_details is None and 'networkBondingModeDetails' in kwargs:
             network_bonding_mode_details = kwargs['networkBondingModeDetails']
-        if 'storageCount' in kwargs:
+        if storage_count is None and 'storageCount' in kwargs:
             storage_count = kwargs['storageCount']
 
         _setter("admin_network_cidr", admin_network_cidr)
@@ -734,91 +758,91 @@ class _ExadataInfrastructureState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activatedStorageCount' in kwargs:
+        if activated_storage_count is None and 'activatedStorageCount' in kwargs:
             activated_storage_count = kwargs['activatedStorageCount']
-        if 'activationFile' in kwargs:
+        if activation_file is None and 'activationFile' in kwargs:
             activation_file = kwargs['activationFile']
-        if 'additionalComputeCount' in kwargs:
+        if additional_compute_count is None and 'additionalComputeCount' in kwargs:
             additional_compute_count = kwargs['additionalComputeCount']
-        if 'additionalComputeSystemModel' in kwargs:
+        if additional_compute_system_model is None and 'additionalComputeSystemModel' in kwargs:
             additional_compute_system_model = kwargs['additionalComputeSystemModel']
-        if 'additionalStorageCount' in kwargs:
+        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
             additional_storage_count = kwargs['additionalStorageCount']
-        if 'adminNetworkCidr' in kwargs:
+        if admin_network_cidr is None and 'adminNetworkCidr' in kwargs:
             admin_network_cidr = kwargs['adminNetworkCidr']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'cloudControlPlaneServer1' in kwargs:
+        if cloud_control_plane_server1 is None and 'cloudControlPlaneServer1' in kwargs:
             cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
-        if 'cloudControlPlaneServer2' in kwargs:
+        if cloud_control_plane_server2 is None and 'cloudControlPlaneServer2' in kwargs:
             cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeCount' in kwargs:
+        if compute_count is None and 'computeCount' in kwargs:
             compute_count = kwargs['computeCount']
-        if 'corporateProxy' in kwargs:
+        if corporate_proxy is None and 'corporateProxy' in kwargs:
             corporate_proxy = kwargs['corporateProxy']
-        if 'cpusEnabled' in kwargs:
+        if cpus_enabled is None and 'cpusEnabled' in kwargs:
             cpus_enabled = kwargs['cpusEnabled']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'csiNumber' in kwargs:
+        if csi_number is None and 'csiNumber' in kwargs:
             csi_number = kwargs['csiNumber']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServerVersion' in kwargs:
+        if db_server_version is None and 'dbServerVersion' in kwargs:
             db_server_version = kwargs['dbServerVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsServers' in kwargs:
+        if dns_servers is None and 'dnsServers' in kwargs:
             dns_servers = kwargs['dnsServers']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'infiniBandNetworkCidr' in kwargs:
+        if infini_band_network_cidr is None and 'infiniBandNetworkCidr' in kwargs:
             infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
-        if 'isCpsOfflineReportEnabled' in kwargs:
+        if is_cps_offline_report_enabled is None and 'isCpsOfflineReportEnabled' in kwargs:
             is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
-        if 'isMultiRackDeployment' in kwargs:
+        if is_multi_rack_deployment is None and 'isMultiRackDeployment' in kwargs:
             is_multi_rack_deployment = kwargs['isMultiRackDeployment']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maintenanceSloStatus' in kwargs:
+        if maintenance_slo_status is None and 'maintenanceSloStatus' in kwargs:
             maintenance_slo_status = kwargs['maintenanceSloStatus']
-        if 'maintenanceWindow' in kwargs:
+        if maintenance_window is None and 'maintenanceWindow' in kwargs:
             maintenance_window = kwargs['maintenanceWindow']
-        if 'maxCpuCount' in kwargs:
+        if max_cpu_count is None and 'maxCpuCount' in kwargs:
             max_cpu_count = kwargs['maxCpuCount']
-        if 'maxDataStorageInTbs' in kwargs:
+        if max_data_storage_in_tbs is None and 'maxDataStorageInTbs' in kwargs:
             max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
-        if 'maxDbNodeStorageInGbs' in kwargs:
+        if max_db_node_storage_in_gbs is None and 'maxDbNodeStorageInGbs' in kwargs:
             max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
-        if 'maxMemoryInGbs' in kwargs:
+        if max_memory_in_gbs is None and 'maxMemoryInGbs' in kwargs:
             max_memory_in_gbs = kwargs['maxMemoryInGbs']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'monthlyDbServerVersion' in kwargs:
+        if monthly_db_server_version is None and 'monthlyDbServerVersion' in kwargs:
             monthly_db_server_version = kwargs['monthlyDbServerVersion']
-        if 'multiRackConfigurationFile' in kwargs:
+        if multi_rack_configuration_file is None and 'multiRackConfigurationFile' in kwargs:
             multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
-        if 'networkBondingModeDetails' in kwargs:
+        if network_bonding_mode_details is None and 'networkBondingModeDetails' in kwargs:
             network_bonding_mode_details = kwargs['networkBondingModeDetails']
-        if 'ntpServers' in kwargs:
+        if ntp_servers is None and 'ntpServers' in kwargs:
             ntp_servers = kwargs['ntpServers']
-        if 'rackSerialNumber' in kwargs:
+        if rack_serial_number is None and 'rackSerialNumber' in kwargs:
             rack_serial_number = kwargs['rackSerialNumber']
-        if 'storageCount' in kwargs:
+        if storage_count is None and 'storageCount' in kwargs:
             storage_count = kwargs['storageCount']
-        if 'storageServerVersion' in kwargs:
+        if storage_server_version is None and 'storageServerVersion' in kwargs:
             storage_server_version = kwargs['storageServerVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         if activated_storage_count is not None:
@@ -1786,21 +1810,13 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
             __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
             __props__.__dict__["is_multi_rack_deployment"] = is_multi_rack_deployment
-            if maintenance_window is not None and not isinstance(maintenance_window, ExadataInfrastructureMaintenanceWindowArgs):
-                maintenance_window = maintenance_window or {}
-                def _setter(key, value):
-                    maintenance_window[key] = value
-                ExadataInfrastructureMaintenanceWindowArgs._configure(_setter, **maintenance_window)
+            maintenance_window = _utilities.configure(maintenance_window, ExadataInfrastructureMaintenanceWindowArgs, True)
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["multi_rack_configuration_file"] = multi_rack_configuration_file
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")
             __props__.__dict__["netmask"] = netmask
-            if network_bonding_mode_details is not None and not isinstance(network_bonding_mode_details, ExadataInfrastructureNetworkBondingModeDetailsArgs):
-                network_bonding_mode_details = network_bonding_mode_details or {}
-                def _setter(key, value):
-                    network_bonding_mode_details[key] = value
-                ExadataInfrastructureNetworkBondingModeDetailsArgs._configure(_setter, **network_bonding_mode_details)
+            network_bonding_mode_details = _utilities.configure(network_bonding_mode_details, ExadataInfrastructureNetworkBondingModeDetailsArgs, True)
             __props__.__dict__["network_bonding_mode_details"] = network_bonding_mode_details
             if ntp_servers is None and not opts.urn:
                 raise TypeError("Missing required property 'ntp_servers'")

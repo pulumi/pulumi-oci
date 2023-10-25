@@ -40,10 +40,10 @@ import (
 //				Locale:        pulumi.Any(_var.News_report_locale),
 //				NewsFrequency: pulumi.Any(_var.News_report_news_frequency),
 //				OnsTopicId:    pulumi.Any(oci_opsi_ons_topic.Test_ons_topic.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Status: pulumi.Any(_var.News_report_status),

@@ -38,11 +38,11 @@ import (
 //			_, err := Core.NewComputeCapacityReservation(ctx, "testComputeCapacityReservation", &Core.ComputeCapacityReservationArgs{
 //				AvailabilityDomain: pulumi.Any(_var.Compute_capacity_reservation_availability_domain),
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Compute_capacity_reservation_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InstanceReservationConfigs: core.ComputeCapacityReservationInstanceReservationConfigArray{

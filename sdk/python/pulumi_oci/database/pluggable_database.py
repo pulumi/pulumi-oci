@@ -70,8 +70,8 @@ class PluggableDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             container_database_id: pulumi.Input[str],
-             pdb_name: pulumi.Input[str],
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
              container_database_admin_password: Optional[pulumi.Input[str]] = None,
              convert_to_regular_trigger: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -83,33 +83,37 @@ class PluggableDatabaseArgs:
              should_create_pdb_backup: Optional[pulumi.Input[bool]] = None,
              should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
              tde_wallet_password: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'pdbName' in kwargs:
+        if container_database_id is None:
+            raise TypeError("Missing 'container_database_id' argument")
+        if pdb_name is None and 'pdbName' in kwargs:
             pdb_name = kwargs['pdbName']
-        if 'containerDatabaseAdminPassword' in kwargs:
+        if pdb_name is None:
+            raise TypeError("Missing 'pdb_name' argument")
+        if container_database_admin_password is None and 'containerDatabaseAdminPassword' in kwargs:
             container_database_admin_password = kwargs['containerDatabaseAdminPassword']
-        if 'convertToRegularTrigger' in kwargs:
+        if convert_to_regular_trigger is None and 'convertToRegularTrigger' in kwargs:
             convert_to_regular_trigger = kwargs['convertToRegularTrigger']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'pdbAdminPassword' in kwargs:
+        if pdb_admin_password is None and 'pdbAdminPassword' in kwargs:
             pdb_admin_password = kwargs['pdbAdminPassword']
-        if 'pdbCreationTypeDetails' in kwargs:
+        if pdb_creation_type_details is None and 'pdbCreationTypeDetails' in kwargs:
             pdb_creation_type_details = kwargs['pdbCreationTypeDetails']
-        if 'refreshTrigger' in kwargs:
+        if refresh_trigger is None and 'refreshTrigger' in kwargs:
             refresh_trigger = kwargs['refreshTrigger']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'shouldCreatePdbBackup' in kwargs:
+        if should_create_pdb_backup is None and 'shouldCreatePdbBackup' in kwargs:
             should_create_pdb_backup = kwargs['shouldCreatePdbBackup']
-        if 'shouldPdbAdminAccountBeLocked' in kwargs:
+        if should_pdb_admin_account_be_locked is None and 'shouldPdbAdminAccountBeLocked' in kwargs:
             should_pdb_admin_account_be_locked = kwargs['shouldPdbAdminAccountBeLocked']
-        if 'tdeWalletPassword' in kwargs:
+        if tde_wallet_password is None and 'tdeWalletPassword' in kwargs:
             tde_wallet_password = kwargs['tdeWalletPassword']
 
         _setter("container_database_id", container_database_id)
@@ -410,51 +414,51 @@ class _PluggableDatabaseState:
              state: Optional[pulumi.Input[str]] = None,
              tde_wallet_password: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionStrings' in kwargs:
+        if connection_strings is None and 'connectionStrings' in kwargs:
             connection_strings = kwargs['connectionStrings']
-        if 'containerDatabaseAdminPassword' in kwargs:
+        if container_database_admin_password is None and 'containerDatabaseAdminPassword' in kwargs:
             container_database_admin_password = kwargs['containerDatabaseAdminPassword']
-        if 'containerDatabaseId' in kwargs:
+        if container_database_id is None and 'containerDatabaseId' in kwargs:
             container_database_id = kwargs['containerDatabaseId']
-        if 'convertToRegularTrigger' in kwargs:
+        if convert_to_regular_trigger is None and 'convertToRegularTrigger' in kwargs:
             convert_to_regular_trigger = kwargs['convertToRegularTrigger']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isRestricted' in kwargs:
+        if is_restricted is None and 'isRestricted' in kwargs:
             is_restricted = kwargs['isRestricted']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'openMode' in kwargs:
+        if open_mode is None and 'openMode' in kwargs:
             open_mode = kwargs['openMode']
-        if 'pdbAdminPassword' in kwargs:
+        if pdb_admin_password is None and 'pdbAdminPassword' in kwargs:
             pdb_admin_password = kwargs['pdbAdminPassword']
-        if 'pdbCreationTypeDetails' in kwargs:
+        if pdb_creation_type_details is None and 'pdbCreationTypeDetails' in kwargs:
             pdb_creation_type_details = kwargs['pdbCreationTypeDetails']
-        if 'pdbName' in kwargs:
+        if pdb_name is None and 'pdbName' in kwargs:
             pdb_name = kwargs['pdbName']
-        if 'pdbNodeLevelDetails' in kwargs:
+        if pdb_node_level_details is None and 'pdbNodeLevelDetails' in kwargs:
             pdb_node_level_details = kwargs['pdbNodeLevelDetails']
-        if 'pluggableDatabaseManagementConfigs' in kwargs:
+        if pluggable_database_management_configs is None and 'pluggableDatabaseManagementConfigs' in kwargs:
             pluggable_database_management_configs = kwargs['pluggableDatabaseManagementConfigs']
-        if 'refreshTrigger' in kwargs:
+        if refresh_trigger is None and 'refreshTrigger' in kwargs:
             refresh_trigger = kwargs['refreshTrigger']
-        if 'refreshableCloneConfigs' in kwargs:
+        if refreshable_clone_configs is None and 'refreshableCloneConfigs' in kwargs:
             refreshable_clone_configs = kwargs['refreshableCloneConfigs']
-        if 'rotateKeyTrigger' in kwargs:
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
             rotate_key_trigger = kwargs['rotateKeyTrigger']
-        if 'shouldCreatePdbBackup' in kwargs:
+        if should_create_pdb_backup is None and 'shouldCreatePdbBackup' in kwargs:
             should_create_pdb_backup = kwargs['shouldCreatePdbBackup']
-        if 'shouldPdbAdminAccountBeLocked' in kwargs:
+        if should_pdb_admin_account_be_locked is None and 'shouldPdbAdminAccountBeLocked' in kwargs:
             should_pdb_admin_account_be_locked = kwargs['shouldPdbAdminAccountBeLocked']
-        if 'tdeWalletPassword' in kwargs:
+        if tde_wallet_password is None and 'tdeWalletPassword' in kwargs:
             tde_wallet_password = kwargs['tdeWalletPassword']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -913,11 +917,7 @@ class PluggableDatabase(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["pdb_admin_password"] = None if pdb_admin_password is None else pulumi.Output.secret(pdb_admin_password)
-            if pdb_creation_type_details is not None and not isinstance(pdb_creation_type_details, PluggableDatabasePdbCreationTypeDetailsArgs):
-                pdb_creation_type_details = pdb_creation_type_details or {}
-                def _setter(key, value):
-                    pdb_creation_type_details[key] = value
-                PluggableDatabasePdbCreationTypeDetailsArgs._configure(_setter, **pdb_creation_type_details)
+            pdb_creation_type_details = _utilities.configure(pdb_creation_type_details, PluggableDatabasePdbCreationTypeDetailsArgs, True)
             __props__.__dict__["pdb_creation_type_details"] = pdb_creation_type_details
             if pdb_name is None and not opts.urn:
                 raise TypeError("Missing required property 'pdb_name'")

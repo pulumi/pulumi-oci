@@ -61,9 +61,9 @@ class DatabaseToolsConnectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              connection_string: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -73,29 +73,35 @@ class DatabaseToolsConnectionArgs:
              related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'advancedProperties' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if advanced_properties is None and 'advancedProperties' in kwargs:
             advanced_properties = kwargs['advancedProperties']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'keyStores' in kwargs:
+        if key_stores is None and 'keyStores' in kwargs:
             key_stores = kwargs['keyStores']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'relatedResource' in kwargs:
+        if related_resource is None and 'relatedResource' in kwargs:
             related_resource = kwargs['relatedResource']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'userPassword' in kwargs:
+        if user_password is None and 'userPassword' in kwargs:
             user_password = kwargs['userPassword']
 
         _setter("compartment_id", compartment_id)
@@ -345,37 +351,37 @@ class _DatabaseToolsConnectionState:
              type: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'advancedProperties' in kwargs:
+        if advanced_properties is None and 'advancedProperties' in kwargs:
             advanced_properties = kwargs['advancedProperties']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionString' in kwargs:
+        if connection_string is None and 'connectionString' in kwargs:
             connection_string = kwargs['connectionString']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'keyStores' in kwargs:
+        if key_stores is None and 'keyStores' in kwargs:
             key_stores = kwargs['keyStores']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'relatedResource' in kwargs:
+        if related_resource is None and 'relatedResource' in kwargs:
             related_resource = kwargs['relatedResource']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'userPassword' in kwargs:
+        if user_password is None and 'userPassword' in kwargs:
             user_password = kwargs['userPassword']
 
         if advanced_properties is not None:
@@ -817,21 +823,13 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["key_stores"] = key_stores
             __props__.__dict__["private_endpoint_id"] = private_endpoint_id
-            if related_resource is not None and not isinstance(related_resource, DatabaseToolsConnectionRelatedResourceArgs):
-                related_resource = related_resource or {}
-                def _setter(key, value):
-                    related_resource[key] = value
-                DatabaseToolsConnectionRelatedResourceArgs._configure(_setter, **related_resource)
+            related_resource = _utilities.configure(related_resource, DatabaseToolsConnectionRelatedResourceArgs, True)
             __props__.__dict__["related_resource"] = related_resource
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
             __props__.__dict__["user_name"] = user_name
-            if user_password is not None and not isinstance(user_password, DatabaseToolsConnectionUserPasswordArgs):
-                user_password = user_password or {}
-                def _setter(key, value):
-                    user_password[key] = value
-                DatabaseToolsConnectionUserPasswordArgs._configure(_setter, **user_password)
+            user_password = _utilities.configure(user_password, DatabaseToolsConnectionUserPasswordArgs, True)
             __props__.__dict__["user_password"] = user_password
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None

@@ -49,7 +49,7 @@ import (
 //			_, err := Core.NewSecurityList(ctx, "testSecurityList", &Core.SecurityListArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Security_list_display_name),
@@ -82,7 +82,7 @@ import (
 //						},
 //					},
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IngressSecurityRules: core.SecurityListIngressSecurityRuleArray{

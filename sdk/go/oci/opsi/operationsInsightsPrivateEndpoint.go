@@ -38,11 +38,11 @@ import (
 //				IsUsedForRacDbs: pulumi.Any(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
 //				SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Operations_insights_private_endpoint_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				NsgIds: pulumi.Any(_var.Operations_insights_private_endpoint_nsg_ids),

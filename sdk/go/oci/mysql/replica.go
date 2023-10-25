@@ -33,12 +33,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.NewReplica(ctx, "testReplica", &Mysql.ReplicaArgs{
 //				DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_mysql_db_system.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Replica_description),
 //				DisplayName: pulumi.Any(_var.Replica_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsDeleteProtected: pulumi.Any(_var.Replica_is_delete_protected),

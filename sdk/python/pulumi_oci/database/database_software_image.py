@@ -60,8 +60,8 @@ class DatabaseSoftwareImageArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              database_software_image_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              database_version: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -71,29 +71,33 @@ class DatabaseSoftwareImageArgs:
              ls_inventory: Optional[pulumi.Input[str]] = None,
              patch_set: Optional[pulumi.Input[str]] = None,
              source_db_home_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'databaseSoftwareImageOneOffPatches' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if database_software_image_one_off_patches is None and 'databaseSoftwareImageOneOffPatches' in kwargs:
             database_software_image_one_off_patches = kwargs['databaseSoftwareImageOneOffPatches']
-        if 'databaseVersion' in kwargs:
+        if database_version is None and 'databaseVersion' in kwargs:
             database_version = kwargs['databaseVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageShapeFamily' in kwargs:
+        if image_shape_family is None and 'imageShapeFamily' in kwargs:
             image_shape_family = kwargs['imageShapeFamily']
-        if 'imageType' in kwargs:
+        if image_type is None and 'imageType' in kwargs:
             image_type = kwargs['imageType']
-        if 'lsInventory' in kwargs:
+        if ls_inventory is None and 'lsInventory' in kwargs:
             ls_inventory = kwargs['lsInventory']
-        if 'patchSet' in kwargs:
+        if patch_set is None and 'patchSet' in kwargs:
             patch_set = kwargs['patchSet']
-        if 'sourceDbHomeId' in kwargs:
+        if source_db_home_id is None and 'sourceDbHomeId' in kwargs:
             source_db_home_id = kwargs['sourceDbHomeId']
 
         _setter("compartment_id", compartment_id)
@@ -338,39 +342,39 @@ class _DatabaseSoftwareImageState:
              source_db_home_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseSoftwareImageIncludedPatches' in kwargs:
+        if database_software_image_included_patches is None and 'databaseSoftwareImageIncludedPatches' in kwargs:
             database_software_image_included_patches = kwargs['databaseSoftwareImageIncludedPatches']
-        if 'databaseSoftwareImageOneOffPatches' in kwargs:
+        if database_software_image_one_off_patches is None and 'databaseSoftwareImageOneOffPatches' in kwargs:
             database_software_image_one_off_patches = kwargs['databaseSoftwareImageOneOffPatches']
-        if 'databaseVersion' in kwargs:
+        if database_version is None and 'databaseVersion' in kwargs:
             database_version = kwargs['databaseVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'imageShapeFamily' in kwargs:
+        if image_shape_family is None and 'imageShapeFamily' in kwargs:
             image_shape_family = kwargs['imageShapeFamily']
-        if 'imageType' in kwargs:
+        if image_type is None and 'imageType' in kwargs:
             image_type = kwargs['imageType']
-        if 'includedPatchesSummary' in kwargs:
+        if included_patches_summary is None and 'includedPatchesSummary' in kwargs:
             included_patches_summary = kwargs['includedPatchesSummary']
-        if 'isUpgradeSupported' in kwargs:
+        if is_upgrade_supported is None and 'isUpgradeSupported' in kwargs:
             is_upgrade_supported = kwargs['isUpgradeSupported']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lsInventory' in kwargs:
+        if ls_inventory is None and 'lsInventory' in kwargs:
             ls_inventory = kwargs['lsInventory']
-        if 'patchSet' in kwargs:
+        if patch_set is None and 'patchSet' in kwargs:
             patch_set = kwargs['patchSet']
-        if 'sourceDbHomeId' in kwargs:
+        if source_db_home_id is None and 'sourceDbHomeId' in kwargs:
             source_db_home_id = kwargs['sourceDbHomeId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:

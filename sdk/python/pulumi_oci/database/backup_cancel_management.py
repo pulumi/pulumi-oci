@@ -33,13 +33,15 @@ class BackupCancelManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_id: pulumi.Input[str],
+             backup_id: Optional[pulumi.Input[str]] = None,
              cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupId' in kwargs:
+        if backup_id is None and 'backupId' in kwargs:
             backup_id = kwargs['backupId']
-        if 'cancelBackupTrigger' in kwargs:
+        if backup_id is None:
+            raise TypeError("Missing 'backup_id' argument")
+        if cancel_backup_trigger is None and 'cancelBackupTrigger' in kwargs:
             cancel_backup_trigger = kwargs['cancelBackupTrigger']
 
         _setter("backup_id", backup_id)
@@ -99,11 +101,11 @@ class _BackupCancelManagementState:
              _setter: Callable[[Any, Any], None],
              backup_id: Optional[pulumi.Input[str]] = None,
              cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupId' in kwargs:
+        if backup_id is None and 'backupId' in kwargs:
             backup_id = kwargs['backupId']
-        if 'cancelBackupTrigger' in kwargs:
+        if cancel_backup_trigger is None and 'cancelBackupTrigger' in kwargs:
             cancel_backup_trigger = kwargs['cancelBackupTrigger']
 
         if backup_id is not None:

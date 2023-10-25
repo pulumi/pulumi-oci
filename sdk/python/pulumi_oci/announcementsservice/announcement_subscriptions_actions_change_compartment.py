@@ -33,14 +33,18 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             announcement_subscription_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             announcement_subscription_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'announcementSubscriptionId' in kwargs:
+        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
             announcement_subscription_id = kwargs['announcementSubscriptionId']
-        if 'compartmentId' in kwargs:
+        if announcement_subscription_id is None:
+            raise TypeError("Missing 'announcement_subscription_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
 
         _setter("announcement_subscription_id", announcement_subscription_id)
         _setter("compartment_id", compartment_id)
@@ -98,11 +102,11 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
              _setter: Callable[[Any, Any], None],
              announcement_subscription_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'announcementSubscriptionId' in kwargs:
+        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
             announcement_subscription_id = kwargs['announcementSubscriptionId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if announcement_subscription_id is not None:

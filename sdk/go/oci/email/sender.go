@@ -34,10 +34,10 @@ import (
 //			_, err := Email.NewSender(ctx, "testSender", &Email.SenderArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				EmailAddress:  pulumi.Any(_var.Sender_email_address),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

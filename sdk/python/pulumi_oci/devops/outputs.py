@@ -364,9 +364,11 @@ class BuildPipelineBuildPipelineParameters(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.BuildPipelineBuildPipelineParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.BuildPipelineBuildPipelineParametersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -416,13 +418,17 @@ class BuildPipelineBuildPipelineParametersItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             name: str,
+             default_value: Optional[str] = None,
+             name: Optional[str] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("default_value", default_value)
         _setter("name", name)
@@ -468,9 +474,11 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollection(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -497,9 +505,11 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -551,14 +561,16 @@ class BuildPipelineStageBuildRunnerShapeConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_runner_type: str,
+             build_runner_type: Optional[str] = None,
              memory_in_gbs: Optional[int] = None,
              ocpus: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildRunnerType' in kwargs:
+        if build_runner_type is None and 'buildRunnerType' in kwargs:
             build_runner_type = kwargs['buildRunnerType']
-        if 'memoryInGbs' in kwargs:
+        if build_runner_type is None:
+            raise TypeError("Missing 'build_runner_type' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         _setter("build_runner_type", build_runner_type)
@@ -607,7 +619,7 @@ class BuildPipelineStageBuildSourceCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildPipelineStageBuildSourceCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -674,21 +686,23 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connection_type: str,
+             connection_type: Optional[str] = None,
              branch: Optional[str] = None,
              connection_id: Optional[str] = None,
              name: Optional[str] = None,
              repository_id: Optional[str] = None,
              repository_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionType' in kwargs:
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'connectionId' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if connection_id is None and 'connectionId' in kwargs:
             connection_id = kwargs['connectionId']
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'repositoryUrl' in kwargs:
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
 
         _setter("connection_type", connection_type)
@@ -767,7 +781,7 @@ class BuildPipelineStageDeliverArtifactCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildPipelineStageDeliverArtifactCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -820,11 +834,11 @@ class BuildPipelineStageDeliverArtifactCollectionItem(dict):
              _setter: Callable[[Any, Any], None],
              artifact_id: Optional[str] = None,
              artifact_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactId' in kwargs:
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
-        if 'artifactName' in kwargs:
+        if artifact_name is None and 'artifactName' in kwargs:
             artifact_name = kwargs['artifactName']
 
         if artifact_id is not None:
@@ -890,16 +904,20 @@ class BuildPipelineStagePrivateAccessConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             subnet_id: str,
+             network_channel_type: Optional[str] = None,
+             subnet_id: Optional[str] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'subnetId' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'nsgIds' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("network_channel_type", network_channel_type)
@@ -972,14 +990,18 @@ class BuildPipelineStageWaitCriteria(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -1055,15 +1077,15 @@ class BuildRunBuildOutput(dict):
              delivered_artifacts: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifact']] = None,
              exported_variables: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariable']] = None,
              vulnerability_audit_summary_collections: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollection']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactOverrideParameters' in kwargs:
+        if artifact_override_parameters is None and 'artifactOverrideParameters' in kwargs:
             artifact_override_parameters = kwargs['artifactOverrideParameters']
-        if 'deliveredArtifacts' in kwargs:
+        if delivered_artifacts is None and 'deliveredArtifacts' in kwargs:
             delivered_artifacts = kwargs['deliveredArtifacts']
-        if 'exportedVariables' in kwargs:
+        if exported_variables is None and 'exportedVariables' in kwargs:
             exported_variables = kwargs['exportedVariables']
-        if 'vulnerabilityAuditSummaryCollections' in kwargs:
+        if vulnerability_audit_summary_collections is None and 'vulnerabilityAuditSummaryCollections' in kwargs:
             vulnerability_audit_summary_collections = kwargs['vulnerabilityAuditSummaryCollections']
 
         if artifact_override_parameters is not None:
@@ -1123,7 +1145,7 @@ class BuildRunBuildOutputArtifactOverrideParameter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputArtifactOverrideParameterItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1178,9 +1200,9 @@ class BuildRunBuildOutputArtifactOverrideParameterItem(dict):
              deploy_artifact_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
 
         if deploy_artifact_id is not None:
@@ -1230,7 +1252,7 @@ class BuildRunBuildOutputDeliveredArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1321,21 +1343,21 @@ class BuildRunBuildOutputDeliveredArtifactItem(dict):
              output_artifact_name: Optional[str] = None,
              path: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactRepositoryId' in kwargs:
+        if artifact_repository_id is None and 'artifactRepositoryId' in kwargs:
             artifact_repository_id = kwargs['artifactRepositoryId']
-        if 'artifactType' in kwargs:
+        if artifact_type is None and 'artifactType' in kwargs:
             artifact_type = kwargs['artifactType']
-        if 'deliveredArtifactHash' in kwargs:
+        if delivered_artifact_hash is None and 'deliveredArtifactHash' in kwargs:
             delivered_artifact_hash = kwargs['deliveredArtifactHash']
-        if 'deliveredArtifactId' in kwargs:
+        if delivered_artifact_id is None and 'deliveredArtifactId' in kwargs:
             delivered_artifact_id = kwargs['deliveredArtifactId']
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'imageUri' in kwargs:
+        if image_uri is None and 'imageUri' in kwargs:
             image_uri = kwargs['imageUri']
-        if 'outputArtifactName' in kwargs:
+        if output_artifact_name is None and 'outputArtifactName' in kwargs:
             output_artifact_name = kwargs['outputArtifactName']
 
         if artifact_repository_id is not None:
@@ -1445,7 +1467,7 @@ class BuildRunBuildOutputExportedVariable(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariableItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1479,7 +1501,7 @@ class BuildRunBuildOutputExportedVariableItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -1519,7 +1541,7 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -1578,13 +1600,13 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem(dict):
              build_stage_id: Optional[str] = None,
              commit_hash: Optional[str] = None,
              vulnerability_audit_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildStageId' in kwargs:
+        if build_stage_id is None and 'buildStageId' in kwargs:
             build_stage_id = kwargs['buildStageId']
-        if 'commitHash' in kwargs:
+        if commit_hash is None and 'commitHash' in kwargs:
             commit_hash = kwargs['commitHash']
-        if 'vulnerabilityAuditId' in kwargs:
+        if vulnerability_audit_id is None and 'vulnerabilityAuditId' in kwargs:
             vulnerability_audit_id = kwargs['vulnerabilityAuditId']
 
         if build_stage_id is not None:
@@ -1633,9 +1655,11 @@ class BuildRunBuildRunArguments(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.BuildRunBuildRunArgumentsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.BuildRunBuildRunArgumentsItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1665,10 +1689,14 @@ class BuildRunBuildRunArgumentsItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -1734,13 +1762,13 @@ class BuildRunBuildRunProgress(dict):
              build_pipeline_stage_run_progress: Optional[Mapping[str, Any]] = None,
              time_finished: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineStageRunProgress' in kwargs:
+        if build_pipeline_stage_run_progress is None and 'buildPipelineStageRunProgress' in kwargs:
             build_pipeline_stage_run_progress = kwargs['buildPipelineStageRunProgress']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if build_pipeline_stage_run_progress is not None:
@@ -1825,15 +1853,15 @@ class BuildRunBuildRunSource(dict):
              source_type: Optional[str] = None,
              trigger_id: Optional[str] = None,
              trigger_infos: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfo']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'triggerId' in kwargs:
+        if trigger_id is None and 'triggerId' in kwargs:
             trigger_id = kwargs['triggerId']
-        if 'triggerInfos' in kwargs:
+        if trigger_infos is None and 'triggerInfos' in kwargs:
             trigger_infos = kwargs['triggerInfos']
 
         if repository_id is not None:
@@ -1914,9 +1942,9 @@ class BuildRunBuildRunSourceTriggerInfo(dict):
              _setter: Callable[[Any, Any], None],
              actions: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoAction']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if actions is not None:
@@ -1981,9 +2009,9 @@ class BuildRunBuildRunSourceTriggerInfoAction(dict):
              build_pipeline_id: Optional[str] = None,
              filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilter']] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
 
         if build_pipeline_id is not None:
@@ -2061,9 +2089,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
              excludes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExclude']] = None,
              includes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterInclude']] = None,
              trigger_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
 
         if events is not None:
@@ -2134,9 +2162,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExclude(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileFilters' in kwargs:
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
 
         if file_filters is not None:
@@ -2177,9 +2205,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
 
         if file_paths is not None:
@@ -2240,15 +2268,15 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
              file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter']] = None,
              head_ref: Optional[str] = None,
              repository_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'fileFilters' in kwargs:
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
-        if 'headRef' in kwargs:
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
-        if 'repositoryName' in kwargs:
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
 
         if base_ref is not None:
@@ -2319,9 +2347,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
 
         if file_paths is not None:
@@ -2374,17 +2402,23 @@ class BuildRunCommitInfo(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             commit_hash: str,
-             repository_branch: str,
-             repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             commit_hash: Optional[str] = None,
+             repository_branch: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commitHash' in kwargs:
+        if commit_hash is None and 'commitHash' in kwargs:
             commit_hash = kwargs['commitHash']
-        if 'repositoryBranch' in kwargs:
+        if commit_hash is None:
+            raise TypeError("Missing 'commit_hash' argument")
+        if repository_branch is None and 'repositoryBranch' in kwargs:
             repository_branch = kwargs['repositoryBranch']
-        if 'repositoryUrl' in kwargs:
+        if repository_branch is None:
+            raise TypeError("Missing 'repository_branch' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
 
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
@@ -2455,9 +2489,9 @@ class ConnectionLastConnectionValidationResult(dict):
              message: Optional[str] = None,
              result: Optional[str] = None,
              time_validated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeValidated' in kwargs:
+        if time_validated is None and 'timeValidated' in kwargs:
             time_validated = kwargs['timeValidated']
 
         if message is not None:
@@ -2528,14 +2562,18 @@ class ConnectionTlsVerifyConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_certificate_bundle_id: str,
-             tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ca_certificate_bundle_id: Optional[str] = None,
+             tls_verify_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caCertificateBundleId' in kwargs:
+        if ca_certificate_bundle_id is None and 'caCertificateBundleId' in kwargs:
             ca_certificate_bundle_id = kwargs['caCertificateBundleId']
-        if 'tlsVerifyMode' in kwargs:
+        if ca_certificate_bundle_id is None:
+            raise TypeError("Missing 'ca_certificate_bundle_id' argument")
+        if tls_verify_mode is None and 'tlsVerifyMode' in kwargs:
             tls_verify_mode = kwargs['tlsVerifyMode']
+        if tls_verify_mode is None:
+            raise TypeError("Missing 'tls_verify_mode' argument")
 
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
@@ -2628,7 +2666,7 @@ class DeployArtifactDeployArtifactSource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_source_type: str,
+             deploy_artifact_source_type: Optional[str] = None,
              base64encoded_content: Optional[str] = None,
              chart_url: Optional[str] = None,
              deploy_artifact_path: Optional[str] = None,
@@ -2637,25 +2675,27 @@ class DeployArtifactDeployArtifactSource(dict):
              image_digest: Optional[str] = None,
              image_uri: Optional[str] = None,
              repository_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactSourceType' in kwargs:
+        if deploy_artifact_source_type is None and 'deployArtifactSourceType' in kwargs:
             deploy_artifact_source_type = kwargs['deployArtifactSourceType']
-        if 'base64encodedContent' in kwargs:
+        if deploy_artifact_source_type is None:
+            raise TypeError("Missing 'deploy_artifact_source_type' argument")
+        if base64encoded_content is None and 'base64encodedContent' in kwargs:
             base64encoded_content = kwargs['base64encodedContent']
-        if 'chartUrl' in kwargs:
+        if chart_url is None and 'chartUrl' in kwargs:
             chart_url = kwargs['chartUrl']
-        if 'deployArtifactPath' in kwargs:
+        if deploy_artifact_path is None and 'deployArtifactPath' in kwargs:
             deploy_artifact_path = kwargs['deployArtifactPath']
-        if 'deployArtifactVersion' in kwargs:
+        if deploy_artifact_version is None and 'deployArtifactVersion' in kwargs:
             deploy_artifact_version = kwargs['deployArtifactVersion']
-        if 'helmVerificationKeySource' in kwargs:
+        if helm_verification_key_source is None and 'helmVerificationKeySource' in kwargs:
             helm_verification_key_source = kwargs['helmVerificationKeySource']
-        if 'imageDigest' in kwargs:
+        if image_digest is None and 'imageDigest' in kwargs:
             image_digest = kwargs['imageDigest']
-        if 'imageUri' in kwargs:
+        if image_uri is None and 'imageUri' in kwargs:
             image_uri = kwargs['imageUri']
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
 
         _setter("deploy_artifact_source_type", deploy_artifact_source_type)
@@ -2795,19 +2835,21 @@ class DeployArtifactDeployArtifactSourceHelmVerificationKeySource(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             verification_key_source_type: str,
+             verification_key_source_type: Optional[str] = None,
              current_public_key: Optional[str] = None,
              previous_public_key: Optional[str] = None,
              vault_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'verificationKeySourceType' in kwargs:
+        if verification_key_source_type is None and 'verificationKeySourceType' in kwargs:
             verification_key_source_type = kwargs['verificationKeySourceType']
-        if 'currentPublicKey' in kwargs:
+        if verification_key_source_type is None:
+            raise TypeError("Missing 'verification_key_source_type' argument")
+        if current_public_key is None and 'currentPublicKey' in kwargs:
             current_public_key = kwargs['currentPublicKey']
-        if 'previousPublicKey' in kwargs:
+        if previous_public_key is None and 'previousPublicKey' in kwargs:
             previous_public_key = kwargs['previousPublicKey']
-        if 'vaultSecretId' in kwargs:
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
             vault_secret_id = kwargs['vaultSecretId']
 
         _setter("verification_key_source_type", verification_key_source_type)
@@ -2866,7 +2908,7 @@ class DeployEnvironmentComputeInstanceGroupSelectors(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployEnvironmentComputeInstanceGroupSelectorsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -2923,15 +2965,17 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             selector_type: str,
+             selector_type: Optional[str] = None,
              compute_instance_ids: Optional[Sequence[str]] = None,
              query: Optional[str] = None,
              region: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'selectorType' in kwargs:
+        if selector_type is None and 'selectorType' in kwargs:
             selector_type = kwargs['selectorType']
-        if 'computeInstanceIds' in kwargs:
+        if selector_type is None:
+            raise TypeError("Missing 'selector_type' argument")
+        if compute_instance_ids is None and 'computeInstanceIds' in kwargs:
             compute_instance_ids = kwargs['computeInstanceIds']
 
         _setter("selector_type", selector_type)
@@ -3016,16 +3060,20 @@ class DeployEnvironmentNetworkChannel(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             subnet_id: str,
+             network_channel_type: Optional[str] = None,
+             subnet_id: Optional[str] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'subnetId' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'nsgIds' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("network_channel_type", network_channel_type)
@@ -3073,7 +3121,7 @@ class DeployPipelineDeployPipelineArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -3132,13 +3180,13 @@ class DeployPipelineDeployPipelineArtifactItem(dict):
              deploy_artifact_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_artifact_id is not None:
@@ -3188,7 +3236,7 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -3241,11 +3289,11 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_stage_id is not None:
@@ -3285,7 +3333,7 @@ class DeployPipelineDeployPipelineEnvironment(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -3344,13 +3392,13 @@ class DeployPipelineDeployPipelineEnvironmentItem(dict):
              deploy_environment_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_environment_id is not None:
@@ -3400,7 +3448,7 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -3453,11 +3501,11 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_stage_id is not None:
@@ -3496,9 +3544,11 @@ class DeployPipelineDeployPipelineParameters(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.DeployPipelineDeployPipelineParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.DeployPipelineDeployPipelineParametersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3548,12 +3598,14 @@ class DeployPipelineDeployPipelineParametersItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
+             name: Optional[str] = None,
              default_value: Optional[str] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
 
         _setter("name", name)
@@ -3623,14 +3675,18 @@ class DeployStageApprovalPolicy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approval_policy_type: str,
-             number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approval_policy_type: Optional[str] = None,
+             number_of_approvals_required: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalPolicyType' in kwargs:
+        if approval_policy_type is None and 'approvalPolicyType' in kwargs:
             approval_policy_type = kwargs['approvalPolicyType']
-        if 'numberOfApprovalsRequired' in kwargs:
+        if approval_policy_type is None:
+            raise TypeError("Missing 'approval_policy_type' argument")
+        if number_of_approvals_required is None and 'numberOfApprovalsRequired' in kwargs:
             number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+        if number_of_approvals_required is None:
+            raise TypeError("Missing 'number_of_approvals_required' argument")
 
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
@@ -3667,7 +3723,7 @@ class DeployStageBlueBackendIps(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -3728,20 +3784,28 @@ class DeployStageBlueGreenStrategy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace_a: str,
-             namespace_b: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace_a: Optional[str] = None,
+             namespace_b: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'namespaceA' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace_a is None and 'namespaceA' in kwargs:
             namespace_a = kwargs['namespaceA']
-        if 'namespaceB' in kwargs:
+        if namespace_a is None:
+            raise TypeError("Missing 'namespace_a' argument")
+        if namespace_b is None and 'namespaceB' in kwargs:
             namespace_b = kwargs['namespaceB']
-        if 'strategyType' in kwargs:
+        if namespace_b is None:
+            raise TypeError("Missing 'namespace_b' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
@@ -3820,15 +3884,21 @@ class DeployStageCanaryStrategy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'strategyType' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
@@ -3915,25 +3985,33 @@ class DeployStageContainerConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             container_config_type: str,
-             network_channel: 'outputs.DeployStageContainerConfigNetworkChannel',
-             shape_config: 'outputs.DeployStageContainerConfigShapeConfig',
-             shape_name: str,
+             container_config_type: Optional[str] = None,
+             network_channel: Optional['outputs.DeployStageContainerConfigNetworkChannel'] = None,
+             shape_config: Optional['outputs.DeployStageContainerConfigShapeConfig'] = None,
+             shape_name: Optional[str] = None,
              availability_domain: Optional[str] = None,
              compartment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'containerConfigType' in kwargs:
+        if container_config_type is None and 'containerConfigType' in kwargs:
             container_config_type = kwargs['containerConfigType']
-        if 'networkChannel' in kwargs:
+        if container_config_type is None:
+            raise TypeError("Missing 'container_config_type' argument")
+        if network_channel is None and 'networkChannel' in kwargs:
             network_channel = kwargs['networkChannel']
-        if 'shapeConfig' in kwargs:
+        if network_channel is None:
+            raise TypeError("Missing 'network_channel' argument")
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'shapeName' in kwargs:
+        if shape_config is None:
+            raise TypeError("Missing 'shape_config' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
-        if 'availabilityDomain' in kwargs:
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("container_config_type", container_config_type)
@@ -4035,16 +4113,20 @@ class DeployStageContainerConfigNetworkChannel(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             subnet_id: str,
+             network_channel_type: Optional[str] = None,
+             subnet_id: Optional[str] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'subnetId' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'nsgIds' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("network_channel_type", network_channel_type)
@@ -4111,11 +4193,13 @@ class DeployStageContainerConfigShapeConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ocpus: float,
+             ocpus: Optional[float] = None,
              memory_in_gbs: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
 
         _setter("ocpus", ocpus)
@@ -4153,9 +4237,11 @@ class DeployStageDeployStagePredecessorCollection(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -4182,9 +4268,11 @@ class DeployStageDeployStagePredecessorCollectionItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -4238,16 +4326,18 @@ class DeployStageFailurePolicy(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: str,
+             policy_type: Optional[str] = None,
              failure_count: Optional[int] = None,
              failure_percentage: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'failureCount' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if failure_count is None and 'failureCount' in kwargs:
             failure_count = kwargs['failureCount']
-        if 'failurePercentage' in kwargs:
+        if failure_percentage is None and 'failurePercentage' in kwargs:
             failure_percentage = kwargs['failurePercentage']
 
         _setter("policy_type", policy_type)
@@ -4296,7 +4386,7 @@ class DeployStageGreenBackendIps(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4359,13 +4449,13 @@ class DeployStageLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if backend_port is not None:
@@ -4458,13 +4548,13 @@ class DeployStageProductionLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if backend_port is not None:
@@ -4541,9 +4631,9 @@ class DeployStageRollbackPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              policy_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
 
         if policy_type is not None:
@@ -4614,17 +4704,17 @@ class DeployStageRolloutPolicy(dict):
              batch_percentage: Optional[int] = None,
              policy_type: Optional[str] = None,
              ramp_limit_percent: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchCount' in kwargs:
+        if batch_count is None and 'batchCount' in kwargs:
             batch_count = kwargs['batchCount']
-        if 'batchDelayInSeconds' in kwargs:
+        if batch_delay_in_seconds is None and 'batchDelayInSeconds' in kwargs:
             batch_delay_in_seconds = kwargs['batchDelayInSeconds']
-        if 'batchPercentage' in kwargs:
+        if batch_percentage is None and 'batchPercentage' in kwargs:
             batch_percentage = kwargs['batchPercentage']
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'rampLimitPercent' in kwargs:
+        if ramp_limit_percent is None and 'rampLimitPercent' in kwargs:
             ramp_limit_percent = kwargs['rampLimitPercent']
 
         if batch_count is not None:
@@ -4694,7 +4784,7 @@ class DeployStageSetString(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployStageSetStringItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4728,7 +4818,7 @@ class DeployStageSetStringItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -4768,7 +4858,7 @@ class DeployStageSetValues(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployStageSetValuesItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -4802,7 +4892,7 @@ class DeployStageSetValuesItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -4875,13 +4965,13 @@ class DeployStageTestLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
 
         if backend_port is not None:
@@ -4966,14 +5056,18 @@ class DeployStageWaitCriteria(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -5014,7 +5108,7 @@ class DeploymentDeployArtifactOverrideArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployArtifactOverrideArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5070,9 +5164,9 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
              deploy_artifact_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
 
         if deploy_artifact_id is not None:
@@ -5123,7 +5217,7 @@ class DeploymentDeployPipelineArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5182,13 +5276,13 @@ class DeploymentDeployPipelineArtifactItem(dict):
              deploy_artifact_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_artifact_id is not None:
@@ -5238,7 +5332,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5291,11 +5385,11 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_stage_id is not None:
@@ -5335,7 +5429,7 @@ class DeploymentDeployPipelineEnvironment(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5394,13 +5488,13 @@ class DeploymentDeployPipelineEnvironmentItem(dict):
              deploy_environment_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_environment_id is not None:
@@ -5450,7 +5544,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5503,11 +5597,11 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         if deploy_stage_id is not None:
@@ -5547,7 +5641,7 @@ class DeploymentDeployStageOverrideArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5603,9 +5697,9 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
              deploy_stage_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
 
         if deploy_stage_id is not None:
@@ -5656,7 +5750,7 @@ class DeploymentDeploymentArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeploymentArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if items is not None:
@@ -5691,7 +5785,7 @@ class DeploymentDeploymentArgumentsItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -5761,13 +5855,13 @@ class DeploymentDeploymentExecutionProgress(dict):
              deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
              time_finished: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageExecutionProgress' in kwargs:
+        if deploy_stage_execution_progress is None and 'deployStageExecutionProgress' in kwargs:
             deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if deploy_stage_execution_progress is not None:
@@ -5837,11 +5931,13 @@ class ProjectNotificationConfig(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("topic_id", topic_id)
 
@@ -5902,13 +5998,13 @@ class RepositoryMirrorRepositoryConfig(dict):
              connector_id: Optional[str] = None,
              repository_url: Optional[str] = None,
              trigger_schedule: Optional['outputs.RepositoryMirrorRepositoryConfigTriggerSchedule'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorId' in kwargs:
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'repositoryUrl' in kwargs:
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
-        if 'triggerSchedule' in kwargs:
+        if trigger_schedule is None and 'triggerSchedule' in kwargs:
             trigger_schedule = kwargs['triggerSchedule']
 
         if connector_id is not None:
@@ -5979,13 +6075,15 @@ class RepositoryMirrorRepositoryConfigTriggerSchedule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             schedule_type: str,
+             schedule_type: Optional[str] = None,
              custom_schedule: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'scheduleType' in kwargs:
+        if schedule_type is None and 'scheduleType' in kwargs:
             schedule_type = kwargs['scheduleType']
-        if 'customSchedule' in kwargs:
+        if schedule_type is None:
+            raise TypeError("Missing 'schedule_type' argument")
+        if custom_schedule is None and 'customSchedule' in kwargs:
             custom_schedule = kwargs['customSchedule']
 
         _setter("schedule_type", schedule_type)
@@ -6046,13 +6144,17 @@ class TriggerAction(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             type: str,
+             build_pipeline_id: Optional[str] = None,
+             type: Optional[str] = None,
              filter: Optional['outputs.TriggerActionFilter'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("type", type)
@@ -6128,14 +6230,16 @@ class TriggerActionFilter(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             trigger_source: str,
+             trigger_source: Optional[str] = None,
              events: Optional[Sequence[str]] = None,
              exclude: Optional['outputs.TriggerActionFilterExclude'] = None,
              include: Optional['outputs.TriggerActionFilterInclude'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
 
         _setter("trigger_source", trigger_source)
         if events is not None:
@@ -6214,9 +6318,9 @@ class TriggerActionFilterExclude(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filter: Optional['outputs.TriggerActionFilterExcludeFileFilter'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileFilter' in kwargs:
+        if file_filter is None and 'fileFilter' in kwargs:
             file_filter = kwargs['fileFilter']
 
         if file_filter is not None:
@@ -6263,9 +6367,9 @@ class TriggerActionFilterExcludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
 
         if file_paths is not None:
@@ -6330,15 +6434,15 @@ class TriggerActionFilterInclude(dict):
              file_filter: Optional['outputs.TriggerActionFilterIncludeFileFilter'] = None,
              head_ref: Optional[str] = None,
              repository_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'fileFilter' in kwargs:
+        if file_filter is None and 'fileFilter' in kwargs:
             file_filter = kwargs['fileFilter']
-        if 'headRef' in kwargs:
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
-        if 'repositoryName' in kwargs:
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
 
         if base_ref is not None:
@@ -6415,9 +6519,9 @@ class TriggerActionFilterIncludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
 
         if file_paths is not None:
@@ -6446,9 +6550,11 @@ class GetBuildPipelineBuildPipelineParameterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineBuildPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineBuildPipelineParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6481,13 +6587,19 @@ class GetBuildPipelineBuildPipelineParameterItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             description: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("default_value", default_value)
         _setter("description", description)
@@ -6532,9 +6644,11 @@ class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6561,9 +6675,11 @@ class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -6596,15 +6712,21 @@ class GetBuildPipelineStageBuildRunnerShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_runner_type: str,
-             memory_in_gbs: int,
-             ocpus: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_runner_type: Optional[str] = None,
+             memory_in_gbs: Optional[int] = None,
+             ocpus: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildRunnerType' in kwargs:
+        if build_runner_type is None and 'buildRunnerType' in kwargs:
             build_runner_type = kwargs['buildRunnerType']
-        if 'memoryInGbs' in kwargs:
+        if build_runner_type is None:
+            raise TypeError("Missing 'build_runner_type' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("build_runner_type", build_runner_type)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -6649,9 +6771,11 @@ class GetBuildPipelineStageBuildSourceCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6693,22 +6817,34 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             branch: str,
-             connection_id: str,
-             connection_type: str,
-             name: str,
-             repository_id: str,
-             repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             branch: Optional[str] = None,
+             connection_id: Optional[str] = None,
+             connection_type: Optional[str] = None,
+             name: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionId' in kwargs:
+        if branch is None:
+            raise TypeError("Missing 'branch' argument")
+        if connection_id is None and 'connectionId' in kwargs:
             connection_id = kwargs['connectionId']
-        if 'connectionType' in kwargs:
+        if connection_id is None:
+            raise TypeError("Missing 'connection_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'repositoryId' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'repositoryUrl' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
 
         _setter("branch", branch)
         _setter("connection_id", connection_id)
@@ -6780,9 +6916,11 @@ class GetBuildPipelineStageDeliverArtifactCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStageDeliverArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStageDeliverArtifactCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -6812,14 +6950,18 @@ class GetBuildPipelineStageDeliverArtifactCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_id: str,
-             artifact_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_id: Optional[str] = None,
+             artifact_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactId' in kwargs:
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
-        if 'artifactName' in kwargs:
+        if artifact_id is None:
+            raise TypeError("Missing 'artifact_id' argument")
+        if artifact_name is None and 'artifactName' in kwargs:
             artifact_name = kwargs['artifactName']
+        if artifact_name is None:
+            raise TypeError("Missing 'artifact_name' argument")
 
         _setter("artifact_id", artifact_id)
         _setter("artifact_name", artifact_name)
@@ -6861,17 +7003,23 @@ class GetBuildPipelineStagePrivateAccessConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -6919,14 +7067,18 @@ class GetBuildPipelineStageWaitCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -6962,9 +7114,11 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7069,81 +7223,135 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             build_pipeline_stage_predecessor_collections: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionResult'],
-             build_pipeline_stage_type: str,
-             build_runner_shape_config: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult',
-             build_source_collection: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult',
-             build_spec_file: str,
-             compartment_id: str,
-             connection_type: str,
-             defined_tags: Mapping[str, Any],
-             deliver_artifact_collection: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult',
-             deploy_pipeline_id: str,
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             image: str,
-             is_pass_all_parameters_enabled: bool,
-             lifecycle_details: str,
-             primary_build_source: str,
-             private_access_config: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult',
-             project_id: str,
-             stage_execution_timeout_in_seconds: int,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             wait_criteria: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             build_pipeline_stage_predecessor_collections: Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionResult']] = None,
+             build_pipeline_stage_type: Optional[str] = None,
+             build_runner_shape_config: Optional['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult'] = None,
+             build_source_collection: Optional['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult'] = None,
+             build_spec_file: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             connection_type: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deliver_artifact_collection: Optional['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult'] = None,
+             deploy_pipeline_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             image: Optional[str] = None,
+             is_pass_all_parameters_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             primary_build_source: Optional[str] = None,
+             private_access_config: Optional['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult'] = None,
+             project_id: Optional[str] = None,
+             stage_execution_timeout_in_seconds: Optional[int] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             wait_criteria: Optional['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
-        if 'buildPipelineStagePredecessorCollections' in kwargs:
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if build_pipeline_stage_predecessor_collections is None and 'buildPipelineStagePredecessorCollections' in kwargs:
             build_pipeline_stage_predecessor_collections = kwargs['buildPipelineStagePredecessorCollections']
-        if 'buildPipelineStageType' in kwargs:
+        if build_pipeline_stage_predecessor_collections is None:
+            raise TypeError("Missing 'build_pipeline_stage_predecessor_collections' argument")
+        if build_pipeline_stage_type is None and 'buildPipelineStageType' in kwargs:
             build_pipeline_stage_type = kwargs['buildPipelineStageType']
-        if 'buildRunnerShapeConfig' in kwargs:
+        if build_pipeline_stage_type is None:
+            raise TypeError("Missing 'build_pipeline_stage_type' argument")
+        if build_runner_shape_config is None and 'buildRunnerShapeConfig' in kwargs:
             build_runner_shape_config = kwargs['buildRunnerShapeConfig']
-        if 'buildSourceCollection' in kwargs:
+        if build_runner_shape_config is None:
+            raise TypeError("Missing 'build_runner_shape_config' argument")
+        if build_source_collection is None and 'buildSourceCollection' in kwargs:
             build_source_collection = kwargs['buildSourceCollection']
-        if 'buildSpecFile' in kwargs:
+        if build_source_collection is None:
+            raise TypeError("Missing 'build_source_collection' argument")
+        if build_spec_file is None and 'buildSpecFile' in kwargs:
             build_spec_file = kwargs['buildSpecFile']
-        if 'compartmentId' in kwargs:
+        if build_spec_file is None:
+            raise TypeError("Missing 'build_spec_file' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'definedTags' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deliverArtifactCollection' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deliver_artifact_collection is None and 'deliverArtifactCollection' in kwargs:
             deliver_artifact_collection = kwargs['deliverArtifactCollection']
-        if 'deployPipelineId' in kwargs:
+        if deliver_artifact_collection is None:
+            raise TypeError("Missing 'deliver_artifact_collection' argument")
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_id is None:
+            raise TypeError("Missing 'deploy_pipeline_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isPassAllParametersEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image is None:
+            raise TypeError("Missing 'image' argument")
+        if is_pass_all_parameters_enabled is None and 'isPassAllParametersEnabled' in kwargs:
             is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if is_pass_all_parameters_enabled is None:
+            raise TypeError("Missing 'is_pass_all_parameters_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'primaryBuildSource' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if primary_build_source is None and 'primaryBuildSource' in kwargs:
             primary_build_source = kwargs['primaryBuildSource']
-        if 'privateAccessConfig' in kwargs:
+        if primary_build_source is None:
+            raise TypeError("Missing 'primary_build_source' argument")
+        if private_access_config is None and 'privateAccessConfig' in kwargs:
             private_access_config = kwargs['privateAccessConfig']
-        if 'projectId' in kwargs:
+        if private_access_config is None:
+            raise TypeError("Missing 'private_access_config' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'stageExecutionTimeoutInSeconds' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if stage_execution_timeout_in_seconds is None and 'stageExecutionTimeoutInSeconds' in kwargs:
             stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
-        if 'systemTags' in kwargs:
+        if stage_execution_timeout_in_seconds is None:
+            raise TypeError("Missing 'stage_execution_timeout_in_seconds' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'waitCriteria' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if wait_criteria is None and 'waitCriteria' in kwargs:
             wait_criteria = kwargs['waitCriteria']
+        if wait_criteria is None:
+            raise TypeError("Missing 'wait_criteria' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("build_pipeline_stage_predecessor_collections", build_pipeline_stage_predecessor_collections)
@@ -7404,9 +7612,11 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7433,9 +7643,11 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePr
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -7468,15 +7680,21 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConf
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_runner_type: str,
-             memory_in_gbs: int,
-             ocpus: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_runner_type: Optional[str] = None,
+             memory_in_gbs: Optional[int] = None,
+             ocpus: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildRunnerType' in kwargs:
+        if build_runner_type is None and 'buildRunnerType' in kwargs:
             build_runner_type = kwargs['buildRunnerType']
-        if 'memoryInGbs' in kwargs:
+        if build_runner_type is None:
+            raise TypeError("Missing 'build_runner_type' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("build_runner_type", build_runner_type)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -7521,9 +7739,11 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7565,22 +7785,34 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             branch: str,
-             connection_id: str,
-             connection_type: str,
-             name: str,
-             repository_id: str,
-             repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             branch: Optional[str] = None,
+             connection_id: Optional[str] = None,
+             connection_type: Optional[str] = None,
+             name: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectionId' in kwargs:
+        if branch is None:
+            raise TypeError("Missing 'branch' argument")
+        if connection_id is None and 'connectionId' in kwargs:
             connection_id = kwargs['connectionId']
-        if 'connectionType' in kwargs:
+        if connection_id is None:
+            raise TypeError("Missing 'connection_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'repositoryId' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'repositoryUrl' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
 
         _setter("branch", branch)
         _setter("connection_id", connection_id)
@@ -7652,9 +7884,11 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactColle
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7684,14 +7918,18 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactColle
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_id: str,
-             artifact_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_id: Optional[str] = None,
+             artifact_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactId' in kwargs:
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
-        if 'artifactName' in kwargs:
+        if artifact_id is None:
+            raise TypeError("Missing 'artifact_id' argument")
+        if artifact_name is None and 'artifactName' in kwargs:
             artifact_name = kwargs['artifactName']
+        if artifact_name is None:
+            raise TypeError("Missing 'artifact_name' argument")
 
         _setter("artifact_id", artifact_id)
         _setter("artifact_name", artifact_name)
@@ -7733,17 +7971,23 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -7791,14 +8035,18 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -7838,11 +8086,15 @@ class GetBuildPipelineStagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -7882,9 +8134,11 @@ class GetBuildPipelinesBuildPipelineCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -7947,41 +8201,67 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_parameters: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterResult'],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_parameters: Optional[Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterResult']] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineParameters' in kwargs:
+        if build_pipeline_parameters is None and 'buildPipelineParameters' in kwargs:
             build_pipeline_parameters = kwargs['buildPipelineParameters']
-        if 'compartmentId' in kwargs:
+        if build_pipeline_parameters is None:
+            raise TypeError("Missing 'build_pipeline_parameters' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("build_pipeline_parameters", build_pipeline_parameters)
         _setter("compartment_id", compartment_id)
@@ -8116,9 +8396,11 @@ class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8151,13 +8433,19 @@ class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemResu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             description: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("default_value", default_value)
         _setter("description", description)
@@ -8206,11 +8494,15 @@ class GetBuildPipelinesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -8259,20 +8551,28 @@ class GetBuildRunBuildOutputResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_override_parameters: Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterResult'],
-             delivered_artifacts: Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactResult'],
-             exported_variables: Sequence['outputs.GetBuildRunBuildOutputExportedVariableResult'],
-             vulnerability_audit_summary_collections: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_override_parameters: Optional[Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterResult']] = None,
+             delivered_artifacts: Optional[Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactResult']] = None,
+             exported_variables: Optional[Sequence['outputs.GetBuildRunBuildOutputExportedVariableResult']] = None,
+             vulnerability_audit_summary_collections: Optional[Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactOverrideParameters' in kwargs:
+        if artifact_override_parameters is None and 'artifactOverrideParameters' in kwargs:
             artifact_override_parameters = kwargs['artifactOverrideParameters']
-        if 'deliveredArtifacts' in kwargs:
+        if artifact_override_parameters is None:
+            raise TypeError("Missing 'artifact_override_parameters' argument")
+        if delivered_artifacts is None and 'deliveredArtifacts' in kwargs:
             delivered_artifacts = kwargs['deliveredArtifacts']
-        if 'exportedVariables' in kwargs:
+        if delivered_artifacts is None:
+            raise TypeError("Missing 'delivered_artifacts' argument")
+        if exported_variables is None and 'exportedVariables' in kwargs:
             exported_variables = kwargs['exportedVariables']
-        if 'vulnerabilityAuditSummaryCollections' in kwargs:
+        if exported_variables is None:
+            raise TypeError("Missing 'exported_variables' argument")
+        if vulnerability_audit_summary_collections is None and 'vulnerabilityAuditSummaryCollections' in kwargs:
             vulnerability_audit_summary_collections = kwargs['vulnerabilityAuditSummaryCollections']
+        if vulnerability_audit_summary_collections is None:
+            raise TypeError("Missing 'vulnerability_audit_summary_collections' argument")
 
         _setter("artifact_override_parameters", artifact_override_parameters)
         _setter("delivered_artifacts", delivered_artifacts)
@@ -8326,9 +8626,11 @@ class GetBuildRunBuildOutputArtifactOverrideParameterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8361,13 +8663,19 @@ class GetBuildRunBuildOutputArtifactOverrideParameterItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
@@ -8412,9 +8720,11 @@ class GetBuildRunBuildOutputDeliveredArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8465,31 +8775,49 @@ class GetBuildRunBuildOutputDeliveredArtifactItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_repository_id: str,
-             artifact_type: str,
-             delivered_artifact_hash: str,
-             delivered_artifact_id: str,
-             deploy_artifact_id: str,
-             image_uri: str,
-             output_artifact_name: str,
-             path: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_repository_id: Optional[str] = None,
+             artifact_type: Optional[str] = None,
+             delivered_artifact_hash: Optional[str] = None,
+             delivered_artifact_id: Optional[str] = None,
+             deploy_artifact_id: Optional[str] = None,
+             image_uri: Optional[str] = None,
+             output_artifact_name: Optional[str] = None,
+             path: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactRepositoryId' in kwargs:
+        if artifact_repository_id is None and 'artifactRepositoryId' in kwargs:
             artifact_repository_id = kwargs['artifactRepositoryId']
-        if 'artifactType' in kwargs:
+        if artifact_repository_id is None:
+            raise TypeError("Missing 'artifact_repository_id' argument")
+        if artifact_type is None and 'artifactType' in kwargs:
             artifact_type = kwargs['artifactType']
-        if 'deliveredArtifactHash' in kwargs:
+        if artifact_type is None:
+            raise TypeError("Missing 'artifact_type' argument")
+        if delivered_artifact_hash is None and 'deliveredArtifactHash' in kwargs:
             delivered_artifact_hash = kwargs['deliveredArtifactHash']
-        if 'deliveredArtifactId' in kwargs:
+        if delivered_artifact_hash is None:
+            raise TypeError("Missing 'delivered_artifact_hash' argument")
+        if delivered_artifact_id is None and 'deliveredArtifactId' in kwargs:
             delivered_artifact_id = kwargs['deliveredArtifactId']
-        if 'deployArtifactId' in kwargs:
+        if delivered_artifact_id is None:
+            raise TypeError("Missing 'delivered_artifact_id' argument")
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'imageUri' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if image_uri is None and 'imageUri' in kwargs:
             image_uri = kwargs['imageUri']
-        if 'outputArtifactName' in kwargs:
+        if image_uri is None:
+            raise TypeError("Missing 'image_uri' argument")
+        if output_artifact_name is None and 'outputArtifactName' in kwargs:
             output_artifact_name = kwargs['outputArtifactName']
+        if output_artifact_name is None:
+            raise TypeError("Missing 'output_artifact_name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("artifact_repository_id", artifact_repository_id)
         _setter("artifact_type", artifact_type)
@@ -8588,9 +8916,11 @@ class GetBuildRunBuildOutputExportedVariableResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunBuildOutputExportedVariableItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunBuildOutputExportedVariableItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8620,10 +8950,14 @@ class GetBuildRunBuildOutputExportedVariableItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -8659,9 +8993,11 @@ class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8694,17 +9030,23 @@ class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_stage_id: str,
-             commit_hash: str,
-             vulnerability_audit_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_stage_id: Optional[str] = None,
+             commit_hash: Optional[str] = None,
+             vulnerability_audit_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildStageId' in kwargs:
+        if build_stage_id is None and 'buildStageId' in kwargs:
             build_stage_id = kwargs['buildStageId']
-        if 'commitHash' in kwargs:
+        if build_stage_id is None:
+            raise TypeError("Missing 'build_stage_id' argument")
+        if commit_hash is None and 'commitHash' in kwargs:
             commit_hash = kwargs['commitHash']
-        if 'vulnerabilityAuditId' in kwargs:
+        if commit_hash is None:
+            raise TypeError("Missing 'commit_hash' argument")
+        if vulnerability_audit_id is None and 'vulnerabilityAuditId' in kwargs:
             vulnerability_audit_id = kwargs['vulnerabilityAuditId']
+        if vulnerability_audit_id is None:
+            raise TypeError("Missing 'vulnerability_audit_id' argument")
 
         _setter("build_stage_id", build_stage_id)
         _setter("commit_hash", commit_hash)
@@ -8749,9 +9091,11 @@ class GetBuildRunBuildRunArgumentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunBuildRunArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunBuildRunArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -8781,10 +9125,14 @@ class GetBuildRunBuildRunArgumentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -8826,17 +9174,23 @@ class GetBuildRunBuildRunProgressResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_stage_run_progress: Mapping[str, Any],
-             time_finished: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_stage_run_progress: Optional[Mapping[str, Any]] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineStageRunProgress' in kwargs:
+        if build_pipeline_stage_run_progress is None and 'buildPipelineStageRunProgress' in kwargs:
             build_pipeline_stage_run_progress = kwargs['buildPipelineStageRunProgress']
-        if 'timeFinished' in kwargs:
+        if build_pipeline_stage_run_progress is None:
+            raise TypeError("Missing 'build_pipeline_stage_run_progress' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("build_pipeline_stage_run_progress", build_pipeline_stage_run_progress)
         _setter("time_finished", time_finished)
@@ -8890,20 +9244,28 @@ class GetBuildRunBuildRunSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             repository_id: str,
-             source_type: str,
-             trigger_id: str,
-             trigger_infos: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             repository_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             trigger_id: Optional[str] = None,
+             trigger_infos: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'sourceType' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'triggerId' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if trigger_id is None and 'triggerId' in kwargs:
             trigger_id = kwargs['triggerId']
-        if 'triggerInfos' in kwargs:
+        if trigger_id is None:
+            raise TypeError("Missing 'trigger_id' argument")
+        if trigger_infos is None and 'triggerInfos' in kwargs:
             trigger_infos = kwargs['triggerInfos']
+        if trigger_infos is None:
+            raise TypeError("Missing 'trigger_infos' argument")
 
         _setter("repository_id", repository_id)
         _setter("source_type", source_type)
@@ -8960,12 +9322,16 @@ class GetBuildRunBuildRunSourceTriggerInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("actions", actions)
         _setter("display_name", display_name)
@@ -9007,13 +9373,19 @@ class GetBuildRunBuildRunSourceTriggerInfoActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             filters: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
@@ -9066,14 +9438,22 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             events: Sequence[str],
-             excludes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult'],
-             includes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult'],
-             trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             events: Optional[Sequence[str]] = None,
+             excludes: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult']] = None,
+             includes: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult']] = None,
+             trigger_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if events is None:
+            raise TypeError("Missing 'events' argument")
+        if excludes is None:
+            raise TypeError("Missing 'excludes' argument")
+        if includes is None:
+            raise TypeError("Missing 'includes' argument")
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
 
         _setter("events", events)
         _setter("excludes", excludes)
@@ -9121,11 +9501,13 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_filters: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileFilters' in kwargs:
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
 
         _setter("file_filters", file_filters)
 
@@ -9146,11 +9528,13 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 
@@ -9182,20 +9566,28 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_ref: str,
-             file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult'],
-             head_ref: str,
-             repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_ref: Optional[str] = None,
+             file_filters: Optional[Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult']] = None,
+             head_ref: Optional[str] = None,
+             repository_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'fileFilters' in kwargs:
+        if base_ref is None:
+            raise TypeError("Missing 'base_ref' argument")
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
-        if 'headRef' in kwargs:
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
-        if 'repositoryName' in kwargs:
+        if head_ref is None:
+            raise TypeError("Missing 'head_ref' argument")
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
+        if repository_name is None:
+            raise TypeError("Missing 'repository_name' argument")
 
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
@@ -9243,11 +9635,13 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 
@@ -9277,17 +9671,23 @@ class GetBuildRunCommitInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             commit_hash: str,
-             repository_branch: str,
-             repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             commit_hash: Optional[str] = None,
+             repository_branch: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commitHash' in kwargs:
+        if commit_hash is None and 'commitHash' in kwargs:
             commit_hash = kwargs['commitHash']
-        if 'repositoryBranch' in kwargs:
+        if commit_hash is None:
+            raise TypeError("Missing 'commit_hash' argument")
+        if repository_branch is None and 'repositoryBranch' in kwargs:
             repository_branch = kwargs['repositoryBranch']
-        if 'repositoryUrl' in kwargs:
+        if repository_branch is None:
+            raise TypeError("Missing 'repository_branch' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
 
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
@@ -9332,9 +9732,11 @@ class GetBuildRunsBuildRunSummaryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9405,52 +9807,84 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             build_run_arguments: 'outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult',
-             build_run_progress_summaries: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult'],
-             build_run_sources: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult'],
-             commit_info: 'outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult',
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             build_run_arguments: Optional['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult'] = None,
+             build_run_progress_summaries: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult']] = None,
+             build_run_sources: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult']] = None,
+             commit_info: Optional['outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult'] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
-        if 'buildRunArguments' in kwargs:
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if build_run_arguments is None and 'buildRunArguments' in kwargs:
             build_run_arguments = kwargs['buildRunArguments']
-        if 'buildRunProgressSummaries' in kwargs:
+        if build_run_arguments is None:
+            raise TypeError("Missing 'build_run_arguments' argument")
+        if build_run_progress_summaries is None and 'buildRunProgressSummaries' in kwargs:
             build_run_progress_summaries = kwargs['buildRunProgressSummaries']
-        if 'buildRunSources' in kwargs:
+        if build_run_progress_summaries is None:
+            raise TypeError("Missing 'build_run_progress_summaries' argument")
+        if build_run_sources is None and 'buildRunSources' in kwargs:
             build_run_sources = kwargs['buildRunSources']
-        if 'commitInfo' in kwargs:
+        if build_run_sources is None:
+            raise TypeError("Missing 'build_run_sources' argument")
+        if commit_info is None and 'commitInfo' in kwargs:
             commit_info = kwargs['commitInfo']
-        if 'compartmentId' in kwargs:
+        if commit_info is None:
+            raise TypeError("Missing 'commit_info' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("build_run_arguments", build_run_arguments)
@@ -9609,9 +10043,11 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -9641,10 +10077,14 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -9683,14 +10123,18 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             time_finished: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("time_finished", time_finished)
         _setter("time_started", time_started)
@@ -9732,17 +10176,23 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             repository_id: str,
-             source_type: str,
-             trigger_infos: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             repository_id: Optional[str] = None,
+             source_type: Optional[str] = None,
+             trigger_infos: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'repositoryId' in kwargs:
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'sourceType' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'triggerInfos' in kwargs:
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if trigger_infos is None and 'triggerInfos' in kwargs:
             trigger_infos = kwargs['triggerInfos']
+        if trigger_infos is None:
+            raise TypeError("Missing 'trigger_infos' argument")
 
         _setter("repository_id", repository_id)
         _setter("source_type", source_type)
@@ -9793,15 +10243,21 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionResult'],
-             display_name: str,
-             trigger_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionResult']] = None,
+             display_name: Optional[str] = None,
+             trigger_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'triggerId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if trigger_id is None and 'triggerId' in kwargs:
             trigger_id = kwargs['triggerId']
+        if trigger_id is None:
+            raise TypeError("Missing 'trigger_id' argument")
 
         _setter("actions", actions)
         _setter("display_name", display_name)
@@ -9852,13 +10308,19 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             filters: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             filters: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
@@ -9909,13 +10371,19 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             events: Sequence[str],
-             includes: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult'],
-             trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             events: Optional[Sequence[str]] = None,
+             includes: Optional[Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult']] = None,
+             trigger_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if events is None:
+            raise TypeError("Missing 'events' argument")
+        if includes is None:
+            raise TypeError("Missing 'includes' argument")
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
 
         _setter("events", events)
         _setter("includes", includes)
@@ -9963,14 +10431,18 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_ref: str,
-             head_ref: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_ref: Optional[str] = None,
+             head_ref: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'headRef' in kwargs:
+        if base_ref is None:
+            raise TypeError("Missing 'base_ref' argument")
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
+        if head_ref is None:
+            raise TypeError("Missing 'head_ref' argument")
 
         _setter("base_ref", base_ref)
         _setter("head_ref", head_ref)
@@ -10012,17 +10484,23 @@ class GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             commit_hash: str,
-             repository_branch: str,
-             repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             commit_hash: Optional[str] = None,
+             repository_branch: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commitHash' in kwargs:
+        if commit_hash is None and 'commitHash' in kwargs:
             commit_hash = kwargs['commitHash']
-        if 'repositoryBranch' in kwargs:
+        if commit_hash is None:
+            raise TypeError("Missing 'commit_hash' argument")
+        if repository_branch is None and 'repositoryBranch' in kwargs:
             repository_branch = kwargs['repositoryBranch']
-        if 'repositoryUrl' in kwargs:
+        if repository_branch is None:
+            raise TypeError("Missing 'repository_branch' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
 
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
@@ -10071,11 +10549,15 @@ class GetBuildRunsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10121,13 +10603,19 @@ class GetConnectionLastConnectionValidationResultResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             result: str,
-             time_validated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             result: Optional[str] = None,
+             time_validated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeValidated' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+        if time_validated is None and 'timeValidated' in kwargs:
             time_validated = kwargs['timeValidated']
+        if time_validated is None:
+            raise TypeError("Missing 'time_validated' argument")
 
         _setter("message", message)
         _setter("result", result)
@@ -10175,14 +10663,18 @@ class GetConnectionTlsVerifyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_certificate_bundle_id: str,
-             tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ca_certificate_bundle_id: Optional[str] = None,
+             tls_verify_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caCertificateBundleId' in kwargs:
+        if ca_certificate_bundle_id is None and 'caCertificateBundleId' in kwargs:
             ca_certificate_bundle_id = kwargs['caCertificateBundleId']
-        if 'tlsVerifyMode' in kwargs:
+        if ca_certificate_bundle_id is None:
+            raise TypeError("Missing 'ca_certificate_bundle_id' argument")
+        if tls_verify_mode is None and 'tlsVerifyMode' in kwargs:
             tls_verify_mode = kwargs['tlsVerifyMode']
+        if tls_verify_mode is None:
+            raise TypeError("Missing 'tls_verify_mode' argument")
 
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
@@ -10215,9 +10707,11 @@ class GetConnectionsConnectionCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -10292,54 +10786,90 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_token: str,
-             app_password: str,
-             base_url: str,
-             compartment_id: str,
-             connection_type: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             last_connection_validation_results: Sequence['outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult'],
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             tls_verify_configs: Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult'],
-             username: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             access_token: Optional[str] = None,
+             app_password: Optional[str] = None,
+             base_url: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             connection_type: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             last_connection_validation_results: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult']] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             tls_verify_configs: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult']] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessToken' in kwargs:
+        if access_token is None and 'accessToken' in kwargs:
             access_token = kwargs['accessToken']
-        if 'appPassword' in kwargs:
+        if access_token is None:
+            raise TypeError("Missing 'access_token' argument")
+        if app_password is None and 'appPassword' in kwargs:
             app_password = kwargs['appPassword']
-        if 'baseUrl' in kwargs:
+        if app_password is None:
+            raise TypeError("Missing 'app_password' argument")
+        if base_url is None and 'baseUrl' in kwargs:
             base_url = kwargs['baseUrl']
-        if 'compartmentId' in kwargs:
+        if base_url is None:
+            raise TypeError("Missing 'base_url' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
             connection_type = kwargs['connectionType']
-        if 'definedTags' in kwargs:
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lastConnectionValidationResults' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if last_connection_validation_results is None and 'lastConnectionValidationResults' in kwargs:
             last_connection_validation_results = kwargs['lastConnectionValidationResults']
-        if 'projectId' in kwargs:
+        if last_connection_validation_results is None:
+            raise TypeError("Missing 'last_connection_validation_results' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'tlsVerifyConfigs' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if tls_verify_configs is None and 'tlsVerifyConfigs' in kwargs:
             tls_verify_configs = kwargs['tlsVerifyConfigs']
+        if tls_verify_configs is None:
+            raise TypeError("Missing 'tls_verify_configs' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
 
         _setter("access_token", access_token)
         _setter("app_password", app_password)
@@ -10525,13 +11055,19 @@ class GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             message: str,
-             result: str,
-             time_validated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             message: Optional[str] = None,
+             result: Optional[str] = None,
+             time_validated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeValidated' in kwargs:
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+        if time_validated is None and 'timeValidated' in kwargs:
             time_validated = kwargs['timeValidated']
+        if time_validated is None:
+            raise TypeError("Missing 'time_validated' argument")
 
         _setter("message", message)
         _setter("result", result)
@@ -10579,14 +11115,18 @@ class GetConnectionsConnectionCollectionItemTlsVerifyConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ca_certificate_bundle_id: str,
-             tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ca_certificate_bundle_id: Optional[str] = None,
+             tls_verify_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'caCertificateBundleId' in kwargs:
+        if ca_certificate_bundle_id is None and 'caCertificateBundleId' in kwargs:
             ca_certificate_bundle_id = kwargs['caCertificateBundleId']
-        if 'tlsVerifyMode' in kwargs:
+        if ca_certificate_bundle_id is None:
+            raise TypeError("Missing 'ca_certificate_bundle_id' argument")
+        if tls_verify_mode is None and 'tlsVerifyMode' in kwargs:
             tls_verify_mode = kwargs['tlsVerifyMode']
+        if tls_verify_mode is None:
+            raise TypeError("Missing 'tls_verify_mode' argument")
 
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
@@ -10623,11 +11163,15 @@ class GetConnectionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -10688,35 +11232,53 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base64encoded_content: str,
-             chart_url: str,
-             deploy_artifact_path: str,
-             deploy_artifact_source_type: str,
-             deploy_artifact_version: str,
-             helm_verification_key_sources: Sequence['outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult'],
-             image_digest: str,
-             image_uri: str,
-             repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base64encoded_content: Optional[str] = None,
+             chart_url: Optional[str] = None,
+             deploy_artifact_path: Optional[str] = None,
+             deploy_artifact_source_type: Optional[str] = None,
+             deploy_artifact_version: Optional[str] = None,
+             helm_verification_key_sources: Optional[Sequence['outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult']] = None,
+             image_digest: Optional[str] = None,
+             image_uri: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'base64encodedContent' in kwargs:
+        if base64encoded_content is None and 'base64encodedContent' in kwargs:
             base64encoded_content = kwargs['base64encodedContent']
-        if 'chartUrl' in kwargs:
+        if base64encoded_content is None:
+            raise TypeError("Missing 'base64encoded_content' argument")
+        if chart_url is None and 'chartUrl' in kwargs:
             chart_url = kwargs['chartUrl']
-        if 'deployArtifactPath' in kwargs:
+        if chart_url is None:
+            raise TypeError("Missing 'chart_url' argument")
+        if deploy_artifact_path is None and 'deployArtifactPath' in kwargs:
             deploy_artifact_path = kwargs['deployArtifactPath']
-        if 'deployArtifactSourceType' in kwargs:
+        if deploy_artifact_path is None:
+            raise TypeError("Missing 'deploy_artifact_path' argument")
+        if deploy_artifact_source_type is None and 'deployArtifactSourceType' in kwargs:
             deploy_artifact_source_type = kwargs['deployArtifactSourceType']
-        if 'deployArtifactVersion' in kwargs:
+        if deploy_artifact_source_type is None:
+            raise TypeError("Missing 'deploy_artifact_source_type' argument")
+        if deploy_artifact_version is None and 'deployArtifactVersion' in kwargs:
             deploy_artifact_version = kwargs['deployArtifactVersion']
-        if 'helmVerificationKeySources' in kwargs:
+        if deploy_artifact_version is None:
+            raise TypeError("Missing 'deploy_artifact_version' argument")
+        if helm_verification_key_sources is None and 'helmVerificationKeySources' in kwargs:
             helm_verification_key_sources = kwargs['helmVerificationKeySources']
-        if 'imageDigest' in kwargs:
+        if helm_verification_key_sources is None:
+            raise TypeError("Missing 'helm_verification_key_sources' argument")
+        if image_digest is None and 'imageDigest' in kwargs:
             image_digest = kwargs['imageDigest']
-        if 'imageUri' in kwargs:
+        if image_digest is None:
+            raise TypeError("Missing 'image_digest' argument")
+        if image_uri is None and 'imageUri' in kwargs:
             image_uri = kwargs['imageUri']
-        if 'repositoryId' in kwargs:
+        if image_uri is None:
+            raise TypeError("Missing 'image_uri' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
 
         _setter("base64encoded_content", base64encoded_content)
         _setter("chart_url", chart_url)
@@ -10824,20 +11386,28 @@ class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             current_public_key: str,
-             previous_public_key: str,
-             vault_secret_id: str,
-             verification_key_source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             current_public_key: Optional[str] = None,
+             previous_public_key: Optional[str] = None,
+             vault_secret_id: Optional[str] = None,
+             verification_key_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currentPublicKey' in kwargs:
+        if current_public_key is None and 'currentPublicKey' in kwargs:
             current_public_key = kwargs['currentPublicKey']
-        if 'previousPublicKey' in kwargs:
+        if current_public_key is None:
+            raise TypeError("Missing 'current_public_key' argument")
+        if previous_public_key is None and 'previousPublicKey' in kwargs:
             previous_public_key = kwargs['previousPublicKey']
-        if 'vaultSecretId' in kwargs:
+        if previous_public_key is None:
+            raise TypeError("Missing 'previous_public_key' argument")
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
             vault_secret_id = kwargs['vaultSecretId']
-        if 'verificationKeySourceType' in kwargs:
+        if vault_secret_id is None:
+            raise TypeError("Missing 'vault_secret_id' argument")
+        if verification_key_source_type is None and 'verificationKeySourceType' in kwargs:
             verification_key_source_type = kwargs['verificationKeySourceType']
+        if verification_key_source_type is None:
+            raise TypeError("Missing 'verification_key_source_type' argument")
 
         _setter("current_public_key", current_public_key)
         _setter("previous_public_key", previous_public_key)
@@ -10888,9 +11458,11 @@ class GetDeployArtifactsDeployArtifactCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -10956,47 +11528,77 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             argument_substitution_mode: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             deploy_artifact_sources: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult'],
-             deploy_artifact_type: str,
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             argument_substitution_mode: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_artifact_sources: Optional[Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult']] = None,
+             deploy_artifact_type: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'argumentSubstitutionMode' in kwargs:
+        if argument_substitution_mode is None and 'argumentSubstitutionMode' in kwargs:
             argument_substitution_mode = kwargs['argumentSubstitutionMode']
-        if 'compartmentId' in kwargs:
+        if argument_substitution_mode is None:
+            raise TypeError("Missing 'argument_substitution_mode' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactSources' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_artifact_sources is None and 'deployArtifactSources' in kwargs:
             deploy_artifact_sources = kwargs['deployArtifactSources']
-        if 'deployArtifactType' in kwargs:
+        if deploy_artifact_sources is None:
+            raise TypeError("Missing 'deploy_artifact_sources' argument")
+        if deploy_artifact_type is None and 'deployArtifactType' in kwargs:
             deploy_artifact_type = kwargs['deployArtifactType']
-        if 'displayName' in kwargs:
+        if deploy_artifact_type is None:
+            raise TypeError("Missing 'deploy_artifact_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("argument_substitution_mode", argument_substitution_mode)
         _setter("compartment_id", compartment_id)
@@ -11173,35 +11775,53 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base64encoded_content: str,
-             chart_url: str,
-             deploy_artifact_path: str,
-             deploy_artifact_source_type: str,
-             deploy_artifact_version: str,
-             helm_verification_key_sources: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult'],
-             image_digest: str,
-             image_uri: str,
-             repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base64encoded_content: Optional[str] = None,
+             chart_url: Optional[str] = None,
+             deploy_artifact_path: Optional[str] = None,
+             deploy_artifact_source_type: Optional[str] = None,
+             deploy_artifact_version: Optional[str] = None,
+             helm_verification_key_sources: Optional[Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult']] = None,
+             image_digest: Optional[str] = None,
+             image_uri: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'base64encodedContent' in kwargs:
+        if base64encoded_content is None and 'base64encodedContent' in kwargs:
             base64encoded_content = kwargs['base64encodedContent']
-        if 'chartUrl' in kwargs:
+        if base64encoded_content is None:
+            raise TypeError("Missing 'base64encoded_content' argument")
+        if chart_url is None and 'chartUrl' in kwargs:
             chart_url = kwargs['chartUrl']
-        if 'deployArtifactPath' in kwargs:
+        if chart_url is None:
+            raise TypeError("Missing 'chart_url' argument")
+        if deploy_artifact_path is None and 'deployArtifactPath' in kwargs:
             deploy_artifact_path = kwargs['deployArtifactPath']
-        if 'deployArtifactSourceType' in kwargs:
+        if deploy_artifact_path is None:
+            raise TypeError("Missing 'deploy_artifact_path' argument")
+        if deploy_artifact_source_type is None and 'deployArtifactSourceType' in kwargs:
             deploy_artifact_source_type = kwargs['deployArtifactSourceType']
-        if 'deployArtifactVersion' in kwargs:
+        if deploy_artifact_source_type is None:
+            raise TypeError("Missing 'deploy_artifact_source_type' argument")
+        if deploy_artifact_version is None and 'deployArtifactVersion' in kwargs:
             deploy_artifact_version = kwargs['deployArtifactVersion']
-        if 'helmVerificationKeySources' in kwargs:
+        if deploy_artifact_version is None:
+            raise TypeError("Missing 'deploy_artifact_version' argument")
+        if helm_verification_key_sources is None and 'helmVerificationKeySources' in kwargs:
             helm_verification_key_sources = kwargs['helmVerificationKeySources']
-        if 'imageDigest' in kwargs:
+        if helm_verification_key_sources is None:
+            raise TypeError("Missing 'helm_verification_key_sources' argument")
+        if image_digest is None and 'imageDigest' in kwargs:
             image_digest = kwargs['imageDigest']
-        if 'imageUri' in kwargs:
+        if image_digest is None:
+            raise TypeError("Missing 'image_digest' argument")
+        if image_uri is None and 'imageUri' in kwargs:
             image_uri = kwargs['imageUri']
-        if 'repositoryId' in kwargs:
+        if image_uri is None:
+            raise TypeError("Missing 'image_uri' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
 
         _setter("base64encoded_content", base64encoded_content)
         _setter("chart_url", chart_url)
@@ -11309,20 +11929,28 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVeri
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             current_public_key: str,
-             previous_public_key: str,
-             vault_secret_id: str,
-             verification_key_source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             current_public_key: Optional[str] = None,
+             previous_public_key: Optional[str] = None,
+             vault_secret_id: Optional[str] = None,
+             verification_key_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'currentPublicKey' in kwargs:
+        if current_public_key is None and 'currentPublicKey' in kwargs:
             current_public_key = kwargs['currentPublicKey']
-        if 'previousPublicKey' in kwargs:
+        if current_public_key is None:
+            raise TypeError("Missing 'current_public_key' argument")
+        if previous_public_key is None and 'previousPublicKey' in kwargs:
             previous_public_key = kwargs['previousPublicKey']
-        if 'vaultSecretId' in kwargs:
+        if previous_public_key is None:
+            raise TypeError("Missing 'previous_public_key' argument")
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
             vault_secret_id = kwargs['vaultSecretId']
-        if 'verificationKeySourceType' in kwargs:
+        if vault_secret_id is None:
+            raise TypeError("Missing 'vault_secret_id' argument")
+        if verification_key_source_type is None and 'verificationKeySourceType' in kwargs:
             verification_key_source_type = kwargs['verificationKeySourceType']
+        if verification_key_source_type is None:
+            raise TypeError("Missing 'verification_key_source_type' argument")
 
         _setter("current_public_key", current_public_key)
         _setter("previous_public_key", previous_public_key)
@@ -11377,11 +12005,15 @@ class GetDeployArtifactsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -11418,9 +12050,11 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployEnvironmentComputeInstanceGroupSelectorItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployEnvironmentComputeInstanceGroupSelectorItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -11456,16 +12090,24 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compute_instance_ids: Sequence[str],
-             query: str,
-             region: str,
-             selector_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compute_instance_ids: Optional[Sequence[str]] = None,
+             query: Optional[str] = None,
+             region: Optional[str] = None,
+             selector_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'computeInstanceIds' in kwargs:
+        if compute_instance_ids is None and 'computeInstanceIds' in kwargs:
             compute_instance_ids = kwargs['computeInstanceIds']
-        if 'selectorType' in kwargs:
+        if compute_instance_ids is None:
+            raise TypeError("Missing 'compute_instance_ids' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if selector_type is None and 'selectorType' in kwargs:
             selector_type = kwargs['selectorType']
+        if selector_type is None:
+            raise TypeError("Missing 'selector_type' argument")
 
         _setter("compute_instance_ids", compute_instance_ids)
         _setter("query", query)
@@ -11525,17 +12167,23 @@ class GetDeployEnvironmentNetworkChannelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -11580,9 +12228,11 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -11657,53 +12307,87 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: str,
-             compartment_id: str,
-             compute_instance_group_selectors: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorResult'],
-             defined_tags: Mapping[str, Any],
-             deploy_environment_type: str,
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             function_id: str,
-             id: str,
-             lifecycle_details: str,
-             network_channels: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult'],
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cluster_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_instance_group_selectors: Optional[Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_environment_type: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             network_channels: Optional[Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult']] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeInstanceGroupSelectors' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_instance_group_selectors is None and 'computeInstanceGroupSelectors' in kwargs:
             compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
-        if 'definedTags' in kwargs:
+        if compute_instance_group_selectors is None:
+            raise TypeError("Missing 'compute_instance_group_selectors' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployEnvironmentType' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_environment_type is None and 'deployEnvironmentType' in kwargs:
             deploy_environment_type = kwargs['deployEnvironmentType']
-        if 'displayName' in kwargs:
+        if deploy_environment_type is None:
+            raise TypeError("Missing 'deploy_environment_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'lifecycleDetails' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'networkChannels' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if network_channels is None and 'networkChannels' in kwargs:
             network_channels = kwargs['networkChannels']
-        if 'projectId' in kwargs:
+        if network_channels is None:
+            raise TypeError("Missing 'network_channels' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
@@ -11874,9 +12558,11 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -11912,16 +12598,24 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compute_instance_ids: Sequence[str],
-             query: str,
-             region: str,
-             selector_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compute_instance_ids: Optional[Sequence[str]] = None,
+             query: Optional[str] = None,
+             region: Optional[str] = None,
+             selector_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'computeInstanceIds' in kwargs:
+        if compute_instance_ids is None and 'computeInstanceIds' in kwargs:
             compute_instance_ids = kwargs['computeInstanceIds']
-        if 'selectorType' in kwargs:
+        if compute_instance_ids is None:
+            raise TypeError("Missing 'compute_instance_ids' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if selector_type is None and 'selectorType' in kwargs:
             selector_type = kwargs['selectorType']
+        if selector_type is None:
+            raise TypeError("Missing 'selector_type' argument")
 
         _setter("compute_instance_ids", compute_instance_ids)
         _setter("query", query)
@@ -11981,17 +12675,23 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -12037,11 +12737,15 @@ class GetDeployEnvironmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -12078,9 +12782,11 @@ class GetDeployPipelineDeployPipelineArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12113,17 +12819,23 @@ class GetDeployPipelineDeployPipelineArtifactItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -12168,9 +12880,11 @@ class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12200,14 +12914,18 @@ class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -12243,9 +12961,11 @@ class GetDeployPipelineDeployPipelineEnvironmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12278,17 +12998,23 @@ class GetDeployPipelineDeployPipelineEnvironmentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_environment_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_environment_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_environment_id is None:
+            raise TypeError("Missing 'deploy_environment_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -12333,9 +13059,11 @@ class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12365,14 +13093,18 @@ class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -12408,9 +13140,11 @@ class GetDeployPipelineDeployPipelineParameterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelineDeployPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelineDeployPipelineParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12443,13 +13177,19 @@ class GetDeployPipelineDeployPipelineParameterItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             description: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("default_value", default_value)
         _setter("description", description)
@@ -12494,9 +13234,11 @@ class GetDeployPipelinesDeployPipelineCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12565,47 +13307,77 @@ class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             deploy_pipeline_artifacts: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactResult'],
-             deploy_pipeline_environments: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentResult'],
-             deploy_pipeline_parameters: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterResult'],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_pipeline_artifacts: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactResult']] = None,
+             deploy_pipeline_environments: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentResult']] = None,
+             deploy_pipeline_parameters: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployPipelineArtifacts' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_pipeline_artifacts is None and 'deployPipelineArtifacts' in kwargs:
             deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
-        if 'deployPipelineEnvironments' in kwargs:
+        if deploy_pipeline_artifacts is None:
+            raise TypeError("Missing 'deploy_pipeline_artifacts' argument")
+        if deploy_pipeline_environments is None and 'deployPipelineEnvironments' in kwargs:
             deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
-        if 'deployPipelineParameters' in kwargs:
+        if deploy_pipeline_environments is None:
+            raise TypeError("Missing 'deploy_pipeline_environments' argument")
+        if deploy_pipeline_parameters is None and 'deployPipelineParameters' in kwargs:
             deploy_pipeline_parameters = kwargs['deployPipelineParameters']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_parameters is None:
+            raise TypeError("Missing 'deploy_pipeline_parameters' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -12758,9 +13530,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12793,17 +13567,23 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -12848,9 +13628,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12880,14 +13662,18 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -12923,9 +13709,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentRes
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -12958,17 +13746,23 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_environment_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_environment_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_environment_id is None:
+            raise TypeError("Missing 'deploy_environment_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -13013,9 +13807,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13045,14 +13841,18 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -13088,9 +13888,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13123,13 +13925,19 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_value: str,
-             description: str,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             default_value: Optional[str] = None,
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultValue' in kwargs:
+        if default_value is None and 'defaultValue' in kwargs:
             default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("default_value", default_value)
         _setter("description", description)
@@ -13178,11 +13986,15 @@ class GetDeployPipelinesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -13225,14 +14037,18 @@ class GetDeployStageApprovalPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approval_policy_type: str,
-             number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approval_policy_type: Optional[str] = None,
+             number_of_approvals_required: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalPolicyType' in kwargs:
+        if approval_policy_type is None and 'approvalPolicyType' in kwargs:
             approval_policy_type = kwargs['approvalPolicyType']
-        if 'numberOfApprovalsRequired' in kwargs:
+        if approval_policy_type is None:
+            raise TypeError("Missing 'approval_policy_type' argument")
+        if number_of_approvals_required is None and 'numberOfApprovalsRequired' in kwargs:
             number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+        if number_of_approvals_required is None:
+            raise TypeError("Missing 'number_of_approvals_required' argument")
 
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
@@ -13268,9 +14084,11 @@ class GetDeployStageBlueBackendIpResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13306,20 +14124,28 @@ class GetDeployStageBlueGreenStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace_a: str,
-             namespace_b: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace_a: Optional[str] = None,
+             namespace_b: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'namespaceA' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace_a is None and 'namespaceA' in kwargs:
             namespace_a = kwargs['namespaceA']
-        if 'namespaceB' in kwargs:
+        if namespace_a is None:
+            raise TypeError("Missing 'namespace_a' argument")
+        if namespace_b is None and 'namespaceB' in kwargs:
             namespace_b = kwargs['namespaceB']
-        if 'strategyType' in kwargs:
+        if namespace_b is None:
+            raise TypeError("Missing 'namespace_b' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
@@ -13379,15 +14205,21 @@ class GetDeployStageCanaryStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'strategyType' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
@@ -13447,26 +14279,38 @@ class GetDeployStageContainerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             container_config_type: str,
-             network_channels: Sequence['outputs.GetDeployStageContainerConfigNetworkChannelResult'],
-             shape_configs: Sequence['outputs.GetDeployStageContainerConfigShapeConfigResult'],
-             shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             container_config_type: Optional[str] = None,
+             network_channels: Optional[Sequence['outputs.GetDeployStageContainerConfigNetworkChannelResult']] = None,
+             shape_configs: Optional[Sequence['outputs.GetDeployStageContainerConfigShapeConfigResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerConfigType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if container_config_type is None and 'containerConfigType' in kwargs:
             container_config_type = kwargs['containerConfigType']
-        if 'networkChannels' in kwargs:
+        if container_config_type is None:
+            raise TypeError("Missing 'container_config_type' argument")
+        if network_channels is None and 'networkChannels' in kwargs:
             network_channels = kwargs['networkChannels']
-        if 'shapeConfigs' in kwargs:
+        if network_channels is None:
+            raise TypeError("Missing 'network_channels' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'shapeName' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -13544,17 +14388,23 @@ class GetDeployStageContainerConfigNetworkChannelResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -13602,12 +14452,16 @@ class GetDeployStageContainerConfigShapeConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -13643,9 +14497,11 @@ class GetDeployStageDeployStagePredecessorCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13672,9 +14528,11 @@ class GetDeployStageDeployStagePredecessorCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -13707,17 +14565,23 @@ class GetDeployStageFailurePolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             failure_count: int,
-             failure_percentage: int,
-             policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             failure_count: Optional[int] = None,
+             failure_percentage: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'failureCount' in kwargs:
+        if failure_count is None and 'failureCount' in kwargs:
             failure_count = kwargs['failureCount']
-        if 'failurePercentage' in kwargs:
+        if failure_count is None:
+            raise TypeError("Missing 'failure_count' argument")
+        if failure_percentage is None and 'failurePercentage' in kwargs:
             failure_percentage = kwargs['failurePercentage']
-        if 'policyType' in kwargs:
+        if failure_percentage is None:
+            raise TypeError("Missing 'failure_percentage' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
 
         _setter("failure_count", failure_count)
         _setter("failure_percentage", failure_percentage)
@@ -13762,9 +14626,11 @@ class GetDeployStageGreenBackendIpResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -13800,18 +14666,26 @@ class GetDeployStageLoadBalancerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -13874,18 +14748,26 @@ class GetDeployStageProductionLoadBalancerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -13939,11 +14821,13 @@ class GetDeployStageRollbackPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
 
         _setter("policy_type", policy_type)
 
@@ -13982,23 +14866,33 @@ class GetDeployStageRolloutPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_count: int,
-             batch_delay_in_seconds: int,
-             batch_percentage: int,
-             policy_type: str,
-             ramp_limit_percent: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_count: Optional[int] = None,
+             batch_delay_in_seconds: Optional[int] = None,
+             batch_percentage: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             ramp_limit_percent: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchCount' in kwargs:
+        if batch_count is None and 'batchCount' in kwargs:
             batch_count = kwargs['batchCount']
-        if 'batchDelayInSeconds' in kwargs:
+        if batch_count is None:
+            raise TypeError("Missing 'batch_count' argument")
+        if batch_delay_in_seconds is None and 'batchDelayInSeconds' in kwargs:
             batch_delay_in_seconds = kwargs['batchDelayInSeconds']
-        if 'batchPercentage' in kwargs:
+        if batch_delay_in_seconds is None:
+            raise TypeError("Missing 'batch_delay_in_seconds' argument")
+        if batch_percentage is None and 'batchPercentage' in kwargs:
             batch_percentage = kwargs['batchPercentage']
-        if 'policyType' in kwargs:
+        if batch_percentage is None:
+            raise TypeError("Missing 'batch_percentage' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'rampLimitPercent' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if ramp_limit_percent is None and 'rampLimitPercent' in kwargs:
             ramp_limit_percent = kwargs['rampLimitPercent']
+        if ramp_limit_percent is None:
+            raise TypeError("Missing 'ramp_limit_percent' argument")
 
         _setter("batch_count", batch_count)
         _setter("batch_delay_in_seconds", batch_delay_in_seconds)
@@ -14061,9 +14955,11 @@ class GetDeployStageSetStringResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStageSetStringItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStageSetStringItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -14093,10 +14989,14 @@ class GetDeployStageSetStringItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -14132,9 +15032,11 @@ class GetDeployStageSetValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStageSetValueItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStageSetValueItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -14164,10 +15066,14 @@ class GetDeployStageSetValueItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -14212,18 +15118,26 @@ class GetDeployStageTestLoadBalancerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -14280,14 +15194,18 @@ class GetDeployStageWaitCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -14323,9 +15241,11 @@ class GetDeployStagesDeployStageCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -14553,202 +15473,338 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approval_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemApprovalPolicyResult'],
-             are_hooks_enabled: bool,
-             blue_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult'],
-             blue_green_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult'],
-             canary_strategies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult'],
-             command_spec_deploy_artifact_id: str,
-             compartment_id: str,
-             compute_instance_group_blue_green_deployment_deploy_stage_id: str,
-             compute_instance_group_canary_deploy_stage_id: str,
-             compute_instance_group_canary_traffic_shift_deploy_stage_id: str,
-             compute_instance_group_deploy_environment_id: str,
-             config: Mapping[str, Any],
-             container_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult'],
-             defined_tags: Mapping[str, Any],
-             deploy_artifact_id: str,
-             deploy_artifact_ids: Sequence[str],
-             deploy_environment_id_a: str,
-             deploy_environment_id_b: str,
-             deploy_pipeline_id: str,
-             deploy_stage_predecessor_collections: Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionResult'],
-             deploy_stage_type: str,
-             deployment_spec_deploy_artifact_id: str,
-             description: str,
-             display_name: str,
-             docker_image_deploy_artifact_id: str,
-             failure_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemFailurePolicyResult'],
-             freeform_tags: Mapping[str, Any],
-             function_deploy_environment_id: str,
-             function_timeout_in_seconds: int,
-             green_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult'],
-             helm_chart_deploy_artifact_id: str,
-             id: str,
-             is_async: bool,
-             is_debug_enabled: bool,
-             is_force_enabled: bool,
-             is_validation_enabled: bool,
-             kubernetes_manifest_deploy_artifact_ids: Sequence[str],
-             lifecycle_details: str,
-             load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult'],
-             max_history: int,
-             max_memory_in_mbs: str,
-             namespace: str,
-             oke_blue_green_deploy_stage_id: str,
-             oke_canary_deploy_stage_id: str,
-             oke_canary_traffic_shift_deploy_stage_id: str,
-             oke_cluster_deploy_environment_id: str,
-             production_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult'],
-             project_id: str,
-             release_name: str,
-             rollback_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult'],
-             rollout_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult'],
-             set_strings: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringResult'],
-             set_values: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueResult'],
-             should_cleanup_on_fail: bool,
-             should_not_wait: bool,
-             should_reset_values: bool,
-             should_reuse_values: bool,
-             should_skip_crds: bool,
-             should_skip_render_subchart_notes: bool,
-             state: str,
-             system_tags: Mapping[str, Any],
-             test_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult'],
-             time_created: str,
-             time_updated: str,
-             timeout_in_seconds: int,
-             traffic_shift_target: str,
-             values_artifact_ids: Sequence[str],
-             wait_criterias: Sequence['outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approval_policies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemApprovalPolicyResult']] = None,
+             are_hooks_enabled: Optional[bool] = None,
+             blue_backend_ips: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueBackendIpResult']] = None,
+             blue_green_strategies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult']] = None,
+             canary_strategies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemCanaryStrategyResult']] = None,
+             command_spec_deploy_artifact_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[str] = None,
+             compute_instance_group_canary_deploy_stage_id: Optional[str] = None,
+             compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[str] = None,
+             compute_instance_group_deploy_environment_id: Optional[str] = None,
+             config: Optional[Mapping[str, Any]] = None,
+             container_configs: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_artifact_id: Optional[str] = None,
+             deploy_artifact_ids: Optional[Sequence[str]] = None,
+             deploy_environment_id_a: Optional[str] = None,
+             deploy_environment_id_b: Optional[str] = None,
+             deploy_pipeline_id: Optional[str] = None,
+             deploy_stage_predecessor_collections: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionResult']] = None,
+             deploy_stage_type: Optional[str] = None,
+             deployment_spec_deploy_artifact_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             docker_image_deploy_artifact_id: Optional[str] = None,
+             failure_policies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemFailurePolicyResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             function_deploy_environment_id: Optional[str] = None,
+             function_timeout_in_seconds: Optional[int] = None,
+             green_backend_ips: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult']] = None,
+             helm_chart_deploy_artifact_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_async: Optional[bool] = None,
+             is_debug_enabled: Optional[bool] = None,
+             is_force_enabled: Optional[bool] = None,
+             is_validation_enabled: Optional[bool] = None,
+             kubernetes_manifest_deploy_artifact_ids: Optional[Sequence[str]] = None,
+             lifecycle_details: Optional[str] = None,
+             load_balancer_configs: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult']] = None,
+             max_history: Optional[int] = None,
+             max_memory_in_mbs: Optional[str] = None,
+             namespace: Optional[str] = None,
+             oke_blue_green_deploy_stage_id: Optional[str] = None,
+             oke_canary_deploy_stage_id: Optional[str] = None,
+             oke_canary_traffic_shift_deploy_stage_id: Optional[str] = None,
+             oke_cluster_deploy_environment_id: Optional[str] = None,
+             production_load_balancer_configs: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult']] = None,
+             project_id: Optional[str] = None,
+             release_name: Optional[str] = None,
+             rollback_policies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult']] = None,
+             rollout_policies: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult']] = None,
+             set_strings: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringResult']] = None,
+             set_values: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueResult']] = None,
+             should_cleanup_on_fail: Optional[bool] = None,
+             should_not_wait: Optional[bool] = None,
+             should_reset_values: Optional[bool] = None,
+             should_reuse_values: Optional[bool] = None,
+             should_skip_crds: Optional[bool] = None,
+             should_skip_render_subchart_notes: Optional[bool] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             test_load_balancer_configs: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             timeout_in_seconds: Optional[int] = None,
+             traffic_shift_target: Optional[str] = None,
+             values_artifact_ids: Optional[Sequence[str]] = None,
+             wait_criterias: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalPolicies' in kwargs:
+        if approval_policies is None and 'approvalPolicies' in kwargs:
             approval_policies = kwargs['approvalPolicies']
-        if 'areHooksEnabled' in kwargs:
+        if approval_policies is None:
+            raise TypeError("Missing 'approval_policies' argument")
+        if are_hooks_enabled is None and 'areHooksEnabled' in kwargs:
             are_hooks_enabled = kwargs['areHooksEnabled']
-        if 'blueBackendIps' in kwargs:
+        if are_hooks_enabled is None:
+            raise TypeError("Missing 'are_hooks_enabled' argument")
+        if blue_backend_ips is None and 'blueBackendIps' in kwargs:
             blue_backend_ips = kwargs['blueBackendIps']
-        if 'blueGreenStrategies' in kwargs:
+        if blue_backend_ips is None:
+            raise TypeError("Missing 'blue_backend_ips' argument")
+        if blue_green_strategies is None and 'blueGreenStrategies' in kwargs:
             blue_green_strategies = kwargs['blueGreenStrategies']
-        if 'canaryStrategies' in kwargs:
+        if blue_green_strategies is None:
+            raise TypeError("Missing 'blue_green_strategies' argument")
+        if canary_strategies is None and 'canaryStrategies' in kwargs:
             canary_strategies = kwargs['canaryStrategies']
-        if 'commandSpecDeployArtifactId' in kwargs:
+        if canary_strategies is None:
+            raise TypeError("Missing 'canary_strategies' argument")
+        if command_spec_deploy_artifact_id is None and 'commandSpecDeployArtifactId' in kwargs:
             command_spec_deploy_artifact_id = kwargs['commandSpecDeployArtifactId']
-        if 'compartmentId' in kwargs:
+        if command_spec_deploy_artifact_id is None:
+            raise TypeError("Missing 'command_spec_deploy_artifact_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_instance_group_blue_green_deployment_deploy_stage_id is None and 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
             compute_instance_group_blue_green_deployment_deploy_stage_id = kwargs['computeInstanceGroupBlueGreenDeploymentDeployStageId']
-        if 'computeInstanceGroupCanaryDeployStageId' in kwargs:
+        if compute_instance_group_blue_green_deployment_deploy_stage_id is None:
+            raise TypeError("Missing 'compute_instance_group_blue_green_deployment_deploy_stage_id' argument")
+        if compute_instance_group_canary_deploy_stage_id is None and 'computeInstanceGroupCanaryDeployStageId' in kwargs:
             compute_instance_group_canary_deploy_stage_id = kwargs['computeInstanceGroupCanaryDeployStageId']
-        if 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
+        if compute_instance_group_canary_deploy_stage_id is None:
+            raise TypeError("Missing 'compute_instance_group_canary_deploy_stage_id' argument")
+        if compute_instance_group_canary_traffic_shift_deploy_stage_id is None and 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
             compute_instance_group_canary_traffic_shift_deploy_stage_id = kwargs['computeInstanceGroupCanaryTrafficShiftDeployStageId']
-        if 'computeInstanceGroupDeployEnvironmentId' in kwargs:
+        if compute_instance_group_canary_traffic_shift_deploy_stage_id is None:
+            raise TypeError("Missing 'compute_instance_group_canary_traffic_shift_deploy_stage_id' argument")
+        if compute_instance_group_deploy_environment_id is None and 'computeInstanceGroupDeployEnvironmentId' in kwargs:
             compute_instance_group_deploy_environment_id = kwargs['computeInstanceGroupDeployEnvironmentId']
-        if 'containerConfigs' in kwargs:
+        if compute_instance_group_deploy_environment_id is None:
+            raise TypeError("Missing 'compute_instance_group_deploy_environment_id' argument")
+        if config is None:
+            raise TypeError("Missing 'config' argument")
+        if container_configs is None and 'containerConfigs' in kwargs:
             container_configs = kwargs['containerConfigs']
-        if 'definedTags' in kwargs:
+        if container_configs is None:
+            raise TypeError("Missing 'container_configs' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactId' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployArtifactIds' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if deploy_artifact_ids is None and 'deployArtifactIds' in kwargs:
             deploy_artifact_ids = kwargs['deployArtifactIds']
-        if 'deployEnvironmentIdA' in kwargs:
+        if deploy_artifact_ids is None:
+            raise TypeError("Missing 'deploy_artifact_ids' argument")
+        if deploy_environment_id_a is None and 'deployEnvironmentIdA' in kwargs:
             deploy_environment_id_a = kwargs['deployEnvironmentIdA']
-        if 'deployEnvironmentIdB' in kwargs:
+        if deploy_environment_id_a is None:
+            raise TypeError("Missing 'deploy_environment_id_a' argument")
+        if deploy_environment_id_b is None and 'deployEnvironmentIdB' in kwargs:
             deploy_environment_id_b = kwargs['deployEnvironmentIdB']
-        if 'deployPipelineId' in kwargs:
+        if deploy_environment_id_b is None:
+            raise TypeError("Missing 'deploy_environment_id_b' argument")
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deployStagePredecessorCollections' in kwargs:
+        if deploy_pipeline_id is None:
+            raise TypeError("Missing 'deploy_pipeline_id' argument")
+        if deploy_stage_predecessor_collections is None and 'deployStagePredecessorCollections' in kwargs:
             deploy_stage_predecessor_collections = kwargs['deployStagePredecessorCollections']
-        if 'deployStageType' in kwargs:
+        if deploy_stage_predecessor_collections is None:
+            raise TypeError("Missing 'deploy_stage_predecessor_collections' argument")
+        if deploy_stage_type is None and 'deployStageType' in kwargs:
             deploy_stage_type = kwargs['deployStageType']
-        if 'deploymentSpecDeployArtifactId' in kwargs:
+        if deploy_stage_type is None:
+            raise TypeError("Missing 'deploy_stage_type' argument")
+        if deployment_spec_deploy_artifact_id is None and 'deploymentSpecDeployArtifactId' in kwargs:
             deployment_spec_deploy_artifact_id = kwargs['deploymentSpecDeployArtifactId']
-        if 'displayName' in kwargs:
+        if deployment_spec_deploy_artifact_id is None:
+            raise TypeError("Missing 'deployment_spec_deploy_artifact_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dockerImageDeployArtifactId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if docker_image_deploy_artifact_id is None and 'dockerImageDeployArtifactId' in kwargs:
             docker_image_deploy_artifact_id = kwargs['dockerImageDeployArtifactId']
-        if 'failurePolicies' in kwargs:
+        if docker_image_deploy_artifact_id is None:
+            raise TypeError("Missing 'docker_image_deploy_artifact_id' argument")
+        if failure_policies is None and 'failurePolicies' in kwargs:
             failure_policies = kwargs['failurePolicies']
-        if 'freeformTags' in kwargs:
+        if failure_policies is None:
+            raise TypeError("Missing 'failure_policies' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'functionDeployEnvironmentId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if function_deploy_environment_id is None and 'functionDeployEnvironmentId' in kwargs:
             function_deploy_environment_id = kwargs['functionDeployEnvironmentId']
-        if 'functionTimeoutInSeconds' in kwargs:
+        if function_deploy_environment_id is None:
+            raise TypeError("Missing 'function_deploy_environment_id' argument")
+        if function_timeout_in_seconds is None and 'functionTimeoutInSeconds' in kwargs:
             function_timeout_in_seconds = kwargs['functionTimeoutInSeconds']
-        if 'greenBackendIps' in kwargs:
+        if function_timeout_in_seconds is None:
+            raise TypeError("Missing 'function_timeout_in_seconds' argument")
+        if green_backend_ips is None and 'greenBackendIps' in kwargs:
             green_backend_ips = kwargs['greenBackendIps']
-        if 'helmChartDeployArtifactId' in kwargs:
+        if green_backend_ips is None:
+            raise TypeError("Missing 'green_backend_ips' argument")
+        if helm_chart_deploy_artifact_id is None and 'helmChartDeployArtifactId' in kwargs:
             helm_chart_deploy_artifact_id = kwargs['helmChartDeployArtifactId']
-        if 'isAsync' in kwargs:
+        if helm_chart_deploy_artifact_id is None:
+            raise TypeError("Missing 'helm_chart_deploy_artifact_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_async is None and 'isAsync' in kwargs:
             is_async = kwargs['isAsync']
-        if 'isDebugEnabled' in kwargs:
+        if is_async is None:
+            raise TypeError("Missing 'is_async' argument")
+        if is_debug_enabled is None and 'isDebugEnabled' in kwargs:
             is_debug_enabled = kwargs['isDebugEnabled']
-        if 'isForceEnabled' in kwargs:
+        if is_debug_enabled is None:
+            raise TypeError("Missing 'is_debug_enabled' argument")
+        if is_force_enabled is None and 'isForceEnabled' in kwargs:
             is_force_enabled = kwargs['isForceEnabled']
-        if 'isValidationEnabled' in kwargs:
+        if is_force_enabled is None:
+            raise TypeError("Missing 'is_force_enabled' argument")
+        if is_validation_enabled is None and 'isValidationEnabled' in kwargs:
             is_validation_enabled = kwargs['isValidationEnabled']
-        if 'kubernetesManifestDeployArtifactIds' in kwargs:
+        if is_validation_enabled is None:
+            raise TypeError("Missing 'is_validation_enabled' argument")
+        if kubernetes_manifest_deploy_artifact_ids is None and 'kubernetesManifestDeployArtifactIds' in kwargs:
             kubernetes_manifest_deploy_artifact_ids = kwargs['kubernetesManifestDeployArtifactIds']
-        if 'lifecycleDetails' in kwargs:
+        if kubernetes_manifest_deploy_artifact_ids is None:
+            raise TypeError("Missing 'kubernetes_manifest_deploy_artifact_ids' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'loadBalancerConfigs' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if load_balancer_configs is None and 'loadBalancerConfigs' in kwargs:
             load_balancer_configs = kwargs['loadBalancerConfigs']
-        if 'maxHistory' in kwargs:
+        if load_balancer_configs is None:
+            raise TypeError("Missing 'load_balancer_configs' argument")
+        if max_history is None and 'maxHistory' in kwargs:
             max_history = kwargs['maxHistory']
-        if 'maxMemoryInMbs' in kwargs:
+        if max_history is None:
+            raise TypeError("Missing 'max_history' argument")
+        if max_memory_in_mbs is None and 'maxMemoryInMbs' in kwargs:
             max_memory_in_mbs = kwargs['maxMemoryInMbs']
-        if 'okeBlueGreenDeployStageId' in kwargs:
+        if max_memory_in_mbs is None:
+            raise TypeError("Missing 'max_memory_in_mbs' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if oke_blue_green_deploy_stage_id is None and 'okeBlueGreenDeployStageId' in kwargs:
             oke_blue_green_deploy_stage_id = kwargs['okeBlueGreenDeployStageId']
-        if 'okeCanaryDeployStageId' in kwargs:
+        if oke_blue_green_deploy_stage_id is None:
+            raise TypeError("Missing 'oke_blue_green_deploy_stage_id' argument")
+        if oke_canary_deploy_stage_id is None and 'okeCanaryDeployStageId' in kwargs:
             oke_canary_deploy_stage_id = kwargs['okeCanaryDeployStageId']
-        if 'okeCanaryTrafficShiftDeployStageId' in kwargs:
+        if oke_canary_deploy_stage_id is None:
+            raise TypeError("Missing 'oke_canary_deploy_stage_id' argument")
+        if oke_canary_traffic_shift_deploy_stage_id is None and 'okeCanaryTrafficShiftDeployStageId' in kwargs:
             oke_canary_traffic_shift_deploy_stage_id = kwargs['okeCanaryTrafficShiftDeployStageId']
-        if 'okeClusterDeployEnvironmentId' in kwargs:
+        if oke_canary_traffic_shift_deploy_stage_id is None:
+            raise TypeError("Missing 'oke_canary_traffic_shift_deploy_stage_id' argument")
+        if oke_cluster_deploy_environment_id is None and 'okeClusterDeployEnvironmentId' in kwargs:
             oke_cluster_deploy_environment_id = kwargs['okeClusterDeployEnvironmentId']
-        if 'productionLoadBalancerConfigs' in kwargs:
+        if oke_cluster_deploy_environment_id is None:
+            raise TypeError("Missing 'oke_cluster_deploy_environment_id' argument")
+        if production_load_balancer_configs is None and 'productionLoadBalancerConfigs' in kwargs:
             production_load_balancer_configs = kwargs['productionLoadBalancerConfigs']
-        if 'projectId' in kwargs:
+        if production_load_balancer_configs is None:
+            raise TypeError("Missing 'production_load_balancer_configs' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'releaseName' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if release_name is None and 'releaseName' in kwargs:
             release_name = kwargs['releaseName']
-        if 'rollbackPolicies' in kwargs:
+        if release_name is None:
+            raise TypeError("Missing 'release_name' argument")
+        if rollback_policies is None and 'rollbackPolicies' in kwargs:
             rollback_policies = kwargs['rollbackPolicies']
-        if 'rolloutPolicies' in kwargs:
+        if rollback_policies is None:
+            raise TypeError("Missing 'rollback_policies' argument")
+        if rollout_policies is None and 'rolloutPolicies' in kwargs:
             rollout_policies = kwargs['rolloutPolicies']
-        if 'setStrings' in kwargs:
+        if rollout_policies is None:
+            raise TypeError("Missing 'rollout_policies' argument")
+        if set_strings is None and 'setStrings' in kwargs:
             set_strings = kwargs['setStrings']
-        if 'setValues' in kwargs:
+        if set_strings is None:
+            raise TypeError("Missing 'set_strings' argument")
+        if set_values is None and 'setValues' in kwargs:
             set_values = kwargs['setValues']
-        if 'shouldCleanupOnFail' in kwargs:
+        if set_values is None:
+            raise TypeError("Missing 'set_values' argument")
+        if should_cleanup_on_fail is None and 'shouldCleanupOnFail' in kwargs:
             should_cleanup_on_fail = kwargs['shouldCleanupOnFail']
-        if 'shouldNotWait' in kwargs:
+        if should_cleanup_on_fail is None:
+            raise TypeError("Missing 'should_cleanup_on_fail' argument")
+        if should_not_wait is None and 'shouldNotWait' in kwargs:
             should_not_wait = kwargs['shouldNotWait']
-        if 'shouldResetValues' in kwargs:
+        if should_not_wait is None:
+            raise TypeError("Missing 'should_not_wait' argument")
+        if should_reset_values is None and 'shouldResetValues' in kwargs:
             should_reset_values = kwargs['shouldResetValues']
-        if 'shouldReuseValues' in kwargs:
+        if should_reset_values is None:
+            raise TypeError("Missing 'should_reset_values' argument")
+        if should_reuse_values is None and 'shouldReuseValues' in kwargs:
             should_reuse_values = kwargs['shouldReuseValues']
-        if 'shouldSkipCrds' in kwargs:
+        if should_reuse_values is None:
+            raise TypeError("Missing 'should_reuse_values' argument")
+        if should_skip_crds is None and 'shouldSkipCrds' in kwargs:
             should_skip_crds = kwargs['shouldSkipCrds']
-        if 'shouldSkipRenderSubchartNotes' in kwargs:
+        if should_skip_crds is None:
+            raise TypeError("Missing 'should_skip_crds' argument")
+        if should_skip_render_subchart_notes is None and 'shouldSkipRenderSubchartNotes' in kwargs:
             should_skip_render_subchart_notes = kwargs['shouldSkipRenderSubchartNotes']
-        if 'systemTags' in kwargs:
+        if should_skip_render_subchart_notes is None:
+            raise TypeError("Missing 'should_skip_render_subchart_notes' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'testLoadBalancerConfigs' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if test_load_balancer_configs is None and 'testLoadBalancerConfigs' in kwargs:
             test_load_balancer_configs = kwargs['testLoadBalancerConfigs']
-        if 'timeCreated' in kwargs:
+        if test_load_balancer_configs is None:
+            raise TypeError("Missing 'test_load_balancer_configs' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'timeoutInSeconds' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
             timeout_in_seconds = kwargs['timeoutInSeconds']
-        if 'trafficShiftTarget' in kwargs:
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+        if traffic_shift_target is None and 'trafficShiftTarget' in kwargs:
             traffic_shift_target = kwargs['trafficShiftTarget']
-        if 'valuesArtifactIds' in kwargs:
+        if traffic_shift_target is None:
+            raise TypeError("Missing 'traffic_shift_target' argument")
+        if values_artifact_ids is None and 'valuesArtifactIds' in kwargs:
             values_artifact_ids = kwargs['valuesArtifactIds']
-        if 'waitCriterias' in kwargs:
+        if values_artifact_ids is None:
+            raise TypeError("Missing 'values_artifact_ids' argument")
+        if wait_criterias is None and 'waitCriterias' in kwargs:
             wait_criterias = kwargs['waitCriterias']
+        if wait_criterias is None:
+            raise TypeError("Missing 'wait_criterias' argument")
 
         _setter("approval_policies", approval_policies)
         _setter("are_hooks_enabled", are_hooks_enabled)
@@ -15381,14 +16437,18 @@ class GetDeployStagesDeployStageCollectionItemApprovalPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approval_policy_type: str,
-             number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approval_policy_type: Optional[str] = None,
+             number_of_approvals_required: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approvalPolicyType' in kwargs:
+        if approval_policy_type is None and 'approvalPolicyType' in kwargs:
             approval_policy_type = kwargs['approvalPolicyType']
-        if 'numberOfApprovalsRequired' in kwargs:
+        if approval_policy_type is None:
+            raise TypeError("Missing 'approval_policy_type' argument")
+        if number_of_approvals_required is None and 'numberOfApprovalsRequired' in kwargs:
             number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+        if number_of_approvals_required is None:
+            raise TypeError("Missing 'number_of_approvals_required' argument")
 
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
@@ -15424,9 +16484,11 @@ class GetDeployStagesDeployStageCollectionItemBlueBackendIpResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -15462,20 +16524,28 @@ class GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace_a: str,
-             namespace_b: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace_a: Optional[str] = None,
+             namespace_b: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'namespaceA' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace_a is None and 'namespaceA' in kwargs:
             namespace_a = kwargs['namespaceA']
-        if 'namespaceB' in kwargs:
+        if namespace_a is None:
+            raise TypeError("Missing 'namespace_a' argument")
+        if namespace_b is None and 'namespaceB' in kwargs:
             namespace_b = kwargs['namespaceB']
-        if 'strategyType' in kwargs:
+        if namespace_b is None:
+            raise TypeError("Missing 'namespace_b' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
@@ -15535,15 +16605,21 @@ class GetDeployStagesDeployStageCollectionItemCanaryStrategyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ingress_name: str,
-             namespace: str,
-             strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ingress_name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             strategy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressName' in kwargs:
+        if ingress_name is None and 'ingressName' in kwargs:
             ingress_name = kwargs['ingressName']
-        if 'strategyType' in kwargs:
+        if ingress_name is None:
+            raise TypeError("Missing 'ingress_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if strategy_type is None and 'strategyType' in kwargs:
             strategy_type = kwargs['strategyType']
+        if strategy_type is None:
+            raise TypeError("Missing 'strategy_type' argument")
 
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
@@ -15603,26 +16679,38 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: str,
-             compartment_id: str,
-             container_config_type: str,
-             network_channels: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult'],
-             shape_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult'],
-             shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             container_config_type: Optional[str] = None,
+             network_channels: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult']] = None,
+             shape_configs: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'containerConfigType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if container_config_type is None and 'containerConfigType' in kwargs:
             container_config_type = kwargs['containerConfigType']
-        if 'networkChannels' in kwargs:
+        if container_config_type is None:
+            raise TypeError("Missing 'container_config_type' argument")
+        if network_channels is None and 'networkChannels' in kwargs:
             network_channels = kwargs['networkChannels']
-        if 'shapeConfigs' in kwargs:
+        if network_channels is None:
+            raise TypeError("Missing 'network_channels' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
             shape_configs = kwargs['shapeConfigs']
-        if 'shapeName' in kwargs:
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if shape_name is None and 'shapeName' in kwargs:
             shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
 
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -15700,17 +16788,23 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_channel_type: str,
-             nsg_ids: Sequence[str],
-             subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_channel_type: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkChannelType' in kwargs:
+        if network_channel_type is None and 'networkChannelType' in kwargs:
             network_channel_type = kwargs['networkChannelType']
-        if 'nsgIds' in kwargs:
+        if network_channel_type is None:
+            raise TypeError("Missing 'network_channel_type' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'subnetId' in kwargs:
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
 
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
@@ -15758,12 +16852,16 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             memory_in_gbs: float,
-             ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'memoryInGbs' in kwargs:
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
             memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
 
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -15799,9 +16897,11 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -15828,9 +16928,11 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionIt
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
 
         _setter("id", id)
 
@@ -15863,17 +16965,23 @@ class GetDeployStagesDeployStageCollectionItemFailurePolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             failure_count: int,
-             failure_percentage: int,
-             policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             failure_count: Optional[int] = None,
+             failure_percentage: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'failureCount' in kwargs:
+        if failure_count is None and 'failureCount' in kwargs:
             failure_count = kwargs['failureCount']
-        if 'failurePercentage' in kwargs:
+        if failure_count is None:
+            raise TypeError("Missing 'failure_count' argument")
+        if failure_percentage is None and 'failurePercentage' in kwargs:
             failure_percentage = kwargs['failurePercentage']
-        if 'policyType' in kwargs:
+        if failure_percentage is None:
+            raise TypeError("Missing 'failure_percentage' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
 
         _setter("failure_count", failure_count)
         _setter("failure_percentage", failure_percentage)
@@ -15918,9 +17026,11 @@ class GetDeployStagesDeployStageCollectionItemGreenBackendIpResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -15956,18 +17066,26 @@ class GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -16030,18 +17148,26 @@ class GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -16095,11 +17221,13 @@ class GetDeployStagesDeployStageCollectionItemRollbackPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'policyType' in kwargs:
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
 
         _setter("policy_type", policy_type)
 
@@ -16138,23 +17266,33 @@ class GetDeployStagesDeployStageCollectionItemRolloutPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             batch_count: int,
-             batch_delay_in_seconds: int,
-             batch_percentage: int,
-             policy_type: str,
-             ramp_limit_percent: float,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             batch_count: Optional[int] = None,
+             batch_delay_in_seconds: Optional[int] = None,
+             batch_percentage: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             ramp_limit_percent: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'batchCount' in kwargs:
+        if batch_count is None and 'batchCount' in kwargs:
             batch_count = kwargs['batchCount']
-        if 'batchDelayInSeconds' in kwargs:
+        if batch_count is None:
+            raise TypeError("Missing 'batch_count' argument")
+        if batch_delay_in_seconds is None and 'batchDelayInSeconds' in kwargs:
             batch_delay_in_seconds = kwargs['batchDelayInSeconds']
-        if 'batchPercentage' in kwargs:
+        if batch_delay_in_seconds is None:
+            raise TypeError("Missing 'batch_delay_in_seconds' argument")
+        if batch_percentage is None and 'batchPercentage' in kwargs:
             batch_percentage = kwargs['batchPercentage']
-        if 'policyType' in kwargs:
+        if batch_percentage is None:
+            raise TypeError("Missing 'batch_percentage' argument")
+        if policy_type is None and 'policyType' in kwargs:
             policy_type = kwargs['policyType']
-        if 'rampLimitPercent' in kwargs:
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+        if ramp_limit_percent is None and 'rampLimitPercent' in kwargs:
             ramp_limit_percent = kwargs['rampLimitPercent']
+        if ramp_limit_percent is None:
+            raise TypeError("Missing 'ramp_limit_percent' argument")
 
         _setter("batch_count", batch_count)
         _setter("batch_delay_in_seconds", batch_delay_in_seconds)
@@ -16217,9 +17355,11 @@ class GetDeployStagesDeployStageCollectionItemSetStringResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16249,10 +17389,14 @@ class GetDeployStagesDeployStageCollectionItemSetStringItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -16288,9 +17432,11 @@ class GetDeployStagesDeployStageCollectionItemSetValueResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16320,10 +17466,14 @@ class GetDeployStagesDeployStageCollectionItemSetValueItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -16368,18 +17518,26 @@ class GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backend_port: int,
-             listener_name: str,
-             load_balancer_id: str,
-             state: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             backend_port: Optional[int] = None,
+             listener_name: Optional[str] = None,
+             load_balancer_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backendPort' in kwargs:
+        if backend_port is None and 'backendPort' in kwargs:
             backend_port = kwargs['backendPort']
-        if 'listenerName' in kwargs:
+        if backend_port is None:
+            raise TypeError("Missing 'backend_port' argument")
+        if listener_name is None and 'listenerName' in kwargs:
             listener_name = kwargs['listenerName']
-        if 'loadBalancerId' in kwargs:
+        if listener_name is None:
+            raise TypeError("Missing 'listener_name' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
             load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
 
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
@@ -16436,14 +17594,18 @@ class GetDeployStagesDeployStageCollectionItemWaitCriteriaResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             wait_duration: str,
-             wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             wait_duration: Optional[str] = None,
+             wait_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'waitDuration' in kwargs:
+        if wait_duration is None and 'waitDuration' in kwargs:
             wait_duration = kwargs['waitDuration']
-        if 'waitType' in kwargs:
+        if wait_duration is None:
+            raise TypeError("Missing 'wait_duration' argument")
+        if wait_type is None and 'waitType' in kwargs:
             wait_type = kwargs['waitType']
+        if wait_type is None:
+            raise TypeError("Missing 'wait_type' argument")
 
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
@@ -16483,11 +17645,15 @@ class GetDeployStagesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -16527,9 +17693,11 @@ class GetDeploymentDeployArtifactOverrideArgumentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployArtifactOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployArtifactOverrideArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16562,13 +17730,19 @@ class GetDeploymentDeployArtifactOverrideArgumentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
@@ -16613,9 +17787,11 @@ class GetDeploymentDeployPipelineArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployPipelineArtifactItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16648,17 +17824,23 @@ class GetDeploymentDeployPipelineArtifactItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -16703,9 +17885,11 @@ class GetDeploymentDeployPipelineArtifactItemDeployPipelineStageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16735,14 +17919,18 @@ class GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -16778,9 +17966,11 @@ class GetDeploymentDeployPipelineEnvironmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16813,17 +18003,23 @@ class GetDeploymentDeployPipelineEnvironmentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_environment_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_environment_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_environment_id is None:
+            raise TypeError("Missing 'deploy_environment_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -16868,9 +18064,11 @@ class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16900,14 +18098,18 @@ class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -16943,9 +18145,11 @@ class GetDeploymentDeployStageOverrideArgumentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeployStageOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeployStageOverrideArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -16978,13 +18182,19 @@ class GetDeploymentDeployStageOverrideArgumentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("name", name)
@@ -17029,9 +18239,11 @@ class GetDeploymentDeploymentArgumentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentDeploymentArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentDeploymentArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17061,10 +18273,14 @@ class GetDeploymentDeploymentArgumentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -17106,17 +18322,23 @@ class GetDeploymentDeploymentExecutionProgressResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_execution_progress: Mapping[str, Any],
-             time_finished: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageExecutionProgress' in kwargs:
+        if deploy_stage_execution_progress is None and 'deployStageExecutionProgress' in kwargs:
             deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
-        if 'timeFinished' in kwargs:
+        if deploy_stage_execution_progress is None:
+            raise TypeError("Missing 'deploy_stage_execution_progress' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("deploy_stage_execution_progress", deploy_stage_execution_progress)
         _setter("time_finished", time_finished)
@@ -17161,9 +18383,11 @@ class GetDeploymentsDeploymentCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17252,70 +18476,114 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             deploy_artifact_override_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult'],
-             deploy_pipeline_artifacts: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactResult'],
-             deploy_pipeline_environments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult'],
-             deploy_pipeline_id: str,
-             deploy_stage_id: str,
-             deploy_stage_override_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult'],
-             deployment_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult'],
-             deployment_execution_progresses: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult'],
-             deployment_type: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             previous_deployment_id: str,
-             project_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             trigger_new_devops_deployment: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deploy_artifact_override_arguments: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult']] = None,
+             deploy_pipeline_artifacts: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactResult']] = None,
+             deploy_pipeline_environments: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult']] = None,
+             deploy_pipeline_id: Optional[str] = None,
+             deploy_stage_id: Optional[str] = None,
+             deploy_stage_override_arguments: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult']] = None,
+             deployment_arguments: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult']] = None,
+             deployment_execution_progresses: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult']] = None,
+             deployment_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             previous_deployment_id: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trigger_new_devops_deployment: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactOverrideArguments' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deploy_artifact_override_arguments is None and 'deployArtifactOverrideArguments' in kwargs:
             deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
-        if 'deployPipelineArtifacts' in kwargs:
+        if deploy_artifact_override_arguments is None:
+            raise TypeError("Missing 'deploy_artifact_override_arguments' argument")
+        if deploy_pipeline_artifacts is None and 'deployPipelineArtifacts' in kwargs:
             deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
-        if 'deployPipelineEnvironments' in kwargs:
+        if deploy_pipeline_artifacts is None:
+            raise TypeError("Missing 'deploy_pipeline_artifacts' argument")
+        if deploy_pipeline_environments is None and 'deployPipelineEnvironments' in kwargs:
             deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
-        if 'deployPipelineId' in kwargs:
+        if deploy_pipeline_environments is None:
+            raise TypeError("Missing 'deploy_pipeline_environments' argument")
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
             deploy_pipeline_id = kwargs['deployPipelineId']
-        if 'deployStageId' in kwargs:
+        if deploy_pipeline_id is None:
+            raise TypeError("Missing 'deploy_pipeline_id' argument")
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'deployStageOverrideArguments' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if deploy_stage_override_arguments is None and 'deployStageOverrideArguments' in kwargs:
             deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
-        if 'deploymentArguments' in kwargs:
+        if deploy_stage_override_arguments is None:
+            raise TypeError("Missing 'deploy_stage_override_arguments' argument")
+        if deployment_arguments is None and 'deploymentArguments' in kwargs:
             deployment_arguments = kwargs['deploymentArguments']
-        if 'deploymentExecutionProgresses' in kwargs:
+        if deployment_arguments is None:
+            raise TypeError("Missing 'deployment_arguments' argument")
+        if deployment_execution_progresses is None and 'deploymentExecutionProgresses' in kwargs:
             deployment_execution_progresses = kwargs['deploymentExecutionProgresses']
-        if 'deploymentType' in kwargs:
+        if deployment_execution_progresses is None:
+            raise TypeError("Missing 'deployment_execution_progresses' argument")
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'displayName' in kwargs:
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'previousDeploymentId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if previous_deployment_id is None and 'previousDeploymentId' in kwargs:
             previous_deployment_id = kwargs['previousDeploymentId']
-        if 'projectId' in kwargs:
+        if previous_deployment_id is None:
+            raise TypeError("Missing 'previous_deployment_id' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'triggerNewDevopsDeployment' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trigger_new_devops_deployment is None and 'triggerNewDevopsDeployment' in kwargs:
             trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
+        if trigger_new_devops_deployment is None:
+            raise TypeError("Missing 'trigger_new_devops_deployment' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -17528,9 +18796,11 @@ class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17563,13 +18833,19 @@ class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemRe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
@@ -17614,9 +18890,11 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17649,17 +18927,23 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult(dic
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_artifact_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_artifact_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployArtifactId' in kwargs:
+        if deploy_artifact_id is None and 'deployArtifactId' in kwargs:
             deploy_artifact_id = kwargs['deployArtifactId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_artifact_id is None:
+            raise TypeError("Missing 'deploy_artifact_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -17704,9 +18988,11 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17736,14 +19022,18 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipe
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -17779,9 +19069,11 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17814,17 +19106,23 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult(
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_environment_id: str,
-             deploy_pipeline_stages: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult'],
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_environment_id: Optional[str] = None,
+             deploy_pipeline_stages: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult']] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployEnvironmentId' in kwargs:
+        if deploy_environment_id is None and 'deployEnvironmentId' in kwargs:
             deploy_environment_id = kwargs['deployEnvironmentId']
-        if 'deployPipelineStages' in kwargs:
+        if deploy_environment_id is None:
+            raise TypeError("Missing 'deploy_environment_id' argument")
+        if deploy_pipeline_stages is None and 'deployPipelineStages' in kwargs:
             deploy_pipeline_stages = kwargs['deployPipelineStages']
-        if 'displayName' in kwargs:
+        if deploy_pipeline_stages is None:
+            raise TypeError("Missing 'deploy_pipeline_stages' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
@@ -17869,9 +19167,11 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployP
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17901,14 +19201,18 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployP
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
-        if 'displayName' in kwargs:
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
@@ -17944,9 +19248,11 @@ class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -17979,13 +19285,19 @@ class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_id: str,
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_id: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageId' in kwargs:
+        if deploy_stage_id is None and 'deployStageId' in kwargs:
             deploy_stage_id = kwargs['deployStageId']
+        if deploy_stage_id is None:
+            raise TypeError("Missing 'deploy_stage_id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("name", name)
@@ -18030,9 +19342,11 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -18062,10 +19376,14 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             value: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("name", name)
         _setter("value", value)
@@ -18107,17 +19425,23 @@ class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(di
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deploy_stage_execution_progress: Mapping[str, Any],
-             time_finished: str,
-             time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deployStageExecutionProgress' in kwargs:
+        if deploy_stage_execution_progress is None and 'deployStageExecutionProgress' in kwargs:
             deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
-        if 'timeFinished' in kwargs:
+        if deploy_stage_execution_progress is None:
+            raise TypeError("Missing 'deploy_stage_execution_progress' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
 
         _setter("deploy_stage_execution_progress", deploy_stage_execution_progress)
         _setter("time_finished", time_finished)
@@ -18166,11 +19490,15 @@ class GetDeploymentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -18210,11 +19538,13 @@ class GetProjectNotificationConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("topic_id", topic_id)
 
@@ -18245,11 +19575,15 @@ class GetProjectsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -18286,9 +19620,11 @@ class GetProjectsProjectCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -18348,37 +19684,63 @@ class GetProjectsProjectCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             name: str,
-             namespace: str,
-             notification_configs: Sequence['outputs.GetProjectsProjectCollectionItemNotificationConfigResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             notification_configs: Optional[Sequence['outputs.GetProjectsProjectCollectionItemNotificationConfigResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'notificationConfigs' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if notification_configs is None and 'notificationConfigs' in kwargs:
             notification_configs = kwargs['notificationConfigs']
-        if 'systemTags' in kwargs:
+        if notification_configs is None:
+            raise TypeError("Missing 'notification_configs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -18513,11 +19875,13 @@ class GetProjectsProjectCollectionItemNotificationConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("topic_id", topic_id)
 
@@ -18547,14 +19911,18 @@ class GetRepoFileLineLineResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             line_content: str,
-             line_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             line_content: Optional[str] = None,
+             line_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lineContent' in kwargs:
+        if line_content is None and 'lineContent' in kwargs:
             line_content = kwargs['lineContent']
-        if 'lineNumber' in kwargs:
+        if line_content is None:
+            raise TypeError("Missing 'line_content' argument")
+        if line_number is None and 'lineNumber' in kwargs:
             line_number = kwargs['lineNumber']
+        if line_number is None:
+            raise TypeError("Missing 'line_number' argument")
 
         _setter("line_content", line_content)
         _setter("line_number", line_number)
@@ -18594,11 +19962,15 @@ class GetRepositoriesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -18635,9 +20007,11 @@ class GetRepositoriesRepositoryCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -18726,67 +20100,113 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             branch_count: int,
-             commit_count: int,
-             compartment_id: str,
-             default_branch: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             freeform_tags: Mapping[str, Any],
-             http_url: str,
-             id: str,
-             lifecycle_details: str,
-             mirror_repository_config: 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult',
-             name: str,
-             namespace: str,
-             project_id: str,
-             project_name: str,
-             repository_type: str,
-             size_in_bytes: str,
-             ssh_url: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             trigger_build_events: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             branch_count: Optional[int] = None,
+             commit_count: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             default_branch: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             http_url: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             mirror_repository_config: Optional['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult'] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             project_id: Optional[str] = None,
+             project_name: Optional[str] = None,
+             repository_type: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             ssh_url: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trigger_build_events: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'branchCount' in kwargs:
+        if branch_count is None and 'branchCount' in kwargs:
             branch_count = kwargs['branchCount']
-        if 'commitCount' in kwargs:
+        if branch_count is None:
+            raise TypeError("Missing 'branch_count' argument")
+        if commit_count is None and 'commitCount' in kwargs:
             commit_count = kwargs['commitCount']
-        if 'compartmentId' in kwargs:
+        if commit_count is None:
+            raise TypeError("Missing 'commit_count' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultBranch' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if default_branch is None and 'defaultBranch' in kwargs:
             default_branch = kwargs['defaultBranch']
-        if 'definedTags' in kwargs:
+        if default_branch is None:
+            raise TypeError("Missing 'default_branch' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'httpUrl' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if http_url is None and 'httpUrl' in kwargs:
             http_url = kwargs['httpUrl']
-        if 'lifecycleDetails' in kwargs:
+        if http_url is None:
+            raise TypeError("Missing 'http_url' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'mirrorRepositoryConfig' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if mirror_repository_config is None and 'mirrorRepositoryConfig' in kwargs:
             mirror_repository_config = kwargs['mirrorRepositoryConfig']
-        if 'projectId' in kwargs:
+        if mirror_repository_config is None:
+            raise TypeError("Missing 'mirror_repository_config' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'projectName' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if project_name is None and 'projectName' in kwargs:
             project_name = kwargs['projectName']
-        if 'repositoryType' in kwargs:
+        if project_name is None:
+            raise TypeError("Missing 'project_name' argument")
+        if repository_type is None and 'repositoryType' in kwargs:
             repository_type = kwargs['repositoryType']
-        if 'sizeInBytes' in kwargs:
+        if repository_type is None:
+            raise TypeError("Missing 'repository_type' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'sshUrl' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if ssh_url is None and 'sshUrl' in kwargs:
             ssh_url = kwargs['sshUrl']
-        if 'systemTags' in kwargs:
+        if ssh_url is None:
+            raise TypeError("Missing 'ssh_url' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'triggerBuildEvents' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trigger_build_events is None and 'triggerBuildEvents' in kwargs:
             trigger_build_events = kwargs['triggerBuildEvents']
+        if trigger_build_events is None:
+            raise TypeError("Missing 'trigger_build_events' argument")
 
         _setter("branch_count", branch_count)
         _setter("commit_count", commit_count)
@@ -19014,17 +20434,23 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_id: str,
-             repository_url: str,
-             trigger_schedule: 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult',
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connector_id: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             trigger_schedule: Optional['outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult'] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorId' in kwargs:
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'repositoryUrl' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
-        if 'triggerSchedule' in kwargs:
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
+        if trigger_schedule is None and 'triggerSchedule' in kwargs:
             trigger_schedule = kwargs['triggerSchedule']
+        if trigger_schedule is None:
+            raise TypeError("Missing 'trigger_schedule' argument")
 
         _setter("connector_id", connector_id)
         _setter("repository_url", repository_url)
@@ -19072,14 +20498,18 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedu
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_schedule: str,
-             schedule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_schedule: Optional[str] = None,
+             schedule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customSchedule' in kwargs:
+        if custom_schedule is None and 'customSchedule' in kwargs:
             custom_schedule = kwargs['customSchedule']
-        if 'scheduleType' in kwargs:
+        if custom_schedule is None:
+            raise TypeError("Missing 'custom_schedule' argument")
+        if schedule_type is None and 'scheduleType' in kwargs:
             schedule_type = kwargs['scheduleType']
+        if schedule_type is None:
+            raise TypeError("Missing 'schedule_type' argument")
 
         _setter("custom_schedule", custom_schedule)
         _setter("schedule_type", schedule_type)
@@ -19121,17 +20551,23 @@ class GetRepositoryAuthorItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             author_name: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             author_name: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authorName' in kwargs:
+        if author_name is None and 'authorName' in kwargs:
             author_name = kwargs['authorName']
-        if 'definedTags' in kwargs:
+        if author_name is None:
+            raise TypeError("Missing 'author_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("author_name", author_name)
         _setter("defined_tags", defined_tags)
@@ -19177,11 +20613,15 @@ class GetRepositoryAuthorsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -19218,9 +20658,11 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryAuthorsRepositoryAuthorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryAuthorsRepositoryAuthorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -19253,17 +20695,23 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             author_name: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             author_name: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authorName' in kwargs:
+        if author_name is None and 'authorName' in kwargs:
             author_name = kwargs['authorName']
-        if 'definedTags' in kwargs:
+        if author_name is None:
+            raise TypeError("Missing 'author_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
 
         _setter("author_name", author_name)
         _setter("defined_tags", defined_tags)
@@ -19309,11 +20757,15 @@ class GetRepositoryCommitsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -19347,9 +20799,11 @@ class GetRepositoryCommitsRepositoryCommitCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryCommitsRepositoryCommitCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryCommitsRepositoryCommitCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -19401,41 +20855,63 @@ class GetRepositoryCommitsRepositoryCommitCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             author_email: str,
-             author_name: str,
-             commit_id: str,
-             commit_message: str,
-             committer_email: str,
-             committer_name: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             parent_commit_ids: Sequence[str],
-             time_created: str,
-             tree_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             author_email: Optional[str] = None,
+             author_name: Optional[str] = None,
+             commit_id: Optional[str] = None,
+             commit_message: Optional[str] = None,
+             committer_email: Optional[str] = None,
+             committer_name: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             parent_commit_ids: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             tree_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authorEmail' in kwargs:
+        if author_email is None and 'authorEmail' in kwargs:
             author_email = kwargs['authorEmail']
-        if 'authorName' in kwargs:
+        if author_email is None:
+            raise TypeError("Missing 'author_email' argument")
+        if author_name is None and 'authorName' in kwargs:
             author_name = kwargs['authorName']
-        if 'commitId' in kwargs:
+        if author_name is None:
+            raise TypeError("Missing 'author_name' argument")
+        if commit_id is None and 'commitId' in kwargs:
             commit_id = kwargs['commitId']
-        if 'commitMessage' in kwargs:
+        if commit_id is None:
+            raise TypeError("Missing 'commit_id' argument")
+        if commit_message is None and 'commitMessage' in kwargs:
             commit_message = kwargs['commitMessage']
-        if 'committerEmail' in kwargs:
+        if commit_message is None:
+            raise TypeError("Missing 'commit_message' argument")
+        if committer_email is None and 'committerEmail' in kwargs:
             committer_email = kwargs['committerEmail']
-        if 'committerName' in kwargs:
+        if committer_email is None:
+            raise TypeError("Missing 'committer_email' argument")
+        if committer_name is None and 'committerName' in kwargs:
             committer_name = kwargs['committerName']
-        if 'definedTags' in kwargs:
+        if committer_name is None:
+            raise TypeError("Missing 'committer_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'parentCommitIds' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if parent_commit_ids is None and 'parentCommitIds' in kwargs:
             parent_commit_ids = kwargs['parentCommitIds']
-        if 'timeCreated' in kwargs:
+        if parent_commit_ids is None:
+            raise TypeError("Missing 'parent_commit_ids' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'treeId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if tree_id is None and 'treeId' in kwargs:
             tree_id = kwargs['treeId']
+        if tree_id is None:
+            raise TypeError("Missing 'tree_id' argument")
 
         _setter("author_email", author_email)
         _setter("author_name", author_name)
@@ -19558,23 +21034,33 @@ class GetRepositoryDiffChangeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             base_span: int,
-             diff_sections: Sequence['outputs.GetRepositoryDiffChangeDiffSectionResult'],
-             target_line: int,
-             target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             base_span: Optional[int] = None,
+             diff_sections: Optional[Sequence['outputs.GetRepositoryDiffChangeDiffSectionResult']] = None,
+             target_line: Optional[int] = None,
+             target_span: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'baseSpan' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if base_span is None and 'baseSpan' in kwargs:
             base_span = kwargs['baseSpan']
-        if 'diffSections' in kwargs:
+        if base_span is None:
+            raise TypeError("Missing 'base_span' argument")
+        if diff_sections is None and 'diffSections' in kwargs:
             diff_sections = kwargs['diffSections']
-        if 'targetLine' in kwargs:
+        if diff_sections is None:
+            raise TypeError("Missing 'diff_sections' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
-        if 'targetSpan' in kwargs:
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
+        if target_span is None and 'targetSpan' in kwargs:
             target_span = kwargs['targetSpan']
+        if target_span is None:
+            raise TypeError("Missing 'target_span' argument")
 
         _setter("base_line", base_line)
         _setter("base_span", base_span)
@@ -19640,10 +21126,14 @@ class GetRepositoryDiffChangeDiffSectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lines: Sequence['outputs.GetRepositoryDiffChangeDiffSectionLineResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lines: Optional[Sequence['outputs.GetRepositoryDiffChangeDiffSectionLineResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if lines is None:
+            raise TypeError("Missing 'lines' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("lines", lines)
         _setter("type", type)
@@ -19688,20 +21178,28 @@ class GetRepositoryDiffChangeDiffSectionLineResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             conflict_marker: str,
-             line_content: str,
-             target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             conflict_marker: Optional[str] = None,
+             line_content: Optional[str] = None,
+             target_line: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'conflictMarker' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if conflict_marker is None and 'conflictMarker' in kwargs:
             conflict_marker = kwargs['conflictMarker']
-        if 'lineContent' in kwargs:
+        if conflict_marker is None:
+            raise TypeError("Missing 'conflict_marker' argument")
+        if line_content is None and 'lineContent' in kwargs:
             line_content = kwargs['lineContent']
-        if 'targetLine' in kwargs:
+        if line_content is None:
+            raise TypeError("Missing 'line_content' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
 
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
@@ -19752,9 +21250,11 @@ class GetRepositoryDiffsDiffCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryDiffsDiffCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -19801,33 +21301,51 @@ class GetRepositoryDiffsDiffCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             are_conflicts_in_file: bool,
-             changes: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeResult'],
-             freeform_tags: Mapping[str, Any],
-             is_binary: bool,
-             is_large: bool,
-             new_id: str,
-             new_path: str,
-             old_id: str,
-             old_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             are_conflicts_in_file: Optional[bool] = None,
+             changes: Optional[Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_binary: Optional[bool] = None,
+             is_large: Optional[bool] = None,
+             new_id: Optional[str] = None,
+             new_path: Optional[str] = None,
+             old_id: Optional[str] = None,
+             old_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'areConflictsInFile' in kwargs:
+        if are_conflicts_in_file is None and 'areConflictsInFile' in kwargs:
             are_conflicts_in_file = kwargs['areConflictsInFile']
-        if 'freeformTags' in kwargs:
+        if are_conflicts_in_file is None:
+            raise TypeError("Missing 'are_conflicts_in_file' argument")
+        if changes is None:
+            raise TypeError("Missing 'changes' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isBinary' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_binary is None and 'isBinary' in kwargs:
             is_binary = kwargs['isBinary']
-        if 'isLarge' in kwargs:
+        if is_binary is None:
+            raise TypeError("Missing 'is_binary' argument")
+        if is_large is None and 'isLarge' in kwargs:
             is_large = kwargs['isLarge']
-        if 'newId' in kwargs:
+        if is_large is None:
+            raise TypeError("Missing 'is_large' argument")
+        if new_id is None and 'newId' in kwargs:
             new_id = kwargs['newId']
-        if 'newPath' in kwargs:
+        if new_id is None:
+            raise TypeError("Missing 'new_id' argument")
+        if new_path is None and 'newPath' in kwargs:
             new_path = kwargs['newPath']
-        if 'oldId' in kwargs:
+        if new_path is None:
+            raise TypeError("Missing 'new_path' argument")
+        if old_id is None and 'oldId' in kwargs:
             old_id = kwargs['oldId']
-        if 'oldPath' in kwargs:
+        if old_id is None:
+            raise TypeError("Missing 'old_id' argument")
+        if old_path is None and 'oldPath' in kwargs:
             old_path = kwargs['oldPath']
+        if old_path is None:
+            raise TypeError("Missing 'old_path' argument")
 
         _setter("are_conflicts_in_file", are_conflicts_in_file)
         _setter("changes", changes)
@@ -19935,23 +21453,33 @@ class GetRepositoryDiffsDiffCollectionItemChangeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             base_span: int,
-             diff_sections: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionResult'],
-             target_line: int,
-             target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             base_span: Optional[int] = None,
+             diff_sections: Optional[Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionResult']] = None,
+             target_line: Optional[int] = None,
+             target_span: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'baseSpan' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if base_span is None and 'baseSpan' in kwargs:
             base_span = kwargs['baseSpan']
-        if 'diffSections' in kwargs:
+        if base_span is None:
+            raise TypeError("Missing 'base_span' argument")
+        if diff_sections is None and 'diffSections' in kwargs:
             diff_sections = kwargs['diffSections']
-        if 'targetLine' in kwargs:
+        if diff_sections is None:
+            raise TypeError("Missing 'diff_sections' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
-        if 'targetSpan' in kwargs:
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
+        if target_span is None and 'targetSpan' in kwargs:
             target_span = kwargs['targetSpan']
+        if target_span is None:
+            raise TypeError("Missing 'target_span' argument")
 
         _setter("base_line", base_line)
         _setter("base_span", base_span)
@@ -20017,10 +21545,14 @@ class GetRepositoryDiffsDiffCollectionItemChangeDiffSectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lines: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lines: Optional[Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if lines is None:
+            raise TypeError("Missing 'lines' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("lines", lines)
         _setter("type", type)
@@ -20065,20 +21597,28 @@ class GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             conflict_marker: str,
-             line_content: str,
-             target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             conflict_marker: Optional[str] = None,
+             line_content: Optional[str] = None,
+             target_line: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'conflictMarker' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if conflict_marker is None and 'conflictMarker' in kwargs:
             conflict_marker = kwargs['conflictMarker']
-        if 'lineContent' in kwargs:
+        if conflict_marker is None:
+            raise TypeError("Missing 'conflict_marker' argument")
+        if line_content is None and 'lineContent' in kwargs:
             line_content = kwargs['lineContent']
-        if 'targetLine' in kwargs:
+        if line_content is None:
+            raise TypeError("Missing 'line_content' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
 
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
@@ -20133,11 +21673,15 @@ class GetRepositoryDiffsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -20186,23 +21730,33 @@ class GetRepositoryFileDiffChangeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             base_span: int,
-             diff_sections: Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionResult'],
-             target_line: int,
-             target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             base_span: Optional[int] = None,
+             diff_sections: Optional[Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionResult']] = None,
+             target_line: Optional[int] = None,
+             target_span: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'baseSpan' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if base_span is None and 'baseSpan' in kwargs:
             base_span = kwargs['baseSpan']
-        if 'diffSections' in kwargs:
+        if base_span is None:
+            raise TypeError("Missing 'base_span' argument")
+        if diff_sections is None and 'diffSections' in kwargs:
             diff_sections = kwargs['diffSections']
-        if 'targetLine' in kwargs:
+        if diff_sections is None:
+            raise TypeError("Missing 'diff_sections' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
-        if 'targetSpan' in kwargs:
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
+        if target_span is None and 'targetSpan' in kwargs:
             target_span = kwargs['targetSpan']
+        if target_span is None:
+            raise TypeError("Missing 'target_span' argument")
 
         _setter("base_line", base_line)
         _setter("base_span", base_span)
@@ -20268,10 +21822,14 @@ class GetRepositoryFileDiffChangeDiffSectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             lines: Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionLineResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             lines: Optional[Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionLineResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if lines is None:
+            raise TypeError("Missing 'lines' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("lines", lines)
         _setter("type", type)
@@ -20316,20 +21874,28 @@ class GetRepositoryFileDiffChangeDiffSectionLineResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_line: int,
-             conflict_marker: str,
-             line_content: str,
-             target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_line: Optional[int] = None,
+             conflict_marker: Optional[str] = None,
+             line_content: Optional[str] = None,
+             target_line: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseLine' in kwargs:
+        if base_line is None and 'baseLine' in kwargs:
             base_line = kwargs['baseLine']
-        if 'conflictMarker' in kwargs:
+        if base_line is None:
+            raise TypeError("Missing 'base_line' argument")
+        if conflict_marker is None and 'conflictMarker' in kwargs:
             conflict_marker = kwargs['conflictMarker']
-        if 'lineContent' in kwargs:
+        if conflict_marker is None:
+            raise TypeError("Missing 'conflict_marker' argument")
+        if line_content is None and 'lineContent' in kwargs:
             line_content = kwargs['lineContent']
-        if 'targetLine' in kwargs:
+        if line_content is None:
+            raise TypeError("Missing 'line_content' argument")
+        if target_line is None and 'targetLine' in kwargs:
             target_line = kwargs['targetLine']
+        if target_line is None:
+            raise TypeError("Missing 'target_line' argument")
 
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
@@ -20386,14 +21952,18 @@ class GetRepositoryFileLineLineResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             line_content: str,
-             line_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             line_content: Optional[str] = None,
+             line_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'lineContent' in kwargs:
+        if line_content is None and 'lineContent' in kwargs:
             line_content = kwargs['lineContent']
-        if 'lineNumber' in kwargs:
+        if line_content is None:
+            raise TypeError("Missing 'line_content' argument")
+        if line_number is None and 'lineNumber' in kwargs:
             line_number = kwargs['lineNumber']
+        if line_number is None:
+            raise TypeError("Missing 'line_number' argument")
 
         _setter("line_content", line_content)
         _setter("line_number", line_number)
@@ -20430,11 +22000,15 @@ class GetRepositoryMirrorRecordsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -20468,9 +22042,11 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -20507,26 +22083,38 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(dict)
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             freeform_tags: Mapping[str, Any],
-             mirror_status: str,
-             time_completed: str,
-             time_enqueued: str,
-             time_started: str,
-             work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             mirror_status: Optional[str] = None,
+             time_completed: Optional[str] = None,
+             time_enqueued: Optional[str] = None,
+             time_started: Optional[str] = None,
+             work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'mirrorStatus' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if mirror_status is None and 'mirrorStatus' in kwargs:
             mirror_status = kwargs['mirrorStatus']
-        if 'timeCompleted' in kwargs:
+        if mirror_status is None:
+            raise TypeError("Missing 'mirror_status' argument")
+        if time_completed is None and 'timeCompleted' in kwargs:
             time_completed = kwargs['timeCompleted']
-        if 'timeEnqueued' in kwargs:
+        if time_completed is None:
+            raise TypeError("Missing 'time_completed' argument")
+        if time_enqueued is None and 'timeEnqueued' in kwargs:
             time_enqueued = kwargs['timeEnqueued']
-        if 'timeStarted' in kwargs:
+        if time_enqueued is None:
+            raise TypeError("Missing 'time_enqueued' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'workRequestId' in kwargs:
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
+        if work_request_id is None:
+            raise TypeError("Missing 'work_request_id' argument")
 
         _setter("freeform_tags", freeform_tags)
         _setter("mirror_status", mirror_status)
@@ -20598,17 +22186,23 @@ class GetRepositoryMirrorRepositoryConfigResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             connector_id: str,
-             repository_url: str,
-             trigger_schedules: Sequence['outputs.GetRepositoryMirrorRepositoryConfigTriggerScheduleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             connector_id: Optional[str] = None,
+             repository_url: Optional[str] = None,
+             trigger_schedules: Optional[Sequence['outputs.GetRepositoryMirrorRepositoryConfigTriggerScheduleResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'connectorId' in kwargs:
+        if connector_id is None and 'connectorId' in kwargs:
             connector_id = kwargs['connectorId']
-        if 'repositoryUrl' in kwargs:
+        if connector_id is None:
+            raise TypeError("Missing 'connector_id' argument")
+        if repository_url is None and 'repositoryUrl' in kwargs:
             repository_url = kwargs['repositoryUrl']
-        if 'triggerSchedules' in kwargs:
+        if repository_url is None:
+            raise TypeError("Missing 'repository_url' argument")
+        if trigger_schedules is None and 'triggerSchedules' in kwargs:
             trigger_schedules = kwargs['triggerSchedules']
+        if trigger_schedules is None:
+            raise TypeError("Missing 'trigger_schedules' argument")
 
         _setter("connector_id", connector_id)
         _setter("repository_url", repository_url)
@@ -20656,14 +22250,18 @@ class GetRepositoryMirrorRepositoryConfigTriggerScheduleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             custom_schedule: str,
-             schedule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             custom_schedule: Optional[str] = None,
+             schedule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'customSchedule' in kwargs:
+        if custom_schedule is None and 'customSchedule' in kwargs:
             custom_schedule = kwargs['customSchedule']
-        if 'scheduleType' in kwargs:
+        if custom_schedule is None:
+            raise TypeError("Missing 'custom_schedule' argument")
+        if schedule_type is None and 'scheduleType' in kwargs:
             schedule_type = kwargs['scheduleType']
+        if schedule_type is None:
+            raise TypeError("Missing 'schedule_type' argument")
 
         _setter("custom_schedule", custom_schedule)
         _setter("schedule_type", schedule_type)
@@ -20720,24 +22318,40 @@ class GetRepositoryPathItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             name: str,
-             path: str,
-             sha: str,
-             size_in_bytes: str,
-             submodule_git_url: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             path: Optional[str] = None,
+             sha: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             submodule_git_url: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sizeInBytes' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if sha is None:
+            raise TypeError("Missing 'sha' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'submoduleGitUrl' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if submodule_git_url is None and 'submoduleGitUrl' in kwargs:
             submodule_git_url = kwargs['submoduleGitUrl']
+        if submodule_git_url is None:
+            raise TypeError("Missing 'submodule_git_url' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -20831,11 +22445,15 @@ class GetRepositoryPathsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -20875,9 +22493,11 @@ class GetRepositoryPathsRepositoryPathCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryPathsRepositoryPathCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryPathsRepositoryPathCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -20925,24 +22545,40 @@ class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             name: str,
-             path: str,
-             sha: str,
-             size_in_bytes: str,
-             submodule_git_url: str,
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             path: Optional[str] = None,
+             sha: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             submodule_git_url: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'sizeInBytes' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if sha is None:
+            raise TypeError("Missing 'sha' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
             size_in_bytes = kwargs['sizeInBytes']
-        if 'submoduleGitUrl' in kwargs:
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if submodule_git_url is None and 'submoduleGitUrl' in kwargs:
             submodule_git_url = kwargs['submoduleGitUrl']
+        if submodule_git_url is None:
+            raise TypeError("Missing 'submodule_git_url' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -21033,11 +22669,15 @@ class GetRepositoryRefsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -21071,9 +22711,11 @@ class GetRepositoryRefsRepositoryRefCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetRepositoryRefsRepositoryRefCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetRepositoryRefsRepositoryRefCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -21120,33 +22762,51 @@ class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             commit_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             full_ref_name: str,
-             id: str,
-             object_id: str,
-             ref_name: str,
-             ref_type: str,
-             repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             commit_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             full_ref_name: Optional[str] = None,
+             id: Optional[str] = None,
+             object_id: Optional[str] = None,
+             ref_name: Optional[str] = None,
+             ref_type: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'commitId' in kwargs:
+        if commit_id is None and 'commitId' in kwargs:
             commit_id = kwargs['commitId']
-        if 'definedTags' in kwargs:
+        if commit_id is None:
+            raise TypeError("Missing 'commit_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fullRefName' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if full_ref_name is None and 'fullRefName' in kwargs:
             full_ref_name = kwargs['fullRefName']
-        if 'objectId' in kwargs:
+        if full_ref_name is None:
+            raise TypeError("Missing 'full_ref_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if object_id is None and 'objectId' in kwargs:
             object_id = kwargs['objectId']
-        if 'refName' in kwargs:
+        if object_id is None:
+            raise TypeError("Missing 'object_id' argument")
+        if ref_name is None and 'refName' in kwargs:
             ref_name = kwargs['refName']
-        if 'refType' in kwargs:
+        if ref_name is None:
+            raise TypeError("Missing 'ref_name' argument")
+        if ref_type is None and 'refType' in kwargs:
             ref_type = kwargs['refType']
-        if 'repositoryId' in kwargs:
+        if ref_type is None:
+            raise TypeError("Missing 'ref_type' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
 
         _setter("commit_id", commit_id)
         _setter("defined_tags", defined_tags)
@@ -21248,13 +22908,19 @@ class GetTriggerActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             filters: Sequence['outputs.GetTriggerActionFilterResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             filters: Optional[Sequence['outputs.GetTriggerActionFilterResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
@@ -21307,14 +22973,22 @@ class GetTriggerActionFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             events: Sequence[str],
-             excludes: Sequence['outputs.GetTriggerActionFilterExcludeResult'],
-             includes: Sequence['outputs.GetTriggerActionFilterIncludeResult'],
-             trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             events: Optional[Sequence[str]] = None,
+             excludes: Optional[Sequence['outputs.GetTriggerActionFilterExcludeResult']] = None,
+             includes: Optional[Sequence['outputs.GetTriggerActionFilterIncludeResult']] = None,
+             trigger_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if events is None:
+            raise TypeError("Missing 'events' argument")
+        if excludes is None:
+            raise TypeError("Missing 'excludes' argument")
+        if includes is None:
+            raise TypeError("Missing 'includes' argument")
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
 
         _setter("events", events)
         _setter("excludes", excludes)
@@ -21362,11 +23036,13 @@ class GetTriggerActionFilterExcludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_filters: Sequence['outputs.GetTriggerActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_filters: Optional[Sequence['outputs.GetTriggerActionFilterExcludeFileFilterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileFilters' in kwargs:
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
 
         _setter("file_filters", file_filters)
 
@@ -21387,11 +23063,13 @@ class GetTriggerActionFilterExcludeFileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 
@@ -21423,20 +23101,28 @@ class GetTriggerActionFilterIncludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_ref: str,
-             file_filters: Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult'],
-             head_ref: str,
-             repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_ref: Optional[str] = None,
+             file_filters: Optional[Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult']] = None,
+             head_ref: Optional[str] = None,
+             repository_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'fileFilters' in kwargs:
+        if base_ref is None:
+            raise TypeError("Missing 'base_ref' argument")
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
-        if 'headRef' in kwargs:
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
-        if 'repositoryName' in kwargs:
+        if head_ref is None:
+            raise TypeError("Missing 'head_ref' argument")
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
+        if repository_name is None:
+            raise TypeError("Missing 'repository_name' argument")
 
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
@@ -21484,11 +23170,13 @@ class GetTriggerActionFilterIncludeFileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 
@@ -21513,11 +23201,15 @@ class GetTriggersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -21551,9 +23243,11 @@ class GetTriggersTriggerCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetTriggersTriggerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -21624,51 +23318,85 @@ class GetTriggersTriggerCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetTriggersTriggerCollectionItemActionResult'],
-             compartment_id: str,
-             connection_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             project_id: str,
-             repository_id: str,
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_updated: str,
-             trigger_source: str,
-             trigger_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionResult']] = None,
+             compartment_id: Optional[str] = None,
+             connection_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             repository_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trigger_source: Optional[str] = None,
+             trigger_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_id is None and 'connectionId' in kwargs:
             connection_id = kwargs['connectionId']
-        if 'definedTags' in kwargs:
+        if connection_id is None:
+            raise TypeError("Missing 'connection_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'repositoryId' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
             repository_id = kwargs['repositoryId']
-        if 'systemTags' in kwargs:
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'triggerSource' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
-        if 'triggerUrl' in kwargs:
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
+        if trigger_url is None and 'triggerUrl' in kwargs:
             trigger_url = kwargs['triggerUrl']
+        if trigger_url is None:
+            raise TypeError("Missing 'trigger_url' argument")
 
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
@@ -21842,13 +23570,19 @@ class GetTriggersTriggerCollectionItemActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             build_pipeline_id: str,
-             filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterResult'],
-             type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             build_pipeline_id: Optional[str] = None,
+             filters: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'buildPipelineId' in kwargs:
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
             build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
@@ -21901,14 +23635,22 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             events: Sequence[str],
-             excludes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult'],
-             includes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeResult'],
-             trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             events: Optional[Sequence[str]] = None,
+             excludes: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult']] = None,
+             includes: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeResult']] = None,
+             trigger_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'triggerSource' in kwargs:
+        if events is None:
+            raise TypeError("Missing 'events' argument")
+        if excludes is None:
+            raise TypeError("Missing 'excludes' argument")
+        if includes is None:
+            raise TypeError("Missing 'includes' argument")
+        if trigger_source is None and 'triggerSource' in kwargs:
             trigger_source = kwargs['triggerSource']
+        if trigger_source is None:
+            raise TypeError("Missing 'trigger_source' argument")
 
         _setter("events", events)
         _setter("excludes", excludes)
@@ -21956,11 +23698,13 @@ class GetTriggersTriggerCollectionItemActionFilterExcludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_filters: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fileFilters' in kwargs:
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
 
         _setter("file_filters", file_filters)
 
@@ -21981,11 +23725,13 @@ class GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 
@@ -22017,20 +23763,28 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             base_ref: str,
-             file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult'],
-             head_ref: str,
-             repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             base_ref: Optional[str] = None,
+             file_filters: Optional[Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult']] = None,
+             head_ref: Optional[str] = None,
+             repository_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'baseRef' in kwargs:
+        if base_ref is None and 'baseRef' in kwargs:
             base_ref = kwargs['baseRef']
-        if 'fileFilters' in kwargs:
+        if base_ref is None:
+            raise TypeError("Missing 'base_ref' argument")
+        if file_filters is None and 'fileFilters' in kwargs:
             file_filters = kwargs['fileFilters']
-        if 'headRef' in kwargs:
+        if file_filters is None:
+            raise TypeError("Missing 'file_filters' argument")
+        if head_ref is None and 'headRef' in kwargs:
             head_ref = kwargs['headRef']
-        if 'repositoryName' in kwargs:
+        if head_ref is None:
+            raise TypeError("Missing 'head_ref' argument")
+        if repository_name is None and 'repositoryName' in kwargs:
             repository_name = kwargs['repositoryName']
+        if repository_name is None:
+            raise TypeError("Missing 'repository_name' argument")
 
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
@@ -22078,11 +23832,13 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             file_paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'filePaths' in kwargs:
+        if file_paths is None and 'filePaths' in kwargs:
             file_paths = kwargs['filePaths']
+        if file_paths is None:
+            raise TypeError("Missing 'file_paths' argument")
 
         _setter("file_paths", file_paths)
 

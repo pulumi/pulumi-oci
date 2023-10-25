@@ -37,19 +37,23 @@ class ExternalDbSystemDiscoveryArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             agent_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'patchOperations' in kwargs:
+        if patch_operations is None and 'patchOperations' in kwargs:
             patch_operations = kwargs['patchOperations']
 
         _setter("agent_id", agent_id)
@@ -167,29 +171,29 @@ class _ExternalDbSystemDiscoveryState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentId' in kwargs:
+        if agent_id is None and 'agentId' in kwargs:
             agent_id = kwargs['agentId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'discoveredComponents' in kwargs:
+        if discovered_components is None and 'discoveredComponents' in kwargs:
             discovered_components = kwargs['discoveredComponents']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalDbSystemDiscoveryId' in kwargs:
+        if external_db_system_discovery_id is None and 'externalDbSystemDiscoveryId' in kwargs:
             external_db_system_discovery_id = kwargs['externalDbSystemDiscoveryId']
-        if 'gridHome' in kwargs:
+        if grid_home is None and 'gridHome' in kwargs:
             grid_home = kwargs['gridHome']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'patchOperations' in kwargs:
+        if patch_operations is None and 'patchOperations' in kwargs:
             patch_operations = kwargs['patchOperations']
-        if 'resourceId' in kwargs:
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if agent_id is not None:

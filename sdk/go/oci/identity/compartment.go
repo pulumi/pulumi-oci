@@ -30,10 +30,10 @@ import (
 //			_, err := Identity.NewCompartment(ctx, "testCompartment", &Identity.CompartmentArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Description:   pulumi.Any(_var.Compartment_description),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

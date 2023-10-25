@@ -41,7 +41,7 @@ import (
 //				CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
 //				DbServers:                      pulumi.Any(_var.Autonomous_vm_cluster_db_servers),
 //				DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsLocalBackupEnabled: pulumi.Any(_var.Autonomous_vm_cluster_is_local_backup_enabled),

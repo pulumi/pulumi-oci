@@ -35,14 +35,18 @@ class FusionEnvironmentRefreshActivityArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fusion_environment_id: pulumi.Input[str],
-             source_fusion_environment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'sourceFusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if source_fusion_environment_id is None and 'sourceFusionEnvironmentId' in kwargs:
             source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
+        if source_fusion_environment_id is None:
+            raise TypeError("Missing 'source_fusion_environment_id' argument")
 
         _setter("fusion_environment_id", fusion_environment_id)
         _setter("source_fusion_environment_id", source_fusion_environment_id)
@@ -143,31 +147,31 @@ class _FusionEnvironmentRefreshActivityState:
              time_finished: Optional[pulumi.Input[str]] = None,
              time_of_restoration_point: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'fusionEnvironmentId' in kwargs:
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
             fusion_environment_id = kwargs['fusionEnvironmentId']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'refreshActivityId' in kwargs:
+        if refresh_activity_id is None and 'refreshActivityId' in kwargs:
             refresh_activity_id = kwargs['refreshActivityId']
-        if 'refreshIssueDetailsLists' in kwargs:
+        if refresh_issue_details_lists is None and 'refreshIssueDetailsLists' in kwargs:
             refresh_issue_details_lists = kwargs['refreshIssueDetailsLists']
-        if 'serviceAvailability' in kwargs:
+        if service_availability is None and 'serviceAvailability' in kwargs:
             service_availability = kwargs['serviceAvailability']
-        if 'sourceFusionEnvironmentId' in kwargs:
+        if source_fusion_environment_id is None and 'sourceFusionEnvironmentId' in kwargs:
             source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
-        if 'timeAccepted' in kwargs:
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeExpectedFinish' in kwargs:
+        if time_expected_finish is None and 'timeExpectedFinish' in kwargs:
             time_expected_finish = kwargs['timeExpectedFinish']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeOfRestorationPoint' in kwargs:
+        if time_of_restoration_point is None and 'timeOfRestorationPoint' in kwargs:
             time_of_restoration_point = kwargs['timeOfRestorationPoint']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if display_name is not None:

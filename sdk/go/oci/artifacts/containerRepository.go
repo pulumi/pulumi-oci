@@ -34,10 +34,10 @@ import (
 //			_, err := Artifacts.NewContainerRepository(ctx, "testContainerRepository", &Artifacts.ContainerRepositoryArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Container_repository_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsImmutable: pulumi.Any(_var.Container_repository_is_immutable),

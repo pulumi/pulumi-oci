@@ -35,11 +35,11 @@ import (
 //				CompartmentId:                 pulumi.Any(_var.Compartment_id),
 //				EmBridgeId:                    pulumi.Any(oci_em_warehouse_em_bridge.Test_em_bridge.Id),
 //				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Em_warehouse_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //			})

@@ -37,7 +37,7 @@ import (
 //				DbNodeId:    pulumi.Any(oci_database_db_node.Test_db_node.Id),
 //				PublicKey:   pulumi.Any(_var.Db_node_console_connection_public_key),
 //				DefinedTags: pulumi.Any(_var.Db_node_console_connection_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

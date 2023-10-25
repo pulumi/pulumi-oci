@@ -61,11 +61,11 @@ class FusionEnvironmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             create_fusion_environment_admin_user_details: pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs'],
-             display_name: pulumi.Input[str],
-             fusion_environment_family_id: pulumi.Input[str],
-             fusion_environment_type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_fusion_environment_admin_user_details: Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
+             fusion_environment_type: Optional[pulumi.Input[str]] = None,
              additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              dns_prefix: Optional[pulumi.Input[str]] = None,
@@ -73,29 +73,39 @@ class FusionEnvironmentArgs:
              kms_key_id: Optional[pulumi.Input[str]] = None,
              maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if create_fusion_environment_admin_user_details is None and 'createFusionEnvironmentAdminUserDetails' in kwargs:
             create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
-        if 'displayName' in kwargs:
+        if create_fusion_environment_admin_user_details is None:
+            raise TypeError("Missing 'create_fusion_environment_admin_user_details' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'fusionEnvironmentFamilyId' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fusion_environment_family_id is None and 'fusionEnvironmentFamilyId' in kwargs:
             fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
-        if 'fusionEnvironmentType' in kwargs:
+        if fusion_environment_family_id is None:
+            raise TypeError("Missing 'fusion_environment_family_id' argument")
+        if fusion_environment_type is None and 'fusionEnvironmentType' in kwargs:
             fusion_environment_type = kwargs['fusionEnvironmentType']
-        if 'additionalLanguagePacks' in kwargs:
+        if fusion_environment_type is None:
+            raise TypeError("Missing 'fusion_environment_type' argument")
+        if additional_language_packs is None and 'additionalLanguagePacks' in kwargs:
             additional_language_packs = kwargs['additionalLanguagePacks']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsPrefix' in kwargs:
+        if dns_prefix is None and 'dnsPrefix' in kwargs:
             dns_prefix = kwargs['dnsPrefix']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'maintenancePolicy' in kwargs:
+        if maintenance_policy is None and 'maintenancePolicy' in kwargs:
             maintenance_policy = kwargs['maintenancePolicy']
 
         _setter("compartment_id", compartment_id)
@@ -387,55 +397,55 @@ class _FusionEnvironmentState:
              time_upcoming_maintenance: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalLanguagePacks' in kwargs:
+        if additional_language_packs is None and 'additionalLanguagePacks' in kwargs:
             additional_language_packs = kwargs['additionalLanguagePacks']
-        if 'appliedPatchBundles' in kwargs:
+        if applied_patch_bundles is None and 'appliedPatchBundles' in kwargs:
             applied_patch_bundles = kwargs['appliedPatchBundles']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+        if create_fusion_environment_admin_user_details is None and 'createFusionEnvironmentAdminUserDetails' in kwargs:
             create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'dnsPrefix' in kwargs:
+        if dns_prefix is None and 'dnsPrefix' in kwargs:
             dns_prefix = kwargs['dnsPrefix']
-        if 'domainId' in kwargs:
+        if domain_id is None and 'domainId' in kwargs:
             domain_id = kwargs['domainId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'fusionEnvironmentFamilyId' in kwargs:
+        if fusion_environment_family_id is None and 'fusionEnvironmentFamilyId' in kwargs:
             fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
-        if 'fusionEnvironmentType' in kwargs:
+        if fusion_environment_type is None and 'fusionEnvironmentType' in kwargs:
             fusion_environment_type = kwargs['fusionEnvironmentType']
-        if 'idcsDomainUrl' in kwargs:
+        if idcs_domain_url is None and 'idcsDomainUrl' in kwargs:
             idcs_domain_url = kwargs['idcsDomainUrl']
-        if 'isBreakGlassEnabled' in kwargs:
+        if is_break_glass_enabled is None and 'isBreakGlassEnabled' in kwargs:
             is_break_glass_enabled = kwargs['isBreakGlassEnabled']
-        if 'kmsKeyId' in kwargs:
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
             kms_key_id = kwargs['kmsKeyId']
-        if 'kmsKeyInfos' in kwargs:
+        if kms_key_infos is None and 'kmsKeyInfos' in kwargs:
             kms_key_infos = kwargs['kmsKeyInfos']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'lockboxId' in kwargs:
+        if lockbox_id is None and 'lockboxId' in kwargs:
             lockbox_id = kwargs['lockboxId']
-        if 'maintenancePolicy' in kwargs:
+        if maintenance_policy is None and 'maintenancePolicy' in kwargs:
             maintenance_policy = kwargs['maintenancePolicy']
-        if 'publicUrl' in kwargs:
+        if public_url is None and 'publicUrl' in kwargs:
             public_url = kwargs['publicUrl']
-        if 'subscriptionIds' in kwargs:
+        if subscription_ids is None and 'subscriptionIds' in kwargs:
             subscription_ids = kwargs['subscriptionIds']
-        if 'systemName' in kwargs:
+        if system_name is None and 'systemName' in kwargs:
             system_name = kwargs['systemName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpcomingMaintenance' in kwargs:
+        if time_upcoming_maintenance is None and 'timeUpcomingMaintenance' in kwargs:
             time_upcoming_maintenance = kwargs['timeUpcomingMaintenance']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_language_packs is not None:
@@ -1023,11 +1033,7 @@ class FusionEnvironment(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if create_fusion_environment_admin_user_details is not None and not isinstance(create_fusion_environment_admin_user_details, FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs):
-                create_fusion_environment_admin_user_details = create_fusion_environment_admin_user_details or {}
-                def _setter(key, value):
-                    create_fusion_environment_admin_user_details[key] = value
-                FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs._configure(_setter, **create_fusion_environment_admin_user_details)
+            create_fusion_environment_admin_user_details = _utilities.configure(create_fusion_environment_admin_user_details, FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs, True)
             if create_fusion_environment_admin_user_details is None and not opts.urn:
                 raise TypeError("Missing required property 'create_fusion_environment_admin_user_details'")
             __props__.__dict__["create_fusion_environment_admin_user_details"] = create_fusion_environment_admin_user_details
@@ -1044,11 +1050,7 @@ class FusionEnvironment(pulumi.CustomResource):
                 raise TypeError("Missing required property 'fusion_environment_type'")
             __props__.__dict__["fusion_environment_type"] = fusion_environment_type
             __props__.__dict__["kms_key_id"] = kms_key_id
-            if maintenance_policy is not None and not isinstance(maintenance_policy, FusionEnvironmentMaintenancePolicyArgs):
-                maintenance_policy = maintenance_policy or {}
-                def _setter(key, value):
-                    maintenance_policy[key] = value
-                FusionEnvironmentMaintenancePolicyArgs._configure(_setter, **maintenance_policy)
+            maintenance_policy = _utilities.configure(maintenance_policy, FusionEnvironmentMaintenancePolicyArgs, True)
             __props__.__dict__["maintenance_policy"] = maintenance_policy
             __props__.__dict__["rules"] = rules
             __props__.__dict__["applied_patch_bundles"] = None

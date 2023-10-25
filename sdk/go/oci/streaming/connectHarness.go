@@ -36,7 +36,7 @@ import (
 //			_, err := Streaming.NewConnectHarness(ctx, "testConnectHarness", &Streaming.ConnectHarnessArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DefinedTags:   pulumi.Any(_var.Connect_harness_defined_tags),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

@@ -118,14 +118,18 @@ class FleetInventoryLog(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -191,14 +195,18 @@ class FleetOperationLog(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -238,9 +246,11 @@ class GetAnnouncementsAnnouncementCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -276,14 +286,22 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: int,
-             summary: str,
-             time_released: str,
-             url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[int] = None,
+             summary: Optional[str] = None,
+             time_released: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'timeReleased' in kwargs:
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
+        if time_released is None and 'timeReleased' in kwargs:
             time_released = kwargs['timeReleased']
+        if time_released is None:
+            raise TypeError("Missing 'time_released' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
 
         _setter("key", key)
         _setter("summary", summary)
@@ -338,11 +356,15 @@ class GetAnnouncementsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -379,11 +401,13 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -413,14 +437,18 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             summarized_events_logs: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'summarizedEventsLogs' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if summarized_events_logs is None and 'summarizedEventsLogs' in kwargs:
             summarized_events_logs = kwargs['summarizedEventsLogs']
+        if summarized_events_logs is None:
+            raise TypeError("Missing 'summarized_events_logs' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("summarized_events_logs", summarized_events_logs)
@@ -459,14 +487,18 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -502,11 +534,13 @@ class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -533,11 +567,13 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -567,14 +603,18 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             post_installation_actions: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'postInstallationActions' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if post_installation_actions is None and 'postInstallationActions' in kwargs:
             post_installation_actions = kwargs['postInstallationActions']
+        if post_installation_actions is None:
+            raise TypeError("Missing 'post_installation_actions' argument")
 
         _setter("is_enabled", is_enabled)
         _setter("post_installation_actions", post_installation_actions)
@@ -627,24 +667,36 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             add_logging_handler: bool,
-             disabled_tls_versions: Sequence[str],
-             global_logging_level: str,
-             minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
-             proxies: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult'],
-             should_replace_certificates_operating_system: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             add_logging_handler: Optional[bool] = None,
+             disabled_tls_versions: Optional[Sequence[str]] = None,
+             global_logging_level: Optional[str] = None,
+             minimum_key_size_settings: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']] = None,
+             proxies: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult']] = None,
+             should_replace_certificates_operating_system: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'addLoggingHandler' in kwargs:
+        if add_logging_handler is None and 'addLoggingHandler' in kwargs:
             add_logging_handler = kwargs['addLoggingHandler']
-        if 'disabledTlsVersions' in kwargs:
+        if add_logging_handler is None:
+            raise TypeError("Missing 'add_logging_handler' argument")
+        if disabled_tls_versions is None and 'disabledTlsVersions' in kwargs:
             disabled_tls_versions = kwargs['disabledTlsVersions']
-        if 'globalLoggingLevel' in kwargs:
+        if disabled_tls_versions is None:
+            raise TypeError("Missing 'disabled_tls_versions' argument")
+        if global_logging_level is None and 'globalLoggingLevel' in kwargs:
             global_logging_level = kwargs['globalLoggingLevel']
-        if 'minimumKeySizeSettings' in kwargs:
+        if global_logging_level is None:
+            raise TypeError("Missing 'global_logging_level' argument")
+        if minimum_key_size_settings is None and 'minimumKeySizeSettings' in kwargs:
             minimum_key_size_settings = kwargs['minimumKeySizeSettings']
-        if 'shouldReplaceCertificatesOperatingSystem' in kwargs:
+        if minimum_key_size_settings is None:
+            raise TypeError("Missing 'minimum_key_size_settings' argument")
+        if proxies is None:
+            raise TypeError("Missing 'proxies' argument")
+        if should_replace_certificates_operating_system is None and 'shouldReplaceCertificatesOperatingSystem' in kwargs:
             should_replace_certificates_operating_system = kwargs['shouldReplaceCertificatesOperatingSystem']
+        if should_replace_certificates_operating_system is None:
+            raise TypeError("Missing 'should_replace_certificates_operating_system' argument")
 
         _setter("add_logging_handler", add_logging_handler)
         _setter("disabled_tls_versions", disabled_tls_versions)
@@ -731,11 +783,17 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             certpaths: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult'],
-             jars: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult'],
-             tls: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             certpaths: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult']] = None,
+             jars: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult']] = None,
+             tls: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if certpaths is None:
+            raise TypeError("Missing 'certpaths' argument")
+        if jars is None:
+            raise TypeError("Missing 'jars' argument")
+        if tls is None:
+            raise TypeError("Missing 'tls' argument")
 
         _setter("certpaths", certpaths)
         _setter("jars", jars)
@@ -790,12 +848,16 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_size: int,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_size: Optional[int] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
+        if key_size is None:
+            raise TypeError("Missing 'key_size' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("key_size", key_size)
         _setter("name", name)
@@ -834,12 +896,16 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_size: int,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_size: Optional[int] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
+        if key_size is None:
+            raise TypeError("Missing 'key_size' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("key_size", key_size)
         _setter("name", name)
@@ -878,12 +944,16 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key_size: int,
-             name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key_size: Optional[int] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'keySize' in kwargs:
+        if key_size is None and 'keySize' in kwargs:
             key_size = kwargs['keySize']
+        if key_size is None:
+            raise TypeError("Missing 'key_size' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
 
         _setter("key_size", key_size)
         _setter("name", name)
@@ -943,35 +1013,53 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(d
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             ftp_proxy_host: str,
-             ftp_proxy_port: int,
-             http_proxy_host: str,
-             http_proxy_port: int,
-             https_proxy_host: str,
-             https_proxy_port: int,
-             socks_proxy_host: str,
-             socks_proxy_port: int,
-             use_system_proxies: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             ftp_proxy_host: Optional[str] = None,
+             ftp_proxy_port: Optional[int] = None,
+             http_proxy_host: Optional[str] = None,
+             http_proxy_port: Optional[int] = None,
+             https_proxy_host: Optional[str] = None,
+             https_proxy_port: Optional[int] = None,
+             socks_proxy_host: Optional[str] = None,
+             socks_proxy_port: Optional[int] = None,
+             use_system_proxies: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ftpProxyHost' in kwargs:
+        if ftp_proxy_host is None and 'ftpProxyHost' in kwargs:
             ftp_proxy_host = kwargs['ftpProxyHost']
-        if 'ftpProxyPort' in kwargs:
+        if ftp_proxy_host is None:
+            raise TypeError("Missing 'ftp_proxy_host' argument")
+        if ftp_proxy_port is None and 'ftpProxyPort' in kwargs:
             ftp_proxy_port = kwargs['ftpProxyPort']
-        if 'httpProxyHost' in kwargs:
+        if ftp_proxy_port is None:
+            raise TypeError("Missing 'ftp_proxy_port' argument")
+        if http_proxy_host is None and 'httpProxyHost' in kwargs:
             http_proxy_host = kwargs['httpProxyHost']
-        if 'httpProxyPort' in kwargs:
+        if http_proxy_host is None:
+            raise TypeError("Missing 'http_proxy_host' argument")
+        if http_proxy_port is None and 'httpProxyPort' in kwargs:
             http_proxy_port = kwargs['httpProxyPort']
-        if 'httpsProxyHost' in kwargs:
+        if http_proxy_port is None:
+            raise TypeError("Missing 'http_proxy_port' argument")
+        if https_proxy_host is None and 'httpsProxyHost' in kwargs:
             https_proxy_host = kwargs['httpsProxyHost']
-        if 'httpsProxyPort' in kwargs:
+        if https_proxy_host is None:
+            raise TypeError("Missing 'https_proxy_host' argument")
+        if https_proxy_port is None and 'httpsProxyPort' in kwargs:
             https_proxy_port = kwargs['httpsProxyPort']
-        if 'socksProxyHost' in kwargs:
+        if https_proxy_port is None:
+            raise TypeError("Missing 'https_proxy_port' argument")
+        if socks_proxy_host is None and 'socksProxyHost' in kwargs:
             socks_proxy_host = kwargs['socksProxyHost']
-        if 'socksProxyPort' in kwargs:
+        if socks_proxy_host is None:
+            raise TypeError("Missing 'socks_proxy_host' argument")
+        if socks_proxy_port is None and 'socksProxyPort' in kwargs:
             socks_proxy_port = kwargs['socksProxyPort']
-        if 'useSystemProxies' in kwargs:
+        if socks_proxy_port is None:
+            raise TypeError("Missing 'socks_proxy_port' argument")
+        if use_system_proxies is None and 'useSystemProxies' in kwargs:
             use_system_proxies = kwargs['useSystemProxies']
+        if use_system_proxies is None:
+            raise TypeError("Missing 'use_system_proxies' argument")
 
         _setter("ftp_proxy_host", ftp_proxy_host)
         _setter("ftp_proxy_port", ftp_proxy_port)
@@ -1070,11 +1158,13 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
 
         _setter("is_enabled", is_enabled)
 
@@ -1102,11 +1192,15 @@ class GetFleetBlocklistsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1152,12 +1246,20 @@ class GetFleetBlocklistsItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             key: str,
-             operation: str,
-             reason: str,
-             targets: Sequence['outputs.GetFleetBlocklistsItemTargetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             key: Optional[str] = None,
+             operation: Optional[str] = None,
+             reason: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetFleetBlocklistsItemTargetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
 
         _setter("key", key)
         _setter("operation", operation)
@@ -1217,17 +1319,23 @@ class GetFleetBlocklistsItemTargetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             fleet_id: str,
-             installation_key: str,
-             managed_instance_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             fleet_id: Optional[str] = None,
+             installation_key: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fleetId' in kwargs:
+        if fleet_id is None and 'fleetId' in kwargs:
             fleet_id = kwargs['fleetId']
-        if 'installationKey' in kwargs:
+        if fleet_id is None:
+            raise TypeError("Missing 'fleet_id' argument")
+        if installation_key is None and 'installationKey' in kwargs:
             installation_key = kwargs['installationKey']
-        if 'managedInstanceId' in kwargs:
+        if installation_key is None:
+            raise TypeError("Missing 'installation_key' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
 
         _setter("fleet_id", fleet_id)
         _setter("installation_key", installation_key)
@@ -1269,9 +1377,11 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1343,51 +1453,85 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             aggregation_mode: str,
-             bucket: str,
-             crypto_roadmap_version: str,
-             finding_count: int,
-             fleet_id: str,
-             host_name: str,
-             id: str,
-             managed_instance_id: str,
-             namespace: str,
-             non_compliant_finding_count: int,
-             object: str,
-             summarized_event_count: int,
-             time_created: str,
-             time_first_event: str,
-             time_last_event: str,
-             total_event_count: int,
-             work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             aggregation_mode: Optional[str] = None,
+             bucket: Optional[str] = None,
+             crypto_roadmap_version: Optional[str] = None,
+             finding_count: Optional[int] = None,
+             fleet_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             non_compliant_finding_count: Optional[int] = None,
+             object: Optional[str] = None,
+             summarized_event_count: Optional[int] = None,
+             time_created: Optional[str] = None,
+             time_first_event: Optional[str] = None,
+             time_last_event: Optional[str] = None,
+             total_event_count: Optional[int] = None,
+             work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregationMode' in kwargs:
+        if aggregation_mode is None and 'aggregationMode' in kwargs:
             aggregation_mode = kwargs['aggregationMode']
-        if 'cryptoRoadmapVersion' in kwargs:
+        if aggregation_mode is None:
+            raise TypeError("Missing 'aggregation_mode' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if crypto_roadmap_version is None and 'cryptoRoadmapVersion' in kwargs:
             crypto_roadmap_version = kwargs['cryptoRoadmapVersion']
-        if 'findingCount' in kwargs:
+        if crypto_roadmap_version is None:
+            raise TypeError("Missing 'crypto_roadmap_version' argument")
+        if finding_count is None and 'findingCount' in kwargs:
             finding_count = kwargs['findingCount']
-        if 'fleetId' in kwargs:
+        if finding_count is None:
+            raise TypeError("Missing 'finding_count' argument")
+        if fleet_id is None and 'fleetId' in kwargs:
             fleet_id = kwargs['fleetId']
-        if 'hostName' in kwargs:
+        if fleet_id is None:
+            raise TypeError("Missing 'fleet_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managedInstanceId' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'nonCompliantFindingCount' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if non_compliant_finding_count is None and 'nonCompliantFindingCount' in kwargs:
             non_compliant_finding_count = kwargs['nonCompliantFindingCount']
-        if 'summarizedEventCount' in kwargs:
+        if non_compliant_finding_count is None:
+            raise TypeError("Missing 'non_compliant_finding_count' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if summarized_event_count is None and 'summarizedEventCount' in kwargs:
             summarized_event_count = kwargs['summarizedEventCount']
-        if 'timeCreated' in kwargs:
+        if summarized_event_count is None:
+            raise TypeError("Missing 'summarized_event_count' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeFirstEvent' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_first_event is None and 'timeFirstEvent' in kwargs:
             time_first_event = kwargs['timeFirstEvent']
-        if 'timeLastEvent' in kwargs:
+        if time_first_event is None:
+            raise TypeError("Missing 'time_first_event' argument")
+        if time_last_event is None and 'timeLastEvent' in kwargs:
             time_last_event = kwargs['timeLastEvent']
-        if 'totalEventCount' in kwargs:
+        if time_last_event is None:
+            raise TypeError("Missing 'time_last_event' argument")
+        if total_event_count is None and 'totalEventCount' in kwargs:
             total_event_count = kwargs['totalEventCount']
-        if 'workRequestId' in kwargs:
+        if total_event_count is None:
+            raise TypeError("Missing 'total_event_count' argument")
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
+        if work_request_id is None:
+            raise TypeError("Missing 'work_request_id' argument")
 
         _setter("aggregation_mode", aggregation_mode)
         _setter("bucket", bucket)
@@ -1559,11 +1703,15 @@ class GetFleetCryptoAnalysisResultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1601,11 +1749,15 @@ class GetFleetDiagnosesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1642,9 +1794,11 @@ class GetFleetDiagnosesFleetDiagnosisCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1680,20 +1834,28 @@ class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             resource_diagnosis: str,
-             resource_id: str,
-             resource_state: str,
-             resource_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             resource_diagnosis: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_state: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceDiagnosis' in kwargs:
+        if resource_diagnosis is None and 'resourceDiagnosis' in kwargs:
             resource_diagnosis = kwargs['resourceDiagnosis']
-        if 'resourceId' in kwargs:
+        if resource_diagnosis is None:
+            raise TypeError("Missing 'resource_diagnosis' argument")
+        if resource_id is None and 'resourceId' in kwargs:
             resource_id = kwargs['resourceId']
-        if 'resourceState' in kwargs:
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_state is None and 'resourceState' in kwargs:
             resource_state = kwargs['resourceState']
-        if 'resourceType' in kwargs:
+        if resource_state is None:
+            raise TypeError("Missing 'resource_state' argument")
+        if resource_type is None and 'resourceType' in kwargs:
             resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
 
         _setter("resource_diagnosis", resource_diagnosis)
         _setter("resource_id", resource_id)
@@ -1750,14 +1912,18 @@ class GetFleetInventoryLogResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -1794,11 +1960,15 @@ class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1832,9 +2002,11 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionR
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -1903,48 +2075,80 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_execution_type: str,
-             application_name: str,
-             application_path: str,
-             bucket: str,
-             fleet_id: str,
-             host_name: str,
-             id: str,
-             managed_instance_id: str,
-             metadata: str,
-             namespace: str,
-             object_lists: Sequence[str],
-             object_storage_upload_dir_path: str,
-             source_jdk_version: str,
-             target_jdk_version: str,
-             time_created: str,
-             work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_execution_type: Optional[str] = None,
+             application_name: Optional[str] = None,
+             application_path: Optional[str] = None,
+             bucket: Optional[str] = None,
+             fleet_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             metadata: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_lists: Optional[Sequence[str]] = None,
+             object_storage_upload_dir_path: Optional[str] = None,
+             source_jdk_version: Optional[str] = None,
+             target_jdk_version: Optional[str] = None,
+             time_created: Optional[str] = None,
+             work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationExecutionType' in kwargs:
+        if application_execution_type is None and 'applicationExecutionType' in kwargs:
             application_execution_type = kwargs['applicationExecutionType']
-        if 'applicationName' in kwargs:
+        if application_execution_type is None:
+            raise TypeError("Missing 'application_execution_type' argument")
+        if application_name is None and 'applicationName' in kwargs:
             application_name = kwargs['applicationName']
-        if 'applicationPath' in kwargs:
+        if application_name is None:
+            raise TypeError("Missing 'application_name' argument")
+        if application_path is None and 'applicationPath' in kwargs:
             application_path = kwargs['applicationPath']
-        if 'fleetId' in kwargs:
+        if application_path is None:
+            raise TypeError("Missing 'application_path' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if fleet_id is None and 'fleetId' in kwargs:
             fleet_id = kwargs['fleetId']
-        if 'hostName' in kwargs:
+        if fleet_id is None:
+            raise TypeError("Missing 'fleet_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managedInstanceId' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'objectLists' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_lists is None and 'objectLists' in kwargs:
             object_lists = kwargs['objectLists']
-        if 'objectStorageUploadDirPath' in kwargs:
+        if object_lists is None:
+            raise TypeError("Missing 'object_lists' argument")
+        if object_storage_upload_dir_path is None and 'objectStorageUploadDirPath' in kwargs:
             object_storage_upload_dir_path = kwargs['objectStorageUploadDirPath']
-        if 'sourceJdkVersion' in kwargs:
+        if object_storage_upload_dir_path is None:
+            raise TypeError("Missing 'object_storage_upload_dir_path' argument")
+        if source_jdk_version is None and 'sourceJdkVersion' in kwargs:
             source_jdk_version = kwargs['sourceJdkVersion']
-        if 'targetJdkVersion' in kwargs:
+        if source_jdk_version is None:
+            raise TypeError("Missing 'source_jdk_version' argument")
+        if target_jdk_version is None and 'targetJdkVersion' in kwargs:
             target_jdk_version = kwargs['targetJdkVersion']
-        if 'timeCreated' in kwargs:
+        if target_jdk_version is None:
+            raise TypeError("Missing 'target_jdk_version' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'workRequestId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
+        if work_request_id is None:
+            raise TypeError("Missing 'work_request_id' argument")
 
         _setter("application_execution_type", application_execution_type)
         _setter("application_name", application_name)
@@ -2109,14 +2313,18 @@ class GetFleetOperationLogResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -2153,11 +2361,15 @@ class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2191,9 +2403,11 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2265,49 +2479,83 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             application_id: str,
-             application_installation_id: str,
-             application_installation_path: str,
-             application_name: str,
-             bucket: str,
-             fleet_id: str,
-             host_name: str,
-             id: str,
-             managed_instance_id: str,
-             namespace: str,
-             object: str,
-             result: str,
-             time_created: str,
-             time_finished: str,
-             time_started: str,
-             warning_count: int,
-             work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             application_id: Optional[str] = None,
+             application_installation_id: Optional[str] = None,
+             application_installation_path: Optional[str] = None,
+             application_name: Optional[str] = None,
+             bucket: Optional[str] = None,
+             fleet_id: Optional[str] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             result: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             warning_count: Optional[int] = None,
+             work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationId' in kwargs:
+        if application_id is None and 'applicationId' in kwargs:
             application_id = kwargs['applicationId']
-        if 'applicationInstallationId' in kwargs:
+        if application_id is None:
+            raise TypeError("Missing 'application_id' argument")
+        if application_installation_id is None and 'applicationInstallationId' in kwargs:
             application_installation_id = kwargs['applicationInstallationId']
-        if 'applicationInstallationPath' in kwargs:
+        if application_installation_id is None:
+            raise TypeError("Missing 'application_installation_id' argument")
+        if application_installation_path is None and 'applicationInstallationPath' in kwargs:
             application_installation_path = kwargs['applicationInstallationPath']
-        if 'applicationName' in kwargs:
+        if application_installation_path is None:
+            raise TypeError("Missing 'application_installation_path' argument")
+        if application_name is None and 'applicationName' in kwargs:
             application_name = kwargs['applicationName']
-        if 'fleetId' in kwargs:
+        if application_name is None:
+            raise TypeError("Missing 'application_name' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if fleet_id is None and 'fleetId' in kwargs:
             fleet_id = kwargs['fleetId']
-        if 'hostName' in kwargs:
+        if fleet_id is None:
+            raise TypeError("Missing 'fleet_id' argument")
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managedInstanceId' in kwargs:
+        if host_name is None:
+            raise TypeError("Missing 'host_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'timeCreated' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeFinished' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
-        if 'warningCount' in kwargs:
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+        if warning_count is None and 'warningCount' in kwargs:
             warning_count = kwargs['warningCount']
-        if 'workRequestId' in kwargs:
+        if warning_count is None:
+            raise TypeError("Missing 'warning_count' argument")
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
+        if work_request_id is None:
+            raise TypeError("Missing 'work_request_id' argument")
 
         _setter("application_id", application_id)
         _setter("application_installation_id", application_installation_id)
@@ -2479,11 +2727,15 @@ class GetFleetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2517,9 +2769,11 @@ class GetFleetsFleetCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetFleetsFleetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetFleetsFleetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -2591,53 +2845,87 @@ class GetFleetsFleetCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_application_count: int,
-             approximate_installation_count: int,
-             approximate_java_server_count: int,
-             approximate_jre_count: int,
-             approximate_managed_instance_count: int,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             inventory_logs: Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult'],
-             is_advanced_features_enabled: bool,
-             operation_logs: Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult'],
-             state: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_application_count: Optional[int] = None,
+             approximate_installation_count: Optional[int] = None,
+             approximate_java_server_count: Optional[int] = None,
+             approximate_jre_count: Optional[int] = None,
+             approximate_managed_instance_count: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             inventory_logs: Optional[Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult']] = None,
+             is_advanced_features_enabled: Optional[bool] = None,
+             operation_logs: Optional[Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateApplicationCount' in kwargs:
+        if approximate_application_count is None and 'approximateApplicationCount' in kwargs:
             approximate_application_count = kwargs['approximateApplicationCount']
-        if 'approximateInstallationCount' in kwargs:
+        if approximate_application_count is None:
+            raise TypeError("Missing 'approximate_application_count' argument")
+        if approximate_installation_count is None and 'approximateInstallationCount' in kwargs:
             approximate_installation_count = kwargs['approximateInstallationCount']
-        if 'approximateJavaServerCount' in kwargs:
+        if approximate_installation_count is None:
+            raise TypeError("Missing 'approximate_installation_count' argument")
+        if approximate_java_server_count is None and 'approximateJavaServerCount' in kwargs:
             approximate_java_server_count = kwargs['approximateJavaServerCount']
-        if 'approximateJreCount' in kwargs:
+        if approximate_java_server_count is None:
+            raise TypeError("Missing 'approximate_java_server_count' argument")
+        if approximate_jre_count is None and 'approximateJreCount' in kwargs:
             approximate_jre_count = kwargs['approximateJreCount']
-        if 'approximateManagedInstanceCount' in kwargs:
+        if approximate_jre_count is None:
+            raise TypeError("Missing 'approximate_jre_count' argument")
+        if approximate_managed_instance_count is None and 'approximateManagedInstanceCount' in kwargs:
             approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
-        if 'compartmentId' in kwargs:
+        if approximate_managed_instance_count is None:
+            raise TypeError("Missing 'approximate_managed_instance_count' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'inventoryLogs' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if inventory_logs is None and 'inventoryLogs' in kwargs:
             inventory_logs = kwargs['inventoryLogs']
-        if 'isAdvancedFeaturesEnabled' in kwargs:
+        if inventory_logs is None:
+            raise TypeError("Missing 'inventory_logs' argument")
+        if is_advanced_features_enabled is None and 'isAdvancedFeaturesEnabled' in kwargs:
             is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
-        if 'operationLogs' in kwargs:
+        if is_advanced_features_enabled is None:
+            raise TypeError("Missing 'is_advanced_features_enabled' argument")
+        if operation_logs is None and 'operationLogs' in kwargs:
             operation_logs = kwargs['operationLogs']
-        if 'systemTags' in kwargs:
+        if operation_logs is None:
+            raise TypeError("Missing 'operation_logs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("approximate_application_count", approximate_application_count)
         _setter("approximate_installation_count", approximate_installation_count)
@@ -2811,14 +3099,18 @@ class GetFleetsFleetCollectionItemInventoryLogResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -2857,14 +3149,18 @@ class GetFleetsFleetCollectionItemOperationLogResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_group_id: str,
-             log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logId' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
             log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
 
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -2927,30 +3223,50 @@ class GetInstallationSiteItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_application_count: int,
-             blocklists: Sequence['outputs.GetInstallationSiteItemBlocklistResult'],
-             installation_key: str,
-             jres: Sequence['outputs.GetInstallationSiteItemJreResult'],
-             managed_instance_id: str,
-             operating_systems: Sequence['outputs.GetInstallationSiteItemOperatingSystemResult'],
-             path: str,
-             security_status: str,
-             state: str,
-             time_last_seen: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_application_count: Optional[int] = None,
+             blocklists: Optional[Sequence['outputs.GetInstallationSiteItemBlocklistResult']] = None,
+             installation_key: Optional[str] = None,
+             jres: Optional[Sequence['outputs.GetInstallationSiteItemJreResult']] = None,
+             managed_instance_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetInstallationSiteItemOperatingSystemResult']] = None,
+             path: Optional[str] = None,
+             security_status: Optional[str] = None,
+             state: Optional[str] = None,
+             time_last_seen: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateApplicationCount' in kwargs:
+        if approximate_application_count is None and 'approximateApplicationCount' in kwargs:
             approximate_application_count = kwargs['approximateApplicationCount']
-        if 'installationKey' in kwargs:
+        if approximate_application_count is None:
+            raise TypeError("Missing 'approximate_application_count' argument")
+        if blocklists is None:
+            raise TypeError("Missing 'blocklists' argument")
+        if installation_key is None and 'installationKey' in kwargs:
             installation_key = kwargs['installationKey']
-        if 'managedInstanceId' in kwargs:
+        if installation_key is None:
+            raise TypeError("Missing 'installation_key' argument")
+        if jres is None:
+            raise TypeError("Missing 'jres' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'operatingSystems' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'securityStatus' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if security_status is None and 'securityStatus' in kwargs:
             security_status = kwargs['securityStatus']
-        if 'timeLastSeen' in kwargs:
+        if security_status is None:
+            raise TypeError("Missing 'security_status' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_last_seen is None and 'timeLastSeen' in kwargs:
             time_last_seen = kwargs['timeLastSeen']
+        if time_last_seen is None:
+            raise TypeError("Missing 'time_last_seen' argument")
 
         _setter("approximate_application_count", approximate_application_count)
         _setter("blocklists", blocklists)
@@ -3061,10 +3377,14 @@ class GetInstallationSiteItemBlocklistResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation: str,
-             reason: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation: Optional[str] = None,
+             reason: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
 
         _setter("operation", operation)
         _setter("reason", reason)
@@ -3109,14 +3429,22 @@ class GetInstallationSiteItemJreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             distribution: str,
-             jre_key: str,
-             vendor: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             distribution: Optional[str] = None,
+             jre_key: Optional[str] = None,
+             vendor: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'jreKey' in kwargs:
+        if distribution is None:
+            raise TypeError("Missing 'distribution' argument")
+        if jre_key is None and 'jreKey' in kwargs:
             jre_key = kwargs['jreKey']
+        if jre_key is None:
+            raise TypeError("Missing 'jre_key' argument")
+        if vendor is None:
+            raise TypeError("Missing 'vendor' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("distribution", distribution)
         _setter("jre_key", jre_key)
@@ -3182,15 +3510,25 @@ class GetInstallationSiteItemOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             architecture: str,
-             family: str,
-             managed_instance_count: int,
-             name: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             architecture: Optional[str] = None,
+             family: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             name: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedInstanceCount' in kwargs:
+        if architecture is None:
+            raise TypeError("Missing 'architecture' argument")
+        if family is None:
+            raise TypeError("Missing 'family' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
             managed_instance_count = kwargs['managedInstanceCount']
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("architecture", architecture)
         _setter("family", family)
@@ -3257,11 +3595,15 @@ class GetInstallationSitesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3301,9 +3643,11 @@ class GetInstallationSitesInstallationSiteCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3330,9 +3674,11 @@ class GetInstallationSitesInstallationSiteCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3386,30 +3732,50 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_application_count: int,
-             blocklists: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult'],
-             installation_key: str,
-             jres: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult'],
-             managed_instance_id: str,
-             operating_systems: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult'],
-             path: str,
-             security_status: str,
-             state: str,
-             time_last_seen: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_application_count: Optional[int] = None,
+             blocklists: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult']] = None,
+             installation_key: Optional[str] = None,
+             jres: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult']] = None,
+             managed_instance_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult']] = None,
+             path: Optional[str] = None,
+             security_status: Optional[str] = None,
+             state: Optional[str] = None,
+             time_last_seen: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateApplicationCount' in kwargs:
+        if approximate_application_count is None and 'approximateApplicationCount' in kwargs:
             approximate_application_count = kwargs['approximateApplicationCount']
-        if 'installationKey' in kwargs:
+        if approximate_application_count is None:
+            raise TypeError("Missing 'approximate_application_count' argument")
+        if blocklists is None:
+            raise TypeError("Missing 'blocklists' argument")
+        if installation_key is None and 'installationKey' in kwargs:
             installation_key = kwargs['installationKey']
-        if 'managedInstanceId' in kwargs:
+        if installation_key is None:
+            raise TypeError("Missing 'installation_key' argument")
+        if jres is None:
+            raise TypeError("Missing 'jres' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'operatingSystems' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'securityStatus' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if security_status is None and 'securityStatus' in kwargs:
             security_status = kwargs['securityStatus']
-        if 'timeLastSeen' in kwargs:
+        if security_status is None:
+            raise TypeError("Missing 'security_status' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_last_seen is None and 'timeLastSeen' in kwargs:
             time_last_seen = kwargs['timeLastSeen']
+        if time_last_seen is None:
+            raise TypeError("Missing 'time_last_seen' argument")
 
         _setter("approximate_application_count", approximate_application_count)
         _setter("blocklists", blocklists)
@@ -3520,10 +3886,14 @@ class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             operation: str,
-             reason: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             operation: Optional[str] = None,
+             reason: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if operation is None:
+            raise TypeError("Missing 'operation' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
 
         _setter("operation", operation)
         _setter("reason", reason)
@@ -3568,14 +3938,22 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             distribution: str,
-             jre_key: str,
-             vendor: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             distribution: Optional[str] = None,
+             jre_key: Optional[str] = None,
+             vendor: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'jreKey' in kwargs:
+        if distribution is None:
+            raise TypeError("Missing 'distribution' argument")
+        if jre_key is None and 'jreKey' in kwargs:
             jre_key = kwargs['jreKey']
+        if jre_key is None:
+            raise TypeError("Missing 'jre_key' argument")
+        if vendor is None:
+            raise TypeError("Missing 'vendor' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("distribution", distribution)
         _setter("jre_key", jre_key)
@@ -3641,15 +4019,25 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             architecture: str,
-             family: str,
-             managed_instance_count: int,
-             name: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             architecture: Optional[str] = None,
+             family: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             name: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedInstanceCount' in kwargs:
+        if architecture is None:
+            raise TypeError("Missing 'architecture' argument")
+        if family is None:
+            raise TypeError("Missing 'family' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
             managed_instance_count = kwargs['managedInstanceCount']
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("architecture", architecture)
         _setter("family", family)
@@ -3713,11 +4101,15 @@ class GetJavaFamiliesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3751,9 +4143,11 @@ class GetJavaFamiliesJavaFamilyCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -3789,23 +4183,33 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             doc_url: str,
-             end_of_support_life_date: str,
-             family_version: str,
-             support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             doc_url: Optional[str] = None,
+             end_of_support_life_date: Optional[str] = None,
+             family_version: Optional[str] = None,
+             support_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'docUrl' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if doc_url is None and 'docUrl' in kwargs:
             doc_url = kwargs['docUrl']
-        if 'endOfSupportLifeDate' in kwargs:
+        if doc_url is None:
+            raise TypeError("Missing 'doc_url' argument")
+        if end_of_support_life_date is None and 'endOfSupportLifeDate' in kwargs:
             end_of_support_life_date = kwargs['endOfSupportLifeDate']
-        if 'familyVersion' in kwargs:
+        if end_of_support_life_date is None:
+            raise TypeError("Missing 'end_of_support_life_date' argument")
+        if family_version is None and 'familyVersion' in kwargs:
             family_version = kwargs['familyVersion']
-        if 'supportType' in kwargs:
+        if family_version is None:
+            raise TypeError("Missing 'family_version' argument")
+        if support_type is None and 'supportType' in kwargs:
             support_type = kwargs['supportType']
+        if support_type is None:
+            raise TypeError("Missing 'support_type' argument")
 
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
@@ -3880,21 +4284,31 @@ class GetJavaReleaseArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_file_size_in_bytes: str,
-             artifact_content_type: str,
-             artifact_description: str,
-             artifact_id: str,
-             sha256: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_file_size_in_bytes: Optional[str] = None,
+             artifact_content_type: Optional[str] = None,
+             artifact_description: Optional[str] = None,
+             artifact_id: Optional[str] = None,
+             sha256: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateFileSizeInBytes' in kwargs:
+        if approximate_file_size_in_bytes is None and 'approximateFileSizeInBytes' in kwargs:
             approximate_file_size_in_bytes = kwargs['approximateFileSizeInBytes']
-        if 'artifactContentType' in kwargs:
+        if approximate_file_size_in_bytes is None:
+            raise TypeError("Missing 'approximate_file_size_in_bytes' argument")
+        if artifact_content_type is None and 'artifactContentType' in kwargs:
             artifact_content_type = kwargs['artifactContentType']
-        if 'artifactDescription' in kwargs:
+        if artifact_content_type is None:
+            raise TypeError("Missing 'artifact_content_type' argument")
+        if artifact_description is None and 'artifactDescription' in kwargs:
             artifact_description = kwargs['artifactDescription']
-        if 'artifactId' in kwargs:
+        if artifact_description is None:
+            raise TypeError("Missing 'artifact_description' argument")
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
+        if artifact_id is None:
+            raise TypeError("Missing 'artifact_id' argument")
+        if sha256 is None:
+            raise TypeError("Missing 'sha256' argument")
 
         _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
         _setter("artifact_content_type", artifact_content_type)
@@ -3969,23 +4383,33 @@ class GetJavaReleaseFamilyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             doc_url: str,
-             end_of_support_life_date: str,
-             family_version: str,
-             support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             doc_url: Optional[str] = None,
+             end_of_support_life_date: Optional[str] = None,
+             family_version: Optional[str] = None,
+             support_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'docUrl' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if doc_url is None and 'docUrl' in kwargs:
             doc_url = kwargs['docUrl']
-        if 'endOfSupportLifeDate' in kwargs:
+        if doc_url is None:
+            raise TypeError("Missing 'doc_url' argument")
+        if end_of_support_life_date is None and 'endOfSupportLifeDate' in kwargs:
             end_of_support_life_date = kwargs['endOfSupportLifeDate']
-        if 'familyVersion' in kwargs:
+        if end_of_support_life_date is None:
+            raise TypeError("Missing 'end_of_support_life_date' argument")
+        if family_version is None and 'familyVersion' in kwargs:
             family_version = kwargs['familyVersion']
-        if 'supportType' in kwargs:
+        if family_version is None:
+            raise TypeError("Missing 'family_version' argument")
+        if support_type is None and 'supportType' in kwargs:
             support_type = kwargs['supportType']
+        if support_type is None:
+            raise TypeError("Missing 'support_type' argument")
 
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
@@ -4054,17 +4478,23 @@ class GetJavaReleaseLicenseDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             license_type: str,
-             license_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             license_type: Optional[str] = None,
+             license_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'licenseType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'licenseUrl' in kwargs:
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+        if license_url is None and 'licenseUrl' in kwargs:
             license_url = kwargs['licenseUrl']
+        if license_url is None:
+            raise TypeError("Missing 'license_url' argument")
 
         _setter("display_name", display_name)
         _setter("license_type", license_type)
@@ -4110,11 +4540,15 @@ class GetJavaReleasesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4148,9 +4582,11 @@ class GetJavaReleasesJavaReleaseCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -4207,42 +4643,66 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             artifact_content_types: Sequence[str],
-             artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
-             family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
-             family_version: str,
-             license_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult'],
-             license_type: str,
-             parent_release_version: str,
-             release_date: str,
-             release_notes_url: str,
-             release_type: str,
-             release_version: str,
-             security_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             artifact_content_types: Optional[Sequence[str]] = None,
+             artifacts: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']] = None,
+             family_details: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']] = None,
+             family_version: Optional[str] = None,
+             license_details: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult']] = None,
+             license_type: Optional[str] = None,
+             parent_release_version: Optional[str] = None,
+             release_date: Optional[str] = None,
+             release_notes_url: Optional[str] = None,
+             release_type: Optional[str] = None,
+             release_version: Optional[str] = None,
+             security_status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'artifactContentTypes' in kwargs:
+        if artifact_content_types is None and 'artifactContentTypes' in kwargs:
             artifact_content_types = kwargs['artifactContentTypes']
-        if 'familyDetails' in kwargs:
+        if artifact_content_types is None:
+            raise TypeError("Missing 'artifact_content_types' argument")
+        if artifacts is None:
+            raise TypeError("Missing 'artifacts' argument")
+        if family_details is None and 'familyDetails' in kwargs:
             family_details = kwargs['familyDetails']
-        if 'familyVersion' in kwargs:
+        if family_details is None:
+            raise TypeError("Missing 'family_details' argument")
+        if family_version is None and 'familyVersion' in kwargs:
             family_version = kwargs['familyVersion']
-        if 'licenseDetails' in kwargs:
+        if family_version is None:
+            raise TypeError("Missing 'family_version' argument")
+        if license_details is None and 'licenseDetails' in kwargs:
             license_details = kwargs['licenseDetails']
-        if 'licenseType' in kwargs:
+        if license_details is None:
+            raise TypeError("Missing 'license_details' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'parentReleaseVersion' in kwargs:
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+        if parent_release_version is None and 'parentReleaseVersion' in kwargs:
             parent_release_version = kwargs['parentReleaseVersion']
-        if 'releaseDate' in kwargs:
+        if parent_release_version is None:
+            raise TypeError("Missing 'parent_release_version' argument")
+        if release_date is None and 'releaseDate' in kwargs:
             release_date = kwargs['releaseDate']
-        if 'releaseNotesUrl' in kwargs:
+        if release_date is None:
+            raise TypeError("Missing 'release_date' argument")
+        if release_notes_url is None and 'releaseNotesUrl' in kwargs:
             release_notes_url = kwargs['releaseNotesUrl']
-        if 'releaseType' in kwargs:
+        if release_notes_url is None:
+            raise TypeError("Missing 'release_notes_url' argument")
+        if release_type is None and 'releaseType' in kwargs:
             release_type = kwargs['releaseType']
-        if 'releaseVersion' in kwargs:
+        if release_type is None:
+            raise TypeError("Missing 'release_type' argument")
+        if release_version is None and 'releaseVersion' in kwargs:
             release_version = kwargs['releaseVersion']
-        if 'securityStatus' in kwargs:
+        if release_version is None:
+            raise TypeError("Missing 'release_version' argument")
+        if security_status is None and 'securityStatus' in kwargs:
             security_status = kwargs['securityStatus']
+        if security_status is None:
+            raise TypeError("Missing 'security_status' argument")
 
         _setter("artifact_content_types", artifact_content_types)
         _setter("artifacts", artifacts)
@@ -4380,21 +4840,31 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_file_size_in_bytes: str,
-             artifact_content_type: str,
-             artifact_description: str,
-             artifact_id: str,
-             sha256: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_file_size_in_bytes: Optional[str] = None,
+             artifact_content_type: Optional[str] = None,
+             artifact_description: Optional[str] = None,
+             artifact_id: Optional[str] = None,
+             sha256: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateFileSizeInBytes' in kwargs:
+        if approximate_file_size_in_bytes is None and 'approximateFileSizeInBytes' in kwargs:
             approximate_file_size_in_bytes = kwargs['approximateFileSizeInBytes']
-        if 'artifactContentType' in kwargs:
+        if approximate_file_size_in_bytes is None:
+            raise TypeError("Missing 'approximate_file_size_in_bytes' argument")
+        if artifact_content_type is None and 'artifactContentType' in kwargs:
             artifact_content_type = kwargs['artifactContentType']
-        if 'artifactDescription' in kwargs:
+        if artifact_content_type is None:
+            raise TypeError("Missing 'artifact_content_type' argument")
+        if artifact_description is None and 'artifactDescription' in kwargs:
             artifact_description = kwargs['artifactDescription']
-        if 'artifactId' in kwargs:
+        if artifact_description is None:
+            raise TypeError("Missing 'artifact_description' argument")
+        if artifact_id is None and 'artifactId' in kwargs:
             artifact_id = kwargs['artifactId']
+        if artifact_id is None:
+            raise TypeError("Missing 'artifact_id' argument")
+        if sha256 is None:
+            raise TypeError("Missing 'sha256' argument")
 
         _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
         _setter("artifact_content_type", artifact_content_type)
@@ -4469,23 +4939,33 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             doc_url: str,
-             end_of_support_life_date: str,
-             family_version: str,
-             support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             doc_url: Optional[str] = None,
+             end_of_support_life_date: Optional[str] = None,
+             family_version: Optional[str] = None,
+             support_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'docUrl' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if doc_url is None and 'docUrl' in kwargs:
             doc_url = kwargs['docUrl']
-        if 'endOfSupportLifeDate' in kwargs:
+        if doc_url is None:
+            raise TypeError("Missing 'doc_url' argument")
+        if end_of_support_life_date is None and 'endOfSupportLifeDate' in kwargs:
             end_of_support_life_date = kwargs['endOfSupportLifeDate']
-        if 'familyVersion' in kwargs:
+        if end_of_support_life_date is None:
+            raise TypeError("Missing 'end_of_support_life_date' argument")
+        if family_version is None and 'familyVersion' in kwargs:
             family_version = kwargs['familyVersion']
-        if 'supportType' in kwargs:
+        if family_version is None:
+            raise TypeError("Missing 'family_version' argument")
+        if support_type is None and 'supportType' in kwargs:
             support_type = kwargs['supportType']
+        if support_type is None:
+            raise TypeError("Missing 'support_type' argument")
 
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
@@ -4554,17 +5034,23 @@ class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             display_name: str,
-             license_type: str,
-             license_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             display_name: Optional[str] = None,
+             license_type: Optional[str] = None,
+             license_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'licenseType' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if license_type is None and 'licenseType' in kwargs:
             license_type = kwargs['licenseType']
-        if 'licenseUrl' in kwargs:
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+        if license_url is None and 'licenseUrl' in kwargs:
             license_url = kwargs['licenseUrl']
+        if license_url is None:
+            raise TypeError("Missing 'license_url' argument")
 
         _setter("display_name", display_name)
         _setter("license_type", license_type)
@@ -4663,57 +5149,95 @@ class GetListJreUsageItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             approximate_application_count: int,
-             approximate_installation_count: int,
-             approximate_managed_instance_count: int,
-             approximate_pending_work_request_count: int,
-             days_under_security_baseline: int,
-             distribution: str,
-             end_of_support_life_date: str,
-             fleet_id: str,
-             id: str,
-             managed_instance_id: str,
-             operating_systems: Sequence['outputs.GetListJreUsageItemOperatingSystemResult'],
-             release_date: str,
-             security_status: str,
-             time_end: str,
-             time_first_seen: str,
-             time_last_seen: str,
-             time_start: str,
-             vendor: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             approximate_application_count: Optional[int] = None,
+             approximate_installation_count: Optional[int] = None,
+             approximate_managed_instance_count: Optional[int] = None,
+             approximate_pending_work_request_count: Optional[int] = None,
+             days_under_security_baseline: Optional[int] = None,
+             distribution: Optional[str] = None,
+             end_of_support_life_date: Optional[str] = None,
+             fleet_id: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             operating_systems: Optional[Sequence['outputs.GetListJreUsageItemOperatingSystemResult']] = None,
+             release_date: Optional[str] = None,
+             security_status: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_first_seen: Optional[str] = None,
+             time_last_seen: Optional[str] = None,
+             time_start: Optional[str] = None,
+             vendor: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'approximateApplicationCount' in kwargs:
+        if approximate_application_count is None and 'approximateApplicationCount' in kwargs:
             approximate_application_count = kwargs['approximateApplicationCount']
-        if 'approximateInstallationCount' in kwargs:
+        if approximate_application_count is None:
+            raise TypeError("Missing 'approximate_application_count' argument")
+        if approximate_installation_count is None and 'approximateInstallationCount' in kwargs:
             approximate_installation_count = kwargs['approximateInstallationCount']
-        if 'approximateManagedInstanceCount' in kwargs:
+        if approximate_installation_count is None:
+            raise TypeError("Missing 'approximate_installation_count' argument")
+        if approximate_managed_instance_count is None and 'approximateManagedInstanceCount' in kwargs:
             approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
-        if 'approximatePendingWorkRequestCount' in kwargs:
+        if approximate_managed_instance_count is None:
+            raise TypeError("Missing 'approximate_managed_instance_count' argument")
+        if approximate_pending_work_request_count is None and 'approximatePendingWorkRequestCount' in kwargs:
             approximate_pending_work_request_count = kwargs['approximatePendingWorkRequestCount']
-        if 'daysUnderSecurityBaseline' in kwargs:
+        if approximate_pending_work_request_count is None:
+            raise TypeError("Missing 'approximate_pending_work_request_count' argument")
+        if days_under_security_baseline is None and 'daysUnderSecurityBaseline' in kwargs:
             days_under_security_baseline = kwargs['daysUnderSecurityBaseline']
-        if 'endOfSupportLifeDate' in kwargs:
+        if days_under_security_baseline is None:
+            raise TypeError("Missing 'days_under_security_baseline' argument")
+        if distribution is None:
+            raise TypeError("Missing 'distribution' argument")
+        if end_of_support_life_date is None and 'endOfSupportLifeDate' in kwargs:
             end_of_support_life_date = kwargs['endOfSupportLifeDate']
-        if 'fleetId' in kwargs:
+        if end_of_support_life_date is None:
+            raise TypeError("Missing 'end_of_support_life_date' argument")
+        if fleet_id is None and 'fleetId' in kwargs:
             fleet_id = kwargs['fleetId']
-        if 'managedInstanceId' in kwargs:
+        if fleet_id is None:
+            raise TypeError("Missing 'fleet_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
             managed_instance_id = kwargs['managedInstanceId']
-        if 'operatingSystems' in kwargs:
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if operating_systems is None and 'operatingSystems' in kwargs:
             operating_systems = kwargs['operatingSystems']
-        if 'releaseDate' in kwargs:
+        if operating_systems is None:
+            raise TypeError("Missing 'operating_systems' argument")
+        if release_date is None and 'releaseDate' in kwargs:
             release_date = kwargs['releaseDate']
-        if 'securityStatus' in kwargs:
+        if release_date is None:
+            raise TypeError("Missing 'release_date' argument")
+        if security_status is None and 'securityStatus' in kwargs:
             security_status = kwargs['securityStatus']
-        if 'timeEnd' in kwargs:
+        if security_status is None:
+            raise TypeError("Missing 'security_status' argument")
+        if time_end is None and 'timeEnd' in kwargs:
             time_end = kwargs['timeEnd']
-        if 'timeFirstSeen' in kwargs:
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_first_seen is None and 'timeFirstSeen' in kwargs:
             time_first_seen = kwargs['timeFirstSeen']
-        if 'timeLastSeen' in kwargs:
+        if time_first_seen is None:
+            raise TypeError("Missing 'time_first_seen' argument")
+        if time_last_seen is None and 'timeLastSeen' in kwargs:
             time_last_seen = kwargs['timeLastSeen']
-        if 'timeStart' in kwargs:
+        if time_last_seen is None:
+            raise TypeError("Missing 'time_last_seen' argument")
+        if time_start is None and 'timeStart' in kwargs:
             time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if vendor is None:
+            raise TypeError("Missing 'vendor' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("approximate_application_count", approximate_application_count)
         _setter("approximate_installation_count", approximate_installation_count)
@@ -4914,15 +5438,25 @@ class GetListJreUsageItemOperatingSystemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             architecture: str,
-             family: str,
-             managed_instance_count: int,
-             name: str,
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             architecture: Optional[str] = None,
+             family: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             name: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'managedInstanceCount' in kwargs:
+        if architecture is None:
+            raise TypeError("Missing 'architecture' argument")
+        if family is None:
+            raise TypeError("Missing 'family' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
             managed_instance_count = kwargs['managedInstanceCount']
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("architecture", architecture)
         _setter("family", family)

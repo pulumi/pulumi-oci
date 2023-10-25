@@ -53,27 +53,33 @@ class DrProtectionGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             log_location: pulumi.Input['DrProtectionGroupLogLocationArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             log_location: Optional[pulumi.Input['DrProtectionGroupLogLocationArgs']] = None,
              association: Optional[pulumi.Input['DrProtectionGroupAssociationArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              disassociate_trigger: Optional[pulumi.Input[int]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'logLocation' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if log_location is None and 'logLocation' in kwargs:
             log_location = kwargs['logLocation']
-        if 'definedTags' in kwargs:
+        if log_location is None:
+            raise TypeError("Missing 'log_location' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'disassociateTrigger' in kwargs:
+        if disassociate_trigger is None and 'disassociateTrigger' in kwargs:
             disassociate_trigger = kwargs['disassociateTrigger']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("compartment_id", compartment_id)
@@ -271,31 +277,31 @@ class _DrProtectionGroupState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'disassociateTrigger' in kwargs:
+        if disassociate_trigger is None and 'disassociateTrigger' in kwargs:
             disassociate_trigger = kwargs['disassociateTrigger']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifeCycleDetails' in kwargs:
+        if life_cycle_details is None and 'lifeCycleDetails' in kwargs:
             life_cycle_details = kwargs['lifeCycleDetails']
-        if 'logLocation' in kwargs:
+        if log_location is None and 'logLocation' in kwargs:
             log_location = kwargs['logLocation']
-        if 'peerId' in kwargs:
+        if peer_id is None and 'peerId' in kwargs:
             peer_id = kwargs['peerId']
-        if 'peerRegion' in kwargs:
+        if peer_region is None and 'peerRegion' in kwargs:
             peer_region = kwargs['peerRegion']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if association is not None:
@@ -725,11 +731,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DrProtectionGroupArgs.__new__(DrProtectionGroupArgs)
 
-            if association is not None and not isinstance(association, DrProtectionGroupAssociationArgs):
-                association = association or {}
-                def _setter(key, value):
-                    association[key] = value
-                DrProtectionGroupAssociationArgs._configure(_setter, **association)
+            association = _utilities.configure(association, DrProtectionGroupAssociationArgs, True)
             __props__.__dict__["association"] = association
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -740,11 +742,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if log_location is not None and not isinstance(log_location, DrProtectionGroupLogLocationArgs):
-                log_location = log_location or {}
-                def _setter(key, value):
-                    log_location[key] = value
-                DrProtectionGroupLogLocationArgs._configure(_setter, **log_location)
+            log_location = _utilities.configure(log_location, DrProtectionGroupLogLocationArgs, True)
             if log_location is None and not opts.urn:
                 raise TypeError("Missing required property 'log_location'")
             __props__.__dict__["log_location"] = log_location

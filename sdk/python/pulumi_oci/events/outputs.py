@@ -35,9 +35,11 @@ class RuleActions(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.RuleActionsAction'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.RuleActionsAction']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
 
         _setter("actions", actions)
 
@@ -122,8 +124,8 @@ class RuleActionsAction(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             is_enabled: bool,
+             action_type: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
              description: Optional[str] = None,
              function_id: Optional[str] = None,
              id: Optional[str] = None,
@@ -131,19 +133,23 @@ class RuleActionsAction(dict):
              state: Optional[str] = None,
              stream_id: Optional[str] = None,
              topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'isEnabled' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'functionId' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'lifecycleMessage' in kwargs:
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
             lifecycle_message = kwargs['lifecycleMessage']
-        if 'streamId' in kwargs:
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
 
         _setter("action_type", action_type)
@@ -257,9 +263,11 @@ class GetRuleActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetRuleActionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetRuleActionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
 
         _setter("actions", actions)
 
@@ -313,29 +321,47 @@ class GetRuleActionActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             description: str,
-             function_id: str,
-             id: str,
-             is_enabled: bool,
-             lifecycle_message: str,
-             state: str,
-             stream_id: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action_type: Optional[str] = None,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'functionId' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isEnabled' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleMessage' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
             lifecycle_message = kwargs['lifecycleMessage']
-        if 'streamId' in kwargs:
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("action_type", action_type)
         _setter("description", description)
@@ -438,11 +464,15 @@ class GetRulesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -513,34 +543,58 @@ class GetRulesRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetRulesRuleActionResult'],
-             compartment_id: str,
-             condition: str,
-             defined_tags: Mapping[str, Any],
-             description: str,
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_enabled: bool,
-             lifecycle_message: str,
-             state: str,
-             time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetRulesRuleActionResult']] = None,
+             compartment_id: Optional[str] = None,
+             condition: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleMessage' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
             lifecycle_message = kwargs['lifecycleMessage']
-        if 'timeCreated' in kwargs:
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
 
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
@@ -667,9 +721,11 @@ class GetRulesRuleActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             actions: Sequence['outputs.GetRulesRuleActionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             actions: Optional[Sequence['outputs.GetRulesRuleActionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
 
         _setter("actions", actions)
 
@@ -723,29 +779,47 @@ class GetRulesRuleActionActionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action_type: str,
-             description: str,
-             function_id: str,
-             id: str,
-             is_enabled: bool,
-             lifecycle_message: str,
-             state: str,
-             stream_id: str,
-             topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action_type: Optional[str] = None,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionType' in kwargs:
+        if action_type is None and 'actionType' in kwargs:
             action_type = kwargs['actionType']
-        if 'functionId' in kwargs:
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'isEnabled' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleMessage' in kwargs:
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
             lifecycle_message = kwargs['lifecycleMessage']
-        if 'streamId' in kwargs:
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_id is None and 'streamId' in kwargs:
             stream_id = kwargs['streamId']
-        if 'topicId' in kwargs:
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
             topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
 
         _setter("action_type", action_type)
         _setter("description", description)

@@ -381,21 +381,21 @@ class DomainsAuthenticationFactorSettingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             authentication_factor_setting_id: pulumi.Input[str],
-             bypass_code_enabled: pulumi.Input[bool],
-             bypass_code_settings: pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs'],
-             client_app_settings: pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs'],
-             compliance_policies: pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]],
-             endpoint_restrictions: pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs'],
-             idcs_endpoint: pulumi.Input[str],
-             mfa_enrollment_type: pulumi.Input[str],
-             notification_settings: pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs'],
-             push_enabled: pulumi.Input[bool],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
-             security_questions_enabled: pulumi.Input[bool],
-             sms_enabled: pulumi.Input[bool],
-             totp_enabled: pulumi.Input[bool],
-             totp_settings: pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs'],
+             authentication_factor_setting_id: Optional[pulumi.Input[str]] = None,
+             bypass_code_enabled: Optional[pulumi.Input[bool]] = None,
+             bypass_code_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] = None,
+             client_app_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] = None,
+             compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] = None,
+             endpoint_restrictions: Optional[pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             mfa_enrollment_type: Optional[pulumi.Input[str]] = None,
+             notification_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] = None,
+             push_enabled: Optional[pulumi.Input[bool]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             security_questions_enabled: Optional[pulumi.Input[bool]] = None,
+             sms_enabled: Optional[pulumi.Input[bool]] = None,
+             totp_enabled: Optional[pulumi.Input[bool]] = None,
+             totp_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs']] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -414,63 +414,93 @@ class DomainsAuthenticationFactorSettingArgs:
              urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
              user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authenticationFactorSettingId' in kwargs:
+        if authentication_factor_setting_id is None and 'authenticationFactorSettingId' in kwargs:
             authentication_factor_setting_id = kwargs['authenticationFactorSettingId']
-        if 'bypassCodeEnabled' in kwargs:
+        if authentication_factor_setting_id is None:
+            raise TypeError("Missing 'authentication_factor_setting_id' argument")
+        if bypass_code_enabled is None and 'bypassCodeEnabled' in kwargs:
             bypass_code_enabled = kwargs['bypassCodeEnabled']
-        if 'bypassCodeSettings' in kwargs:
+        if bypass_code_enabled is None:
+            raise TypeError("Missing 'bypass_code_enabled' argument")
+        if bypass_code_settings is None and 'bypassCodeSettings' in kwargs:
             bypass_code_settings = kwargs['bypassCodeSettings']
-        if 'clientAppSettings' in kwargs:
+        if bypass_code_settings is None:
+            raise TypeError("Missing 'bypass_code_settings' argument")
+        if client_app_settings is None and 'clientAppSettings' in kwargs:
             client_app_settings = kwargs['clientAppSettings']
-        if 'compliancePolicies' in kwargs:
+        if client_app_settings is None:
+            raise TypeError("Missing 'client_app_settings' argument")
+        if compliance_policies is None and 'compliancePolicies' in kwargs:
             compliance_policies = kwargs['compliancePolicies']
-        if 'endpointRestrictions' in kwargs:
+        if compliance_policies is None:
+            raise TypeError("Missing 'compliance_policies' argument")
+        if endpoint_restrictions is None and 'endpointRestrictions' in kwargs:
             endpoint_restrictions = kwargs['endpointRestrictions']
-        if 'idcsEndpoint' in kwargs:
+        if endpoint_restrictions is None:
+            raise TypeError("Missing 'endpoint_restrictions' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'mfaEnrollmentType' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if mfa_enrollment_type is None and 'mfaEnrollmentType' in kwargs:
             mfa_enrollment_type = kwargs['mfaEnrollmentType']
-        if 'notificationSettings' in kwargs:
+        if mfa_enrollment_type is None:
+            raise TypeError("Missing 'mfa_enrollment_type' argument")
+        if notification_settings is None and 'notificationSettings' in kwargs:
             notification_settings = kwargs['notificationSettings']
-        if 'pushEnabled' in kwargs:
+        if notification_settings is None:
+            raise TypeError("Missing 'notification_settings' argument")
+        if push_enabled is None and 'pushEnabled' in kwargs:
             push_enabled = kwargs['pushEnabled']
-        if 'securityQuestionsEnabled' in kwargs:
+        if push_enabled is None:
+            raise TypeError("Missing 'push_enabled' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if security_questions_enabled is None and 'securityQuestionsEnabled' in kwargs:
             security_questions_enabled = kwargs['securityQuestionsEnabled']
-        if 'smsEnabled' in kwargs:
+        if security_questions_enabled is None:
+            raise TypeError("Missing 'security_questions_enabled' argument")
+        if sms_enabled is None and 'smsEnabled' in kwargs:
             sms_enabled = kwargs['smsEnabled']
-        if 'totpEnabled' in kwargs:
+        if sms_enabled is None:
+            raise TypeError("Missing 'sms_enabled' argument")
+        if totp_enabled is None and 'totpEnabled' in kwargs:
             totp_enabled = kwargs['totpEnabled']
-        if 'totpSettings' in kwargs:
+        if totp_enabled is None:
+            raise TypeError("Missing 'totp_enabled' argument")
+        if totp_settings is None and 'totpSettings' in kwargs:
             totp_settings = kwargs['totpSettings']
-        if 'attributeSets' in kwargs:
+        if totp_settings is None:
+            raise TypeError("Missing 'totp_settings' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'autoEnrollEmailFactorDisabled' in kwargs:
+        if auto_enroll_email_factor_disabled is None and 'autoEnrollEmailFactorDisabled' in kwargs:
             auto_enroll_email_factor_disabled = kwargs['autoEnrollEmailFactorDisabled']
-        if 'emailEnabled' in kwargs:
+        if email_enabled is None and 'emailEnabled' in kwargs:
             email_enabled = kwargs['emailEnabled']
-        if 'emailSettings' in kwargs:
+        if email_settings is None and 'emailSettings' in kwargs:
             email_settings = kwargs['emailSettings']
-        if 'fidoAuthenticatorEnabled' in kwargs:
+        if fido_authenticator_enabled is None and 'fidoAuthenticatorEnabled' in kwargs:
             fido_authenticator_enabled = kwargs['fidoAuthenticatorEnabled']
-        if 'hideBackupFactorEnabled' in kwargs:
+        if hide_backup_factor_enabled is None and 'hideBackupFactorEnabled' in kwargs:
             hide_backup_factor_enabled = kwargs['hideBackupFactorEnabled']
-        if 'identityStoreSettings' in kwargs:
+        if identity_store_settings is None and 'identityStoreSettings' in kwargs:
             identity_store_settings = kwargs['identityStoreSettings']
-        if 'phoneCallEnabled' in kwargs:
+        if phone_call_enabled is None and 'phoneCallEnabled' in kwargs:
             phone_call_enabled = kwargs['phoneCallEnabled']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'thirdPartyFactor' in kwargs:
+        if third_party_factor is None and 'thirdPartyFactor' in kwargs:
             third_party_factor = kwargs['thirdPartyFactor']
-        if 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is None and 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings']
-        if 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is None and 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings']
-        if 'userEnrollmentDisabledFactors' in kwargs:
+        if user_enrollment_disabled_factors is None and 'userEnrollmentDisabledFactors' in kwargs:
             user_enrollment_disabled_factors = kwargs['userEnrollmentDisabledFactors']
-        if 'yubicoOtpEnabled' in kwargs:
+        if yubico_otp_enabled is None and 'yubicoOtpEnabled' in kwargs:
             yubico_otp_enabled = kwargs['yubicoOtpEnabled']
 
         _setter("authentication_factor_setting_id", authentication_factor_setting_id)
@@ -1716,81 +1746,81 @@ class _DomainsAuthenticationFactorSettingState:
              urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
              user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'authenticationFactorSettingId' in kwargs:
+        if authentication_factor_setting_id is None and 'authenticationFactorSettingId' in kwargs:
             authentication_factor_setting_id = kwargs['authenticationFactorSettingId']
-        if 'autoEnrollEmailFactorDisabled' in kwargs:
+        if auto_enroll_email_factor_disabled is None and 'autoEnrollEmailFactorDisabled' in kwargs:
             auto_enroll_email_factor_disabled = kwargs['autoEnrollEmailFactorDisabled']
-        if 'bypassCodeEnabled' in kwargs:
+        if bypass_code_enabled is None and 'bypassCodeEnabled' in kwargs:
             bypass_code_enabled = kwargs['bypassCodeEnabled']
-        if 'bypassCodeSettings' in kwargs:
+        if bypass_code_settings is None and 'bypassCodeSettings' in kwargs:
             bypass_code_settings = kwargs['bypassCodeSettings']
-        if 'clientAppSettings' in kwargs:
+        if client_app_settings is None and 'clientAppSettings' in kwargs:
             client_app_settings = kwargs['clientAppSettings']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'compliancePolicies' in kwargs:
+        if compliance_policies is None and 'compliancePolicies' in kwargs:
             compliance_policies = kwargs['compliancePolicies']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'emailEnabled' in kwargs:
+        if email_enabled is None and 'emailEnabled' in kwargs:
             email_enabled = kwargs['emailEnabled']
-        if 'emailSettings' in kwargs:
+        if email_settings is None and 'emailSettings' in kwargs:
             email_settings = kwargs['emailSettings']
-        if 'endpointRestrictions' in kwargs:
+        if endpoint_restrictions is None and 'endpointRestrictions' in kwargs:
             endpoint_restrictions = kwargs['endpointRestrictions']
-        if 'fidoAuthenticatorEnabled' in kwargs:
+        if fido_authenticator_enabled is None and 'fidoAuthenticatorEnabled' in kwargs:
             fido_authenticator_enabled = kwargs['fidoAuthenticatorEnabled']
-        if 'hideBackupFactorEnabled' in kwargs:
+        if hide_backup_factor_enabled is None and 'hideBackupFactorEnabled' in kwargs:
             hide_backup_factor_enabled = kwargs['hideBackupFactorEnabled']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'identityStoreSettings' in kwargs:
+        if identity_store_settings is None and 'identityStoreSettings' in kwargs:
             identity_store_settings = kwargs['identityStoreSettings']
-        if 'mfaEnabledCategory' in kwargs:
+        if mfa_enabled_category is None and 'mfaEnabledCategory' in kwargs:
             mfa_enabled_category = kwargs['mfaEnabledCategory']
-        if 'mfaEnrollmentType' in kwargs:
+        if mfa_enrollment_type is None and 'mfaEnrollmentType' in kwargs:
             mfa_enrollment_type = kwargs['mfaEnrollmentType']
-        if 'notificationSettings' in kwargs:
+        if notification_settings is None and 'notificationSettings' in kwargs:
             notification_settings = kwargs['notificationSettings']
-        if 'phoneCallEnabled' in kwargs:
+        if phone_call_enabled is None and 'phoneCallEnabled' in kwargs:
             phone_call_enabled = kwargs['phoneCallEnabled']
-        if 'pushEnabled' in kwargs:
+        if push_enabled is None and 'pushEnabled' in kwargs:
             push_enabled = kwargs['pushEnabled']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'securityQuestionsEnabled' in kwargs:
+        if security_questions_enabled is None and 'securityQuestionsEnabled' in kwargs:
             security_questions_enabled = kwargs['securityQuestionsEnabled']
-        if 'smsEnabled' in kwargs:
+        if sms_enabled is None and 'smsEnabled' in kwargs:
             sms_enabled = kwargs['smsEnabled']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'thirdPartyFactor' in kwargs:
+        if third_party_factor is None and 'thirdPartyFactor' in kwargs:
             third_party_factor = kwargs['thirdPartyFactor']
-        if 'totpEnabled' in kwargs:
+        if totp_enabled is None and 'totpEnabled' in kwargs:
             totp_enabled = kwargs['totpEnabled']
-        if 'totpSettings' in kwargs:
+        if totp_settings is None and 'totpSettings' in kwargs:
             totp_settings = kwargs['totpSettings']
-        if 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is None and 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings']
-        if 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is None and 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings']
-        if 'userEnrollmentDisabledFactors' in kwargs:
+        if user_enrollment_disabled_factors is None and 'userEnrollmentDisabledFactors' in kwargs:
             user_enrollment_disabled_factors = kwargs['userEnrollmentDisabledFactors']
-        if 'yubicoOtpEnabled' in kwargs:
+        if yubico_otp_enabled is None and 'yubicoOtpEnabled' in kwargs:
             yubico_otp_enabled = kwargs['yubicoOtpEnabled']
 
         if attribute_sets is not None:
@@ -3185,19 +3215,11 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             if bypass_code_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'bypass_code_enabled'")
             __props__.__dict__["bypass_code_enabled"] = bypass_code_enabled
-            if bypass_code_settings is not None and not isinstance(bypass_code_settings, DomainsAuthenticationFactorSettingBypassCodeSettingsArgs):
-                bypass_code_settings = bypass_code_settings or {}
-                def _setter(key, value):
-                    bypass_code_settings[key] = value
-                DomainsAuthenticationFactorSettingBypassCodeSettingsArgs._configure(_setter, **bypass_code_settings)
+            bypass_code_settings = _utilities.configure(bypass_code_settings, DomainsAuthenticationFactorSettingBypassCodeSettingsArgs, True)
             if bypass_code_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'bypass_code_settings'")
             __props__.__dict__["bypass_code_settings"] = bypass_code_settings
-            if client_app_settings is not None and not isinstance(client_app_settings, DomainsAuthenticationFactorSettingClientAppSettingsArgs):
-                client_app_settings = client_app_settings or {}
-                def _setter(key, value):
-                    client_app_settings[key] = value
-                DomainsAuthenticationFactorSettingClientAppSettingsArgs._configure(_setter, **client_app_settings)
+            client_app_settings = _utilities.configure(client_app_settings, DomainsAuthenticationFactorSettingClientAppSettingsArgs, True)
             if client_app_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'client_app_settings'")
             __props__.__dict__["client_app_settings"] = client_app_settings
@@ -3205,17 +3227,9 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compliance_policies'")
             __props__.__dict__["compliance_policies"] = compliance_policies
             __props__.__dict__["email_enabled"] = email_enabled
-            if email_settings is not None and not isinstance(email_settings, DomainsAuthenticationFactorSettingEmailSettingsArgs):
-                email_settings = email_settings or {}
-                def _setter(key, value):
-                    email_settings[key] = value
-                DomainsAuthenticationFactorSettingEmailSettingsArgs._configure(_setter, **email_settings)
+            email_settings = _utilities.configure(email_settings, DomainsAuthenticationFactorSettingEmailSettingsArgs, True)
             __props__.__dict__["email_settings"] = email_settings
-            if endpoint_restrictions is not None and not isinstance(endpoint_restrictions, DomainsAuthenticationFactorSettingEndpointRestrictionsArgs):
-                endpoint_restrictions = endpoint_restrictions or {}
-                def _setter(key, value):
-                    endpoint_restrictions[key] = value
-                DomainsAuthenticationFactorSettingEndpointRestrictionsArgs._configure(_setter, **endpoint_restrictions)
+            endpoint_restrictions = _utilities.configure(endpoint_restrictions, DomainsAuthenticationFactorSettingEndpointRestrictionsArgs, True)
             if endpoint_restrictions is None and not opts.urn:
                 raise TypeError("Missing required property 'endpoint_restrictions'")
             __props__.__dict__["endpoint_restrictions"] = endpoint_restrictions
@@ -3224,20 +3238,12 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
-            if identity_store_settings is not None and not isinstance(identity_store_settings, DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs):
-                identity_store_settings = identity_store_settings or {}
-                def _setter(key, value):
-                    identity_store_settings[key] = value
-                DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs._configure(_setter, **identity_store_settings)
+            identity_store_settings = _utilities.configure(identity_store_settings, DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs, True)
             __props__.__dict__["identity_store_settings"] = identity_store_settings
             if mfa_enrollment_type is None and not opts.urn:
                 raise TypeError("Missing required property 'mfa_enrollment_type'")
             __props__.__dict__["mfa_enrollment_type"] = mfa_enrollment_type
-            if notification_settings is not None and not isinstance(notification_settings, DomainsAuthenticationFactorSettingNotificationSettingsArgs):
-                notification_settings = notification_settings or {}
-                def _setter(key, value):
-                    notification_settings[key] = value
-                DomainsAuthenticationFactorSettingNotificationSettingsArgs._configure(_setter, **notification_settings)
+            notification_settings = _utilities.configure(notification_settings, DomainsAuthenticationFactorSettingNotificationSettingsArgs, True)
             if notification_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_settings'")
             __props__.__dict__["notification_settings"] = notification_settings
@@ -3257,34 +3263,18 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                 raise TypeError("Missing required property 'sms_enabled'")
             __props__.__dict__["sms_enabled"] = sms_enabled
             __props__.__dict__["tags"] = tags
-            if third_party_factor is not None and not isinstance(third_party_factor, DomainsAuthenticationFactorSettingThirdPartyFactorArgs):
-                third_party_factor = third_party_factor or {}
-                def _setter(key, value):
-                    third_party_factor[key] = value
-                DomainsAuthenticationFactorSettingThirdPartyFactorArgs._configure(_setter, **third_party_factor)
+            third_party_factor = _utilities.configure(third_party_factor, DomainsAuthenticationFactorSettingThirdPartyFactorArgs, True)
             __props__.__dict__["third_party_factor"] = third_party_factor
             if totp_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'totp_enabled'")
             __props__.__dict__["totp_enabled"] = totp_enabled
-            if totp_settings is not None and not isinstance(totp_settings, DomainsAuthenticationFactorSettingTotpSettingsArgs):
-                totp_settings = totp_settings or {}
-                def _setter(key, value):
-                    totp_settings[key] = value
-                DomainsAuthenticationFactorSettingTotpSettingsArgs._configure(_setter, **totp_settings)
+            totp_settings = _utilities.configure(totp_settings, DomainsAuthenticationFactorSettingTotpSettingsArgs, True)
             if totp_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'totp_settings'")
             __props__.__dict__["totp_settings"] = totp_settings
-            if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs):
-                urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings[key] = value
-                DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings"] = urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
-            if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs):
-                urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings[key] = value
-                DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings"] = urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
             __props__.__dict__["user_enrollment_disabled_factors"] = user_enrollment_disabled_factors
             __props__.__dict__["yubico_otp_enabled"] = yubico_otp_enabled

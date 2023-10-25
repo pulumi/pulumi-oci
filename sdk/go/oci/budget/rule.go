@@ -36,12 +36,12 @@ import (
 //				Threshold:     pulumi.Any(_var.Alert_rule_threshold),
 //				ThresholdType: pulumi.Any(_var.Alert_rule_threshold_type),
 //				Type:          pulumi.Any(_var.Alert_rule_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Alert_rule_description),
 //				DisplayName: pulumi.Any(_var.Alert_rule_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Message:    pulumi.Any(_var.Alert_rule_message),

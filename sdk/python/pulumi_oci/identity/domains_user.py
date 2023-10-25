@@ -450,10 +450,10 @@ class DomainsUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_endpoint: pulumi.Input[str],
-             name: pulumi.Input['DomainsUserNameArgs'],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
-             user_name: pulumi.Input[str],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
              active: Optional[pulumi.Input[bool]] = None,
              addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -497,61 +497,69 @@ class DomainsUserArgs:
              urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
              user_type: Optional[pulumi.Input[str]] = None,
              x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'userName' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'attributeSets' in kwargs:
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'nickName' in kwargs:
+        if nick_name is None and 'nickName' in kwargs:
             nick_name = kwargs['nickName']
-        if 'phoneNumbers' in kwargs:
+        if phone_numbers is None and 'phoneNumbers' in kwargs:
             phone_numbers = kwargs['phoneNumbers']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'profileUrl' in kwargs:
+        if profile_url is None and 'profileUrl' in kwargs:
             profile_url = kwargs['profileUrl']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionadaptive_user is None and 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
-        if 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is None and 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is None and 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmfa_user is None and 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionposix_user is None and 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is None and 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionself_registration_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsff_user is None and 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is None and 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
-        if 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is None and 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionuser_state_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionuser_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
-        if 'userType' in kwargs:
+        if user_type is None and 'userType' in kwargs:
             user_type = kwargs['userType']
 
         _setter("idcs_endpoint", idcs_endpoint)
@@ -2125,83 +2133,83 @@ class _DomainsUserState:
              user_name: Optional[pulumi.Input[str]] = None,
              user_type: Optional[pulumi.Input[str]] = None,
              x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'nickName' in kwargs:
+        if nick_name is None and 'nickName' in kwargs:
             nick_name = kwargs['nickName']
-        if 'phoneNumbers' in kwargs:
+        if phone_numbers is None and 'phoneNumbers' in kwargs:
             phone_numbers = kwargs['phoneNumbers']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'profileUrl' in kwargs:
+        if profile_url is None and 'profileUrl' in kwargs:
             profile_url = kwargs['profileUrl']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
-        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
             urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
-        if 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionadaptive_user is None and 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
-        if 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is None and 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is None and 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
-        if 'urnietfparamsscimschemasoracleidcsextensiondbUserUsers' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensiondb_user_users is None and 'urnietfparamsscimschemasoracleidcsextensiondbUserUsers' in kwargs:
             urnietfparamsscimschemasoracleidcsextensiondb_user_users = kwargs['urnietfparamsscimschemasoracleidcsextensiondbUserUsers']
-        if 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionmfa_user is None and 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionpassword_state_users is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionpassword_state_users = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers']
-        if 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionposix_user is None and 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is None and 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionself_registration_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsff_user is None and 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is None and 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
-        if 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is None and 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionuser_credentials_users is None and 'urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionuser_credentials_users = kwargs['urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers']
-        if 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionuser_state_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
-        if 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+        if urnietfparamsscimschemasoracleidcsextensionuser_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
             urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'userType' in kwargs:
+        if user_type is None and 'userType' in kwargs:
             user_type = kwargs['userType']
 
         if active is not None:
@@ -3934,11 +3942,7 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["ims"] = ims
             __props__.__dict__["locale"] = locale
-            if name is not None and not isinstance(name, DomainsUserNameArgs):
-                name = name or {}
-                def _setter(key, value):
-                    name[key] = value
-                DomainsUserNameArgs._configure(_setter, **name)
+            name = _utilities.configure(name, DomainsUserNameArgs, True)
             if name is None and not opts.urn:
                 raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
@@ -3957,107 +3961,39 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["tags"] = tags
             __props__.__dict__["timezone"] = timezone
             __props__.__dict__["title"] = title
-            if urnietfparamsscimschemasextensionenterprise20user is not None and not isinstance(urnietfparamsscimschemasextensionenterprise20user, DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs):
-                urnietfparamsscimschemasextensionenterprise20user = urnietfparamsscimschemasextensionenterprise20user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasextensionenterprise20user[key] = value
-                DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs._configure(_setter, **urnietfparamsscimschemasextensionenterprise20user)
+            urnietfparamsscimschemasextensionenterprise20user = _utilities.configure(urnietfparamsscimschemasextensionenterprise20user, DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs, True)
             __props__.__dict__["urnietfparamsscimschemasextensionenterprise20user"] = urnietfparamsscimschemasextensionenterprise20user
-            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
-                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = _utilities.configure(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
-            if urnietfparamsscimschemasoracleidcsextensionadaptive_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionadaptive_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionadaptive_user = urnietfparamsscimschemasoracleidcsextensionadaptive_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionadaptive_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionadaptive_user)
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionadaptive_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionadaptive_user"] = urnietfparamsscimschemasoracleidcsextensionadaptive_user
-            if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensioncapabilities_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs):
-                urnietfparamsscimschemasoracleidcsextensioncapabilities_user = urnietfparamsscimschemasoracleidcsextensioncapabilities_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensioncapabilities_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensioncapabilities_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensioncapabilities_user"] = urnietfparamsscimschemasoracleidcsextensioncapabilities_user
-            if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondb_credentials_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs):
-                urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = urnietfparamsscimschemasoracleidcsextensiondb_credentials_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensiondb_credentials_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensiondb_credentials_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondb_credentials_user"] = urnietfparamsscimschemasoracleidcsextensiondb_credentials_user
-            if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionkerberos_user_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = urnietfparamsscimschemasoracleidcsextensionkerberos_user_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionkerberos_user_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionkerberos_user_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionkerberos_user_user"] = urnietfparamsscimschemasoracleidcsextensionkerberos_user_user
-            if urnietfparamsscimschemasoracleidcsextensionmfa_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmfa_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionmfa_user = urnietfparamsscimschemasoracleidcsextensionmfa_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionmfa_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmfa_user)
+            urnietfparamsscimschemasoracleidcsextensionmfa_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionmfa_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmfa_user"] = urnietfparamsscimschemasoracleidcsextensionmfa_user
-            if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionpasswordless_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionpasswordless_user = urnietfparamsscimschemasoracleidcsextensionpasswordless_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionpasswordless_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionpasswordless_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionpasswordless_user"] = urnietfparamsscimschemasoracleidcsextensionpasswordless_user
-            if urnietfparamsscimschemasoracleidcsextensionposix_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionposix_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionposix_user = urnietfparamsscimschemasoracleidcsextensionposix_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionposix_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionposix_user)
+            urnietfparamsscimschemasoracleidcsextensionposix_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionposix_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionposix_user"] = urnietfparamsscimschemasoracleidcsextensionposix_user
-            if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user"] = urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user
-            if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionself_change_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionself_change_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionself_change_user)
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionself_change_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_change_user"] = urnietfparamsscimschemasoracleidcsextensionself_change_user
-            if urnietfparamsscimschemasoracleidcsextensionself_registration_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionself_registration_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionself_registration_user = urnietfparamsscimschemasoracleidcsextensionself_registration_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionself_registration_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionself_registration_user)
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionself_registration_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_registration_user"] = urnietfparamsscimschemasoracleidcsextensionself_registration_user
-            if urnietfparamsscimschemasoracleidcsextensionsff_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsff_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionsff_user = urnietfparamsscimschemasoracleidcsextensionsff_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionsff_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsff_user)
+            urnietfparamsscimschemasoracleidcsextensionsff_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionsff_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsff_user"] = urnietfparamsscimschemasoracleidcsextensionsff_user
-            if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsocial_account_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionsocial_account_user = urnietfparamsscimschemasoracleidcsextensionsocial_account_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionsocial_account_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionsocial_account_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsocial_account_user"] = urnietfparamsscimschemasoracleidcsextensionsocial_account_user
-            if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionterms_of_use_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = urnietfparamsscimschemasoracleidcsextensionterms_of_use_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionterms_of_use_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionterms_of_use_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionterms_of_use_user"] = urnietfparamsscimschemasoracleidcsextensionterms_of_use_user
-            if urnietfparamsscimschemasoracleidcsextensionuser_state_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionuser_state_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionuser_state_user = urnietfparamsscimschemasoracleidcsextensionuser_state_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionuser_state_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionuser_state_user)
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionuser_state_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionuser_state_user"] = urnietfparamsscimschemasoracleidcsextensionuser_state_user
-            if urnietfparamsscimschemasoracleidcsextensionuser_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionuser_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs):
-                urnietfparamsscimschemasoracleidcsextensionuser_user = urnietfparamsscimschemasoracleidcsextensionuser_user or {}
-                def _setter(key, value):
-                    urnietfparamsscimschemasoracleidcsextensionuser_user[key] = value
-                DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionuser_user)
+            urnietfparamsscimschemasoracleidcsextensionuser_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionuser_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionuser_user"] = urnietfparamsscimschemasoracleidcsextensionuser_user
             if user_name is None and not opts.urn:
                 raise TypeError("Missing required property 'user_name'")

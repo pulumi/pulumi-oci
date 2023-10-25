@@ -33,14 +33,18 @@ class OdaPrivateEndpointAttachmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             oda_instance_id: pulumi.Input[str],
-             oda_private_endpoint_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             oda_instance_id: Optional[pulumi.Input[str]] = None,
+             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'odaInstanceId' in kwargs:
+        if oda_instance_id is None and 'odaInstanceId' in kwargs:
             oda_instance_id = kwargs['odaInstanceId']
-        if 'odaPrivateEndpointId' in kwargs:
+        if oda_instance_id is None:
+            raise TypeError("Missing 'oda_instance_id' argument")
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
+        if oda_private_endpoint_id is None:
+            raise TypeError("Missing 'oda_private_endpoint_id' argument")
 
         _setter("oda_instance_id", oda_instance_id)
         _setter("oda_private_endpoint_id", oda_private_endpoint_id)
@@ -114,17 +118,17 @@ class _OdaPrivateEndpointAttachmentState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'odaInstanceId' in kwargs:
+        if oda_instance_id is None and 'odaInstanceId' in kwargs:
             oda_instance_id = kwargs['odaInstanceId']
-        if 'odaPrivateEndpointId' in kwargs:
+        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
             oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

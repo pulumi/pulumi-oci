@@ -44,12 +44,12 @@ import (
 //				CompartmentId:   pulumi.Any(_var.Compartment_id),
 //				SourceId:        pulumi.Any(oci_core_source.Test_source.Id),
 //				VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName:           pulumi.Any(_var.Vtap_display_name),
 //				EncapsulationProtocol: pulumi.Any(_var.Vtap_encapsulation_protocol),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IsVtapEnabled:                 pulumi.Any(_var.Vtap_is_vtap_enabled),

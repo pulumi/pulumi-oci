@@ -34,10 +34,10 @@ import (
 //			_, err := Vbs.NewInstVbsInstance(ctx, "testVbsInstance", &Vbs.InstVbsInstanceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Vbs_instance_display_name),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IdcsAccessToken:                 pulumi.Any(_var.Vbs_instance_idcs_access_token),

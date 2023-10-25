@@ -36,13 +36,13 @@ import (
 //				CompartmentId:                     pulumi.Any(_var.Tenancy_ocid),
 //				ResetPeriod:                       pulumi.Any(_var.Budget_reset_period),
 //				BudgetProcessingPeriodStartOffset: pulumi.Any(_var.Budget_budget_processing_period_start_offset),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				Description: pulumi.Any(_var.Budget_description),
 //				DisplayName: pulumi.Any(_var.Budget_display_name),
 //				EndDate:     pulumi.Any(_var.Budget_end_date),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),

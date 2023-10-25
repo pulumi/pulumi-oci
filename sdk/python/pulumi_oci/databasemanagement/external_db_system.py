@@ -40,22 +40,26 @@ class ExternalDbSystemArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             db_system_discovery_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_system_discovery_id: Optional[pulumi.Input[str]] = None,
              database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbSystemDiscoveryId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_system_discovery_id is None and 'dbSystemDiscoveryId' in kwargs:
             db_system_discovery_id = kwargs['dbSystemDiscoveryId']
-        if 'databaseManagementConfig' in kwargs:
+        if db_system_discovery_id is None:
+            raise TypeError("Missing 'db_system_discovery_id' argument")
+        if database_management_config is None and 'databaseManagementConfig' in kwargs:
             database_management_config = kwargs['databaseManagementConfig']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'stackMonitoringConfig' in kwargs:
+        if stack_monitoring_config is None and 'stackMonitoringConfig' in kwargs:
             stack_monitoring_config = kwargs['stackMonitoringConfig']
 
         _setter("compartment_id", compartment_id)
@@ -188,29 +192,29 @@ class _ExternalDbSystemState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseManagementConfig' in kwargs:
+        if database_management_config is None and 'databaseManagementConfig' in kwargs:
             database_management_config = kwargs['databaseManagementConfig']
-        if 'dbSystemDiscoveryId' in kwargs:
+        if db_system_discovery_id is None and 'dbSystemDiscoveryId' in kwargs:
             db_system_discovery_id = kwargs['dbSystemDiscoveryId']
-        if 'discoveryAgentId' in kwargs:
+        if discovery_agent_id is None and 'discoveryAgentId' in kwargs:
             discovery_agent_id = kwargs['discoveryAgentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'homeDirectory' in kwargs:
+        if home_directory is None and 'homeDirectory' in kwargs:
             home_directory = kwargs['homeDirectory']
-        if 'isCluster' in kwargs:
+        if is_cluster is None and 'isCluster' in kwargs:
             is_cluster = kwargs['isCluster']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'stackMonitoringConfig' in kwargs:
+        if stack_monitoring_config is None and 'stackMonitoringConfig' in kwargs:
             stack_monitoring_config = kwargs['stackMonitoringConfig']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -508,21 +512,13 @@ class ExternalDbSystem(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if database_management_config is not None and not isinstance(database_management_config, ExternalDbSystemDatabaseManagementConfigArgs):
-                database_management_config = database_management_config or {}
-                def _setter(key, value):
-                    database_management_config[key] = value
-                ExternalDbSystemDatabaseManagementConfigArgs._configure(_setter, **database_management_config)
+            database_management_config = _utilities.configure(database_management_config, ExternalDbSystemDatabaseManagementConfigArgs, True)
             __props__.__dict__["database_management_config"] = database_management_config
             if db_system_discovery_id is None and not opts.urn:
                 raise TypeError("Missing required property 'db_system_discovery_id'")
             __props__.__dict__["db_system_discovery_id"] = db_system_discovery_id
             __props__.__dict__["display_name"] = display_name
-            if stack_monitoring_config is not None and not isinstance(stack_monitoring_config, ExternalDbSystemStackMonitoringConfigArgs):
-                stack_monitoring_config = stack_monitoring_config or {}
-                def _setter(key, value):
-                    stack_monitoring_config[key] = value
-                ExternalDbSystemStackMonitoringConfigArgs._configure(_setter, **stack_monitoring_config)
+            stack_monitoring_config = _utilities.configure(stack_monitoring_config, ExternalDbSystemStackMonitoringConfigArgs, True)
             __props__.__dict__["stack_monitoring_config"] = stack_monitoring_config
             __props__.__dict__["discovery_agent_id"] = None
             __props__.__dict__["home_directory"] = None

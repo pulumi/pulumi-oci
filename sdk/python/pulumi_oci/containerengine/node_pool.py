@@ -86,9 +86,9 @@ class NodePoolArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cluster_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             node_shape: pulumi.Input[str],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             node_shape: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
@@ -105,43 +105,49 @@ class NodePoolArgs:
              quantity_per_subnet: Optional[pulumi.Input[int]] = None,
              ssh_public_key: Optional[pulumi.Input[str]] = None,
              subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'nodeShape' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if node_shape is None and 'nodeShape' in kwargs:
             node_shape = kwargs['nodeShape']
-        if 'definedTags' in kwargs:
+        if node_shape is None:
+            raise TypeError("Missing 'node_shape' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialNodeLabels' in kwargs:
+        if initial_node_labels is None and 'initialNodeLabels' in kwargs:
             initial_node_labels = kwargs['initialNodeLabels']
-        if 'kubernetesVersion' in kwargs:
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'nodeConfigDetails' in kwargs:
+        if node_config_details is None and 'nodeConfigDetails' in kwargs:
             node_config_details = kwargs['nodeConfigDetails']
-        if 'nodeEvictionNodePoolSettings' in kwargs:
+        if node_eviction_node_pool_settings is None and 'nodeEvictionNodePoolSettings' in kwargs:
             node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
-        if 'nodeImageId' in kwargs:
+        if node_image_id is None and 'nodeImageId' in kwargs:
             node_image_id = kwargs['nodeImageId']
-        if 'nodeImageName' in kwargs:
+        if node_image_name is None and 'nodeImageName' in kwargs:
             node_image_name = kwargs['nodeImageName']
-        if 'nodeMetadata' in kwargs:
+        if node_metadata is None and 'nodeMetadata' in kwargs:
             node_metadata = kwargs['nodeMetadata']
-        if 'nodePoolCyclingDetails' in kwargs:
+        if node_pool_cycling_details is None and 'nodePoolCyclingDetails' in kwargs:
             node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
-        if 'nodeShapeConfig' in kwargs:
+        if node_shape_config is None and 'nodeShapeConfig' in kwargs:
             node_shape_config = kwargs['nodeShapeConfig']
-        if 'nodeSourceDetails' in kwargs:
+        if node_source_details is None and 'nodeSourceDetails' in kwargs:
             node_source_details = kwargs['nodeSourceDetails']
-        if 'quantityPerSubnet' in kwargs:
+        if quantity_per_subnet is None and 'quantityPerSubnet' in kwargs:
             quantity_per_subnet = kwargs['quantityPerSubnet']
-        if 'sshPublicKey' in kwargs:
+        if ssh_public_key is None and 'sshPublicKey' in kwargs:
             ssh_public_key = kwargs['sshPublicKey']
-        if 'subnetIds' in kwargs:
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
 
         _setter("cluster_id", cluster_id)
@@ -533,47 +539,47 @@ class _NodePoolState:
              ssh_public_key: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clusterId' in kwargs:
+        if cluster_id is None and 'clusterId' in kwargs:
             cluster_id = kwargs['clusterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'initialNodeLabels' in kwargs:
+        if initial_node_labels is None and 'initialNodeLabels' in kwargs:
             initial_node_labels = kwargs['initialNodeLabels']
-        if 'kubernetesVersion' in kwargs:
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
             kubernetes_version = kwargs['kubernetesVersion']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'nodeConfigDetails' in kwargs:
+        if node_config_details is None and 'nodeConfigDetails' in kwargs:
             node_config_details = kwargs['nodeConfigDetails']
-        if 'nodeEvictionNodePoolSettings' in kwargs:
+        if node_eviction_node_pool_settings is None and 'nodeEvictionNodePoolSettings' in kwargs:
             node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
-        if 'nodeImageId' in kwargs:
+        if node_image_id is None and 'nodeImageId' in kwargs:
             node_image_id = kwargs['nodeImageId']
-        if 'nodeImageName' in kwargs:
+        if node_image_name is None and 'nodeImageName' in kwargs:
             node_image_name = kwargs['nodeImageName']
-        if 'nodeMetadata' in kwargs:
+        if node_metadata is None and 'nodeMetadata' in kwargs:
             node_metadata = kwargs['nodeMetadata']
-        if 'nodePoolCyclingDetails' in kwargs:
+        if node_pool_cycling_details is None and 'nodePoolCyclingDetails' in kwargs:
             node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
-        if 'nodeShape' in kwargs:
+        if node_shape is None and 'nodeShape' in kwargs:
             node_shape = kwargs['nodeShape']
-        if 'nodeShapeConfig' in kwargs:
+        if node_shape_config is None and 'nodeShapeConfig' in kwargs:
             node_shape_config = kwargs['nodeShapeConfig']
-        if 'nodeSourceDetails' in kwargs:
+        if node_source_details is None and 'nodeSourceDetails' in kwargs:
             node_source_details = kwargs['nodeSourceDetails']
-        if 'nodeSources' in kwargs:
+        if node_sources is None and 'nodeSources' in kwargs:
             node_sources = kwargs['nodeSources']
-        if 'quantityPerSubnet' in kwargs:
+        if quantity_per_subnet is None and 'quantityPerSubnet' in kwargs:
             quantity_per_subnet = kwargs['quantityPerSubnet']
-        if 'sshPublicKey' in kwargs:
+        if ssh_public_key is None and 'sshPublicKey' in kwargs:
             ssh_public_key = kwargs['sshPublicKey']
-        if 'subnetIds' in kwargs:
+        if subnet_ids is None and 'subnetIds' in kwargs:
             subnet_ids = kwargs['subnetIds']
 
         if cluster_id is not None:
@@ -1209,41 +1215,21 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["initial_node_labels"] = initial_node_labels
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
-            if node_config_details is not None and not isinstance(node_config_details, NodePoolNodeConfigDetailsArgs):
-                node_config_details = node_config_details or {}
-                def _setter(key, value):
-                    node_config_details[key] = value
-                NodePoolNodeConfigDetailsArgs._configure(_setter, **node_config_details)
+            node_config_details = _utilities.configure(node_config_details, NodePoolNodeConfigDetailsArgs, True)
             __props__.__dict__["node_config_details"] = node_config_details
-            if node_eviction_node_pool_settings is not None and not isinstance(node_eviction_node_pool_settings, NodePoolNodeEvictionNodePoolSettingsArgs):
-                node_eviction_node_pool_settings = node_eviction_node_pool_settings or {}
-                def _setter(key, value):
-                    node_eviction_node_pool_settings[key] = value
-                NodePoolNodeEvictionNodePoolSettingsArgs._configure(_setter, **node_eviction_node_pool_settings)
+            node_eviction_node_pool_settings = _utilities.configure(node_eviction_node_pool_settings, NodePoolNodeEvictionNodePoolSettingsArgs, True)
             __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
             __props__.__dict__["node_image_id"] = node_image_id
             __props__.__dict__["node_image_name"] = node_image_name
             __props__.__dict__["node_metadata"] = node_metadata
-            if node_pool_cycling_details is not None and not isinstance(node_pool_cycling_details, NodePoolNodePoolCyclingDetailsArgs):
-                node_pool_cycling_details = node_pool_cycling_details or {}
-                def _setter(key, value):
-                    node_pool_cycling_details[key] = value
-                NodePoolNodePoolCyclingDetailsArgs._configure(_setter, **node_pool_cycling_details)
+            node_pool_cycling_details = _utilities.configure(node_pool_cycling_details, NodePoolNodePoolCyclingDetailsArgs, True)
             __props__.__dict__["node_pool_cycling_details"] = node_pool_cycling_details
             if node_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'node_shape'")
             __props__.__dict__["node_shape"] = node_shape
-            if node_shape_config is not None and not isinstance(node_shape_config, NodePoolNodeShapeConfigArgs):
-                node_shape_config = node_shape_config or {}
-                def _setter(key, value):
-                    node_shape_config[key] = value
-                NodePoolNodeShapeConfigArgs._configure(_setter, **node_shape_config)
+            node_shape_config = _utilities.configure(node_shape_config, NodePoolNodeShapeConfigArgs, True)
             __props__.__dict__["node_shape_config"] = node_shape_config
-            if node_source_details is not None and not isinstance(node_source_details, NodePoolNodeSourceDetailsArgs):
-                node_source_details = node_source_details or {}
-                def _setter(key, value):
-                    node_source_details[key] = value
-                NodePoolNodeSourceDetailsArgs._configure(_setter, **node_source_details)
+            node_source_details = _utilities.configure(node_source_details, NodePoolNodeSourceDetailsArgs, True)
             __props__.__dict__["node_source_details"] = node_source_details
             __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
             __props__.__dict__["ssh_public_key"] = ssh_public_key

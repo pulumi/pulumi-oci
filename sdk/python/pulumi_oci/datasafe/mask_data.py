@@ -27,14 +27,18 @@ class MaskDataArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             masking_policy_id: pulumi.Input[str],
-             target_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maskingPolicyId' in kwargs:
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'targetId' in kwargs:
+        if masking_policy_id is None:
+            raise TypeError("Missing 'masking_policy_id' argument")
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
 
         _setter("masking_policy_id", masking_policy_id)
         _setter("target_id", target_id)
@@ -76,11 +80,11 @@ class _MaskDataState:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'maskingPolicyId' in kwargs:
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
 
         if masking_policy_id is not None:

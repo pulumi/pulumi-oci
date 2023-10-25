@@ -52,28 +52,34 @@ class DedicatedVmHostArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             dedicated_vm_host_shape: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             dedicated_vm_host_shape: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              fault_domain: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dedicatedVmHostShape' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dedicated_vm_host_shape is None and 'dedicatedVmHostShape' in kwargs:
             dedicated_vm_host_shape = kwargs['dedicatedVmHostShape']
-        if 'definedTags' in kwargs:
+        if dedicated_vm_host_shape is None:
+            raise TypeError("Missing 'dedicated_vm_host_shape' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("availability_domain", availability_domain)
@@ -253,31 +259,31 @@ class _DedicatedVmHostState:
              time_created: Optional[pulumi.Input[str]] = None,
              total_memory_in_gbs: Optional[pulumi.Input[float]] = None,
              total_ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dedicatedVmHostShape' in kwargs:
+        if dedicated_vm_host_shape is None and 'dedicatedVmHostShape' in kwargs:
             dedicated_vm_host_shape = kwargs['dedicatedVmHostShape']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'remainingMemoryInGbs' in kwargs:
+        if remaining_memory_in_gbs is None and 'remainingMemoryInGbs' in kwargs:
             remaining_memory_in_gbs = kwargs['remainingMemoryInGbs']
-        if 'remainingOcpus' in kwargs:
+        if remaining_ocpus is None and 'remainingOcpus' in kwargs:
             remaining_ocpus = kwargs['remainingOcpus']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'totalMemoryInGbs' in kwargs:
+        if total_memory_in_gbs is None and 'totalMemoryInGbs' in kwargs:
             total_memory_in_gbs = kwargs['totalMemoryInGbs']
-        if 'totalOcpus' in kwargs:
+        if total_ocpus is None and 'totalOcpus' in kwargs:
             total_ocpus = kwargs['totalOcpus']
 
         if availability_domain is not None:

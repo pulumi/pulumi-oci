@@ -34,11 +34,11 @@ import (
 //			_, err := Core.NewLocalPeeringGateway(ctx, "testLocalPeeringGateway", &Core.LocalPeeringGatewayArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Local_peering_gateway_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				PeerId:       pulumi.Any(oci_core_local_peering_gateway.Test_local_peering_gateway2.Id),

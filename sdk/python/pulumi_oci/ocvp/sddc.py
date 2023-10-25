@@ -131,19 +131,19 @@ class SddcArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             compute_availability_domain: pulumi.Input[str],
-             esxi_hosts_count: pulumi.Input[int],
-             nsx_edge_uplink1vlan_id: pulumi.Input[str],
-             nsx_edge_uplink2vlan_id: pulumi.Input[str],
-             nsx_edge_vtep_vlan_id: pulumi.Input[str],
-             nsx_vtep_vlan_id: pulumi.Input[str],
-             provisioning_subnet_id: pulumi.Input[str],
-             ssh_authorized_keys: pulumi.Input[str],
-             vmotion_vlan_id: pulumi.Input[str],
-             vmware_software_version: pulumi.Input[str],
-             vsan_vlan_id: pulumi.Input[str],
-             vsphere_vlan_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_availability_domain: Optional[pulumi.Input[str]] = None,
+             esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             nsx_edge_uplink1vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink2vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             provisioning_subnet_id: Optional[pulumi.Input[str]] = None,
+             ssh_authorized_keys: Optional[pulumi.Input[str]] = None,
+             vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
+             vmware_software_version: Optional[pulumi.Input[str]] = None,
+             vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+             vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
              capacity_reservation_id: Optional[pulumi.Input[str]] = None,
              datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -163,69 +163,95 @@ class SddcArgs:
              replication_vlan_id: Optional[pulumi.Input[str]] = None,
              reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              workload_network_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'esxiHostsCount' in kwargs:
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
             esxi_hosts_count = kwargs['esxiHostsCount']
-        if 'nsxEdgeUplink1vlanId' in kwargs:
+        if esxi_hosts_count is None:
+            raise TypeError("Missing 'esxi_hosts_count' argument")
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
             nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
-        if 'nsxEdgeUplink2vlanId' in kwargs:
+        if nsx_edge_uplink1vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink1vlan_id' argument")
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
             nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
-        if 'nsxEdgeVtepVlanId' in kwargs:
+        if nsx_edge_uplink2vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink2vlan_id' argument")
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
             nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
-        if 'nsxVtepVlanId' in kwargs:
+        if nsx_edge_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_vtep_vlan_id' argument")
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
             nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
-        if 'provisioningSubnetId' in kwargs:
+        if nsx_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_vtep_vlan_id' argument")
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
             provisioning_subnet_id = kwargs['provisioningSubnetId']
-        if 'sshAuthorizedKeys' in kwargs:
+        if provisioning_subnet_id is None:
+            raise TypeError("Missing 'provisioning_subnet_id' argument")
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
             ssh_authorized_keys = kwargs['sshAuthorizedKeys']
-        if 'vmotionVlanId' in kwargs:
+        if ssh_authorized_keys is None:
+            raise TypeError("Missing 'ssh_authorized_keys' argument")
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
             vmotion_vlan_id = kwargs['vmotionVlanId']
-        if 'vmwareSoftwareVersion' in kwargs:
+        if vmotion_vlan_id is None:
+            raise TypeError("Missing 'vmotion_vlan_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
             vmware_software_version = kwargs['vmwareSoftwareVersion']
-        if 'vsanVlanId' in kwargs:
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
             vsan_vlan_id = kwargs['vsanVlanId']
-        if 'vsphereVlanId' in kwargs:
+        if vsan_vlan_id is None:
+            raise TypeError("Missing 'vsan_vlan_id' argument")
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
             vsphere_vlan_id = kwargs['vsphereVlanId']
-        if 'capacityReservationId' in kwargs:
+        if vsphere_vlan_id is None:
+            raise TypeError("Missing 'vsphere_vlan_id' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hcxAction' in kwargs:
+        if hcx_action is None and 'hcxAction' in kwargs:
             hcx_action = kwargs['hcxAction']
-        if 'hcxVlanId' in kwargs:
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
             hcx_vlan_id = kwargs['hcxVlanId']
-        if 'initialHostOcpuCount' in kwargs:
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
             initial_host_ocpu_count = kwargs['initialHostOcpuCount']
-        if 'initialHostShapeName' in kwargs:
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
             initial_host_shape_name = kwargs['initialHostShapeName']
-        if 'initialSku' in kwargs:
+        if initial_sku is None and 'initialSku' in kwargs:
             initial_sku = kwargs['initialSku']
-        if 'instanceDisplayNamePrefix' in kwargs:
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
             instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
-        if 'isHcxEnabled' in kwargs:
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
             is_hcx_enabled = kwargs['isHcxEnabled']
-        if 'isShieldedInstanceEnabled' in kwargs:
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
             is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
-        if 'isSingleHostSddc' in kwargs:
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
             is_single_host_sddc = kwargs['isSingleHostSddc']
-        if 'provisioningVlanId' in kwargs:
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
             provisioning_vlan_id = kwargs['provisioningVlanId']
-        if 'refreshHcxLicenseStatus' in kwargs:
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
             refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
-        if 'replicationVlanId' in kwargs:
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
             replication_vlan_id = kwargs['replicationVlanId']
-        if 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
             reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
-        if 'workloadNetworkCidr' in kwargs:
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
             workload_network_cidr = kwargs['workloadNetworkCidr']
 
         _setter("compartment_id", compartment_id)
@@ -1061,119 +1087,119 @@ class _SddcState:
              vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
              vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
              workload_network_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actualEsxiHostsCount' in kwargs:
+        if actual_esxi_hosts_count is None and 'actualEsxiHostsCount' in kwargs:
             actual_esxi_hosts_count = kwargs['actualEsxiHostsCount']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeAvailabilityDomain' in kwargs:
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
             compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'esxiHostsCount' in kwargs:
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
             esxi_hosts_count = kwargs['esxiHostsCount']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hcxAction' in kwargs:
+        if hcx_action is None and 'hcxAction' in kwargs:
             hcx_action = kwargs['hcxAction']
-        if 'hcxFqdn' in kwargs:
+        if hcx_fqdn is None and 'hcxFqdn' in kwargs:
             hcx_fqdn = kwargs['hcxFqdn']
-        if 'hcxInitialPassword' in kwargs:
+        if hcx_initial_password is None and 'hcxInitialPassword' in kwargs:
             hcx_initial_password = kwargs['hcxInitialPassword']
-        if 'hcxOnPremKey' in kwargs:
+        if hcx_on_prem_key is None and 'hcxOnPremKey' in kwargs:
             hcx_on_prem_key = kwargs['hcxOnPremKey']
-        if 'hcxOnPremLicenses' in kwargs:
+        if hcx_on_prem_licenses is None and 'hcxOnPremLicenses' in kwargs:
             hcx_on_prem_licenses = kwargs['hcxOnPremLicenses']
-        if 'hcxPrivateIpId' in kwargs:
+        if hcx_private_ip_id is None and 'hcxPrivateIpId' in kwargs:
             hcx_private_ip_id = kwargs['hcxPrivateIpId']
-        if 'hcxVlanId' in kwargs:
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
             hcx_vlan_id = kwargs['hcxVlanId']
-        if 'initialHostOcpuCount' in kwargs:
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
             initial_host_ocpu_count = kwargs['initialHostOcpuCount']
-        if 'initialHostShapeName' in kwargs:
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
             initial_host_shape_name = kwargs['initialHostShapeName']
-        if 'initialSku' in kwargs:
+        if initial_sku is None and 'initialSku' in kwargs:
             initial_sku = kwargs['initialSku']
-        if 'instanceDisplayNamePrefix' in kwargs:
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
             instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
-        if 'isHcxEnabled' in kwargs:
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
             is_hcx_enabled = kwargs['isHcxEnabled']
-        if 'isHcxEnterpriseEnabled' in kwargs:
+        if is_hcx_enterprise_enabled is None and 'isHcxEnterpriseEnabled' in kwargs:
             is_hcx_enterprise_enabled = kwargs['isHcxEnterpriseEnabled']
-        if 'isHcxPendingDowngrade' in kwargs:
+        if is_hcx_pending_downgrade is None and 'isHcxPendingDowngrade' in kwargs:
             is_hcx_pending_downgrade = kwargs['isHcxPendingDowngrade']
-        if 'isShieldedInstanceEnabled' in kwargs:
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
             is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
-        if 'isSingleHostSddc' in kwargs:
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
             is_single_host_sddc = kwargs['isSingleHostSddc']
-        if 'nsxEdgeUplink1vlanId' in kwargs:
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
             nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
-        if 'nsxEdgeUplink2vlanId' in kwargs:
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
             nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
-        if 'nsxEdgeUplinkIpId' in kwargs:
+        if nsx_edge_uplink_ip_id is None and 'nsxEdgeUplinkIpId' in kwargs:
             nsx_edge_uplink_ip_id = kwargs['nsxEdgeUplinkIpId']
-        if 'nsxEdgeVtepVlanId' in kwargs:
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
             nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
-        if 'nsxManagerFqdn' in kwargs:
+        if nsx_manager_fqdn is None and 'nsxManagerFqdn' in kwargs:
             nsx_manager_fqdn = kwargs['nsxManagerFqdn']
-        if 'nsxManagerInitialPassword' in kwargs:
+        if nsx_manager_initial_password is None and 'nsxManagerInitialPassword' in kwargs:
             nsx_manager_initial_password = kwargs['nsxManagerInitialPassword']
-        if 'nsxManagerPrivateIpId' in kwargs:
+        if nsx_manager_private_ip_id is None and 'nsxManagerPrivateIpId' in kwargs:
             nsx_manager_private_ip_id = kwargs['nsxManagerPrivateIpId']
-        if 'nsxManagerUsername' in kwargs:
+        if nsx_manager_username is None and 'nsxManagerUsername' in kwargs:
             nsx_manager_username = kwargs['nsxManagerUsername']
-        if 'nsxOverlaySegmentName' in kwargs:
+        if nsx_overlay_segment_name is None and 'nsxOverlaySegmentName' in kwargs:
             nsx_overlay_segment_name = kwargs['nsxOverlaySegmentName']
-        if 'nsxVtepVlanId' in kwargs:
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
             nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
-        if 'provisioningSubnetId' in kwargs:
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
             provisioning_subnet_id = kwargs['provisioningSubnetId']
-        if 'provisioningVlanId' in kwargs:
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
             provisioning_vlan_id = kwargs['provisioningVlanId']
-        if 'refreshHcxLicenseStatus' in kwargs:
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
             refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
-        if 'replicationVlanId' in kwargs:
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
             replication_vlan_id = kwargs['replicationVlanId']
-        if 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
             reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
-        if 'sshAuthorizedKeys' in kwargs:
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
             ssh_authorized_keys = kwargs['sshAuthorizedKeys']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeHcxBillingCycleEnd' in kwargs:
+        if time_hcx_billing_cycle_end is None and 'timeHcxBillingCycleEnd' in kwargs:
             time_hcx_billing_cycle_end = kwargs['timeHcxBillingCycleEnd']
-        if 'timeHcxLicenseStatusUpdated' in kwargs:
+        if time_hcx_license_status_updated is None and 'timeHcxLicenseStatusUpdated' in kwargs:
             time_hcx_license_status_updated = kwargs['timeHcxLicenseStatusUpdated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'upgradeLicenses' in kwargs:
+        if upgrade_licenses is None and 'upgradeLicenses' in kwargs:
             upgrade_licenses = kwargs['upgradeLicenses']
-        if 'vcenterFqdn' in kwargs:
+        if vcenter_fqdn is None and 'vcenterFqdn' in kwargs:
             vcenter_fqdn = kwargs['vcenterFqdn']
-        if 'vcenterInitialPassword' in kwargs:
+        if vcenter_initial_password is None and 'vcenterInitialPassword' in kwargs:
             vcenter_initial_password = kwargs['vcenterInitialPassword']
-        if 'vcenterPrivateIpId' in kwargs:
+        if vcenter_private_ip_id is None and 'vcenterPrivateIpId' in kwargs:
             vcenter_private_ip_id = kwargs['vcenterPrivateIpId']
-        if 'vcenterUsername' in kwargs:
+        if vcenter_username is None and 'vcenterUsername' in kwargs:
             vcenter_username = kwargs['vcenterUsername']
-        if 'vmotionVlanId' in kwargs:
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
             vmotion_vlan_id = kwargs['vmotionVlanId']
-        if 'vmwareSoftwareVersion' in kwargs:
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
             vmware_software_version = kwargs['vmwareSoftwareVersion']
-        if 'vsanVlanId' in kwargs:
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
             vsan_vlan_id = kwargs['vsanVlanId']
-        if 'vsphereUpgradeGuide' in kwargs:
+        if vsphere_upgrade_guide is None and 'vsphereUpgradeGuide' in kwargs:
             vsphere_upgrade_guide = kwargs['vsphereUpgradeGuide']
-        if 'vsphereUpgradeObjects' in kwargs:
+        if vsphere_upgrade_objects is None and 'vsphereUpgradeObjects' in kwargs:
             vsphere_upgrade_objects = kwargs['vsphereUpgradeObjects']
-        if 'vsphereVlanId' in kwargs:
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
             vsphere_vlan_id = kwargs['vsphereVlanId']
-        if 'workloadNetworkCidr' in kwargs:
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
             workload_network_cidr = kwargs['workloadNetworkCidr']
 
         if actual_esxi_hosts_count is not None:

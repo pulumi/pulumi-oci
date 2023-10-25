@@ -36,16 +36,20 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_exadata: pulumi.Input[bool],
-             external_exadata_infrastructure_id: pulumi.Input[str],
+             enable_exadata: Optional[pulumi.Input[bool]] = None,
+             external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableExadata' in kwargs:
+        if enable_exadata is None and 'enableExadata' in kwargs:
             enable_exadata = kwargs['enableExadata']
-        if 'externalExadataInfrastructureId' in kwargs:
+        if enable_exadata is None:
+            raise TypeError("Missing 'enable_exadata' argument")
+        if external_exadata_infrastructure_id is None and 'externalExadataInfrastructureId' in kwargs:
             external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
-        if 'licenseModel' in kwargs:
+        if external_exadata_infrastructure_id is None:
+            raise TypeError("Missing 'external_exadata_infrastructure_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         _setter("enable_exadata", enable_exadata)
@@ -122,13 +126,13 @@ class _ExternalExadataInfrastructureExadataManagementState:
              enable_exadata: Optional[pulumi.Input[bool]] = None,
              external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableExadata' in kwargs:
+        if enable_exadata is None and 'enableExadata' in kwargs:
             enable_exadata = kwargs['enableExadata']
-        if 'externalExadataInfrastructureId' in kwargs:
+        if external_exadata_infrastructure_id is None and 'externalExadataInfrastructureId' in kwargs:
             external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         if enable_exadata is not None:

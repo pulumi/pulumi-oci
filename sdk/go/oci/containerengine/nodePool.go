@@ -35,10 +35,10 @@ import (
 //				ClusterId:     pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				NodeShape:     pulumi.Any(_var.Node_pool_node_shape),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InitialNodeLabels: containerengine.NodePoolInitialNodeLabelArray{
@@ -72,10 +72,10 @@ import (
 //						PodNsgIds:      pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids),
 //						PodSubnetIds:   pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids),
 //					},
-//					DefinedTags: pulumi.AnyMap{
+//					DefinedTags: pulumi.Map{
 //						"Operations.CostCenter": pulumi.Any("42"),
 //					},
-//					FreeformTags: pulumi.AnyMap{
+//					FreeformTags: pulumi.Map{
 //						"Department": pulumi.Any("Finance"),
 //					},
 //					NsgIds: pulumi.Any(_var.Node_pool_node_config_details_nsg_ids),

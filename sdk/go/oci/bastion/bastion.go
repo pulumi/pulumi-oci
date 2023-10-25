@@ -36,11 +36,11 @@ import (
 //				CompartmentId:             pulumi.Any(_var.Compartment_id),
 //				TargetSubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				ClientCidrBlockAllowLists: pulumi.Any(_var.Bastion_client_cidr_block_allow_list),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DnsProxyStatus: pulumi.Any(_var.Bastion_dns_proxy_status),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MaxSessionTtlInSeconds:    pulumi.Any(_var.Bastion_max_session_ttl_in_seconds),

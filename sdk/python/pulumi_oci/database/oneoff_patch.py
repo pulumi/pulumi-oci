@@ -51,31 +51,39 @@ class OneoffPatchArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             db_version: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             release_update: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             release_update: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              download_oneoff_patch_trigger: Optional[pulumi.Input[int]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbVersion' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'displayName' in kwargs:
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'releaseUpdate' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if release_update is None and 'releaseUpdate' in kwargs:
             release_update = kwargs['releaseUpdate']
-        if 'definedTags' in kwargs:
+        if release_update is None:
+            raise TypeError("Missing 'release_update' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'downloadOneoffPatchTrigger' in kwargs:
+        if download_oneoff_patch_trigger is None and 'downloadOneoffPatchTrigger' in kwargs:
             download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'oneOffPatches' in kwargs:
+        if one_off_patches is None and 'oneOffPatches' in kwargs:
             one_off_patches = kwargs['oneOffPatches']
 
         _setter("compartment_id", compartment_id)
@@ -268,33 +276,33 @@ class _OneoffPatchState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_expiration: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dbVersion' in kwargs:
+        if db_version is None and 'dbVersion' in kwargs:
             db_version = kwargs['dbVersion']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'downloadOneoffPatchTrigger' in kwargs:
+        if download_oneoff_patch_trigger is None and 'downloadOneoffPatchTrigger' in kwargs:
             download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'oneOffPatches' in kwargs:
+        if one_off_patches is None and 'oneOffPatches' in kwargs:
             one_off_patches = kwargs['oneOffPatches']
-        if 'releaseUpdate' in kwargs:
+        if release_update is None and 'releaseUpdate' in kwargs:
             release_update = kwargs['releaseUpdate']
-        if 'sizeInKbs' in kwargs:
+        if size_in_kbs is None and 'sizeInKbs' in kwargs:
             size_in_kbs = kwargs['sizeInKbs']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeOfExpiration' in kwargs:
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
             time_of_expiration = kwargs['timeOfExpiration']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:

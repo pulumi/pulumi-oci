@@ -36,12 +36,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewVolumeBackupPolicy(ctx, "testVolumeBackupPolicy", &Core.VolumeBackupPolicyArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DestinationRegion: pulumi.Any(_var.Volume_backup_policy_destination_region),
 //				DisplayName:       pulumi.Any(_var.Volume_backup_policy_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Schedules: core.VolumeBackupPolicyScheduleArray{

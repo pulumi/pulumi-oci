@@ -45,28 +45,30 @@ class InvokeFunctionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             function_id: pulumi.Input[str],
+             function_id: Optional[pulumi.Input[str]] = None,
              base64_encode_content: Optional[pulumi.Input[bool]] = None,
              fn_intent: Optional[pulumi.Input[str]] = None,
              fn_invoke_type: Optional[pulumi.Input[str]] = None,
              input_body_source_path: Optional[pulumi.Input[str]] = None,
              invoke_function_body: Optional[pulumi.Input[str]] = None,
              invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'base64EncodeContent' in kwargs:
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if base64_encode_content is None and 'base64EncodeContent' in kwargs:
             base64_encode_content = kwargs['base64EncodeContent']
-        if 'fnIntent' in kwargs:
+        if fn_intent is None and 'fnIntent' in kwargs:
             fn_intent = kwargs['fnIntent']
-        if 'fnInvokeType' in kwargs:
+        if fn_invoke_type is None and 'fnInvokeType' in kwargs:
             fn_invoke_type = kwargs['fnInvokeType']
-        if 'inputBodySourcePath' in kwargs:
+        if input_body_source_path is None and 'inputBodySourcePath' in kwargs:
             input_body_source_path = kwargs['inputBodySourcePath']
-        if 'invokeFunctionBody' in kwargs:
+        if invoke_function_body is None and 'invokeFunctionBody' in kwargs:
             invoke_function_body = kwargs['invokeFunctionBody']
-        if 'invokeFunctionBodyBase64Encoded' in kwargs:
+        if invoke_function_body_base64_encoded is None and 'invokeFunctionBodyBase64Encoded' in kwargs:
             invoke_function_body_base64_encoded = kwargs['invokeFunctionBodyBase64Encoded']
 
         _setter("function_id", function_id)
@@ -213,23 +215,23 @@ class _InvokeFunctionState:
              invoke_endpoint: Optional[pulumi.Input[str]] = None,
              invoke_function_body: Optional[pulumi.Input[str]] = None,
              invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'base64EncodeContent' in kwargs:
+        if base64_encode_content is None and 'base64EncodeContent' in kwargs:
             base64_encode_content = kwargs['base64EncodeContent']
-        if 'fnIntent' in kwargs:
+        if fn_intent is None and 'fnIntent' in kwargs:
             fn_intent = kwargs['fnIntent']
-        if 'fnInvokeType' in kwargs:
+        if fn_invoke_type is None and 'fnInvokeType' in kwargs:
             fn_invoke_type = kwargs['fnInvokeType']
-        if 'functionId' in kwargs:
+        if function_id is None and 'functionId' in kwargs:
             function_id = kwargs['functionId']
-        if 'inputBodySourcePath' in kwargs:
+        if input_body_source_path is None and 'inputBodySourcePath' in kwargs:
             input_body_source_path = kwargs['inputBodySourcePath']
-        if 'invokeEndpoint' in kwargs:
+        if invoke_endpoint is None and 'invokeEndpoint' in kwargs:
             invoke_endpoint = kwargs['invokeEndpoint']
-        if 'invokeFunctionBody' in kwargs:
+        if invoke_function_body is None and 'invokeFunctionBody' in kwargs:
             invoke_function_body = kwargs['invokeFunctionBody']
-        if 'invokeFunctionBodyBase64Encoded' in kwargs:
+        if invoke_function_body_base64_encoded is None and 'invokeFunctionBodyBase64Encoded' in kwargs:
             invoke_function_body_base64_encoded = kwargs['invokeFunctionBodyBase64Encoded']
 
         if base64_encode_content is not None:

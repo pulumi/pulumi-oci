@@ -36,11 +36,11 @@ import (
 //				DisplayName:        pulumi.Any(_var.Target_display_name),
 //				TargetResourceId:   pulumi.Any(oci_cloud_guard_target_resource.Test_target_resource.Id),
 //				TargetResourceType: pulumi.Any(_var.Target_target_resource_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Target_description),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				State: pulumi.Any(_var.Target_state),

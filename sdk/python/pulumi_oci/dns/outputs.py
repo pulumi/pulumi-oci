@@ -110,9 +110,9 @@ class ActionCreateZoneFromZoneFileExternalDownstream(dict):
              address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
 
         if address is not None:
@@ -187,9 +187,9 @@ class ActionCreateZoneFromZoneFileExternalMaster(dict):
              address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
 
         if address is not None:
@@ -239,7 +239,7 @@ class ActionCreateZoneFromZoneFileNameserver(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if hostname is not None:
@@ -300,11 +300,11 @@ class ActionCreateZoneFromZoneFileZoneTransferServer(dict):
              is_transfer_destination: Optional[bool] = None,
              is_transfer_source: Optional[bool] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isTransferDestination' in kwargs:
+        if is_transfer_destination is None and 'isTransferDestination' in kwargs:
             is_transfer_destination = kwargs['isTransferDestination']
-        if 'isTransferSource' in kwargs:
+        if is_transfer_source is None and 'isTransferSource' in kwargs:
             is_transfer_source = kwargs['isTransferSource']
 
         if address is not None:
@@ -380,11 +380,13 @@ class ResolverAttachedView(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             view_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
+        if view_id is None:
+            raise TypeError("Missing 'view_id' argument")
 
         _setter("view_id", view_id)
 
@@ -489,25 +491,25 @@ class ResolverEndpoint(dict):
              subnet_id: Optional[str] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'endpointType' in kwargs:
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'isForwarding' in kwargs:
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'listeningAddress' in kwargs:
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -681,20 +683,26 @@ class ResolverRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             destination_addresses: Sequence[str],
-             source_endpoint_name: str,
+             action: Optional[str] = None,
+             destination_addresses: Optional[Sequence[str]] = None,
+             source_endpoint_name: Optional[str] = None,
              client_address_conditions: Optional[Sequence[str]] = None,
              qname_cover_conditions: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'destinationAddresses' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
             destination_addresses = kwargs['destinationAddresses']
-        if 'sourceEndpointName' in kwargs:
+        if destination_addresses is None:
+            raise TypeError("Missing 'destination_addresses' argument")
+        if source_endpoint_name is None and 'sourceEndpointName' in kwargs:
             source_endpoint_name = kwargs['sourceEndpointName']
-        if 'clientAddressConditions' in kwargs:
+        if source_endpoint_name is None:
+            raise TypeError("Missing 'source_endpoint_name' argument")
+        if client_address_conditions is None and 'clientAddressConditions' in kwargs:
             client_address_conditions = kwargs['clientAddressConditions']
-        if 'qnameCoverConditions' in kwargs:
+        if qname_cover_conditions is None and 'qnameCoverConditions' in kwargs:
             qname_cover_conditions = kwargs['qnameCoverConditions']
 
         _setter("action", action)
@@ -799,20 +807,28 @@ class RrsetItem(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             rdata: str,
-             rtype: str,
-             ttl: int,
+             domain: Optional[str] = None,
+             rdata: Optional[str] = None,
+             rtype: Optional[str] = None,
+             ttl: Optional[int] = None,
              is_protected: Optional[bool] = None,
              record_hash: Optional[str] = None,
              rrset_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isProtected' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'recordHash' in kwargs:
+        if record_hash is None and 'recordHash' in kwargs:
             record_hash = kwargs['recordHash']
-        if 'rrsetVersion' in kwargs:
+        if rrset_version is None and 'rrsetVersion' in kwargs:
             rrset_version = kwargs['rrsetVersion']
 
         _setter("domain", domain)
@@ -926,14 +942,20 @@ class SteeringPolicyAnswer(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             rdata: str,
-             rtype: str,
+             name: Optional[str] = None,
+             rdata: Optional[str] = None,
+             rtype: Optional[str] = None,
              is_disabled: Optional[bool] = None,
              pool: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDisabled' in kwargs:
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if is_disabled is None and 'isDisabled' in kwargs:
             is_disabled = kwargs['isDisabled']
 
         _setter("name", name)
@@ -1032,18 +1054,20 @@ class SteeringPolicyRule(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             rule_type: str,
+             rule_type: Optional[str] = None,
              cases: Optional[Sequence['outputs.SteeringPolicyRuleCase']] = None,
              default_answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleDefaultAnswerData']] = None,
              default_count: Optional[int] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ruleType' in kwargs:
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
-        if 'defaultAnswerDatas' in kwargs:
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
+        if default_answer_datas is None and 'defaultAnswerDatas' in kwargs:
             default_answer_datas = kwargs['defaultAnswerDatas']
-        if 'defaultCount' in kwargs:
+        if default_count is None and 'defaultCount' in kwargs:
             default_count = kwargs['defaultCount']
 
         _setter("rule_type", rule_type)
@@ -1139,11 +1163,11 @@ class SteeringPolicyRuleCase(dict):
              answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleCaseAnswerData']] = None,
              case_condition: Optional[str] = None,
              count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerDatas' in kwargs:
+        if answer_datas is None and 'answerDatas' in kwargs:
             answer_datas = kwargs['answerDatas']
-        if 'caseCondition' in kwargs:
+        if case_condition is None and 'caseCondition' in kwargs:
             case_condition = kwargs['caseCondition']
 
         if answer_datas is not None:
@@ -1220,11 +1244,11 @@ class SteeringPolicyRuleCaseAnswerData(dict):
              answer_condition: Optional[str] = None,
              should_keep: Optional[bool] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
 
         if answer_condition is not None:
@@ -1301,11 +1325,11 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
              answer_condition: Optional[str] = None,
              should_keep: Optional[bool] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
 
         if answer_condition is not None:
@@ -1377,12 +1401,14 @@ class ZoneExternalDownstream(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
+             address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
 
         _setter("address", address)
@@ -1453,12 +1479,14 @@ class ZoneExternalMaster(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
+             address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
 
         _setter("address", address)
@@ -1507,7 +1535,7 @@ class ZoneNameserver(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if hostname is not None:
@@ -1568,11 +1596,11 @@ class ZoneZoneTransferServer(dict):
              is_transfer_destination: Optional[bool] = None,
              is_transfer_source: Optional[bool] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isTransferDestination' in kwargs:
+        if is_transfer_destination is None and 'isTransferDestination' in kwargs:
             is_transfer_destination = kwargs['isTransferDestination']
-        if 'isTransferSource' in kwargs:
+        if is_transfer_source is None and 'isTransferSource' in kwargs:
             is_transfer_source = kwargs['isTransferSource']
 
         if address is not None:
@@ -1632,11 +1660,15 @@ class GetRecordsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1697,26 +1729,38 @@ class GetRecordsRecordResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             is_protected: bool,
-             record_hash: str,
-             rrset_version: str,
-             rtype: str,
-             zone_name_or_id: str,
+             domain: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             record_hash: Optional[str] = None,
+             rrset_version: Optional[str] = None,
+             rtype: Optional[str] = None,
+             zone_name_or_id: Optional[str] = None,
              compartment_id: Optional[str] = None,
              rdata: Optional[str] = None,
              ttl: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isProtected' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'recordHash' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if record_hash is None and 'recordHash' in kwargs:
             record_hash = kwargs['recordHash']
-        if 'rrsetVersion' in kwargs:
+        if record_hash is None:
+            raise TypeError("Missing 'record_hash' argument")
+        if rrset_version is None and 'rrsetVersion' in kwargs:
             rrset_version = kwargs['rrsetVersion']
-        if 'zoneNameOrId' in kwargs:
+        if rrset_version is None:
+            raise TypeError("Missing 'rrset_version' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if zone_name_or_id is None and 'zoneNameOrId' in kwargs:
             zone_name_or_id = kwargs['zoneNameOrId']
-        if 'compartmentId' in kwargs:
+        if zone_name_or_id is None:
+            raise TypeError("Missing 'zone_name_or_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("domain", domain)
@@ -1828,11 +1872,13 @@ class GetResolverAttachedViewResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             view_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
+        if view_id is None:
+            raise TypeError("Missing 'view_id' argument")
 
         _setter("view_id", view_id)
 
@@ -1892,38 +1938,62 @@ class GetResolverEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             endpoint_type: str,
-             forwarding_address: str,
-             is_forwarding: bool,
-             is_listening: bool,
-             listening_address: str,
-             name: str,
-             self: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             endpoint_type: Optional[str] = None,
+             forwarding_address: Optional[str] = None,
+             is_forwarding: Optional[bool] = None,
+             is_listening: Optional[bool] = None,
+             listening_address: Optional[str] = None,
+             name: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'endpointType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if endpoint_type is None:
+            raise TypeError("Missing 'endpoint_type' argument")
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'isForwarding' in kwargs:
+        if forwarding_address is None:
+            raise TypeError("Missing 'forwarding_address' argument")
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_forwarding is None:
+            raise TypeError("Missing 'is_forwarding' argument")
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'listeningAddress' in kwargs:
+        if is_listening is None:
+            raise TypeError("Missing 'is_listening' argument")
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'subnetId' in kwargs:
+        if listening_address is None:
+            raise TypeError("Missing 'listening_address' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
@@ -2053,11 +2123,15 @@ class GetResolverEndpointsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2139,44 +2213,70 @@ class GetResolverEndpointsResolverEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             endpoint_type: str,
-             forwarding_address: str,
-             is_forwarding: bool,
-             is_listening: bool,
-             listening_address: str,
-             name: str,
-             resolver_id: str,
-             self: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
+             compartment_id: Optional[str] = None,
+             endpoint_type: Optional[str] = None,
+             forwarding_address: Optional[str] = None,
+             is_forwarding: Optional[bool] = None,
+             is_listening: Optional[bool] = None,
+             listening_address: Optional[str] = None,
+             name: Optional[str] = None,
+             resolver_id: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
              nsg_ids: Optional[Sequence[str]] = None,
              scope: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'endpointType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if endpoint_type is None:
+            raise TypeError("Missing 'endpoint_type' argument")
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'isForwarding' in kwargs:
+        if forwarding_address is None:
+            raise TypeError("Missing 'forwarding_address' argument")
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_forwarding is None:
+            raise TypeError("Missing 'is_forwarding' argument")
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'listeningAddress' in kwargs:
+        if is_listening is None:
+            raise TypeError("Missing 'is_listening' argument")
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'resolverId' in kwargs:
+        if listening_address is None:
+            raise TypeError("Missing 'listening_address' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'subnetId' in kwargs:
+        if resolver_id is None:
+            raise TypeError("Missing 'resolver_id' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'nsgIds' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
 
         _setter("compartment_id", compartment_id)
@@ -2344,21 +2444,31 @@ class GetResolverRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             client_address_conditions: Sequence[str],
-             destination_addresses: Sequence[str],
-             qname_cover_conditions: Sequence[str],
-             source_endpoint_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             client_address_conditions: Optional[Sequence[str]] = None,
+             destination_addresses: Optional[Sequence[str]] = None,
+             qname_cover_conditions: Optional[Sequence[str]] = None,
+             source_endpoint_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAddressConditions' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if client_address_conditions is None and 'clientAddressConditions' in kwargs:
             client_address_conditions = kwargs['clientAddressConditions']
-        if 'destinationAddresses' in kwargs:
+        if client_address_conditions is None:
+            raise TypeError("Missing 'client_address_conditions' argument")
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
             destination_addresses = kwargs['destinationAddresses']
-        if 'qnameCoverConditions' in kwargs:
+        if destination_addresses is None:
+            raise TypeError("Missing 'destination_addresses' argument")
+        if qname_cover_conditions is None and 'qnameCoverConditions' in kwargs:
             qname_cover_conditions = kwargs['qnameCoverConditions']
-        if 'sourceEndpointName' in kwargs:
+        if qname_cover_conditions is None:
+            raise TypeError("Missing 'qname_cover_conditions' argument")
+        if source_endpoint_name is None and 'sourceEndpointName' in kwargs:
             source_endpoint_name = kwargs['sourceEndpointName']
+        if source_endpoint_name is None:
+            raise TypeError("Missing 'source_endpoint_name' argument")
 
         _setter("action", action)
         _setter("client_address_conditions", client_address_conditions)
@@ -2422,11 +2532,15 @@ class GetResolversFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -2507,47 +2621,81 @@ class GetResolversResolverResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attached_vcn_id: str,
-             attached_views: Sequence['outputs.GetResolversResolverAttachedViewResult'],
-             compartment_id: str,
-             default_view_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             endpoints: Sequence['outputs.GetResolversResolverEndpointResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_protected: bool,
-             resolver_id: str,
-             rules: Sequence['outputs.GetResolversResolverRuleResult'],
-             scope: str,
-             self: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             attached_vcn_id: Optional[str] = None,
+             attached_views: Optional[Sequence['outputs.GetResolversResolverAttachedViewResult']] = None,
+             compartment_id: Optional[str] = None,
+             default_view_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetResolversResolverEndpointResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             resolver_id: Optional[str] = None,
+             rules: Optional[Sequence['outputs.GetResolversResolverRuleResult']] = None,
+             scope: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attachedVcnId' in kwargs:
+        if attached_vcn_id is None and 'attachedVcnId' in kwargs:
             attached_vcn_id = kwargs['attachedVcnId']
-        if 'attachedViews' in kwargs:
+        if attached_vcn_id is None:
+            raise TypeError("Missing 'attached_vcn_id' argument")
+        if attached_views is None and 'attachedViews' in kwargs:
             attached_views = kwargs['attachedViews']
-        if 'compartmentId' in kwargs:
+        if attached_views is None:
+            raise TypeError("Missing 'attached_views' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'defaultViewId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if default_view_id is None and 'defaultViewId' in kwargs:
             default_view_id = kwargs['defaultViewId']
-        if 'definedTags' in kwargs:
+        if default_view_id is None:
+            raise TypeError("Missing 'default_view_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isProtected' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'resolverId' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if resolver_id is None and 'resolverId' in kwargs:
             resolver_id = kwargs['resolverId']
-        if 'timeCreated' in kwargs:
+        if resolver_id is None:
+            raise TypeError("Missing 'resolver_id' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("attached_vcn_id", attached_vcn_id)
         _setter("attached_views", attached_views)
@@ -2703,11 +2851,13 @@ class GetResolversResolverAttachedViewResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             view_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'viewId' in kwargs:
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
+        if view_id is None:
+            raise TypeError("Missing 'view_id' argument")
 
         _setter("view_id", view_id)
 
@@ -2757,38 +2907,62 @@ class GetResolversResolverEndpointResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             endpoint_type: str,
-             forwarding_address: str,
-             is_forwarding: bool,
-             is_listening: bool,
-             listening_address: str,
-             name: str,
-             self: str,
-             state: str,
-             subnet_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             endpoint_type: Optional[str] = None,
+             forwarding_address: Optional[str] = None,
+             is_forwarding: Optional[bool] = None,
+             is_listening: Optional[bool] = None,
+             listening_address: Optional[str] = None,
+             name: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'endpointType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
             endpoint_type = kwargs['endpointType']
-        if 'forwardingAddress' in kwargs:
+        if endpoint_type is None:
+            raise TypeError("Missing 'endpoint_type' argument")
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
             forwarding_address = kwargs['forwardingAddress']
-        if 'isForwarding' in kwargs:
+        if forwarding_address is None:
+            raise TypeError("Missing 'forwarding_address' argument")
+        if is_forwarding is None and 'isForwarding' in kwargs:
             is_forwarding = kwargs['isForwarding']
-        if 'isListening' in kwargs:
+        if is_forwarding is None:
+            raise TypeError("Missing 'is_forwarding' argument")
+        if is_listening is None and 'isListening' in kwargs:
             is_listening = kwargs['isListening']
-        if 'listeningAddress' in kwargs:
+        if is_listening is None:
+            raise TypeError("Missing 'is_listening' argument")
+        if listening_address is None and 'listeningAddress' in kwargs:
             listening_address = kwargs['listeningAddress']
-        if 'subnetId' in kwargs:
+        if listening_address is None:
+            raise TypeError("Missing 'listening_address' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'timeCreated' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
@@ -2898,21 +3072,31 @@ class GetResolversResolverRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: str,
-             client_address_conditions: Sequence[str],
-             destination_addresses: Sequence[str],
-             qname_cover_conditions: Sequence[str],
-             source_endpoint_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             action: Optional[str] = None,
+             client_address_conditions: Optional[Sequence[str]] = None,
+             destination_addresses: Optional[Sequence[str]] = None,
+             qname_cover_conditions: Optional[Sequence[str]] = None,
+             source_endpoint_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'clientAddressConditions' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if client_address_conditions is None and 'clientAddressConditions' in kwargs:
             client_address_conditions = kwargs['clientAddressConditions']
-        if 'destinationAddresses' in kwargs:
+        if client_address_conditions is None:
+            raise TypeError("Missing 'client_address_conditions' argument")
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
             destination_addresses = kwargs['destinationAddresses']
-        if 'qnameCoverConditions' in kwargs:
+        if destination_addresses is None:
+            raise TypeError("Missing 'destination_addresses' argument")
+        if qname_cover_conditions is None and 'qnameCoverConditions' in kwargs:
             qname_cover_conditions = kwargs['qnameCoverConditions']
-        if 'sourceEndpointName' in kwargs:
+        if qname_cover_conditions is None:
+            raise TypeError("Missing 'qname_cover_conditions' argument")
+        if source_endpoint_name is None and 'sourceEndpointName' in kwargs:
             source_endpoint_name = kwargs['sourceEndpointName']
+        if source_endpoint_name is None:
+            raise TypeError("Missing 'source_endpoint_name' argument")
 
         _setter("action", action)
         _setter("client_address_conditions", client_address_conditions)
@@ -2978,21 +3162,35 @@ class GetRrsetItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             is_protected: bool,
-             rdata: str,
-             record_hash: str,
-             rrset_version: str,
-             rtype: str,
-             ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             rdata: Optional[str] = None,
+             record_hash: Optional[str] = None,
+             rrset_version: Optional[str] = None,
+             rtype: Optional[str] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isProtected' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'recordHash' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if record_hash is None and 'recordHash' in kwargs:
             record_hash = kwargs['recordHash']
-        if 'rrsetVersion' in kwargs:
+        if record_hash is None:
+            raise TypeError("Missing 'record_hash' argument")
+        if rrset_version is None and 'rrsetVersion' in kwargs:
             rrset_version = kwargs['rrsetVersion']
+        if rrset_version is None:
+            raise TypeError("Missing 'rrset_version' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
 
         _setter("domain", domain)
         _setter("is_protected", is_protected)
@@ -3074,11 +3272,15 @@ class GetRrsetsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3120,11 +3322,17 @@ class GetRrsetsRrsetResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             items: Sequence['outputs.GetRrsetsRrsetItemResult'],
-             rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain: Optional[str] = None,
+             items: Optional[Sequence['outputs.GetRrsetsRrsetItemResult']] = None,
+             rtype: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
 
         _setter("domain", domain)
         _setter("items", items)
@@ -3184,21 +3392,35 @@ class GetRrsetsRrsetItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: str,
-             is_protected: bool,
-             rdata: str,
-             record_hash: str,
-             rrset_version: str,
-             rtype: str,
-             ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             domain: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             rdata: Optional[str] = None,
+             record_hash: Optional[str] = None,
+             rrset_version: Optional[str] = None,
+             rtype: Optional[str] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isProtected' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'recordHash' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if record_hash is None and 'recordHash' in kwargs:
             record_hash = kwargs['recordHash']
-        if 'rrsetVersion' in kwargs:
+        if record_hash is None:
+            raise TypeError("Missing 'record_hash' argument")
+        if rrset_version is None and 'rrsetVersion' in kwargs:
             rrset_version = kwargs['rrsetVersion']
+        if rrset_version is None:
+            raise TypeError("Missing 'rrset_version' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
 
         _setter("domain", domain)
         _setter("is_protected", is_protected)
@@ -3283,11 +3505,15 @@ class GetSteeringPoliciesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -3363,33 +3589,59 @@ class GetSteeringPoliciesSteeringPolicyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answers: Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult'],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             health_check_monitor_id: str,
-             id: str,
-             rules: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult'],
-             self: str,
-             state: str,
-             template: str,
-             time_created: str,
-             ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answers: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult']] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             health_check_monitor_id: Optional[str] = None,
+             id: Optional[str] = None,
+             rules: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult']] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             template: Optional[str] = None,
+             time_created: Optional[str] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if answers is None:
+            raise TypeError("Missing 'answers' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'healthCheckMonitorId' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if health_check_monitor_id is None and 'healthCheckMonitorId' in kwargs:
             health_check_monitor_id = kwargs['healthCheckMonitorId']
-        if 'timeCreated' in kwargs:
+        if health_check_monitor_id is None:
+            raise TypeError("Missing 'health_check_monitor_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if rules is None:
+            raise TypeError("Missing 'rules' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if template is None:
+            raise TypeError("Missing 'template' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
 
         _setter("answers", answers)
         _setter("compartment_id", compartment_id)
@@ -3536,15 +3788,25 @@ class GetSteeringPoliciesSteeringPolicyAnswerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_disabled: bool,
-             name: str,
-             pool: str,
-             rdata: str,
-             rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_disabled: Optional[bool] = None,
+             name: Optional[str] = None,
+             pool: Optional[str] = None,
+             rdata: Optional[str] = None,
+             rtype: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDisabled' in kwargs:
+        if is_disabled is None and 'isDisabled' in kwargs:
             is_disabled = kwargs['isDisabled']
+        if is_disabled is None:
+            raise TypeError("Missing 'is_disabled' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if pool is None:
+            raise TypeError("Missing 'pool' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
 
         _setter("is_disabled", is_disabled)
         _setter("name", name)
@@ -3619,19 +3881,29 @@ class GetSteeringPoliciesSteeringPolicyRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cases: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult'],
-             default_answer_datas: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult'],
-             default_count: int,
-             description: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cases: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult']] = None,
+             default_answer_datas: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult']] = None,
+             default_count: Optional[int] = None,
+             description: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultAnswerDatas' in kwargs:
+        if cases is None:
+            raise TypeError("Missing 'cases' argument")
+        if default_answer_datas is None and 'defaultAnswerDatas' in kwargs:
             default_answer_datas = kwargs['defaultAnswerDatas']
-        if 'defaultCount' in kwargs:
+        if default_answer_datas is None:
+            raise TypeError("Missing 'default_answer_datas' argument")
+        if default_count is None and 'defaultCount' in kwargs:
             default_count = kwargs['defaultCount']
-        if 'ruleType' in kwargs:
+        if default_count is None:
+            raise TypeError("Missing 'default_count' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("cases", cases)
         _setter("default_answer_datas", default_answer_datas)
@@ -3700,15 +3972,21 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_datas: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult'],
-             case_condition: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_datas: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult']] = None,
+             case_condition: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerDatas' in kwargs:
+        if answer_datas is None and 'answerDatas' in kwargs:
             answer_datas = kwargs['answerDatas']
-        if 'caseCondition' in kwargs:
+        if answer_datas is None:
+            raise TypeError("Missing 'answer_datas' argument")
+        if case_condition is None and 'caseCondition' in kwargs:
             case_condition = kwargs['caseCondition']
+        if case_condition is None:
+            raise TypeError("Missing 'case_condition' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("answer_datas", answer_datas)
         _setter("case_condition", case_condition)
@@ -3759,15 +4037,21 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_condition: str,
-             should_keep: bool,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_condition: Optional[str] = None,
+             should_keep: Optional[bool] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if answer_condition is None:
+            raise TypeError("Missing 'answer_condition' argument")
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
+        if should_keep is None:
+            raise TypeError("Missing 'should_keep' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
@@ -3818,15 +4102,21 @@ class GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_condition: str,
-             should_keep: bool,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_condition: Optional[str] = None,
+             should_keep: Optional[bool] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if answer_condition is None:
+            raise TypeError("Missing 'answer_condition' argument")
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
+        if should_keep is None:
+            raise TypeError("Missing 'should_keep' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
@@ -3883,15 +4173,25 @@ class GetSteeringPolicyAnswerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_disabled: bool,
-             name: str,
-             pool: str,
-             rdata: str,
-             rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             is_disabled: Optional[bool] = None,
+             name: Optional[str] = None,
+             pool: Optional[str] = None,
+             rdata: Optional[str] = None,
+             rtype: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isDisabled' in kwargs:
+        if is_disabled is None and 'isDisabled' in kwargs:
             is_disabled = kwargs['isDisabled']
+        if is_disabled is None:
+            raise TypeError("Missing 'is_disabled' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if pool is None:
+            raise TypeError("Missing 'pool' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
 
         _setter("is_disabled", is_disabled)
         _setter("name", name)
@@ -3955,11 +4255,15 @@ class GetSteeringPolicyAttachmentsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4023,30 +4327,50 @@ class GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             display_name: str,
-             domain_name: str,
-             id: str,
-             rtypes: Sequence[str],
-             self: str,
-             state: str,
-             steering_policy_id: str,
-             time_created: str,
-             zone_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             domain_name: Optional[str] = None,
+             id: Optional[str] = None,
+             rtypes: Optional[Sequence[str]] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             steering_policy_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             zone_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'domainName' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if domain_name is None and 'domainName' in kwargs:
             domain_name = kwargs['domainName']
-        if 'steeringPolicyId' in kwargs:
+        if domain_name is None:
+            raise TypeError("Missing 'domain_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if rtypes is None:
+            raise TypeError("Missing 'rtypes' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if steering_policy_id is None and 'steeringPolicyId' in kwargs:
             steering_policy_id = kwargs['steeringPolicyId']
-        if 'timeCreated' in kwargs:
+        if steering_policy_id is None:
+            raise TypeError("Missing 'steering_policy_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'zoneId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if zone_id is None and 'zoneId' in kwargs:
             zone_id = kwargs['zoneId']
+        if zone_id is None:
+            raise TypeError("Missing 'zone_id' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -4166,19 +4490,29 @@ class GetSteeringPolicyRuleResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cases: Sequence['outputs.GetSteeringPolicyRuleCaseResult'],
-             default_answer_datas: Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult'],
-             default_count: int,
-             description: str,
-             rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             cases: Optional[Sequence['outputs.GetSteeringPolicyRuleCaseResult']] = None,
+             default_answer_datas: Optional[Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult']] = None,
+             default_count: Optional[int] = None,
+             description: Optional[str] = None,
+             rule_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultAnswerDatas' in kwargs:
+        if cases is None:
+            raise TypeError("Missing 'cases' argument")
+        if default_answer_datas is None and 'defaultAnswerDatas' in kwargs:
             default_answer_datas = kwargs['defaultAnswerDatas']
-        if 'defaultCount' in kwargs:
+        if default_answer_datas is None:
+            raise TypeError("Missing 'default_answer_datas' argument")
+        if default_count is None and 'defaultCount' in kwargs:
             default_count = kwargs['defaultCount']
-        if 'ruleType' in kwargs:
+        if default_count is None:
+            raise TypeError("Missing 'default_count' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if rule_type is None and 'ruleType' in kwargs:
             rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
 
         _setter("cases", cases)
         _setter("default_answer_datas", default_answer_datas)
@@ -4247,15 +4581,21 @@ class GetSteeringPolicyRuleCaseResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_datas: Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult'],
-             case_condition: str,
-             count: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_datas: Optional[Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult']] = None,
+             case_condition: Optional[str] = None,
+             count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerDatas' in kwargs:
+        if answer_datas is None and 'answerDatas' in kwargs:
             answer_datas = kwargs['answerDatas']
-        if 'caseCondition' in kwargs:
+        if answer_datas is None:
+            raise TypeError("Missing 'answer_datas' argument")
+        if case_condition is None and 'caseCondition' in kwargs:
             case_condition = kwargs['caseCondition']
+        if case_condition is None:
+            raise TypeError("Missing 'case_condition' argument")
+        if count is None:
+            raise TypeError("Missing 'count' argument")
 
         _setter("answer_datas", answer_datas)
         _setter("case_condition", case_condition)
@@ -4306,15 +4646,21 @@ class GetSteeringPolicyRuleCaseAnswerDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_condition: str,
-             should_keep: bool,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_condition: Optional[str] = None,
+             should_keep: Optional[bool] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if answer_condition is None:
+            raise TypeError("Missing 'answer_condition' argument")
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
+        if should_keep is None:
+            raise TypeError("Missing 'should_keep' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
@@ -4365,15 +4711,21 @@ class GetSteeringPolicyRuleDefaultAnswerDataResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             answer_condition: str,
-             should_keep: bool,
-             value: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             answer_condition: Optional[str] = None,
+             should_keep: Optional[bool] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerCondition' in kwargs:
+        if answer_condition is None and 'answerCondition' in kwargs:
             answer_condition = kwargs['answerCondition']
-        if 'shouldKeep' in kwargs:
+        if answer_condition is None:
+            raise TypeError("Missing 'answer_condition' argument")
+        if should_keep is None and 'shouldKeep' in kwargs:
             should_keep = kwargs['shouldKeep']
+        if should_keep is None:
+            raise TypeError("Missing 'should_keep' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
 
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
@@ -4422,11 +4774,15 @@ class GetTsigKeysFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4496,29 +4852,51 @@ class GetTsigKeysTsigKeyResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             algorithm: str,
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             name: str,
-             secret: str,
-             self: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             algorithm: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             secret: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if algorithm is None:
+            raise TypeError("Missing 'algorithm' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'timeCreated' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if secret is None:
+            raise TypeError("Missing 'secret' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("algorithm", algorithm)
         _setter("compartment_id", compartment_id)
@@ -4636,11 +5014,15 @@ class GetViewsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4707,33 +5089,55 @@ class GetViewsViewResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_protected: bool,
-             scope: str,
-             self: str,
-             state: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             scope: Optional[str] = None,
+             self: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isProtected' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'timeCreated' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4854,11 +5258,15 @@ class GetZonesFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -4950,46 +5358,82 @@ class GetZonesZoneResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             external_downstreams: Sequence['outputs.GetZonesZoneExternalDownstreamResult'],
-             external_masters: Sequence['outputs.GetZonesZoneExternalMasterResult'],
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             is_protected: bool,
-             name: str,
-             nameservers: Sequence['outputs.GetZonesZoneNameserverResult'],
-             scope: str,
-             self: str,
-             serial: int,
-             state: str,
-             time_created: str,
-             version: str,
-             view_id: str,
-             zone_transfer_servers: Sequence['outputs.GetZonesZoneZoneTransferServerResult'],
-             zone_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             external_downstreams: Optional[Sequence['outputs.GetZonesZoneExternalDownstreamResult']] = None,
+             external_masters: Optional[Sequence['outputs.GetZonesZoneExternalMasterResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_protected: Optional[bool] = None,
+             name: Optional[str] = None,
+             nameservers: Optional[Sequence['outputs.GetZonesZoneNameserverResult']] = None,
+             scope: Optional[str] = None,
+             self: Optional[str] = None,
+             serial: Optional[int] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             version: Optional[str] = None,
+             view_id: Optional[str] = None,
+             zone_transfer_servers: Optional[Sequence['outputs.GetZonesZoneZoneTransferServerResult']] = None,
+             zone_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'externalDownstreams' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if external_downstreams is None and 'externalDownstreams' in kwargs:
             external_downstreams = kwargs['externalDownstreams']
-        if 'externalMasters' in kwargs:
+        if external_downstreams is None:
+            raise TypeError("Missing 'external_downstreams' argument")
+        if external_masters is None and 'externalMasters' in kwargs:
             external_masters = kwargs['externalMasters']
-        if 'freeformTags' in kwargs:
+        if external_masters is None:
+            raise TypeError("Missing 'external_masters' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isProtected' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'timeCreated' in kwargs:
+        if is_protected is None:
+            raise TypeError("Missing 'is_protected' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if nameservers is None:
+            raise TypeError("Missing 'nameservers' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
+        if self is None:
+            raise TypeError("Missing 'self' argument")
+        if serial is None:
+            raise TypeError("Missing 'serial' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'viewId' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if view_id is None and 'viewId' in kwargs:
             view_id = kwargs['viewId']
-        if 'zoneTransferServers' in kwargs:
+        if view_id is None:
+            raise TypeError("Missing 'view_id' argument")
+        if zone_transfer_servers is None and 'zoneTransferServers' in kwargs:
             zone_transfer_servers = kwargs['zoneTransferServers']
-        if 'zoneType' in kwargs:
+        if zone_transfer_servers is None:
+            raise TypeError("Missing 'zone_transfer_servers' argument")
+        if zone_type is None and 'zoneType' in kwargs:
             zone_type = kwargs['zoneType']
+        if zone_type is None:
+            raise TypeError("Missing 'zone_type' argument")
 
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -5176,13 +5620,19 @@ class GetZonesZoneExternalDownstreamResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             port: int,
-             tsig_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             port: Optional[int] = None,
+             tsig_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
+        if tsig_key_id is None:
+            raise TypeError("Missing 'tsig_key_id' argument")
 
         _setter("address", address)
         _setter("port", port)
@@ -5233,13 +5683,19 @@ class GetZonesZoneExternalMasterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             port: int,
-             tsig_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             port: Optional[int] = None,
+             tsig_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'tsigKeyId' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
             tsig_key_id = kwargs['tsigKeyId']
+        if tsig_key_id is None:
+            raise TypeError("Missing 'tsig_key_id' argument")
 
         _setter("address", address)
         _setter("port", port)
@@ -5284,9 +5740,11 @@ class GetZonesZoneNameserverResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             hostname: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
 
         _setter("hostname", hostname)
 
@@ -5322,16 +5780,24 @@ class GetZonesZoneZoneTransferServerResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: str,
-             is_transfer_destination: bool,
-             is_transfer_source: bool,
-             port: int,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             address: Optional[str] = None,
+             is_transfer_destination: Optional[bool] = None,
+             is_transfer_source: Optional[bool] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'isTransferDestination' in kwargs:
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if is_transfer_destination is None and 'isTransferDestination' in kwargs:
             is_transfer_destination = kwargs['isTransferDestination']
-        if 'isTransferSource' in kwargs:
+        if is_transfer_destination is None:
+            raise TypeError("Missing 'is_transfer_destination' argument")
+        if is_transfer_source is None and 'isTransferSource' in kwargs:
             is_transfer_source = kwargs['isTransferSource']
+        if is_transfer_source is None:
+            raise TypeError("Missing 'is_transfer_source' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
 
         _setter("address", address)
         _setter("is_transfer_destination", is_transfer_destination)

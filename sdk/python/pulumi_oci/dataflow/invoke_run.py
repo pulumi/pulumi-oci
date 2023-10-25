@@ -103,7 +103,7 @@ class InvokeRunArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
              application_id: Optional[pulumi.Input[str]] = None,
              application_log_config: Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']] = None,
              archive_uri: Optional[pulumi.Input[str]] = None,
@@ -128,45 +128,47 @@ class InvokeRunArgs:
              spark_version: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'applicationId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if application_id is None and 'applicationId' in kwargs:
             application_id = kwargs['applicationId']
-        if 'applicationLogConfig' in kwargs:
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
             application_log_config = kwargs['applicationLogConfig']
-        if 'archiveUri' in kwargs:
+        if archive_uri is None and 'archiveUri' in kwargs:
             archive_uri = kwargs['archiveUri']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShape' in kwargs:
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idleTimeoutInMinutes' in kwargs:
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
             idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
-        if 'logsBucketUri' in kwargs:
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
             logs_bucket_uri = kwargs['logsBucketUri']
-        if 'maxDurationInMinutes' in kwargs:
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
             max_duration_in_minutes = kwargs['maxDurationInMinutes']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'numExecutors' in kwargs:
+        if num_executors is None and 'numExecutors' in kwargs:
             num_executors = kwargs['numExecutors']
-        if 'poolId' in kwargs:
+        if pool_id is None and 'poolId' in kwargs:
             pool_id = kwargs['poolId']
-        if 'sparkVersion' in kwargs:
+        if spark_version is None and 'sparkVersion' in kwargs:
             spark_version = kwargs['sparkVersion']
-        if 'warehouseBucketUri' in kwargs:
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
             warehouse_bucket_uri = kwargs['warehouseBucketUri']
 
         _setter("compartment_id", compartment_id)
@@ -712,79 +714,79 @@ class _InvokeRunState:
              total_ocpu: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'applicationId' in kwargs:
+        if application_id is None and 'applicationId' in kwargs:
             application_id = kwargs['applicationId']
-        if 'applicationLogConfig' in kwargs:
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
             application_log_config = kwargs['applicationLogConfig']
-        if 'archiveUri' in kwargs:
+        if archive_uri is None and 'archiveUri' in kwargs:
             archive_uri = kwargs['archiveUri']
-        if 'className' in kwargs:
+        if class_name is None and 'className' in kwargs:
             class_name = kwargs['className']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataReadInBytes' in kwargs:
+        if data_read_in_bytes is None and 'dataReadInBytes' in kwargs:
             data_read_in_bytes = kwargs['dataReadInBytes']
-        if 'dataWrittenInBytes' in kwargs:
+        if data_written_in_bytes is None and 'dataWrittenInBytes' in kwargs:
             data_written_in_bytes = kwargs['dataWrittenInBytes']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'driverShape' in kwargs:
+        if driver_shape is None and 'driverShape' in kwargs:
             driver_shape = kwargs['driverShape']
-        if 'driverShapeConfig' in kwargs:
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
             driver_shape_config = kwargs['driverShapeConfig']
-        if 'executorShape' in kwargs:
+        if executor_shape is None and 'executorShape' in kwargs:
             executor_shape = kwargs['executorShape']
-        if 'executorShapeConfig' in kwargs:
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
             executor_shape_config = kwargs['executorShapeConfig']
-        if 'fileUri' in kwargs:
+        if file_uri is None and 'fileUri' in kwargs:
             file_uri = kwargs['fileUri']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idleTimeoutInMinutes' in kwargs:
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
             idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'logsBucketUri' in kwargs:
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
             logs_bucket_uri = kwargs['logsBucketUri']
-        if 'maxDurationInMinutes' in kwargs:
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
             max_duration_in_minutes = kwargs['maxDurationInMinutes']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'numExecutors' in kwargs:
+        if num_executors is None and 'numExecutors' in kwargs:
             num_executors = kwargs['numExecutors']
-        if 'opcRequestId' in kwargs:
+        if opc_request_id is None and 'opcRequestId' in kwargs:
             opc_request_id = kwargs['opcRequestId']
-        if 'ownerPrincipalId' in kwargs:
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
             owner_principal_id = kwargs['ownerPrincipalId']
-        if 'ownerUserName' in kwargs:
+        if owner_user_name is None and 'ownerUserName' in kwargs:
             owner_user_name = kwargs['ownerUserName']
-        if 'poolId' in kwargs:
+        if pool_id is None and 'poolId' in kwargs:
             pool_id = kwargs['poolId']
-        if 'privateEndpointDnsZones' in kwargs:
+        if private_endpoint_dns_zones is None and 'privateEndpointDnsZones' in kwargs:
             private_endpoint_dns_zones = kwargs['privateEndpointDnsZones']
-        if 'privateEndpointId' in kwargs:
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
             private_endpoint_id = kwargs['privateEndpointId']
-        if 'privateEndpointMaxHostCount' in kwargs:
+        if private_endpoint_max_host_count is None and 'privateEndpointMaxHostCount' in kwargs:
             private_endpoint_max_host_count = kwargs['privateEndpointMaxHostCount']
-        if 'privateEndpointNsgIds' in kwargs:
+        if private_endpoint_nsg_ids is None and 'privateEndpointNsgIds' in kwargs:
             private_endpoint_nsg_ids = kwargs['privateEndpointNsgIds']
-        if 'privateEndpointSubnetId' in kwargs:
+        if private_endpoint_subnet_id is None and 'privateEndpointSubnetId' in kwargs:
             private_endpoint_subnet_id = kwargs['privateEndpointSubnetId']
-        if 'runDurationInMilliseconds' in kwargs:
+        if run_duration_in_milliseconds is None and 'runDurationInMilliseconds' in kwargs:
             run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
-        if 'sparkVersion' in kwargs:
+        if spark_version is None and 'sparkVersion' in kwargs:
             spark_version = kwargs['sparkVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalOcpu' in kwargs:
+        if total_ocpu is None and 'totalOcpu' in kwargs:
             total_ocpu = kwargs['totalOcpu']
-        if 'warehouseBucketUri' in kwargs:
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
             warehouse_bucket_uri = kwargs['warehouseBucketUri']
 
         if application_id is not None:
@@ -1658,11 +1660,7 @@ class InvokeRun(pulumi.CustomResource):
             __props__ = InvokeRunArgs.__new__(InvokeRunArgs)
 
             __props__.__dict__["application_id"] = application_id
-            if application_log_config is not None and not isinstance(application_log_config, InvokeRunApplicationLogConfigArgs):
-                application_log_config = application_log_config or {}
-                def _setter(key, value):
-                    application_log_config[key] = value
-                InvokeRunApplicationLogConfigArgs._configure(_setter, **application_log_config)
+            application_log_config = _utilities.configure(application_log_config, InvokeRunApplicationLogConfigArgs, True)
             __props__.__dict__["application_log_config"] = application_log_config
             __props__.__dict__["archive_uri"] = archive_uri
             __props__.__dict__["arguments"] = arguments
@@ -1674,19 +1672,11 @@ class InvokeRun(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["driver_shape"] = driver_shape
-            if driver_shape_config is not None and not isinstance(driver_shape_config, InvokeRunDriverShapeConfigArgs):
-                driver_shape_config = driver_shape_config or {}
-                def _setter(key, value):
-                    driver_shape_config[key] = value
-                InvokeRunDriverShapeConfigArgs._configure(_setter, **driver_shape_config)
+            driver_shape_config = _utilities.configure(driver_shape_config, InvokeRunDriverShapeConfigArgs, True)
             __props__.__dict__["driver_shape_config"] = driver_shape_config
             __props__.__dict__["execute"] = execute
             __props__.__dict__["executor_shape"] = executor_shape
-            if executor_shape_config is not None and not isinstance(executor_shape_config, InvokeRunExecutorShapeConfigArgs):
-                executor_shape_config = executor_shape_config or {}
-                def _setter(key, value):
-                    executor_shape_config[key] = value
-                InvokeRunExecutorShapeConfigArgs._configure(_setter, **executor_shape_config)
+            executor_shape_config = _utilities.configure(executor_shape_config, InvokeRunExecutorShapeConfigArgs, True)
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idle_timeout_in_minutes"] = idle_timeout_in_minutes

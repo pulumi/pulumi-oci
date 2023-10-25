@@ -81,10 +81,10 @@ class VtapArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             capture_filter_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             source_id: pulumi.Input[str],
-             vcn_id: pulumi.Input[str],
+             capture_filter_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              encapsulation_protocol: Optional[pulumi.Input[str]] = None,
@@ -99,43 +99,51 @@ class VtapArgs:
              target_type: Optional[pulumi.Input[str]] = None,
              traffic_mode: Optional[pulumi.Input[str]] = None,
              vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'captureFilterId' in kwargs:
+        if capture_filter_id is None and 'captureFilterId' in kwargs:
             capture_filter_id = kwargs['captureFilterId']
-        if 'compartmentId' in kwargs:
+        if capture_filter_id is None:
+            raise TypeError("Missing 'capture_filter_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'sourceId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'vcnId' in kwargs:
+        if source_id is None:
+            raise TypeError("Missing 'source_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'definedTags' in kwargs:
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'encapsulationProtocol' in kwargs:
+        if encapsulation_protocol is None and 'encapsulationProtocol' in kwargs:
             encapsulation_protocol = kwargs['encapsulationProtocol']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isVtapEnabled' in kwargs:
+        if is_vtap_enabled is None and 'isVtapEnabled' in kwargs:
             is_vtap_enabled = kwargs['isVtapEnabled']
-        if 'maxPacketSize' in kwargs:
+        if max_packet_size is None and 'maxPacketSize' in kwargs:
             max_packet_size = kwargs['maxPacketSize']
-        if 'sourcePrivateEndpointIp' in kwargs:
+        if source_private_endpoint_ip is None and 'sourcePrivateEndpointIp' in kwargs:
             source_private_endpoint_ip = kwargs['sourcePrivateEndpointIp']
-        if 'sourcePrivateEndpointSubnetId' in kwargs:
+        if source_private_endpoint_subnet_id is None and 'sourcePrivateEndpointSubnetId' in kwargs:
             source_private_endpoint_subnet_id = kwargs['sourcePrivateEndpointSubnetId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'targetIp' in kwargs:
+        if target_ip is None and 'targetIp' in kwargs:
             target_ip = kwargs['targetIp']
-        if 'targetType' in kwargs:
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'trafficMode' in kwargs:
+        if traffic_mode is None and 'trafficMode' in kwargs:
             traffic_mode = kwargs['trafficMode']
-        if 'vxlanNetworkIdentifier' in kwargs:
+        if vxlan_network_identifier is None and 'vxlanNetworkIdentifier' in kwargs:
             vxlan_network_identifier = kwargs['vxlanNetworkIdentifier']
 
         _setter("capture_filter_id", capture_filter_id)
@@ -492,47 +500,47 @@ class _VtapState:
              traffic_mode: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
              vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'captureFilterId' in kwargs:
+        if capture_filter_id is None and 'captureFilterId' in kwargs:
             capture_filter_id = kwargs['captureFilterId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'encapsulationProtocol' in kwargs:
+        if encapsulation_protocol is None and 'encapsulationProtocol' in kwargs:
             encapsulation_protocol = kwargs['encapsulationProtocol']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isVtapEnabled' in kwargs:
+        if is_vtap_enabled is None and 'isVtapEnabled' in kwargs:
             is_vtap_enabled = kwargs['isVtapEnabled']
-        if 'lifecycleStateDetails' in kwargs:
+        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
             lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if 'maxPacketSize' in kwargs:
+        if max_packet_size is None and 'maxPacketSize' in kwargs:
             max_packet_size = kwargs['maxPacketSize']
-        if 'sourceId' in kwargs:
+        if source_id is None and 'sourceId' in kwargs:
             source_id = kwargs['sourceId']
-        if 'sourcePrivateEndpointIp' in kwargs:
+        if source_private_endpoint_ip is None and 'sourcePrivateEndpointIp' in kwargs:
             source_private_endpoint_ip = kwargs['sourcePrivateEndpointIp']
-        if 'sourcePrivateEndpointSubnetId' in kwargs:
+        if source_private_endpoint_subnet_id is None and 'sourcePrivateEndpointSubnetId' in kwargs:
             source_private_endpoint_subnet_id = kwargs['sourcePrivateEndpointSubnetId']
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
-        if 'targetId' in kwargs:
+        if target_id is None and 'targetId' in kwargs:
             target_id = kwargs['targetId']
-        if 'targetIp' in kwargs:
+        if target_ip is None and 'targetIp' in kwargs:
             target_ip = kwargs['targetIp']
-        if 'targetType' in kwargs:
+        if target_type is None and 'targetType' in kwargs:
             target_type = kwargs['targetType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'trafficMode' in kwargs:
+        if traffic_mode is None and 'trafficMode' in kwargs:
             traffic_mode = kwargs['trafficMode']
-        if 'vcnId' in kwargs:
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
-        if 'vxlanNetworkIdentifier' in kwargs:
+        if vxlan_network_identifier is None and 'vxlanNetworkIdentifier' in kwargs:
             vxlan_network_identifier = kwargs['vxlanNetworkIdentifier']
 
         if capture_filter_id is not None:

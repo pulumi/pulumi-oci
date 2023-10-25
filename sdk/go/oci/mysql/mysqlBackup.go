@@ -34,12 +34,12 @@ import (
 //			_, err := Mysql.NewMysqlBackup(ctx, "testMysqlBackup", &Mysql.MysqlBackupArgs{
 //				DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_db_system.Id),
 //				BackupType: pulumi.Any(_var.Mysql_backup_backup_type),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Description: pulumi.Any(_var.Mysql_backup_description),
 //				DisplayName: pulumi.Any(_var.Mysql_backup_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				RetentionInDays: pulumi.Any(_var.Mysql_backup_retention_in_days),

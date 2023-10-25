@@ -34,11 +34,11 @@ import (
 //			_, err := Core.NewNetworkSecurityGroup(ctx, "testNetworkSecurityGroup", &Core.NetworkSecurityGroupArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Network_security_group_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //			})

@@ -64,10 +64,10 @@ class ModelArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             model_type: pulumi.Input[str],
-             project_id: pulumi.Input[str],
-             training_dataset: pulumi.Input['ModelTrainingDatasetArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
@@ -77,31 +77,39 @@ class ModelArgs:
              model_version: Optional[pulumi.Input[str]] = None,
              testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'modelType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'projectId' in kwargs:
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'trainingDataset' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if training_dataset is None and 'trainingDataset' in kwargs:
             training_dataset = kwargs['trainingDataset']
-        if 'definedTags' in kwargs:
+        if training_dataset is None:
+            raise TypeError("Missing 'training_dataset' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isQuickMode' in kwargs:
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
             is_quick_mode = kwargs['isQuickMode']
-        if 'maxTrainingDurationInHours' in kwargs:
+        if max_training_duration_in_hours is None and 'maxTrainingDurationInHours' in kwargs:
             max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'testingDataset' in kwargs:
+        if testing_dataset is None and 'testingDataset' in kwargs:
             testing_dataset = kwargs['testingDataset']
-        if 'validationDataset' in kwargs:
+        if validation_dataset is None and 'validationDataset' in kwargs:
             validation_dataset = kwargs['validationDataset']
 
         _setter("compartment_id", compartment_id)
@@ -400,49 +408,49 @@ class _ModelState:
              trained_duration_in_hours: Optional[pulumi.Input[float]] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'averagePrecision' in kwargs:
+        if average_precision is None and 'averagePrecision' in kwargs:
             average_precision = kwargs['averagePrecision']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'confidenceThreshold' in kwargs:
+        if confidence_threshold is None and 'confidenceThreshold' in kwargs:
             confidence_threshold = kwargs['confidenceThreshold']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isQuickMode' in kwargs:
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
             is_quick_mode = kwargs['isQuickMode']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maxTrainingDurationInHours' in kwargs:
+        if max_training_duration_in_hours is None and 'maxTrainingDurationInHours' in kwargs:
             max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'testImageCount' in kwargs:
+        if test_image_count is None and 'testImageCount' in kwargs:
             test_image_count = kwargs['testImageCount']
-        if 'testingDataset' in kwargs:
+        if testing_dataset is None and 'testingDataset' in kwargs:
             testing_dataset = kwargs['testingDataset']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalImageCount' in kwargs:
+        if total_image_count is None and 'totalImageCount' in kwargs:
             total_image_count = kwargs['totalImageCount']
-        if 'trainedDurationInHours' in kwargs:
+        if trained_duration_in_hours is None and 'trainedDurationInHours' in kwargs:
             trained_duration_in_hours = kwargs['trainedDurationInHours']
-        if 'trainingDataset' in kwargs:
+        if training_dataset is None and 'trainingDataset' in kwargs:
             training_dataset = kwargs['trainingDataset']
-        if 'validationDataset' in kwargs:
+        if validation_dataset is None and 'validationDataset' in kwargs:
             validation_dataset = kwargs['validationDataset']
 
         if average_precision is not None:
@@ -1023,25 +1031,13 @@ class Model(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            if testing_dataset is not None and not isinstance(testing_dataset, ModelTestingDatasetArgs):
-                testing_dataset = testing_dataset or {}
-                def _setter(key, value):
-                    testing_dataset[key] = value
-                ModelTestingDatasetArgs._configure(_setter, **testing_dataset)
+            testing_dataset = _utilities.configure(testing_dataset, ModelTestingDatasetArgs, True)
             __props__.__dict__["testing_dataset"] = testing_dataset
-            if training_dataset is not None and not isinstance(training_dataset, ModelTrainingDatasetArgs):
-                training_dataset = training_dataset or {}
-                def _setter(key, value):
-                    training_dataset[key] = value
-                ModelTrainingDatasetArgs._configure(_setter, **training_dataset)
+            training_dataset = _utilities.configure(training_dataset, ModelTrainingDatasetArgs, True)
             if training_dataset is None and not opts.urn:
                 raise TypeError("Missing required property 'training_dataset'")
             __props__.__dict__["training_dataset"] = training_dataset
-            if validation_dataset is not None and not isinstance(validation_dataset, ModelValidationDatasetArgs):
-                validation_dataset = validation_dataset or {}
-                def _setter(key, value):
-                    validation_dataset[key] = value
-                ModelValidationDatasetArgs._configure(_setter, **validation_dataset)
+            validation_dataset = _utilities.configure(validation_dataset, ModelValidationDatasetArgs, True)
             __props__.__dict__["validation_dataset"] = validation_dataset
             __props__.__dict__["average_precision"] = None
             __props__.__dict__["confidence_threshold"] = None

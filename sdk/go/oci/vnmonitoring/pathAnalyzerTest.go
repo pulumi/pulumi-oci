@@ -56,11 +56,11 @@ import (
 //					VlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
 //					VnicId:                pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
 //				},
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Path_analyzer_test_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				ProtocolParameters: &vnmonitoring.PathAnalyzerTestProtocolParametersArgs{

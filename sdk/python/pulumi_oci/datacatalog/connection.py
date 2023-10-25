@@ -50,27 +50,37 @@ class ConnectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             catalog_id: pulumi.Input[str],
-             data_asset_key: pulumi.Input[str],
-             display_name: pulumi.Input[str],
-             properties: pulumi.Input[Mapping[str, Any]],
-             type_key: pulumi.Input[str],
+             catalog_id: Optional[pulumi.Input[str]] = None,
+             data_asset_key: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             type_key: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_default: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'dataAssetKey' in kwargs:
+        if catalog_id is None:
+            raise TypeError("Missing 'catalog_id' argument")
+        if data_asset_key is None and 'dataAssetKey' in kwargs:
             data_asset_key = kwargs['dataAssetKey']
-        if 'displayName' in kwargs:
+        if data_asset_key is None:
+            raise TypeError("Missing 'data_asset_key' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'typeKey' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
-        if 'encProperties' in kwargs:
+        if type_key is None:
+            raise TypeError("Missing 'type_key' argument")
+        if enc_properties is None and 'encProperties' in kwargs:
             enc_properties = kwargs['encProperties']
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
 
         _setter("catalog_id", catalog_id)
@@ -266,31 +276,31 @@ class _ConnectionState:
              type_key: Optional[pulumi.Input[str]] = None,
              updated_by_id: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'catalogId' in kwargs:
+        if catalog_id is None and 'catalogId' in kwargs:
             catalog_id = kwargs['catalogId']
-        if 'createdById' in kwargs:
+        if created_by_id is None and 'createdById' in kwargs:
             created_by_id = kwargs['createdById']
-        if 'dataAssetKey' in kwargs:
+        if data_asset_key is None and 'dataAssetKey' in kwargs:
             data_asset_key = kwargs['dataAssetKey']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'encProperties' in kwargs:
+        if enc_properties is None and 'encProperties' in kwargs:
             enc_properties = kwargs['encProperties']
-        if 'externalKey' in kwargs:
+        if external_key is None and 'externalKey' in kwargs:
             external_key = kwargs['externalKey']
-        if 'isDefault' in kwargs:
+        if is_default is None and 'isDefault' in kwargs:
             is_default = kwargs['isDefault']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusUpdated' in kwargs:
+        if time_status_updated is None and 'timeStatusUpdated' in kwargs:
             time_status_updated = kwargs['timeStatusUpdated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'typeKey' in kwargs:
+        if type_key is None and 'typeKey' in kwargs:
             type_key = kwargs['typeKey']
-        if 'updatedById' in kwargs:
+        if updated_by_id is None and 'updatedById' in kwargs:
             updated_by_id = kwargs['updatedById']
 
         if catalog_id is not None:

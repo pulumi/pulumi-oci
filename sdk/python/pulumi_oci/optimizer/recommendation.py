@@ -40,14 +40,18 @@ class RecommendationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             recommendation_id: pulumi.Input[str],
-             status: pulumi.Input[str],
+             recommendation_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
              time_status_end: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recommendationId' in kwargs:
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
-        if 'timeStatusEnd' in kwargs:
+        if recommendation_id is None:
+            raise TypeError("Missing 'recommendation_id' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
             time_status_end = kwargs['timeStatusEnd']
 
         _setter("recommendation_id", recommendation_id)
@@ -180,29 +184,29 @@ class _RecommendationState:
              time_status_begin: Optional[pulumi.Input[str]] = None,
              time_status_end: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryId' in kwargs:
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'estimatedCostSaving' in kwargs:
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
             estimated_cost_saving = kwargs['estimatedCostSaving']
-        if 'extendedMetadata' in kwargs:
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'recommendationId' in kwargs:
+        if recommendation_id is None and 'recommendationId' in kwargs:
             recommendation_id = kwargs['recommendationId']
-        if 'resourceCounts' in kwargs:
+        if resource_counts is None and 'resourceCounts' in kwargs:
             resource_counts = kwargs['resourceCounts']
-        if 'supportedLevels' in kwargs:
+        if supported_levels is None and 'supportedLevels' in kwargs:
             supported_levels = kwargs['supportedLevels']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeStatusBegin' in kwargs:
+        if time_status_begin is None and 'timeStatusBegin' in kwargs:
             time_status_begin = kwargs['timeStatusBegin']
-        if 'timeStatusEnd' in kwargs:
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
             time_status_end = kwargs['timeStatusEnd']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if category_id is not None:

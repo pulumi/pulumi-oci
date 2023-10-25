@@ -67,11 +67,11 @@ import (
 //					},
 //				},
 //				Size: pulumi.Any(_var.Instance_pool_size),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Instance_pool_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InstanceDisplayNameFormatter: pulumi.Any(_var.Instance_pool_instance_display_name_formatter),

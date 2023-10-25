@@ -46,18 +46,20 @@ class DkimArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email_domain_id: pulumi.Input[str],
+             email_domain_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'emailDomainId' in kwargs:
+        if email_domain_id is None and 'emailDomainId' in kwargs:
             email_domain_id = kwargs['emailDomainId']
-        if 'definedTags' in kwargs:
+        if email_domain_id is None:
+            raise TypeError("Missing 'email_domain_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("email_domain_id", email_domain_id)
@@ -215,29 +217,29 @@ class _DkimState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              txt_record_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cnameRecordValue' in kwargs:
+        if cname_record_value is None and 'cnameRecordValue' in kwargs:
             cname_record_value = kwargs['cnameRecordValue']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsSubdomainName' in kwargs:
+        if dns_subdomain_name is None and 'dnsSubdomainName' in kwargs:
             dns_subdomain_name = kwargs['dnsSubdomainName']
-        if 'emailDomainId' in kwargs:
+        if email_domain_id is None and 'emailDomainId' in kwargs:
             email_domain_id = kwargs['emailDomainId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'txtRecordValue' in kwargs:
+        if txt_record_value is None and 'txtRecordValue' in kwargs:
             txt_record_value = kwargs['txtRecordValue']
 
         if cname_record_value is not None:

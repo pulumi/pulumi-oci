@@ -45,17 +45,23 @@ class RecordArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: pulumi.Input[str],
-             rtype: pulumi.Input[str],
-             zone_name_or_id: pulumi.Input[str],
+             domain: Optional[pulumi.Input[str]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             zone_name_or_id: Optional[pulumi.Input[str]] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
              rdata: Optional[pulumi.Input[str]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'zoneNameOrId' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if zone_name_or_id is None and 'zoneNameOrId' in kwargs:
             zone_name_or_id = kwargs['zoneNameOrId']
-        if 'compartmentId' in kwargs:
+        if zone_name_or_id is None:
+            raise TypeError("Missing 'zone_name_or_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         if domain is not None:
@@ -215,17 +221,17 @@ class _RecordState:
              rtype: Optional[pulumi.Input[str]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
              zone_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'isProtected' in kwargs:
+        if is_protected is None and 'isProtected' in kwargs:
             is_protected = kwargs['isProtected']
-        if 'recordHash' in kwargs:
+        if record_hash is None and 'recordHash' in kwargs:
             record_hash = kwargs['recordHash']
-        if 'rrsetVersion' in kwargs:
+        if rrset_version is None and 'rrsetVersion' in kwargs:
             rrset_version = kwargs['rrsetVersion']
-        if 'zoneNameOrId' in kwargs:
+        if zone_name_or_id is None and 'zoneNameOrId' in kwargs:
             zone_name_or_id = kwargs['zoneNameOrId']
 
         if compartment_id is not None:

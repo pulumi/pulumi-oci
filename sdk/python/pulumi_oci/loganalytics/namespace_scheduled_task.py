@@ -59,29 +59,41 @@ class NamespaceScheduledTaskArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: pulumi.Input['NamespaceScheduledTaskActionArgs'],
-             compartment_id: pulumi.Input[str],
-             kind: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             schedules: pulumi.Input['NamespaceScheduledTaskSchedulesArgs'],
-             task_type: pulumi.Input[str],
+             action: Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             kind: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             schedules: Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']] = None,
+             task_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              saved_search_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'taskType' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if schedules is None:
+            raise TypeError("Missing 'schedules' argument")
+        if task_type is None and 'taskType' in kwargs:
             task_type = kwargs['taskType']
-        if 'definedTags' in kwargs:
+        if task_type is None:
+            raise TypeError("Missing 'task_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'savedSearchId' in kwargs:
+        if saved_search_id is None and 'savedSearchId' in kwargs:
             saved_search_id = kwargs['savedSearchId']
 
         _setter("action", action)
@@ -307,31 +319,31 @@ class _NamespaceScheduledTaskState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'numOccurrences' in kwargs:
+        if num_occurrences is None and 'numOccurrences' in kwargs:
             num_occurrences = kwargs['numOccurrences']
-        if 'savedSearchId' in kwargs:
+        if saved_search_id is None and 'savedSearchId' in kwargs:
             saved_search_id = kwargs['savedSearchId']
-        if 'scheduledTaskId' in kwargs:
+        if scheduled_task_id is None and 'scheduledTaskId' in kwargs:
             scheduled_task_id = kwargs['scheduledTaskId']
-        if 'taskStatus' in kwargs:
+        if task_status is None and 'taskStatus' in kwargs:
             task_status = kwargs['taskStatus']
-        if 'taskType' in kwargs:
+        if task_type is None and 'taskType' in kwargs:
             task_type = kwargs['taskType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'workRequestId' in kwargs:
+        if work_request_id is None and 'workRequestId' in kwargs:
             work_request_id = kwargs['workRequestId']
 
         if action is not None:
@@ -678,11 +690,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NamespaceScheduledTaskArgs.__new__(NamespaceScheduledTaskArgs)
 
-            if action is not None and not isinstance(action, NamespaceScheduledTaskActionArgs):
-                action = action or {}
-                def _setter(key, value):
-                    action[key] = value
-                NamespaceScheduledTaskActionArgs._configure(_setter, **action)
+            action = _utilities.configure(action, NamespaceScheduledTaskActionArgs, True)
             if action is None and not opts.urn:
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
@@ -699,11 +707,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
             __props__.__dict__["saved_search_id"] = saved_search_id
-            if schedules is not None and not isinstance(schedules, NamespaceScheduledTaskSchedulesArgs):
-                schedules = schedules or {}
-                def _setter(key, value):
-                    schedules[key] = value
-                NamespaceScheduledTaskSchedulesArgs._configure(_setter, **schedules)
+            schedules = _utilities.configure(schedules, NamespaceScheduledTaskSchedulesArgs, True)
             if schedules is None and not opts.urn:
                 raise TypeError("Missing required property 'schedules'")
             __props__.__dict__["schedules"] = schedules

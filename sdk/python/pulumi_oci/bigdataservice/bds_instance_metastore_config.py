@@ -48,28 +48,38 @@ class BdsInstanceMetastoreConfigArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bds_api_key_id: pulumi.Input[str],
-             bds_api_key_passphrase: pulumi.Input[str],
-             bds_instance_id: pulumi.Input[str],
-             cluster_admin_password: pulumi.Input[str],
-             metastore_id: pulumi.Input[str],
+             bds_api_key_id: Optional[pulumi.Input[str]] = None,
+             bds_api_key_passphrase: Optional[pulumi.Input[str]] = None,
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             metastore_id: Optional[pulumi.Input[str]] = None,
              activate_trigger: Optional[pulumi.Input[int]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bdsApiKeyId' in kwargs:
+        if bds_api_key_id is None and 'bdsApiKeyId' in kwargs:
             bds_api_key_id = kwargs['bdsApiKeyId']
-        if 'bdsApiKeyPassphrase' in kwargs:
+        if bds_api_key_id is None:
+            raise TypeError("Missing 'bds_api_key_id' argument")
+        if bds_api_key_passphrase is None and 'bdsApiKeyPassphrase' in kwargs:
             bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
-        if 'bdsInstanceId' in kwargs:
+        if bds_api_key_passphrase is None:
+            raise TypeError("Missing 'bds_api_key_passphrase' argument")
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'clusterAdminPassword' in kwargs:
+        if bds_instance_id is None:
+            raise TypeError("Missing 'bds_instance_id' argument")
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
-        if 'metastoreId' in kwargs:
+        if cluster_admin_password is None:
+            raise TypeError("Missing 'cluster_admin_password' argument")
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'activateTrigger' in kwargs:
+        if metastore_id is None:
+            raise TypeError("Missing 'metastore_id' argument")
+        if activate_trigger is None and 'activateTrigger' in kwargs:
             activate_trigger = kwargs['activateTrigger']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         _setter("bds_api_key_id", bds_api_key_id)
@@ -231,27 +241,27 @@ class _BdsInstanceMetastoreConfigState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activateTrigger' in kwargs:
+        if activate_trigger is None and 'activateTrigger' in kwargs:
             activate_trigger = kwargs['activateTrigger']
-        if 'bdsApiKeyId' in kwargs:
+        if bds_api_key_id is None and 'bdsApiKeyId' in kwargs:
             bds_api_key_id = kwargs['bdsApiKeyId']
-        if 'bdsApiKeyPassphrase' in kwargs:
+        if bds_api_key_passphrase is None and 'bdsApiKeyPassphrase' in kwargs:
             bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
-        if 'bdsInstanceId' in kwargs:
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
             bds_instance_id = kwargs['bdsInstanceId']
-        if 'clusterAdminPassword' in kwargs:
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
             cluster_admin_password = kwargs['clusterAdminPassword']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'metastoreId' in kwargs:
+        if metastore_id is None and 'metastoreId' in kwargs:
             metastore_id = kwargs['metastoreId']
-        if 'metastoreType' in kwargs:
+        if metastore_type is None and 'metastoreType' in kwargs:
             metastore_type = kwargs['metastoreType']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if activate_trigger is not None:

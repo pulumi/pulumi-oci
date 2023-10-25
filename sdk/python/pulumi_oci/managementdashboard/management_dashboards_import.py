@@ -30,11 +30,11 @@ class ManagementDashboardsImportArgs:
              _setter: Callable[[Any, Any], None],
              import_details: Optional[pulumi.Input[str]] = None,
              import_details_file: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importDetails' in kwargs:
+        if import_details is None and 'importDetails' in kwargs:
             import_details = kwargs['importDetails']
-        if 'importDetailsFile' in kwargs:
+        if import_details_file is None and 'importDetailsFile' in kwargs:
             import_details_file = kwargs['importDetailsFile']
 
         if import_details is not None:
@@ -83,11 +83,11 @@ class _ManagementDashboardsImportState:
              _setter: Callable[[Any, Any], None],
              import_details: Optional[pulumi.Input[str]] = None,
              import_details_file: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'importDetails' in kwargs:
+        if import_details is None and 'importDetails' in kwargs:
             import_details = kwargs['importDetails']
-        if 'importDetailsFile' in kwargs:
+        if import_details_file is None and 'importDetailsFile' in kwargs:
             import_details_file = kwargs['importDetailsFile']
 
         if import_details is not None:

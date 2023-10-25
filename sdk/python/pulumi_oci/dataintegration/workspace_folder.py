@@ -58,9 +58,9 @@ class WorkspaceFolderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             identifier: pulumi.Input[str],
-             registry_metadata: pulumi.Input['WorkspaceFolderRegistryMetadataArgs'],
-             workspace_id: pulumi.Input[str],
+             identifier: Optional[pulumi.Input[str]] = None,
+             registry_metadata: Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
              category_name: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              folder_key: Optional[pulumi.Input[str]] = None,
@@ -68,19 +68,25 @@ class WorkspaceFolderArgs:
              model_version: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              object_status: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'registryMetadata' in kwargs:
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
-        if 'workspaceId' in kwargs:
+        if registry_metadata is None:
+            raise TypeError("Missing 'registry_metadata' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
-        if 'categoryName' in kwargs:
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if category_name is None and 'categoryName' in kwargs:
             category_name = kwargs['categoryName']
-        if 'folderKey' in kwargs:
+        if folder_key is None and 'folderKey' in kwargs:
             folder_key = kwargs['folderKey']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
 
         _setter("identifier", identifier)
@@ -298,27 +304,27 @@ class _WorkspaceFolderState:
              parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryName' in kwargs:
+        if category_name is None and 'categoryName' in kwargs:
             category_name = kwargs['categoryName']
-        if 'folderKey' in kwargs:
+        if folder_key is None and 'folderKey' in kwargs:
             folder_key = kwargs['folderKey']
-        if 'keyMap' in kwargs:
+        if key_map is None and 'keyMap' in kwargs:
             key_map = kwargs['keyMap']
-        if 'modelType' in kwargs:
+        if model_type is None and 'modelType' in kwargs:
             model_type = kwargs['modelType']
-        if 'modelVersion' in kwargs:
+        if model_version is None and 'modelVersion' in kwargs:
             model_version = kwargs['modelVersion']
-        if 'objectStatus' in kwargs:
+        if object_status is None and 'objectStatus' in kwargs:
             object_status = kwargs['objectStatus']
-        if 'objectVersion' in kwargs:
+        if object_version is None and 'objectVersion' in kwargs:
             object_version = kwargs['objectVersion']
-        if 'parentReves' in kwargs:
+        if parent_reves is None and 'parentReves' in kwargs:
             parent_reves = kwargs['parentReves']
-        if 'registryMetadata' in kwargs:
+        if registry_metadata is None and 'registryMetadata' in kwargs:
             registry_metadata = kwargs['registryMetadata']
-        if 'workspaceId' in kwargs:
+        if workspace_id is None and 'workspaceId' in kwargs:
             workspace_id = kwargs['workspaceId']
 
         if category_name is not None:
@@ -694,11 +700,7 @@ class WorkspaceFolder(pulumi.CustomResource):
             __props__.__dict__["model_version"] = model_version
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
-            if registry_metadata is not None and not isinstance(registry_metadata, WorkspaceFolderRegistryMetadataArgs):
-                registry_metadata = registry_metadata or {}
-                def _setter(key, value):
-                    registry_metadata[key] = value
-                WorkspaceFolderRegistryMetadataArgs._configure(_setter, **registry_metadata)
+            registry_metadata = _utilities.configure(registry_metadata, WorkspaceFolderRegistryMetadataArgs, True)
             if registry_metadata is None and not opts.urn:
                 raise TypeError("Missing required property 'registry_metadata'")
             __props__.__dict__["registry_metadata"] = registry_metadata

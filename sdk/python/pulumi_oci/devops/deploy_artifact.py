@@ -53,29 +53,37 @@ class DeployArtifactArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             argument_substitution_mode: pulumi.Input[str],
-             deploy_artifact_source: pulumi.Input['DeployArtifactDeployArtifactSourceArgs'],
-             deploy_artifact_type: pulumi.Input[str],
-             project_id: pulumi.Input[str],
+             argument_substitution_mode: Optional[pulumi.Input[str]] = None,
+             deploy_artifact_source: Optional[pulumi.Input['DeployArtifactDeployArtifactSourceArgs']] = None,
+             deploy_artifact_type: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'argumentSubstitutionMode' in kwargs:
+        if argument_substitution_mode is None and 'argumentSubstitutionMode' in kwargs:
             argument_substitution_mode = kwargs['argumentSubstitutionMode']
-        if 'deployArtifactSource' in kwargs:
+        if argument_substitution_mode is None:
+            raise TypeError("Missing 'argument_substitution_mode' argument")
+        if deploy_artifact_source is None and 'deployArtifactSource' in kwargs:
             deploy_artifact_source = kwargs['deployArtifactSource']
-        if 'deployArtifactType' in kwargs:
+        if deploy_artifact_source is None:
+            raise TypeError("Missing 'deploy_artifact_source' argument")
+        if deploy_artifact_type is None and 'deployArtifactType' in kwargs:
             deploy_artifact_type = kwargs['deployArtifactType']
-        if 'projectId' in kwargs:
+        if deploy_artifact_type is None:
+            raise TypeError("Missing 'deploy_artifact_type' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'definedTags' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
 
         _setter("argument_substitution_mode", argument_substitution_mode)
@@ -264,31 +272,31 @@ class _DeployArtifactState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'argumentSubstitutionMode' in kwargs:
+        if argument_substitution_mode is None and 'argumentSubstitutionMode' in kwargs:
             argument_substitution_mode = kwargs['argumentSubstitutionMode']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deployArtifactSource' in kwargs:
+        if deploy_artifact_source is None and 'deployArtifactSource' in kwargs:
             deploy_artifact_source = kwargs['deployArtifactSource']
-        if 'deployArtifactType' in kwargs:
+        if deploy_artifact_type is None and 'deployArtifactType' in kwargs:
             deploy_artifact_type = kwargs['deployArtifactType']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if argument_substitution_mode is not None:
@@ -666,11 +674,7 @@ class DeployArtifact(pulumi.CustomResource):
                 raise TypeError("Missing required property 'argument_substitution_mode'")
             __props__.__dict__["argument_substitution_mode"] = argument_substitution_mode
             __props__.__dict__["defined_tags"] = defined_tags
-            if deploy_artifact_source is not None and not isinstance(deploy_artifact_source, DeployArtifactDeployArtifactSourceArgs):
-                deploy_artifact_source = deploy_artifact_source or {}
-                def _setter(key, value):
-                    deploy_artifact_source[key] = value
-                DeployArtifactDeployArtifactSourceArgs._configure(_setter, **deploy_artifact_source)
+            deploy_artifact_source = _utilities.configure(deploy_artifact_source, DeployArtifactDeployArtifactSourceArgs, True)
             if deploy_artifact_source is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_artifact_source'")
             __props__.__dict__["deploy_artifact_source"] = deploy_artifact_source

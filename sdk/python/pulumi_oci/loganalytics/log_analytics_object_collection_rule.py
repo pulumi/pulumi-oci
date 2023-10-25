@@ -95,12 +95,12 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             log_group_id: pulumi.Input[str],
-             log_source_name: pulumi.Input[str],
-             namespace: pulumi.Input[str],
-             os_bucket_name: pulumi.Input[str],
-             os_namespace: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_source_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             os_bucket_name: Optional[pulumi.Input[str]] = None,
+             os_namespace: Optional[pulumi.Input[str]] = None,
              char_encoding: Optional[pulumi.Input[str]] = None,
              collection_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -117,41 +117,53 @@ class LogAnalyticsObjectCollectionRuleArgs:
              poll_since: Optional[pulumi.Input[str]] = None,
              poll_till: Optional[pulumi.Input[str]] = None,
              timezone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'logGroupId' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSourceName' in kwargs:
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_source_name is None and 'logSourceName' in kwargs:
             log_source_name = kwargs['logSourceName']
-        if 'osBucketName' in kwargs:
+        if log_source_name is None:
+            raise TypeError("Missing 'log_source_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if os_bucket_name is None and 'osBucketName' in kwargs:
             os_bucket_name = kwargs['osBucketName']
-        if 'osNamespace' in kwargs:
+        if os_bucket_name is None:
+            raise TypeError("Missing 'os_bucket_name' argument")
+        if os_namespace is None and 'osNamespace' in kwargs:
             os_namespace = kwargs['osNamespace']
-        if 'charEncoding' in kwargs:
+        if os_namespace is None:
+            raise TypeError("Missing 'os_namespace' argument")
+        if char_encoding is None and 'charEncoding' in kwargs:
             char_encoding = kwargs['charEncoding']
-        if 'collectionType' in kwargs:
+        if collection_type is None and 'collectionType' in kwargs:
             collection_type = kwargs['collectionType']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'entityId' in kwargs:
+        if entity_id is None and 'entityId' in kwargs:
             entity_id = kwargs['entityId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'logSet' in kwargs:
+        if log_set is None and 'logSet' in kwargs:
             log_set = kwargs['logSet']
-        if 'logSetExtRegex' in kwargs:
+        if log_set_ext_regex is None and 'logSetExtRegex' in kwargs:
             log_set_ext_regex = kwargs['logSetExtRegex']
-        if 'logSetKey' in kwargs:
+        if log_set_key is None and 'logSetKey' in kwargs:
             log_set_key = kwargs['logSetKey']
-        if 'objectNameFilters' in kwargs:
+        if object_name_filters is None and 'objectNameFilters' in kwargs:
             object_name_filters = kwargs['objectNameFilters']
-        if 'pollSince' in kwargs:
+        if poll_since is None and 'pollSince' in kwargs:
             poll_since = kwargs['pollSince']
-        if 'pollTill' in kwargs:
+        if poll_till is None and 'pollTill' in kwargs:
             poll_till = kwargs['pollTill']
 
         _setter("compartment_id", compartment_id)
@@ -582,47 +594,47 @@ class _LogAnalyticsObjectCollectionRuleState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              timezone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'charEncoding' in kwargs:
+        if char_encoding is None and 'charEncoding' in kwargs:
             char_encoding = kwargs['charEncoding']
-        if 'collectionType' in kwargs:
+        if collection_type is None and 'collectionType' in kwargs:
             collection_type = kwargs['collectionType']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'entityId' in kwargs:
+        if entity_id is None and 'entityId' in kwargs:
             entity_id = kwargs['entityId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'logGroupId' in kwargs:
+        if log_group_id is None and 'logGroupId' in kwargs:
             log_group_id = kwargs['logGroupId']
-        if 'logSet' in kwargs:
+        if log_set is None and 'logSet' in kwargs:
             log_set = kwargs['logSet']
-        if 'logSetExtRegex' in kwargs:
+        if log_set_ext_regex is None and 'logSetExtRegex' in kwargs:
             log_set_ext_regex = kwargs['logSetExtRegex']
-        if 'logSetKey' in kwargs:
+        if log_set_key is None and 'logSetKey' in kwargs:
             log_set_key = kwargs['logSetKey']
-        if 'logSourceName' in kwargs:
+        if log_source_name is None and 'logSourceName' in kwargs:
             log_source_name = kwargs['logSourceName']
-        if 'objectNameFilters' in kwargs:
+        if object_name_filters is None and 'objectNameFilters' in kwargs:
             object_name_filters = kwargs['objectNameFilters']
-        if 'osBucketName' in kwargs:
+        if os_bucket_name is None and 'osBucketName' in kwargs:
             os_bucket_name = kwargs['osBucketName']
-        if 'osNamespace' in kwargs:
+        if os_namespace is None and 'osNamespace' in kwargs:
             os_namespace = kwargs['osNamespace']
-        if 'pollSince' in kwargs:
+        if poll_since is None and 'pollSince' in kwargs:
             poll_since = kwargs['pollSince']
-        if 'pollTill' in kwargs:
+        if poll_till is None and 'pollTill' in kwargs:
             poll_till = kwargs['pollTill']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if char_encoding is not None:

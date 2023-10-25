@@ -40,22 +40,30 @@ class ProcessorJobArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             input_location: pulumi.Input['ProcessorJobInputLocationArgs'],
-             output_location: pulumi.Input['ProcessorJobOutputLocationArgs'],
-             processor_config: pulumi.Input['ProcessorJobProcessorConfigArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             input_location: Optional[pulumi.Input['ProcessorJobInputLocationArgs']] = None,
+             output_location: Optional[pulumi.Input['ProcessorJobOutputLocationArgs']] = None,
+             processor_config: Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'inputLocation' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if input_location is None and 'inputLocation' in kwargs:
             input_location = kwargs['inputLocation']
-        if 'outputLocation' in kwargs:
+        if input_location is None:
+            raise TypeError("Missing 'input_location' argument")
+        if output_location is None and 'outputLocation' in kwargs:
             output_location = kwargs['outputLocation']
-        if 'processorConfig' in kwargs:
+        if output_location is None:
+            raise TypeError("Missing 'output_location' argument")
+        if processor_config is None and 'processorConfig' in kwargs:
             processor_config = kwargs['processorConfig']
-        if 'displayName' in kwargs:
+        if processor_config is None:
+            raise TypeError("Missing 'processor_config' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
 
         _setter("compartment_id", compartment_id)
@@ -182,27 +190,27 @@ class _ProcessorJobState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'inputLocation' in kwargs:
+        if input_location is None and 'inputLocation' in kwargs:
             input_location = kwargs['inputLocation']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'outputLocation' in kwargs:
+        if output_location is None and 'outputLocation' in kwargs:
             output_location = kwargs['outputLocation']
-        if 'percentComplete' in kwargs:
+        if percent_complete is None and 'percentComplete' in kwargs:
             percent_complete = kwargs['percentComplete']
-        if 'processorConfig' in kwargs:
+        if processor_config is None and 'processorConfig' in kwargs:
             processor_config = kwargs['processorConfig']
-        if 'timeAccepted' in kwargs:
+        if time_accepted is None and 'timeAccepted' in kwargs:
             time_accepted = kwargs['timeAccepted']
-        if 'timeFinished' in kwargs:
+        if time_finished is None and 'timeFinished' in kwargs:
             time_finished = kwargs['timeFinished']
-        if 'timeStarted' in kwargs:
+        if time_started is None and 'timeStarted' in kwargs:
             time_started = kwargs['timeStarted']
 
         if compartment_id is not None:
@@ -525,27 +533,15 @@ class ProcessorJob(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["display_name"] = display_name
-            if input_location is not None and not isinstance(input_location, ProcessorJobInputLocationArgs):
-                input_location = input_location or {}
-                def _setter(key, value):
-                    input_location[key] = value
-                ProcessorJobInputLocationArgs._configure(_setter, **input_location)
+            input_location = _utilities.configure(input_location, ProcessorJobInputLocationArgs, True)
             if input_location is None and not opts.urn:
                 raise TypeError("Missing required property 'input_location'")
             __props__.__dict__["input_location"] = input_location
-            if output_location is not None and not isinstance(output_location, ProcessorJobOutputLocationArgs):
-                output_location = output_location or {}
-                def _setter(key, value):
-                    output_location[key] = value
-                ProcessorJobOutputLocationArgs._configure(_setter, **output_location)
+            output_location = _utilities.configure(output_location, ProcessorJobOutputLocationArgs, True)
             if output_location is None and not opts.urn:
                 raise TypeError("Missing required property 'output_location'")
             __props__.__dict__["output_location"] = output_location
-            if processor_config is not None and not isinstance(processor_config, ProcessorJobProcessorConfigArgs):
-                processor_config = processor_config or {}
-                def _setter(key, value):
-                    processor_config[key] = value
-                ProcessorJobProcessorConfigArgs._configure(_setter, **processor_config)
+            processor_config = _utilities.configure(processor_config, ProcessorJobProcessorConfigArgs, True)
             if processor_config is None and not opts.urn:
                 raise TypeError("Missing required property 'processor_config'")
             __props__.__dict__["processor_config"] = processor_config

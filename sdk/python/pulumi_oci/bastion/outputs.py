@@ -54,11 +54,13 @@ class SessionKeyDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             public_key_content: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKeyContent' in kwargs:
+        if public_key_content is None and 'publicKeyContent' in kwargs:
             public_key_content = kwargs['publicKeyContent']
+        if public_key_content is None:
+            raise TypeError("Missing 'public_key_content' argument")
 
         _setter("public_key_content", public_key_content)
 
@@ -136,28 +138,30 @@ class SessionTargetResourceDetails(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             session_type: str,
+             session_type: Optional[str] = None,
              target_resource_display_name: Optional[str] = None,
              target_resource_fqdn: Optional[str] = None,
              target_resource_id: Optional[str] = None,
              target_resource_operating_system_user_name: Optional[str] = None,
              target_resource_port: Optional[int] = None,
              target_resource_private_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sessionType' in kwargs:
+        if session_type is None and 'sessionType' in kwargs:
             session_type = kwargs['sessionType']
-        if 'targetResourceDisplayName' in kwargs:
+        if session_type is None:
+            raise TypeError("Missing 'session_type' argument")
+        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
             target_resource_display_name = kwargs['targetResourceDisplayName']
-        if 'targetResourceFqdn' in kwargs:
+        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
             target_resource_fqdn = kwargs['targetResourceFqdn']
-        if 'targetResourceId' in kwargs:
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceOperatingSystemUserName' in kwargs:
+        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
             target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if 'targetResourcePort' in kwargs:
+        if target_resource_port is None and 'targetResourcePort' in kwargs:
             target_resource_port = kwargs['targetResourcePort']
-        if 'targetResourcePrivateIpAddress' in kwargs:
+        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
             target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
 
         _setter("session_type", session_type)
@@ -306,62 +310,102 @@ class GetBastionsBastionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bastion_type: str,
-             client_cidr_block_allow_lists: Sequence[str],
-             compartment_id: str,
-             defined_tags: Mapping[str, Any],
-             dns_proxy_status: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             max_session_ttl_in_seconds: int,
-             max_sessions_allowed: int,
-             name: str,
-             phone_book_entry: str,
-             private_endpoint_ip_address: str,
-             state: str,
-             static_jump_host_ip_addresses: Sequence[str],
-             system_tags: Mapping[str, Any],
-             target_subnet_id: str,
-             target_vcn_id: str,
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bastion_type: Optional[str] = None,
+             client_cidr_block_allow_lists: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             dns_proxy_status: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             max_session_ttl_in_seconds: Optional[int] = None,
+             max_sessions_allowed: Optional[int] = None,
+             name: Optional[str] = None,
+             phone_book_entry: Optional[str] = None,
+             private_endpoint_ip_address: Optional[str] = None,
+             state: Optional[str] = None,
+             static_jump_host_ip_addresses: Optional[Sequence[str]] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             target_subnet_id: Optional[str] = None,
+             target_vcn_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bastionType' in kwargs:
+        if bastion_type is None and 'bastionType' in kwargs:
             bastion_type = kwargs['bastionType']
-        if 'clientCidrBlockAllowLists' in kwargs:
+        if bastion_type is None:
+            raise TypeError("Missing 'bastion_type' argument")
+        if client_cidr_block_allow_lists is None and 'clientCidrBlockAllowLists' in kwargs:
             client_cidr_block_allow_lists = kwargs['clientCidrBlockAllowLists']
-        if 'compartmentId' in kwargs:
+        if client_cidr_block_allow_lists is None:
+            raise TypeError("Missing 'client_cidr_block_allow_lists' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'dnsProxyStatus' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if dns_proxy_status is None and 'dnsProxyStatus' in kwargs:
             dns_proxy_status = kwargs['dnsProxyStatus']
-        if 'freeformTags' in kwargs:
+        if dns_proxy_status is None:
+            raise TypeError("Missing 'dns_proxy_status' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maxSessionTtlInSeconds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_session_ttl_in_seconds is None and 'maxSessionTtlInSeconds' in kwargs:
             max_session_ttl_in_seconds = kwargs['maxSessionTtlInSeconds']
-        if 'maxSessionsAllowed' in kwargs:
+        if max_session_ttl_in_seconds is None:
+            raise TypeError("Missing 'max_session_ttl_in_seconds' argument")
+        if max_sessions_allowed is None and 'maxSessionsAllowed' in kwargs:
             max_sessions_allowed = kwargs['maxSessionsAllowed']
-        if 'phoneBookEntry' in kwargs:
+        if max_sessions_allowed is None:
+            raise TypeError("Missing 'max_sessions_allowed' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if phone_book_entry is None and 'phoneBookEntry' in kwargs:
             phone_book_entry = kwargs['phoneBookEntry']
-        if 'privateEndpointIpAddress' in kwargs:
+        if phone_book_entry is None:
+            raise TypeError("Missing 'phone_book_entry' argument")
+        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
             private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
-        if 'staticJumpHostIpAddresses' in kwargs:
+        if private_endpoint_ip_address is None:
+            raise TypeError("Missing 'private_endpoint_ip_address' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if static_jump_host_ip_addresses is None and 'staticJumpHostIpAddresses' in kwargs:
             static_jump_host_ip_addresses = kwargs['staticJumpHostIpAddresses']
-        if 'systemTags' in kwargs:
+        if static_jump_host_ip_addresses is None:
+            raise TypeError("Missing 'static_jump_host_ip_addresses' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'targetSubnetId' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if target_subnet_id is None and 'targetSubnetId' in kwargs:
             target_subnet_id = kwargs['targetSubnetId']
-        if 'targetVcnId' in kwargs:
+        if target_subnet_id is None:
+            raise TypeError("Missing 'target_subnet_id' argument")
+        if target_vcn_id is None and 'targetVcnId' in kwargs:
             target_vcn_id = kwargs['targetVcnId']
-        if 'timeCreated' in kwargs:
+        if target_vcn_id is None:
+            raise TypeError("Missing 'target_vcn_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("bastion_type", bastion_type)
         _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
@@ -563,11 +607,15 @@ class GetBastionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -607,11 +655,13 @@ class GetSessionKeyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             public_key_content: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKeyContent' in kwargs:
+        if public_key_content is None and 'publicKeyContent' in kwargs:
             public_key_content = kwargs['publicKeyContent']
+        if public_key_content is None:
+            raise TypeError("Missing 'public_key_content' argument")
 
         _setter("public_key_content", public_key_content)
 
@@ -656,29 +706,43 @@ class GetSessionTargetResourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             session_type: str,
-             target_resource_display_name: str,
-             target_resource_fqdn: str,
-             target_resource_id: str,
-             target_resource_operating_system_user_name: str,
-             target_resource_port: int,
-             target_resource_private_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             session_type: Optional[str] = None,
+             target_resource_display_name: Optional[str] = None,
+             target_resource_fqdn: Optional[str] = None,
+             target_resource_id: Optional[str] = None,
+             target_resource_operating_system_user_name: Optional[str] = None,
+             target_resource_port: Optional[int] = None,
+             target_resource_private_ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sessionType' in kwargs:
+        if session_type is None and 'sessionType' in kwargs:
             session_type = kwargs['sessionType']
-        if 'targetResourceDisplayName' in kwargs:
+        if session_type is None:
+            raise TypeError("Missing 'session_type' argument")
+        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
             target_resource_display_name = kwargs['targetResourceDisplayName']
-        if 'targetResourceFqdn' in kwargs:
+        if target_resource_display_name is None:
+            raise TypeError("Missing 'target_resource_display_name' argument")
+        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
             target_resource_fqdn = kwargs['targetResourceFqdn']
-        if 'targetResourceId' in kwargs:
+        if target_resource_fqdn is None:
+            raise TypeError("Missing 'target_resource_fqdn' argument")
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceOperatingSystemUserName' in kwargs:
+        if target_resource_id is None:
+            raise TypeError("Missing 'target_resource_id' argument")
+        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
             target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if 'targetResourcePort' in kwargs:
+        if target_resource_operating_system_user_name is None:
+            raise TypeError("Missing 'target_resource_operating_system_user_name' argument")
+        if target_resource_port is None and 'targetResourcePort' in kwargs:
             target_resource_port = kwargs['targetResourcePort']
-        if 'targetResourcePrivateIpAddress' in kwargs:
+        if target_resource_port is None:
+            raise TypeError("Missing 'target_resource_port' argument")
+        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
             target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+        if target_resource_private_ip_address is None:
+            raise TypeError("Missing 'target_resource_private_ip_address' argument")
 
         _setter("session_type", session_type)
         _setter("target_resource_display_name", target_resource_display_name)
@@ -760,11 +824,15 @@ class GetSessionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -843,49 +911,79 @@ class GetSessionsSessionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bastion_id: str,
-             bastion_name: str,
-             bastion_public_host_key_info: str,
-             bastion_user_name: str,
-             display_name: str,
-             id: str,
-             key_details: Sequence['outputs.GetSessionsSessionKeyDetailResult'],
-             key_type: str,
-             lifecycle_details: str,
-             session_ttl_in_seconds: int,
-             ssh_metadata: Mapping[str, Any],
-             state: str,
-             target_resource_details: Sequence['outputs.GetSessionsSessionTargetResourceDetailResult'],
-             time_created: str,
-             time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bastion_id: Optional[str] = None,
+             bastion_name: Optional[str] = None,
+             bastion_public_host_key_info: Optional[str] = None,
+             bastion_user_name: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             key_details: Optional[Sequence['outputs.GetSessionsSessionKeyDetailResult']] = None,
+             key_type: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             session_ttl_in_seconds: Optional[int] = None,
+             ssh_metadata: Optional[Mapping[str, Any]] = None,
+             state: Optional[str] = None,
+             target_resource_details: Optional[Sequence['outputs.GetSessionsSessionTargetResourceDetailResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bastionId' in kwargs:
+        if bastion_id is None and 'bastionId' in kwargs:
             bastion_id = kwargs['bastionId']
-        if 'bastionName' in kwargs:
+        if bastion_id is None:
+            raise TypeError("Missing 'bastion_id' argument")
+        if bastion_name is None and 'bastionName' in kwargs:
             bastion_name = kwargs['bastionName']
-        if 'bastionPublicHostKeyInfo' in kwargs:
+        if bastion_name is None:
+            raise TypeError("Missing 'bastion_name' argument")
+        if bastion_public_host_key_info is None and 'bastionPublicHostKeyInfo' in kwargs:
             bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
-        if 'bastionUserName' in kwargs:
+        if bastion_public_host_key_info is None:
+            raise TypeError("Missing 'bastion_public_host_key_info' argument")
+        if bastion_user_name is None and 'bastionUserName' in kwargs:
             bastion_user_name = kwargs['bastionUserName']
-        if 'displayName' in kwargs:
+        if bastion_user_name is None:
+            raise TypeError("Missing 'bastion_user_name' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'keyDetails' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if key_details is None and 'keyDetails' in kwargs:
             key_details = kwargs['keyDetails']
-        if 'keyType' in kwargs:
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
+        if key_type is None and 'keyType' in kwargs:
             key_type = kwargs['keyType']
-        if 'lifecycleDetails' in kwargs:
+        if key_type is None:
+            raise TypeError("Missing 'key_type' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'sessionTtlInSeconds' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
             session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
-        if 'sshMetadata' in kwargs:
+        if session_ttl_in_seconds is None:
+            raise TypeError("Missing 'session_ttl_in_seconds' argument")
+        if ssh_metadata is None and 'sshMetadata' in kwargs:
             ssh_metadata = kwargs['sshMetadata']
-        if 'targetResourceDetails' in kwargs:
+        if ssh_metadata is None:
+            raise TypeError("Missing 'ssh_metadata' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if target_resource_details is None and 'targetResourceDetails' in kwargs:
             target_resource_details = kwargs['targetResourceDetails']
-        if 'timeCreated' in kwargs:
+        if target_resource_details is None:
+            raise TypeError("Missing 'target_resource_details' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
 
         _setter("bastion_id", bastion_id)
         _setter("bastion_name", bastion_name)
@@ -1038,11 +1136,13 @@ class GetSessionsSessionKeyDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             public_key_content: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'publicKeyContent' in kwargs:
+        if public_key_content is None and 'publicKeyContent' in kwargs:
             public_key_content = kwargs['publicKeyContent']
+        if public_key_content is None:
+            raise TypeError("Missing 'public_key_content' argument")
 
         _setter("public_key_content", public_key_content)
 
@@ -1087,29 +1187,43 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             session_type: str,
-             target_resource_display_name: str,
-             target_resource_fqdn: str,
-             target_resource_id: str,
-             target_resource_operating_system_user_name: str,
-             target_resource_port: int,
-             target_resource_private_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             session_type: Optional[str] = None,
+             target_resource_display_name: Optional[str] = None,
+             target_resource_fqdn: Optional[str] = None,
+             target_resource_id: Optional[str] = None,
+             target_resource_operating_system_user_name: Optional[str] = None,
+             target_resource_port: Optional[int] = None,
+             target_resource_private_ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sessionType' in kwargs:
+        if session_type is None and 'sessionType' in kwargs:
             session_type = kwargs['sessionType']
-        if 'targetResourceDisplayName' in kwargs:
+        if session_type is None:
+            raise TypeError("Missing 'session_type' argument")
+        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
             target_resource_display_name = kwargs['targetResourceDisplayName']
-        if 'targetResourceFqdn' in kwargs:
+        if target_resource_display_name is None:
+            raise TypeError("Missing 'target_resource_display_name' argument")
+        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
             target_resource_fqdn = kwargs['targetResourceFqdn']
-        if 'targetResourceId' in kwargs:
+        if target_resource_fqdn is None:
+            raise TypeError("Missing 'target_resource_fqdn' argument")
+        if target_resource_id is None and 'targetResourceId' in kwargs:
             target_resource_id = kwargs['targetResourceId']
-        if 'targetResourceOperatingSystemUserName' in kwargs:
+        if target_resource_id is None:
+            raise TypeError("Missing 'target_resource_id' argument")
+        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
             target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if 'targetResourcePort' in kwargs:
+        if target_resource_operating_system_user_name is None:
+            raise TypeError("Missing 'target_resource_operating_system_user_name' argument")
+        if target_resource_port is None and 'targetResourcePort' in kwargs:
             target_resource_port = kwargs['targetResourcePort']
-        if 'targetResourcePrivateIpAddress' in kwargs:
+        if target_resource_port is None:
+            raise TypeError("Missing 'target_resource_port' argument")
+        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
             target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+        if target_resource_private_ip_address is None:
+            raise TypeError("Missing 'target_resource_private_ip_address' argument")
 
         _setter("session_type", session_type)
         _setter("target_resource_display_name", target_resource_display_name)

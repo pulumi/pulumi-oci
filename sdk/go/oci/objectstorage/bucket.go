@@ -37,10 +37,10 @@ import (
 //				Namespace:     pulumi.Any(_var.Bucket_namespace),
 //				AccessType:    pulumi.Any(_var.Bucket_access_type),
 //				AutoTiering:   pulumi.Any(_var.Bucket_auto_tiering),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),

@@ -80,8 +80,8 @@ class MonitoredResourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             type: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
              additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
              aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
@@ -97,31 +97,35 @@ class MonitoredResourceArgs:
              name: Optional[pulumi.Input[str]] = None,
              properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
              resource_time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'additionalAliases' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_aliases is None and 'additionalAliases' in kwargs:
             additional_aliases = kwargs['additionalAliases']
-        if 'additionalCredentials' in kwargs:
+        if additional_credentials is None and 'additionalCredentials' in kwargs:
             additional_credentials = kwargs['additionalCredentials']
-        if 'databaseConnectionDetails' in kwargs:
+        if database_connection_details is None and 'databaseConnectionDetails' in kwargs:
             database_connection_details = kwargs['databaseConnectionDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'externalResourceId' in kwargs:
+        if external_resource_id is None and 'externalResourceId' in kwargs:
             external_resource_id = kwargs['externalResourceId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'resourceTimeZone' in kwargs:
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
             resource_time_zone = kwargs['resourceTimeZone']
 
         _setter("compartment_id", compartment_id)
@@ -470,39 +474,39 @@ class _MonitoredResourceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'additionalAliases' in kwargs:
+        if additional_aliases is None and 'additionalAliases' in kwargs:
             additional_aliases = kwargs['additionalAliases']
-        if 'additionalCredentials' in kwargs:
+        if additional_credentials is None and 'additionalCredentials' in kwargs:
             additional_credentials = kwargs['additionalCredentials']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseConnectionDetails' in kwargs:
+        if database_connection_details is None and 'databaseConnectionDetails' in kwargs:
             database_connection_details = kwargs['databaseConnectionDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'externalResourceId' in kwargs:
+        if external_resource_id is None and 'externalResourceId' in kwargs:
             external_resource_id = kwargs['externalResourceId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostName' in kwargs:
+        if host_name is None and 'hostName' in kwargs:
             host_name = kwargs['hostName']
-        if 'managementAgentId' in kwargs:
+        if management_agent_id is None and 'managementAgentId' in kwargs:
             management_agent_id = kwargs['managementAgentId']
-        if 'resourceTimeZone' in kwargs:
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
             resource_time_zone = kwargs['resourceTimeZone']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'tenantId' in kwargs:
+        if tenant_id is None and 'tenantId' in kwargs:
             tenant_id = kwargs['tenantId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if additional_aliases is not None:
@@ -1105,26 +1109,14 @@ class MonitoredResource(pulumi.CustomResource):
 
             __props__.__dict__["additional_aliases"] = additional_aliases
             __props__.__dict__["additional_credentials"] = additional_credentials
-            if aliases is not None and not isinstance(aliases, MonitoredResourceAliasesArgs):
-                aliases = aliases or {}
-                def _setter(key, value):
-                    aliases[key] = value
-                MonitoredResourceAliasesArgs._configure(_setter, **aliases)
+            aliases = _utilities.configure(aliases, MonitoredResourceAliasesArgs, True)
             __props__.__dict__["aliases"] = aliases
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if credentials is not None and not isinstance(credentials, MonitoredResourceCredentialsArgs):
-                credentials = credentials or {}
-                def _setter(key, value):
-                    credentials[key] = value
-                MonitoredResourceCredentialsArgs._configure(_setter, **credentials)
+            credentials = _utilities.configure(credentials, MonitoredResourceCredentialsArgs, True)
             __props__.__dict__["credentials"] = credentials
-            if database_connection_details is not None and not isinstance(database_connection_details, MonitoredResourceDatabaseConnectionDetailsArgs):
-                database_connection_details = database_connection_details or {}
-                def _setter(key, value):
-                    database_connection_details[key] = value
-                MonitoredResourceDatabaseConnectionDetailsArgs._configure(_setter, **database_connection_details)
+            database_connection_details = _utilities.configure(database_connection_details, MonitoredResourceDatabaseConnectionDetailsArgs, True)
             __props__.__dict__["database_connection_details"] = database_connection_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name

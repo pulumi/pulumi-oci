@@ -85,8 +85,8 @@ class DatabaseInsightArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             entity_source: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             entity_source: Optional[pulumi.Input[str]] = None,
              connection_credential_details: Optional[pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs']] = None,
              connection_details: Optional[pulumi.Input['DatabaseInsightConnectionDetailsArgs']] = None,
              credential_details: Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']] = None,
@@ -104,43 +104,47 @@ class DatabaseInsightArgs:
              opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'entitySource' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if entity_source is None and 'entitySource' in kwargs:
             entity_source = kwargs['entitySource']
-        if 'connectionCredentialDetails' in kwargs:
+        if entity_source is None:
+            raise TypeError("Missing 'entity_source' argument")
+        if connection_credential_details is None and 'connectionCredentialDetails' in kwargs:
             connection_credential_details = kwargs['connectionCredentialDetails']
-        if 'connectionDetails' in kwargs:
+        if connection_details is None and 'connectionDetails' in kwargs:
             connection_details = kwargs['connectionDetails']
-        if 'credentialDetails' in kwargs:
+        if credential_details is None and 'credentialDetails' in kwargs:
             credential_details = kwargs['credentialDetails']
-        if 'databaseConnectionStatusDetails' in kwargs:
+        if database_connection_status_details is None and 'databaseConnectionStatusDetails' in kwargs:
             database_connection_status_details = kwargs['databaseConnectionStatusDetails']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseResourceType' in kwargs:
+        if database_resource_type is None and 'databaseResourceType' in kwargs:
             database_resource_type = kwargs['databaseResourceType']
-        if 'dbmPrivateEndpointId' in kwargs:
+        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
             dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'enterpriseManagerBridgeId' in kwargs:
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
             enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if 'enterpriseManagerEntityIdentifier' in kwargs:
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
             enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if 'enterpriseManagerIdentifier' in kwargs:
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
             enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if 'exadataInsightId' in kwargs:
+        if exadata_insight_id is None and 'exadataInsightId' in kwargs:
             exadata_insight_id = kwargs['exadataInsightId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'opsiPrivateEndpointId' in kwargs:
+        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
             opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
 
         _setter("compartment_id", compartment_id)
@@ -563,71 +567,71 @@ class _DatabaseInsightState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionCredentialDetails' in kwargs:
+        if connection_credential_details is None and 'connectionCredentialDetails' in kwargs:
             connection_credential_details = kwargs['connectionCredentialDetails']
-        if 'connectionDetails' in kwargs:
+        if connection_details is None and 'connectionDetails' in kwargs:
             connection_details = kwargs['connectionDetails']
-        if 'credentialDetails' in kwargs:
+        if credential_details is None and 'credentialDetails' in kwargs:
             credential_details = kwargs['credentialDetails']
-        if 'databaseConnectionStatusDetails' in kwargs:
+        if database_connection_status_details is None and 'databaseConnectionStatusDetails' in kwargs:
             database_connection_status_details = kwargs['databaseConnectionStatusDetails']
-        if 'databaseDisplayName' in kwargs:
+        if database_display_name is None and 'databaseDisplayName' in kwargs:
             database_display_name = kwargs['databaseDisplayName']
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'databaseName' in kwargs:
+        if database_name is None and 'databaseName' in kwargs:
             database_name = kwargs['databaseName']
-        if 'databaseResourceType' in kwargs:
+        if database_resource_type is None and 'databaseResourceType' in kwargs:
             database_resource_type = kwargs['databaseResourceType']
-        if 'databaseType' in kwargs:
+        if database_type is None and 'databaseType' in kwargs:
             database_type = kwargs['databaseType']
-        if 'databaseVersion' in kwargs:
+        if database_version is None and 'databaseVersion' in kwargs:
             database_version = kwargs['databaseVersion']
-        if 'dbmPrivateEndpointId' in kwargs:
+        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
             dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'deploymentType' in kwargs:
+        if deployment_type is None and 'deploymentType' in kwargs:
             deployment_type = kwargs['deploymentType']
-        if 'enterpriseManagerBridgeId' in kwargs:
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
             enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if 'enterpriseManagerEntityDisplayName' in kwargs:
+        if enterprise_manager_entity_display_name is None and 'enterpriseManagerEntityDisplayName' in kwargs:
             enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
-        if 'enterpriseManagerEntityIdentifier' in kwargs:
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
             enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if 'enterpriseManagerEntityName' in kwargs:
+        if enterprise_manager_entity_name is None and 'enterpriseManagerEntityName' in kwargs:
             enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
-        if 'enterpriseManagerEntityType' in kwargs:
+        if enterprise_manager_entity_type is None and 'enterpriseManagerEntityType' in kwargs:
             enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
-        if 'enterpriseManagerIdentifier' in kwargs:
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
             enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if 'entitySource' in kwargs:
+        if entity_source is None and 'entitySource' in kwargs:
             entity_source = kwargs['entitySource']
-        if 'exadataInsightId' in kwargs:
+        if exadata_insight_id is None and 'exadataInsightId' in kwargs:
             exadata_insight_id = kwargs['exadataInsightId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'opsiPrivateEndpointId' in kwargs:
+        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
             opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if 'parentId' in kwargs:
+        if parent_id is None and 'parentId' in kwargs:
             parent_id = kwargs['parentId']
-        if 'processorCount' in kwargs:
+        if processor_count is None and 'processorCount' in kwargs:
             processor_count = kwargs['processorCount']
-        if 'rootId' in kwargs:
+        if root_id is None and 'rootId' in kwargs:
             root_id = kwargs['rootId']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if compartment_id is not None:
@@ -1235,23 +1239,11 @@ class DatabaseInsight(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if connection_credential_details is not None and not isinstance(connection_credential_details, DatabaseInsightConnectionCredentialDetailsArgs):
-                connection_credential_details = connection_credential_details or {}
-                def _setter(key, value):
-                    connection_credential_details[key] = value
-                DatabaseInsightConnectionCredentialDetailsArgs._configure(_setter, **connection_credential_details)
+            connection_credential_details = _utilities.configure(connection_credential_details, DatabaseInsightConnectionCredentialDetailsArgs, True)
             __props__.__dict__["connection_credential_details"] = connection_credential_details
-            if connection_details is not None and not isinstance(connection_details, DatabaseInsightConnectionDetailsArgs):
-                connection_details = connection_details or {}
-                def _setter(key, value):
-                    connection_details[key] = value
-                DatabaseInsightConnectionDetailsArgs._configure(_setter, **connection_details)
+            connection_details = _utilities.configure(connection_details, DatabaseInsightConnectionDetailsArgs, True)
             __props__.__dict__["connection_details"] = connection_details
-            if credential_details is not None and not isinstance(credential_details, DatabaseInsightCredentialDetailsArgs):
-                credential_details = credential_details or {}
-                def _setter(key, value):
-                    credential_details[key] = value
-                DatabaseInsightCredentialDetailsArgs._configure(_setter, **credential_details)
+            credential_details = _utilities.configure(credential_details, DatabaseInsightCredentialDetailsArgs, True)
             __props__.__dict__["credential_details"] = credential_details
             __props__.__dict__["database_connection_status_details"] = database_connection_status_details
             __props__.__dict__["database_id"] = database_id

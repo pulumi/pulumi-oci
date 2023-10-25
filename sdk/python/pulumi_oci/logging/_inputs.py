@@ -46,11 +46,13 @@ class LogConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source: pulumi.Input['LogConfigurationSourceArgs'],
+             source: Optional[pulumi.Input['LogConfigurationSourceArgs']] = None,
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
 
         _setter("source", source)
@@ -106,14 +108,22 @@ class LogConfigurationSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category: pulumi.Input[str],
-             resource: pulumi.Input[str],
-             service: pulumi.Input[str],
-             source_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category: Optional[pulumi.Input[str]] = None,
+             resource: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if resource is None:
+            raise TypeError("Missing 'resource' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("category", category)
         _setter("resource", resource)
@@ -185,9 +195,9 @@ class UnifiedAgentConfigurationGroupAssociationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupLists' in kwargs:
+        if group_lists is None and 'groupLists' in kwargs:
             group_lists = kwargs['groupLists']
 
         if group_lists is not None:
@@ -226,13 +236,19 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             configuration_type: pulumi.Input[str],
-             destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs'],
-             sources: pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             configuration_type: Optional[pulumi.Input[str]] = None,
+             destination: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configurationType' in kwargs:
+        if configuration_type is None and 'configurationType' in kwargs:
             configuration_type = kwargs['configurationType']
+        if configuration_type is None:
+            raise TypeError("Missing 'configuration_type' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
 
         _setter("configuration_type", configuration_type)
         _setter("destination", destination)
@@ -292,13 +308,15 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             log_object_id: pulumi.Input[str],
+             log_object_id: Optional[pulumi.Input[str]] = None,
              operational_metrics_configuration: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'logObjectId' in kwargs:
+        if log_object_id is None and 'logObjectId' in kwargs:
             log_object_id = kwargs['logObjectId']
-        if 'operationalMetricsConfiguration' in kwargs:
+        if log_object_id is None:
+            raise TypeError("Missing 'log_object_id' argument")
+        if operational_metrics_configuration is None and 'operationalMetricsConfiguration' in kwargs:
             operational_metrics_configuration = kwargs['operationalMetricsConfiguration']
 
         _setter("log_object_id", log_object_id)
@@ -347,10 +365,14 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs'],
-             source: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             destination: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs']] = None,
+             source: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
 
         _setter("destination", destination)
         _setter("source", source)
@@ -394,11 +416,13 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
 
         _setter("compartment_id", compartment_id)
 
@@ -435,13 +459,17 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             record_input: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs'],
-             type: pulumi.Input[str],
+             record_input: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs']] = None,
+             type: Optional[pulumi.Input[str]] = None,
              metrics: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'recordInput' in kwargs:
+        if record_input is None and 'recordInput' in kwargs:
             record_input = kwargs['recordInput']
+        if record_input is None:
+            raise TypeError("Missing 'record_input' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("record_input", record_input)
         _setter("type", type)
@@ -502,11 +530,13 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             namespace: pulumi.Input[str],
+             namespace: Optional[pulumi.Input[str]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'resourceGroup' in kwargs:
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
             resource_group = kwargs['resourceGroup']
 
         _setter("namespace", namespace)
@@ -568,15 +598,17 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             source_type: pulumi.Input[str],
+             source_type: Optional[pulumi.Input[str]] = None,
              channels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']] = None,
              paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'sourceType' in kwargs:
+        if source_type is None and 'sourceType' in kwargs:
             source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
 
         _setter("source_type", source_type)
         if channels is not None:
@@ -751,7 +783,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             parser_type: pulumi.Input[str],
+             parser_type: Optional[pulumi.Input[str]] = None,
              delimiter: Optional[pulumi.Input[str]] = None,
              expression: Optional[pulumi.Input[str]] = None,
              field_time_key: Optional[pulumi.Input[str]] = None,
@@ -778,49 +810,51 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
              time_type: Optional[pulumi.Input[str]] = None,
              timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
              types: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parserType' in kwargs:
+        if parser_type is None and 'parserType' in kwargs:
             parser_type = kwargs['parserType']
-        if 'fieldTimeKey' in kwargs:
+        if parser_type is None:
+            raise TypeError("Missing 'parser_type' argument")
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
             field_time_key = kwargs['fieldTimeKey']
-        if 'formatFirstline' in kwargs:
+        if format_firstline is None and 'formatFirstline' in kwargs:
             format_firstline = kwargs['formatFirstline']
-        if 'grokFailureKey' in kwargs:
+        if grok_failure_key is None and 'grokFailureKey' in kwargs:
             grok_failure_key = kwargs['grokFailureKey']
-        if 'grokNameKey' in kwargs:
+        if grok_name_key is None and 'grokNameKey' in kwargs:
             grok_name_key = kwargs['grokNameKey']
-        if 'isEstimateCurrentEvent' in kwargs:
+        if is_estimate_current_event is None and 'isEstimateCurrentEvent' in kwargs:
             is_estimate_current_event = kwargs['isEstimateCurrentEvent']
-        if 'isKeepTimeKey' in kwargs:
+        if is_keep_time_key is None and 'isKeepTimeKey' in kwargs:
             is_keep_time_key = kwargs['isKeepTimeKey']
-        if 'isMergeCriFields' in kwargs:
+        if is_merge_cri_fields is None and 'isMergeCriFields' in kwargs:
             is_merge_cri_fields = kwargs['isMergeCriFields']
-        if 'isNullEmptyString' in kwargs:
+        if is_null_empty_string is None and 'isNullEmptyString' in kwargs:
             is_null_empty_string = kwargs['isNullEmptyString']
-        if 'isSupportColonlessIdent' in kwargs:
+        if is_support_colonless_ident is None and 'isSupportColonlessIdent' in kwargs:
             is_support_colonless_ident = kwargs['isSupportColonlessIdent']
-        if 'isWithPriority' in kwargs:
+        if is_with_priority is None and 'isWithPriority' in kwargs:
             is_with_priority = kwargs['isWithPriority']
-        if 'messageFormat' in kwargs:
+        if message_format is None and 'messageFormat' in kwargs:
             message_format = kwargs['messageFormat']
-        if 'messageKey' in kwargs:
+        if message_key is None and 'messageKey' in kwargs:
             message_key = kwargs['messageKey']
-        if 'multiLineStartRegexp' in kwargs:
+        if multi_line_start_regexp is None and 'multiLineStartRegexp' in kwargs:
             multi_line_start_regexp = kwargs['multiLineStartRegexp']
-        if 'nestedParser' in kwargs:
+        if nested_parser is None and 'nestedParser' in kwargs:
             nested_parser = kwargs['nestedParser']
-        if 'nullValuePattern' in kwargs:
+        if null_value_pattern is None and 'nullValuePattern' in kwargs:
             null_value_pattern = kwargs['nullValuePattern']
-        if 'rfc5424timeFormat' in kwargs:
+        if rfc5424time_format is None and 'rfc5424timeFormat' in kwargs:
             rfc5424time_format = kwargs['rfc5424timeFormat']
-        if 'syslogParserType' in kwargs:
+        if syslog_parser_type is None and 'syslogParserType' in kwargs:
             syslog_parser_type = kwargs['syslogParserType']
-        if 'timeFormat' in kwargs:
+        if time_format is None and 'timeFormat' in kwargs:
             time_format = kwargs['timeFormat']
-        if 'timeType' in kwargs:
+        if time_type is None and 'timeType' in kwargs:
             time_type = kwargs['timeType']
-        if 'timeoutInMilliseconds' in kwargs:
+        if timeout_in_milliseconds is None and 'timeoutInMilliseconds' in kwargs:
             timeout_in_milliseconds = kwargs['timeoutInMilliseconds']
 
         _setter("parser_type", parser_type)
@@ -1235,15 +1269,15 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
              is_keep_time_key: Optional[pulumi.Input[bool]] = None,
              time_format: Optional[pulumi.Input[str]] = None,
              time_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fieldTimeKey' in kwargs:
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
             field_time_key = kwargs['fieldTimeKey']
-        if 'isKeepTimeKey' in kwargs:
+        if is_keep_time_key is None and 'isKeepTimeKey' in kwargs:
             is_keep_time_key = kwargs['isKeepTimeKey']
-        if 'timeFormat' in kwargs:
+        if time_format is None and 'timeFormat' in kwargs:
             time_format = kwargs['timeFormat']
-        if 'timeType' in kwargs:
+        if time_type is None and 'timeType' in kwargs:
             time_type = kwargs['timeType']
 
         if field_time_key is not None:
@@ -1335,13 +1369,13 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
              field_time_zone: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              pattern: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'fieldTimeFormat' in kwargs:
+        if field_time_format is None and 'fieldTimeFormat' in kwargs:
             field_time_format = kwargs['fieldTimeFormat']
-        if 'fieldTimeKey' in kwargs:
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
             field_time_key = kwargs['fieldTimeKey']
-        if 'fieldTimeZone' in kwargs:
+        if field_time_zone is None and 'fieldTimeZone' in kwargs:
             field_time_zone = kwargs['fieldTimeZone']
 
         if field_time_format is not None:
@@ -1431,11 +1465,15 @@ class GetLogGroupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1488,11 +1526,15 @@ class GetLogSavedSearchesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1545,11 +1587,15 @@ class GetLogsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1602,11 +1648,15 @@ class GetUnifiedAgentConfigurationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

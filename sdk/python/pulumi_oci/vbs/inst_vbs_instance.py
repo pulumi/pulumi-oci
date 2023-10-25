@@ -51,29 +51,33 @@ class InstVbsInstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             display_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              idcs_access_token: Optional[pulumi.Input[str]] = None,
              is_resource_usage_agreement_granted: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              resource_compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'displayName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'definedTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'isResourceUsageAgreementGranted' in kwargs:
+        if is_resource_usage_agreement_granted is None and 'isResourceUsageAgreementGranted' in kwargs:
             is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
-        if 'resourceCompartmentId' in kwargs:
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
 
         _setter("compartment_id", compartment_id)
@@ -264,31 +268,31 @@ class _InstVbsInstanceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vbs_access_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'idcsAccessToken' in kwargs:
+        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
             idcs_access_token = kwargs['idcsAccessToken']
-        if 'isResourceUsageAgreementGranted' in kwargs:
+        if is_resource_usage_agreement_granted is None and 'isResourceUsageAgreementGranted' in kwargs:
             is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
-        if 'lifecyleDetails' in kwargs:
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
             lifecyle_details = kwargs['lifecyleDetails']
-        if 'resourceCompartmentId' in kwargs:
+        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
             resource_compartment_id = kwargs['resourceCompartmentId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'vbsAccessUrl' in kwargs:
+        if vbs_access_url is None and 'vbsAccessUrl' in kwargs:
             vbs_access_url = kwargs['vbsAccessUrl']
 
         if compartment_id is not None:

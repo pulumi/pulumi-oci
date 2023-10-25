@@ -34,11 +34,11 @@ import (
 //			_, err := ApiGateway.NewCertificate(ctx, "testCertificate", &ApiGateway.CertificateArgs{
 //				Certificate:   pulumi.Any(_var.Certificate_certificate),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Certificate_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				IntermediateCertificates: pulumi.Any(_var.Certificate_intermediate_certificates),

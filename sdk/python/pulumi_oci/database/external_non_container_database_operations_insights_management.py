@@ -35,17 +35,23 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_operations_insights: pulumi.Input[bool],
-             external_database_connector_id: pulumi.Input[str],
-             external_non_container_database_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             enable_operations_insights: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_non_container_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableOperationsInsights' in kwargs:
+        if enable_operations_insights is None and 'enableOperationsInsights' in kwargs:
             enable_operations_insights = kwargs['enableOperationsInsights']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if enable_operations_insights is None:
+            raise TypeError("Missing 'enable_operations_insights' argument")
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalNonContainerDatabaseId' in kwargs:
+        if external_database_connector_id is None:
+            raise TypeError("Missing 'external_database_connector_id' argument")
+        if external_non_container_database_id is None and 'externalNonContainerDatabaseId' in kwargs:
             external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+        if external_non_container_database_id is None:
+            raise TypeError("Missing 'external_non_container_database_id' argument")
 
         _setter("enable_operations_insights", enable_operations_insights)
         _setter("external_database_connector_id", external_database_connector_id)
@@ -118,13 +124,13 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
              enable_operations_insights: Optional[pulumi.Input[bool]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableOperationsInsights' in kwargs:
+        if enable_operations_insights is None and 'enableOperationsInsights' in kwargs:
             enable_operations_insights = kwargs['enableOperationsInsights']
-        if 'externalDatabaseConnectorId' in kwargs:
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
             external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if 'externalNonContainerDatabaseId' in kwargs:
+        if external_non_container_database_id is None and 'externalNonContainerDatabaseId' in kwargs:
             external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
 
         if enable_operations_insights is not None:

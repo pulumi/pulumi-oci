@@ -130,15 +130,15 @@ class CloudVmClusterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             backup_subnet_id: pulumi.Input[str],
-             cloud_exadata_infrastructure_id: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
-             cpu_core_count: pulumi.Input[int],
-             display_name: pulumi.Input[str],
-             gi_version: pulumi.Input[str],
-             hostname: pulumi.Input[str],
-             ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[str]]],
-             subnet_id: pulumi.Input[str],
+             backup_subnet_id: Optional[pulumi.Input[str]] = None,
+             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             gi_version: Optional[pulumi.Input[str]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
              backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              cluster_name: Optional[pulumi.Input[str]] = None,
              create_async: Optional[pulumi.Input[bool]] = None,
@@ -160,63 +160,81 @@ class CloudVmClusterArgs:
              scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
              scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupSubnetId' in kwargs:
+        if backup_subnet_id is None and 'backupSubnetId' in kwargs:
             backup_subnet_id = kwargs['backupSubnetId']
-        if 'cloudExadataInfrastructureId' in kwargs:
+        if backup_subnet_id is None:
+            raise TypeError("Missing 'backup_subnet_id' argument")
+        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
             cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
-        if 'compartmentId' in kwargs:
+        if cloud_exadata_infrastructure_id is None:
+            raise TypeError("Missing 'cloud_exadata_infrastructure_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'displayName' in kwargs:
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'giVersion' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if gi_version is None and 'giVersion' in kwargs:
             gi_version = kwargs['giVersion']
-        if 'sshPublicKeys' in kwargs:
+        if gi_version is None:
+            raise TypeError("Missing 'gi_version' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'subnetId' in kwargs:
+        if ssh_public_keys is None:
+            raise TypeError("Missing 'ssh_public_keys' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'backupNetworkNsgIds' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
             backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
-        if 'clusterName' in kwargs:
+        if cluster_name is None and 'clusterName' in kwargs:
             cluster_name = kwargs['clusterName']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'dataStoragePercentage' in kwargs:
+        if data_storage_percentage is None and 'dataStoragePercentage' in kwargs:
             data_storage_percentage = kwargs['dataStoragePercentage']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isLocalBackupEnabled' in kwargs:
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
             is_local_backup_enabled = kwargs['isLocalBackupEnabled']
-        if 'isSparseDiskgroupEnabled' in kwargs:
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
             is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'privateZoneId' in kwargs:
+        if private_zone_id is None and 'privateZoneId' in kwargs:
             private_zone_id = kwargs['privateZoneId']
-        if 'scanListenerPortTcp' in kwargs:
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
             scan_listener_port_tcp = kwargs['scanListenerPortTcp']
-        if 'scanListenerPortTcpSsl' in kwargs:
+        if scan_listener_port_tcp_ssl is None and 'scanListenerPortTcpSsl' in kwargs:
             scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
 
         _setter("backup_subnet_id", backup_subnet_id)
@@ -860,93 +878,93 @@ class _CloudVmClusterState:
              time_zone: Optional[pulumi.Input[str]] = None,
              vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'backupNetworkNsgIds' in kwargs:
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
             backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
-        if 'backupSubnetId' in kwargs:
+        if backup_subnet_id is None and 'backupSubnetId' in kwargs:
             backup_subnet_id = kwargs['backupSubnetId']
-        if 'cloudExadataInfrastructureId' in kwargs:
+        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
             cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
-        if 'clusterName' in kwargs:
+        if cluster_name is None and 'clusterName' in kwargs:
             cluster_name = kwargs['clusterName']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'cpuCoreCount' in kwargs:
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
             cpu_core_count = kwargs['cpuCoreCount']
-        if 'createAsync' in kwargs:
+        if create_async is None and 'createAsync' in kwargs:
             create_async = kwargs['createAsync']
-        if 'dataCollectionOptions' in kwargs:
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
             data_collection_options = kwargs['dataCollectionOptions']
-        if 'dataStoragePercentage' in kwargs:
+        if data_storage_percentage is None and 'dataStoragePercentage' in kwargs:
             data_storage_percentage = kwargs['dataStoragePercentage']
-        if 'dataStorageSizeInTbs' in kwargs:
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
             data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if 'dbNodeStorageSizeInGbs' in kwargs:
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
             db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if 'dbServers' in kwargs:
+        if db_servers is None and 'dbServers' in kwargs:
             db_servers = kwargs['dbServers']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'diskRedundancy' in kwargs:
+        if disk_redundancy is None and 'diskRedundancy' in kwargs:
             disk_redundancy = kwargs['diskRedundancy']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'giVersion' in kwargs:
+        if gi_version is None and 'giVersion' in kwargs:
             gi_version = kwargs['giVersion']
-        if 'iormConfigCaches' in kwargs:
+        if iorm_config_caches is None and 'iormConfigCaches' in kwargs:
             iorm_config_caches = kwargs['iormConfigCaches']
-        if 'isLocalBackupEnabled' in kwargs:
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
             is_local_backup_enabled = kwargs['isLocalBackupEnabled']
-        if 'isSparseDiskgroupEnabled' in kwargs:
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
             is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
-        if 'lastUpdateHistoryEntryId' in kwargs:
+        if last_update_history_entry_id is None and 'lastUpdateHistoryEntryId' in kwargs:
             last_update_history_entry_id = kwargs['lastUpdateHistoryEntryId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'listenerPort' in kwargs:
+        if listener_port is None and 'listenerPort' in kwargs:
             listener_port = kwargs['listenerPort']
-        if 'memorySizeInGbs' in kwargs:
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
             memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if 'nodeCount' in kwargs:
+        if node_count is None and 'nodeCount' in kwargs:
             node_count = kwargs['nodeCount']
-        if 'nsgIds' in kwargs:
+        if nsg_ids is None and 'nsgIds' in kwargs:
             nsg_ids = kwargs['nsgIds']
-        if 'ocpuCount' in kwargs:
+        if ocpu_count is None and 'ocpuCount' in kwargs:
             ocpu_count = kwargs['ocpuCount']
-        if 'privateZoneId' in kwargs:
+        if private_zone_id is None and 'privateZoneId' in kwargs:
             private_zone_id = kwargs['privateZoneId']
-        if 'scanDnsName' in kwargs:
+        if scan_dns_name is None and 'scanDnsName' in kwargs:
             scan_dns_name = kwargs['scanDnsName']
-        if 'scanDnsRecordId' in kwargs:
+        if scan_dns_record_id is None and 'scanDnsRecordId' in kwargs:
             scan_dns_record_id = kwargs['scanDnsRecordId']
-        if 'scanIpIds' in kwargs:
+        if scan_ip_ids is None and 'scanIpIds' in kwargs:
             scan_ip_ids = kwargs['scanIpIds']
-        if 'scanListenerPortTcp' in kwargs:
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
             scan_listener_port_tcp = kwargs['scanListenerPortTcp']
-        if 'scanListenerPortTcpSsl' in kwargs:
+        if scan_listener_port_tcp_ssl is None and 'scanListenerPortTcpSsl' in kwargs:
             scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
-        if 'sshPublicKeys' in kwargs:
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
             ssh_public_keys = kwargs['sshPublicKeys']
-        if 'storageSizeInGbs' in kwargs:
+        if storage_size_in_gbs is None and 'storageSizeInGbs' in kwargs:
             storage_size_in_gbs = kwargs['storageSizeInGbs']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemVersion' in kwargs:
+        if system_version is None and 'systemVersion' in kwargs:
             system_version = kwargs['systemVersion']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'vipIds' in kwargs:
+        if vip_ids is None and 'vipIds' in kwargs:
             vip_ids = kwargs['vipIds']
-        if 'zoneId' in kwargs:
+        if zone_id is None and 'zoneId' in kwargs:
             zone_id = kwargs['zoneId']
 
         if availability_domain is not None:
@@ -1899,11 +1917,7 @@ class CloudVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'cpu_core_count'")
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["create_async"] = create_async
-            if data_collection_options is not None and not isinstance(data_collection_options, CloudVmClusterDataCollectionOptionsArgs):
-                data_collection_options = data_collection_options or {}
-                def _setter(key, value):
-                    data_collection_options[key] = value
-                CloudVmClusterDataCollectionOptionsArgs._configure(_setter, **data_collection_options)
+            data_collection_options = _utilities.configure(data_collection_options, CloudVmClusterDataCollectionOptionsArgs, True)
             __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_percentage"] = data_storage_percentage
             __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs

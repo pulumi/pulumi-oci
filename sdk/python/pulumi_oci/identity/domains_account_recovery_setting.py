@@ -135,12 +135,12 @@ class DomainsAccountRecoverySettingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             account_recovery_setting_id: pulumi.Input[str],
-             factors: pulumi.Input[Sequence[pulumi.Input[str]]],
-             idcs_endpoint: pulumi.Input[str],
-             lockout_duration: pulumi.Input[int],
-             max_incorrect_attempts: pulumi.Input[int],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             account_recovery_setting_id: Optional[pulumi.Input[str]] = None,
+             factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             lockout_duration: Optional[pulumi.Input[int]] = None,
+             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -148,21 +148,33 @@ class DomainsAccountRecoverySettingArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountRecoverySettingId' in kwargs:
+        if account_recovery_setting_id is None and 'accountRecoverySettingId' in kwargs:
             account_recovery_setting_id = kwargs['accountRecoverySettingId']
-        if 'idcsEndpoint' in kwargs:
+        if account_recovery_setting_id is None:
+            raise TypeError("Missing 'account_recovery_setting_id' argument")
+        if factors is None:
+            raise TypeError("Missing 'factors' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'lockoutDuration' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if lockout_duration is None and 'lockoutDuration' in kwargs:
             lockout_duration = kwargs['lockoutDuration']
-        if 'maxIncorrectAttempts' in kwargs:
+        if lockout_duration is None:
+            raise TypeError("Missing 'lockout_duration' argument")
+        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
             max_incorrect_attempts = kwargs['maxIncorrectAttempts']
-        if 'attributeSets' in kwargs:
+        if max_incorrect_attempts is None:
+            raise TypeError("Missing 'max_incorrect_attempts' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("account_recovery_setting_id", account_recovery_setting_id)
@@ -674,37 +686,37 @@ class _DomainsAccountRecoverySettingState:
              schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accountRecoverySettingId' in kwargs:
+        if account_recovery_setting_id is None and 'accountRecoverySettingId' in kwargs:
             account_recovery_setting_id = kwargs['accountRecoverySettingId']
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'lockoutDuration' in kwargs:
+        if lockout_duration is None and 'lockoutDuration' in kwargs:
             lockout_duration = kwargs['lockoutDuration']
-        if 'maxIncorrectAttempts' in kwargs:
+        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
             max_incorrect_attempts = kwargs['maxIncorrectAttempts']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
 
         if account_recovery_setting_id is not None:

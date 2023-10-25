@@ -179,8 +179,8 @@ class InstanceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domain: pulumi.Input[str],
-             compartment_id: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
              agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
              async_: Optional[pulumi.Input[bool]] = None,
              availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
@@ -210,61 +210,65 @@ class InstanceArgs:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'compartmentId' in kwargs:
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'agentConfig' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if agent_config is None and 'agentConfig' in kwargs:
             agent_config = kwargs['agentConfig']
-        if 'async' in kwargs:
+        if async_ is None and 'async' in kwargs:
             async_ = kwargs['async']
-        if 'availabilityConfig' in kwargs:
+        if availability_config is None and 'availabilityConfig' in kwargs:
             availability_config = kwargs['availabilityConfig']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'computeClusterId' in kwargs:
+        if compute_cluster_id is None and 'computeClusterId' in kwargs:
             compute_cluster_id = kwargs['computeClusterId']
-        if 'createVnicDetails' in kwargs:
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'extendedMetadata' in kwargs:
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceConfigurationId' in kwargs:
+        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
             instance_configuration_id = kwargs['instanceConfigurationId']
-        if 'instanceOptions' in kwargs:
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'launchOptions' in kwargs:
+        if launch_options is None and 'launchOptions' in kwargs:
             launch_options = kwargs['launchOptions']
-        if 'platformConfig' in kwargs:
+        if platform_config is None and 'platformConfig' in kwargs:
             platform_config = kwargs['platformConfig']
-        if 'preemptibleInstanceConfig' in kwargs:
+        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
             preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'updateOperationConstraint' in kwargs:
+        if update_operation_constraint is None and 'updateOperationConstraint' in kwargs:
             update_operation_constraint = kwargs['updateOperationConstraint']
 
         _setter("availability_domain", availability_domain)
@@ -1011,77 +1015,77 @@ class _InstanceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
              update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'agentConfig' in kwargs:
+        if agent_config is None and 'agentConfig' in kwargs:
             agent_config = kwargs['agentConfig']
-        if 'async' in kwargs:
+        if async_ is None and 'async' in kwargs:
             async_ = kwargs['async']
-        if 'availabilityConfig' in kwargs:
+        if availability_config is None and 'availabilityConfig' in kwargs:
             availability_config = kwargs['availabilityConfig']
-        if 'availabilityDomain' in kwargs:
+        if availability_domain is None and 'availabilityDomain' in kwargs:
             availability_domain = kwargs['availabilityDomain']
-        if 'bootVolumeId' in kwargs:
+        if boot_volume_id is None and 'bootVolumeId' in kwargs:
             boot_volume_id = kwargs['bootVolumeId']
-        if 'capacityReservationId' in kwargs:
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
             capacity_reservation_id = kwargs['capacityReservationId']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'computeClusterId' in kwargs:
+        if compute_cluster_id is None and 'computeClusterId' in kwargs:
             compute_cluster_id = kwargs['computeClusterId']
-        if 'createVnicDetails' in kwargs:
+        if create_vnic_details is None and 'createVnicDetails' in kwargs:
             create_vnic_details = kwargs['createVnicDetails']
-        if 'dedicatedVmHostId' in kwargs:
+        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
             dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'extendedMetadata' in kwargs:
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
             extended_metadata = kwargs['extendedMetadata']
-        if 'faultDomain' in kwargs:
+        if fault_domain is None and 'faultDomain' in kwargs:
             fault_domain = kwargs['faultDomain']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'hostnameLabel' in kwargs:
+        if hostname_label is None and 'hostnameLabel' in kwargs:
             hostname_label = kwargs['hostnameLabel']
-        if 'instanceConfigurationId' in kwargs:
+        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
             instance_configuration_id = kwargs['instanceConfigurationId']
-        if 'instanceOptions' in kwargs:
+        if instance_options is None and 'instanceOptions' in kwargs:
             instance_options = kwargs['instanceOptions']
-        if 'ipxeScript' in kwargs:
+        if ipxe_script is None and 'ipxeScript' in kwargs:
             ipxe_script = kwargs['ipxeScript']
-        if 'isCrossNumaNode' in kwargs:
+        if is_cross_numa_node is None and 'isCrossNumaNode' in kwargs:
             is_cross_numa_node = kwargs['isCrossNumaNode']
-        if 'isPvEncryptionInTransitEnabled' in kwargs:
+        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
             is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if 'launchMode' in kwargs:
+        if launch_mode is None and 'launchMode' in kwargs:
             launch_mode = kwargs['launchMode']
-        if 'launchOptions' in kwargs:
+        if launch_options is None and 'launchOptions' in kwargs:
             launch_options = kwargs['launchOptions']
-        if 'platformConfig' in kwargs:
+        if platform_config is None and 'platformConfig' in kwargs:
             platform_config = kwargs['platformConfig']
-        if 'preemptibleInstanceConfig' in kwargs:
+        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
             preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if 'preserveBootVolume' in kwargs:
+        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
             preserve_boot_volume = kwargs['preserveBootVolume']
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
-        if 'publicIp' in kwargs:
+        if public_ip is None and 'publicIp' in kwargs:
             public_ip = kwargs['publicIp']
-        if 'shapeConfig' in kwargs:
+        if shape_config is None and 'shapeConfig' in kwargs:
             shape_config = kwargs['shapeConfig']
-        if 'sourceDetails' in kwargs:
+        if source_details is None and 'sourceDetails' in kwargs:
             source_details = kwargs['sourceDetails']
-        if 'subnetId' in kwargs:
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeMaintenanceRebootDue' in kwargs:
+        if time_maintenance_reboot_due is None and 'timeMaintenanceRebootDue' in kwargs:
             time_maintenance_reboot_due = kwargs['timeMaintenanceRebootDue']
-        if 'updateOperationConstraint' in kwargs:
+        if update_operation_constraint is None and 'updateOperationConstraint' in kwargs:
             update_operation_constraint = kwargs['updateOperationConstraint']
 
         if agent_config is not None:
@@ -2030,18 +2034,10 @@ class Instance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InstanceArgs.__new__(InstanceArgs)
 
-            if agent_config is not None and not isinstance(agent_config, InstanceAgentConfigArgs):
-                agent_config = agent_config or {}
-                def _setter(key, value):
-                    agent_config[key] = value
-                InstanceAgentConfigArgs._configure(_setter, **agent_config)
+            agent_config = _utilities.configure(agent_config, InstanceAgentConfigArgs, True)
             __props__.__dict__["agent_config"] = agent_config
             __props__.__dict__["async_"] = async_
-            if availability_config is not None and not isinstance(availability_config, InstanceAvailabilityConfigArgs):
-                availability_config = availability_config or {}
-                def _setter(key, value):
-                    availability_config[key] = value
-                InstanceAvailabilityConfigArgs._configure(_setter, **availability_config)
+            availability_config = _utilities.configure(availability_config, InstanceAvailabilityConfigArgs, True)
             __props__.__dict__["availability_config"] = availability_config
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
@@ -2051,11 +2047,7 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["compute_cluster_id"] = compute_cluster_id
-            if create_vnic_details is not None and not isinstance(create_vnic_details, InstanceCreateVnicDetailsArgs):
-                create_vnic_details = create_vnic_details or {}
-                def _setter(key, value):
-                    create_vnic_details[key] = value
-                InstanceCreateVnicDetailsArgs._configure(_setter, **create_vnic_details)
+            create_vnic_details = _utilities.configure(create_vnic_details, InstanceCreateVnicDetailsArgs, True)
             __props__.__dict__["create_vnic_details"] = create_vnic_details
             __props__.__dict__["dedicated_vm_host_id"] = dedicated_vm_host_id
             __props__.__dict__["defined_tags"] = defined_tags
@@ -2066,46 +2058,22 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["image"] = image
             __props__.__dict__["instance_configuration_id"] = instance_configuration_id
-            if instance_options is not None and not isinstance(instance_options, InstanceInstanceOptionsArgs):
-                instance_options = instance_options or {}
-                def _setter(key, value):
-                    instance_options[key] = value
-                InstanceInstanceOptionsArgs._configure(_setter, **instance_options)
+            instance_options = _utilities.configure(instance_options, InstanceInstanceOptionsArgs, True)
             __props__.__dict__["instance_options"] = instance_options
             __props__.__dict__["ipxe_script"] = ipxe_script
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
-            if launch_options is not None and not isinstance(launch_options, InstanceLaunchOptionsArgs):
-                launch_options = launch_options or {}
-                def _setter(key, value):
-                    launch_options[key] = value
-                InstanceLaunchOptionsArgs._configure(_setter, **launch_options)
+            launch_options = _utilities.configure(launch_options, InstanceLaunchOptionsArgs, True)
             __props__.__dict__["launch_options"] = launch_options
             __props__.__dict__["metadata"] = metadata
-            if platform_config is not None and not isinstance(platform_config, InstancePlatformConfigArgs):
-                platform_config = platform_config or {}
-                def _setter(key, value):
-                    platform_config[key] = value
-                InstancePlatformConfigArgs._configure(_setter, **platform_config)
+            platform_config = _utilities.configure(platform_config, InstancePlatformConfigArgs, True)
             __props__.__dict__["platform_config"] = platform_config
-            if preemptible_instance_config is not None and not isinstance(preemptible_instance_config, InstancePreemptibleInstanceConfigArgs):
-                preemptible_instance_config = preemptible_instance_config or {}
-                def _setter(key, value):
-                    preemptible_instance_config[key] = value
-                InstancePreemptibleInstanceConfigArgs._configure(_setter, **preemptible_instance_config)
+            preemptible_instance_config = _utilities.configure(preemptible_instance_config, InstancePreemptibleInstanceConfigArgs, True)
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
             __props__.__dict__["shape"] = shape
-            if shape_config is not None and not isinstance(shape_config, InstanceShapeConfigArgs):
-                shape_config = shape_config or {}
-                def _setter(key, value):
-                    shape_config[key] = value
-                InstanceShapeConfigArgs._configure(_setter, **shape_config)
+            shape_config = _utilities.configure(shape_config, InstanceShapeConfigArgs, True)
             __props__.__dict__["shape_config"] = shape_config
-            if source_details is not None and not isinstance(source_details, InstanceSourceDetailsArgs):
-                source_details = source_details or {}
-                def _setter(key, value):
-                    source_details[key] = value
-                InstanceSourceDetailsArgs._configure(_setter, **source_details)
+            source_details = _utilities.configure(source_details, InstanceSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["state"] = state
             __props__.__dict__["subnet_id"] = subnet_id

@@ -58,29 +58,41 @@ class CloudDatabaseManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             credentialdetails: pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs'],
-             database_id: pulumi.Input[str],
-             enable_management: pulumi.Input[bool],
-             management_type: pulumi.Input[str],
-             private_end_point_id: pulumi.Input[str],
-             service_name: pulumi.Input[str],
+             credentialdetails: Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             enable_management: Optional[pulumi.Input[bool]] = None,
+             management_type: Optional[pulumi.Input[str]] = None,
+             private_end_point_id: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseId' in kwargs:
+        if credentialdetails is None:
+            raise TypeError("Missing 'credentialdetails' argument")
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'enableManagement' in kwargs:
+        if database_id is None:
+            raise TypeError("Missing 'database_id' argument")
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'managementType' in kwargs:
+        if enable_management is None:
+            raise TypeError("Missing 'enable_management' argument")
+        if management_type is None and 'managementType' in kwargs:
             management_type = kwargs['managementType']
-        if 'privateEndPointId' in kwargs:
+        if management_type is None:
+            raise TypeError("Missing 'management_type' argument")
+        if private_end_point_id is None and 'privateEndPointId' in kwargs:
             private_end_point_id = kwargs['privateEndPointId']
-        if 'serviceName' in kwargs:
+        if private_end_point_id is None:
+            raise TypeError("Missing 'private_end_point_id' argument")
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'sslSecretId' in kwargs:
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
 
         _setter("credentialdetails", credentialdetails)
@@ -275,19 +287,19 @@ class _CloudDatabaseManagementState:
              role: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'databaseId' in kwargs:
+        if database_id is None and 'databaseId' in kwargs:
             database_id = kwargs['databaseId']
-        if 'enableManagement' in kwargs:
+        if enable_management is None and 'enableManagement' in kwargs:
             enable_management = kwargs['enableManagement']
-        if 'managementType' in kwargs:
+        if management_type is None and 'managementType' in kwargs:
             management_type = kwargs['managementType']
-        if 'privateEndPointId' in kwargs:
+        if private_end_point_id is None and 'privateEndPointId' in kwargs:
             private_end_point_id = kwargs['privateEndPointId']
-        if 'serviceName' in kwargs:
+        if service_name is None and 'serviceName' in kwargs:
             service_name = kwargs['serviceName']
-        if 'sslSecretId' in kwargs:
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
             ssl_secret_id = kwargs['sslSecretId']
 
         if credentialdetails is not None:
@@ -577,11 +589,7 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CloudDatabaseManagementArgs.__new__(CloudDatabaseManagementArgs)
 
-            if credentialdetails is not None and not isinstance(credentialdetails, CloudDatabaseManagementCredentialdetailsArgs):
-                credentialdetails = credentialdetails or {}
-                def _setter(key, value):
-                    credentialdetails[key] = value
-                CloudDatabaseManagementCredentialdetailsArgs._configure(_setter, **credentialdetails)
+            credentialdetails = _utilities.configure(credentialdetails, CloudDatabaseManagementCredentialdetailsArgs, True)
             if credentialdetails is None and not opts.urn:
                 raise TypeError("Missing required property 'credentialdetails'")
             __props__.__dict__["credentialdetails"] = credentialdetails

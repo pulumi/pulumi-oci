@@ -65,9 +65,9 @@ class CrossConnectArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             location_name: pulumi.Input[str],
-             port_speed_shape_name: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             location_name: Optional[pulumi.Input[str]] = None,
+             port_speed_shape_name: Optional[pulumi.Input[str]] = None,
              cross_connect_group_id: Optional[pulumi.Input[str]] = None,
              customer_reference_name: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -77,31 +77,37 @@ class CrossConnectArgs:
              is_active: Optional[pulumi.Input[bool]] = None,
              macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
              near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'locationName' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if location_name is None and 'locationName' in kwargs:
             location_name = kwargs['locationName']
-        if 'portSpeedShapeName' in kwargs:
+        if location_name is None:
+            raise TypeError("Missing 'location_name' argument")
+        if port_speed_shape_name is None and 'portSpeedShapeName' in kwargs:
             port_speed_shape_name = kwargs['portSpeedShapeName']
-        if 'crossConnectGroupId' in kwargs:
+        if port_speed_shape_name is None:
+            raise TypeError("Missing 'port_speed_shape_name' argument")
+        if cross_connect_group_id is None and 'crossConnectGroupId' in kwargs:
             cross_connect_group_id = kwargs['crossConnectGroupId']
-        if 'customerReferenceName' in kwargs:
+        if customer_reference_name is None and 'customerReferenceName' in kwargs:
             customer_reference_name = kwargs['customerReferenceName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'farCrossConnectOrCrossConnectGroupId' in kwargs:
+        if far_cross_connect_or_cross_connect_group_id is None and 'farCrossConnectOrCrossConnectGroupId' in kwargs:
             far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isActive' in kwargs:
+        if is_active is None and 'isActive' in kwargs:
             is_active = kwargs['isActive']
-        if 'macsecProperties' in kwargs:
+        if macsec_properties is None and 'macsecProperties' in kwargs:
             macsec_properties = kwargs['macsecProperties']
-        if 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
+        if near_cross_connect_or_cross_connect_group_id is None and 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
             near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
 
         _setter("compartment_id", compartment_id)
@@ -359,39 +365,39 @@ class _CrossConnectState:
              port_speed_shape_name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'crossConnectGroupId' in kwargs:
+        if cross_connect_group_id is None and 'crossConnectGroupId' in kwargs:
             cross_connect_group_id = kwargs['crossConnectGroupId']
-        if 'customerReferenceName' in kwargs:
+        if customer_reference_name is None and 'customerReferenceName' in kwargs:
             customer_reference_name = kwargs['customerReferenceName']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'farCrossConnectOrCrossConnectGroupId' in kwargs:
+        if far_cross_connect_or_cross_connect_group_id is None and 'farCrossConnectOrCrossConnectGroupId' in kwargs:
             far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isActive' in kwargs:
+        if is_active is None and 'isActive' in kwargs:
             is_active = kwargs['isActive']
-        if 'locationName' in kwargs:
+        if location_name is None and 'locationName' in kwargs:
             location_name = kwargs['locationName']
-        if 'macsecProperties' in kwargs:
+        if macsec_properties is None and 'macsecProperties' in kwargs:
             macsec_properties = kwargs['macsecProperties']
-        if 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
+        if near_cross_connect_or_cross_connect_group_id is None and 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
             near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
-        if 'ociLogicalDeviceName' in kwargs:
+        if oci_logical_device_name is None and 'ociLogicalDeviceName' in kwargs:
             oci_logical_device_name = kwargs['ociLogicalDeviceName']
-        if 'ociPhysicalDeviceName' in kwargs:
+        if oci_physical_device_name is None and 'ociPhysicalDeviceName' in kwargs:
             oci_physical_device_name = kwargs['ociPhysicalDeviceName']
-        if 'portName' in kwargs:
+        if port_name is None and 'portName' in kwargs:
             port_name = kwargs['portName']
-        if 'portSpeedShapeName' in kwargs:
+        if port_speed_shape_name is None and 'portSpeedShapeName' in kwargs:
             port_speed_shape_name = kwargs['portSpeedShapeName']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if compartment_id is not None:
@@ -860,11 +866,7 @@ class CrossConnect(pulumi.CustomResource):
             if location_name is None and not opts.urn:
                 raise TypeError("Missing required property 'location_name'")
             __props__.__dict__["location_name"] = location_name
-            if macsec_properties is not None and not isinstance(macsec_properties, CrossConnectMacsecPropertiesArgs):
-                macsec_properties = macsec_properties or {}
-                def _setter(key, value):
-                    macsec_properties[key] = value
-                CrossConnectMacsecPropertiesArgs._configure(_setter, **macsec_properties)
+            macsec_properties = _utilities.configure(macsec_properties, CrossConnectMacsecPropertiesArgs, True)
             __props__.__dict__["macsec_properties"] = macsec_properties
             __props__.__dict__["near_cross_connect_or_cross_connect_group_id"] = near_cross_connect_or_cross_connect_group_id
             if port_speed_shape_name is None and not opts.urn:

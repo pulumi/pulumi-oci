@@ -35,11 +35,15 @@ class GetOpensearchClustersFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -73,9 +77,11 @@ class GetOpensearchClustersOpensearchClusterCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -216,122 +222,202 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             availability_domains: Sequence[str],
-             compartment_id: str,
-             data_node_count: int,
-             data_node_host_bare_metal_shape: str,
-             data_node_host_memory_gb: int,
-             data_node_host_ocpu_count: int,
-             data_node_host_type: str,
-             data_node_storage_gb: int,
-             defined_tags: Mapping[str, Any],
-             display_name: str,
-             fqdn: str,
-             freeform_tags: Mapping[str, Any],
-             id: str,
-             lifecycle_details: str,
-             master_node_count: int,
-             master_node_host_bare_metal_shape: str,
-             master_node_host_memory_gb: int,
-             master_node_host_ocpu_count: int,
-             master_node_host_type: str,
-             opendashboard_fqdn: str,
-             opendashboard_node_count: int,
-             opendashboard_node_host_memory_gb: int,
-             opendashboard_node_host_ocpu_count: int,
-             opendashboard_private_ip: str,
-             opensearch_fqdn: str,
-             opensearch_private_ip: str,
-             security_master_user_name: str,
-             security_master_user_password_hash: str,
-             security_mode: str,
-             software_version: str,
-             state: str,
-             subnet_compartment_id: str,
-             subnet_id: str,
-             system_tags: Mapping[str, Any],
-             time_created: str,
-             time_deleted: str,
-             time_updated: str,
-             total_storage_gb: int,
-             vcn_compartment_id: str,
-             vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             availability_domains: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             data_node_count: Optional[int] = None,
+             data_node_host_bare_metal_shape: Optional[str] = None,
+             data_node_host_memory_gb: Optional[int] = None,
+             data_node_host_ocpu_count: Optional[int] = None,
+             data_node_host_type: Optional[str] = None,
+             data_node_storage_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fqdn: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             master_node_count: Optional[int] = None,
+             master_node_host_bare_metal_shape: Optional[str] = None,
+             master_node_host_memory_gb: Optional[int] = None,
+             master_node_host_ocpu_count: Optional[int] = None,
+             master_node_host_type: Optional[str] = None,
+             opendashboard_fqdn: Optional[str] = None,
+             opendashboard_node_count: Optional[int] = None,
+             opendashboard_node_host_memory_gb: Optional[int] = None,
+             opendashboard_node_host_ocpu_count: Optional[int] = None,
+             opendashboard_private_ip: Optional[str] = None,
+             opensearch_fqdn: Optional[str] = None,
+             opensearch_private_ip: Optional[str] = None,
+             security_master_user_name: Optional[str] = None,
+             security_master_user_password_hash: Optional[str] = None,
+             security_mode: Optional[str] = None,
+             software_version: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_compartment_id: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_deleted: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_storage_gb: Optional[int] = None,
+             vcn_compartment_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'availabilityDomains' in kwargs:
+        if availability_domains is None and 'availabilityDomains' in kwargs:
             availability_domains = kwargs['availabilityDomains']
-        if 'compartmentId' in kwargs:
+        if availability_domains is None:
+            raise TypeError("Missing 'availability_domains' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'dataNodeCount' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_node_count is None and 'dataNodeCount' in kwargs:
             data_node_count = kwargs['dataNodeCount']
-        if 'dataNodeHostBareMetalShape' in kwargs:
+        if data_node_count is None:
+            raise TypeError("Missing 'data_node_count' argument")
+        if data_node_host_bare_metal_shape is None and 'dataNodeHostBareMetalShape' in kwargs:
             data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
-        if 'dataNodeHostMemoryGb' in kwargs:
+        if data_node_host_bare_metal_shape is None:
+            raise TypeError("Missing 'data_node_host_bare_metal_shape' argument")
+        if data_node_host_memory_gb is None and 'dataNodeHostMemoryGb' in kwargs:
             data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
-        if 'dataNodeHostOcpuCount' in kwargs:
+        if data_node_host_memory_gb is None:
+            raise TypeError("Missing 'data_node_host_memory_gb' argument")
+        if data_node_host_ocpu_count is None and 'dataNodeHostOcpuCount' in kwargs:
             data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
-        if 'dataNodeHostType' in kwargs:
+        if data_node_host_ocpu_count is None:
+            raise TypeError("Missing 'data_node_host_ocpu_count' argument")
+        if data_node_host_type is None and 'dataNodeHostType' in kwargs:
             data_node_host_type = kwargs['dataNodeHostType']
-        if 'dataNodeStorageGb' in kwargs:
+        if data_node_host_type is None:
+            raise TypeError("Missing 'data_node_host_type' argument")
+        if data_node_storage_gb is None and 'dataNodeStorageGb' in kwargs:
             data_node_storage_gb = kwargs['dataNodeStorageGb']
-        if 'definedTags' in kwargs:
+        if data_node_storage_gb is None:
+            raise TypeError("Missing 'data_node_storage_gb' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'masterNodeCount' in kwargs:
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if master_node_count is None and 'masterNodeCount' in kwargs:
             master_node_count = kwargs['masterNodeCount']
-        if 'masterNodeHostBareMetalShape' in kwargs:
+        if master_node_count is None:
+            raise TypeError("Missing 'master_node_count' argument")
+        if master_node_host_bare_metal_shape is None and 'masterNodeHostBareMetalShape' in kwargs:
             master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
-        if 'masterNodeHostMemoryGb' in kwargs:
+        if master_node_host_bare_metal_shape is None:
+            raise TypeError("Missing 'master_node_host_bare_metal_shape' argument")
+        if master_node_host_memory_gb is None and 'masterNodeHostMemoryGb' in kwargs:
             master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
-        if 'masterNodeHostOcpuCount' in kwargs:
+        if master_node_host_memory_gb is None:
+            raise TypeError("Missing 'master_node_host_memory_gb' argument")
+        if master_node_host_ocpu_count is None and 'masterNodeHostOcpuCount' in kwargs:
             master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
-        if 'masterNodeHostType' in kwargs:
+        if master_node_host_ocpu_count is None:
+            raise TypeError("Missing 'master_node_host_ocpu_count' argument")
+        if master_node_host_type is None and 'masterNodeHostType' in kwargs:
             master_node_host_type = kwargs['masterNodeHostType']
-        if 'opendashboardFqdn' in kwargs:
+        if master_node_host_type is None:
+            raise TypeError("Missing 'master_node_host_type' argument")
+        if opendashboard_fqdn is None and 'opendashboardFqdn' in kwargs:
             opendashboard_fqdn = kwargs['opendashboardFqdn']
-        if 'opendashboardNodeCount' in kwargs:
+        if opendashboard_fqdn is None:
+            raise TypeError("Missing 'opendashboard_fqdn' argument")
+        if opendashboard_node_count is None and 'opendashboardNodeCount' in kwargs:
             opendashboard_node_count = kwargs['opendashboardNodeCount']
-        if 'opendashboardNodeHostMemoryGb' in kwargs:
+        if opendashboard_node_count is None:
+            raise TypeError("Missing 'opendashboard_node_count' argument")
+        if opendashboard_node_host_memory_gb is None and 'opendashboardNodeHostMemoryGb' in kwargs:
             opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
-        if 'opendashboardNodeHostOcpuCount' in kwargs:
+        if opendashboard_node_host_memory_gb is None:
+            raise TypeError("Missing 'opendashboard_node_host_memory_gb' argument")
+        if opendashboard_node_host_ocpu_count is None and 'opendashboardNodeHostOcpuCount' in kwargs:
             opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
-        if 'opendashboardPrivateIp' in kwargs:
+        if opendashboard_node_host_ocpu_count is None:
+            raise TypeError("Missing 'opendashboard_node_host_ocpu_count' argument")
+        if opendashboard_private_ip is None and 'opendashboardPrivateIp' in kwargs:
             opendashboard_private_ip = kwargs['opendashboardPrivateIp']
-        if 'opensearchFqdn' in kwargs:
+        if opendashboard_private_ip is None:
+            raise TypeError("Missing 'opendashboard_private_ip' argument")
+        if opensearch_fqdn is None and 'opensearchFqdn' in kwargs:
             opensearch_fqdn = kwargs['opensearchFqdn']
-        if 'opensearchPrivateIp' in kwargs:
+        if opensearch_fqdn is None:
+            raise TypeError("Missing 'opensearch_fqdn' argument")
+        if opensearch_private_ip is None and 'opensearchPrivateIp' in kwargs:
             opensearch_private_ip = kwargs['opensearchPrivateIp']
-        if 'securityMasterUserName' in kwargs:
+        if opensearch_private_ip is None:
+            raise TypeError("Missing 'opensearch_private_ip' argument")
+        if security_master_user_name is None and 'securityMasterUserName' in kwargs:
             security_master_user_name = kwargs['securityMasterUserName']
-        if 'securityMasterUserPasswordHash' in kwargs:
+        if security_master_user_name is None:
+            raise TypeError("Missing 'security_master_user_name' argument")
+        if security_master_user_password_hash is None and 'securityMasterUserPasswordHash' in kwargs:
             security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
-        if 'securityMode' in kwargs:
+        if security_master_user_password_hash is None:
+            raise TypeError("Missing 'security_master_user_password_hash' argument")
+        if security_mode is None and 'securityMode' in kwargs:
             security_mode = kwargs['securityMode']
-        if 'softwareVersion' in kwargs:
+        if security_mode is None:
+            raise TypeError("Missing 'security_mode' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
             software_version = kwargs['softwareVersion']
-        if 'subnetCompartmentId' in kwargs:
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_compartment_id is None and 'subnetCompartmentId' in kwargs:
             subnet_compartment_id = kwargs['subnetCompartmentId']
-        if 'subnetId' in kwargs:
+        if subnet_compartment_id is None:
+            raise TypeError("Missing 'subnet_compartment_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
             subnet_id = kwargs['subnetId']
-        if 'systemTags' in kwargs:
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeDeleted' in kwargs:
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_deleted is None and 'timeDeleted' in kwargs:
             time_deleted = kwargs['timeDeleted']
-        if 'timeUpdated' in kwargs:
+        if time_deleted is None:
+            raise TypeError("Missing 'time_deleted' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'totalStorageGb' in kwargs:
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_storage_gb is None and 'totalStorageGb' in kwargs:
             total_storage_gb = kwargs['totalStorageGb']
-        if 'vcnCompartmentId' in kwargs:
+        if total_storage_gb is None:
+            raise TypeError("Missing 'total_storage_gb' argument")
+        if vcn_compartment_id is None and 'vcnCompartmentId' in kwargs:
             vcn_compartment_id = kwargs['vcnCompartmentId']
-        if 'vcnId' in kwargs:
+        if vcn_compartment_id is None:
+            raise TypeError("Missing 'vcn_compartment_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
             vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
 
         _setter("availability_domains", availability_domains)
         _setter("compartment_id", compartment_id)
@@ -709,9 +795,11 @@ class GetOpensearchVersionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("version", version)
 
@@ -739,11 +827,15 @@ class GetOpensearchVersionsFilterResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -780,9 +872,11 @@ class GetOpensearchVersionsOpensearchVersionsCollectionResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             items: Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             items: Optional[Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
 
         _setter("items", items)
 
@@ -809,9 +903,11 @@ class GetOpensearchVersionsOpensearchVersionsCollectionItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             version: str,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("version", version)
 

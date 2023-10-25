@@ -150,13 +150,13 @@ class DomainsSecurityQuestionSettingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             idcs_endpoint: pulumi.Input[str],
-             max_field_length: pulumi.Input[int],
-             min_answer_length: pulumi.Input[int],
-             num_questions_to_ans: pulumi.Input[int],
-             num_questions_to_setup: pulumi.Input[int],
-             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
-             security_question_setting_id: pulumi.Input[str],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             max_field_length: Optional[pulumi.Input[int]] = None,
+             min_answer_length: Optional[pulumi.Input[int]] = None,
+             num_questions_to_ans: Optional[pulumi.Input[int]] = None,
+             num_questions_to_setup: Optional[pulumi.Input[int]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             security_question_setting_id: Optional[pulumi.Input[str]] = None,
              attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              attributes: Optional[pulumi.Input[str]] = None,
              authorization: Optional[pulumi.Input[str]] = None,
@@ -164,25 +164,39 @@ class DomainsSecurityQuestionSettingArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'maxFieldLength' in kwargs:
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if max_field_length is None and 'maxFieldLength' in kwargs:
             max_field_length = kwargs['maxFieldLength']
-        if 'minAnswerLength' in kwargs:
+        if max_field_length is None:
+            raise TypeError("Missing 'max_field_length' argument")
+        if min_answer_length is None and 'minAnswerLength' in kwargs:
             min_answer_length = kwargs['minAnswerLength']
-        if 'numQuestionsToAns' in kwargs:
+        if min_answer_length is None:
+            raise TypeError("Missing 'min_answer_length' argument")
+        if num_questions_to_ans is None and 'numQuestionsToAns' in kwargs:
             num_questions_to_ans = kwargs['numQuestionsToAns']
-        if 'numQuestionsToSetup' in kwargs:
+        if num_questions_to_ans is None:
+            raise TypeError("Missing 'num_questions_to_ans' argument")
+        if num_questions_to_setup is None and 'numQuestionsToSetup' in kwargs:
             num_questions_to_setup = kwargs['numQuestionsToSetup']
-        if 'securityQuestionSettingId' in kwargs:
+        if num_questions_to_setup is None:
+            raise TypeError("Missing 'num_questions_to_setup' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if security_question_setting_id is None and 'securityQuestionSettingId' in kwargs:
             security_question_setting_id = kwargs['securityQuestionSettingId']
-        if 'attributeSets' in kwargs:
+        if security_question_setting_id is None:
+            raise TypeError("Missing 'security_question_setting_id' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
 
         _setter("idcs_endpoint", idcs_endpoint)
@@ -735,41 +749,41 @@ class _DomainsSecurityQuestionSettingState:
              security_question_setting_id: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attributeSets' in kwargs:
+        if attribute_sets is None and 'attributeSets' in kwargs:
             attribute_sets = kwargs['attributeSets']
-        if 'compartmentOcid' in kwargs:
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
             compartment_ocid = kwargs['compartmentOcid']
-        if 'deleteInProgress' in kwargs:
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
             delete_in_progress = kwargs['deleteInProgress']
-        if 'domainOcid' in kwargs:
+        if domain_ocid is None and 'domainOcid' in kwargs:
             domain_ocid = kwargs['domainOcid']
-        if 'externalId' in kwargs:
+        if external_id is None and 'externalId' in kwargs:
             external_id = kwargs['externalId']
-        if 'idcsCreatedBies' in kwargs:
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
             idcs_created_bies = kwargs['idcsCreatedBies']
-        if 'idcsEndpoint' in kwargs:
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
             idcs_endpoint = kwargs['idcsEndpoint']
-        if 'idcsLastModifiedBies' in kwargs:
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
             idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if 'idcsLastUpgradedInRelease' in kwargs:
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
             idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if 'idcsPreventedOperations' in kwargs:
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
             idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if 'maxFieldLength' in kwargs:
+        if max_field_length is None and 'maxFieldLength' in kwargs:
             max_field_length = kwargs['maxFieldLength']
-        if 'minAnswerLength' in kwargs:
+        if min_answer_length is None and 'minAnswerLength' in kwargs:
             min_answer_length = kwargs['minAnswerLength']
-        if 'numQuestionsToAns' in kwargs:
+        if num_questions_to_ans is None and 'numQuestionsToAns' in kwargs:
             num_questions_to_ans = kwargs['numQuestionsToAns']
-        if 'numQuestionsToSetup' in kwargs:
+        if num_questions_to_setup is None and 'numQuestionsToSetup' in kwargs:
             num_questions_to_setup = kwargs['numQuestionsToSetup']
-        if 'resourceTypeSchemaVersion' in kwargs:
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
             resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if 'securityQuestionSettingId' in kwargs:
+        if security_question_setting_id is None and 'securityQuestionSettingId' in kwargs:
             security_question_setting_id = kwargs['securityQuestionSettingId']
-        if 'tenancyOcid' in kwargs:
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
             tenancy_ocid = kwargs['tenancyOcid']
 
         if attribute_sets is not None:

@@ -36,11 +36,11 @@ import (
 //				CompartmentId:          pulumi.Any(_var.Compartment_id),
 //				LoadBalancerId:         pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
 //				WebAppFirewallPolicyId: pulumi.Any(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
-//				DefinedTags: pulumi.AnyMap{
+//				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DisplayName: pulumi.Any(_var.Web_app_firewall_display_name),
-//				FreeformTags: pulumi.AnyMap{
+//				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				SystemTags: pulumi.Any(_var.Web_app_firewall_system_tags),

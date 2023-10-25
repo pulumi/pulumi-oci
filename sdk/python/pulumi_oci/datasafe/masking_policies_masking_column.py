@@ -56,32 +56,40 @@ class MaskingPoliciesMaskingColumnArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             column_name: pulumi.Input[str],
-             masking_policy_id: pulumi.Input[str],
-             object: pulumi.Input[str],
-             schema_name: pulumi.Input[str],
+             column_name: Optional[pulumi.Input[str]] = None,
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
              is_masking_enabled: Optional[pulumi.Input[bool]] = None,
              masking_column_group: Optional[pulumi.Input[str]] = None,
              masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
              sensitive_type_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'maskingPolicyId' in kwargs:
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'schemaName' in kwargs:
+        if masking_policy_id is None:
+            raise TypeError("Missing 'masking_policy_id' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'isMaskingEnabled' in kwargs:
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
+        if is_masking_enabled is None and 'isMaskingEnabled' in kwargs:
             is_masking_enabled = kwargs['isMaskingEnabled']
-        if 'maskingColumnGroup' in kwargs:
+        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
             masking_column_group = kwargs['maskingColumnGroup']
-        if 'maskingFormats' in kwargs:
+        if masking_formats is None and 'maskingFormats' in kwargs:
             masking_formats = kwargs['maskingFormats']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'sensitiveTypeId' in kwargs:
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
             sensitive_type_id = kwargs['sensitiveTypeId']
 
         _setter("column_name", column_name)
@@ -292,33 +300,33 @@ class _MaskingPoliciesMaskingColumnState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'childColumns' in kwargs:
+        if child_columns is None and 'childColumns' in kwargs:
             child_columns = kwargs['childColumns']
-        if 'columnName' in kwargs:
+        if column_name is None and 'columnName' in kwargs:
             column_name = kwargs['columnName']
-        if 'dataType' in kwargs:
+        if data_type is None and 'dataType' in kwargs:
             data_type = kwargs['dataType']
-        if 'isMaskingEnabled' in kwargs:
+        if is_masking_enabled is None and 'isMaskingEnabled' in kwargs:
             is_masking_enabled = kwargs['isMaskingEnabled']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'maskingColumnGroup' in kwargs:
+        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
             masking_column_group = kwargs['maskingColumnGroup']
-        if 'maskingFormats' in kwargs:
+        if masking_formats is None and 'maskingFormats' in kwargs:
             masking_formats = kwargs['maskingFormats']
-        if 'maskingPolicyId' in kwargs:
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
             masking_policy_id = kwargs['maskingPolicyId']
-        if 'objectType' in kwargs:
+        if object_type is None and 'objectType' in kwargs:
             object_type = kwargs['objectType']
-        if 'schemaName' in kwargs:
+        if schema_name is None and 'schemaName' in kwargs:
             schema_name = kwargs['schemaName']
-        if 'sensitiveTypeId' in kwargs:
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
             sensitive_type_id = kwargs['sensitiveTypeId']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
 
         if child_columns is not None:

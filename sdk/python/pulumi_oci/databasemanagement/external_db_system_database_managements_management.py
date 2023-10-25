@@ -36,16 +36,20 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enable_database_management: pulumi.Input[bool],
-             external_db_system_id: pulumi.Input[str],
+             enable_database_management: Optional[pulumi.Input[bool]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableDatabaseManagement' in kwargs:
+        if enable_database_management is None and 'enableDatabaseManagement' in kwargs:
             enable_database_management = kwargs['enableDatabaseManagement']
-        if 'externalDbSystemId' in kwargs:
+        if enable_database_management is None:
+            raise TypeError("Missing 'enable_database_management' argument")
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'licenseModel' in kwargs:
+        if external_db_system_id is None:
+            raise TypeError("Missing 'external_db_system_id' argument")
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         _setter("enable_database_management", enable_database_management)
@@ -122,13 +126,13 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
              enable_database_management: Optional[pulumi.Input[bool]] = None,
              external_db_system_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enableDatabaseManagement' in kwargs:
+        if enable_database_management is None and 'enableDatabaseManagement' in kwargs:
             enable_database_management = kwargs['enableDatabaseManagement']
-        if 'externalDbSystemId' in kwargs:
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
             external_db_system_id = kwargs['externalDbSystemId']
-        if 'licenseModel' in kwargs:
+        if license_model is None and 'licenseModel' in kwargs:
             license_model = kwargs['licenseModel']
 
         if enable_database_management is not None:

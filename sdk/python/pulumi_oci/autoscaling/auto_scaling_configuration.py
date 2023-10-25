@@ -52,29 +52,35 @@ class AutoScalingConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auto_scaling_resources: pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'],
-             compartment_id: pulumi.Input[str],
-             policies: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]],
+             auto_scaling_resources: Optional[pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             policies: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]]] = None,
              cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoScalingResources' in kwargs:
+        if auto_scaling_resources is None and 'autoScalingResources' in kwargs:
             auto_scaling_resources = kwargs['autoScalingResources']
-        if 'compartmentId' in kwargs:
+        if auto_scaling_resources is None:
+            raise TypeError("Missing 'auto_scaling_resources' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'coolDownInSeconds' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if policies is None:
+            raise TypeError("Missing 'policies' argument")
+        if cool_down_in_seconds is None and 'coolDownInSeconds' in kwargs:
             cool_down_in_seconds = kwargs['coolDownInSeconds']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
 
         _setter("auto_scaling_resources", auto_scaling_resources)
@@ -248,27 +254,27 @@ class _AutoScalingConfigurationState:
              min_resource_count: Optional[pulumi.Input[int]] = None,
              policies: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoScalingResources' in kwargs:
+        if auto_scaling_resources is None and 'autoScalingResources' in kwargs:
             auto_scaling_resources = kwargs['autoScalingResources']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'coolDownInSeconds' in kwargs:
+        if cool_down_in_seconds is None and 'coolDownInSeconds' in kwargs:
             cool_down_in_seconds = kwargs['coolDownInSeconds']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'isEnabled' in kwargs:
+        if is_enabled is None and 'isEnabled' in kwargs:
             is_enabled = kwargs['isEnabled']
-        if 'maxResourceCount' in kwargs:
+        if max_resource_count is None and 'maxResourceCount' in kwargs:
             max_resource_count = kwargs['maxResourceCount']
-        if 'minResourceCount' in kwargs:
+        if min_resource_count is None and 'minResourceCount' in kwargs:
             min_resource_count = kwargs['minResourceCount']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
 
         if auto_scaling_resources is not None:
@@ -636,11 +642,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutoScalingConfigurationArgs.__new__(AutoScalingConfigurationArgs)
 
-            if auto_scaling_resources is not None and not isinstance(auto_scaling_resources, AutoScalingConfigurationAutoScalingResourcesArgs):
-                auto_scaling_resources = auto_scaling_resources or {}
-                def _setter(key, value):
-                    auto_scaling_resources[key] = value
-                AutoScalingConfigurationAutoScalingResourcesArgs._configure(_setter, **auto_scaling_resources)
+            auto_scaling_resources = _utilities.configure(auto_scaling_resources, AutoScalingConfigurationAutoScalingResourcesArgs, True)
             if auto_scaling_resources is None and not opts.urn:
                 raise TypeError("Missing required property 'auto_scaling_resources'")
             __props__.__dict__["auto_scaling_resources"] = auto_scaling_resources

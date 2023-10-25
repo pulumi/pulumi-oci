@@ -49,7 +49,7 @@ class ConnectionAdditionalAttributeArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
 
         if name is not None:
@@ -105,9 +105,9 @@ class ConnectionBootstrapServerArgs:
              host: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              private_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'privateIp' in kwargs:
+        if private_ip is None and 'privateIp' in kwargs:
             private_ip = kwargs['privateIp']
 
         if host is not None:
@@ -169,9 +169,9 @@ class ConnectionIngressIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              ingress_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'ingressIp' in kwargs:
+        if ingress_ip is None and 'ingressIp' in kwargs:
             ingress_ip = kwargs['ingressIp']
 
         if ingress_ip is not None:
@@ -225,13 +225,13 @@ class DeploymentDeploymentDiagnosticDataArgs:
              object: Optional[pulumi.Input[str]] = None,
              time_diagnostic_end: Optional[pulumi.Input[str]] = None,
              time_diagnostic_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'diagnosticState' in kwargs:
+        if diagnostic_state is None and 'diagnosticState' in kwargs:
             diagnostic_state = kwargs['diagnosticState']
-        if 'timeDiagnosticEnd' in kwargs:
+        if time_diagnostic_end is None and 'timeDiagnosticEnd' in kwargs:
             time_diagnostic_end = kwargs['timeDiagnosticEnd']
-        if 'timeDiagnosticStart' in kwargs:
+        if time_diagnostic_start is None and 'timeDiagnosticStart' in kwargs:
             time_diagnostic_start = kwargs['timeDiagnosticStart']
 
         if bucket is not None:
@@ -351,17 +351,17 @@ class DeploymentMaintenanceConfigurationArgs:
              is_interim_release_auto_upgrade_enabled: Optional[pulumi.Input[bool]] = None,
              major_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
              security_patch_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bundleReleaseUpgradePeriodInDays' in kwargs:
+        if bundle_release_upgrade_period_in_days is None and 'bundleReleaseUpgradePeriodInDays' in kwargs:
             bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
-        if 'interimReleaseUpgradePeriodInDays' in kwargs:
+        if interim_release_upgrade_period_in_days is None and 'interimReleaseUpgradePeriodInDays' in kwargs:
             interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
-        if 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
+        if is_interim_release_auto_upgrade_enabled is None and 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
             is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
-        if 'majorReleaseUpgradePeriodInDays' in kwargs:
+        if major_release_upgrade_period_in_days is None and 'majorReleaseUpgradePeriodInDays' in kwargs:
             major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
-        if 'securityPatchUpgradePeriodInDays' in kwargs:
+        if security_patch_upgrade_period_in_days is None and 'securityPatchUpgradePeriodInDays' in kwargs:
             security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
 
         if bundle_release_upgrade_period_in_days is not None:
@@ -453,12 +453,16 @@ class DeploymentMaintenanceWindowArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             day: pulumi.Input[str],
-             start_hour: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             day: Optional[pulumi.Input[str]] = None,
+             start_hour: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'startHour' in kwargs:
+        if day is None:
+            raise TypeError("Missing 'day' argument")
+        if start_hour is None and 'startHour' in kwargs:
             start_hour = kwargs['startHour']
+        if start_hour is None:
+            raise TypeError("Missing 'start_hour' argument")
 
         _setter("day", day)
         _setter("start_hour", start_hour)
@@ -526,7 +530,7 @@ class DeploymentOggDataArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             deployment_name: pulumi.Input[str],
+             deployment_name: Optional[pulumi.Input[str]] = None,
              admin_password: Optional[pulumi.Input[str]] = None,
              admin_username: Optional[pulumi.Input[str]] = None,
              certificate: Optional[pulumi.Input[str]] = None,
@@ -535,21 +539,23 @@ class DeploymentOggDataArgs:
              key: Optional[pulumi.Input[str]] = None,
              ogg_version: Optional[pulumi.Input[str]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'deploymentName' in kwargs:
+        if deployment_name is None and 'deploymentName' in kwargs:
             deployment_name = kwargs['deploymentName']
-        if 'adminPassword' in kwargs:
+        if deployment_name is None:
+            raise TypeError("Missing 'deployment_name' argument")
+        if admin_password is None and 'adminPassword' in kwargs:
             admin_password = kwargs['adminPassword']
-        if 'adminUsername' in kwargs:
+        if admin_username is None and 'adminUsername' in kwargs:
             admin_username = kwargs['adminUsername']
-        if 'credentialStore' in kwargs:
+        if credential_store is None and 'credentialStore' in kwargs:
             credential_store = kwargs['credentialStore']
-        if 'identityDomainId' in kwargs:
+        if identity_domain_id is None and 'identityDomainId' in kwargs:
             identity_domain_id = kwargs['identityDomainId']
-        if 'oggVersion' in kwargs:
+        if ogg_version is None and 'oggVersion' in kwargs:
             ogg_version = kwargs['oggVersion']
-        if 'passwordSecretId' in kwargs:
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
             password_secret_id = kwargs['passwordSecretId']
 
         _setter("deployment_name", deployment_name)
@@ -697,11 +703,15 @@ class GetConnectionAssignmentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -757,11 +767,15 @@ class GetConnectionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -814,11 +828,15 @@ class GetDatabaseRegistrationsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -868,11 +886,15 @@ class GetDeploymentBackupsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -922,11 +944,15 @@ class GetDeploymentTypesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -976,11 +1002,15 @@ class GetDeploymentUpgradesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1030,11 +1060,15 @@ class GetDeploymentVersionsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1084,11 +1118,15 @@ class GetDeploymentsFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1138,11 +1176,15 @@ class GetMessagesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1192,11 +1234,15 @@ class GetTrailFilesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)
@@ -1246,11 +1292,15 @@ class GetTrailSequencesFilterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             name: str,
-             values: Sequence[str],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
 
         _setter("name", name)
         _setter("values", values)

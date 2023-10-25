@@ -52,32 +52,40 @@ class ModelArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             model_details: pulumi.Input['ModelModelDetailsArgs'],
-             project_id: pulumi.Input[str],
-             training_dataset: pulumi.Input['ModelTrainingDatasetArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             model_details: Optional[pulumi.Input['ModelModelDetailsArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              test_strategy: Optional[pulumi.Input['ModelTestStrategyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'modelDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if model_details is None and 'modelDetails' in kwargs:
             model_details = kwargs['modelDetails']
-        if 'projectId' in kwargs:
+        if model_details is None:
+            raise TypeError("Missing 'model_details' argument")
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'trainingDataset' in kwargs:
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if training_dataset is None and 'trainingDataset' in kwargs:
             training_dataset = kwargs['trainingDataset']
-        if 'definedTags' in kwargs:
+        if training_dataset is None:
+            raise TypeError("Missing 'training_dataset' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'testStrategy' in kwargs:
+        if test_strategy is None and 'testStrategy' in kwargs:
             test_strategy = kwargs['testStrategy']
 
         _setter("compartment_id", compartment_id)
@@ -280,33 +288,33 @@ class _ModelState:
              time_updated: Optional[pulumi.Input[str]] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'evaluationResults' in kwargs:
+        if evaluation_results is None and 'evaluationResults' in kwargs:
             evaluation_results = kwargs['evaluationResults']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'modelDetails' in kwargs:
+        if model_details is None and 'modelDetails' in kwargs:
             model_details = kwargs['modelDetails']
-        if 'projectId' in kwargs:
+        if project_id is None and 'projectId' in kwargs:
             project_id = kwargs['projectId']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'testStrategy' in kwargs:
+        if test_strategy is None and 'testStrategy' in kwargs:
             test_strategy = kwargs['testStrategy']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'trainingDataset' in kwargs:
+        if training_dataset is None and 'trainingDataset' in kwargs:
             training_dataset = kwargs['trainingDataset']
 
         if compartment_id is not None:
@@ -760,28 +768,16 @@ class Model(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if model_details is not None and not isinstance(model_details, ModelModelDetailsArgs):
-                model_details = model_details or {}
-                def _setter(key, value):
-                    model_details[key] = value
-                ModelModelDetailsArgs._configure(_setter, **model_details)
+            model_details = _utilities.configure(model_details, ModelModelDetailsArgs, True)
             if model_details is None and not opts.urn:
                 raise TypeError("Missing required property 'model_details'")
             __props__.__dict__["model_details"] = model_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            if test_strategy is not None and not isinstance(test_strategy, ModelTestStrategyArgs):
-                test_strategy = test_strategy or {}
-                def _setter(key, value):
-                    test_strategy[key] = value
-                ModelTestStrategyArgs._configure(_setter, **test_strategy)
+            test_strategy = _utilities.configure(test_strategy, ModelTestStrategyArgs, True)
             __props__.__dict__["test_strategy"] = test_strategy
-            if training_dataset is not None and not isinstance(training_dataset, ModelTrainingDatasetArgs):
-                training_dataset = training_dataset or {}
-                def _setter(key, value):
-                    training_dataset[key] = value
-                ModelTrainingDatasetArgs._configure(_setter, **training_dataset)
+            training_dataset = _utilities.configure(training_dataset, ModelTrainingDatasetArgs, True)
             if training_dataset is None and not opts.urn:
                 raise TypeError("Missing required property 'training_dataset'")
             __props__.__dict__["training_dataset"] = training_dataset

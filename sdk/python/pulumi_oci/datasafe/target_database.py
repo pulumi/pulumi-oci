@@ -52,8 +52,8 @@ class TargetDatabaseArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             compartment_id: pulumi.Input[str],
-             database_details: pulumi.Input['TargetDatabaseDatabaseDetailsArgs'],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_details: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']] = None,
              connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
              credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -61,21 +61,25 @@ class TargetDatabaseArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'databaseDetails' in kwargs:
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_details is None and 'databaseDetails' in kwargs:
             database_details = kwargs['databaseDetails']
-        if 'connectionOption' in kwargs:
+        if database_details is None:
+            raise TypeError("Missing 'database_details' argument")
+        if connection_option is None and 'connectionOption' in kwargs:
             connection_option = kwargs['connectionOption']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'tlsConfig' in kwargs:
+        if tls_config is None and 'tlsConfig' in kwargs:
             tls_config = kwargs['tlsConfig']
 
         _setter("compartment_id", compartment_id)
@@ -276,31 +280,31 @@ class _TargetDatabaseState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedResourceIds' in kwargs:
+        if associated_resource_ids is None and 'associatedResourceIds' in kwargs:
             associated_resource_ids = kwargs['associatedResourceIds']
-        if 'compartmentId' in kwargs:
+        if compartment_id is None and 'compartmentId' in kwargs:
             compartment_id = kwargs['compartmentId']
-        if 'connectionOption' in kwargs:
+        if connection_option is None and 'connectionOption' in kwargs:
             connection_option = kwargs['connectionOption']
-        if 'databaseDetails' in kwargs:
+        if database_details is None and 'databaseDetails' in kwargs:
             database_details = kwargs['databaseDetails']
-        if 'definedTags' in kwargs:
+        if defined_tags is None and 'definedTags' in kwargs:
             defined_tags = kwargs['definedTags']
-        if 'displayName' in kwargs:
+        if display_name is None and 'displayName' in kwargs:
             display_name = kwargs['displayName']
-        if 'freeformTags' in kwargs:
+        if freeform_tags is None and 'freeformTags' in kwargs:
             freeform_tags = kwargs['freeformTags']
-        if 'lifecycleDetails' in kwargs:
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
-        if 'systemTags' in kwargs:
+        if system_tags is None and 'systemTags' in kwargs:
             system_tags = kwargs['systemTags']
-        if 'timeCreated' in kwargs:
+        if time_created is None and 'timeCreated' in kwargs:
             time_created = kwargs['timeCreated']
-        if 'timeUpdated' in kwargs:
+        if time_updated is None and 'timeUpdated' in kwargs:
             time_updated = kwargs['timeUpdated']
-        if 'tlsConfig' in kwargs:
+        if tls_config is None and 'tlsConfig' in kwargs:
             tls_config = kwargs['tlsConfig']
 
         if associated_resource_ids is not None:
@@ -704,23 +708,11 @@ class TargetDatabase(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if connection_option is not None and not isinstance(connection_option, TargetDatabaseConnectionOptionArgs):
-                connection_option = connection_option or {}
-                def _setter(key, value):
-                    connection_option[key] = value
-                TargetDatabaseConnectionOptionArgs._configure(_setter, **connection_option)
+            connection_option = _utilities.configure(connection_option, TargetDatabaseConnectionOptionArgs, True)
             __props__.__dict__["connection_option"] = connection_option
-            if credentials is not None and not isinstance(credentials, TargetDatabaseCredentialsArgs):
-                credentials = credentials or {}
-                def _setter(key, value):
-                    credentials[key] = value
-                TargetDatabaseCredentialsArgs._configure(_setter, **credentials)
+            credentials = _utilities.configure(credentials, TargetDatabaseCredentialsArgs, True)
             __props__.__dict__["credentials"] = credentials
-            if database_details is not None and not isinstance(database_details, TargetDatabaseDatabaseDetailsArgs):
-                database_details = database_details or {}
-                def _setter(key, value):
-                    database_details[key] = value
-                TargetDatabaseDatabaseDetailsArgs._configure(_setter, **database_details)
+            database_details = _utilities.configure(database_details, TargetDatabaseDatabaseDetailsArgs, True)
             if database_details is None and not opts.urn:
                 raise TypeError("Missing required property 'database_details'")
             __props__.__dict__["database_details"] = database_details
@@ -728,11 +720,7 @@ class TargetDatabase(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if tls_config is not None and not isinstance(tls_config, TargetDatabaseTlsConfigArgs):
-                tls_config = tls_config or {}
-                def _setter(key, value):
-                    tls_config[key] = value
-                TargetDatabaseTlsConfigArgs._configure(_setter, **tls_config)
+            tls_config = _utilities.configure(tls_config, TargetDatabaseTlsConfigArgs, True)
             __props__.__dict__["tls_config"] = tls_config
             __props__.__dict__["associated_resource_ids"] = None
             __props__.__dict__["lifecycle_details"] = None
